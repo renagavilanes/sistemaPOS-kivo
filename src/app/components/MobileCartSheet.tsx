@@ -119,12 +119,13 @@ export function MobileCartSheet({
                     {/* Header: Image + Name + Delete */}
                     <div className="flex items-center gap-3 mb-3">
                       {/* Image */}
-                      <div className="w-14 h-14 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
+                      <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
                         <LazyProductImage
+                          fillParent
                           productId={item.product.id}
                           initialSrc={item.product.image}
                           alt={item.product.name}
-                          className="w-full h-full object-cover"
+                          className="h-full w-full object-cover object-center"
                           eager
                         />
                       </div>

@@ -97,12 +97,13 @@ export function CartItemEditSheet({
           <div className="space-y-6">
             {/* Product Image */}
             <div className="flex justify-center">
-              <div className="w-32 h-32 bg-gray-100 rounded-2xl overflow-hidden">
+              <div className="relative h-32 w-32 overflow-hidden rounded-2xl bg-gray-100">
                 <LazyProductImage
+                  fillParent
                   productId={item.product.id}
                   initialSrc={item.product.image}
                   alt={item.product.name}
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover object-center"
                   eager
                 />
               </div>

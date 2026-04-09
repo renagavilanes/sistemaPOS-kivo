@@ -184,12 +184,13 @@ export function ProductCatalog({
                     onClick={() => handleAddToCartWithPrice(product)}
                   >
                     {/* Imagen ~20% menos alta que 1:1 (altura = 80% del ancho) para compactar la tarjeta */}
-                    <div className="w-full aspect-[5/4] bg-gray-100 relative overflow-hidden">
+                    <div className="relative aspect-[5/4] w-full shrink-0 overflow-hidden bg-gray-100">
                       <LazyProductImage
+                        fillParent
                         productId={product.id}
                         initialSrc={product.image}
                         alt={product.name}
-                        className="w-full h-full object-cover"
+                        className="h-full w-full object-cover object-center"
                       />
                       {product.stock <= 0 && (
                         <div className="absolute top-2 right-2">
@@ -249,12 +250,13 @@ export function ProductCatalog({
                 {/* Mobile & Tablet view - with quantity controls */}
                 <div className="lg:hidden flex gap-3 p-3">
                   {/* Product Image (20% menor que 20×20 → 16×16) */}
-                  <div className="w-16 h-16 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden relative">
+                  <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
                     <LazyProductImage
+                      fillParent
                       productId={product.id}
                       initialSrc={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover"
+                      className="h-full w-full object-cover object-center"
                     />
                     {product.stock <= 0 && (
                       <div className="absolute top-1 right-1">

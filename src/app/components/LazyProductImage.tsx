@@ -50,6 +50,11 @@ export interface LazyProductImageProps {
    * true: pide la imagen al abrir (carrito / modal). false: solo al entrar en vista (catálogo).
    */
   eager?: boolean;
+  /**
+   * Rellena un ancestro con `position: relative` y tamaño definido (p. ej. aspect-ratio).
+   * Evita en Safari/WebKit que `h-full` sobre la imagen se resuelva mal dentro de flex.
+   */
+  fillParent?: boolean;
 }
 
 export function LazyProductImage({
@@ -58,6 +63,7 @@ export function LazyProductImage({
   className,
   initialSrc,
   eager = false,
+  fillParent = false,
 }: LazyProductImageProps) {
   const { currentBusiness } = useBusiness();
   const businessId = currentBusiness?.id ?? '';
@@ -121,7 +127,14 @@ export function LazyProductImage({
   }, [businessId, productId, initialSrc, eager]);
 
   return (
-    <div ref={containerRef} className="w-full h-full min-h-0">
+    <div
+      ref={containerRef}
+      className={
+        fillParent
+          ? 'absolute inset-0 min-h-0 overflow-hidden'
+          : 'h-full w-full min-h-0'
+      }
+    >
       <ImageWithFallback src={src} alt={alt} className={className} />
     </div>
   );

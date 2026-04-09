@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { cn } from '../ui/utils'
 
 export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElement>) {
   const [didError, setDidError] = useState(false)
@@ -11,7 +12,10 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
 
   return didError || !src ? (
     <div
-      className={`inline-block bg-gradient-to-br from-gray-50 to-gray-100 text-center align-middle ${className ?? ''}`}
+      className={cn(
+        'inline-block bg-gradient-to-br from-gray-50 to-gray-100 text-center align-middle max-h-full max-w-full',
+        className,
+      )}
       style={style}
     >
       <div className="flex items-center justify-center w-full h-full">
@@ -31,6 +35,13 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
       </div>
     </div>
   ) : (
-    <img src={src} alt={alt} className={className} style={style} {...rest} onError={handleError} />
+    <img
+      src={src}
+      alt={alt}
+      className={cn('max-h-full max-w-full', className)}
+      style={style}
+      {...rest}
+      onError={handleError}
+    />
   )
 }

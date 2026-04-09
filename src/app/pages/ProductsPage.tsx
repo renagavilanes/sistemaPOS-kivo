@@ -819,12 +819,13 @@ export default function ProductsPage() {
                     <tr key={product.id} className="hover:bg-gray-50">
                       <td className="pl-4 pr-0 py-3 w-auto">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded overflow-hidden bg-gray-100 flex-shrink-0">
+                          <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded bg-gray-100">
                             <LazyProductImage
+                              fillParent
                               productId={product.id}
                               initialSrc={product.image}
                               alt={product.name}
-                              className="w-full h-full object-cover"
+                              className="h-full w-full object-cover object-center"
                             />
                           </div>
                           <div className="min-w-0 max-w-[400px]">
@@ -958,12 +959,13 @@ export default function ProductsPage() {
                   onClick={() => handleEditProduct(product)}
                 >
                   {/* Imagen pequeña */}
-                  <div className="w-20 h-20 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 relative">
+                  <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
                     <LazyProductImage
+                      fillParent
                       productId={product.id}
                       initialSrc={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover"
+                      className="h-full w-full object-cover object-center"
                     />
                   </div>
 

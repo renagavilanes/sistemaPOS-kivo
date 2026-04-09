@@ -3357,15 +3357,15 @@ export default function MovementsPage() {
                           className="grid grid-cols-[3rem_minmax(0,1fr)_auto] gap-3 items-center p-3 bg-gray-50 rounded-lg min-w-0"
                         >
                           {/*
-                            LazyProductImage envuelve la imagen en un div con w-full; en flex/grid hay que
-                            acotar el ancho o ese div se come toda la fila y el nombre no se ve.
+                            Contenedor con tamaño fijo + fillParent evita que el wrapper empuje el grid y corrige escala en Safari.
                           */}
-                          <div className="h-12 w-12 shrink-0 overflow-hidden rounded">
+                          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded">
                             <LazyProductImage
+                              fillParent
                               productId={product.product_id || product.id}
                               initialSrc={product.image}
                               alt={lineName}
-                              className="h-full w-full object-cover rounded"
+                              className="h-full w-full object-cover object-center rounded"
                               eager
                             />
                           </div>
