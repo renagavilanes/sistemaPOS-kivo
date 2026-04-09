@@ -1,0 +1,653 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  /* Kivo brand (tomado del logo) */
+  --brand: #2F80FF;
+  --brand-foreground: oklch(1 0 0);
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: var(--brand);
+  --primary-foreground: var(--brand-foreground);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --radius-control: 0.625rem;
+  --radius-tabs: 0.75rem;
+  --control-height-sm: 2rem;
+  --control-height-md: 2.25rem;
+  --control-height-lg: 2.5rem;
+  --tabs-list-height: 2.25rem;
+  --shadow-card: 0 4px 14px rgba(15, 23, 42, 0.10);
+  --shadow-card-hover: 0 12px 28px rgba(15, 23, 42, 0.14);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: var(--brand);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  /* En dark mantenemos el mismo azul de marca para estilo “Uber-like” */
+  --brand: #2F80FF;
+  --brand-foreground: oklch(1 0 0);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: var(--brand);
+  --primary-foreground: var(--brand-foreground);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+
+  /* Hide scrollbar for horizontal scroll elements */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+@layer utilities {
+  @keyframes kivo-pop-in {
+    0% {
+      opacity: 0;
+      transform: translateY(6px) scale(0.98);
+      filter: blur(2px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes kivo-soft-pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(47, 128, 255, 0.18);
+    }
+    100% {
+      transform: scale(1.02);
+      box-shadow: 0 0 0 10px rgba(47, 128, 255, 0);
+    }
+  }
+
+  @keyframes kivo-shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  .kivo-pop-in {
+    animation: kivo-pop-in 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .kivo-soft-pulse {
+    animation: kivo-soft-pulse 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 1 both;
+  }
+
+  /* Botón “Crear venta”: sensación de press + focus moderno */
+  .kivo-pressable {
+    transform: translateZ(0);
+    transition: transform 120ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 120ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform;
+  }
+  .kivo-pressable:active {
+    transform: translateY(1px) scale(0.99);
+  }
+
+  /* Overlay de “guardando…”: shimmer muy suave */
+  .kivo-saving-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.00) 0%,
+      rgba(255, 255, 255, 0.10) 40%,
+      rgba(255, 255, 255, 0.00) 80%
+    );
+    background-size: 200% 100%;
+    animation: kivo-shimmer 900ms linear infinite;
+  }
+
+  /* ===========================
+   * Motion Lab (solo pruebas)
+   * =========================== */
+  @keyframes kivo-screenfx-wipe {
+    0% { clip-path: inset(0 100% 0 0); opacity: 1; }
+    35% { clip-path: inset(0 0 0 0); opacity: 1; }
+    100% { clip-path: inset(0 0 0 100%); opacity: 0; }
+  }
+  @keyframes kivo-screenfx-radial {
+    0% { transform: translate3d(0,0,0) scale(0.1); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translate3d(0,0,0) scale(3.2); opacity: 0; }
+  }
+  @keyframes kivo-screenfx-glitch {
+    0% { opacity: 0; transform: translateX(0); }
+    10% { opacity: 1; transform: translateX(-8px); }
+    20% { transform: translateX(6px); }
+    30% { transform: translateX(-4px); }
+    45% { opacity: 1; transform: translateX(3px); }
+    100% { opacity: 0; transform: translateX(0); }
+  }
+  @keyframes kivo-screenfx-pixels {
+    0% { opacity: 0; transform: scale(1.02); filter: blur(10px); }
+    15% { opacity: 1; filter: blur(0); }
+    100% { opacity: 0; transform: scale(1); filter: blur(0); }
+  }
+  @keyframes kivo-screenfx-shutter {
+    0% { opacity: 0; transform: translateY(-2%); }
+    25% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(2%); }
+  }
+  @keyframes kivo-screenfx-wave {
+    0% { opacity: 0; transform: translateX(-40%); }
+    15% { opacity: 1; }
+    100% { opacity: 0; transform: translateX(140%); }
+  }
+  @keyframes kivo-screenfx-zoom-tunnel {
+    0% { opacity: 0; transform: scale(0.96); filter: blur(10px); }
+    20% { opacity: 1; filter: blur(0); }
+    100% { opacity: 0; transform: scale(1.08); filter: blur(0); }
+  }
+  @keyframes kivo-screenfx-ink {
+    0% { opacity: 0; transform: scale(0.15); filter: blur(8px); }
+    15% { opacity: 1; }
+    100% { opacity: 0; transform: scale(3.4); filter: blur(0); }
+  }
+  @keyframes kivo-screenfx-prism {
+    0% { opacity: 0; filter: saturate(1.4) contrast(1.2); transform: translate(0,0); }
+    12% { opacity: 1; transform: translate(-8px, 2px); }
+    25% { transform: translate(6px, -2px); }
+    100% { opacity: 0; transform: translate(0,0); }
+  }
+  @keyframes kivo-screenfx-spot {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  .kivo-screenfx {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 80;
+  }
+
+  /* 1) Wipe */
+  .kivo-screenfx-wipe {
+    background: linear-gradient(90deg, rgba(47,128,255,0.0) 0%, rgba(47,128,255,0.55) 35%, rgba(17,24,39,0.92) 70%);
+    animation: kivo-screenfx-wipe 780ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  /* 2) Radial burst desde click */
+  .kivo-screenfx-radial::before {
+    content: "";
+    position: absolute;
+    left: var(--fx-x, 50vw);
+    top: var(--fx-y, 50vh);
+    width: 40vmax;
+    height: 40vmax;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center, rgba(47,128,255,0.65), rgba(47,128,255,0.0) 60%);
+    mix-blend-mode: screen;
+    animation: kivo-screenfx-radial 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  /* 3) Glitch */
+  .kivo-screenfx-glitch {
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.08) 0px,
+      rgba(255,255,255,0.08) 2px,
+      rgba(0,0,0,0) 2px,
+      rgba(0,0,0,0) 6px
+    );
+    mix-blend-mode: overlay;
+    animation: kivo-screenfx-glitch 620ms steps(2, end) both;
+  }
+  .kivo-screenfx-glitch::before,
+  .kivo-screenfx-glitch::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(47,128,255,0.16);
+    mix-blend-mode: screen;
+    animation: kivo-screenfx-glitch 620ms steps(2, end) both;
+  }
+  .kivo-screenfx-glitch::after {
+    background: rgba(255,0,84,0.12);
+    animation-delay: 40ms;
+  }
+
+  /* 4) Pixelate */
+  .kivo-screenfx-pixels {
+    background:
+      linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35)),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 10px, rgba(0,0,0,0) 10px 20px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0 10px, rgba(0,0,0,0) 10px 20px);
+    animation: kivo-screenfx-pixels 780ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  /* 5) Shutter */
+  .kivo-screenfx-shutter {
+    background:
+      repeating-linear-gradient(
+        90deg,
+        rgba(17,24,39,0.96) 0px,
+        rgba(17,24,39,0.96) 24px,
+        rgba(17,24,39,0.0) 24px,
+        rgba(17,24,39,0.0) 44px
+      );
+    animation: kivo-screenfx-shutter 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  /* 6) Wave */
+  .kivo-screenfx-wave::before {
+    content: "";
+    position: absolute;
+    inset: -35%;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(47,128,255,0.22) 45%, rgba(255,255,255,0) 70%);
+    transform: rotate(-12deg) translateX(-40%);
+    animation: kivo-screenfx-wave 620ms ease-out both;
+  }
+
+  /* 7) Zoom tunnel */
+  .kivo-screenfx-zoom-tunnel {
+    background:
+      radial-gradient(600px 420px at var(--fx-x, 50vw) var(--fx-y, 50vh), rgba(47,128,255,0.34), rgba(0,0,0,0) 60%),
+      radial-gradient(900px 620px at 50% 50%, rgba(0,0,0,0.85), rgba(0,0,0,0.35));
+    animation: kivo-screenfx-zoom-tunnel 780ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  /* 8) Ink splash */
+  .kivo-screenfx-ink::before {
+    content: "";
+    position: absolute;
+    left: var(--fx-x, 50vw);
+    top: var(--fx-y, 50vh);
+    width: 52vmax;
+    height: 52vmax;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 40% 35%, rgba(17,24,39,0.98), rgba(17,24,39,0.0) 64%);
+    border-radius: 46% 54% 48% 52% / 46% 48% 52% 54%;
+    animation: kivo-screenfx-ink 820ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  /* Ink variants */
+  .kivo-screenfx-ink-soft::before {
+    content: "";
+    position: absolute;
+    left: var(--fx-x, 50vw);
+    top: var(--fx-y, 50vh);
+    width: 56vmax;
+    height: 56vmax;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 45% 40%, rgba(17,24,39,0.86), rgba(17,24,39,0.0) 70%);
+    border-radius: 48% 52% 51% 49% / 52% 46% 54% 48%;
+    animation: kivo-screenfx-ink 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    filter: blur(0.5px);
+  }
+
+  .kivo-screenfx-ink-neon::before {
+    content: "";
+    position: absolute;
+    left: var(--fx-x, 50vw);
+    top: var(--fx-y, 50vh);
+    width: 54vmax;
+    height: 54vmax;
+    transform: translate(-50%, -50%);
+    background:
+      radial-gradient(circle at 40% 35%, rgba(47,128,255,0.55), rgba(47,128,255,0.0) 60%),
+      radial-gradient(circle at 55% 45%, rgba(17,24,39,0.94), rgba(17,24,39,0.0) 68%);
+    border-radius: 46% 54% 48% 52% / 46% 48% 52% 54%;
+    animation: kivo-screenfx-ink 820ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    mix-blend-mode: screen;
+    filter: saturate(1.4);
+  }
+
+  .kivo-screenfx-ink-double::before,
+  .kivo-screenfx-ink-double::after {
+    content: "";
+    position: absolute;
+    left: var(--fx-x, 50vw);
+    top: var(--fx-y, 50vh);
+    width: 52vmax;
+    height: 52vmax;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 40% 35%, rgba(17,24,39,0.98), rgba(17,24,39,0.0) 66%);
+    border-radius: 46% 54% 48% 52% / 46% 48% 52% 54%;
+    animation: kivo-screenfx-ink 760ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .kivo-screenfx-ink-double::after {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(0.82);
+    filter: blur(1px);
+    animation-delay: 110ms;
+  }
+
+  .kivo-screenfx-ink-blobs::before,
+  .kivo-screenfx-ink-blobs::after {
+    content: "";
+    position: absolute;
+    left: var(--fx-x, 50vw);
+    top: var(--fx-y, 50vh);
+    width: 34vmax;
+    height: 34vmax;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 45% 40%, rgba(17,24,39,0.96), rgba(17,24,39,0.0) 70%);
+    border-radius: 58% 42% 60% 40% / 45% 58% 42% 55%;
+    animation: kivo-screenfx-ink 820ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    filter: blur(0.8px);
+  }
+  .kivo-screenfx-ink-blobs::after {
+    left: calc(var(--fx-x, 50vw) + 10vw);
+    top: calc(var(--fx-y, 50vh) - 6vh);
+    transform: translate(-50%, -50%) scale(0.72);
+    opacity: 0.92;
+    animation-delay: 70ms;
+  }
+
+  .kivo-screenfx-ink-reveal {
+    background: rgba(0,0,0,0.55);
+  }
+  .kivo-screenfx-ink-reveal::before {
+    content: "";
+    position: absolute;
+    left: var(--fx-x, 50vw);
+    top: var(--fx-y, 50vh);
+    width: 54vmax;
+    height: 54vmax;
+    transform: translate(-50%, -50%);
+    border-radius: 46% 54% 48% 52% / 46% 48% 52% 54%;
+    background: radial-gradient(circle at 40% 35%, rgba(0,0,0,1), rgba(0,0,0,0) 70%);
+    animation: kivo-screenfx-ink 820ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    /* “Agujero” en el overlay: revela lo de atrás con tinta */
+    mask-image: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(0,0,0,1) 74%);
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(0,0,0,1) 74%);
+    mix-blend-mode: destination-out;
+  }
+
+  /* 9) Prism */
+  .kivo-screenfx-prism {
+    background: rgba(255,255,255,0.06);
+    animation: kivo-screenfx-prism 640ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .kivo-screenfx-prism::before,
+  .kivo-screenfx-prism::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(47,128,255,0.10);
+    mix-blend-mode: screen;
+    animation: kivo-screenfx-prism 640ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .kivo-screenfx-prism::after {
+    background: rgba(255,0,84,0.08);
+    animation-delay: 40ms;
+  }
+
+  /* 10) Spotlight */
+  .kivo-screenfx-spot {
+    background: rgba(0,0,0,0.35);
+    animation: kivo-screenfx-spot 780ms ease-out both;
+    mask-image: radial-gradient(circle 120px at var(--fx-x, 50vw) var(--fx-y, 50vh), rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(0,0,0,1) 75%);
+    -webkit-mask-image: radial-gradient(circle 120px at var(--fx-x, 50vw) var(--fx-y, 50vh), rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(0,0,0,1) 75%);
+  }
+
+  @keyframes kivo-lab-shake {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-10px) rotate(-1deg); }
+    30% { transform: translateX(10px) rotate(1deg); }
+    50% { transform: translateX(-8px) rotate(-1deg); }
+    70% { transform: translateX(8px) rotate(1deg); }
+    100% { transform: translateX(0); }
+  }
+  @keyframes kivo-lab-bounce {
+    0% { transform: translateY(0) scale(1); }
+    25% { transform: translateY(-10px) scale(1.02); }
+    55% { transform: translateY(2px) scale(0.99); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  @keyframes kivo-lab-jelly {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.12, 0.86); }
+    55% { transform: scale(0.92, 1.08); }
+    80% { transform: scale(1.04, 0.96); }
+    100% { transform: scale(1); }
+  }
+  @keyframes kivo-lab-flip {
+    0% { transform: perspective(900px) rotateX(0deg); }
+    45% { transform: perspective(900px) rotateX(75deg); }
+    100% { transform: perspective(900px) rotateX(0deg); }
+  }
+  @keyframes kivo-lab-spin {
+    0% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+  @keyframes kivo-lab-glow {
+    0% { box-shadow: 0 0 0 0 rgba(47, 128, 255, 0.0); }
+    25% { box-shadow: 0 0 0 6px rgba(47, 128, 255, 0.28); }
+    100% { box-shadow: 0 0 0 14px rgba(47, 128, 255, 0.0); }
+  }
+  @keyframes kivo-lab-ripple {
+    0% { transform: translate(-50%, -50%) scale(0.2); opacity: 0.35; }
+    100% { transform: translate(-50%, -50%) scale(8); opacity: 0; }
+  }
+  @keyframes kivo-lab-slide {
+    0% { transform: translateY(18px); opacity: 0.2; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes kivo-lab-zoom {
+    0% { transform: scale(1); }
+    35% { transform: scale(1.18); }
+    100% { transform: scale(1); }
+  }
+  @keyframes kivo-lab-spotlight {
+    0% { opacity: 0; transform: translateX(-30%); }
+    20% { opacity: 1; }
+    100% { opacity: 0; transform: translateX(130%); }
+  }
+
+  /* Usamos selectors por prefijo + la key en el className para poder “re-disparar” */
+  [class*="kivo-lab-shake-"] { animation: kivo-lab-shake 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  [class*="kivo-lab-bounce-"] { animation: kivo-lab-bounce 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  [class*="kivo-lab-jelly-"] { animation: kivo-lab-jelly 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  [class*="kivo-lab-flip-"] { transform-origin: 50% 60%; animation: kivo-lab-flip 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  [class*="kivo-lab-spin-"] { animation: kivo-lab-spin 650ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  [class*="kivo-lab-glow-"] { animation: kivo-lab-glow 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  [class*="kivo-lab-slide-"] { animation: kivo-lab-slide 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  [class*="kivo-lab-zoom-"] { animation: kivo-lab-zoom 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+  /* Ripple: el puntito animado vive dentro del botón */
+  .kivo-lab-ripple-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.55);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+  }
+  [class*="kivo-lab-ripple-"] .kivo-lab-ripple-dot {
+    animation: kivo-lab-ripple 620ms ease-out both;
+  }
+
+  /* Spotlight: pseudo layer usando ::after */
+  [class*="kivo-lab-spotlight-"] {
+    position: relative;
+  }
+  [class*="kivo-lab-spotlight-"]::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.22) 45%, rgba(255,255,255,0) 70%);
+    transform: translateX(-30%);
+    opacity: 0;
+    pointer-events: none;
+    animation: kivo-lab-spotlight 520ms ease-out both;
+  }
+}

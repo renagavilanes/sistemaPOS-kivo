@@ -1,0 +1,85 @@
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 💰 Creando venta: {cartItems: Array(1), total: 40, paymentType: 'pagada', payments: Array(1), client: null, …}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting customers for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Creating sale
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Categories retrieved: 0
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔄 [SALES] Categorías actualizadas: []
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/sales?select=sale_number&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=created_at.desc&limit=1 406 (Not Acceptable)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=92aa4488:11533
+(anonymous) @ @supabase_supabase-js.js?v=92aa4488:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=92aa4488:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  POST https://zcqoussqgigskextorag.supabase.co/rest/v1/sales?select=* 400 (Bad Request)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=92aa4488:11533
+(anonymous) @ @supabase_supabase-js.js?v=92aa4488:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=92aa4488:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error creating sale: {code: '22P02', details: null, hint: null, message: 'invalid input syntax for type uuid: "khjjb@cdd.com"'}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+createSale @ api.ts:602
+await in createSale
+createSale @ api.ts:70
+await in createSale
+handleConfirmSale @ SalesPage.tsx:394
+handleConfirm @ PaymentSheet.tsx:181
+y @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+ik @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+ij @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+iz @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+dP @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dM @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dG @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dk @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+iR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+d$ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+lO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 Error creating sale: Error: invalid input syntax for type uuid: "khjjb@cdd.com"
+    at Module.createSale (api.ts:603:11)
+    at async createSale (api.ts:70:16)
+    at async handleConfirmSale (SalesPage.tsx:394:22)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleConfirmSale @ SalesPage.tsx:450
+await in handleConfirmSale
+handleConfirm @ PaymentSheet.tsx:181
+y @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+ik @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+ij @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+iz @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+dP @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dM @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dG @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dk @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+iR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+d$ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+lO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Categories retrieved: 0
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔄 [SALES] Categorías actualizadas: []
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Categories retrieved: 0
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔄 [SALES] Categorías actualizadas: []
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Categories retrieved: 0
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔄 [SALES] Categorías actualizadas: []
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Categories retrieved: 0
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔄 [SALES] Categorías actualizadas: []

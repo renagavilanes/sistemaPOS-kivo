@@ -1,0 +1,139 @@
+routes.tsx:38  GET https://app-jyvcpjeroa5huwtutvwfk3z5m3owy6bkcj6jpwfnkiqqkgofa5uq.makeproxy-c.figma.site/src/app/pages/AuthTestPage.tsx?t=1773095312331 net::ERR_ABORTED 500 (Internal Server Error)
+app-jyvcpjeroa5huwtutvwfk3z5m3owy6bkcj6jpwfnkiqqkgofa5uq.makeproxy-c.figma.site/src/app/pages/AuthTestPage.tsx?t=1773095312331:1  Failed to load resource: the server responded with a status of 500 ()
+app-jyvcpjeroa5huwtutvwfk3z5m3owy6bkcj6jpwfnkiqqkgofa5uq.makeproxy-c.figma.site/src/app/pages/AuthTestPage.tsx?t=1773095312331:1  Failed to load resource: the server responded with a status of 500 ()
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 [vite] Internal Server Error
+Failed to resolve import "../../utils/supabase/info" from "app/pages/AuthTestPage.tsx". Does the file exist?
+    at TransformPluginContext._formatLog (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42499:41)
+    at TransformPluginContext.error (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42496:16)
+    at normalizeUrl (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40475:23)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40594:37
+    at async Promise.all (index 6)
+    at TransformPluginContext.transform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40521:7)
+    at EnvironmentPluginContainer.transform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42294:18)
+    at loadAndTransform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:35735:27)
+    at viteTransformMiddleware (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:37250:24)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleMessage @ client:1000
+await in handleMessage
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 10:30:01 PM [vite] Internal server error: Failed to resolve import "../../utils/supabase/info" from "app/pages/AuthTestPage.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: app/pages/AuthTestPage.tsx:3:26
+  19 |  import { useState } from "react";
+  20 |  import { supabase } from "../lib/supabase";
+  21 |  import { projectId } from "../../utils/supabase/info";
+     |                             ^
+  22 |  import { CheckCircle2, XCircle, AlertTriangle } from "lucide-react";
+  23 |  export default function AuthTestPage() {
+      at TransformPluginContext._formatLog (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42499:41)
+      at TransformPluginContext.error (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42496:16)
+      at normalizeUrl (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40475:23)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40594:37
+      at async Promise.all (index 6)
+      at TransformPluginContext.transform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40521:7)
+      at EnvironmentPluginContainer.transform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42294:18)
+      at loadAndTransform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:35735:27)
+      at viteTransformMiddleware (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:37250:24)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:55
+(anonymous) @ client:132
+notifyListeners @ client:132
+handleMessage @ client:961
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 10:30:05 PM [vite] (client) hmr update /src/app/pages/ServerStatusPage.tsx, /src/styles/index.css
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 Creando nueva instancia de Supabase Client
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 No routes matched location "/auth-test"  Component Stack
+    at DataRoutes (react-router.js?v=cc6cb703:6994:3)
+    at Router (react-router.js?v=cc6cb703:7086:13)
+    at RouterProvider (react-router.js?v=cc6cb703:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:290:12506
+    at FGCmp (fginspector:3:55)
+    at 7b0e140f-c8b1-4fca-8435-a6d756c18b7b-v2-figmaiframepreview.figma.site/App
+    at oF (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:55:4420)
+    at O (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:570:13251)
+    at rr (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:624:13959)
+    at bq (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:641:10311)
+    at 7b0e140f-c8b1-4fca-8435-a6d756c18b7b-v2-figmaiframepreview.figma.site/div
+    at oZ (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:55:14034)
+    at TQ (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:631:233579)
+    at yv (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:631:244761)
+    at is (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:40:135676)
+    at hi (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:434:8433)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+warn @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+warning @ react-router.js?v=cc6cb703:631
+useRoutesImpl @ react-router.js?v=cc6cb703:6124
+DataRoutes @ react-router.js?v=cc6cb703:6999
+ms @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+_c @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+_o @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+_i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+_4 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+ep @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SX @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+Sz @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+Sj @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SS @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:3
+V @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+B @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+eo @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 Error handled by React Router default ErrorBoundary: ErrorResponseImpl {status: 404, statusText: 'Not Found', internal: true, data: 'Error: No route matches URL "/auth-test"', error: Error: No route matches URL "/auth-test"
+    at getInternalRouterError (https://app-jyvcpjeroa5huwt…} Component Stack
+    at DefaultErrorComponent (react-router.js?v=cc6cb703:6187:15)
+    at RenderErrorBoundary (react-router.js?v=cc6cb703:6206:5)
+    at DataRoutes (react-router.js?v=cc6cb703:6994:3)
+    at Router (react-router.js?v=cc6cb703:7086:13)
+    at RouterProvider (react-router.js?v=cc6cb703:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:290:12506
+    at FGCmp (fginspector:3:55)
+    at 7b0e140f-c8b1-4fca-8435-a6d756c18b7b-v2-figmaiframepreview.figma.site/App
+    at oF (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:55:4420)
+    at O (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:570:13251)
+    at rr (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:624:13959)
+    at bq (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:641:10311)
+    at 7b0e140f-c8b1-4fca-8435-a6d756c18b7b-v2-figmaiframepreview.figma.site/div
+    at oZ (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:55:14034)
+    at TQ (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:631:233579)
+    at yv (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:631:244761)
+    at is (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:40:135676)
+    at hi (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:434:8433)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+DefaultErrorComponent @ react-router.js?v=cc6cb703:6195
+ms @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+_S @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+_4 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+ep @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SX @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+Sz @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+Sj @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SS @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:3
+V @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+B @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+eo @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113

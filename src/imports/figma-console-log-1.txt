@@ -1,0 +1,61 @@
+ Running frontend commit 104e5cff5c002c982d12ee7e71d6e343532dd808
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 31 scripts (5988491b), 28 from cache (1566590b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: 48589f4cb70c6245ed05d8f4e8e56d36d6b05fb3, stamp: 594A0F27E5DEFE4C
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 305.3ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=Y4PGC2ck3mAeeXey&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=104e5cff5c002c982d12ee7e71d6e343532dd808
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=RK4TrNdaOsJt6yEH-0&fullscreen=1&preview-route=%2Flogin:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+/api/make/5Fd3OHhMY2lssTlq3IRIEy/cached_preview_urls?source_code_hash=94630240590629ae7e815d43e31d7ed9a87bc86f:1  Failed to load resource: the server responded with a status of 404 ()
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=7.94s maxmem=123056136
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔐 AuthContext: Inicializando...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 📦 Sesión obtenida: Inactiva
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ℹ️ No hay sesión activa
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ AuthContext inicializado, loading=false
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ℹ️ No hay usuario autenticado
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔄 Auth state changed: INITIAL_SESSION
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 📝 Enviando código de verificación...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ Código enviado: Object
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔐 Verificando código y creando cuenta...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ Cuenta creada: Object
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔐 Iniciando sesión...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔄 Auth state changed: SIGNED_IN
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ℹ️ No hay negocio seleccionado
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ Sesión obtenida
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔑 Access Token: eyJhbGciOiJFUzI1NiIs...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ ID de negocio guardado: 99032327-4d9d-49c9-9d7d-a46125a10f0f
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ⏳ Esperando que la sesión se persista...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 👤 Usuario: renagavilanes@hotmail.com
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔑 Getting auth token, session exists: true
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🌐 API Call: /businesses
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔑 Token disponible: true
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/businesses:1  Failed to load resource: the server responded with a status of 401 ()
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 📡 Response status: 401
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ❌ API Error: Object
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ❌ ======== ERROR CARGANDO NEGOCIOS ========
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 Error: HTTP 401
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🏢 ========================================
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🚨 Error de autenticación detectado, limpiando sesión...
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ Sesión persistida: true
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔍 Sidebar - Business actualizado: Object
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔍 [SALES] Estado: Object

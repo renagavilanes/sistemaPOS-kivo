@@ -1,0 +1,111 @@
+[vite] connecting...
+[vite] connected.
+🔐 AuthContext: Cargando sesión desde localStorage...
+✅ Sesión encontrada: jbnj@bjbj.com
+📦 Business cargado desde almacenamiento individual: 7635673
+🔍 Sidebar - Business actualizado: {
+  "name": "7635673",
+  "id": "1772809902442-eqr43k2ga",
+  "logo": null,
+  "logo_url": null,
+  "loadedAt": 1772810406235,
+  "fullBusinessKeys": [
+    "id",
+    "name",
+    "email",
+    "phone",
+    "address",
+    "tax_id",
+    "country",
+    "currency",
+    "timezone",
+    "logo_url",
+    "active",
+    "owner_id",
+    "created_at",
+    "updated_at",
+    "logo",
+    "_loadedAt"
+  ]
+}
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏢 ======== CARGANDO NEGOCIOS ========
+👤 Usuario: jbnj@bjbj.com
+✅ Negocios encontrados: 6
+   1. nombre cambio (ID: 1772724732498-a7816l1wy)
+   2. 2 BE A HERO (ID: 1772806866198-bigtiiavv)
+   3. 1 PRUEBA BE AHERO (ID: 1772807135056-2wy7jsklk)
+   4. lkhj (ID: 1772807891840-kmmqbvd5z)
+   5. kjgkug (ID: 1772808669871-idvwngmfp)
+   6. 7635673 (ID: 1772809902442-eqr43k2ga)
+💾 Business ID guardado: 1772809902442-eqr43k2ga
+🎯 Negocio seleccionado: 7635673 (ID: 1772809902442-eqr43k2ga)
+🏢 ========================================
+📂 [LOAD] Categorías cargadas desde localStorage: []
+💾 [SAVE] Categorías guardadas en localStorage: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+ℹ️ Negocio nuevo - comenzando sin productos de prueba
+💾 [SAVE] Categorías guardadas en localStorage: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []
+🏷️ [CATEGORIES] Estado actual:
+   - isFirstBusiness: false
+   - baseCategories: []
+   - customCategories: []
+   - allCategories: []

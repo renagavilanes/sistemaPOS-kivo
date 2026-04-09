@@ -1,0 +1,253 @@
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔐 Iniciando sesión con: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Sesión iniciada: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔥 ANTES DEL useEffect - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Usuario: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 [LOAD BUSINESSES] INICIO - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔥 ANTES DEL useEffect - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: beahero_ec@hotmail.com initialLoad: false Component Stack
+    at BusinessProtectedRoute (BusinessProtectedRoute.tsx:11:42)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at Outlet (react-router.js?v=6ff28621:7077:26)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at BusinessProvider (BusinessContext.tsx:44:36)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at AuthProvider (AuthContext.tsx:42:32)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at RenderErrorBoundary (react-router.js?v=6ff28621:6206:5)
+    at DataRoutes (react-router.js?v=6ff28621:6994:3)
+    at Router (react-router.js?v=6ff28621:7086:13)
+    at RouterProvider (react-router.js?v=6ff28621:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 [LOAD BUSINESSES] INICIO - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔥 ANTES DEL useEffect - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: beahero_ec@hotmail.com initialLoad: false Component Stack
+    at BusinessProtectedRoute (BusinessProtectedRoute.tsx:11:42)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at Outlet (react-router.js?v=6ff28621:7077:26)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at BusinessProvider (BusinessContext.tsx:44:36)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at AuthProvider (AuthContext.tsx:42:32)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at RenderErrorBoundary (react-router.js?v=6ff28621:6206:5)
+    at DataRoutes (react-router.js?v=6ff28621:6994:3)
+    at Router (react-router.js?v=6ff28621:7086:13)
+    at RouterProvider (react-router.js?v=6ff28621:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 [LOAD BUSINESSES] INICIO - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔥 ANTES DEL useEffect - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: beahero_ec@hotmail.com initialLoad: false Component Stack
+    at BusinessProtectedRoute (BusinessProtectedRoute.tsx:11:42)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at Outlet (react-router.js?v=6ff28621:7077:26)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at BusinessProvider (BusinessContext.tsx:44:36)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at AuthProvider (AuthContext.tsx:42:32)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at RenderErrorBoundary (react-router.js?v=6ff28621:6206:5)
+    at DataRoutes (react-router.js?v=6ff28621:6994:3)
+    at Router (react-router.js?v=6ff28621:7086:13)
+    at RouterProvider (react-router.js?v=6ff28621:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 [LOAD BUSINESSES] INICIO - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔥 ANTES DEL useEffect - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔥 ANTES DEL useEffect - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: beahero_ec@hotmail.com initialLoad: true Component Stack
+    at BusinessProtectedRoute (BusinessProtectedRoute.tsx:11:42)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at Outlet (react-router.js?v=6ff28621:7077:26)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at BusinessProvider (BusinessContext.tsx:44:36)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at AuthProvider (AuthContext.tsx:42:32)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at RenderErrorBoundary (react-router.js?v=6ff28621:6206:5)
+    at DataRoutes (react-router.js?v=6ff28621:6994:3)
+    at Router (react-router.js?v=6ff28621:7086:13)
+    at RouterProvider (react-router.js?v=6ff28621:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔥 ANTES DEL useEffect - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: beahero_ec@hotmail.com initialLoad: true Component Stack
+    at BusinessProtectedRoute (BusinessProtectedRoute.tsx:11:42)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at Outlet (react-router.js?v=6ff28621:7077:26)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at BusinessProvider (BusinessContext.tsx:44:36)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at AuthProvider (AuthContext.tsx:42:32)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at RenderErrorBoundary (react-router.js?v=6ff28621:6206:5)
+    at DataRoutes (react-router.js?v=6ff28621:6994:3)
+    at Router (react-router.js?v=6ff28621:7086:13)
+    at RouterProvider (react-router.js?v=6ff28621:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔥 ANTES DEL useEffect - user: beahero_ec@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: beahero_ec@hotmail.com initialLoad: true Component Stack
+    at BusinessProtectedRoute (BusinessProtectedRoute.tsx:11:42)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at Outlet (react-router.js?v=6ff28621:7077:26)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at BusinessProvider (BusinessContext.tsx:44:36)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at AuthProvider (AuthContext.tsx:42:32)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at RenderedRoute (react-router.js?v=6ff28621:6296:26)
+    at RenderErrorBoundary (react-router.js?v=6ff28621:6206:5)
+    at DataRoutes (react-router.js?v=6ff28621:6994:3)
+    at Router (react-router.js?v=6ff28621:7086:13)
+    at RouterProvider (react-router.js?v=6ff28621:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 3127a9af-a28c-4af6-94c3-2d305066ed1e-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90

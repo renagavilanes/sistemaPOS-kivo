@@ -1,0 +1,294 @@
+ 🔐 Verificando código y creando cuenta...
+ ✅ Cuenta creada: {success: true, message: 'Account created successfully', user: {…}, business: {…}}
+ 🔐 Iniciando sesión con Supabase client...
+ 🔄 Auth state changed: SIGNED_IN
+ ℹ️ No hay negocio seleccionado
+ ✅ Sesión obtenida desde Supabase client
+ 🔑 Access Token: eyJhbGciOiJFUzI1NiIs...
+ 🔑 Token expires at: 2026-03-09T18:22:28.000Z
+ ✅ ID de negocio guardado: 4642b89d-5cf9-4adc-8358-c6fe750c5ad6
+ 🔄 Usuario y sesión listos, cargando negocios...
+ 🏢 ======== CARGANDO NEGOCIOS ========
+ 👤 Usuario: jbjkbj@jj.com
+ ✅ Sesión persistida: true
+ ✅ Navegando al dashboard...
+ 🔑 Getting auth token, session exists: true
+ 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+ 🌐 API Call: /businesses
+ 🔑 Token disponible: true
+ 🔍 Sidebar - Business actualizado: {name: undefined, id: undefined, logo: null, logo_url: null, loadedAt: undefined, …}
+ 🔒 [PROTECTED] loading: false user: jbjkbj@jj.com
+ 🔍 [SALES] Estado: {businessLoading: true, currentBusiness: undefined}
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/businesses 401 (Unauthorized)
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+wn @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:18864
+await in wn
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22535
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ 📡 Response status: 401
+ ❌ API Error: {code: 401, message: 'Invalid JWT'}
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+r @ code_components_prev…89ccb5.min.js.br:69
+error @ code_components_prev…89ccb5.min.js.br:28
+wn @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:18870
+await in wn
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22535
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ ❌ ======== ERROR CARGANDO NEGOCIOS ========
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+r @ code_components_prev…89ccb5.min.js.br:69
+error @ code_components_prev…89ccb5.min.js.br:28
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22547
+await in g
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ Error: HTTP 401
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+r @ code_components_prev…89ccb5.min.js.br:69
+error @ code_components_prev…89ccb5.min.js.br:28
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22547
+await in g
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ 🏢 ========================================
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+r @ code_components_prev…89ccb5.min.js.br:69
+error @ code_components_prev…89ccb5.min.js.br:28
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22547
+await in g
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ 🚨 Error de autenticación detectado, limpiando sesión...
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+r @ code_components_prev…89ccb5.min.js.br:69
+error @ code_components_prev…89ccb5.min.js.br:28
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22547
+await in g
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ 🔍 [SALES] Estado: {businessLoading: false, currentBusiness: undefined}
+ 🔄 Auth state changed: SIGNED_IN
+ ℹ️ No hay negocio seleccionado
+ 🔒 [PROTECTED] loading: false user: jbjkbj@jj.com
+ 🔄 Usuario y sesión listos, cargando negocios...
+ 🏢 ======== CARGANDO NEGOCIOS ========
+ 👤 Usuario: jbjkbj@jj.com
+ 🔍 [SALES] Estado: {businessLoading: true, currentBusiness: undefined}
+ 🔑 Getting auth token, session exists: true
+ 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+ 🌐 API Call: /businesses
+ 🔑 Token disponible: true
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/businesses 401 (Unauthorized)
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+wn @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:18864
+await in wn
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22535
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+SO @ code_components_prev…89ccb5.min.js.br:89
+pC @ code_components_prev…89ccb5.min.js.br:89
+SJ @ code_components_prev…89ccb5.min.js.br:89
+SZ @ code_components_prev…89ccb5.min.js.br:89
+Sv @ code_components_prev…89ccb5.min.js.br:89
+SS @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ 📡 Response status: 401
+ ❌ API Error: {code: 401, message: 'Invalid JWT'}
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+r @ code_components_prev…89ccb5.min.js.br:69
+error @ code_components_prev…89ccb5.min.js.br:28
+wn @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:18870
+await in wn
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22535
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+SO @ code_components_prev…89ccb5.min.js.br:89
+pC @ code_components_prev…89ccb5.min.js.br:89
+SJ @ code_components_prev…89ccb5.min.js.br:89
+SZ @ code_components_prev…89ccb5.min.js.br:89
+Sv @ code_components_prev…89ccb5.min.js.br:89
+SS @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ ❌ ======== ERROR CARGANDO NEGOCIOS ========
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+r @ code_components_prev…89ccb5.min.js.br:69
+error @ code_components_prev…89ccb5.min.js.br:28
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22547
+await in g
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+SO @ code_components_prev…89ccb5.min.js.br:89
+pC @ code_components_prev…89ccb5.min.js.br:89
+SJ @ code_components_prev…89ccb5.min.js.br:89
+SZ @ code_components_prev…89ccb5.min.js.br:89
+Sv @ code_components_prev…89ccb5.min.js.br:89
+SS @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ Error: HTTP 401
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+r @ code_components_prev…89ccb5.min.js.br:69
+error @ code_components_prev…89ccb5.min.js.br:28
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22547
+await in g
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+SO @ code_components_prev…89ccb5.min.js.br:89
+pC @ code_components_prev…89ccb5.min.js.br:89
+SJ @ code_components_prev…89ccb5.min.js.br:89
+SZ @ code_components_prev…89ccb5.min.js.br:89
+Sv @ code_components_prev…89ccb5.min.js.br:89
+SS @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ 🏢 ========================================
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+r @ code_components_prev…89ccb5.min.js.br:69
+error @ code_components_prev…89ccb5.min.js.br:28
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22547
+await in g
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+SO @ code_components_prev…89ccb5.min.js.br:89
+pC @ code_components_prev…89ccb5.min.js.br:89
+SJ @ code_components_prev…89ccb5.min.js.br:89
+SZ @ code_components_prev…89ccb5.min.js.br:89
+Sv @ code_components_prev…89ccb5.min.js.br:89
+SS @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ 🚨 Error de autenticación detectado, limpiando sesión...
+(anonymous) @ code_components_prev…89ccb5.min.js.br:28
+r @ code_components_prev…89ccb5.min.js.br:69
+error @ code_components_prev…89ccb5.min.js.br:28
+g @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22547
+await in g
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=b1xG8rWfbQoep-1jkaoXVlWQIKix1Yoi1UMEDXaoFcfw5Hyd3tjfCtj8KPYISTmDwECpZdHpNy1MZKRnA6b~Ez3BdwIoCoMkA6eaJ2xUOs8~CWiSy9uEcb55oO3oXqe20qWMg-~6Y74g~bXhT5F~UXD88eyicliSsFDCyMc4VkU-BlC1vcIYOWwz8Zi17-2waG3Aj87dWfjC8Z-B1~C4nDOmGORl2PERq6Ioza3NoFgbSappQZk8Txlp-bKhguyfVxnJ-T4nI7WAnFafggYCZ984~gvFhaTClCMrLvydPCnOazfv03u-UUSw~zMsAxgecN-u-TIdQWkYKb-VDJbXGg__:22526
+TN @ code_components_prev…89ccb5.min.js.br:89
+T7 @ code_components_prev…89ccb5.min.js.br:89
+T8 @ code_components_prev…89ccb5.min.js.br:89
+T6 @ code_components_prev…89ccb5.min.js.br:89
+T4 @ code_components_prev…89ccb5.min.js.br:89
+S1 @ code_components_prev…89ccb5.min.js.br:89
+SQ @ code_components_prev…89ccb5.min.js.br:89
+SO @ code_components_prev…89ccb5.min.js.br:89
+pC @ code_components_prev…89ccb5.min.js.br:89
+SJ @ code_components_prev…89ccb5.min.js.br:89
+SZ @ code_components_prev…89ccb5.min.js.br:89
+Sv @ code_components_prev…89ccb5.min.js.br:89
+SS @ code_components_prev…89ccb5.min.js.br:89
+(anonymous) @ code_components_prev…389ccb5.min.js.br:3
+V @ code_components_prev…9ccb5.min.js.br:113
+B @ code_components_prev…9ccb5.min.js.br:113
+eo @ code_components_prev…9ccb5.min.js.br:113
+ 🔍 [SALES] Estado: {businessLoading: false, currentBusiness: undefined}

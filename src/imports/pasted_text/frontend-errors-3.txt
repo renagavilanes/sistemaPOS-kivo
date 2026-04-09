@@ -1,0 +1,1017 @@
+ Running frontend commit c8cf25fd40ec23e6d4f43316412edea9dd392484
+vendor-core-83c17265f2588e9e.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:54
+vendor-core-83c17265f2588e9e.min.js.br:54 [bootstrap_waiting_on_user_state] You appear to be logging a relative timestamp and not an epoch timestamp. Try adding performance.timeOrigin to the timestamp.
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:54
+vendor-core-83c17265f2588e9e.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+vendor-core-83c17265f2588e9e.min.js.br:54 [import] git: 166cb33e8bde4f5a2d3b91e3f07579b444411ff4, stamp: 87A19F9B274A8446
+vendor-core-83c17265f2588e9e.min.js.br:54 Loaded 35 scripts (5965013b), 0 from cache (0b)
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-83c17265f2588e9e.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-83c17265f2588e9e.min.js.br:54 [Fullscreen] Ready in 1710.7ms
+vendor-core-83c17265f2588e9e.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=rUF3XRfxtgqtyGkG&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484
+vendor-core-83c17265f2588e9e.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-83c17265f2588e9e.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+vendor-core-83c17265f2588e9e.min.js.br:54 [devtools] Initialized LS
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 400 ()
+ [devtools] Initialized LS
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=zZltO2MVY0lejZP9-0&preview-route=%2Flogin:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:54 [Fullscreen] loadtime=10.07s maxmem=200412984
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-fe7483da6da244f1.min.js.br:3 Datadog Browser SDK: The data provided has been discarded as it is over the limit of 225280 characters: IMG[src="data:image/png;base64,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
+g @ vendor-fe7483da6da244f1.min.js.br:3
+vendor-fe7483da6da244f1.min.js.br:3 Datadog Browser SDK: The data provided has been discarded as it is over the limit of 225280 characters: IMG[src="data:image/png;base64,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
+g @ vendor-fe7483da6da244f1.min.js.br:3
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 Too many elapsed hits of react since last report
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:54
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/src/app/pages/EmployeesPage.tsx?t=1773850977415:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/src/app/pages/EmployeesPage.tsx?t=1773850977415:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/src/app/pages/EmployeesPage.tsx?t=1773850977415:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+vendor-core-83c17265f2588e9e.min.js.br:54 [Livegraph] Connection closed. Code: 4001, reason: draining_start
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/src/app/pages/EmployeesPage.tsx?t=1773850977415:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/src/app/pages/EmployeesPage.tsx?t=1773850977415:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/src/app/pages/EmployeesPage.tsx?t=1773850977415:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/src/app/pages/EmployeesPage.tsx?t=1773850977415:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/src/app/pages/EmployeesPage.tsx?t=1773850977415:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/src/app/pages/EmployeesPage.tsx?t=1773850977415:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site/employees:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/employees/02c9d9a6-1867-48b6-b3dc-395c7a38c8b2' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site/employees:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/employees/02c9d9a6-1867-48b6-b3dc-395c7a38c8b2' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site/employees:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/employees/02c9d9a6-1867-48b6-b3dc-395c7a38c8b2' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/employees/02c9d9a6-1867-48b6-b3dc-395c7a38c8b2:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/employees/02c9d9a6-1867-48b6-b3dc-395c7a38c8b2:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/employees/02c9d9a6-1867-48b6-b3dc-395c7a38c8b2:1  Failed to load resource: net::ERR_FAILED
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site/employees:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales/e6e335cd-d621-4bd2-9216-2dc03da20961' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: It does not have HTTP ok status.
+742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site/employees:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales/e6e335cd-d621-4bd2-9216-2dc03da20961' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: It does not have HTTP ok status.
+742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site/employees:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales/e6e335cd-d621-4bd2-9216-2dc03da20961' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: It does not have HTTP ok status.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales/e6e335cd-d621-4bd2-9216-2dc03da20961:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales/e6e335cd-d621-4bd2-9216-2dc03da20961:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales/e6e335cd-d621-4bd2-9216-2dc03da20961:1  Failed to load resource: net::ERR_FAILED
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=rUF3XRfxtgqtyGkG&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=83cf823a08adc4ec8270d47617e5c105e796760f&reconnect-sequence-number=11233&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (skip_reload reconnect)
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=zZltO2MVY0lejZP9-0&preview-route=%2Femployees:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=rUF3XRfxtgqtyGkG&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=83cf823a08adc4ec8270d47617e5c105e796760f&reconnect-sequence-number=11238&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (skip_reload reconnect)
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=zZltO2MVY0lejZP9-0&preview-route=%2Femployees:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-fe7483da6da244f1.min.js.br:3 Datadog Browser SDK: The data provided has been discarded as it is over the limit of 225280 characters: IMG[src="data:image/png;base64,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
+g @ vendor-fe7483da6da244f1.min.js.br:3
+vendor-fe7483da6da244f1.min.js.br:3 Datadog Browser SDK: The data provided has been discarded as it is over the limit of 225280 characters: IMG[src="data:image/png;base64,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
+g @ vendor-fe7483da6da244f1.min.js.br:3
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=rUF3XRfxtgqtyGkG&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=83cf823a08adc4ec8270d47617e5c105e796760f&reconnect-sequence-number=11276&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (skip_reload reconnect)
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=zZltO2MVY0lejZP9-0&preview-route=%2Femployees:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [Livegraph] Connection closed. Code: 4001, reason: connection_lifetime
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+vendor-core-83c17265f2588e9e.min.js.br:54 [Livegraph] Connection closed. Code: 4010, reason: server_idle
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=rUF3XRfxtgqtyGkG&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=83cf823a08adc4ec8270d47617e5c105e796760f&reconnect-sequence-number=11299&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (skip_reload reconnect)
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=zZltO2MVY0lejZP9-0&preview-route=%2Femployees:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ [esbuild-wasm] Initializing from URL: /webpack-artifacts/assets/2b68f2d3d5e8b3d6.wasm
+ [esbuild-wasm] Initialized
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0v4scynzhktrd…e/@vite/client:1035
+ [bundleCode] Found 5 CSS files in VFS
+ [bundleCode] Total CSS size to be processed by lightningcss: 0.01MB
+ [lightningcss-wasm] Initialized
+ [lightningCSS] Processing 0.12MB of CSS (environment: browser)
+ [lightningCSS] Encoded size: 0.12MB
+ [lightningCSS] Transform completed successfully
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/@react-refresh:1  Failed to load resource: net::ERR_CONNECTION_CLOSED
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/@react-refresh:1  Failed to load resource: net::ERR_CONNECTION_CLOSED
+ta-01km0v4scynzhktrd5c110nd03-1380-ti812vxt65lpyrlvl0zrs0f1l.makeproxy-m.figma.site/@react-refresh:1  Failed to load resource: net::ERR_CONNECTION_CLOSED
+ [bundleCode] Found 5 CSS files in VFS
+ [bundleCode] Total CSS size to be processed by lightningcss: 0.01MB
+ [lightningCSS] Processing 0.12MB of CSS (environment: browser)
+ [lightningCSS] Encoded size: 0.12MB
+ [lightningCSS] Transform completed successfully
+/api/rev/5Fd3OHhMY2lssTlq3IRIEy/code_snapshot/d64dc2e63beb351eaf152360509e63c4bd808ae70fb34259ae3effc06a6ac1cd:1  Failed to load resource: the server responded with a status of 404 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 Failed to fetch snapshot files: E: XHR for "/api/rev/5Fd3OHhMY2lssTlq3IRIEy/code_snapshot/d64dc2e63beb351eaf152360509e63c4bd808ae70fb34259ae3effc06a6ac1cd" failed with status 404
+    at w (5606-1de0d45022ae32b0.min.js.br:1318:13965)
+    at async Object.k [as get] (5606-1de0d45022ae32b0.min.js.br:1318:14348)
+    at async 5860-52593e69470d76d1.min.js.br:3:647
+    at async 5860-52593e69470d76d1.min.js.br:3:49174
+    at async 5860-52593e69470d76d1.min.js.br:3:1078
+    at async y (5860-52593e69470d76d1.min.js.br:3:48682)
+    at async 5860-52593e69470d76d1.min.js.br:3:39522
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:54
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/customers:1  Failed to load resource: the server responded with a status of 500 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/customers:1  Failed to load resource: the server responded with a status of 500 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/customers:1  Failed to load resource: the server responded with a status of 500 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=rUF3XRfxtgqtyGkG&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=83cf823a08adc4ec8270d47617e5c105e796760f&reconnect-sequence-number=11334&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (journaled reconnect)
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=zZltO2MVY0lejZP9-0&preview-route=%2Femployees:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=rUF3XRfxtgqtyGkG&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=83cf823a08adc4ec8270d47617e5c105e796760f&reconnect-sequence-number=11355&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (full reconnect)
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=zZltO2MVY0lejZP9-0&preview-route=%2Femployees:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+ WebSocket connection to 'wss://app-7h54zklnh67r3u5elh66ouq6jl43ugrfgs7vlvs3iv2zrz3ohu3q.makeproxy-c.figma.site/' failed: 
+ping @ app-7h54zklnh67r3u5e…e/@vite/client:1035
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/categories:1  Failed to load resource: the server responded with a status of 546 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/categories:1  Failed to load resource: the server responded with a status of 546 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/categories:1  Failed to load resource: the server responded with a status of 546 ()
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=zZltO2MVY0lejZP9-0&preview-route=%2Fsales:1 Form submission canceled because the form is not connected
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+ 🔵 Creando nueva instancia de Supabase Client
+ 🚀 [APP] App component loading...
+ 🔐 AuthContext: Inicializando...
+ ✅ Negocio cargado: be a hero 5
+ ✅ Negocio cargado: be a hero 5
+ ✅ Negocio cargado: be a hero 5
+ ✅ Negocio cargado: be a hero 5
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=admin
+ 🏢 Total negocios encontrados: 5
+ 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+ ✅ Negocio cargado: be a hero 5
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/login:1  Failed to load resource: the server responded with a status of 404 ()
+ 6:48:50 PM [vite] (client) hmr update /src/app/pages/SuperAdminPage.tsx, /src/styles/index.css
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+ [SUPERADMIN] TypeError: Failed to fetch
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:90:9794
+    at app-7qq227alsojrbrnczdaie7k6tqiptidgpj2danomarrlv2d4q64q.makeproxy-c.figma.site/src/app/pages/SuperAdminPage.tsx?t=1773859730992:126:11
+    at app-7qq227alsojrbrnczdaie7k6tqiptidgpj2danomarrlv2d4q64q.makeproxy-c.figma.site/src/app/pages/SuperAdminPage.tsx?t=1773859730992:156:17
+    at TN (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:138396)
+    at T8 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:151856)
+    at T7 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:151634)
+    at T6 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:151542)
+    at T4 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:151420)
+    at S1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:163585)
+    at SQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:163247)
+    at SJ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:163060)
+    at SZ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:161662)
+    at SO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:158427)
+    at pC (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:36290)
+    at SL (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:158998)
+    at IO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:169939)
+    at r.scheduleRefresh (code_components_preview_iframe-38049e48d7f0a436.min.js.br:17:53181)
+    at app-7qq227alsojrbrnczdaie7k6tqiptidgpj2danomarrlv2d4q64q.makeproxy-c.figma.site/@react-refresh:228:17
+    at Set.forEach (<anonymous>)
+    at performReactRefresh (app-7qq227alsojrbrnczdaie7k6tqiptidgpj2danomarrlv2d4q64q.makeproxy-c.figma.site/@react-refresh:217:26)
+    at app-7qq227alsojrbrnczdaie7k6tqiptidgpj2danomarrlv2d4q64q.makeproxy-c.figma.site/@react-refresh:608:3
+    at i (code_components_preview_iframe-38049e48d7f0a436.min.js.br:90:4861)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+ ✅ Negocio cargado: be a hero 5
+ ✅ Negocio cargado: be a hero 5
+ ✅ Negocio cargado: be a hero 5
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users net::ERR_FAILED
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+(anonymous) @ app-7qq227alsojrbrnc…t=1773859730992:132
+y @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+iG @ code_components_prev…f0a436.min.js.br:25
+ij @ code_components_prev…f0a436.min.js.br:25
+iz @ code_components_prev…f0a436.min.js.br:25
+dP @ code_components_prev…f0a436.min.js.br:37
+dM @ code_components_prev…f0a436.min.js.br:37
+dk @ code_components_prev…f0a436.min.js.br:37
+dG @ code_components_prev…f0a436.min.js.br:37
+(anonymous) @ code_components_prev…f0a436.min.js.br:37
+SR @ code_components_prev…f0a436.min.js.br:37
+iR @ code_components_prev…f0a436.min.js.br:25
+d$ @ code_components_prev…f0a436.min.js.br:37
+lO @ code_components_prev…f0a436.min.js.br:25
+lN @ code_components_prev…f0a436.min.js.br:25
+lv @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+ [SUPERADMIN] TypeError: Failed to fetch
+    at code_components_prev…6.min.js.br:90:9794
+    at app-7qq227alsojrbrnc…773859730992:132:11
+    at HTMLUnknownElement.y (code_components_prev….min.js.br:25:54006)
+    at HTMLUnknownElement.i (code_components_prev…6.min.js.br:90:4861)
+    at Object.iG (code_components_prev….min.js.br:25:54331)
+    at ij (code_components_prev….min.js.br:25:55284)
+    at iz (code_components_prev….min.js.br:25:55341)
+    at dP (code_components_prev….min.js.br:37:10702)
+    at dM (code_components_prev….min.js.br:37:11042)
+    at dk (code_components_prev….min.js.br:37:11125)
+    at dG (code_components_prev….min.js.br:37:11212)
+    at code_components_prev….min.js.br:37:12595
+    at SR (code_components_prev…min.js.br:37:158583)
+    at iR (code_components_prev….min.js.br:25:51978)
+    at d$ (code_components_prev….min.js.br:37:12574)
+    at lO (code_components_prev….min.js.br:25:72034)
+    at lN (code_components_prev….min.js.br:25:71970)
+    at lv (code_components_prev….min.js.br:25:71781)
+    at HTMLDivElement.i (code_components_prev…6.min.js.br:90:4861)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+r @ code_components_prev…f0a436.min.js.br:17
+error @ code_components_prev…f0a436.min.js.br:90
+(anonymous) @ app-7qq227alsojrbrnc…t=1773859730992:149
+await in (anonymous)
+y @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+iG @ code_components_prev…f0a436.min.js.br:25
+ij @ code_components_prev…f0a436.min.js.br:25
+iz @ code_components_prev…f0a436.min.js.br:25
+dP @ code_components_prev…f0a436.min.js.br:37
+dM @ code_components_prev…f0a436.min.js.br:37
+dk @ code_components_prev…f0a436.min.js.br:37
+dG @ code_components_prev…f0a436.min.js.br:37
+(anonymous) @ code_components_prev…f0a436.min.js.br:37
+SR @ code_components_prev…f0a436.min.js.br:37
+iR @ code_components_prev…f0a436.min.js.br:25
+d$ @ code_components_prev…f0a436.min.js.br:37
+lO @ code_components_prev…f0a436.min.js.br:25
+lN @ code_components_prev…f0a436.min.js.br:25
+lv @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats net::ERR_FAILED
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+(anonymous) @ app-7qq227alsojrbrnc…t=1773859730992:126
+y @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+iG @ code_components_prev…f0a436.min.js.br:25
+ij @ code_components_prev…f0a436.min.js.br:25
+iz @ code_components_prev…f0a436.min.js.br:25
+dP @ code_components_prev…f0a436.min.js.br:37
+dM @ code_components_prev…f0a436.min.js.br:37
+dk @ code_components_prev…f0a436.min.js.br:37
+dG @ code_components_prev…f0a436.min.js.br:37
+(anonymous) @ code_components_prev…f0a436.min.js.br:37
+SR @ code_components_prev…f0a436.min.js.br:37
+iR @ code_components_prev…f0a436.min.js.br:25
+d$ @ code_components_prev…f0a436.min.js.br:37
+lO @ code_components_prev…f0a436.min.js.br:25
+lN @ code_components_prev…f0a436.min.js.br:25
+lv @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats net::ERR_FAILED
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+(anonymous) @ app-7qq227alsojrbrnc…t=1773859730992:126
+y @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+iG @ code_components_prev…f0a436.min.js.br:25
+ij @ code_components_prev…f0a436.min.js.br:25
+iz @ code_components_prev…f0a436.min.js.br:25
+dP @ code_components_prev…f0a436.min.js.br:37
+dM @ code_components_prev…f0a436.min.js.br:37
+dk @ code_components_prev…f0a436.min.js.br:37
+dG @ code_components_prev…f0a436.min.js.br:37
+(anonymous) @ code_components_prev…f0a436.min.js.br:37
+SR @ code_components_prev…f0a436.min.js.br:37
+iR @ code_components_prev…f0a436.min.js.br:25
+d$ @ code_components_prev…f0a436.min.js.br:37
+lO @ code_components_prev…f0a436.min.js.br:25
+lN @ code_components_prev…f0a436.min.js.br:25
+lv @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+ [SUPERADMIN] TypeError: Failed to fetch
+    at code_components_prev…6.min.js.br:90:9794
+    at app-7qq227alsojrbrnc…773859730992:126:11
+    at HTMLUnknownElement.y (code_components_prev….min.js.br:25:54006)
+    at HTMLUnknownElement.i (code_components_prev…6.min.js.br:90:4861)
+    at Object.iG (code_components_prev….min.js.br:25:54331)
+    at ij (code_components_prev….min.js.br:25:55284)
+    at iz (code_components_prev….min.js.br:25:55341)
+    at dP (code_components_prev….min.js.br:37:10702)
+    at dM (code_components_prev….min.js.br:37:11042)
+    at dk (code_components_prev….min.js.br:37:11125)
+    at dG (code_components_prev….min.js.br:37:11212)
+    at code_components_prev….min.js.br:37:12595
+    at SR (code_components_prev…min.js.br:37:158583)
+    at iR (code_components_prev….min.js.br:25:51978)
+    at d$ (code_components_prev….min.js.br:37:12574)
+    at lO (code_components_prev….min.js.br:25:72034)
+    at lN (code_components_prev….min.js.br:25:71970)
+    at lv (code_components_prev….min.js.br:25:71781)
+    at HTMLDivElement.i (code_components_prev…6.min.js.br:90:4861)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+r @ code_components_prev…f0a436.min.js.br:17
+error @ code_components_prev…f0a436.min.js.br:90
+(anonymous) @ app-7qq227alsojrbrnc…t=1773859730992:149
+await in (anonymous)
+y @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+iG @ code_components_prev…f0a436.min.js.br:25
+ij @ code_components_prev…f0a436.min.js.br:25
+iz @ code_components_prev…f0a436.min.js.br:25
+dP @ code_components_prev…f0a436.min.js.br:37
+dM @ code_components_prev…f0a436.min.js.br:37
+dk @ code_components_prev…f0a436.min.js.br:37
+dG @ code_components_prev…f0a436.min.js.br:37
+(anonymous) @ code_components_prev…f0a436.min.js.br:37
+SR @ code_components_prev…f0a436.min.js.br:37
+iR @ code_components_prev…f0a436.min.js.br:25
+d$ @ code_components_prev…f0a436.min.js.br:37
+lO @ code_components_prev…f0a436.min.js.br:25
+lN @ code_components_prev…f0a436.min.js.br:25
+lv @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users net::ERR_FAILED
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+(anonymous) @ app-7qq227alsojrbrnc…t=1773859730992:132
+y @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90
+iG @ code_components_prev…f0a436.min.js.br:25
+ij @ code_components_prev…f0a436.min.js.br:25
+iz @ code_components_prev…f0a436.min.js.br:25
+dP @ code_components_prev…f0a436.min.js.br:37
+dM @ code_components_prev…f0a436.min.js.br:37
+dk @ code_components_prev…f0a436.min.js.br:37
+dG @ code_components_prev…f0a436.min.js.br:37
+(anonymous) @ code_components_prev…f0a436.min.js.br:37
+SR @ code_components_prev…f0a436.min.js.br:37
+iR @ code_components_prev…f0a436.min.js.br:25
+d$ @ code_components_prev…f0a436.min.js.br:37
+lO @ code_components_prev…f0a436.min.js.br:25
+lN @ code_components_prev…f0a436.min.js.br:25
+lv @ code_components_prev…f0a436.min.js.br:25
+i @ code_components_prev…f0a436.min.js.br:90

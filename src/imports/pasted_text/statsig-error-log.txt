@@ -1,0 +1,671 @@
+POS?p=f&t=K3ih9TZ2uhhDRmcF-0&preview-route=%2Flogin:530 Running frontend commit 71a654e3f7c84371a154bcee0380e86a4f6c3018
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+A.logExposureCallback @ 3186-5d955a18ed0f9b29.min.js.br:1096
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+logExposureForFeatureGateCheck @ 3186-5d955a18ed0f9b29.min.js.br:1096
+getFeatureGateFromInitialOptions @ 3186-5d955a18ed0f9b29.min.js.br:1096
+getFeatureGate @ 3186-5d955a18ed0f9b29.min.js.br:1096
+getFeatureGate @ 3186-5d955a18ed0f9b29.min.js.br:1431
+932235 @ figma_app-fb99c62a6754ab3a.min.js.br:420
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+801936 @ figma_app-fb99c62a6754ab3a.min.js.br:41
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+781295 @ figma_app-fb99c62a6754ab3a.min.js.br:418
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+593464 @ figma_app-fb99c62a6754ab3a.min.js.br:4
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+816199 @ 3186-5d955a18ed0f9b29.min.js.br:80
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+881625 @ figma_app-fb99c62a6754ab3a.min.js.br:552
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+28285 @ 1772-8c528df594295803.min.js.br:3
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+344653 @ figma_app-fb99c62a6754ab3a.min.js.br:420
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+912563 @ figma_app-fb99c62a6754ab3a.min.js.br:441
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+941181 @ figma_app-fb99c62a6754ab3a.min.js.br:4
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+577246 @ 5340-ca907fbcb950ef0b.min.js.br:3
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+483051 @ 8222-714b50f6fa462b79.min.js.br:3
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+269817 @ figma_app-fb99c62a6754ab3a.min.js.br:4
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:730
+i.O @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:730
+r @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:3
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 31 scripts (5955904b), 0 from cache (0b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: 40c21b0179015a5a6acee7f25b9df313c1ddb030, stamp: 8599BBF62A492803
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+A.logExposureCallback @ 3186-5d955a18ed0f9b29.min.js.br:1096
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+A.logExposureCallback @ 3186-5d955a18ed0f9b29.min.js.br:1096
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+logExposureForFeatureGateCheck @ 3186-5d955a18ed0f9b29.min.js.br:1096
+getFeatureGateFromInitialOptions @ 3186-5d955a18ed0f9b29.min.js.br:1096
+getFeatureGate @ 3186-5d955a18ed0f9b29.min.js.br:1096
+getFeatureGate @ 3186-5d955a18ed0f9b29.min.js.br:1431
+932235 @ figma_app-fb99c62a6754ab3a.min.js.br:420
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+801936 @ figma_app-fb99c62a6754ab3a.min.js.br:41
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+781295 @ figma_app-fb99c62a6754ab3a.min.js.br:418
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+593464 @ figma_app-fb99c62a6754ab3a.min.js.br:4
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+816199 @ 3186-5d955a18ed0f9b29.min.js.br:80
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+881625 @ figma_app-fb99c62a6754ab3a.min.js.br:552
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+28285 @ 1772-8c528df594295803.min.js.br:3
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+344653 @ figma_app-fb99c62a6754ab3a.min.js.br:420
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+912563 @ figma_app-fb99c62a6754ab3a.min.js.br:441
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+941181 @ figma_app-fb99c62a6754ab3a.min.js.br:4
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+577246 @ 5340-ca907fbcb950ef0b.min.js.br:3
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+483051 @ 8222-714b50f6fa462b79.min.js.br:3
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+269817 @ figma_app-fb99c62a6754ab3a.min.js.br:4
+i @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:730
+i.O @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:730
+r @ runtime~figma_app-d038e0e2bd8510d9.min.js.br:3
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:3
+chrome-extension://invalid/:1  GET chrome-extension://invalid/ net::ERR_FAILED
+Image
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:6
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oL @ vendor-core-ade2edecaf4781c7.min.js.br:11
+f5 @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oE @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+S @ vendor-core-ade2edecaf4781c7.min.js.br:54
+O @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+compiled_wasm.js.br:2 [Intervention] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 1442.5ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=Tw5p4oIL5tjd5pP7&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=71a654e3f7c84371a154bcee0380e86a4f6c3018
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=tcmtXjpOaSYRtjmk-0&preview-route=%2Flogin:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  GET https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1 net::ERR_FAILED 302 (Found)
+Image
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:41
+B @ figma_app-fb99c62a6754ab3a.min.js.br:41
+g @ figma_app-fb99c62a6754ab3a.min.js.br:413
+y @ figma_app-fb99c62a6754ab3a.min.js.br:413
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:413
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oL @ vendor-core-ade2edecaf4781c7.min.js.br:11
+f5 @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+requestAnimationFrame
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+gQ @ 3186-5d955a18ed0f9b29.min.js.br:191
+s @ 3186-5d955a18ed0f9b29.min.js.br:393
+requestAnimationFrame @ 3186-5d955a18ed0f9b29.min.js.br:194
+_Async_requestAnimationFrame @ compiled_wasm.js.br:2
+$wasm-function[1888] @ compiled_wasm.wasm.br:0x3f1d1
+$wasm-function[2245] @ compiled_wasm.wasm.br:0x6699f
+$wasm-function[5038] @ compiled_wasm.wasm.br:0x27a8f3
+$wasm-function[23376] @ compiled_wasm.wasm.br:0x1510c79
+$wasm-function[40523] @ compiled_wasm.wasm.br:0x21030ff
+$wasm-function[16884] @ compiled_wasm.wasm.br:0xe43c93
+$wasm-function[38274] @ compiled_wasm.wasm.br:0x1eb5bec
+(anonymous) @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+_wrapCppCall @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+x @ 1379-77d1fb5d78b88eed.min.js.br:3
+_.onmessage @ 1379-77d1fb5d78b88eed.min.js.br:3
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/make/5Fd3OHhMY2lssTlq3IRIEy/cached_preview_urls?source_code_hash=0f533d949bd0c627e2d29b5efdcb1d4ada769cd2 404 (Not Found)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in T
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+k @ 3186-5d955a18ed0f9b29.min.js.br:1135
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:364
+validate @ figma_app-fb99c62a6754ab3a.min.js.br:420
+getCachedPreviewUrls @ figma_app-fb99c62a6754ab3a.min.js.br:364
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:552
+preloadCachedPreviewUrls @ figma_app-fb99c62a6754ab3a.min.js.br:552
+initializeCode @ figma_app-fb99c62a6754ab3a.min.js.br:552
+(anonymous) @ 1772-8c528df594295803.min.js.br:3
+(anonymous) @ 3161-944b502b9e4aa288.min.js.br:384
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+S @ vendor-core-ade2edecaf4781c7.min.js.br:54
+O @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Found claimed autosave changes from 1 sessions undefined
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Restoring auto-saved data undefined
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Successfully applied auto-saved changes undefined
+5531-b8e5f076817d173e.min.js.br:34 [Intervention] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://static.figma.com/webfont/1/Roboto-Bold.woff2
+vendor-core-ade2edecaf4781c7.min.js.br:54 Sentry event id: a0cf478f815d477b8efc646eedd9d94a
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=23.27s maxmem=271783292
+vendor-core-ade2edecaf4781c7.min.js.br:63  POST https://www.figma.com/api/make/fetch_ds_code_gen_status 400 (Bad Request)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+r @ 3186-5d955a18ed0f9b29.min.js.br:1135
+s @ figma_app-fb99c62a6754ab3a.min.js.br:413
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:418
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:418
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oL @ vendor-core-ade2edecaf4781c7.min.js.br:11
+f5 @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+requestAnimationFrame
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+gQ @ 3186-5d955a18ed0f9b29.min.js.br:191
+s @ 3186-5d955a18ed0f9b29.min.js.br:393
+requestAnimationFrame @ 3186-5d955a18ed0f9b29.min.js.br:194
+_Async_requestAnimationFrame @ compiled_wasm.js.br:2
+$wasm-function[1888] @ compiled_wasm.wasm.br:0x3f1d1
+$wasm-function[9984] @ compiled_wasm.wasm.br:0x7053b8
+$wasm-function[22857] @ compiled_wasm.wasm.br:0x1498d57
+$wasm-function[25741] @ compiled_wasm.wasm.br:0x1797af9
+$wasm-function[25731] @ compiled_wasm.wasm.br:0x179029b
+$wasm-function[40531] @ compiled_wasm.wasm.br:0x210da60
+$wasm-function[15368] @ compiled_wasm.wasm.br:0xc33ee9
+$wasm-function[3527] @ compiled_wasm.wasm.br:0x15eef1
+$wasm-function[7484] @ compiled_wasm.wasm.br:0x4c9736
+$wasm-function[2442] @ compiled_wasm.wasm.br:0x7fbc6
+$wasm-function[14765] @ compiled_wasm.wasm.br:0xb8d3ec
+$wasm-function[9647] @ compiled_wasm.wasm.br:0x6aa911
+$wasm-function[7566] @ compiled_wasm.wasm.br:0x4e0042
+$wasm-function[43363] @ compiled_wasm.wasm.br:0x2361c9f
+(anonymous) @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+_wrapCppCall @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:6
+Object.assign.system @ 3186-5d955a18ed0f9b29.min.js.br:1193
+autosave @ 3186-5d955a18ed0f9b29.min.js.br:1193
+restoreChanges @ figma_app-fb99c62a6754ab3a.min.js.br:6
+await in restoreChanges
+restoreChangesForSessionRows @ figma_app-fb99c62a6754ab3a.min.js.br:6
+await in restoreChangesForSessionRows
+restoreAutosaveIfNeeded @ figma_app-fb99c62a6754ab3a.min.js.br:6
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:191
+timeAsync @ 3186-5d955a18ed0f9b29.min.js.br:393
+_documentIsLoaded @ 3186-5d955a18ed0f9b29.min.js.br:191
+await in _documentIsLoaded
+documentIsLoaded @ 3186-5d955a18ed0f9b29.min.js.br:191
+_FigmaApp_documentIsLoaded @ compiled_wasm.js.br:2
+$wasm-function[27605] @ compiled_wasm.wasm.br:0x19176fa
+$wasm-function[26181] @ compiled_wasm.wasm.br:0x180ab0c
+$wasm-function[23376] @ compiled_wasm.wasm.br:0x1511661
+$wasm-function[40523] @ compiled_wasm.wasm.br:0x21030ff
+$wasm-function[16884] @ compiled_wasm.wasm.br:0xe43c93
+$wasm-function[38274] @ compiled_wasm.wasm.br:0x1eb5bec
+(anonymous) @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+_wrapCppCall @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+x @ 1379-77d1fb5d78b88eed.min.js.br:3
+_.onmessage @ 1379-77d1fb5d78b88eed.min.js.br:3
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in T
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+k @ 3186-5d955a18ed0f9b29.min.js.br:1135
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:364
+validate @ figma_app-fb99c62a6754ab3a.min.js.br:420
+getFunctionLogs @ figma_app-fb99c62a6754ab3a.min.js.br:364
+fetch @ figma_app-fb99c62a6754ab3a.min.js.br:552
+p @ 3186-5d955a18ed0f9b29.min.js.br:393
+await in p
+d @ vendor-9145dcc223f9b840.min.js.br:296
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+onSubscribe @ vendor-9145dcc223f9b840.min.js.br:296
+subscribe @ vendor-9145dcc223f9b840.min.js.br:296
+subscribe @ 3186-5d955a18ed0f9b29.min.js.br:393
+_ @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:393
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1328
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:393
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:393
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1328
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+get @ vendor-core-ade2edecaf4781c7.min.js.br:68
+_ @ 3186-5d955a18ed0f9b29.min.js.br:1731
+f @ 3186-5d955a18ed0f9b29.min.js.br:1731
+g @ 3186-5d955a18ed0f9b29.min.js.br:1096
+p @ 5531-b8e5f076817d173e.min.js.br:155
+g @ 5531-b8e5f076817d173e.min.js.br:155
+P @ 5531-b8e5f076817d173e.min.js.br:34
+(anonymous) @ 5531-b8e5f076817d173e.min.js.br:19
+rp @ vendor-core-ade2edecaf4781c7.min.js.br:11
+ap @ vendor-core-ade2edecaf4781c7.min.js.br:11
+as @ vendor-core-ade2edecaf4781c7.min.js.br:11
+u @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oH @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oI @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oE @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+S @ vendor-core-ade2edecaf4781c7.min.js.br:54
+O @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in T
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in C
+k @ 3186-5d955a18ed0f9b29.min.js.br:1135
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:364
+validate @ figma_app-fb99c62a6754ab3a.min.js.br:420
+getFunctionLogs @ figma_app-fb99c62a6754ab3a.min.js.br:364
+fetch @ figma_app-fb99c62a6754ab3a.min.js.br:552
+p @ 3186-5d955a18ed0f9b29.min.js.br:393
+await in p
+d @ vendor-9145dcc223f9b840.min.js.br:296
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+onSubscribe @ vendor-9145dcc223f9b840.min.js.br:296
+subscribe @ vendor-9145dcc223f9b840.min.js.br:296
+subscribe @ 3186-5d955a18ed0f9b29.min.js.br:393
+_ @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:393
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1328
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:393
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:393
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1328
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+get @ vendor-core-ade2edecaf4781c7.min.js.br:68
+_ @ 3186-5d955a18ed0f9b29.min.js.br:1731
+f @ 3186-5d955a18ed0f9b29.min.js.br:1731
+g @ 3186-5d955a18ed0f9b29.min.js.br:1096
+p @ 5531-b8e5f076817d173e.min.js.br:155
+g @ 5531-b8e5f076817d173e.min.js.br:155
+P @ 5531-b8e5f076817d173e.min.js.br:34
+(anonymous) @ 5531-b8e5f076817d173e.min.js.br:19
+rp @ vendor-core-ade2edecaf4781c7.min.js.br:11
+ap @ vendor-core-ade2edecaf4781c7.min.js.br:11
+as @ vendor-core-ade2edecaf4781c7.min.js.br:11
+u @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oH @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oI @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oE @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+S @ vendor-core-ade2edecaf4781c7.min.js.br:54
+O @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in T
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in C
+k @ 3186-5d955a18ed0f9b29.min.js.br:1135
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:364
+validate @ figma_app-fb99c62a6754ab3a.min.js.br:420
+getFunctionLogs @ figma_app-fb99c62a6754ab3a.min.js.br:364
+fetch @ figma_app-fb99c62a6754ab3a.min.js.br:552
+p @ 3186-5d955a18ed0f9b29.min.js.br:393
+await in p
+d @ vendor-9145dcc223f9b840.min.js.br:296
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+onSubscribe @ vendor-9145dcc223f9b840.min.js.br:296
+subscribe @ vendor-9145dcc223f9b840.min.js.br:296
+subscribe @ 3186-5d955a18ed0f9b29.min.js.br:393
+_ @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:393
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1328
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:68
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:393
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:393
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1328
+f @ vendor-core-ade2edecaf4781c7.min.js.br:68
+get @ vendor-core-ade2edecaf4781c7.min.js.br:68
+_ @ 3186-5d955a18ed0f9b29.min.js.br:1731
+f @ 3186-5d955a18ed0f9b29.min.js.br:1731
+g @ 3186-5d955a18ed0f9b29.min.js.br:1096
+p @ 5531-b8e5f076817d173e.min.js.br:155
+g @ 5531-b8e5f076817d173e.min.js.br:155
+P @ 5531-b8e5f076817d173e.min.js.br:34
+(anonymous) @ 5531-b8e5f076817d173e.min.js.br:19
+rp @ vendor-core-ade2edecaf4781c7.min.js.br:11
+ap @ vendor-core-ade2edecaf4781c7.min.js.br:11
+as @ vendor-core-ade2edecaf4781c7.min.js.br:11
+u @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oH @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oI @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oE @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+S @ vendor-core-ade2edecaf4781c7.min.js.br:54
+O @ vendor-core-ade2edecaf4781c7.min.js.br:54
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔵 Creando nueva instancia de Supabase Client
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 📦 Cuentas guardadas encontradas: 0
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 📦 Detalle de cuentas: []
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ℹ️ No hay cuentas, mostrando formulario completo
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔐 AuthContext: Inicializando...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 📦 Sesión obtenida: Inactiva
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ℹ️ No hay sesión activa
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ AuthContext inicializado, loading=false
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ℹ️ No hay usuario autenticado
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔄 Auth state changed: INITIAL_SESSION
+localStorage.getItem('pos_saved_accounts')
+null
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Successfully synced auto-saved changes undefined
+vendor-core-ade2edecaf4781c7.min.js.br:54 Too many elapsed hits of react since last report
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+t @ figma_app-fb99c62a6754ab3a.min.js.br:41
+eB @ figma_app-fb99c62a6754ab3a.min.js.br:41
+g0 @ 3186-5d955a18ed0f9b29.min.js.br:191
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+requestAnimationFrame
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+gQ @ 3186-5d955a18ed0f9b29.min.js.br:191
+s @ 3186-5d955a18ed0f9b29.min.js.br:393
+requestAnimationFrame @ 3186-5d955a18ed0f9b29.min.js.br:194
+_Async_requestAnimationFrame @ compiled_wasm.js.br:2
+$wasm-function[3231] @ compiled_wasm.wasm.br:0x111a6e
+$wasm-function[1963] @ compiled_wasm.wasm.br:0x457fa
+$wasm-function[40523] @ compiled_wasm.wasm.br:0x21096e8
+$wasm-function[16884] @ compiled_wasm.wasm.br:0xe43c93
+$wasm-function[38274] @ compiled_wasm.wasm.br:0x1eb5bec
+(anonymous) @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+_wrapCppCall @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+x @ 1379-77d1fb5d78b88eed.min.js.br:3
+_.onmessage @ 1379-77d1fb5d78b88eed.min.js.br:3
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in T
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+k @ 3186-5d955a18ed0f9b29.min.js.br:1135
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:364
+validate @ figma_app-fb99c62a6754ab3a.min.js.br:420
+getFunctionLogs @ figma_app-fb99c62a6754ab3a.min.js.br:364
+fetch @ figma_app-fb99c62a6754ab3a.min.js.br:552
+p @ 3186-5d955a18ed0f9b29.min.js.br:393
+await in p
+d @ vendor-9145dcc223f9b840.min.js.br:296
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-9145dcc223f9b840.min.js.br:296
+updateTimers @ vendor-9145dcc223f9b840.min.js.br:296
+onQueryUpdate @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+batch @ vendor-9145dcc223f9b840.min.js.br:296
+dispatch @ vendor-9145dcc223f9b840.min.js.br:296
+setData @ vendor-9145dcc223f9b840.min.js.br:296
+onSuccess @ vendor-9145dcc223f9b840.min.js.br:296
+b @ vendor-9145dcc223f9b840.min.js.br:296
+Promise.then
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-9145dcc223f9b840.min.js.br:296
+updateTimers @ vendor-9145dcc223f9b840.min.js.br:296
+onQueryUpdate @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+batch @ vendor-9145dcc223f9b840.min.js.br:296
+dispatch @ vendor-9145dcc223f9b840.min.js.br:296
+setData @ vendor-9145dcc223f9b840.min.js.br:296
+onSuccess @ vendor-9145dcc223f9b840.min.js.br:296
+b @ vendor-9145dcc223f9b840.min.js.br:296
+Promise.then
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in T
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in C
+k @ 3186-5d955a18ed0f9b29.min.js.br:1135
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:364
+validate @ figma_app-fb99c62a6754ab3a.min.js.br:420
+getFunctionLogs @ figma_app-fb99c62a6754ab3a.min.js.br:364
+fetch @ figma_app-fb99c62a6754ab3a.min.js.br:552
+p @ 3186-5d955a18ed0f9b29.min.js.br:393
+await in p
+d @ vendor-9145dcc223f9b840.min.js.br:296
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-9145dcc223f9b840.min.js.br:296
+updateTimers @ vendor-9145dcc223f9b840.min.js.br:296
+onQueryUpdate @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+batch @ vendor-9145dcc223f9b840.min.js.br:296
+dispatch @ vendor-9145dcc223f9b840.min.js.br:296
+setData @ vendor-9145dcc223f9b840.min.js.br:296
+onSuccess @ vendor-9145dcc223f9b840.min.js.br:296
+b @ vendor-9145dcc223f9b840.min.js.br:296
+Promise.then
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-9145dcc223f9b840.min.js.br:296
+updateTimers @ vendor-9145dcc223f9b840.min.js.br:296
+onQueryUpdate @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+batch @ vendor-9145dcc223f9b840.min.js.br:296
+dispatch @ vendor-9145dcc223f9b840.min.js.br:296
+setData @ vendor-9145dcc223f9b840.min.js.br:296
+onSuccess @ vendor-9145dcc223f9b840.min.js.br:296
+b @ vendor-9145dcc223f9b840.min.js.br:296
+Promise.then
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in T
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in C
+k @ 3186-5d955a18ed0f9b29.min.js.br:1135
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:364
+validate @ figma_app-fb99c62a6754ab3a.min.js.br:420
+getFunctionLogs @ figma_app-fb99c62a6754ab3a.min.js.br:364
+fetch @ figma_app-fb99c62a6754ab3a.min.js.br:552
+p @ 3186-5d955a18ed0f9b29.min.js.br:393
+await in p
+d @ vendor-9145dcc223f9b840.min.js.br:296
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-9145dcc223f9b840.min.js.br:296
+updateTimers @ vendor-9145dcc223f9b840.min.js.br:296
+onQueryUpdate @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+batch @ vendor-9145dcc223f9b840.min.js.br:296
+dispatch @ vendor-9145dcc223f9b840.min.js.br:296
+setData @ vendor-9145dcc223f9b840.min.js.br:296
+onSuccess @ vendor-9145dcc223f9b840.min.js.br:296
+b @ vendor-9145dcc223f9b840.min.js.br:296
+Promise.then
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-9145dcc223f9b840.min.js.br:296
+updateTimers @ vendor-9145dcc223f9b840.min.js.br:296
+onQueryUpdate @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+batch @ vendor-9145dcc223f9b840.min.js.br:296
+dispatch @ vendor-9145dcc223f9b840.min.js.br:296
+setData @ vendor-9145dcc223f9b840.min.js.br:296
+onSuccess @ vendor-9145dcc223f9b840.min.js.br:296
+b @ vendor-9145dcc223f9b840.min.js.br:296
+Promise.then
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in T
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in C
+k @ 3186-5d955a18ed0f9b29.min.js.br:1135
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:364
+validate @ figma_app-fb99c62a6754ab3a.min.js.br:420
+getFunctionLogs @ figma_app-fb99c62a6754ab3a.min.js.br:364
+fetch @ figma_app-fb99c62a6754ab3a.min.js.br:552
+p @ 3186-5d955a18ed0f9b29.min.js.br:393
+await in p
+d @ vendor-9145dcc223f9b840.min.js.br:296
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-9145dcc223f9b840.min.js.br:296
+updateTimers @ vendor-9145dcc223f9b840.min.js.br:296
+onQueryUpdate @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+batch @ vendor-9145dcc223f9b840.min.js.br:296
+dispatch @ vendor-9145dcc223f9b840.min.js.br:296
+setData @ vendor-9145dcc223f9b840.min.js.br:296
+onSuccess @ vendor-9145dcc223f9b840.min.js.br:296
+b @ vendor-9145dcc223f9b840.min.js.br:296
+Promise.then
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54

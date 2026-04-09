@@ -1,0 +1,61 @@
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 📊 Cargando movimientos para negocio: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting products for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting customers for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting customers for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Customers retrieved: 1
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Customers retrieved: 1
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Products retrieved: 5
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 📦 Productos cargados: 5
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting customers for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Customers retrieved: 1
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 👥 Clientes cargados para lookup: 1
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting employees for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Employees retrieved: 1
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 👤 Empleados cargados para lookup: 1
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting sales for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Sales retrieved: 8
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 💰 Ventas cargadas: 8
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting expenses for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Expenses retrieved: 4
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 💸 Gastos cargados: 4
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 💸 Cargando gasto en MovementsPage: {id: '2140904e-25c4-4e73-80c2-74f0a6d625f3', category: 'Servicios', description: 'Servicios', notes: 'pruebas gasto', displayName: 'pruebas gasto'}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 💸 Cargando gasto en MovementsPage: {id: 'df5091c9-a6ce-42b5-9465-be803237c286', category: 'Salarios', description: 'Salarios', notes: 'Salarios', displayName: 'Salarios'}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 💸 Cargando gasto en MovementsPage: {id: 'b676d926-9daf-4e75-9d22-0ccc6fe3385c', category: 'Marketing', description: 'Marketing', notes: 'pruebaaaaa', displayName: 'pruebaaaaa'}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 💸 Cargando gasto en MovementsPage: {id: 'bc961329-257d-413d-93a5-0e51dda9e5cd', category: 'Servicios', description: 'Servicios', notes: 'nombre del gast', displayName: 'nombre del gast'}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Buscando empleado para createdBy: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleados disponibles: [{…}]
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 Empleado encontrado: undefined
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ Movimientos cargados: {total: 12, ventas: 8, gastos: 4}

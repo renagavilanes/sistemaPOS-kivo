@@ -1,0 +1,111 @@
+ Running frontend commit c8cf25fd40ec23e6d4f43316412edea9dd392484
+vendor-core-83c17265f2588e9e.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:54
+vendor-core-83c17265f2588e9e.min.js.br:54 Loaded 35 scripts (5965013b), 0 from cache (0b)
+vendor-core-83c17265f2588e9e.min.js.br:54 [bootstrap_waiting_on_user_state] You appear to be logging a relative timestamp and not an epoch timestamp. Try adding performance.timeOrigin to the timestamp.
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:54
+vendor-core-83c17265f2588e9e.min.js.br:54 [import] git: 166cb33e8bde4f5a2d3b91e3f07579b444411ff4, stamp: 87A19F9B274A8446
+vendor-core-83c17265f2588e9e.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-83c17265f2588e9e.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-83c17265f2588e9e.min.js.br:54 [Fullscreen] Ready in 1133.9ms
+vendor-core-83c17265f2588e9e.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=HWndOqVmxYURTtmQ&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484
+vendor-core-83c17265f2588e9e.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-83c17265f2588e9e.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+vendor-core-83c17265f2588e9e.min.js.br:54 [devtools] Initialized LS
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 400 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [devtools] Initialized LS
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ 🔵 Creando nueva instancia de Supabase Client
+ 🚀 [APP] App component loading...
+ 🔐 AuthContext: Inicializando...
+ 🔍 Leyendo localStorage: null
+ 📦 Cuentas guardadas encontradas: 0
+ 📦 Detalle de cuentas: Array(0)
+ ℹ️ No hay cuentas, mostrando formulario completo
+vendor-core-83c17265f2588e9e.min.js.br:54 [Fullscreen] loadtime=8.88s maxmem=197389864
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=1UGIs8A0HQ3rYt4k-0&preview-route=%2Flogin:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ 🔐 Iniciando sesión con: post_visual@hotmail.com
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ ✅ Sesión iniciada: post_visual@hotmail.com
+ 💾 Guardando cuenta en localStorage
+ 🔍 Leyendo localStorage: null
+ 💾 Guardando en localStorage: 1 cuentas
+ ✅ Verificación guardado: OK
+ 🔄 Forzando recarga de negocios después del login...
+ ✅ Negocios recargados
+ ✅ Usuario ya tiene sesión activa, redirigiendo...
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 Total negocios encontrados: 2
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API] Getting categories via Edge Function for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting products for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API] Categories via Edge Function: 0
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+ ✅ [API DIRECT] Products retrieved: 0
+ ✅ Productos cargados en SalesPage: 0 productos
+ 🔄 Cambiando a negocio: be a hero 5
+ 🔄 Evento businessChanged recibido
+ 🔵 [API] Getting categories via Edge Function for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API] Getting categories via Edge Function for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 [SALES] Estado: Object
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ Negocio cargado: be a hero 5
+ ✅ [API] Categories via Edge Function: 0
+ 🔄 [SALES] Categorías actualizadas: Array(0)
+ ✅ [API] Categories via Edge Function: 1
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(1)
+ 📥 Loading employees from API...
+ 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+ ✅ [API DIRECT] Employees retrieved: 1
+ ✅ Employees loaded: 1
+ ✅ [API DIRECT] Products retrieved: 5
+ ✅ Productos cargados en SalesPage: 5 productos
+ 🔵 [API DIRECT] Updating employee: 02c9d9a6-1867-48b6-b3dc-395c7a38c8b2
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?id=eq.02c9d9a6-1867-48b6-b3dc-395c7a38c8b2&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&select=*:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?id=eq.02c9d9a6-1867-48b6-b3dc-395c7a38c8b2&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&select=*:1  Failed to load resource: the server responded with a status of 406 ()
+ ❌ [API DIRECT] Error updating employee: Object
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ Error: Cannot coerce the result to a single JSON object
+    at m3 (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Tkrl88MDlKKC3UFu~XbLN6U-~rWODyzZXgnbs1ZyczijaHRWgsxEKuFstoAYvDwOqj9MQUclL~X86aj737sEvYczWr1O4PVs1YEVZq4UJCqhEXepFMb-VMaVRAZMUWocQ9e2AKzS0v7TGythp3FraXuAaGGDTQvs~PPBPaoG9sG-wuVYdE2QWdlg8L7mC7PNvSkV5mLC-n6v8ZnCdmYPuL-3S29ZumslYOv5kJOCu3muIo5-WmlVQRseWxTX~TLarU3rQSeA5-pCtoih10JfGnppJusArX71wKPZrZ28NKd3TSgLxuHxhTtaMbfnQ6u4fxmQsdMvkMkWxZFikD9NgQ__:26985:72)
+    at async X (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Tkrl88MDlKKC3UFu~XbLN6U-~rWODyzZXgnbs1ZyczijaHRWgsxEKuFstoAYvDwOqj9MQUclL~X86aj737sEvYczWr1O4PVs1YEVZq4UJCqhEXepFMb-VMaVRAZMUWocQ9e2AKzS0v7TGythp3FraXuAaGGDTQvs~PPBPaoG9sG-wuVYdE2QWdlg8L7mC7PNvSkV5mLC-n6v8ZnCdmYPuL-3S29ZumslYOv5kJOCu3muIo5-WmlVQRseWxTX~TLarU3rQSeA5-pCtoih10JfGnppJusArX71wKPZrZ28NKd3TSgLxuHxhTtaMbfnQ6u4fxmQsdMvkMkWxZFikD9NgQ__:70825:11)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ 🚀 [INVITE] Creating employee invitation...
+ 📧 [INVITE] Email: cdskn!n@nn.com
+ 👤 [INVITE] Name: lkhds
+ 🔵 [API DIRECT] Getting employee by email: cdskn!n@nn.com
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&email=eq.cdskn%21n%40nn.com&is_active=eq.true:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&email=eq.cdskn%21n%40nn.com&is_active=eq.true:1  Failed to load resource: the server responded with a status of 406 ()
+ ℹ️ [API DIRECT] Employee not found
+ 📝 [INVITE] Creating employee record...
+ 🔵 [API DIRECT] Creating employee
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*:1  Failed to load resource: the server responded with a status of 403 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*:1  Failed to load resource: the server responded with a status of 403 ()
+ ❌ [API DIRECT] Error creating employee: Object
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ Error: new row violates row-level security policy for table "employees"
+    at Qk (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Tkrl88MDlKKC3UFu~XbLN6U-~rWODyzZXgnbs1ZyczijaHRWgsxEKuFstoAYvDwOqj9MQUclL~X86aj737sEvYczWr1O4PVs1YEVZq4UJCqhEXepFMb-VMaVRAZMUWocQ9e2AKzS0v7TGythp3FraXuAaGGDTQvs~PPBPaoG9sG-wuVYdE2QWdlg8L7mC7PNvSkV5mLC-n6v8ZnCdmYPuL-3S29ZumslYOv5kJOCu3muIo5-WmlVQRseWxTX~TLarU3rQSeA5-pCtoih10JfGnppJusArX71wKPZrZ28NKd3TSgLxuHxhTtaMbfnQ6u4fxmQsdMvkMkWxZFikD9NgQ__:26963:72)
+    at async iV (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Tkrl88MDlKKC3UFu~XbLN6U-~rWODyzZXgnbs1ZyczijaHRWgsxEKuFstoAYvDwOqj9MQUclL~X86aj737sEvYczWr1O4PVs1YEVZq4UJCqhEXepFMb-VMaVRAZMUWocQ9e2AKzS0v7TGythp3FraXuAaGGDTQvs~PPBPaoG9sG-wuVYdE2QWdlg8L7mC7PNvSkV5mLC-n6v8ZnCdmYPuL-3S29ZumslYOv5kJOCu3muIo5-WmlVQRseWxTX~TLarU3rQSeA5-pCtoih10JfGnppJusArX71wKPZrZ28NKd3TSgLxuHxhTtaMbfnQ6u4fxmQsdMvkMkWxZFikD9NgQ__:27035:59)
+    at async X (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Tkrl88MDlKKC3UFu~XbLN6U-~rWODyzZXgnbs1ZyczijaHRWgsxEKuFstoAYvDwOqj9MQUclL~X86aj737sEvYczWr1O4PVs1YEVZq4UJCqhEXepFMb-VMaVRAZMUWocQ9e2AKzS0v7TGythp3FraXuAaGGDTQvs~PPBPaoG9sG-wuVYdE2QWdlg8L7mC7PNvSkV5mLC-n6v8ZnCdmYPuL-3S29ZumslYOv5kJOCu3muIo5-WmlVQRseWxTX~TLarU3rQSeA5-pCtoih10JfGnppJusArX71wKPZrZ28NKd3TSgLxuHxhTtaMbfnQ6u4fxmQsdMvkMkWxZFikD9NgQ__:70834:22)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90

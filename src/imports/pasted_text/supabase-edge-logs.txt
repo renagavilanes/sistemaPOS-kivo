@@ -1,0 +1,386 @@
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+The resource <URL> was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 Too many elapsed hits of react since last report
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:54
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=dWzgI8VT2QsNphGi&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=5734d378e878c8a06ac608417076fa42e75d393b&reconnect-sequence-number=11053&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (journaled reconnect)
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=cGlpHcwhhIPDVyil-0&preview-route=%2Fmovements:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+729c9a34-aa1f-4a73-9be0-7a62e19bfc3e-v2-figmaiframepreview.figma.site/movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/products' from origin 'https://729c9a34-aa1f-4a73-9be0-7a62e19bfc3e-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: It does not have HTTP ok status.
+729c9a34-aa1f-4a73-9be0-7a62e19bfc3e-v2-figmaiframepreview.figma.site/movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/products' from origin 'https://729c9a34-aa1f-4a73-9be0-7a62e19bfc3e-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: It does not have HTTP ok status.
+729c9a34-aa1f-4a73-9be0-7a62e19bfc3e-v2-figmaiframepreview.figma.site/movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/products' from origin 'https://729c9a34-aa1f-4a73-9be0-7a62e19bfc3e-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: It does not have HTTP ok status.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/products:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/products:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/products:1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=dWzgI8VT2QsNphGi&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=5734d378e878c8a06ac608417076fa42e75d393b&reconnect-sequence-number=11060&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (skip_reload reconnect)
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=cGlpHcwhhIPDVyil-0&preview-route=%2Fmovements:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+The specified value "0,50" cannot be parsed, or is out of range.
+The specified value "0,50" cannot be parsed, or is out of range.
+The specified value "0,50" cannot be parsed, or is out of range.
+The specified value "0,50" cannot be parsed, or is out of range.
+The specified value "0,50" cannot be parsed, or is out of range.
+The specified value "0,50" cannot be parsed, or is out of range.
+ WebSocket connection to 'wss://ta-01km0m34jfjn4sv2wp5kz0rm9r-1380-0ikiqz38puh0v47m6p7qm1tcn.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0m34jfjn4sv2w…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0m34jfjn4sv2wp5kz0rm9r-1380-0ikiqz38puh0v47m6p7qm1tcn.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0m34jfjn4sv2w…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0m34jfjn4sv2wp5kz0rm9r-1380-0ikiqz38puh0v47m6p7qm1tcn.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0m34jfjn4sv2w…e/@vite/client:1035
+vendor-core-83c17265f2588e9e.min.js.br:54 [Livegraph] Connection closed. Code: 4010, reason: server_idle
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=dWzgI8VT2QsNphGi&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=5734d378e878c8a06ac608417076fa42e75d393b&reconnect-sequence-number=11060&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ WebSocket connection to 'wss://ta-01km0m34jfjn4sv2wp5kz0rm9r-1380-0ikiqz38puh0v47m6p7qm1tcn.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0m34jfjn4sv2w…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0m34jfjn4sv2wp5kz0rm9r-1380-0ikiqz38puh0v47m6p7qm1tcn.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0m34jfjn4sv2w…e/@vite/client:1035
+ WebSocket connection to 'wss://ta-01km0m34jfjn4sv2wp5kz0rm9r-1380-0ikiqz38puh0v47m6p7qm1tcn.makeproxy-m.figma.site/' failed: 
+ping @ ta-01km0m34jfjn4sv2w…e/@vite/client:1035
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (journaled reconnect)
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=dWzgI8VT2QsNphGi&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=5734d378e878c8a06ac608417076fa42e75d393b&reconnect-sequence-number=11077&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (journaled reconnect)
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=cGlpHcwhhIPDVyil-0&preview-route=%2Fsales:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=dWzgI8VT2QsNphGi&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=c8cf25fd40ec23e6d4f43316412edea9dd392484&reconnect-key=5734d378e878c8a06ac608417076fa42e75d393b&reconnect-sequence-number=11087&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (journaled reconnect)
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+POS?p=f&t=cGlpHcwhhIPDVyil-0&preview-route=%2Femployees:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+ WebSocket connection to 'wss://app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/' failed: 
+ping @ app-uzyyzorac7qe53zc…e/@vite/client:1035
+devtools_worker-ca13ef76cbd352b1.min.js.br:1190 [esbuild-wasm] Initializing from URL: /webpack-artifacts/assets/2b68f2d3d5e8b3d6.wasm
+devtools_worker-ca13ef76cbd352b1.min.js.br:1190 [esbuild-wasm] Initialized
+app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/@react-refresh:1  Failed to load resource: the server responded with a status of 500 ()
+app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/@react-refresh:1  Failed to load resource: the server responded with a status of 500 ()
+app-uzyyzorac7qe53zcusixvjmytq355s5hksm6vgdjt6pwpgltutfq.makeproxy-c.figma.site/@react-refresh:1  Failed to load resource: the server responded with a status of 500 ()
+devtools_worker-ca13ef76cbd352b1.min.js.br:2001 [esbuild] Build error: Error: Build failed with 1 error:
+virtual-fs:file:///src/app/pages/EmployeesPage.tsx:3:26: ERROR: Could not resolve "/utils/supabase/info"
+    at Z (devtools_worker-ca13ef76cbd352b1.min.js.br:8:5768)
+    at devtools_worker-ca13ef76cbd352b1.min.js.br:676:23008
+    at y (devtools_worker-ca13ef76cbd352b1.min.js.br:676:17720)
+    at G (devtools_worker-ca13ef76cbd352b1.min.js.br:676:22961)
+    at devtools_worker-ca13ef76cbd352b1.min.js.br:676:23116
+    at new Promise (<anonymous>)
+    at c.on-end (devtools_worker-ca13ef76cbd352b1.min.js.br:676:23100)
+    at devtools_worker-ca13ef76cbd352b1.min.js.br:676:10232
+    at Generator.next (<anonymous>)
+    at devtools_worker-ca13ef76cbd352b1.min.js.br:3:376
+(anonymous) @ devtools_worker-ca13ef76cbd352b1.min.js.br:2001
+devtools_worker-ca13ef76cbd352b1.min.js.br:3237 Error: Build failed with 1 error:
+virtual-fs:file:///src/app/pages/EmployeesPage.tsx:3:26: ERROR: Could not resolve "/utils/supabase/info"
+    at Z (devtools_worker-ca13ef76cbd352b1.min.js.br:8:5768)
+    at devtools_worker-ca13ef76cbd352b1.min.js.br:676:23008
+    at y (devtools_worker-ca13ef76cbd352b1.min.js.br:676:17720)
+    at G (devtools_worker-ca13ef76cbd352b1.min.js.br:676:22961)
+    at devtools_worker-ca13ef76cbd352b1.min.js.br:676:23116
+    at new Promise (<anonymous>)
+    at c.on-end (devtools_worker-ca13ef76cbd352b1.min.js.br:676:23100)
+    at devtools_worker-ca13ef76cbd352b1.min.js.br:676:10232
+    at Generator.next (<anonymous>)
+    at devtools_worker-ca13ef76cbd352b1.min.js.br:3:376
+m5 @ devtools_worker-ca13ef76cbd352b1.min.js.br:3237
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&email=eq.empleo%40hotmail.com&is_active=eq.true:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&email=eq.empleo%40hotmail.com&is_active=eq.true:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&email=eq.empleo%40hotmail.com&is_active=eq.true:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*:1  Failed to load resource: the server responded with a status of 403 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*:1  Failed to load resource: the server responded with a status of 403 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*:1  Failed to load resource: the server responded with a status of 403 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ 🔵 Creando nueva instancia de Supabase Client
+ 🚀 [APP] App component loading...
+ 🔐 AuthContext: Inicializando...
+ 🔍 Sidebar - Business actualizado: Object
+ ✅ Negocio cargado: be a hero 5
+ ✅ Negocio cargado: be a hero 5
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 Total negocios encontrados: 2
+ 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 🔍 Sidebar - Business actualizado: Object
+ 📥 Loading employees from API...
+ 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+ ✅ [API DIRECT] Employees retrieved: 1
+ ✅ Employees loaded: 1
+ ✅ Negocio cargado: be a hero 5
+ ✅ Negocio cargado: be a hero 5
+ 🔵 [API DIRECT] Updating employee: 02c9d9a6-1867-48b6-b3dc-395c7a38c8b2
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?id=eq.02c9d9a6-1867-48b6-b3dc-395c7a38c8b2&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&select=*:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?id=eq.02c9d9a6-1867-48b6-b3dc-395c7a38c8b2&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&select=*:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/employees?id=eq.02c9d9a6-1867-48b6-b3dc-395c7a38c8b2&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&select=*:1  Failed to load resource: the server responded with a status of 406 ()
+ ❌ [API DIRECT] Error updating employee: Object
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ Error: Cannot coerce the result to a single JSON object
+    at Module.updateEmployee (app-fivth2ohnwetzuwkyw2neuxi5en3lplfiafb7ehs42fca52nqc5a.makeproxy-c.figma.site/src/app/services/api.ts:731:11)
+    at async handleSaveEmployee (app-fivth2ohnwetzuwkyw2neuxi5en3lplfiafb7ehs42fca52nqc5a.makeproxy-c.figma.site/src/app/pages/EmployeesPage.tsx:237:9)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90

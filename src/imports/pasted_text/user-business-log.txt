@@ -1,0 +1,166 @@
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 📝 Registrando usuario: 12mar2@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ Usuario creado: 407b4bfd-f0a0-4a86-a701-b0d81446d609
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🏢 Creando negocio inicial...
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/register-business:1  Failed to load resource: the server responded with a status of 500 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/register-business:1  Failed to load resource: the server responded with a status of 500 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/register-business:1  Failed to load resource: the server responded with a status of 500 ()
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ❌ Error al crear negocio: Object
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+r @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:69
+error @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+handleRegister @ RegisterPage.tsx:104
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔐 Iniciando sesión automáticamente...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔄 Auth state changed: SIGNED_IN
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ℹ️ No hay negocio seleccionado
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ Sesión iniciada: 12mar2@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 👤 Usuario: 12mar2@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ Negocios encontrados: 0
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ⚠️ No se encontraron negocios para este usuario
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🏢 ========================================
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔍 Sidebar - Business actualizado: Object
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔒 [PROTECTED] loading: false user: 12mar2@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔍 [SALES] Estado: Object
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 Too many elapsed hits of react since last report
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔄 Auth state changed: SIGNED_IN
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ℹ️ No hay negocio seleccionado
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔒 [PROTECTED] loading: false user: 12mar2@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 👤 Usuario: 12mar2@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 2:39:12 PM [vite] (client) hmr update /src/app/pages/RegisterPage.tsx, /src/styles/index.css
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ Negocios encontrados: 0
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ⚠️ No se encontraron negocios para este usuario
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🏢 ========================================
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 👋 Cerrando sesión...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔄 Auth state changed: SIGNED_OUT
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🚫 [PROTECTED] No hay usuario, redirigiendo a login
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔒 [PROTECTED] loading: false user: undefined
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ℹ️ No hay usuario autenticado
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/rev/5Fd3OHhMY2lssTlq3IRIEy/code_snapshot/60f100ba7ed63df569471d84b077c95ce8547eb29edb91f5f2e2839fefcf4aa6:1  Failed to load resource: the server responded with a status of 404 ()
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 Failed to fetch snapshot files: E: XHR for "/api/rev/5Fd3OHhMY2lssTlq3IRIEy/code_snapshot/60f100ba7ed63df569471d84b077c95ce8547eb29edb91f5f2e2839fefcf4aa6" failed with status 404
+    at C (3186-5d955a18ed0f9b29.min.js.br:1135:13967)
+    at async Object.k [as get] (3186-5d955a18ed0f9b29.min.js.br:1135:14350)
+    at async 5531-b8e5f076817d173e.min.js.br:3:24675
+    at async 5531-b8e5f076817d173e.min.js.br:34:205801
+    at async 5531-b8e5f076817d173e.min.js.br:3:25105
+    at async k (5531-b8e5f076817d173e.min.js.br:34:205309)
+    at async 5531-b8e5f076817d173e.min.js.br:34:114835
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔵 Creando nueva instancia de Supabase Client
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔒 [PROTECTED] loading: true user: undefined
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔐 AuthContext: Inicializando...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 📦 Sesión obtenida: Inactiva
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ℹ️ No hay sesión activa
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ AuthContext inicializado, loading=false
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🚫 [PROTECTED] No hay usuario, redirigiendo a login
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔒 [PROTECTED] loading: false user: undefined
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ℹ️ No hay usuario autenticado
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔄 Auth state changed: INITIAL_SESSION
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 📝 Registrando usuario: 12mar3@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ Usuario creado: e67a7a04-2467-4fac-90af-4826bdc65e91
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔐 Iniciando sesión para obtener token...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔄 Auth state changed: SIGNED_IN
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ℹ️ No hay negocio seleccionado
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ Token obtenido
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🏢 Creando negocio inicial...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 👤 Usuario: 12mar3@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ Negocios encontrados: 0
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ⚠️ No se encontraron negocios para este usuario
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🏢 ========================================
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ Negocio creado exitosamente: 3a481c2a-5b57-4f43-a9f2-cd11c5d98691
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ Sesión iniciada: 12mar3@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔍 Sidebar - Business actualizado: Object
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔒 [PROTECTED] loading: false user: 12mar3@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔍 [SALES] Estado: Object
+  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edec…4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in T
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+k @ 3186-5d955a18ed0f9b29.min.js.br:1135
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:364
+validate @ figma_app-fb99c62a6754ab3a.min.js.br:420
+getFunctionLogs @ figma_app-fb99c62a6754ab3a.min.js.br:364
+fetch @ figma_app-fb99c62a6754ab3a.min.js.br:552
+p @ 3186-5d955a18ed0f9b29.min.js.br:393
+await in p
+d @ vendor-9145dcc223f9b840.min.js.br:296
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edec…4781c7.min.js.br:54
+  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edec…4781c7.min.js.br:63
+h @ vendor-9145dcc223f9b840.min.js.br:3
+(anonymous) @ 3186-5d955a18ed0f9b29.min.js.br:1135
+T @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in T
+C @ 3186-5d955a18ed0f9b29.min.js.br:1135
+await in C
+k @ 3186-5d955a18ed0f9b29.min.js.br:1135
+(anonymous) @ figma_app-fb99c62a6754ab3a.min.js.br:364
+validate @ figma_app-fb99c62a6754ab3a.min.js.br:420
+getFunctionLogs @ figma_app-fb99c62a6754ab3a.min.js.br:364
+fetch @ figma_app-fb99c62a6754ab3a.min.js.br:552
+p @ 3186-5d955a18ed0f9b29.min.js.br:393
+await in p
+d @ vendor-9145dcc223f9b840.min.js.br:296
+_ @ vendor-9145dcc223f9b840.min.js.br:296
+h @ vendor-9145dcc223f9b840.min.js.br:296
+fetch @ vendor-9145dcc223f9b840.min.js.br:296
+executeFetch @ vendor-9145dcc223f9b840.min.js.br:296
+(anonymous) @ vendor-9145dcc223f9b840.min.js.br:296
+u @ vendor-core-ade2edec…4781c7.min.js.br:54

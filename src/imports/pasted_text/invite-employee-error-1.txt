@@ -1,0 +1,844 @@
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📧 [API] Inviting employee: r.gavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90  POST https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/invite-employee 401 (Unauthorized)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+inviteEmployee @ api.ts:1059
+await in inviteEmployee
+handleSaveEmployee @ EmployeesPage.tsx:280
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+invite-employee:1  Failed to load resource: the server responded with a status of 401 ()
+invite-employee:1  Failed to load resource: the server responded with a status of 401 ()
+invite-employee:1  Failed to load resource: the server responded with a status of 401 ()
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error: Error al enviar invitación
+    at Module.inviteEmployee (api.ts:1081:11)
+    at async handleSaveEmployee (EmployeesPage.tsx:280:24)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+handleSaveEmployee @ EmployeesPage.tsx:304
+await in handleSaveEmployee
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296
+Promise.then
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296
+Promise.then
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in C
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296
+Promise.then
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in C
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296
+Promise.then
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in C
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296
+Promise.then
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Auth state changed: SIGNED_IN
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cargando negocio desde tabla businesses...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Business ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📥 Loading employees from API...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting employees for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+vendor-core-ade2edecaf4781c7.min.js.br:54 Too many elapsed hits of react since last report
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+t @ figma_app-726b2563eb8cdce8.min.js.br:41
+eI @ figma_app-726b2563eb8cdce8.min.js.br:41
+gJ @ 4239-c4c06d09094e9c07.min.js.br:188
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+requestAnimationFrame
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+gX @ 4239-c4c06d09094e9c07.min.js.br:188
+s @ 4239-c4c06d09094e9c07.min.js.br:386
+requestAnimationFrame @ 4239-c4c06d09094e9c07.min.js.br:191
+_Async_requestAnimationFrame @ compiled_wasm.js.br:2
+$wasm-function[3220] @ compiled_wasm.wasm.br:0x1119a6
+$wasm-function[2940] @ compiled_wasm.wasm.br:0xc7102
+$wasm-function[25754] @ compiled_wasm.wasm.br:0x17a95a4
+$wasm-function[42216] @ compiled_wasm.wasm.br:0x22b0c26
+$wasm-function[25759] @ compiled_wasm.wasm.br:0x17b1083
+$wasm-function[38311] @ compiled_wasm.wasm.br:0x1ed2b3d
+(anonymous) @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+_wrapCppCall @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+onFrame @ 4239-c4c06d09094e9c07.min.js.br:167
+gJ @ 4239-c4c06d09094e9c07.min.js.br:188
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+requestAnimationFrame
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+gX @ 4239-c4c06d09094e9c07.min.js.br:188
+s @ 4239-c4c06d09094e9c07.min.js.br:386
+requestAnimationFrame @ 4239-c4c06d09094e9c07.min.js.br:191
+_Async_requestAnimationFrame @ compiled_wasm.js.br:2
+$wasm-function[3220] @ compiled_wasm.wasm.br:0x1119a6
+$wasm-function[1952] @ compiled_wasm.wasm.br:0x458b9
+$wasm-function[40511] @ compiled_wasm.wasm.br:0x2114688
+$wasm-function[16882] @ compiled_wasm.wasm.br:0xe4d53f
+$wasm-function[38261] @ compiled_wasm.wasm.br:0x1ebf891
+(anonymous) @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+_wrapCppCall @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+b @ 8245-61d61b2c2a415443.min.js.br:3
+g.onmessage @ 8245-61d61b2c2a415443.min.js.br:3
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Employees retrieved: 1
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Employees loaded: 1
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+fetchQuery @ vendor-191557b646cc979f.min.js.br:296
+A @ 4239-c4c06d09094e9c07.min.js.br:386
+H.fetch @ 4239-c4c06d09094e9c07.min.js.br:386
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:34
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:34
+await in (anonymous)
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:18
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1919
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oL @ vendor-core-ade2edecaf4781c7.min.js.br:11
+f5 @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+XMLHttpRequest.send
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+r @ 4239-c4c06d09094e9c07.min.js.br:1319
+post @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1116
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+createThreadMessages @ 4239-c4c06d09094e9c07.min.js.br:1116
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:3
+m @ figma_app-726b2563eb8cdce8.min.js.br:229
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:3
+measureDurationAsync @ 4239-c4c06d09094e9c07.min.js.br:1619
+b @ 4756-94ecc82b32cf4be6.min.js.br:3
+y @ 4756-94ecc82b32cf4be6.min.js.br:3
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:3
+commitMessagesToDatabase @ 4756-94ecc82b32cf4be6.min.js.br:34
+commit @ 4756-94ecc82b32cf4be6.min.js.br:34
+await in commit
+d @ figma_app-726b2563eb8cdce8.min.js.br:298
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be hero 51
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: {name: 'be hero 51', id: '72454c71-5a4f-4d89-9e57-494a7c4b89e7', logo: null, logo_url: null, loadedAt: undefined, …}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocios encontrados: 2
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 💾 Business ID guardado: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🎯 Negocio seleccionado: be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ========================================
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📥 Loading employees from API...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting employees for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Employees retrieved: 1
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Employees loaded: 1
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in C
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+fetchQuery @ vendor-191557b646cc979f.min.js.br:296
+A @ 4239-c4c06d09094e9c07.min.js.br:386
+H.fetch @ 4239-c4c06d09094e9c07.min.js.br:386
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:34
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:34
+await in (anonymous)
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:18
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1919
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oL @ vendor-core-ade2edecaf4781c7.min.js.br:11
+f5 @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+XMLHttpRequest.send
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+r @ 4239-c4c06d09094e9c07.min.js.br:1319
+post @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1116
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+createThreadMessages @ 4239-c4c06d09094e9c07.min.js.br:1116
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:3
+m @ figma_app-726b2563eb8cdce8.min.js.br:229
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:3
+measureDurationAsync @ 4239-c4c06d09094e9c07.min.js.br:1619
+b @ 4756-94ecc82b32cf4be6.min.js.br:3
+y @ 4756-94ecc82b32cf4be6.min.js.br:3
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:3
+commitMessagesToDatabase @ 4756-94ecc82b32cf4be6.min.js.br:34
+commit @ 4756-94ecc82b32cf4be6.min.js.br:34
+await in commit
+d @ figma_app-726b2563eb8cdce8.min.js.br:298
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in C
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+fetchQuery @ vendor-191557b646cc979f.min.js.br:296
+A @ 4239-c4c06d09094e9c07.min.js.br:386
+H.fetch @ 4239-c4c06d09094e9c07.min.js.br:386
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:34
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:34
+await in (anonymous)
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:18
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1919
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oL @ vendor-core-ade2edecaf4781c7.min.js.br:11
+f5 @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+XMLHttpRequest.send
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+r @ 4239-c4c06d09094e9c07.min.js.br:1319
+post @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1116
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+createThreadMessages @ 4239-c4c06d09094e9c07.min.js.br:1116
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:3
+m @ figma_app-726b2563eb8cdce8.min.js.br:229
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:3
+measureDurationAsync @ 4239-c4c06d09094e9c07.min.js.br:1619
+b @ 4756-94ecc82b32cf4be6.min.js.br:3
+y @ 4756-94ecc82b32cf4be6.min.js.br:3
+(anonymous) @ 4756-94ecc82b32cf4be6.min.js.br:3
+commitMessagesToDatabase @ 4756-94ecc82b32cf4be6.min.js.br:34
+commit @ 4756-94ecc82b32cf4be6.min.js.br:34
+await in commit
+d @ figma_app-726b2563eb8cdce8.min.js.br:298
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 Creando nueva instancia de Supabase Client
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: true user: undefined
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔐 AuthContext: Inicializando...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Auth state changed: SIGNED_IN
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cargando negocio desde tabla businesses...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Business ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: {name: undefined, id: undefined, logo: null, logo_url: null, loadedAt: undefined, …}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Auth state changed: SIGNED_IN
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cargando negocio desde tabla businesses...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Business ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📥 Loading employees from API...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting employees for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 [SALES] Estado: {businessLoading: true, currentBusiness: undefined}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Sesión obtenida: Activa
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 Token expires at: 2026-03-13T23:29:31.000Z
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 Current time: 2026-03-13T22:31:07.160Z
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 Token is expired? false
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario establecido: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔧 [API] Fixing employee user_id...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cargando negocio desde tabla businesses...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Business ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ AuthContext inicializado, loading=false
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Auth state changed: INITIAL_SESSION
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cargando negocio desde tabla businesses...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Business ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Employees retrieved: 1
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Employees loaded: 1
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be hero 51
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: {name: 'be hero 51', id: '72454c71-5a4f-4d89-9e57-494a7c4b89e7', logo: null, logo_url: null, loadedAt: undefined, …}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be hero 51
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: {name: 'be hero 51', id: '72454c71-5a4f-4d89-9e57-494a7c4b89e7', logo: null, logo_url: null, loadedAt: undefined, …}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocios encontrados: 2
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 💾 Business ID guardado: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🎯 Negocio seleccionado: be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ========================================
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting categories for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting products for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 [SALES] Estado: {businessLoading: false, currentBusiness: 'be hero 51'}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be hero 51
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: {name: 'be hero 51', id: '72454c71-5a4f-4d89-9e57-494a7c4b89e7', logo: null, logo_url: null, loadedAt: undefined, …}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90  POST https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id 401 (Unauthorized)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+fixEmployeeUserId @ api.ts:1092
+await in fixEmployeeUserId
+(anonymous) @ AuthContext.tsx:127
+Promise.then
+(anonymous) @ AuthContext.tsx:105
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be hero 51
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ Error fixing employee user_id (non-critical): Error al arreglar el empleado
+ ✅ Negocios encontrados: 2
+    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 💾 Business ID guardado: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🎯 Negocio seleccionado: be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+ 🏢 ========================================
+ 📥 Loading employees from API...
+ 🔵 [API DIRECT] Getting employees for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Categories retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📂 [SALES] Categorías cargadas desde Supabase: []
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ❌ [API DIRECT] Error getting products: {message: 'TypeError: Failed to fetch', details: 'TypeError: Failed to fetch\n    at https://www.figm…-c.figma.site/src/app/pages/SalesPage.tsx:115:30)', hint: '', code: ''}
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+getProducts @ api.ts:11
+await in getProducts
+loadProducts @ SalesPage.tsx:115
+(anonymous) @ SalesPage.tsx:133
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SZ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SS @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ❌ [API DIRECT] Error getting customers: {message: 'TypeError: Failed to fetch', details: 'TypeError: Failed to fetch\n    at https://www.figm…roxy-c.figma.site/src/app/services/api.ts:177:27)', hint: '', code: ''}
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+getCustomers @ api.ts:179
+await in getCustomers
+(anonymous) @ ExpenseForm.tsx:80
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SZ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SS @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ❌ ======== ERROR CARGANDO NEGOCIOS ========
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+loadBusinesses @ BusinessContext.tsx:87
+await in loadBusinesses
+(anonymous) @ BusinessContext.tsx:43
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error: TypeError: Failed to fetch
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+loadBusinesses @ BusinessContext.tsx:88
+await in loadBusinesses
+(anonymous) @ BusinessContext.tsx:43
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ========================================
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+loadBusinesses @ BusinessContext.tsx:89
+await in loadBusinesses
+(anonymous) @ BusinessContext.tsx:43
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ❌ ======== ERROR CARGANDO NEGOCIOS ========
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+loadBusinesses @ BusinessContext.tsx:87
+await in loadBusinesses
+(anonymous) @ BusinessContext.tsx:43
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error: TypeError: Failed to fetch
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+loadBusinesses @ BusinessContext.tsx:88
+await in loadBusinesses
+(anonymous) @ BusinessContext.tsx:43
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ========================================
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+loadBusinesses @ BusinessContext.tsx:89
+await in loadBusinesses
+(anonymous) @ BusinessContext.tsx:43
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error loading products: 
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+loadProducts @ SalesPage.tsx:128
+await in loadProducts
+(anonymous) @ SalesPage.tsx:133
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SZ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SS @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error loading contacts: 
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+(anonymous) @ ExpenseForm.tsx:88
+Promise.catch
+(anonymous) @ ExpenseForm.tsx:87
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SZ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SS @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+ 🔵 Creando nueva instancia de Supabase Client
+ ✅ [API DIRECT] Employees retrieved: 1
+ ✅ Employees loaded: 1
+ 🔒 [PROTECTED] loading: true user: undefined
+ 🔐 AuthContext: Inicializando...
+ 🔄 Auth state changed: SIGNED_IN
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 Sidebar - Business actualizado: {name: undefined, id: undefined, logo: null, logo_url: null, loadedAt: undefined, …}
+ 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+ 🔄 Usuario y sesión listos, cargando negocios...
+ 🏢 ======== CARGANDO NEGOCIOS ========
+ 👤 Usuario: renagavilanes@hotmail.com
+ 🔄 Auth state changed: SIGNED_IN
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 📥 Loading employees from API...
+ 🔵 [API DIRECT] Getting employees for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+ 🔄 Usuario y sesión listos, cargando negocios...
+ 🏢 ======== CARGANDO NEGOCIOS ========
+ 👤 Usuario: renagavilanes@hotmail.com
+ 📦 Sesión obtenida: Activa
+ 🔑 Token expires at: 2026-03-13T23:29:31.000Z
+ 🔑 Current time: 2026-03-13T22:31:09.554Z
+ 🔑 Token is expired? false
+ 👤 Usuario establecido: renagavilanes@hotmail.com
+ 🔧 [API] Fixing employee user_id...
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+ ✅ AuthContext inicializado, loading=false
+ 🔍 [SALES] Estado: {businessLoading: true, currentBusiness: undefined}
+ 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+ 🔄 Usuario y sesión listos, cargando negocios...
+ 🏢 ======== CARGANDO NEGOCIOS ========
+ 👤 Usuario: renagavilanes@hotmail.com
+ 🔄 Auth state changed: INITIAL_SESSION
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+ 🔄 Usuario y sesión listos, cargando negocios...
+ 🏢 ======== CARGANDO NEGOCIOS ========
+ 👤 Usuario: renagavilanes@hotmail.com
+ ✅ Negocio cargado desde tabla businesses: be hero 51
+ 🔍 Sidebar - Business actualizado: {name: 'be hero 51', id: '72454c71-5a4f-4d89-9e57-494a7c4b89e7', logo: null, logo_url: null, loadedAt: undefined, …}
+ ✅ [API DIRECT] Employees retrieved: 1
+ ✅ Employees loaded: 1
+  POST https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id 401 (Unauthorized)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+fixEmployeeUserId @ api.ts:680
+await in fixEmployeeUserId
+(anonymous) @ AuthContext.tsx:86
+Promise.then
+(anonymous) @ AuthContext.tsx:68
+TN @ code_components_prev…153e7b.min.js.br:37
+T8 @ code_components_prev…153e7b.min.js.br:37
+T7 @ code_components_prev…153e7b.min.js.br:37
+T6 @ code_components_prev…153e7b.min.js.br:37
+T4 @ code_components_prev…153e7b.min.js.br:37
+S1 @ code_components_prev…153e7b.min.js.br:37
+SQ @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:65
+V @ code_components_prev…153e7b.min.js.br:61
+B @ code_components_prev…153e7b.min.js.br:61
+eo @ code_components_prev…153e7b.min.js.br:61
+ ℹ️ Error fixing employee user_id (non-critical): Error al arreglar el empleado

@@ -1,0 +1,144 @@
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📧 [API] Inviting employee: r.gavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 [API] Using publicAnonKey for invite-employee endpoint
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 [API] Business ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 [API] Business ID type: string
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 [API] Business ID is undefined? false
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 [API] Business ID is string "undefined"? false
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in C
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90  POST https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/invite-employee 500 (Internal Server Error)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+inviteEmployee @ api.ts:1066
+handleSaveEmployee @ EmployeesPage.tsx:280
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ❌ [API] Invitation failed: 500 {error: 'invalid input syntax for type uuid: "undefined"'}
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+inviteEmployee @ api.ts:1088
+await in inviteEmployee
+handleSaveEmployee @ EmployeesPage.tsx:280
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error: invalid input syntax for type uuid: "undefined"
+    at Module.inviteEmployee (api.ts:1089:11)
+    at async handleSaveEmployee (EmployeesPage.tsx:280:24)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+handleSaveEmployee @ EmployeesPage.tsx:304
+await in handleSaveEmployee
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in C
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296

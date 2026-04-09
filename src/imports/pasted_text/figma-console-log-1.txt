@@ -1,0 +1,213 @@
+ Running frontend commit 107bbd51e86fce9a104f472597b3e63a6aa8ffa6
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+A.logExposureCallback @ 4239-c4c06d09094e9c07.min.js.br:1280
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 34 scripts (5985689b), 0 from cache (0b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [bootstrap_waiting_on_user_state] You appear to be logging a relative timestamp and not an epoch timestamp. Try adding performance.timeOrigin to the timestamp.
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+logVital @ 4239-c4c06d09094e9c07.min.js.br:1619
+K @ 4239-c4c06d09094e9c07.min.js.br:188
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:188
+time @ 4239-c4c06d09094e9c07.min.js.br:386
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:188
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: 640e7c0c7a50f673af49d46032d102e256b5e667, stamp: 8E3CE7D760547CC6
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+A.logExposureCallback @ 4239-c4c06d09094e9c07.min.js.br:1280
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 8600.6ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=OCulLs6eHGjz2xTS&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=107bbd51e86fce9a104f472597b3e63a6aa8ffa6
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+vendor-core-ade2edecaf4781c7.min.js.br:54 handleJoinEndInitialLoad the document is dirty immediately after loading Object
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+POS?p=f&t=NFBLy9aUKybJZ2Tr-0&preview-route=%2Femployees:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+devtools_worker-28bcb023fe1485d0.min.js.br:1190 [esbuild-wasm] Initializing from URL: /webpack-artifacts/assets/2b68f2d3d5e8b3d6.wasm
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=39.91s maxmem=161287196
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 400 ()
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+devtools_worker-28bcb023fe1485d0.min.js.br:1190 [esbuild-wasm] Initialized
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+/api/make/5Fd3OHhMY2lssTlq3IRIEy/cached_preview_urls?source_code_hash=b8178cac01225a5e664da43fe7708d4aaef69fa9:1  Failed to load resource: the server responded with a status of 404 ()
+devtools_worker-28bcb023fe1485d0.min.js.br:3176 [bundleCode] Found 5 CSS files in VFS
+devtools_worker-28bcb023fe1485d0.min.js.br:3176 [bundleCode] Total CSS size to be processed by lightningcss: 0.01MB
+devtools_worker-28bcb023fe1485d0.min.js.br:1190 [lightningcss-wasm] Initialized
+devtools_worker-28bcb023fe1485d0.min.js.br:3176 [lightningCSS] Processing 0.12MB of CSS (environment: browser)
+devtools_worker-28bcb023fe1485d0.min.js.br:3176 [lightningCSS] Encoded size: 0.12MB
+devtools_worker-28bcb023fe1485d0.min.js.br:3176 [lightningCSS] Transform completed successfully
+ 🔵 Creando nueva instancia de Supabase Client
+ 🔒 [PROTECTED] loading: true user: undefined
+ 🔐 AuthContext: Inicializando...
+ 📦 Sesión obtenida: Inactiva
+ ℹ️ No hay sesión activa
+ ✅ AuthContext inicializado, loading=false
+ 🚫 [PROTECTED] No hay usuario, redirigiendo a login
+ 🔒 [PROTECTED] loading: false user: undefined
+ ℹ️ No hay usuario autenticado
+ 🔄 Auth state changed: INITIAL_SESSION
+ 🔍 Leyendo localStorage: null
+ 📦 Cuentas guardadas encontradas: 0
+ 📦 Detalle de cuentas: Array(0)
+ ℹ️ No hay cuentas, mostrando formulario completo
+ 🔐 Iniciando sesión con: renagavilanes@hotmail.com
+zcqoussqgigskextorag.supabase.co/auth/v1/token?grant_type=password:1  Failed to load resource: the server responded with a status of 400 ()
+zcqoussqgigskextorag.supabase.co/auth/v1/token?grant_type=password:1  Failed to load resource: the server responded with a status of 400 ()
+zcqoussqgigskextorag.supabase.co/auth/v1/token?grant_type=password:1  Failed to load resource: the server responded with a status of 400 ()
+ ❌ Error de autenticación: AuthApiError: Invalid login credentials
+    at handleError2 (@supabase_supabase-js.js?v=f40e4ed7:8360:9)
+    at async _handleRequest2 (@supabase_supabase-js.js?v=f40e4ed7:8401:5)
+    at async _request (@supabase_supabase-js.js?v=f40e4ed7:8385:16)
+    at async SupabaseAuthClient.signInWithPassword (@supabase_supabase-js.js?v=f40e4ed7:10532:15)
+    at async handleLogin (LoginPage.tsx:177:31)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+ 🔐 Iniciando sesión con: renagavilanes@hotmail.com
+ 🔄 Auth state changed: SIGNED_IN
+ ℹ️ No hay negocio seleccionado
+ ✅ Sesión iniciada: renagavilanes@hotmail.com
+ 💾 Guardando cuenta en localStorage
+ 🔍 Leyendo localStorage: null
+ 💾 Guardando en localStorage: 1 cuentas
+ ✅ Verificación guardado: OK
+ ✅ Usuario ya tiene sesión activa, redirigiendo...
+ 🔄 Usuario y sesión listos, cargando negocios...
+ 🏢 ======== CARGANDO NEGOCIOS ========
+ 👤 Usuario: renagavilanes@hotmail.com
+ 🔍 Sidebar - Business actualizado: Object
+ 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+ 🔍 [SALES] Estado: Object
+ ✅ Negocios encontrados: 2
+    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 💾 Business ID guardado: null
+ 🎯 Negocio seleccionado: be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+ 🏢 ========================================
+ 🔵 [API DIRECT] Getting customers for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🔵 [API DIRECT] Getting customers for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🔵 [API DIRECT] Getting categories for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🔵 [API DIRECT] Getting products for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🔍 [SALES] Estado: Object
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Products retrieved: 0
+ ✅ Productos cargados en SalesPage: 0 productos
+ ✅ [API DIRECT] Categories retrieved: 0
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🔄 Cambiando a negocio: be a hero 5
+ 🔄 Evento businessChanged recibido
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting categories for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting categories for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 [SALES] Estado: Object
+ ✅ [API DIRECT] Categories retrieved: 0
+ 🔄 [SALES] Categorías actualizadas: Array(0)
+ ✅ [API DIRECT] Categories retrieved: 0
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ Negocio cargado desde tabla businesses: be a hero 5
+ 🔍 Sidebar - Business actualizado: Object
+ ✅ [API DIRECT] Products retrieved: 3
+ ✅ Productos cargados en SalesPage: 3 productos
+ 📥 Loading employees from API...
+ 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+ ✅ [API DIRECT] Employees retrieved: 5
+ ✅ Employees loaded: 5
+ 🚀🚀🚀 [API VERSION]: v3.0-NEW-ENDPOINT-20260315
+ 🚀🚀🚀 [API v3] Creating employee via NEW V3 ENDPOINT 🚀🚀🚀
+ 📧 [API v3] Email: ejemplo10@hotmail.com
+ 👤 [API v3] Name: rena10
+ 🔵 [API DIRECT] Getting employee by email: ejemplo10@hotmail.com
+  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&email=eq.ejemplo10%40hotmail.com&is_active=eq.true 406 (Not Acceptable)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+(anonymous) @ @supabase_supabase-js.js?v=f40e4ed7:12780
+(anonymous) @ @supabase_supabase-js.js?v=f40e4ed7:12794
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=f40e4ed7:274
+ ℹ️ [API DIRECT] Employee not found
+ 🔐 [API v3] Generated temporary password: Tempuysmak88!
+ 📡 [API v3] Calling server endpoint: /create-employee-v3
+  POST https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/create-employee-v3 500 (Internal Server Error)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+inviteEmployee @ api.ts:1081
+await in inviteEmployee
+handleSaveEmployee @ EmployeesPage.tsx:280
+y @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ik @ code_components_prev…153e7b.min.js.br:25
+ij @ code_components_prev…153e7b.min.js.br:25
+iz @ code_components_prev…153e7b.min.js.br:25
+dP @ code_components_prev…153e7b.min.js.br:37
+dM @ code_components_prev…153e7b.min.js.br:37
+dG @ code_components_prev…153e7b.min.js.br:37
+dk @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:37
+SR @ code_components_prev…153e7b.min.js.br:37
+iR @ code_components_prev…153e7b.min.js.br:25
+d$ @ code_components_prev…153e7b.min.js.br:37
+lO @ code_components_prev…153e7b.min.js.br:25
+lN @ code_components_prev…153e7b.min.js.br:25
+lv @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ 📥 [API v3] Server response: {error: 'invalid input syntax for type uuid: "undefined"'}
+ ❌ [API v3] Employee creation failed: 500 {error: 'invalid input syntax for type uuid: "undefined"'}
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+r @ code_components_prev…153e7b.min.js.br:17
+error @ code_components_prev…153e7b.min.js.br:90
+inviteEmployee @ api.ts:1105
+await in inviteEmployee
+handleSaveEmployee @ EmployeesPage.tsx:280
+y @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ik @ code_components_prev…153e7b.min.js.br:25
+ij @ code_components_prev…153e7b.min.js.br:25
+iz @ code_components_prev…153e7b.min.js.br:25
+dP @ code_components_prev…153e7b.min.js.br:37
+dM @ code_components_prev…153e7b.min.js.br:37
+dG @ code_components_prev…153e7b.min.js.br:37
+dk @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:37
+SR @ code_components_prev…153e7b.min.js.br:37
+iR @ code_components_prev…153e7b.min.js.br:25
+d$ @ code_components_prev…153e7b.min.js.br:37
+lO @ code_components_prev…153e7b.min.js.br:25
+lN @ code_components_prev…153e7b.min.js.br:25
+lv @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ Error: Error de servidor: El servidor necesita actualizarse. Por favor intenta de nuevo en 1-2 minutos.
+    at Module.inviteEmployee (api.ts:1109:13)
+    at async handleSaveEmployee (EmployeesPage.tsx:280:24)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+r @ code_components_prev…153e7b.min.js.br:17
+error @ code_components_prev…153e7b.min.js.br:90
+handleSaveEmployee @ EmployeesPage.tsx:310
+await in handleSaveEmployee
+y @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ik @ code_components_prev…153e7b.min.js.br:25
+ij @ code_components_prev…153e7b.min.js.br:25
+iz @ code_components_prev…153e7b.min.js.br:25
+dP @ code_components_prev…153e7b.min.js.br:37
+dM @ code_components_prev…153e7b.min.js.br:37
+dG @ code_components_prev…153e7b.min.js.br:37
+dk @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:37
+SR @ code_components_prev…153e7b.min.js.br:37
+iR @ code_components_prev…153e7b.min.js.br:25
+d$ @ code_components_prev…153e7b.min.js.br:37
+lO @ code_components_prev…153e7b.min.js.br:25
+lN @ code_components_prev…153e7b.min.js.br:25
+lv @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90

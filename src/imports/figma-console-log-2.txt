@@ -1,0 +1,398 @@
+ Running frontend commit 104e5cff5c002c982d12ee7e71d6e343532dd808
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 Loaded 31 scripts (5988491b), 31 from cache (5988491b)
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [import] git: 48589f4cb70c6245ed05d8f4e8e56d36d6b05fb3, stamp: 594A0F27E5DEFE4C
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 Autosave Changes not available or already claimed by another tab undefined
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [Fullscreen] Ready in 1091.2ms
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=6TuMMm7W3peieuz9&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=104e5cff5c002c982d12ee7e71d6e343532dd808
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=TNZg1ITdPJoL6Anq-0&preview-route=%2Fsimple-test:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [Fullscreen] loadtime=7.75s maxmem=128413856
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:sourcemap:54 [devtools] Initialized LS
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 400 ()
+zcqoussqgigskextorag.supabase.co/auth/v1/signup:1  Failed to load resource: the server responded with a status of 400 ()
+vendor-998f6c2559412105.min.js.br:sourcemap:3 Datadog Browser SDK: The data provided has been discarded as it is over the limit of 225280 characters: IMG[src="data:image/png;base64,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
+g @ vendor-998f6c2559412105.min.js.br:sourcemap:3
+vendor-998f6c2559412105.min.js.br:sourcemap:3 Datadog Browser SDK: The data provided has been discarded as it is over the limit of 225280 characters: IMG[src="data:image/png;base64,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
+g @ vendor-998f6c2559412105.min.js.br:sourcemap:3
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 GoTrueClient@sb-zcqoussqgigskextorag-auth-token:1 (2.99.0) 2026-03-09T19:54:53.045Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 GoTrueClient@sb-zcqoussqgigskextorag-auth-token:2 (2.99.0) 2026-03-09T19:54:53.117Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 GoTrueClient@sb-zcqoussqgigskextorag-auth-token:3 (2.99.0) 2026-03-09T19:54:53.119Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 GoTrueClient@sb-zcqoussqgigskextorag-auth-token:4 (2.99.0) 2026-03-09T19:54:53.120Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 🔒 [PROTECTED] loading: true user: undefined
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 🔐 AuthContext: Inicializando...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 📦 Sesión obtenida: Inactiva
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 ℹ️ No hay sesión activa
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 ✅ AuthContext inicializado, loading=false
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 🚫 [PROTECTED] No hay usuario, redirigiendo a login
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 🔒 [PROTECTED] loading: false user: undefined
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 ℹ️ No hay usuario autenticado
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 Uncaught ReferenceError: useNavigate is not defined
+    at LoginPage (LoginPage.tsx:10:20)
+    at ms (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:68027)
+    at _S (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:114634)
+    at _4 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:127720)
+    at HTMLUnknownElement.y (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:54006)
+    at HTMLUnknownElement.i (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28:4861)
+    at Object.iG (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:54331)
+    at ij (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:55284)
+    at ep (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:166948)
+    at SX (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160942)
+    at SK (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160868)
+    at SY (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160735)
+    at SS (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156365)
+    at code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:3:4482
+    at V (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1842)
+    at B (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1559)
+    at MessagePort.eo (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:3433)
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 🔄 Auth state changed: INITIAL_SESSION
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 Error handled by React Router default ErrorBoundary: ReferenceError: useNavigate is not defined
+    at LoginPage (LoginPage.tsx:10:20)
+    at ms (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:68027)
+    at _S (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:114634)
+    at _4 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:127720)
+    at ep (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:166810)
+    at SX (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160942)
+    at SK (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160868)
+    at SY (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160735)
+    at SS (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156365)
+    at code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:3:4482
+    at V (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1842)
+    at B (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1559)
+    at MessagePort.eo (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:3433) Component Stack
+    at DefaultErrorComponent (react-router.js?v=7c46752d:6187:15)
+    at RenderErrorBoundary (react-router.js?v=7c46752d:6206:5)
+    at DataRoutes (react-router.js?v=7c46752d:6994:3)
+    at Router (react-router.js?v=7c46752d:7086:13)
+    at RouterProvider (react-router.js?v=7c46752d:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:290:12506
+    at FGCmp (fginspector:3:55)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/App
+    at o$ (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:4461)
+    at O (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:570:13314)
+    at rr (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:624:13959)
+    at b7 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:641:10109)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/div
+    at o2 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:14021)
+    at T3 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:233330)
+    at yk (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:249134)
+    at ih (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:40:136003)
+    at hi (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:434:8433)
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 Uncaught ReferenceError: useNavigate is not defined
+    at LoginPage (LoginPage.tsx:10:20)
+    at ms (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:68027)
+    at _S (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:114634)
+    at _4 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:127720)
+    at HTMLUnknownElement.y (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:54006)
+    at HTMLUnknownElement.i (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28:4861)
+    at Object.iG (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:54331)
+    at ij (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:55284)
+    at ep (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:166948)
+    at SX (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160942)
+    at Sz (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160557)
+    at Sj (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160323)
+    at SI (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156868)
+    at SS (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156422)
+    at V (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1842)
+    at B (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1559)
+    at MessagePort.eo (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:3433)
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 Error handled by React Router default ErrorBoundary: ReferenceError: useNavigate is not defined
+    at LoginPage (LoginPage.tsx:10:20)
+    at ms (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:68027)
+    at _S (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:114634)
+    at _4 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:127720)
+    at ep (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:166810)
+    at SX (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160942)
+    at Sz (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160557)
+    at Sj (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160323)
+    at SI (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156868)
+    at SS (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156422)
+    at V (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1842)
+    at B (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1559)
+    at MessagePort.eo (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:3433) Component Stack
+    at DefaultErrorComponent (react-router.js?v=7c46752d:6187:15)
+    at RenderErrorBoundary (react-router.js?v=7c46752d:6206:5)
+    at DataRoutes (react-router.js?v=7c46752d:6994:3)
+    at Router (react-router.js?v=7c46752d:7086:13)
+    at RouterProvider (react-router.js?v=7c46752d:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:290:12506
+    at FGCmp (fginspector:3:55)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/App
+    at o$ (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:4461)
+    at O (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:570:13314)
+    at rr (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:624:13959)
+    at b7 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:641:10109)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/div
+    at o2 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:14021)
+    at T3 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:233330)
+    at yk (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:249134)
+    at ih (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:40:136003)
+    at hi (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:434:8433)
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 The above error occurred in the <LoginPage> component:
+
+    at LoginPage (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/src/app/pages/LoginPage.tsx:26:20)
+    at RenderedRoute (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:6296:26)
+    at Outlet (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:7077:26)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:36:36)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:22:32)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AppProviders
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:6296:26)
+    at RenderErrorBoundary (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:6206:5)
+    at DataRoutes (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:6994:3)
+    at Router (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:7086:13)
+    at RouterProvider (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:6760:3)
+    at ErrorBoundary (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at App
+    at o$ (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:55:4461)
+    at O (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:570:13314)
+    at rr (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:624:13959)
+    at b7 (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:641:10109)
+    at div
+    at o2 (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:55:14021)
+    at T3 (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:631:233330)
+    at yk (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:631:249134)
+    at ih (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:40:136003)
+    at hi (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:434:8433)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, RenderErrorBoundary.
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 React Router caught the following error during render ReferenceError: useNavigate is not defined
+    at LoginPage (LoginPage.tsx:10:20)
+    at ms (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:68027)
+    at _S (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:114634)
+    at _4 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:127720)
+    at ep (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:166810)
+    at SX (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160942)
+    at Sz (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160557)
+    at Sj (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160323)
+    at SI (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156868)
+    at SS (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156422)
+    at V (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1842)
+    at B (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1559)
+    at MessagePort.eo (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:3433) Component Stack
+    at RenderErrorBoundary (react-router.js?v=7c46752d:6206:5)
+    at DataRoutes (react-router.js?v=7c46752d:6994:3)
+    at Router (react-router.js?v=7c46752d:7086:13)
+    at RouterProvider (react-router.js?v=7c46752d:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:290:12506
+    at FGCmp (fginspector:3:55)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/App
+    at o$ (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:4461)
+    at O (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:570:13314)
+    at rr (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:624:13959)
+    at b7 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:641:10109)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/div
+    at o2 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:14021)
+    at T3 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:233330)
+    at yk (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:249134)
+    at ih (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:40:136003)
+    at hi (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:434:8433)
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+zcqoussqgigskextorag.supabase.co/auth/v1/token?grant_type=password:1  Failed to load resource: the server responded with a status of 400 ()
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 Uncaught ReferenceError: useNavigate is not defined
+    at LoginPage (LoginPage.tsx:10:20)
+    at ms (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:68027)
+    at _S (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:114634)
+    at _4 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:127720)
+    at HTMLUnknownElement.y (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:54006)
+    at HTMLUnknownElement.i (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28:4861)
+    at Object.iG (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:54331)
+    at ij (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:55284)
+    at ep (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:166948)
+    at SX (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160942)
+    at SK (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160868)
+    at SY (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160735)
+    at SS (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156365)
+    at code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:3:4482
+    at V (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1842)
+    at B (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1559)
+    at MessagePort.eo (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:3433)
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 Error handled by React Router default ErrorBoundary: ReferenceError: useNavigate is not defined
+    at LoginPage (LoginPage.tsx:10:20)
+    at ms (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:68027)
+    at _S (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:114634)
+    at _4 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:127720)
+    at ep (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:166810)
+    at SX (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160942)
+    at SK (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160868)
+    at SY (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160735)
+    at SS (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156365)
+    at code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:3:4482
+    at V (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1842)
+    at B (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1559)
+    at MessagePort.eo (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:3433) Component Stack
+    at DefaultErrorComponent (react-router.js?v=7c46752d:6187:15)
+    at RenderErrorBoundary (react-router.js?v=7c46752d:6206:5)
+    at DataRoutes (react-router.js?v=7c46752d:6994:3)
+    at Router (react-router.js?v=7c46752d:7086:13)
+    at RouterProvider (react-router.js?v=7c46752d:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:290:12506
+    at FGCmp (fginspector:3:55)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/App
+    at o$ (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:4461)
+    at O (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:570:13314)
+    at rr (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:624:13959)
+    at b7 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:641:10109)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/div
+    at o2 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:14021)
+    at T3 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:233330)
+    at yk (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:249134)
+    at ih (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:40:136003)
+    at hi (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:434:8433)
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 Uncaught ReferenceError: useNavigate is not defined
+    at LoginPage (LoginPage.tsx:10:20)
+    at ms (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:68027)
+    at _S (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:114634)
+    at _4 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:127720)
+    at HTMLUnknownElement.y (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:54006)
+    at HTMLUnknownElement.i (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28:4861)
+    at Object.iG (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:54331)
+    at ij (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:77:55284)
+    at ep (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:166948)
+    at SX (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160942)
+    at Sz (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160557)
+    at Sj (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160323)
+    at SI (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156868)
+    at SS (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156422)
+    at V (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1842)
+    at B (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1559)
+    at MessagePort.eo (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:3433)
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 Error handled by React Router default ErrorBoundary: ReferenceError: useNavigate is not defined
+    at LoginPage (LoginPage.tsx:10:20)
+    at ms (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:68027)
+    at _S (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:114634)
+    at _4 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:127720)
+    at ep (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:166810)
+    at SX (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160942)
+    at Sz (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160557)
+    at Sj (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160323)
+    at SI (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156868)
+    at SS (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156422)
+    at V (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1842)
+    at B (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1559)
+    at MessagePort.eo (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:3433) Component Stack
+    at DefaultErrorComponent (react-router.js?v=7c46752d:6187:15)
+    at RenderErrorBoundary (react-router.js?v=7c46752d:6206:5)
+    at DataRoutes (react-router.js?v=7c46752d:6994:3)
+    at Router (react-router.js?v=7c46752d:7086:13)
+    at RouterProvider (react-router.js?v=7c46752d:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:290:12506
+    at FGCmp (fginspector:3:55)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/App
+    at o$ (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:4461)
+    at O (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:570:13314)
+    at rr (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:624:13959)
+    at b7 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:641:10109)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/div
+    at o2 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:14021)
+    at T3 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:233330)
+    at yk (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:249134)
+    at ih (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:40:136003)
+    at hi (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:434:8433)
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 The above error occurred in the <LoginPage> component:
+
+    at LoginPage (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/src/app/pages/LoginPage.tsx:26:20)
+    at RenderedRoute (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:6296:26)
+    at Outlet (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:7077:26)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:36:36)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:22:32)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AppProviders
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:6296:26)
+    at RenderErrorBoundary (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:6206:5)
+    at DataRoutes (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:6994:3)
+    at Router (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:7086:13)
+    at RouterProvider (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=7c46752d:6760:3)
+    at ErrorBoundary (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:290:12506
+    at FGCmp (https://app-ij3m5pgfmslctnt7adgoowxnrnhfyiqrm5jzg6j3crscm7cnfw7a.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at App
+    at o$ (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:55:4461)
+    at O (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:570:13314)
+    at rr (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:624:13959)
+    at b7 (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:641:10109)
+    at div
+    at o2 (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:55:14021)
+    at T3 (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:631:233330)
+    at yk (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:631:249134)
+    at ih (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:40:136003)
+    at hi (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:434:8433)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, RenderErrorBoundary.
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28 React Router caught the following error during render ReferenceError: useNavigate is not defined
+    at LoginPage (LoginPage.tsx:10:20)
+    at ms (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:68027)
+    at _S (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:114634)
+    at _4 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:127720)
+    at ep (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:166810)
+    at SX (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160942)
+    at Sz (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160557)
+    at Sj (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:160323)
+    at SI (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156868)
+    at SS (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:89:156422)
+    at V (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1842)
+    at B (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:1559)
+    at MessagePort.eo (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:113:3433) Component Stack
+    at RenderErrorBoundary (react-router.js?v=7c46752d:6206:5)
+    at DataRoutes (react-router.js?v=7c46752d:6994:3)
+    at Router (react-router.js?v=7c46752d:7086:13)
+    at RouterProvider (react-router.js?v=7c46752d:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:290:12506
+    at FGCmp (fginspector:3:55)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/App
+    at o$ (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:4461)
+    at O (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:570:13314)
+    at rr (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:624:13959)
+    at b7 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:641:10109)
+    at f4970d14-cb3d-47df-b598-b8a7387d998f-v2-figmaiframepreview.figma.site/div
+    at o2 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:55:14021)
+    at T3 (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:233330)
+    at yk (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:631:249134)
+    at ih (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:40:136003)
+    at hi (code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:434:8433)
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:sourcemap:28

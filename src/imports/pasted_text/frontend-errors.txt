@@ -1,0 +1,65 @@
+ Running frontend commit 107bbd51e86fce9a104f472597b3e63a6aa8ffa6
+vendor-core-c1d527f9b495c128.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-c1d527f9b495c128.min.js.br:54
+vendor-core-c1d527f9b495c128.min.js.br:54 Loaded 38 scripts (6230564b), 0 from cache (0b)
+vendor-core-c1d527f9b495c128.min.js.br:54 [bootstrap_waiting_on_user_state] You appear to be logging a relative timestamp and not an epoch timestamp. Try adding performance.timeOrigin to the timestamp.
+(anonymous) @ vendor-core-c1d527f9b495c128.min.js.br:54
+vendor-core-c1d527f9b495c128.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-c1d527f9b495c128.min.js.br:54
+vendor-core-c1d527f9b495c128.min.js.br:54 [import] git: 640e7c0c7a50f673af49d46032d102e256b5e667, stamp: 8E3CE7D760547CC6
+vendor-core-c1d527f9b495c128.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-c1d527f9b495c128.min.js.br:54 [GPU] graphicsAPI:"WebGL 2", vendor:"Google Inc. (AMD)", renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" version:"OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))"
+vendor-core-c1d527f9b495c128.min.js.br:54 [Fullscreen] Ready in 2760.6ms
+vendor-core-c1d527f9b495c128.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-c1d527f9b495c128.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=CBmDvFzJA8uIxlFT&version=151&recentReload=0&file-load-streaming-compression&client_release=107bbd51e86fce9a104f472597b3e63a6aa8ffa6
+vendor-core-c1d527f9b495c128.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+/api/folders/170904917:1  Failed to load resource: the server responded with a status of 401 ()
+6380-30e6d96c159a7d0b.min.js.br:sourcemap:1273 Uncaught (in promise) E: XHR for "/api/folders/170904917" failed with status 401
+    at C (6380-30e6d96c159a7d0b.min.js.br:sourcemap:1273:13965)
+    at async Object.k [as get] (6380-30e6d96c159a7d0b.min.js.br:sourcemap:1273:14348)
+    at async 6380-30e6d96c159a7d0b.min.js.br:sourcemap:1070:146214
+    at async h.validate (figma_app_beta-3244bedc616e21d3.min.js.br:sourcemap:185:1521595)
+    at async h.fetchObject (6380-30e6d96c159a7d0b.min.js.br:sourcemap:353:136852)
+    at async f (6380-30e6d96c159a7d0b.min.js.br:sourcemap:353:117154)
+vendor-core-c1d527f9b495c128.min.js.br:54 [Sprigma] Sprig SDK is ready
+vendor-core-c1d527f9b495c128.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-c1d527f9b495c128.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+/api/files/batch:1  Failed to load resource: the server responded with a status of 401 ()
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 401 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/connection:1  Failed to load resource: the server responded with a status of 401 ()
+/api/make/ds_import_libraries?:1  Failed to load resource: the server responded with a status of 401 ()
+/api/user/plans:1  Failed to load resource: the server responded with a status of 401 ()
+/api/make/ds_import_libraries?:1  Failed to load resource: the server responded with a status of 401 ()
+vendor-core-c1d527f9b495c128.min.js.br:54 [Fullscreen] loadtime=31.05s maxmem=180841456
+vendor-core-c1d527f9b495c128.min.js.br:54 Sentry event id: 93006b69a3c54482a46ddeea26ab4846
+vendor-core-c1d527f9b495c128.min.js.br:54 [GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment
+(anonymous) @ vendor-core-c1d527f9b495c128.min.js.br:54
+/api/user/plans:1  Failed to load resource: the server responded with a status of 401 ()
+POS?p=f&preview-route=%2Finvite%2FeyJidXNpbmVzc0lkIjoiZDczMzJkNjYtMjUyYi00MTg1LTg4ODktNzczYWNhNmU4Y…:1 Not signed in with the identity provider.
+/api/user/plans:1  Failed to load resource: the server responded with a status of 401 ()
+/api/mcp/clients?file_key=5Fd3OHhMY2lssTlq3IRIEy:1  Failed to load resource: the server responded with a status of 401 ()
+vendor-core-c1d527f9b495c128.min.js.br:54 [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token.
+(anonymous) @ vendor-core-c1d527f9b495c128.min.js.br:54
+vendor-core-c1d527f9b495c128.min.js.br:54 [devtools] Initialized LS
+vendor-core-c1d527f9b495c128.min.js.br:54 [devtools] Initialized LS
+devtools_worker-28bcb023fe1485d0.min.js.br:sourcemap:1190 [esbuild-wasm] Initializing from URL: /webpack-artifacts/assets/2b68f2d3d5e8b3d6.wasm
+devtools_worker-28bcb023fe1485d0.min.js.br:sourcemap:1190 [esbuild-wasm] Initialized
+devtools_worker-28bcb023fe1485d0.min.js.br:sourcemap:3176 [bundleCode] Found 5 CSS files in VFS
+devtools_worker-28bcb023fe1485d0.min.js.br:sourcemap:3176 [bundleCode] Total CSS size to be processed by lightningcss: 0.01MB
+devtools_worker-28bcb023fe1485d0.min.js.br:sourcemap:1190 [lightningcss-wasm] Initialized
+devtools_worker-28bcb023fe1485d0.min.js.br:sourcemap:3176 [lightningCSS] Processing 0.12MB of CSS (environment: browser)
+devtools_worker-28bcb023fe1485d0.min.js.br:sourcemap:3176 [lightningCSS] Encoded size: 0.12MB
+devtools_worker-28bcb023fe1485d0.min.js.br:sourcemap:3176 [lightningCSS] Transform completed successfully
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 Creando nueva instancia de Supabase Client
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🚀 [APP] App component loading...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📧 Invitación decodificada: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Verificando si el usuario existe...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔐 AuthContext: Inicializando...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Sesión obtenida: Inactiva
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ No hay sesión activa
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ AuthContext inicializado, loading=false
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ No hay usuario autenticado
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Auth state changed: INITIAL_SESSION
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📥 Respuesta del servidor: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario existe: true
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ➡️ Redirigiendo a login...

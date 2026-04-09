@@ -1,0 +1,12 @@
+# Al desplegar con Supabase CLI, permite que el preflight OPTIONS llegue a la función.
+# Sin esto, el gateway puede responder error antes de ejecutar tu código (CORS en el navegador).
+# Si despliegas solo desde el Dashboard: en la función → desactiva "Verify JWT" / JWT verification.
+# Nombre en Supabase = slug en la URL (ej. swift-task). Si despliegas con CLI desde otra carpeta:
+# supabase functions deploy swift-task --project-ref <ref>
+[functions.swift-task]
+verify_jwt = false
+
+# Edge Function principal (make-server-3508045b)
+# Necesitamos que no verifique JWT para permitir endpoints que re-autentican server-side.
+[functions.make-server-3508045b]
+verify_jwt = false

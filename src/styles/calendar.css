@@ -1,0 +1,238 @@
+/* Override react-day-picker default styles */
+.date-calendar-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+.date-calendar-wrapper .rdp {
+  --rdp-accent-color: #14b8a6;
+  --rdp-background-color: #ccfbf1;
+  margin: 0;
+  width: 100%;
+}
+
+/* Responsive setup */
+@media (max-width: 639px) {
+  .date-calendar-wrapper .rdp {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 640px) {
+  .date-calendar-wrapper .rdp {
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .date-calendar-wrapper .rdp {
+    margin: 1.5rem;
+  }
+}
+
+.date-calendar-wrapper .rdp-months {
+  justify-content: center;
+  width: 100%;
+}
+
+.date-calendar-wrapper .rdp-month {
+  width: 100%;
+  max-width: 100%;
+}
+
+.date-calendar-wrapper .rdp-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.date-calendar-wrapper .rdp-caption_label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+@media (min-width: 640px) {
+  .date-calendar-wrapper .rdp-caption_label {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .date-calendar-wrapper .rdp-caption_label {
+    font-size: 1.125rem;
+  }
+}
+
+.date-calendar-wrapper .rdp-nav {
+  position: absolute;
+  top: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.date-calendar-wrapper .rdp-nav_button {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.375rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .date-calendar-wrapper .rdp-nav_button {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.date-calendar-wrapper .rdp-nav_button:hover {
+  opacity: 1;
+  background: #f3f4f6;
+}
+
+.date-calendar-wrapper .rdp-nav_button_previous {
+  left: 0;
+}
+
+.date-calendar-wrapper .rdp-nav_button_next {
+  right: 0;
+}
+
+.date-calendar-wrapper .rdp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.date-calendar-wrapper .rdp-head_row {
+  display: flex;
+  width: 100%;
+}
+
+.date-calendar-wrapper .rdp-head_cell {
+  flex: 1;
+  text-align: center;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  padding: 0.25rem 0;
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .date-calendar-wrapper .rdp-head_cell {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .date-calendar-wrapper .rdp-head_cell {
+    font-size: 0.875rem;
+  }
+}
+
+.date-calendar-wrapper .rdp-row {
+  display: flex;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .date-calendar-wrapper .rdp-row {
+    margin-top: 0.5rem;
+  }
+}
+
+.date-calendar-wrapper .rdp-cell {
+  flex: 1;
+  text-align: center;
+  padding: 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-calendar-wrapper .rdp-day {
+  width: calc(100% - 4px);
+  aspect-ratio: 1;
+  max-width: 48px;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #111827;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .date-calendar-wrapper .rdp-day {
+    font-size: 0.875rem;
+    max-width: 52px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .date-calendar-wrapper .rdp-day {
+    font-size: 1rem;
+    max-width: 56px;
+  }
+}
+
+.date-calendar-wrapper .rdp-day:hover:not(.rdp-day_selected):not(.rdp-day_disabled) {
+  background-color: #f3f4f6;
+}
+
+.date-calendar-wrapper .rdp-day_selected {
+  background-color: #14b8a6;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.date-calendar-wrapper .rdp-day_selected:hover {
+  background-color: #0d9488;
+}
+
+.date-calendar-wrapper .rdp-day_today:not(.rdp-day_selected) {
+  background-color: #f3f4f6;
+  font-weight: 500;
+}
+
+.date-calendar-wrapper .rdp-day_outside {
+  color: #d1d5db;
+  opacity: 0.5;
+}
+
+.date-calendar-wrapper .rdp-day_disabled {
+  color: #d1d5db;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.date-calendar-wrapper .rdp-day_range_start,
+.date-calendar-wrapper .rdp-day_range_end {
+  background-color: #14b8a6;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.date-calendar-wrapper .rdp-day_range_middle {
+  background-color: #ccfbf1;
+  color: #111827;
+}

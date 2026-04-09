@@ -1,0 +1,193 @@
+742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site/superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site/superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site/superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site/superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 Creando nueva instancia de Supabase Client
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🚀 [APP] App component loading...
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔐 AuthContext: Inicializando...
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats net::ERR_FAILED
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+(anonymous) @ SuperAdminPage.tsx:145
+(anonymous) @ SuperAdminPage.tsx:186
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:65
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/stats:1  Failed to load resource: net::ERR_FAILED
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 [SUPERADMIN] loadData error: TypeError: Failed to fetch
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:90:9794
+    at SuperAdminPage.tsx:145:9
+    at SuperAdminPage.tsx:186:17
+    at TN (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:138396)
+    at T8 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:151856)
+    at T7 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:151634)
+    at T6 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:151542)
+    at T4 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:151420)
+    at S1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:163585)
+    at SQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:163247)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:37:162379
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:65:74721
+    at V (code_components_preview_iframe-38049e48d7f0a436.min.js.br:61:1842)
+    at B (code_components_preview_iframe-38049e48d7f0a436.min.js.br:61:1559)
+    at MessagePort.eo (code_components_preview_iframe-38049e48d7f0a436.min.js.br:61:3433)
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+r @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:17
+error @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+(anonymous) @ SuperAdminPage.tsx:178
+await in (anonymous)
+(anonymous) @ SuperAdminPage.tsx:186
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:65
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 Creando nueva instancia de Supabase Client
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+superadmin:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users' from origin 'https://742cdcc3-715a-443a-a0da-c3768c35d558-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: Request header field x-superadmin-key is not allowed by Access-Control-Allow-Headers in preflight response.
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users net::ERR_FAILED
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+(anonymous) @ SuperAdminPage.tsx:151
+(anonymous) @ SuperAdminPage.tsx:186
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:65
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/superadmin/users:1  Failed to load resource: net::ERR_FAILED
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🚀 [APP] App component loading...
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔐 AuthContext: Inicializando...
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🚀 [APP] App component loading...
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🚀 [APP] App component loading...
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🚀 [APP] App component loading...
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🚀 [APP] App component loading...
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔍 Sidebar - Business actualizado: {name: undefined, id: undefined, logo: null, logo_url: null, loadedAt: undefined, …}
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ Negocio cargado: be a hero 5
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ Negocio cargado: be a hero 5
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ⚠️ Error leyendo negocio:  TypeError: Failed to fetch
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+r @ code_components_prev…f0a436.min.js.br:17
+loadCurrentBusiness @ AuthContext.tsx:64
+await in loadCurrentBusiness
+(anonymous) @ AuthContext.tsx:120
+(anonymous) @ @supabase_supabase-js.js?v=f26b253a:11612
+_useSession @ @supabase_supabase-js.js?v=f26b253a:11184
+await in _useSession
+_emitInitialSession @ @supabase_supabase-js.js?v=f26b253a:11606
+(anonymous) @ @supabase_supabase-js.js?v=f26b253a:11600
+(anonymous) @ @supabase_supabase-js.js?v=f26b253a:11151
+(anonymous) @ @supabase_supabase-js.js?v=f26b253a:9094
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ⚠️ Error leyendo negocio:  TypeError: Failed to fetch
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+r @ code_components_prev…f0a436.min.js.br:17
+loadCurrentBusiness @ AuthContext.tsx:64
+await in loadCurrentBusiness
+(anonymous) @ AuthContext.tsx:120
+(anonymous) @ @supabase_supabase-js.js?v=f26b253a:11958
+_notifyAllSubscribers @ @supabase_supabase-js.js?v=f26b253a:11956
+_recoverAndRefresh @ @supabase_supabase-js.js?v=f26b253a:11899
+await in _recoverAndRefresh
+_initialize @ @supabase_supabase-js.js?v=f26b253a:10234
+await in _initialize
+(anonymous) @ @supabase_supabase-js.js?v=f26b253a:10186
+(anonymous) @ @supabase_supabase-js.js?v=f26b253a:11151
+(anonymous) @ @supabase_supabase-js.js?v=f26b253a:9094
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ❌ ERROR CARGANDO NEGOCIOS: TypeError: Failed to fetch
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+r @ code_components_prev…f0a436.min.js.br:17
+(anonymous) @ BusinessContext.tsx:148
+await in (anonymous)
+(anonymous) @ BusinessProtectedRoute.tsx:20
+TN @ code_components_prev…f0a436.min.js.br:37
+T8 @ code_components_prev…f0a436.min.js.br:37
+T7 @ code_components_prev…f0a436.min.js.br:37
+T6 @ code_components_prev…f0a436.min.js.br:37
+T4 @ code_components_prev…f0a436.min.js.br:37
+S1 @ code_components_prev…f0a436.min.js.br:37
+SQ @ code_components_prev…f0a436.min.js.br:37
+SO @ code_components_prev…f0a436.min.js.br:37
+pC @ code_components_prev…f0a436.min.js.br:37
+SJ @ code_components_prev…f0a436.min.js.br:37
+SZ @ code_components_prev…f0a436.min.js.br:37
+Sv @ code_components_prev…f0a436.min.js.br:37
+SS @ code_components_prev…f0a436.min.js.br:37
+(anonymous) @ code_components_prev…f0a436.min.js.br:65
+V @ code_components_prev…f0a436.min.js.br:61
+B @ code_components_prev…f0a436.min.js.br:61
+eo @ code_components_prev…f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ⚠️ Error leyendo negocio:  TypeError: Failed to fetch
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+r @ code_components_prev…f0a436.min.js.br:17
+loadCurrentBusiness @ AuthContext.tsx:64
+await in loadCurrentBusiness
+(anonymous) @ AuthContext.tsx:100
+Promise.then
+(anonymous) @ AuthContext.tsx:89
+TN @ code_components_prev…f0a436.min.js.br:37
+T8 @ code_components_prev…f0a436.min.js.br:37
+T7 @ code_components_prev…f0a436.min.js.br:37
+T6 @ code_components_prev…f0a436.min.js.br:37
+T4 @ code_components_prev…f0a436.min.js.br:37
+S1 @ code_components_prev…f0a436.min.js.br:37
+SQ @ code_components_prev…f0a436.min.js.br:37
+(anonymous) @ code_components_prev…f0a436.min.js.br:37
+(anonymous) @ code_components_prev…f0a436.min.js.br:65
+V @ code_components_prev…f0a436.min.js.br:61
+B @ code_components_prev…f0a436.min.js.br:61
+eo @ code_components_prev…f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ Negocio cargado: be a hero 5
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ Negocio cargado: be a hero 5
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🏢 Permisos para negocio be a hero 5: is_active=true, role=admin
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🏢 Total negocios encontrados: 5
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)

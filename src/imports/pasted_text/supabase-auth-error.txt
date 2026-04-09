@@ -1,0 +1,246 @@
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 📝 Registrando usuario: 12mar@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ✅ Usuario creado: a8dc1228-e8c0-4c60-87e6-02427ba74de4
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🏢 Creando negocio inicial...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28  POST https://zcqoussqgigskextorag.supabase.co/rest/v1/businesses?columns=%22name%22%2C%22owner_id%22%2C%22owner_email%22%2C%22phone%22%2C%22country%22%2C%22currency%22%2C%22active%22 400 (Bad Request)
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=e6e1ff27:12780
+(anonymous) @ @supabase_supabase-js.js?v=e6e1ff27:12794
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=e6e1ff27:274
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ❌ Error al crear negocio: {code: 'PGRST204', details: null, hint: null, message: "Could not find the 'owner_email' column of 'businesses' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+r @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:69
+error @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+handleRegister @ RegisterPage.tsx:93
+await in handleRegister
+y @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+ik @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+ij @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+iz @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+dP @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dM @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dG @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dk @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+SR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+iR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+d$ @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+lO @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lN @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lv @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🚫 [PROTECTED] No hay usuario, redirigiendo a login
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔒 [PROTECTED] loading: false user: undefined
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔐 Iniciando sesión con contraseña...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 📧 Email: 12mar@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28  POST https://zcqoussqgigskextorag.supabase.co/auth/v1/token?grant_type=password 400 (Bad Request)
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=e6e1ff27:8105
+_handleRequest2 @ @supabase_supabase-js.js?v=e6e1ff27:8395
+_request @ @supabase_supabase-js.js?v=e6e1ff27:8385
+signInWithPassword @ @supabase_supabase-js.js?v=e6e1ff27:10532
+handleLogin @ LoginPage.tsx:55
+y @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+ik @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+ij @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+iz @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+dP @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dM @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dG @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dk @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+SR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+iR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+d$ @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+lO @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lN @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lv @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ❌ Error al iniciar sesión: AuthApiError: Email not confirmed
+    at handleError2 (@supabase_supabase-js.js?v=e6e1ff27:8360:9)
+    at async _handleRequest2 (@supabase_supabase-js.js?v=e6e1ff27:8401:5)
+    at async _request (@supabase_supabase-js.js?v=e6e1ff27:8385:16)
+    at async SupabaseAuthClient.signInWithPassword (@supabase_supabase-js.js?v=e6e1ff27:10532:15)
+    at async handleLogin (LoginPage.tsx:55:31)
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+r @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:69
+error @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+handleLogin @ LoginPage.tsx:61
+await in handleLogin
+y @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+ik @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+ij @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+iz @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+dP @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dM @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dG @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dk @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+SR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+iR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+d$ @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+lO @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lN @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lv @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ❌ Error completo: {
+  "__isAuthError": true,
+  "name": "AuthApiError",
+  "status": 400,
+  "code": "email_not_confirmed"
+}
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+r @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:69
+error @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+handleLogin @ LoginPage.tsx:62
+await in handleLogin
+y @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+ik @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+ij @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+iz @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+dP @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dM @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dG @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dk @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+SR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+iR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+d$ @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+lO @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lN @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lv @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 Error logging in: Error: Correo o contraseña incorrectos
+    at handleLogin (LoginPage.tsx:63:15)
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+r @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:69
+error @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+handleLogin @ LoginPage.tsx:76
+await in handleLogin
+y @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+ik @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+ij @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+iz @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+dP @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dM @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dG @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dk @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+SR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+iR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+d$ @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+lO @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lN @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lv @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 🔐 Iniciando sesión con contraseña...
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 📧 Email: 12mar@hotmail.com
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28  POST https://zcqoussqgigskextorag.supabase.co/auth/v1/token?grant_type=password 400 (Bad Request)
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=e6e1ff27:8105
+_handleRequest2 @ @supabase_supabase-js.js?v=e6e1ff27:8395
+_request @ @supabase_supabase-js.js?v=e6e1ff27:8385
+signInWithPassword @ @supabase_supabase-js.js?v=e6e1ff27:10532
+handleLogin @ LoginPage.tsx:55
+y @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+ik @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+ij @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+iz @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+dP @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dM @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dG @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dk @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+SR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+iR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+d$ @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+lO @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lN @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lv @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ❌ Error al iniciar sesión: AuthApiError: Email not confirmed
+    at handleError2 (@supabase_supabase-js.js?v=e6e1ff27:8360:9)
+    at async _handleRequest2 (@supabase_supabase-js.js?v=e6e1ff27:8401:5)
+    at async _request (@supabase_supabase-js.js?v=e6e1ff27:8385:16)
+    at async SupabaseAuthClient.signInWithPassword (@supabase_supabase-js.js?v=e6e1ff27:10532:15)
+    at async handleLogin (LoginPage.tsx:55:31)
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+r @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:69
+error @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+handleLogin @ LoginPage.tsx:61
+await in handleLogin
+y @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+ik @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+ij @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+iz @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+dP @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dM @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dG @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dk @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+SR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+iR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+d$ @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+lO @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lN @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lv @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 ❌ Error completo: {
+  "__isAuthError": true,
+  "name": "AuthApiError",
+  "status": 400,
+  "code": "email_not_confirmed"
+}
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+r @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:69
+error @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+handleLogin @ LoginPage.tsx:62
+await in handleLogin
+y @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+ik @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+ij @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+iz @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+dP @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dM @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dG @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dk @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+SR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+iR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+d$ @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+lO @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lN @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lv @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+code_components_preview_iframe-7412fd47a5113f44.min.js.br:28 Error logging in: Error: Correo o contraseña incorrectos
+    at handleLogin (LoginPage.tsx:63:15)
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+r @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:69
+error @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+handleLogin @ LoginPage.tsx:76
+await in handleLogin
+y @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28
+ik @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+ij @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+iz @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+dP @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dM @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dG @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+dk @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+SR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+iR @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+d$ @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:89
+lO @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lN @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+lv @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:77
+i @ code_components_preview_iframe-7412fd47a5113f44.min.js.br:28

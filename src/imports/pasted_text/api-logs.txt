@@ -1,0 +1,104 @@
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API] Getting sales for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API] Getting expenses for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API DIRECT] Employees retrieved: 1
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/db/sales 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getSales @ api.ts:564
+await in getSales
+loadData @ MovementsPage.tsx:391
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ⚠️ [API] Edge Function /db/sales returned 404, falling back to direct query
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+r @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:17
+warn @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getSales @ api.ts:572
+await in getSales
+loadData @ MovementsPage.tsx:391
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/db/expenses 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getExpenses @ api.ts:793
+await in getExpenses
+loadData @ MovementsPage.tsx:392
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ⚠️ [API] Edge Function /db/expenses returned 404, falling back to direct query
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+r @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:17
+warn @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getExpenses @ api.ts:801
+await in getExpenses
+loadData @ MovementsPage.tsx:392
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API] Sales via direct query: 0
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API] Expenses via direct query: 0
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=fZVaKGRFjDX2qcjH-0&preview-route=%2Fmovements:1 The resource https://www.figma.com/api/user/state?team_id=1308841176238026529&file_key=5Fd3OHhMY2lssTlq3IRIEy&fuid=1041165271660718653 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=fZVaKGRFjDX2qcjH-0&preview-route=%2Fmovements:1 The resource https://www.figma.com/api/session/state?fuid=1041165271660718653 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API DIRECT] Products retrieved: 5

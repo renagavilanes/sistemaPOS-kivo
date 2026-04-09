@@ -1,0 +1,298 @@
+ Running frontend commit 107bbd51e86fce9a104f472597b3e63a6aa8ffa6
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+A.logExposureCallback @ 4239-c4c06d09094e9c07.min.js.br:1280
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 34 scripts (5985689b), 0 from cache (0b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [bootstrap_waiting_on_user_state] You appear to be logging a relative timestamp and not an epoch timestamp. Try adding performance.timeOrigin to the timestamp.
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+logVital @ 4239-c4c06d09094e9c07.min.js.br:1619
+K @ 4239-c4c06d09094e9c07.min.js.br:188
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:188
+time @ 4239-c4c06d09094e9c07.min.js.br:386
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:188
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: 640e7c0c7a50f673af49d46032d102e256b5e667, stamp: 8E3CE7D760547CC6
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 7145.8ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=FpEk49vsZ8ZBi8zJ&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=107bbd51e86fce9a104f472597b3e63a6aa8ffa6
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+POS?p=f&t=npUZIrgK2XBTDHSV-0&preview-route=%2Femployees:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=29.03s maxmem=160263164
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 400 ()
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+ 🔵 Creando nueva instancia de Supabase Client
+ 🔒 [PROTECTED] loading: true user: undefined
+ 🔐 AuthContext: Inicializando...
+ 📦 Sesión obtenida: Inactiva
+ ℹ️ No hay sesión activa
+ ✅ AuthContext inicializado, loading=false
+ 🚫 [PROTECTED] No hay usuario, redirigiendo a login
+ 🔒 [PROTECTED] loading: false user: undefined
+ ℹ️ No hay usuario autenticado
+ 🔄 Auth state changed: INITIAL_SESSION
+ 🔍 Leyendo localStorage: null
+ 📦 Cuentas guardadas encontradas: 0
+ 📦 Detalle de cuentas: Array(0)
+ ℹ️ No hay cuentas, mostrando formulario completo
+ 🔐 Iniciando sesión con: renagavilanes@hotmail.com
+ 🔄 Auth state changed: SIGNED_IN
+ ℹ️ No hay negocio seleccionado
+ ✅ Sesión iniciada: renagavilanes@hotmail.com
+ 💾 Guardando cuenta en localStorage
+ 🔍 Leyendo localStorage: null
+ 💾 Guardando en localStorage: 1 cuentas
+ ✅ Verificación guardado: OK
+ ✅ Usuario ya tiene sesión activa, redirigiendo...
+ 🔄 Usuario y sesión listos, cargando negocios...
+ 🏢 ======== CARGANDO NEGOCIOS ========
+ 👤 Usuario: renagavilanes@hotmail.com
+ 🔍 Sidebar - Business actualizado: Object
+ 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+ 🔍 [SALES] Estado: Object
+ ✅ Negocios encontrados: 2
+    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 💾 Business ID guardado: null
+ 🎯 Negocio seleccionado: be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+ 🏢 ========================================
+ 🔵 [API DIRECT] Getting customers for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🔵 [API DIRECT] Getting customers for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🔵 [API DIRECT] Getting categories for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🔵 [API DIRECT] Getting products for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ 🔍 [SALES] Estado: Object
+ ✅ [API DIRECT] Products retrieved: 0
+ ✅ Productos cargados en SalesPage: 0 productos
+ ✅ [API DIRECT] Categories retrieved: 0
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ 📥 Loading employees from API...
+ 🔵 [API DIRECT] Getting employees for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+ ✅ [API DIRECT] Employees retrieved: 1
+ ✅ Employees loaded: 1
+ 🔄 Cambiando a negocio: be a hero 5
+ 🔄 Evento businessChanged recibido
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 📥 Loading employees from API...
+ 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+ ✅ [API DIRECT] Employees retrieved: 5
+ ✅ Employees loaded: 5
+ ✅ Negocio cargado desde tabla businesses: be a hero 5
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 Creando nueva instancia de Supabase Client
+ 🔒 [PROTECTED] loading: true user: undefined
+ 🔐 AuthContext: Inicializando...
+ 🔄 Auth state changed: SIGNED_IN
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔄 Auth state changed: SIGNED_IN
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 Sidebar - Business actualizado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+ 📥 Loading employees from API...
+ 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+ 🔄 Usuario y sesión listos, cargando negocios...
+ 🏢 ======== CARGANDO NEGOCIOS ========
+ 👤 Usuario: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Sesión obtenida: Activa
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 Token expires at: 2026-03-15T23:22:24.000Z
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 Current time: 2026-03-15T22:22:35.123Z
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 Token is expired? false
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario establecido: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔧 [API] Fixing employee user_id...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cargando negocio desde tabla businesses...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ AuthContext inicializado, loading=false
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 [SALES] Estado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Auth state changed: INITIAL_SESSION
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cargando negocio desde tabla businesses...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+ 🔵 [API DIRECT] Getting categories for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 [SALES] Estado: Object
+ ✅ [API DIRECT] Employees retrieved: 5
+ ✅ Employees loaded: 5
+ ✅ [API DIRECT] Categories retrieved: 0
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be a hero 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocios encontrados: 2
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 💾 Business ID guardado: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ========================================
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting categories for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 [SALES] Estado: Object
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ Error fixing employee user_id (non-critical): Error al arreglar el empleado
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Categories retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+ ✅ Negocio cargado desde tabla businesses: be a hero 5
+ 🔍 Sidebar - Business actualizado: Object
+ ✅ Negocios encontrados: 2
+    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 💾 Business ID guardado: d7332d66-252b-4185-8889-773aca6e8b54
+ 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 🏢 ========================================
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 [SALES] Estado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+ 📥 Loading employees from API...
+ 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocios encontrados: 2
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 💾 Business ID guardado: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ========================================
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 [SALES] Estado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be a hero 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: Object
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Products retrieved: 3
+ ✅ Productos cargados en SalesPage: 3 productos
+ ✅ [API DIRECT] Employees retrieved: 5
+ ✅ Employees loaded: 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be a hero 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocios encontrados: 2
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 💾 Business ID guardado: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ========================================
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 [SALES] Estado: Object
+ ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Products retrieved: 3
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Productos cargados en SalesPage: 3 productos
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+ 🚀🚀🚀 [API VERSION]: v2.1-SERVER-MODE-20260315
+ 🚀🚀🚀 [API v2] Creating employee via SERVER with auto-confirmed email 🚀🚀🚀
+ 📧 [API v2] Email: ejemplo7@hotmail.com
+ 👤 [API v2] Name: rena7
+ 🔵 [API DIRECT] Getting employee by email: ejemplo7@hotmail.com
+  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&email=eq.ejemplo7%40hotmail.com&is_active=eq.true 406 (Not Acceptable)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B41UhDnDRJFP4lcqOWYdsj-EFmLPkrDSvUyN0mYYmvuf84~YI3K-uzwnMQhUsJjdce0odu45oxkgQzdy17R4nAaMoE5xmSIKme6qzHCRLpJ4w7iAzZzGGPUwoScjBWTjyFMYg0Rf58nHct4LWiwHXe6Lmc-YrWeKPMij0hmQzCpn~1gRNvIyc0yN7k9KubZNNBxpsSWIBjhFzPb7JUNEOaC5c9W1cFpGrYnjjqbPcfWJGEXyfDGfMA~uqLlyCrt1heHI7-9AXYhaKpRH8Y6Pt3eeX-4PoWKzfTwGpwZEICvHKN5~PMoJkxmLJGsppqMh0KP7zsHrpHxW4Iz4CX4LWQ__:20057
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B41UhDnDRJFP4lcqOWYdsj-EFmLPkrDSvUyN0mYYmvuf84~YI3K-uzwnMQhUsJjdce0odu45oxkgQzdy17R4nAaMoE5xmSIKme6qzHCRLpJ4w7iAzZzGGPUwoScjBWTjyFMYg0Rf58nHct4LWiwHXe6Lmc-YrWeKPMij0hmQzCpn~1gRNvIyc0yN7k9KubZNNBxpsSWIBjhFzPb7JUNEOaC5c9W1cFpGrYnjjqbPcfWJGEXyfDGfMA~uqLlyCrt1heHI7-9AXYhaKpRH8Y6Pt3eeX-4PoWKzfTwGpwZEICvHKN5~PMoJkxmLJGsppqMh0KP7zsHrpHxW4Iz4CX4LWQ__:20063
+await in (anonymous)
+then @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B41UhDnDRJFP4lcqOWYdsj-EFmLPkrDSvUyN0mYYmvuf84~YI3K-uzwnMQhUsJjdce0odu45oxkgQzdy17R4nAaMoE5xmSIKme6qzHCRLpJ4w7iAzZzGGPUwoScjBWTjyFMYg0Rf58nHct4LWiwHXe6Lmc-YrWeKPMij0hmQzCpn~1gRNvIyc0yN7k9KubZNNBxpsSWIBjhFzPb7JUNEOaC5c9W1cFpGrYnjjqbPcfWJGEXyfDGfMA~uqLlyCrt1heHI7-9AXYhaKpRH8Y6Pt3eeX-4PoWKzfTwGpwZEICvHKN5~PMoJkxmLJGsppqMh0KP7zsHrpHxW4Iz4CX4LWQ__:9777
+ ℹ️ [API DIRECT] Employee not found
+ 🔐 [API v2] Generated temporary password: Tempyecq7x40!
+ 📡 [API v2] Calling server endpoint: /create-employee-v2
+  POST https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/create-employee-v2 500 (Internal Server Error)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+Uj @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B41UhDnDRJFP4lcqOWYdsj-EFmLPkrDSvUyN0mYYmvuf84~YI3K-uzwnMQhUsJjdce0odu45oxkgQzdy17R4nAaMoE5xmSIKme6qzHCRLpJ4w7iAzZzGGPUwoScjBWTjyFMYg0Rf58nHct4LWiwHXe6Lmc-YrWeKPMij0hmQzCpn~1gRNvIyc0yN7k9KubZNNBxpsSWIBjhFzPb7JUNEOaC5c9W1cFpGrYnjjqbPcfWJGEXyfDGfMA~uqLlyCrt1heHI7-9AXYhaKpRH8Y6Pt3eeX-4PoWKzfTwGpwZEICvHKN5~PMoJkxmLJGsppqMh0KP7zsHrpHxW4Iz4CX4LWQ__:20957
+await in Uj
+C @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B41UhDnDRJFP4lcqOWYdsj-EFmLPkrDSvUyN0mYYmvuf84~YI3K-uzwnMQhUsJjdce0odu45oxkgQzdy17R4nAaMoE5xmSIKme6qzHCRLpJ4w7iAzZzGGPUwoScjBWTjyFMYg0Rf58nHct4LWiwHXe6Lmc-YrWeKPMij0hmQzCpn~1gRNvIyc0yN7k9KubZNNBxpsSWIBjhFzPb7JUNEOaC5c9W1cFpGrYnjjqbPcfWJGEXyfDGfMA~uqLlyCrt1heHI7-9AXYhaKpRH8Y6Pt3eeX-4PoWKzfTwGpwZEICvHKN5~PMoJkxmLJGsppqMh0KP7zsHrpHxW4Iz4CX4LWQ__:70629
+y @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ik @ code_components_prev…153e7b.min.js.br:25
+ij @ code_components_prev…153e7b.min.js.br:25
+iz @ code_components_prev…153e7b.min.js.br:25
+dP @ code_components_prev…153e7b.min.js.br:37
+dM @ code_components_prev…153e7b.min.js.br:37
+dG @ code_components_prev…153e7b.min.js.br:37
+dk @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:37
+SR @ code_components_prev…153e7b.min.js.br:37
+iR @ code_components_prev…153e7b.min.js.br:25
+d$ @ code_components_prev…153e7b.min.js.br:37
+lO @ code_components_prev…153e7b.min.js.br:25
+lN @ code_components_prev…153e7b.min.js.br:25
+lv @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ 📥 [API v2] Server response: {error: 'invalid input syntax for type uuid: "undefined"'}
+ ❌ [API v2] Employee creation failed: 500 {error: 'invalid input syntax for type uuid: "undefined"'}
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+r @ code_components_prev…153e7b.min.js.br:17
+error @ code_components_prev…153e7b.min.js.br:90
+Uj @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B41UhDnDRJFP4lcqOWYdsj-EFmLPkrDSvUyN0mYYmvuf84~YI3K-uzwnMQhUsJjdce0odu45oxkgQzdy17R4nAaMoE5xmSIKme6qzHCRLpJ4w7iAzZzGGPUwoScjBWTjyFMYg0Rf58nHct4LWiwHXe6Lmc-YrWeKPMij0hmQzCpn~1gRNvIyc0yN7k9KubZNNBxpsSWIBjhFzPb7JUNEOaC5c9W1cFpGrYnjjqbPcfWJGEXyfDGfMA~uqLlyCrt1heHI7-9AXYhaKpRH8Y6Pt3eeX-4PoWKzfTwGpwZEICvHKN5~PMoJkxmLJGsppqMh0KP7zsHrpHxW4Iz4CX4LWQ__:20977
+await in Uj
+C @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B41UhDnDRJFP4lcqOWYdsj-EFmLPkrDSvUyN0mYYmvuf84~YI3K-uzwnMQhUsJjdce0odu45oxkgQzdy17R4nAaMoE5xmSIKme6qzHCRLpJ4w7iAzZzGGPUwoScjBWTjyFMYg0Rf58nHct4LWiwHXe6Lmc-YrWeKPMij0hmQzCpn~1gRNvIyc0yN7k9KubZNNBxpsSWIBjhFzPb7JUNEOaC5c9W1cFpGrYnjjqbPcfWJGEXyfDGfMA~uqLlyCrt1heHI7-9AXYhaKpRH8Y6Pt3eeX-4PoWKzfTwGpwZEICvHKN5~PMoJkxmLJGsppqMh0KP7zsHrpHxW4Iz4CX4LWQ__:70629
+y @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ik @ code_components_prev…153e7b.min.js.br:25
+ij @ code_components_prev…153e7b.min.js.br:25
+iz @ code_components_prev…153e7b.min.js.br:25
+dP @ code_components_prev…153e7b.min.js.br:37
+dM @ code_components_prev…153e7b.min.js.br:37
+dG @ code_components_prev…153e7b.min.js.br:37
+dk @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:37
+SR @ code_components_prev…153e7b.min.js.br:37
+iR @ code_components_prev…153e7b.min.js.br:25
+d$ @ code_components_prev…153e7b.min.js.br:37
+lO @ code_components_prev…153e7b.min.js.br:25
+lN @ code_components_prev…153e7b.min.js.br:25
+lv @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ Error: invalid input syntax for type uuid: "undefined"
+    at Uj (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B41UhDnDRJFP4lcqOWYdsj-EFmLPkrDSvUyN0mYYmvuf84~YI3K-uzwnMQhUsJjdce0odu45oxkgQzdy17R4nAaMoE5xmSIKme6qzHCRLpJ4w7iAzZzGGPUwoScjBWTjyFMYg0Rf58nHct4LWiwHXe6Lmc-YrWeKPMij0hmQzCpn~1gRNvIyc0yN7k9KubZNNBxpsSWIBjhFzPb7JUNEOaC5c9W1cFpGrYnjjqbPcfWJGEXyfDGfMA~uqLlyCrt1heHI7-9AXYhaKpRH8Y6Pt3eeX-4PoWKzfTwGpwZEICvHKN5~PMoJkxmLJGsppqMh0KP7zsHrpHxW4Iz4CX4LWQ__:20977:79)
+    at async C (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B41UhDnDRJFP4lcqOWYdsj-EFmLPkrDSvUyN0mYYmvuf84~YI3K-uzwnMQhUsJjdce0odu45oxkgQzdy17R4nAaMoE5xmSIKme6qzHCRLpJ4w7iAzZzGGPUwoScjBWTjyFMYg0Rf58nHct4LWiwHXe6Lmc-YrWeKPMij0hmQzCpn~1gRNvIyc0yN7k9KubZNNBxpsSWIBjhFzPb7JUNEOaC5c9W1cFpGrYnjjqbPcfWJGEXyfDGfMA~uqLlyCrt1heHI7-9AXYhaKpRH8Y6Pt3eeX-4PoWKzfTwGpwZEICvHKN5~PMoJkxmLJGsppqMh0KP7zsHrpHxW4Iz4CX4LWQ__:70629:21)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+r @ code_components_prev…153e7b.min.js.br:17
+error @ code_components_prev…153e7b.min.js.br:90
+C @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B41UhDnDRJFP4lcqOWYdsj-EFmLPkrDSvUyN0mYYmvuf84~YI3K-uzwnMQhUsJjdce0odu45oxkgQzdy17R4nAaMoE5xmSIKme6qzHCRLpJ4w7iAzZzGGPUwoScjBWTjyFMYg0Rf58nHct4LWiwHXe6Lmc-YrWeKPMij0hmQzCpn~1gRNvIyc0yN7k9KubZNNBxpsSWIBjhFzPb7JUNEOaC5c9W1cFpGrYnjjqbPcfWJGEXyfDGfMA~uqLlyCrt1heHI7-9AXYhaKpRH8Y6Pt3eeX-4PoWKzfTwGpwZEICvHKN5~PMoJkxmLJGsppqMh0KP7zsHrpHxW4Iz4CX4LWQ__:70656
+await in C
+y @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ik @ code_components_prev…153e7b.min.js.br:25
+ij @ code_components_prev…153e7b.min.js.br:25
+iz @ code_components_prev…153e7b.min.js.br:25
+dP @ code_components_prev…153e7b.min.js.br:37
+dM @ code_components_prev…153e7b.min.js.br:37
+dG @ code_components_prev…153e7b.min.js.br:37
+dk @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:37
+SR @ code_components_prev…153e7b.min.js.br:37
+iR @ code_components_prev…153e7b.min.js.br:25
+d$ @ code_components_prev…153e7b.min.js.br:37
+lO @ code_components_prev…153e7b.min.js.br:25
+lN @ code_components_prev…153e7b.min.js.br:25
+lv @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90

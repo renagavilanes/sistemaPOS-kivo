@@ -1,0 +1,250 @@
+POS?p=f&t=y8UUd7izvecHqw4h-0&preview-route=%2Fauth-test:531 Running frontend commit 60bb58c829c1ecb8fd756d4dc75f44b209b152a9
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+(anonymous) @ 1333-41d7a447b9fe3112.min.js.br:1096
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+logExposureForFeatureGateCheck @ 1333-41d7a447b9fe3112.min.js.br:1096
+getFeatureGateFromInitialOptions @ 1333-41d7a447b9fe3112.min.js.br:1096
+getFeatureGate @ 1333-41d7a447b9fe3112.min.js.br:1096
+getFeatureGate @ 1333-41d7a447b9fe3112.min.js.br:1431
+932235 @ figma_app-02b47157ec573482.min.js.br:420
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+801936 @ figma_app-02b47157ec573482.min.js.br:41
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+781295 @ figma_app-02b47157ec573482.min.js.br:418
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+593464 @ figma_app-02b47157ec573482.min.js.br:4
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+816199 @ 1333-41d7a447b9fe3112.min.js.br:80
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+881625 @ figma_app-02b47157ec573482.min.js.br:531
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+28285 @ 1772-75b46c7a96d0a01e.min.js.br:3
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+344653 @ figma_app-02b47157ec573482.min.js.br:420
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+912563 @ figma_app-02b47157ec573482.min.js.br:420
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+941181 @ figma_app-02b47157ec573482.min.js.br:4
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+577246 @ 5340-37939770a92d139c.min.js.br:3
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+483051 @ 8222-714b50f6fa462b79.min.js.br:3
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+171068 @ figma_app-02b47157ec573482.min.js.br:4
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:709
+(anonymous) @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:709
+b @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:3
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 32 scripts (5928022b), 32 from cache (5928022b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: 32316aad430e1702f36b927d849d2e88aab330ca, stamp: 9356B1DF1C1877B4
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+(anonymous) @ 1333-41d7a447b9fe3112.min.js.br:1096
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+(anonymous) @ 1333-41d7a447b9fe3112.min.js.br:1096
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+logExposureForFeatureGateCheck @ 1333-41d7a447b9fe3112.min.js.br:1096
+getFeatureGateFromInitialOptions @ 1333-41d7a447b9fe3112.min.js.br:1096
+getFeatureGate @ 1333-41d7a447b9fe3112.min.js.br:1096
+getFeatureGate @ 1333-41d7a447b9fe3112.min.js.br:1431
+932235 @ figma_app-02b47157ec573482.min.js.br:420
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+801936 @ figma_app-02b47157ec573482.min.js.br:41
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+781295 @ figma_app-02b47157ec573482.min.js.br:418
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+593464 @ figma_app-02b47157ec573482.min.js.br:4
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+816199 @ 1333-41d7a447b9fe3112.min.js.br:80
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+881625 @ figma_app-02b47157ec573482.min.js.br:531
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+28285 @ 1772-75b46c7a96d0a01e.min.js.br:3
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+344653 @ figma_app-02b47157ec573482.min.js.br:420
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+912563 @ figma_app-02b47157ec573482.min.js.br:420
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+941181 @ figma_app-02b47157ec573482.min.js.br:4
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+577246 @ 5340-37939770a92d139c.min.js.br:3
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+483051 @ 8222-714b50f6fa462b79.min.js.br:3
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+171068 @ figma_app-02b47157ec573482.min.js.br:4
+i @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:709
+(anonymous) @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:709
+b @ runtime~figma_app-2c1ad966b841ae93.min.js.br:3
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:3
+chrome-extension://invalid/:1  GET chrome-extension://invalid/ net::ERR_FAILED
+Image
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:6
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oL @ vendor-core-ade2edecaf4781c7.min.js.br:11
+f5 @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oE @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+S @ vendor-core-ade2edecaf4781c7.min.js.br:54
+O @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 3229.0ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=uZnZxacvFt0zqFVL&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=60bb58c829c1ecb8fd756d4dc75f44b209b152a9
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=udtS2JOOIFRXLzoJ-0&preview-route=%2Fauth-test:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  GET https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1 net::ERR_FAILED
+Image
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:41
+B @ figma_app-02b47157ec573482.min.js.br:41
+g @ figma_app-02b47157ec573482.min.js.br:413
+y @ figma_app-02b47157ec573482.min.js.br:413
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:413
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oL @ vendor-core-ade2edecaf4781c7.min.js.br:11
+f5 @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+requestAnimationFrame
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+g8 @ 1333-41d7a447b9fe3112.min.js.br:191
+s @ 1333-41d7a447b9fe3112.min.js.br:393
+requestAnimationFrame @ 1333-41d7a447b9fe3112.min.js.br:194
+_Async_requestAnimationFrame @ compiled_wasm.js.br:2
+$wasm-function[1884] @ compiled_wasm.wasm.br:0x3e008
+$wasm-function[2237] @ compiled_wasm.wasm.br:0x65e57
+$wasm-function[5025] @ compiled_wasm.wasm.br:0x281d2f
+$wasm-function[23637] @ compiled_wasm.wasm.br:0x162ab4b
+$wasm-function[40494] @ compiled_wasm.wasm.br:0x21ff3b0
+$wasm-function[17171] @ compiled_wasm.wasm.br:0xf4be13
+$wasm-function[38247] @ compiled_wasm.wasm.br:0x1fb142a
+(anonymous) @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+_wrapCppCall @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+x @ 1752-97b07cd19a742a36.min.js.br:3
+(anonymous) @ 1752-97b07cd19a742a36.min.js.br:3
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/make/5Fd3OHhMY2lssTlq3IRIEy/cached_preview_urls?source_code_hash=2d245a51e35d7391b0815983576e823aa1fc8f03 404 (Not Found)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-e02619323541de64.min.js.br:3
+(anonymous) @ 1333-41d7a447b9fe3112.min.js.br:1135
+T @ 1333-41d7a447b9fe3112.min.js.br:1135
+await in T
+C @ 1333-41d7a447b9fe3112.min.js.br:1135
+k @ 1333-41d7a447b9fe3112.min.js.br:1135
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:364
+validate @ figma_app-02b47157ec573482.min.js.br:420
+getCachedPreviewUrls @ figma_app-02b47157ec573482.min.js.br:364
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:531
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:531
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:531
+(anonymous) @ 1772-75b46c7a96d0a01e.min.js.br:3
+(anonymous) @ 2180-69d0321e94f1d568.min.js.br:290
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+S @ vendor-core-ade2edecaf4781c7.min.js.br:54
+O @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=14.21s maxmem=136139008
+vendor-core-ade2edecaf4781c7.min.js.br:63  POST https://www.figma.com/api/make/fetch_ds_code_gen_status 400 (Bad Request)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-e02619323541de64.min.js.br:3
+(anonymous) @ 1333-41d7a447b9fe3112.min.js.br:1135
+T @ 1333-41d7a447b9fe3112.min.js.br:1135
+C @ 1333-41d7a447b9fe3112.min.js.br:1135
+r @ 1333-41d7a447b9fe3112.min.js.br:1135
+o @ figma_app-02b47157ec573482.min.js.br:413
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:418
+(anonymous) @ figma_app-02b47157ec573482.min.js.br:418
+aB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oD @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oL @ vendor-core-ade2edecaf4781c7.min.js.br:11
+f5 @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oB @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oE @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+S @ vendor-core-ade2edecaf4781c7.min.js.br:54
+O @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+routes.tsx:38  GET https://app-jyvcpjeroa5huwtutvwfk3z5m3owy6bkcj6jpwfnkiqqkgofa5uq.makeproxy-c.figma.site/src/app/pages/AuthTestPage.tsx net::ERR_ABORTED 500 (Internal Server Error)
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 [vite] Internal Server Error
+Failed to resolve import "../lib/supabase-client" from "app/pages/AuthTestPage.tsx". Does the file exist?
+    at TransformPluginContext._formatLog (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42499:41)
+    at TransformPluginContext.error (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42496:16)
+    at normalizeUrl (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40475:23)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40594:37
+    at async Promise.all (index 5)
+    at TransformPluginContext.transform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40521:7)
+    at EnvironmentPluginContainer.transform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42294:18)
+    at loadAndTransform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:35735:27)
+    at viteTransformMiddleware (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:37250:24)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleMessage @ client:1000
+await in handleMessage
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 10:27:27 PM [vite] Internal server error: Failed to resolve import "../lib/supabase-client" from "app/pages/AuthTestPage.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: app/pages/AuthTestPage.tsx:2:34
+  18 |  import { FGCmp } from "fginspector";
+  19 |  import { useState } from "react";
+  20 |  import { getSupabaseClient } from "../lib/supabase-client";
+     |                                     ^
+  21 |  import { projectId } from "../../utils/supabase/info";
+  22 |  import { CheckCircle2, XCircle, AlertTriangle } from "lucide-react";
+      at TransformPluginContext._formatLog (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42499:41)
+      at TransformPluginContext.error (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42496:16)
+      at normalizeUrl (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40475:23)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40594:37
+      at async Promise.all (index 5)
+      at TransformPluginContext.transform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40521:7)
+      at EnvironmentPluginContainer.transform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42294:18)
+      at loadAndTransform (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:35735:27)
+      at viteTransformMiddleware (node_modules/.pnpm/vite@6.3.5_@types+node@25.4.0_jiti@2.6.0_lightningcss@1.30.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:37250:24)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:55
+(anonymous) @ client:132
+notifyListeners @ client:132
+handleMessage @ client:961
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28

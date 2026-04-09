@@ -1,0 +1,9 @@
+FORCE REDEPLOY V8 - KEY IN QUERY PARAM
+Timestamp: 2026-03-18T-v8-queryparam
+Version: 15.3.0-key-in-queryparam
+
+Strategy change: stop fighting CORS on custom headers.
+Instead, pass the superadmin key as a URL query param (?key=...).
+- Frontend: fetch(`${BASE}/superadmin/stats?key=${encodeURIComponent(key)}`)
+- No X-Superadmin-Key header = no CORS preflight rejection
+- Server reads: c.req.query('key') [currently bypassed for debug]

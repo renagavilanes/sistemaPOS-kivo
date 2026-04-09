@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Móvil</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .status-box {
+      background: #111;
+      border: 2px solid #0f0;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .status-item {
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+    
+    button {
+      width: 100%;
+      padding: 18px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 12px;
+      border: 2px solid #fff;
+      cursor: pointer;
+      margin-bottom: 12px;
+      font-family: inherit;
+    }
+    
+    .btn-clear {
+      background: #f00;
+      color: #fff;
+    }
+    
+    .btn-reload {
+      background: #0f0;
+      color: #000;
+    }
+    
+    .error-box {
+      background: #f00;
+      color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+      display: none;
+    }
+    
+    .error-box.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🟢 TEST MÓVIL</h1>
+    
+    <div class="status-box">
+      <div class="status-item">✅ HTML cargado</div>
+      <div class="status-item">✅ CSS aplicado</div>
+      <div class="status-item">✅ JavaScript activo</div>
+      <div class="status-item" id="screen-info">📱 Cargando...</div>
+      <div class="status-item" id="time-info">📅 Cargando...</div>
+    </div>
+    
+    <button class="btn-clear" onclick="clearAll()">
+      🗑️ LIMPIAR TODO
+    </button>
+    
+    <button class="btn-reload" onclick="location.reload()">
+      🔄 RECARGAR
+    </button>
+    
+    <div id="error-box" class="error-box">
+      <h2>🚨 ERRORES:</h2>
+      <div id="error-list"></div>
+    </div>
+  </div>
+
+  <script>
+    // Capturar errores
+    const errors = [];
+    
+    window.addEventListener('error', (e) => {
+      errors.push(`ERROR: ${e.message} at ${e.filename}:${e.lineno}`);
+      showErrors();
+    });
+    
+    window.addEventListener('unhandledrejection', (e) => {
+      errors.push(`PROMISE REJECTED: ${e.reason}`);
+      showErrors();
+    });
+    
+    function showErrors() {
+      const errorBox = document.getElementById('error-box');
+      const errorList = document.getElementById('error-list');
+      errorBox.classList.add('show');
+      errorList.innerHTML = errors.map(err => `<div style="margin-bottom: 8px; font-size: 14px;">${err}</div>`).join('');
+    }
+    
+    // Actualizar info
+    function updateInfo() {
+      document.getElementById('screen-info').textContent = 
+        `📱 Pantalla: ${window.innerWidth}x${window.innerHeight}px`;
+      document.getElementById('time-info').textContent = 
+        `📅 ${new Date().toLocaleString('es-ES')}`;
+    }
+    
+    function clearAll() {
+      if (confirm('¿Limpiar TODO el localStorage y recargar?')) {
+        try {
+          localStorage.clear();
+          sessionStorage.clear();
+          alert('✅ Limpiado exitosamente');
+          setTimeout(() => location.reload(), 300);
+        } catch (e) {
+          alert('❌ Error: ' + e.message);
+        }
+      }
+    }
+    
+    // Inicializar
+    updateInfo();
+    setInterval(updateInfo, 1000);
+    
+    console.log('✅ Script ejecutado correctamente');
+    console.log('UserAgent:', navigator.userAgent);
+    console.log('LocalStorage items:', Object.keys(localStorage).length);
+  </script>
+</body>
+</html>

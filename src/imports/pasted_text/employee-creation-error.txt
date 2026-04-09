@@ -1,0 +1,86 @@
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🚀🚀🚀 [API VERSION]: v2.1-SERVER-MODE-20260315
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🚀🚀🚀 [API v2] Creating employee via SERVER with auto-confirmed email 🚀🚀🚀
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📧 [API v2] Email: ejemplo6@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 [API v2] Name: rena6
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting employee by email: ejemplo6@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&email=eq.ejemplo6%40hotmail.com&is_active=eq.true 406 (Not Acceptable)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+(anonymous) @ @supabase_supabase-js.js?v=b52983f2:12780
+(anonymous) @ @supabase_supabase-js.js?v=b52983f2:12794
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=b52983f2:274
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ [API DIRECT] Employee not found
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔐 [API v2] Generated temporary password: Temp1xracd15!
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📡 [API v2] Calling server endpoint: /create-employee-v2
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90  POST https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/create-employee-v2 500 (Internal Server Error)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+inviteEmployee @ api.ts:1081
+await in inviteEmployee
+handleSaveEmployee @ EmployeesPage.tsx:280
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📥 [API v2] Server response: {error: 'invalid input syntax for type uuid: "undefined"'}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ❌ [API v2] Employee creation failed: 500 {error: 'invalid input syntax for type uuid: "undefined"'}
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+inviteEmployee @ api.ts:1105
+await in inviteEmployee
+handleSaveEmployee @ EmployeesPage.tsx:280
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error: invalid input syntax for type uuid: "undefined"
+    at Module.inviteEmployee (api.ts:1106:11)
+    at async handleSaveEmployee (EmployeesPage.tsx:280:24)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+handleSaveEmployee @ EmployeesPage.tsx:310
+await in handleSaveEmployee
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90

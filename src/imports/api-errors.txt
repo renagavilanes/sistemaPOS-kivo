@@ -1,0 +1,869 @@
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 📦 Creando producto: {name: 'prueba pro', price: 20, cost: 20, stock: 20, category: 'Sin categoría', …}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Creating product: prueba pro
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  POST https://zcqoussqgigskextorag.supabase.co/rest/v1/products?select=* 400 (Bad Request)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:18693
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:18699
+await in (anonymous)
+then @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:9660
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error creating product: {code: 'PGRST204', details: null, hint: null, message: "Could not find the 'created_by' column of 'products' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+Jq @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:25830
+await in Jq
+_K @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:27870
+te @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:67283
+y @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+ik @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+ij @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+iz @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+dP @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dM @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dG @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dk @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+iR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+d$ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+lO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 Error saving product: Error: Could not find the 'created_by' column of 'products' in the schema cache
+    at Jq (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:25830:71)
+    at async _K (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:27870:14)
+    at async te (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:67283:20)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+te @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:67306
+await in te
+y @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+ik @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+ij @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+iz @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+dP @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dM @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dG @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dk @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+iR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+d$ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+lO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 📦 Creando producto: {name: 'prueba pro', price: 20, cost: 20, stock: 20, category: 'Sin categoría', …}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Creating product: prueba pro
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  POST https://zcqoussqgigskextorag.supabase.co/rest/v1/products?select=* 400 (Bad Request)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:18693
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:18699
+await in (anonymous)
+then @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:9660
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error creating product: {code: 'PGRST204', details: null, hint: null, message: "Could not find the 'created_by' column of 'products' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+Jq @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:25830
+await in Jq
+_K @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:27870
+te @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:67283
+y @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+ik @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+ij @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+iz @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+dP @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dM @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dG @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dk @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+iR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+d$ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+lO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 Error saving product: Error: Could not find the 'created_by' column of 'products' in the schema cache
+    at Jq (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:25830:71)
+    at async _K (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:27870:14)
+    at async te (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:67283:20)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+te @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:67306
+await in te
+y @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+ik @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+ij @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+iz @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+dP @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dM @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dG @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dk @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+iR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+d$ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+lO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+vendor-core-ade2edecaf4781c7.min.js.br:54 Too many elapsed hits of react since last report
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+t @ figma_app-20aa55bacd9a5197.min.js.br:41
+eF @ figma_app-20aa55bacd9a5197.min.js.br:41
+g9 @ 3435-1e6f92413321c0ba.min.js.br:191
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+requestAnimationFrame
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+g8 @ 3435-1e6f92413321c0ba.min.js.br:191
+s @ 3435-1e6f92413321c0ba.min.js.br:393
+requestAnimationFrame @ 3435-1e6f92413321c0ba.min.js.br:194
+_Async_requestAnimationFrame @ compiled_wasm.js.br:2
+$wasm-function[1884] @ compiled_wasm.wasm.br:0x3e008
+$wasm-function[9863] @ compiled_wasm.wasm.br:0x7233bb
+$wasm-function[23116] @ compiled_wasm.wasm.br:0x15b2d65
+$wasm-function[26015] @ compiled_wasm.wasm.br:0x18b69e5
+$wasm-function[26005] @ compiled_wasm.wasm.br:0x18af187
+$wasm-function[40502] @ compiled_wasm.wasm.br:0x2209cee
+$wasm-function[15383] @ compiled_wasm.wasm.br:0xcd0806
+$wasm-function[3513] @ compiled_wasm.wasm.br:0x1601e7
+$wasm-function[7419] @ compiled_wasm.wasm.br:0x4d49bd
+$wasm-function[5894] @ compiled_wasm.wasm.br:0x38b9b9
+$wasm-function[2227] @ compiled_wasm.wasm.br:0x64fff
+$wasm-function[3905] @ compiled_wasm.wasm.br:0x1a07c9
+$wasm-function[22633] @ compiled_wasm.wasm.br:0x14fbab3
+$wasm-function[35813] @ compiled_wasm.wasm.br:0x1df1a69
+(anonymous) @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+_wrapCppCall @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+createNode @ 3435-1e6f92413321c0ba.min.js.br:1193
+(anonymous) @ figma_app-20aa55bacd9a5197.min.js.br:420
+system @ 3435-1e6f92413321c0ba.min.js.br:1193
+J @ figma_app-20aa55bacd9a5197.min.js.br:420
+q @ figma_app-20aa55bacd9a5197.min.js.br:420
+await in q
+D @ figma_app-20aa55bacd9a5197.min.js.br:420
+await in D
+G @ figma_app-20aa55bacd9a5197.min.js.br:420
+(anonymous) @ 627-9e369b8da0bb899d.min.js.br:12
+eN @ 627-9e369b8da0bb899d.min.js.br:12
+(anonymous) @ figma_app-20aa55bacd9a5197.min.js.br:420
+ez @ vendor-core-ade2edecaf4781c7.min.js.br:11
+eq @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+fi @ vendor-core-ade2edecaf4781c7.min.js.br:11
+ff @ vendor-core-ade2edecaf4781c7.min.js.br:11
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:11
+oP @ vendor-core-ade2edecaf4781c7.min.js.br:11
+eR @ vendor-core-ade2edecaf4781c7.min.js.br:11
+fl @ vendor-core-ade2edecaf4781c7.min.js.br:11
+nz @ vendor-core-ade2edecaf4781c7.min.js.br:11
+nI @ vendor-core-ade2edecaf4781c7.min.js.br:11
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting customers for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting customers for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting products for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 [SALES] Estado: {businessLoading: false, currentBusiness: 'be a hero 16'}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:18693
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:18699
+await in (anonymous)
+then @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:9660
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+aA @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:25881
+await in aA
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37606
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37611
+TN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T7 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T8 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T6 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T4 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+S1 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SQ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+pC @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SJ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SZ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+Sv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SS @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+V @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+B @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+eo @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al cargar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at aA (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:25881:73)
+    at async index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37606:21
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37609
+await in (anonymous)
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37611
+TN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T7 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T8 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T6 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T4 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+S1 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SQ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+pC @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SJ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SZ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+Sv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SS @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+V @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+B @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+eo @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Products retrieved: 0
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ Productos cargados en SalesPage: 0 productos
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11533
+(anonymous) @ @supabase_supabase-js.js?v=7e257cf2:11547
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=7e257cf2:274
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+getCategories @ api.ts:251
+await in getCategories
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at Module.getCategories (api.ts:252:11)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting categories for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/product_categories?select=*&business_id=eq.82db83ae-eeef-4fcd-a1b6-fbcc2e824da6&order=name.asc 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:18693
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:18699
+await in (anonymous)
+then @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:9660
+setInterval
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37621
+TN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T7 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T8 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T6 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T4 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+S1 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SQ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+pC @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SJ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SZ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+Sv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SS @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+V @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+B @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+eo @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [API DIRECT] Error getting categories: {code: 'PGRST205', details: null, hint: "Perhaps you meant the table 'public.categories'", message: "Could not find the table 'public.product_categories' in the schema cache"}
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+aA @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:25881
+await in aA
+Oe @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37616
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37621
+TN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T7 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T8 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T6 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T4 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+S1 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SQ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+pC @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SJ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SZ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+Sv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SS @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+V @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+B @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+eo @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ❌ [SALES] Error al actualizar categorías: Error: Could not find the table 'public.product_categories' in the schema cache
+    at aA (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:25881:73)
+    at async Oe (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37616:21)
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+r @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:69
+error @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+Oe @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37619
+await in Oe
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+(anonymous) @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkzlvYu0QGKxKx4RQBn0Zr-xKkKUXMJwmFUtb7TGgMBpErCzYDLj4axVoaxAoTGw85wGHwEPk9g1xkrpyx8ulaZguPOmmsM9XMKaVOx7FAtFM2-jh4OKzIYKI10Mf9n0oWHqNDWdJMu80VWR38Ccckll93LwfDCrHN7Gym7mR3SqQV4rxYjzj2zOtU48iFScFjbO~mbUAFfbSgXxWNXBil6vvCN9sEnfi4GfVJZ2YLXOMcYOh3JirVHTWMlok~gVP5vh0IpSlcScuG-k7DUIpp3K~k0e1a7B4BFNztgQs92~ZequNvnVuG4nv2kCsab6NG2-dI~4zWynjREIiauSrA__:37621
+TN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T7 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T8 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T6 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+T4 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+S1 @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SQ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+pC @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SJ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SZ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+Sv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SS @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+V @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+B @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113
+eo @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:113

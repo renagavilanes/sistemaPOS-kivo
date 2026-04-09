@@ -1,0 +1,165 @@
+ Running frontend commit a3897195188b83a7a45cf5cd9ef17040462cbd2d
+vendor-core-83c17265f2588e9e.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:54
+vendor-core-83c17265f2588e9e.min.js.br:54 [bootstrap_waiting_on_user_state] You appear to be logging a relative timestamp and not an epoch timestamp. Try adding performance.timeOrigin to the timestamp.
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:54
+vendor-core-83c17265f2588e9e.min.js.br:54 [import] git: 795ca6f1ee9882dfe1a8301c1dd929a1216cbc73, stamp: 9F7B891A935AF638
+vendor-core-83c17265f2588e9e.min.js.br:54 Loaded 34 scripts (5972151b), 0 from cache (0b)
+vendor-core-83c17265f2588e9e.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-83c17265f2588e9e.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-83c17265f2588e9e.min.js.br:54 [Fullscreen] Ready in 2023.2ms
+vendor-core-83c17265f2588e9e.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=C1ZbKB2dp3wxAdlp&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=a3897195188b83a7a45cf5cd9ef17040462cbd2d
+vendor-core-83c17265f2588e9e.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-83c17265f2588e9e.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=RsiHFg6no5l5tEJf-0&preview-route=%2Fmovements:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:54 [Fullscreen] loadtime=10.61s maxmem=202463636
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 400 ()
+ [esbuild-wasm] Initializing from URL: /webpack-artifacts/assets/2b68f2d3d5e8b3d6.wasm
+vendor-core-83c17265f2588e9e.min.js.br:54 [devtools] Initialized LS
+ [esbuild-wasm] Initialized
+ [devtools] Initialized LS
+ [bundleCode] Found 5 CSS files in VFS
+ [bundleCode] Total CSS size to be processed by lightningcss: 0.01MB
+ [lightningcss-wasm] Initialized
+ [lightningCSS] Processing 0.12MB of CSS (environment: browser)
+ [lightningCSS] Encoded size: 0.12MB
+ [lightningCSS] Transform completed successfully
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=C1ZbKB2dp3wxAdlp&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=a3897195188b83a7a45cf5cd9ef17040462cbd2d&reconnect-key=511f8a685bbd29faefcd995edfb401712066624e&reconnect-sequence-number=11257&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (journaled reconnect)
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=RsiHFg6no5l5tEJf-0&preview-route=%2Fmovements:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+ WebSocket connection to 'wss://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/' failed: 
+ping @ app-2tdwgjduz62atgd5…e/@vite/client:1035
+ WebSocket connection to 'wss://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/' failed: 
+ping @ app-2tdwgjduz62atgd5…e/@vite/client:1035
+ WebSocket connection to 'wss://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/' failed: 
+ping @ app-2tdwgjduz62atgd5…e/@vite/client:1035
+vendor-core-83c17265f2588e9e.min.js.br:54 [Livegraph] Connection closed. Code: 4010, reason: server_idle
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=C1ZbKB2dp3wxAdlp&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=a3897195188b83a7a45cf5cd9ef17040462cbd2d&reconnect-key=511f8a685bbd29faefcd995edfb401712066624e&reconnect-sequence-number=11268&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+ WebSocket connection to 'wss://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/' failed: 
+ping @ app-2tdwgjduz62atgd5…e/@vite/client:1035
+ WebSocket connection to 'wss://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/' failed: 
+ping @ app-2tdwgjduz62atgd5…e/@vite/client:1035
+ WebSocket connection to 'wss://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/' failed: 
+ping @ app-2tdwgjduz62atgd5…e/@vite/client:1035
+ WebSocket connection to 'wss://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/' failed: 
+ping @ app-2tdwgjduz62atgd5…e/@vite/client:1035
+ WebSocket connection to 'wss://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/' failed: 
+ping @ app-2tdwgjduz62atgd5…e/@vite/client:1035
+ WebSocket connection to 'wss://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/' failed: 
+ping @ app-2tdwgjduz62atgd5…e/@vite/client:1035
+7772b353-0f64-4fc9-8b84-5ac62ae198d5-v2-figmaiframepreview.figma.site/movements:1 Access to script at 'https://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/@react-refresh' from origin 'https://7772b353-0f64-4fc9-8b84-5ac62ae198d5-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+7772b353-0f64-4fc9-8b84-5ac62ae198d5-v2-figmaiframepreview.figma.site/movements:1 Access to script at 'https://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/@react-refresh' from origin 'https://7772b353-0f64-4fc9-8b84-5ac62ae198d5-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+7772b353-0f64-4fc9-8b84-5ac62ae198d5-v2-figmaiframepreview.figma.site/movements:1 Access to script at 'https://app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/@react-refresh' from origin 'https://7772b353-0f64-4fc9-8b84-5ac62ae198d5-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/@react-refresh:1  Failed to load resource: net::ERR_FAILED
+app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/@react-refresh:1  Failed to load resource: net::ERR_FAILED
+app-2tdwgjduz62atgd5owx6pgawjysnmaalftxhqswwozyq2bx7lt2a.makeproxy-c.figma.site/@react-refresh:1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (full reconnect)
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=RsiHFg6no5l5tEJf-0&preview-route=%2Fmovements:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+devtools_worker-e19e35895693205e.min.js.br:3204 [bundleCode] Found 5 CSS files in VFS
+devtools_worker-e19e35895693205e.min.js.br:3204 [bundleCode] Total CSS size to be processed by lightningcss: 0.01MB
+devtools_worker-e19e35895693205e.min.js.br:3204 [lightningCSS] Processing 0.12MB of CSS (environment: browser)
+devtools_worker-e19e35895693205e.min.js.br:3204 [lightningCSS] Encoded size: 0.12MB
+devtools_worker-e19e35895693205e.min.js.br:3204 [lightningCSS] Transform completed successfully
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=C1ZbKB2dp3wxAdlp&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=a3897195188b83a7a45cf5cd9ef17040462cbd2d&reconnect-key=511f8a685bbd29faefcd995edfb401712066624e&reconnect-sequence-number=11294&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (skip_reload reconnect)
+POS?p=f&t=RsiHFg6no5l5tEJf-0&preview-route=%2Fcontacts:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+vendor-core-83c17265f2588e9e.min.js.br:54 [Livegraph] Connection closed. Code: 4010, reason: server_idle
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=C1ZbKB2dp3wxAdlp&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=a3897195188b83a7a45cf5cd9ef17040462cbd2d&reconnect-key=511f8a685bbd29faefcd995edfb401712066624e&reconnect-sequence-number=11299&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+ WebSocket connection to 'wss://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/' failed: 
+ping @ app-pmqzic7mwln7xnye…e/@vite/client:1035
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (journaled reconnect)
+POS?p=f&t=RsiHFg6no5l5tEJf-0&preview-route=%2Fcontacts:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+7772b353-0f64-4fc9-8b84-5ac62ae198d5-v2-figmaiframepreview.figma.site/contacts:1 Access to script at 'https://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/@react-refresh' from origin 'https://7772b353-0f64-4fc9-8b84-5ac62ae198d5-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+contacts:1 Access to script at 'https://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/@react-refresh' from origin 'https://7772b353-0f64-4fc9-8b84-5ac62ae198d5-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+contacts:1 Access to script at 'https://app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/@react-refresh' from origin 'https://7772b353-0f64-4fc9-8b84-5ac62ae198d5-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/@react-refresh:1  Failed to load resource: net::ERR_FAILED
+app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/@react-refresh:1  Failed to load resource: net::ERR_FAILED
+app-pmqzic7mwln7xnyeva36z2k5zfogp6vg53s2jecibmquggdd6pma.makeproxy-c.figma.site/@react-refresh:1  Failed to load resource: net::ERR_FAILED
+devtools_worker-e19e35895693205e.min.js.br:3204 [bundleCode] Found 5 CSS files in VFS
+devtools_worker-e19e35895693205e.min.js.br:3204 [bundleCode] Total CSS size to be processed by lightningcss: 0.01MB
+devtools_worker-e19e35895693205e.min.js.br:3204 [lightningCSS] Processing 0.12MB of CSS (environment: browser)
+devtools_worker-e19e35895693205e.min.js.br:3204 [lightningCSS] Encoded size: 0.12MB
+devtools_worker-e19e35895693205e.min.js.br:3204 [lightningCSS] Transform completed successfully
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=C1ZbKB2dp3wxAdlp&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=a3897195188b83a7a45cf5cd9ef17040462cbd2d&reconnect-key=511f8a685bbd29faefcd995edfb401712066624e&reconnect-sequence-number=11310&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (skip_reload reconnect)
+POS?p=f&t=RsiHFg6no5l5tEJf-0&preview-route=%2Fcontacts:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=C1ZbKB2dp3wxAdlp&version=151&recentReload=0&file-load-streaming-compression=&user-id=1041165271660718653&client_release=a3897195188b83a7a45cf5cd9ef17040462cbd2d&reconnect-key=511f8a685bbd29faefcd995edfb401712066624e&reconnect-sequence-number=11321&initialFileVersion=106&previousLoadMode=full&incremental-loading-validation=0
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-83c17265f2588e9e.min.js.br:54 [MultiplayerSession] Joining file version 106 (journaled reconnect)
+POS?p=f&t=RsiHFg6no5l5tEJf-0&preview-route=%2Fcontacts:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+ 🔵 Creando nueva instancia de Supabase Client
+ 🚀 [APP] App component loading...
+ 🔐 AuthContext: Inicializando...
+ 🔍 Sidebar - Business actualizado: Object
+logs:1  Failed to load resource: the server responded with a status of 429 ()
+ ✅ Negocio cargado: be a hero 5
+ ✅ Negocio cargado: be a hero 5
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 Total negocios encontrados: 2
+ 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API] Getting sales for business: d7332d66-252b-4185-8889-773aca6e8b54
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ Negocio cargado: be a hero 5
+ ✅ [API] Sales via Edge Function: 8
+ ✅ Negocio cargado: be a hero 5

@@ -1,0 +1,137 @@
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔐 Verificando código y creando cuenta...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ Cuenta creada: {success: true, message: 'Account created successfully', user: {…}, business: {…}}
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔐 Iniciando sesión con Supabase client...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔄 Auth state changed: SIGNED_IN
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ℹ️ No hay negocio seleccionado
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ Sesión obtenida desde Supabase client
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔑 Access Token: eyJhbGciOiJFUzI1NiIs...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔑 Token expires at: 2026-03-09T18:27:30.000Z
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ ID de negocio guardado: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 👤 Usuario: khjjb@cdd.com
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ Sesión persistida: true
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ✅ Navegando al dashboard...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔑 Getting auth token, session exists: true
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🌐 API Call: /businesses
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔑 Token disponible: true
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔍 Sidebar - Business actualizado: {name: undefined, id: undefined, logo: null, logo_url: null, loadedAt: undefined, …}
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔒 [PROTECTED] loading: false user: khjjb@cdd.com
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔍 [SALES] Estado: {businessLoading: true, currentBusiness: undefined}
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/businesses 401 (Unauthorized)
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+apiCall @ supabase.ts:43
+await in apiCall
+loadBusinesses @ BusinessContext.tsx:77
+(anonymous) @ BusinessContext.tsx:56
+TN @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T7 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T8 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T6 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T4 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+S1 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+SQ @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:3
+V @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+B @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+eo @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 📡 Response status: 401
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ❌ API Error: {code: 401, message: 'Invalid JWT'}
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+r @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:69
+error @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+apiCall @ supabase.ts:52
+await in apiCall
+loadBusinesses @ BusinessContext.tsx:77
+(anonymous) @ BusinessContext.tsx:56
+TN @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T7 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T8 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T6 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T4 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+S1 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+SQ @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:3
+V @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+B @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+eo @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ❌ ======== ERROR CARGANDO NEGOCIOS ========
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+r @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:69
+error @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+loadBusinesses @ BusinessContext.tsx:111
+await in loadBusinesses
+(anonymous) @ BusinessContext.tsx:56
+TN @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T7 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T8 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T6 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T4 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+S1 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+SQ @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:3
+V @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+B @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+eo @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 Error: HTTP 401
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+r @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:69
+error @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+loadBusinesses @ BusinessContext.tsx:112
+await in loadBusinesses
+(anonymous) @ BusinessContext.tsx:56
+TN @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T7 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T8 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T6 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T4 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+S1 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+SQ @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:3
+V @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+B @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+eo @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🏢 ========================================
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+r @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:69
+error @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+loadBusinesses @ BusinessContext.tsx:113
+await in loadBusinesses
+(anonymous) @ BusinessContext.tsx:56
+TN @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T7 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T8 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T6 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T4 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+S1 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+SQ @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:3
+V @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+B @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+eo @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🚨 Error de autenticación detectado, limpiando sesión...
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+r @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:69
+error @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+loadBusinesses @ BusinessContext.tsx:118
+await in loadBusinesses
+(anonymous) @ BusinessContext.tsx:56
+TN @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T7 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T8 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T6 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+T4 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+S1 @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+SQ @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:3
+V @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+B @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+eo @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:113
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🔍 [SALES] Estado: {businessLoading: false, currentBusiness: undefined}

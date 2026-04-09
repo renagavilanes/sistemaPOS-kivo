@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
+*.local
+
+# Environment (no subir secretos)
+.env
+.env.*
+!.env.example
+
+# Logs & debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Vite / caches
+.vite/
+*.tsbuildinfo
+
+# Test / coverage
+coverage/
+
+# Supabase local (si lo usas)
+.branches
+.temp

@@ -1,0 +1,1568 @@
+ Running frontend commit ef16aa686a0f3f191e31c9f6e1e7540215287acb
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [bootstrap_waiting_on_user_state] You appear to be logging a relative timestamp and not an epoch timestamp. Try adding performance.timeOrigin to the timestamp.
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 Autosave Changes not available or already claimed by another tab undefined
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [import] git: 166cb33e8bde4f5a2d3b91e3f07579b444411ff4, stamp: 87A19F9B274A8446
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [Fullscreen] Ready in 13821.0ms
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=qTGCs6K8Ht4prrJK&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=ef16aa686a0f3f191e31c9f6e1e7540215287acb
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 Loaded 0 scripts (0b), 0 from cache (0b)
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+POS?p=f&t=EcFLFcaAByM28Eqn-0&preview-route=%2Fmovements:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [Fullscreen] loadtime=51.03s maxmem=191365580
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [devtools] Initialized LS
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 400 ()
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [devtools] Initialized LS
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+/api/rev/5Fd3OHhMY2lssTlq3IRIEy/code_snapshot/630d0008bc70c6944dc3ff8dbb7093ba9fc150754c90d88791dccfbb6651736d:1  Failed to load resource: the server responded with a status of 404 ()
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 Failed to fetch snapshot files: E: XHR for "/api/rev/5Fd3OHhMY2lssTlq3IRIEy/code_snapshot/630d0008bc70c6944dc3ff8dbb7093ba9fc150754c90d88791dccfbb6651736d" failed with status 404
+    at w (5606-49220d1ebdfefb0e.min.js.br:sourcemap:1318:13965)
+    at async Object.k [as get] (5606-49220d1ebdfefb0e.min.js.br:sourcemap:1318:14348)
+    at async 5860-52593e69470d76d1.min.js.br:3:647
+    at async 5860-52593e69470d76d1.min.js.br:3:49174
+    at async 5860-52593e69470d76d1.min.js.br:3:1078
+    at async y (5860-52593e69470d76d1.min.js.br:3:48682)
+    at async 5860-52593e69470d76d1.min.js.br:3:39522
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54
+(anonymous) @ 5860-52593e69470d76d1.min.js.br:3
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+ 🔵 Creando nueva instancia de Supabase Client
+ 🚀 [APP] App component loading...
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: undefined
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: true user: undefined initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: true user: false initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ⏸️ Esperando autenticación... Object
+ 🔐 AuthContext: Inicializando...
+ 🔄 Auth state changed: SIGNED_IN
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 📦 User ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [4] ✅ Llamando a loadBusinesses()... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🚀 Iniciando carga de negocios para: post_visual@hotmail.com
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 📦 Sesión obtenida: Activa
+ 🔑 Token expires at: 2026-03-18T03:28:06.000Z
+ 🔑 Current time: 2026-03-18T02:33:46.831Z
+ 🔑 Token is expired? false
+ 👤 Usuario establecido: post_visual@hotmail.com
+ 🔧 [API] Fixing employee user_id...
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 📦 User ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ ✅ AuthContext inicializado, loading=false
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [4] ✅ Llamando a loadBusinesses()... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🚀 Iniciando carga de negocios para: post_visual@hotmail.com
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🔄 Auth state changed: INITIAL_SESSION
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 📦 User ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [4] ✅ Llamando a loadBusinesses()... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🚀 Iniciando carga de negocios para: post_visual@hotmail.com
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🔄 Auth state changed: SIGNED_IN
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 📦 User ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [4] ✅ Llamando a loadBusinesses()... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🚀 Iniciando carga de negocios para: post_visual@hotmail.com
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ ✅ Negocio cargado desde tabla businesses: post
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [4] ✅ Llamando a loadBusinesses()... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ ✅ Negocio cargado desde tabla businesses: post
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [4] ✅ Llamando a loadBusinesses()... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ ✅ Negocio cargado desde tabla businesses: post
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [4] ✅ Llamando a loadBusinesses()... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id:1  Failed to load resource: the server responded with a status of 401 ()
+ ℹ️ Error fixing employee user_id (non-critical): Unauthorized
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ ✅ Negocio cargado desde tabla businesses: post
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [4] ✅ Llamando a loadBusinesses()... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ 🛡️ [5] ✅ loadBusinesses() completado
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting categories for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting products for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ ✅ [API DIRECT] Categories retrieved: 0
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ ✅ Carga de negocios completada
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ 🛡️ [5] ✅ loadBusinesses() completado
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ ✅ [API DIRECT] Products retrieved: 0
+ ✅ Productos cargados en SalesPage: 0 productos
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ ✅ Carga de negocios completada
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ 🛡️ [5] ✅ loadBusinesses() completado
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ ✅ Carga de negocios completada
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ 🛡️ [5] ✅ loadBusinesses() completado
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ ✅ Carga de negocios completada
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ 🛡️ [5] ✅ loadBusinesses() completado
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🔄 Cambiando a negocio: be a hero 5
+ 🔄 Evento businessChanged recibido
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 📦 User ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting categories for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting categories for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: d7332d66-252b-4185-8889-773aca6e8b54
+ 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 🏢 ========================================
+ 🛡️ [5] ✅ loadBusinesses() completado
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Categories retrieved: 0
+ 🔄 [SALES] Categorías actualizadas: Array(0)
+ ✅ [API DIRECT] Customers retrieved: 0
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+ ⚠️ Negocio no encontrado: d7332d66-252b-4185-8889-773aca6e8b54
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Categories retrieved: 0
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: d7332d66-252b-4185-8889-773aca6e8b54
+ 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 🏢 ========================================
+ 🛡️ [5] ✅ loadBusinesses() completado
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: d7332d66-252b-4185-8889-773aca6e8b54
+ 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 🏢 ========================================
+ 🛡️ [5] ✅ loadBusinesses() completado
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Products retrieved: 5
+ ✅ Productos cargados en SalesPage: 5 productos
+ 🔄 Auth state changed: SIGNED_IN
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 📦 User ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🚀 Iniciando carga de negocios para: post_visual@hotmail.com
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ ⚠️ Negocio no encontrado: d7332d66-252b-4185-8889-773aca6e8b54
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: d7332d66-252b-4185-8889-773aca6e8b54
+ 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+ 🏢 ========================================
+ ✅ Carga de negocios completada
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect Component Stack
+    at BusinessProtectedRoute (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/BusinessProtectedRoute.tsx:24:42)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at Outlet (react-router.js:7077:26)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx:25:36)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx:23:32)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/RootWithProviders
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (react-router.js:6296:26)
+    at RenderErrorBoundary (react-router.js:6206:5)
+    at DataRoutes (react-router.js:6994:3)
+    at Router (react-router.js:7086:13)
+    at RouterProvider (react-router.js:6760:3)
+    at ErrorBoundary (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:290:12522
+    at FGCmp (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/App
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🔵 [API DIRECT] Getting categories for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+ ✅ [API DIRECT] Categories retrieved: 0
+ 📂 [LOAD] Categorías cargadas desde Supabase: Array(0)
+ ✅ [API DIRECT] Products retrieved: 5
+ 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API] Getting sales for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API] Getting expenses for business: d7332d66-252b-4185-8889-773aca6e8b54
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Employees retrieved: 1
+ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales' from origin 'https://ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales' from origin 'https://ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales' from origin 'https://ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales:1  Failed to load resource: net::ERR_FAILED
+ ⚠️ [API] Edge Function /admin/sales failed, falling back to direct query: TypeError: Failed to fetch
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:90:9794
+    at Module.getSales (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/services/api.ts:332:28)
+    at async Promise.all (ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/index 3)
+    at async loadData (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/pages/MovementsPage.tsx:379:87)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses' from origin 'https://ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses' from origin 'https://ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses' from origin 'https://ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses:1  Failed to load resource: net::ERR_FAILED
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses:1  Failed to load resource: net::ERR_FAILED
+ ⚠️ [API] Edge Function /admin/expenses failed, falling back to direct query: TypeError: Failed to fetch
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:90:9794
+    at Module.getExpenses (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/services/api.ts:530:28)
+    at async Promise.all (ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/index 4)
+    at async loadData (app-i4vqela5dpsgybapkyp44r426stq45os2nku5b2gvc5x6z2uplqq.makeproxy-c.figma.site/src/app/pages/MovementsPage.tsx:379:87)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API] Sales via direct query: 0
+ ✅ [API] Expenses via direct query: 0
+ ✅ [API DIRECT] Products retrieved: 5

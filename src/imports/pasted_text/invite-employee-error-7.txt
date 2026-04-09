@@ -1,0 +1,76 @@
+ 📧 [API] Inviting employee: r.gavilanes@hotmail.com
+ 🔑 [API] Using publicAnonKey for invite-employee endpoint
+ 🔑 [API] Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔑 [API] Business ID type: string
+ 🔑 [API] Business ID is undefined? false
+ 🔑 [API] Business ID is string "undefined"? false
+  POST https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/invite-employee 500 (Internal Server Error)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+Pj @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=f6kSsxu3MMxmsm1qkU0lGrZwBz9mUAuh0kUAFXaPvlkGDETy3q4cbITmLafc4nKVeYwmo0Av7hsTCYNjDepkWlIMoyd-OVY2LcHyM~y2G8Y~WWxFUGz7lFmKkXqgpcMlTMcp5r7cjBezmm2resRi5wUZKmROjmTlGrU6TKA7xszqrTSlXDdaIZP39CbzabqoHUoq5PKewuWIUaP0ZUN6HSX-PaX2feBOB6Q1TkC08n7LR4akfpC4l6XV845atG-ECqtf90PVf~8yZ8RscUs3DEd3JapBDYj-tAWwbecdDimtjH3MH8wpbBUpMdhfRD9S3mKsDUmQC5Vfg-jYsgv4-Q__:20853
+C @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=f6kSsxu3MMxmsm1qkU0lGrZwBz9mUAuh0kUAFXaPvlkGDETy3q4cbITmLafc4nKVeYwmo0Av7hsTCYNjDepkWlIMoyd-OVY2LcHyM~y2G8Y~WWxFUGz7lFmKkXqgpcMlTMcp5r7cjBezmm2resRi5wUZKmROjmTlGrU6TKA7xszqrTSlXDdaIZP39CbzabqoHUoq5PKewuWIUaP0ZUN6HSX-PaX2feBOB6Q1TkC08n7LR4akfpC4l6XV845atG-ECqtf90PVf~8yZ8RscUs3DEd3JapBDYj-tAWwbecdDimtjH3MH8wpbBUpMdhfRD9S3mKsDUmQC5Vfg-jYsgv4-Q__:70518
+y @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ik @ code_components_prev…153e7b.min.js.br:25
+ij @ code_components_prev…153e7b.min.js.br:25
+iz @ code_components_prev…153e7b.min.js.br:25
+dP @ code_components_prev…153e7b.min.js.br:37
+dM @ code_components_prev…153e7b.min.js.br:37
+dG @ code_components_prev…153e7b.min.js.br:37
+dk @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:37
+SR @ code_components_prev…153e7b.min.js.br:37
+iR @ code_components_prev…153e7b.min.js.br:25
+d$ @ code_components_prev…153e7b.min.js.br:37
+lO @ code_components_prev…153e7b.min.js.br:25
+lN @ code_components_prev…153e7b.min.js.br:25
+lv @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ ❌ [API] Invitation failed: 500 {error: 'invalid input syntax for type uuid: "undefined"'}
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+r @ code_components_prev…153e7b.min.js.br:17
+error @ code_components_prev…153e7b.min.js.br:90
+Pj @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=f6kSsxu3MMxmsm1qkU0lGrZwBz9mUAuh0kUAFXaPvlkGDETy3q4cbITmLafc4nKVeYwmo0Av7hsTCYNjDepkWlIMoyd-OVY2LcHyM~y2G8Y~WWxFUGz7lFmKkXqgpcMlTMcp5r7cjBezmm2resRi5wUZKmROjmTlGrU6TKA7xszqrTSlXDdaIZP39CbzabqoHUoq5PKewuWIUaP0ZUN6HSX-PaX2feBOB6Q1TkC08n7LR4akfpC4l6XV845atG-ECqtf90PVf~8yZ8RscUs3DEd3JapBDYj-tAWwbecdDimtjH3MH8wpbBUpMdhfRD9S3mKsDUmQC5Vfg-jYsgv4-Q__:20872
+await in Pj
+C @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=f6kSsxu3MMxmsm1qkU0lGrZwBz9mUAuh0kUAFXaPvlkGDETy3q4cbITmLafc4nKVeYwmo0Av7hsTCYNjDepkWlIMoyd-OVY2LcHyM~y2G8Y~WWxFUGz7lFmKkXqgpcMlTMcp5r7cjBezmm2resRi5wUZKmROjmTlGrU6TKA7xszqrTSlXDdaIZP39CbzabqoHUoq5PKewuWIUaP0ZUN6HSX-PaX2feBOB6Q1TkC08n7LR4akfpC4l6XV845atG-ECqtf90PVf~8yZ8RscUs3DEd3JapBDYj-tAWwbecdDimtjH3MH8wpbBUpMdhfRD9S3mKsDUmQC5Vfg-jYsgv4-Q__:70518
+y @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ik @ code_components_prev…153e7b.min.js.br:25
+ij @ code_components_prev…153e7b.min.js.br:25
+iz @ code_components_prev…153e7b.min.js.br:25
+dP @ code_components_prev…153e7b.min.js.br:37
+dM @ code_components_prev…153e7b.min.js.br:37
+dG @ code_components_prev…153e7b.min.js.br:37
+dk @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:37
+SR @ code_components_prev…153e7b.min.js.br:37
+iR @ code_components_prev…153e7b.min.js.br:25
+d$ @ code_components_prev…153e7b.min.js.br:37
+lO @ code_components_prev…153e7b.min.js.br:25
+lN @ code_components_prev…153e7b.min.js.br:25
+lv @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ Error: invalid input syntax for type uuid: "undefined"
+    at Pj (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=f6kSsxu3MMxmsm1qkU0lGrZwBz9mUAuh0kUAFXaPvlkGDETy3q4cbITmLafc4nKVeYwmo0Av7hsTCYNjDepkWlIMoyd-OVY2LcHyM~y2G8Y~WWxFUGz7lFmKkXqgpcMlTMcp5r7cjBezmm2resRi5wUZKmROjmTlGrU6TKA7xszqrTSlXDdaIZP39CbzabqoHUoq5PKewuWIUaP0ZUN6HSX-PaX2feBOB6Q1TkC08n7LR4akfpC4l6XV845atG-ECqtf90PVf~8yZ8RscUs3DEd3JapBDYj-tAWwbecdDimtjH3MH8wpbBUpMdhfRD9S3mKsDUmQC5Vfg-jYsgv4-Q__:20872:69)
+    at async C (index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=f6kSsxu3MMxmsm1qkU0lGrZwBz9mUAuh0kUAFXaPvlkGDETy3q4cbITmLafc4nKVeYwmo0Av7hsTCYNjDepkWlIMoyd-OVY2LcHyM~y2G8Y~WWxFUGz7lFmKkXqgpcMlTMcp5r7cjBezmm2resRi5wUZKmROjmTlGrU6TKA7xszqrTSlXDdaIZP39CbzabqoHUoq5PKewuWIUaP0ZUN6HSX-PaX2feBOB6Q1TkC08n7LR4akfpC4l6XV845atG-ECqtf90PVf~8yZ8RscUs3DEd3JapBDYj-tAWwbecdDimtjH3MH8wpbBUpMdhfRD9S3mKsDUmQC5Vfg-jYsgv4-Q__:70518:77)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+r @ code_components_prev…153e7b.min.js.br:17
+error @ code_components_prev…153e7b.min.js.br:90
+C @ index.js?Expires=1774224000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=f6kSsxu3MMxmsm1qkU0lGrZwBz9mUAuh0kUAFXaPvlkGDETy3q4cbITmLafc4nKVeYwmo0Av7hsTCYNjDepkWlIMoyd-OVY2LcHyM~y2G8Y~WWxFUGz7lFmKkXqgpcMlTMcp5r7cjBezmm2resRi5wUZKmROjmTlGrU6TKA7xszqrTSlXDdaIZP39CbzabqoHUoq5PKewuWIUaP0ZUN6HSX-PaX2feBOB6Q1TkC08n7LR4akfpC4l6XV845atG-ECqtf90PVf~8yZ8RscUs3DEd3JapBDYj-tAWwbecdDimtjH3MH8wpbBUpMdhfRD9S3mKsDUmQC5Vfg-jYsgv4-Q__:70532
+await in C
+y @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90
+ik @ code_components_prev…153e7b.min.js.br:25
+ij @ code_components_prev…153e7b.min.js.br:25
+iz @ code_components_prev…153e7b.min.js.br:25
+dP @ code_components_prev…153e7b.min.js.br:37
+dM @ code_components_prev…153e7b.min.js.br:37
+dG @ code_components_prev…153e7b.min.js.br:37
+dk @ code_components_prev…153e7b.min.js.br:37
+(anonymous) @ code_components_prev…153e7b.min.js.br:37
+SR @ code_components_prev…153e7b.min.js.br:37
+iR @ code_components_prev…153e7b.min.js.br:25
+d$ @ code_components_prev…153e7b.min.js.br:37
+lO @ code_components_prev…153e7b.min.js.br:25
+lN @ code_components_prev…153e7b.min.js.br:25
+lv @ code_components_prev…153e7b.min.js.br:25
+i @ code_components_prev…153e7b.min.js.br:90

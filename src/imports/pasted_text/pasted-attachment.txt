@@ -1,0 +1,126 @@
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API] Getting sales via Edge Function for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API] Getting expenses via Edge Function for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API DIRECT] Employees retrieved: 1
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/sales/db-list 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getSales @ api.ts:539
+await in getSales
+loadData @ MovementsPage.tsx:391
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ❌ [API] Error getting sales: {error: ''}
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+r @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:17
+error @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getSales @ api.ts:548
+await in getSales
+loadData @ MovementsPage.tsx:391
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 Error loading data: Error: Error 404 al obtener ventas
+    at Module.getSales (api.ts:549:11)
+    at async Promise.all (5ab55a54-64a6-4daa-8f0c-9313930b17e9-v2-figmaiframepreview.figma.site/index 3)
+    at async loadData (MovementsPage.tsx:387:87)
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+r @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:17
+error @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+loadData @ MovementsPage.tsx:403
+await in loadData
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/expenses/db-list 404 (Not Found)
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getExpenses @ api.ts:763
+await in getExpenses
+loadData @ MovementsPage.tsx:392
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ❌ [API] Error getting expenses: {error: ''}
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+r @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:17
+error @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getExpenses @ api.ts:772
+await in getExpenses
+loadData @ MovementsPage.tsx:392
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API DIRECT] Products retrieved: 5

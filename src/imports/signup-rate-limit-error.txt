@@ -1,0 +1,55 @@
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 🚀 Intentando crear usuario: {email: 'usuario@gmail.com', password: 'test123456'}
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28  POST https://zcqoussqgigskextorag.supabase.co/auth/v1/signup 429 (Too Many Requests)
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+(anonymous) @ @supabase_supabase-js.js?v=bc9fd932:7025
+_handleRequest2 @ @supabase_supabase-js.js?v=bc9fd932:7315
+_request @ @supabase_supabase-js.js?v=bc9fd932:7305
+signUp @ @supabase_supabase-js.js?v=bc9fd932:9223
+handleSignUp @ SimpleTestPage.tsx:25
+y @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+i @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+iG @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+ij @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+iz @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+dP @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+dM @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+dk @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+dG @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+SR @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+iR @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+d$ @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+lO @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+lN @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+lv @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+i @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 📦 Respuesta de signUp: {data: {…}, error: AuthApiError: email rate limit exceeded
+    at handleError2 (https://app-dvqox5whis3qay5tcivu7e4or2…}
+code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28 ❌ Error de signUp: AuthApiError: email rate limit exceeded
+    at handleError2 (@supabase_supabase-js.js?v=bc9fd932:7280:9)
+    at async _handleRequest2 (@supabase_supabase-js.js?v=bc9fd932:7321:5)
+    at async _request (@supabase_supabase-js.js?v=bc9fd932:7305:16)
+    at async SupabaseAuthClient.signUp (@supabase_supabase-js.js?v=bc9fd932:9223:15)
+    at async handleSignUp (SimpleTestPage.tsx:25:31)
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+r @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:69
+error @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+handleSignUp @ SimpleTestPage.tsx:36
+await in handleSignUp
+y @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+i @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28
+iG @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+ij @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+iz @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+dP @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+dM @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+dk @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+dG @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+(anonymous) @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+SR @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+iR @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+d$ @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:89
+lO @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+lN @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+lv @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:77
+i @ code_components_preview_iframe-ab9bdbe29389ccb5.min.js.br:28

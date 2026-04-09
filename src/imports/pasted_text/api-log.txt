@@ -1,0 +1,112 @@
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API] Getting sales for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 🔵 [API] Getting expenses for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API DIRECT] Employees retrieved: 1
+ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales' from origin 'https://ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales net::ERR_FAILED 200 (OK)
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getSales @ api.ts:564
+await in getSales
+loadData @ MovementsPage.tsx:391
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ⚠️ [API] Edge Function /admin/sales failed, falling back to direct query: TypeError: Failed to fetch
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:90:9794
+    at Module.getSales (api.ts:564:28)
+    at async Promise.all (ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/index 3)
+    at async loadData (MovementsPage.tsx:387:87)
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+r @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:17
+warn @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getSales @ api.ts:574
+await in getSales
+loadData @ MovementsPage.tsx:391
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API] Sales via direct query: 0
+ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/movements:1 Access to fetch at 'https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses' from origin 'https://ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses net::ERR_FAILED 200 (OK)
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getExpenses @ api.ts:793
+await in getExpenses
+loadData @ MovementsPage.tsx:392
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ⚠️ [API] Edge Function /admin/expenses failed, falling back to direct query: TypeError: Failed to fetch
+    at code_components_preview_iframe-38049e48d7f0a436.min.js.br:90:9794
+    at Module.getExpenses (api.ts:793:28)
+    at async Promise.all (ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/index 4)
+    at async loadData (MovementsPage.tsx:387:87)
+(anonymous) @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+r @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:17
+warn @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:90
+getExpenses @ api.ts:803
+await in getExpenses
+loadData @ MovementsPage.tsx:392
+(anonymous) @ MovementsPage.tsx:410
+TN @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T8 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T7 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T6 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+T4 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+S1 @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SQ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SO @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+pC @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SJ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SZ @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+Sv @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+SS @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:37
+V @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+B @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+eo @ code_components_preview_iframe-38049e48d7f0a436.min.js.br:61
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API] Expenses via direct query: 0
+code_components_preview_iframe-38049e48d7f0a436.min.js.br:90 ✅ [API DIRECT] Products retrieved: 5

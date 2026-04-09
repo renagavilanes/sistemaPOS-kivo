@@ -1,0 +1,1239 @@
+ Running frontend commit 107bbd51e86fce9a104f472597b3e63a6aa8ffa6
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+A.logExposureCallback @ 4239-c4c06d09094e9c07.min.js.br:1280
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 34 scripts (5985689b), 0 from cache (0b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [bootstrap_waiting_on_user_state] You appear to be logging a relative timestamp and not an epoch timestamp. Try adding performance.timeOrigin to the timestamp.
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+logVital @ 4239-c4c06d09094e9c07.min.js.br:1619
+K @ 4239-c4c06d09094e9c07.min.js.br:188
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:188
+time @ 4239-c4c06d09094e9c07.min.js.br:386
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:188
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: 640e7c0c7a50f673af49d46032d102e256b5e667, stamp: 8E3CE7D760547CC6
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+A.logExposureCallback @ 4239-c4c06d09094e9c07.min.js.br:1280
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 8468.4ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=HKJ6kyhfyOLImlve&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=107bbd51e86fce9a104f472597b3e63a6aa8ffa6
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+vendor-core-ade2edecaf4781c7.min.js.br:54 handleJoinEndInitialLoad the document is dirty immediately after loading Object
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+I @ 682-1669b10bdb5ae40f.min.js.br:70
+y @ 682-1669b10bdb5ae40f.min.js.br:70
+slogFromFullscreen @ 4239-c4c06d09094e9c07.min.js.br:973
+_WebReporting_slogFromFullscreen @ compiled_wasm.js.br:2
+$wasm-function[20926] @ compiled_wasm.wasm.br:0x1238888
+$wasm-function[7313] @ compiled_wasm.wasm.br:0x493db7
+$wasm-function[1892] @ compiled_wasm.wasm.br:0x3ffc3
+$wasm-function[23374] @ compiled_wasm.wasm.br:0x151bdee
+$wasm-function[40511] @ compiled_wasm.wasm.br:0x210e09f
+$wasm-function[16882] @ compiled_wasm.wasm.br:0xe4d53f
+$wasm-function[38261] @ compiled_wasm.wasm.br:0x1ebf891
+(anonymous) @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+_wrapCppCall @ compiled_wasm.js.br:2
+(anonymous) @ compiled_wasm.js.br:2
+b @ 8245-61d61b2c2a415443.min.js.br:3
+g.onmessage @ 8245-61d61b2c2a415443.min.js.br:3
+POS?p=f&t=iNthcpe8ijW5JJXO-0&preview-route=%2Femployees:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=47.73s maxmem=160699684
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 400 ()
+devtools_worker-28bcb023fe1485d0.min.js.br:1190 [esbuild-wasm] Initializing from URL: /webpack-artifacts/assets/2b68f2d3d5e8b3d6.wasm
+devtools_worker-28bcb023fe1485d0.min.js.br:1190 [esbuild-wasm] Initialized
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+/api/make/5Fd3OHhMY2lssTlq3IRIEy/cached_preview_urls?source_code_hash=f414d57459347531d207c075475f85e79cdc9200:1  Failed to load resource: the server responded with a status of 404 ()
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 Creando nueva instancia de Supabase Client
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: true user: undefined
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔐 AuthContext: Inicializando...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Sesión obtenida: Inactiva
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ No hay sesión activa
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ AuthContext inicializado, loading=false
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🚫 [PROTECTED] No hay usuario, redirigiendo a login
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: undefined
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ No hay usuario autenticado
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Auth state changed: INITIAL_SESSION
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Leyendo localStorage: null
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cuentas guardadas encontradas: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Detalle de cuentas: Array(0)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ No hay cuentas, mostrando formulario completo
+devtools_worker-28bcb023fe1485d0.min.js.br:3176 [bundleCode] Found 5 CSS files in VFS
+devtools_worker-28bcb023fe1485d0.min.js.br:3176 [bundleCode] Total CSS size to be processed by lightningcss: 0.01MB
+devtools_worker-28bcb023fe1485d0.min.js.br:1190 [lightningcss-wasm] Initialized
+devtools_worker-28bcb023fe1485d0.min.js.br:3176 [lightningCSS] Processing 0.12MB of CSS (environment: browser)
+devtools_worker-28bcb023fe1485d0.min.js.br:3176 [lightningCSS] Encoded size: 0.12MB
+devtools_worker-28bcb023fe1485d0.min.js.br:3176 [lightningCSS] Transform completed successfully
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔐 Iniciando sesión con: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Auth state changed: SIGNED_IN
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ No hay negocio seleccionado
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Sesión iniciada: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 💾 Guardando cuenta en localStorage
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Leyendo localStorage: null
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 💾 Guardando en localStorage: 1 cuentas
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Verificación guardado: OK
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Usuario ya tiene sesión activa, redirigiendo...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 [SALES] Estado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocios encontrados: 2
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 💾 Business ID guardado: null
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🎯 Negocio seleccionado: be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ========================================
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting categories for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting products for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 [SALES] Estado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Products retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Productos cargados en SalesPage: 0 productos
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Categories retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Cambiando a negocio: be a hero 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Evento businessChanged recibido
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cargando negocio desde tabla businesses...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting categories for business: 72454c71-5a4f-4d89-9e57-494a7c4b89e7
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting categories for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 [SALES] Estado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Categories retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 [SALES] Categorías actualizadas: Array(0)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Categories retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be a hero 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: Object
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Products retrieved: 3
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Productos cargados en SalesPage: 3 productos
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📥 Loading employees from API...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Employees retrieved: 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Employees loaded: 5
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🚀🚀🚀 [API VERSION]: v2.1-SERVER-MODE-20260315
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🚀🚀🚀 [API v2] Creating employee via SERVER with auto-confirmed email 🚀🚀🚀
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📧 [API v2] Email: ejemplo9@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 [API v2] Name: rena9
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting employee by email: ejemplo9@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90  GET https://zcqoussqgigskextorag.supabase.co/rest/v1/employees?select=*&business_id=eq.d7332d66-252b-4185-8889-773aca6e8b54&email=eq.ejemplo9%40hotmail.com&is_active=eq.true 406 (Not Acceptable)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+(anonymous) @ @supabase_supabase-js.js?v=d13421ab:12780
+(anonymous) @ @supabase_supabase-js.js?v=d13421ab:12794
+await in (anonymous)
+then @ @supabase_supabase-js.js?v=d13421ab:274
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ [API DIRECT] Employee not found
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔐 [API v2] Generated temporary password: Temp4p1sz19!
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📡 [API v2] Calling server endpoint: /create-employee-v2
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90  POST https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/create-employee-v2 500 (Internal Server Error)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+inviteEmployee @ api.ts:667
+await in inviteEmployee
+handleSaveEmployee @ EmployeesPage.tsx:280
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📥 [API v2] Server response: {error: 'invalid input syntax for type uuid: "undefined"'}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ❌ [API v2] Employee creation failed: 500 {error: 'invalid input syntax for type uuid: "undefined"'}
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+inviteEmployee @ api.ts:689
+await in inviteEmployee
+handleSaveEmployee @ EmployeesPage.tsx:280
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error: Error de servidor: El servidor necesita actualizarse. Por favor intenta de nuevo en 1-2 minutos.
+    at Module.inviteEmployee (api.ts:691:13)
+    at async handleSaveEmployee (EmployeesPage.tsx:280:24)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+handleSaveEmployee @ EmployeesPage.tsx:310
+await in handleSaveEmployee
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+iz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+dP @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dM @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dG @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+dk @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+iR @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+d$ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+lO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+lv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1919
+i @ 4239-c4c06d09094e9c07.min.js.br:1919
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in C
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1919
+i @ 4239-c4c06d09094e9c07.min.js.br:1919
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 10:33:36 PM [vite] (client) hmr update /src/styles/index.css, /src/app/pages/SalesPage.tsx, /src/app/pages/ContactsPage.tsx, /src/app/pages/EmployeesPage.tsx, /src/app/pages/ProductsPage.tsx, /src/app/pages/MovementsPage.tsx, /src/app/contexts/AuthContext.tsx, /src/app/components/PaymentSheet.tsx, /src/app/components/ExpenseForm.tsx
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Uncaught Error: useAuth must be used within an AuthProvider
+    at useAuth (AuthContext.tsx:208:11)
+    at ProtectedRoute (ProtectedRoute.tsx:11:29)
+    at ms (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:68027)
+    at _S (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:114634)
+    at _4 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:127720)
+    at HTMLUnknownElement.y (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:54006)
+    at HTMLUnknownElement.i (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90:4861)
+    at Object.ik (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:54331)
+    at ij (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:55284)
+    at ep (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:166948)
+    at SX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160942)
+    at Sz (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160557)
+    at Sj (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160323)
+    at SO (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:158164)
+    at pC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:36290)
+    at SL (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:158998)
+    at IO (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:169939)
+    at r.scheduleRefresh (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17:53181)
+    at @react-refresh:228:17
+    at Set.forEach (<anonymous>)
+    at performReactRefresh (@react-refresh:217:26)
+    at @react-refresh:608:3
+    at i (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90:4861)
+useAuth @ AuthContext.tsx:208
+ProtectedRoute @ ProtectedRoute.tsx:11
+ms @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_S @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ep @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SX @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sj @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SL @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+IO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+r.scheduleRefresh @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+(anonymous) @ @react-refresh:228
+performReactRefresh @ @react-refresh:217
+(anonymous) @ @react-refresh:608
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+setTimeout
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+(anonymous) @ @react-refresh:598
+validateRefreshBoundaryAndEnqueueUpdate @ @react-refresh:648
+(anonymous) @ ExpenseForm.tsx:58
+(anonymous) @ client:34
+(anonymous) @ client:213
+(anonymous) @ client:186
+queueUpdate @ client:186
+await in queueUpdate
+(anonymous) @ client:930
+handleMessage @ client:928
+await in handleMessage
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error handled by React Router default ErrorBoundary: Error: useAuth must be used within an AuthProvider
+    at useAuth (AuthContext.tsx:208:11)
+    at ProtectedRoute (ProtectedRoute.tsx:11:29)
+    at ms (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:68027)
+    at _S (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:114634)
+    at _4 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:127720)
+    at ep (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:166810)
+    at SX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160942)
+    at Sz (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160557)
+    at Sj (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160323)
+    at SO (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:158164)
+    at pC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:36290)
+    at SL (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:158998)
+    at IO (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:169939)
+    at r.scheduleRefresh (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17:53181)
+    at @react-refresh:228:17
+    at Set.forEach (<anonymous>)
+    at performReactRefresh (@react-refresh:217:26)
+    at @react-refresh:608:3
+    at i (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90:4861) Component Stack
+    at DefaultErrorComponent (react-router.js?v=1a9cc121:6187:15)
+    at RenderErrorBoundary (react-router.js?v=1a9cc121:6206:5)
+    at DataRoutes (react-router.js?v=1a9cc121:6994:3)
+    at Router (react-router.js?v=1a9cc121:7086:13)
+    at RouterProvider (react-router.js?v=1a9cc121:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+DefaultErrorComponent @ react-router.js?v=1a9cc121:6195
+ms @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_S @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+ep @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SX @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sj @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SL @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+IO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+r.scheduleRefresh @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+(anonymous) @ @react-refresh:228
+performReactRefresh @ @react-refresh:217
+(anonymous) @ @react-refresh:608
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+setTimeout
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+(anonymous) @ @react-refresh:598
+validateRefreshBoundaryAndEnqueueUpdate @ @react-refresh:648
+(anonymous) @ ExpenseForm.tsx:58
+(anonymous) @ client:34
+(anonymous) @ client:213
+(anonymous) @ client:186
+queueUpdate @ client:186
+await in queueUpdate
+(anonymous) @ client:930
+handleMessage @ client:928
+await in handleMessage
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Uncaught Error: useAuth must be used within an AuthProvider
+    at useAuth (AuthContext.tsx:208:11)
+    at ProtectedRoute (ProtectedRoute.tsx:11:29)
+    at ms (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:68027)
+    at _S (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:114634)
+    at _4 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:127720)
+    at HTMLUnknownElement.y (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:54006)
+    at HTMLUnknownElement.i (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90:4861)
+    at Object.ik (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:54331)
+    at ij (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:55284)
+    at ep (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:166948)
+    at SX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160942)
+    at Sz (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160557)
+    at Sj (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160323)
+    at SI (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156868)
+    at SO (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:158222)
+    at pC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:36290)
+    at SL (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:158998)
+    at IO (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:169939)
+    at r.scheduleRefresh (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17:53181)
+    at @react-refresh:228:17
+    at Set.forEach (<anonymous>)
+    at performReactRefresh (@react-refresh:217:26)
+    at @react-refresh:608:3
+    at i (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90:4861)
+useAuth @ AuthContext.tsx:208
+ProtectedRoute @ ProtectedRoute.tsx:11
+ms @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_S @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ep @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SX @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sj @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SI @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SL @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+IO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+r.scheduleRefresh @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+(anonymous) @ @react-refresh:228
+performReactRefresh @ @react-refresh:217
+(anonymous) @ @react-refresh:608
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+setTimeout
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+(anonymous) @ @react-refresh:598
+validateRefreshBoundaryAndEnqueueUpdate @ @react-refresh:648
+(anonymous) @ ExpenseForm.tsx:58
+(anonymous) @ client:34
+(anonymous) @ client:213
+(anonymous) @ client:186
+queueUpdate @ client:186
+await in queueUpdate
+(anonymous) @ client:930
+handleMessage @ client:928
+await in handleMessage
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error handled by React Router default ErrorBoundary: Error: useAuth must be used within an AuthProvider
+    at useAuth (AuthContext.tsx:208:11)
+    at ProtectedRoute (ProtectedRoute.tsx:11:29)
+    at ms (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:68027)
+    at _S (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:114634)
+    at _4 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:127720)
+    at ep (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:166810)
+    at SX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160942)
+    at Sz (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160557)
+    at Sj (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160323)
+    at SI (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156868)
+    at SO (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:158222)
+    at pC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:36290)
+    at SL (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:158998)
+    at IO (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:169939)
+    at r.scheduleRefresh (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17:53181)
+    at @react-refresh:228:17
+    at Set.forEach (<anonymous>)
+    at performReactRefresh (@react-refresh:217:26)
+    at @react-refresh:608:3
+    at i (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90:4861) Component Stack
+    at DefaultErrorComponent (react-router.js?v=1a9cc121:6187:15)
+    at RenderErrorBoundary (react-router.js?v=1a9cc121:6206:5)
+    at DataRoutes (react-router.js?v=1a9cc121:6994:3)
+    at Router (react-router.js?v=1a9cc121:7086:13)
+    at RouterProvider (react-router.js?v=1a9cc121:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+DefaultErrorComponent @ react-router.js?v=1a9cc121:6195
+ms @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_S @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+ep @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SX @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sj @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SI @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SL @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+IO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+r.scheduleRefresh @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+(anonymous) @ @react-refresh:228
+performReactRefresh @ @react-refresh:217
+(anonymous) @ @react-refresh:608
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+setTimeout
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+(anonymous) @ @react-refresh:598
+validateRefreshBoundaryAndEnqueueUpdate @ @react-refresh:648
+(anonymous) @ ExpenseForm.tsx:58
+(anonymous) @ client:34
+(anonymous) @ client:213
+(anonymous) @ client:186
+queueUpdate @ client:186
+await in queueUpdate
+(anonymous) @ client:930
+handleMessage @ client:928
+await in handleMessage
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 The above error occurred in the <ProtectedRoute> component:
+
+    at ProtectedRoute (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/src/app/components/ProtectedRoute.tsx:23:34)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:6296:26)
+    at Outlet (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:7077:26)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx?t=1773614016887:25:36)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx?t=1773614016887:23:32)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AppProviders
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:6296:26)
+    at RenderErrorBoundary (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:6206:5)
+    at DataRoutes (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:6994:3)
+    at Router (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:7086:13)
+    at RouterProvider (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:6760:3)
+    at ErrorBoundary (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at App
+    at sm (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at div
+    at sC (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, RenderErrorBoundary.
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+EJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+E1.s.componentDidCatch.i.callback @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+gg @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+g_ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T0 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SZ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SL @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+IO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+r.scheduleRefresh @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+(anonymous) @ @react-refresh:228
+performReactRefresh @ @react-refresh:217
+(anonymous) @ @react-refresh:608
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+setTimeout
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+(anonymous) @ @react-refresh:598
+validateRefreshBoundaryAndEnqueueUpdate @ @react-refresh:648
+(anonymous) @ ExpenseForm.tsx:58
+(anonymous) @ client:34
+(anonymous) @ client:213
+(anonymous) @ client:186
+queueUpdate @ client:186
+await in queueUpdate
+(anonymous) @ client:930
+handleMessage @ client:928
+await in handleMessage
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 React Router caught the following error during render Error: useAuth must be used within an AuthProvider
+    at useAuth (AuthContext.tsx:208:11)
+    at ProtectedRoute (ProtectedRoute.tsx:11:29)
+    at ms (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:68027)
+    at _S (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:114634)
+    at _4 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:127720)
+    at ep (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:166810)
+    at SX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160942)
+    at Sz (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160557)
+    at Sj (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160323)
+    at SI (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156868)
+    at SO (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:158222)
+    at pC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:36290)
+    at SL (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:158998)
+    at IO (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:169939)
+    at r.scheduleRefresh (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17:53181)
+    at @react-refresh:228:17
+    at Set.forEach (<anonymous>)
+    at performReactRefresh (@react-refresh:217:26)
+    at @react-refresh:608:3
+    at i (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90:4861) Component Stack
+    at RenderErrorBoundary (react-router.js?v=1a9cc121:6206:5)
+    at DataRoutes (react-router.js?v=1a9cc121:6994:3)
+    at Router (react-router.js?v=1a9cc121:7086:13)
+    at RouterProvider (react-router.js?v=1a9cc121:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+componentDidCatch @ react-router.js?v=1a9cc121:6234
+E1.s.componentDidCatch.i.callback @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+gg @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+g_ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T0 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SZ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SL @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+IO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+r.scheduleRefresh @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+(anonymous) @ @react-refresh:228
+performReactRefresh @ @react-refresh:217
+(anonymous) @ @react-refresh:608
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+setTimeout
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+(anonymous) @ @react-refresh:598
+validateRefreshBoundaryAndEnqueueUpdate @ @react-refresh:648
+(anonymous) @ ExpenseForm.tsx:58
+(anonymous) @ client:34
+(anonymous) @ client:213
+(anonymous) @ client:186
+queueUpdate @ client:186
+await in queueUpdate
+(anonymous) @ client:930
+handleMessage @ client:928
+await in handleMessage
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in C
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1919
+i @ 4239-c4c06d09094e9c07.min.js.br:1919
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 10:33:38 PM [vite] (client) hmr invalidate /src/app/contexts/AuthContext.tsx Could not Fast Refresh ("useAuth" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 10:33:38 PM [vite] (client) hmr update /src/styles/index.css, /src/app/routes.tsx, /src/app/components/ProtectedRoute.tsx, /src/app/pages/MorePage.tsx, /src/app/pages/SalesPage.tsx, /src/app/pages/EmployeesPage.tsx, /src/app/pages/SettingsPage.tsx, /src/app/contexts/BusinessContext.tsx, /src/app/pages/LoginPage.tsx, /src/app/components/Sidebar.tsx, /src/app/components/BusinessSwitcher.tsx
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Uncaught Error: useAuth must be used within an AuthProvider
+    at useAuth (AuthContext.tsx:208:11)
+    at ProtectedRoute (ProtectedRoute.tsx:11:29)
+    at ms (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:68027)
+    at _S (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:114634)
+    at _4 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:127720)
+    at HTMLUnknownElement.y (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:54006)
+    at HTMLUnknownElement.i (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90:4861)
+    at Object.ik (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:54331)
+    at ij (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:55284)
+    at ep (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:166948)
+    at SX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160942)
+    at SK (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160868)
+    at SY (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160735)
+    at SS (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156365)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65:74721
+    at V (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:1842)
+    at B (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:1559)
+    at MessagePort.eo (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:3433)
+useAuth @ AuthContext.tsx:208
+ProtectedRoute @ ProtectedRoute.tsx:11
+ms @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_S @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ep @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SX @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SK @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SY @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SS @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error handled by React Router default ErrorBoundary: Error: useAuth must be used within an AuthProvider
+    at useAuth (AuthContext.tsx:208:11)
+    at ProtectedRoute (ProtectedRoute.tsx:11:29)
+    at ms (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:68027)
+    at _S (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:114634)
+    at _4 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:127720)
+    at ep (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:166810)
+    at SX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160942)
+    at SK (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160868)
+    at SY (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160735)
+    at SS (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156365)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65:74721
+    at V (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:1842)
+    at B (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:1559)
+    at MessagePort.eo (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:3433) Component Stack
+    at DefaultErrorComponent (react-router.js?v=1a9cc121:6187:15)
+    at RenderErrorBoundary (react-router.js?v=1a9cc121:6206:5)
+    at DataRoutes (react-router.js?v=1a9cc121:6994:3)
+    at Router (react-router.js?v=1a9cc121:7086:13)
+    at RouterProvider (react-router.js?v=1a9cc121:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+DefaultErrorComponent @ react-router.js?v=1a9cc121:6195
+ms @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_S @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+ep @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SX @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SK @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SY @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SS @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:65
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Uncaught Error: useAuth must be used within an AuthProvider
+    at useAuth (AuthContext.tsx:208:11)
+    at ProtectedRoute (ProtectedRoute.tsx:11:29)
+    at ms (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:68027)
+    at _S (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:114634)
+    at _4 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:127720)
+    at HTMLUnknownElement.y (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:54006)
+    at HTMLUnknownElement.i (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90:4861)
+    at Object.ik (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:54331)
+    at ij (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25:55284)
+    at ep (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:166948)
+    at SX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160942)
+    at Sz (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160557)
+    at Sj (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160323)
+    at SI (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156868)
+    at SS (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156422)
+    at V (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:1842)
+    at B (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:1559)
+    at MessagePort.eo (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:3433)
+useAuth @ AuthContext.tsx:208
+ProtectedRoute @ ProtectedRoute.tsx:11
+ms @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_S @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+y @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+ik @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ij @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:25
+ep @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SX @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sj @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SI @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SS @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 Error handled by React Router default ErrorBoundary: Error: useAuth must be used within an AuthProvider
+    at useAuth (AuthContext.tsx:208:11)
+    at ProtectedRoute (ProtectedRoute.tsx:11:29)
+    at ms (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:68027)
+    at _S (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:114634)
+    at _4 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:127720)
+    at ep (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:166810)
+    at SX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160942)
+    at Sz (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160557)
+    at Sj (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160323)
+    at SI (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156868)
+    at SS (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156422)
+    at V (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:1842)
+    at B (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:1559)
+    at MessagePort.eo (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:3433) Component Stack
+    at DefaultErrorComponent (react-router.js?v=1a9cc121:6187:15)
+    at RenderErrorBoundary (react-router.js?v=1a9cc121:6206:5)
+    at DataRoutes (react-router.js?v=1a9cc121:6994:3)
+    at Router (react-router.js?v=1a9cc121:7086:13)
+    at RouterProvider (react-router.js?v=1a9cc121:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+DefaultErrorComponent @ react-router.js?v=1a9cc121:6195
+ms @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_S @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+_4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+ep @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SX @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sz @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sj @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SI @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SS @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 The above error occurred in the <ProtectedRoute> component:
+
+    at ProtectedRoute (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/src/app/components/ProtectedRoute.tsx:23:34)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:6296:26)
+    at Outlet (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:7077:26)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at BusinessProvider (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/src/app/contexts/BusinessContext.tsx?t=1773614016887:25:36)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AuthProvider (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/src/app/contexts/AuthContext.tsx?t=1773614016887:23:32)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at AppProviders
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at RenderedRoute (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:6296:26)
+    at RenderErrorBoundary (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:6206:5)
+    at DataRoutes (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:6994:3)
+    at Router (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:7086:13)
+    at RouterProvider (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/node_modules/.vite/deps/react-router.js?v=1a9cc121:6760:3)
+    at ErrorBoundary (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/src/app/components/ErrorBoundary.tsx:10:5)
+    at https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (https://app-7dy4fbpcxjmmoeemtmgyn64apsvtugw4bdejnum4tx6qosjvzuhq.makeproxy-c.figma.site/@id/fginspector:3:55)
+    at App
+    at sm (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at div
+    at sC (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, RenderErrorBoundary.
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+EJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+E1.s.componentDidCatch.i.callback @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+gg @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+g_ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T0 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SZ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SS @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 React Router caught the following error during render Error: useAuth must be used within an AuthProvider
+    at useAuth (AuthContext.tsx:208:11)
+    at ProtectedRoute (ProtectedRoute.tsx:11:29)
+    at ms (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:68027)
+    at _S (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:114634)
+    at _4 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:127720)
+    at ep (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:166810)
+    at SX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160942)
+    at Sz (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160557)
+    at Sj (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:160323)
+    at SI (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156868)
+    at SS (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37:156422)
+    at V (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:1842)
+    at B (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:1559)
+    at MessagePort.eo (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61:3433) Component Stack
+    at RenderErrorBoundary (react-router.js?v=1a9cc121:6206:5)
+    at DataRoutes (react-router.js?v=1a9cc121:6994:3)
+    at Router (react-router.js?v=1a9cc121:7086:13)
+    at RouterProvider (react-router.js?v=1a9cc121:6760:3)
+    at ErrorBoundary (ErrorBoundary.tsx:16:5)
+    at code_components_preview_iframe-f4fd20809e153e7b.min.js.br:290:12522
+    at FGCmp (fginspector:3:55)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/App
+    at sm (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:4420)
+    at O (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:572:13253)
+    at ri (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:626:13959)
+    at bJ (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:643:10311)
+    at 833f451e-75a1-4c1a-b54f-583c3b71c174-v2-figmaiframepreview.figma.site/div
+    at sC (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:117:13984)
+    at T1 (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:234768)
+    at yN (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:633:245893)
+    at oX (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:102:154139)
+    at hi (code_components_preview_iframe-f4fd20809e153e7b.min.js.br:436:8433)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+r @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+error @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+componentDidCatch @ react-router.js?v=1a9cc121:6234
+E1.s.componentDidCatch.i.callback @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+gg @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+g_ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T0 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+TJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SZ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+Sv @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SS @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+V @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+B @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+eo @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:61
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: true user: undefined
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔐 AuthContext: Inicializando...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Sesión obtenida: Activa
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 Token expires at: 2026-03-15T23:33:07.000Z
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 Current time: 2026-03-15T22:33:39.921Z
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔑 Token is expired? false
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario establecido: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔧 [API] Fixing employee user_id...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cargando negocio desde tabla businesses...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ AuthContext inicializado, loading=false
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: {name: undefined, id: undefined, logo: null, logo_url: null, loadedAt: undefined, …}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Auth state changed: INITIAL_SESSION
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Cargando negocio desde tabla businesses...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📦 User ID: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔒 [PROTECTED] loading: false user: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔄 Usuario y sesión listos, cargando negocios...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ======== CARGANDO NEGOCIOS ========
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 👤 Usuario: renagavilanes@hotmail.com
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 10:33:40 PM [vite] (client) hmr invalidate /src/app/routes.tsx Could not Fast Refresh ("router" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 10:33:40 PM [vite] (client) hmr update /src/styles/index.css, /src/app/App.tsx
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocios encontrados: 2
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 💾 Business ID guardado: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ========================================
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📥 Loading employees from API...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be a hero 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: {name: 'be a hero 5', id: 'd7332d66-252b-4185-8889-773aca6e8b54', logo: null, logo_url: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD...', loadedAt: undefined, …}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Employees retrieved: 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Employees loaded: 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocios encontrados: 2
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    1. be hero 51 (ID: 72454c71-5a4f-4d89-9e57-494a7c4b89e7)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90    2. be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 💾 Business ID guardado: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🎯 Negocio seleccionado: be a hero 5 (ID: d7332d66-252b-4185-8889-773aca6e8b54)
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🏢 ========================================
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 📥 Loading employees from API...
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Negocio cargado desde tabla businesses: be a hero 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 🔍 Sidebar - Business actualizado: {name: 'be a hero 5', id: 'd7332d66-252b-4185-8889-773aca6e8b54', logo: null, logo_url: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD...', loadedAt: undefined, …}
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90  POST https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/fix-employee-user-id 401 (Unauthorized)
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+fixEmployeeUserId @ api.ts:1128
+await in fixEmployeeUserId
+(anonymous) @ AuthContext.tsx:127
+Promise.then
+(anonymous) @ AuthContext.tsx:105
+TN @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T8 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T7 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T6 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+T4 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+S1 @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SQ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SJ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SZ @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+pC @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+SL @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+IO @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:37
+r.scheduleRefresh @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:17
+(anonymous) @ @react-refresh:228
+performReactRefresh @ @react-refresh:217
+(anonymous) @ @react-refresh:608
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+setTimeout
+(anonymous) @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+(anonymous) @ @react-refresh:598
+validateRefreshBoundaryAndEnqueueUpdate @ @react-refresh:648
+(anonymous) @ BusinessSwitcher.tsx:25
+(anonymous) @ client:34
+(anonymous) @ client:213
+(anonymous) @ client:186
+queueUpdate @ client:186
+await in queueUpdate
+(anonymous) @ client:930
+handleMessage @ client:928
+await in handleMessage
+(anonymous) @ client:490
+dequeue @ client:516
+(anonymous) @ client:504
+enqueue @ client:498
+(anonymous) @ client:490
+onMessage @ client:309
+(anonymous) @ client:439
+i @ code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ℹ️ Error fixing employee user_id (non-critical): Error al arreglar el empleado
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ [API DIRECT] Employees retrieved: 5
+code_components_preview_iframe-f4fd20809e153e7b.min.js.br:90 ✅ Employees loaded: 5
+vendor-core-ade2edecaf4781c7.min.js.br:63  GET https://www.figma.com/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs 429 (Too Many Requests)
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+h @ vendor-191557b646cc979f.min.js.br:3
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1319
+T @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in T
+C @ 4239-c4c06d09094e9c07.min.js.br:1319
+await in C
+k @ 4239-c4c06d09094e9c07.min.js.br:1319
+(anonymous) @ figma_app-726b2563eb8cdce8.min.js.br:173
+validate @ figma_app-726b2563eb8cdce8.min.js.br:229
+getFunctionLogs @ figma_app-726b2563eb8cdce8.min.js.br:173
+fetch @ figma_app-726b2563eb8cdce8.min.js.br:281
+p @ 4239-c4c06d09094e9c07.min.js.br:386
+await in p
+d @ vendor-191557b646cc979f.min.js.br:296
+O @ vendor-191557b646cc979f.min.js.br:296
+h @ vendor-191557b646cc979f.min.js.br:296
+fetch @ vendor-191557b646cc979f.min.js.br:296
+executeFetch @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setInterval
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+updateRefetchInterval @ vendor-191557b646cc979f.min.js.br:296
+updateTimers @ vendor-191557b646cc979f.min.js.br:296
+onQueryUpdate @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+(anonymous) @ vendor-191557b646cc979f.min.js.br:296
+batch @ vendor-191557b646cc979f.min.js.br:296
+dispatch @ vendor-191557b646cc979f.min.js.br:296
+setData @ vendor-191557b646cc979f.min.js.br:296
+onSuccess @ vendor-191557b646cc979f.min.js.br:296
+b @ vendor-191557b646cc979f.min.js.br:296
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+(anonymous) @ 4239-c4c06d09094e9c07.min.js.br:1919
+i @ 4239-c4c06d09094e9c07.min.js.br:1919
+C @ 4239-c4c06d09094e9c07.min.js.br:1319

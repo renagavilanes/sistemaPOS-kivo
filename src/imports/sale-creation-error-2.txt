@@ -1,0 +1,142 @@
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 💰 Creando venta: {cartItems: Array(1), total: 1, paymentType: 'pagada', payments: Array(1), client: null, …}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Getting customers for business: 82db83ae-eeef-4fcd-a1b6-fbcc2e824da6
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔵 [API DIRECT] Creating sale
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 [DEBUG] Sale data received: {
+  "total": 1,
+  "subtotal": 1,
+  "discount": 0,
+  "paymentMethod": "Efectivo",
+  "paymentStatus": "paid",
+  "paidAmount": 1,
+  "changeAmount": 0,
+  "items": [
+    {
+      "productId": "0cfdc51f-f30f-485f-bcb2-bff925616da3",
+      "name": "iuef uise",
+      "price": 1,
+      "quantity": 1,
+      "subtotal": 1,
+      "discount": 0
+    }
+  ],
+  "payments": [
+    {
+      "method": "Efectivo",
+      "amount": 1
+    }
+  ],
+  "notes": "",
+  "createdBy": "82db83ae-eeef-4fcd-a1b6-fbcc2e824da6"
+}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Customers retrieved: 0
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 🔍 [DEBUG] Insert data: {
+  "business_id": "82db83ae-eeef-4fcd-a1b6-fbcc2e824da6",
+  "customer_id": null,
+  "sale_number": "V-0002",
+  "total": 1,
+  "subtotal": 1,
+  "tax": 0,
+  "discount": 0,
+  "payment_method": "Efectivo",
+  "payment_status": "paid",
+  "paid_amount": 1,
+  "change_amount": 0,
+  "items": [
+    {
+      "productId": "0cfdc51f-f30f-485f-bcb2-bff925616da3",
+      "name": "iuef uise",
+      "price": 1,
+      "quantity": 1,
+      "subtotal": 1,
+      "discount": 0
+    }
+  ],
+  "payments": [
+    {
+      "method": "Efectivo",
+      "amount": 1
+    }
+  ],
+  "notes": null,
+  "created_by": "82db83ae-eeef-4fcd-a1b6-fbcc2e824da6"
+}
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ [API DIRECT] Sale created: 0db78edb-c82f-45d0-9849-6b0c6df69ab3
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 ✅ SuccessDialog - Recibiendo defaultName: iuef uise
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 Uncaught ReferenceError: localStore is not defined
+    at onNameChange (SalesPage.tsx:804:15)
+    at handleGoToMovements (SuccessDialog.tsx:113:7)
+    at HTMLUnknownElement.y (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:54006)
+    at HTMLUnknownElement.i (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28:4861)
+    at Object.ik (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:54331)
+    at ij (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:55284)
+    at iz (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:55341)
+    at dP (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:10702)
+    at dM (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:11042)
+    at dG (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:11125)
+    at dk (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:11212)
+    at code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:12595
+    at SR (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:158583)
+    at iR (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:51978)
+    at d$ (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:12574)
+    at lO (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:72034)
+    at lN (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:71970)
+    at lv (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:71781)
+    at HTMLBodyElement.i (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28:4861)
+onNameChange @ SalesPage.tsx:804
+handleGoToMovements @ SuccessDialog.tsx:113
+y @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+ik @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+ij @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+iz @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+dP @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dM @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dG @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dk @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+iR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+d$ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+lO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28 Uncaught ReferenceError: localStore is not defined
+    at onNameChange (SalesPage.tsx:804:15)
+    at handleGoToMovements (SuccessDialog.tsx:113:7)
+    at HTMLUnknownElement.y (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:54006)
+    at HTMLUnknownElement.i (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28:4861)
+    at Object.ik (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:54331)
+    at ij (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:55284)
+    at iz (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:55341)
+    at dP (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:10702)
+    at dM (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:11042)
+    at dG (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:11125)
+    at dk (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:11212)
+    at code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:12595
+    at SR (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:158583)
+    at iR (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:51978)
+    at d$ (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89:12574)
+    at lO (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:72034)
+    at lN (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:71970)
+    at lv (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77:71781)
+    at HTMLBodyElement.i (code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28:4861)
+onNameChange @ SalesPage.tsx:804
+handleGoToMovements @ SuccessDialog.tsx:113
+y @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28
+ik @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+ij @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+iz @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+dP @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dM @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dG @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+dk @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+(anonymous) @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+SR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+iR @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+d$ @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:89
+lO @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lN @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+lv @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:77
+i @ code_components_preview_iframe-c7239de3eebdcfa0.min.js.br:28

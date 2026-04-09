@@ -1,0 +1,820 @@
+ Running frontend commit ef16aa686a0f3f191e31c9f6e1e7540215287acb
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [bootstrap_waiting_on_user_state] You appear to be logging a relative timestamp and not an epoch timestamp. Try adding performance.timeOrigin to the timestamp.
+(anonymous) @ vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 Autosave Changes not available or already claimed by another tab undefined
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [import] git: 166cb33e8bde4f5a2d3b91e3f07579b444411ff4, stamp: 87A19F9B274A8446
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [Fullscreen] Ready in 13821.0ms
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=qTGCs6K8Ht4prrJK&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=ef16aa686a0f3f191e31c9f6e1e7540215287acb
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 Loaded 0 scripts (0b), 0 from cache (0b)
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=EcFLFcaAByM28Eqn-0&preview-route=%2Fmovements:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [Fullscreen] loadtime=51.03s maxmem=191365580
+vendor-core-83c17265f2588e9e.min.js.br:sourcemap:54 [devtools] Initialized LS
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 400 ()
+ [devtools] Initialized LS
+ 🔵 Creando nueva instancia de Supabase Client
+ 🚀 [APP] App component loading...
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: undefined
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: true user: undefined initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: true user: false initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ⏸️ Esperando autenticación... Object
+ 🔐 AuthContext: Inicializando...
+ 📦 Sesión obtenida: Inactiva
+ ℹ️ No hay sesión activa
+ ✅ AuthContext inicializado, loading=false
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: undefined
+ 🚫 [BUSINESS PROTECTED] No hay usuario, redirigiendo a login
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: undefined initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: null 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: false initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ⏸️ Esperando autenticación... Object
+ 🔄 Auth state changed: INITIAL_SESSION
+ 🔍 Leyendo localStorage: null
+ 📦 Cuentas guardadas encontradas: 0
+ 📦 Detalle de cuentas: Array(0)
+ ℹ️ No hay cuentas, mostrando formulario completo
+ 🔐 Iniciando sesión con: post_visual@hotmail.com
+ 🔄 Auth state changed: SIGNED_IN
+ ℹ️ No hay negocio seleccionado
+ ✅ Sesión iniciada: post_visual@hotmail.com
+ 💾 Guardando cuenta en localStorage
+ 🔍 Leyendo localStorage: null
+ 💾 Guardando en localStorage: 1 cuentas
+ ✅ Verificación guardado: OK
+ 🔄 Forzando recarga de negocios después del login...
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+  [LOAD-2] ❌ No hay usuario
+ ✅ Negocios recargados
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ Usuario ya tiene sesión activa, redirigiendo...
+ 🚀 Iniciando carga de negocios para: post_visual@hotmail.com
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [4] ✅ Llamando a loadBusinesses()... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: null
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ ✅ Carga de negocios completada
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: false 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: true 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [4] ✅ Llamando a loadBusinesses()... 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-1] ✅ Iniciando carga de negocios...
+ 🏢 [LOAD-3] 👤 Usuario: post_visual@hotmail.com
+ 🏢 [LOAD-4] 📡 Consultando negocios propios...
+ 🛡️ [8] FIN useEffect 
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🏢 [LOAD-6] ✅ Negocios propios: 1
+ 🏢 [LOAD-7] 📡 Consultando negocios como empleado...
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ 🛡️ [5] ✅ loadBusinesses() completado
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting categories for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting products for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🏢 [LOAD-8] ✅ Empleado en: 1 negocios Array(1)
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Categories retrieved: 0
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🏢 Permisos para negocio be a hero 5: is_active=true, role=cashier
+ 🏢 [LOAD-9] ✅ Negocios como empleado: 1
+ 🏢 [LOAD-10] ✅ Total negocios encontrados: 2
+ 💾 Business ID guardado: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🎯 Negocio seleccionado: post (ID: 8813d682-1c9c-4282-b834-e7b0b9974d12)
+ 🏢 ========================================
+ 🛡️ [5] ✅ loadBusinesses() completado
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting customers for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Products retrieved: 0
+ ✅ Productos cargados en SalesPage: 0 productos
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🔄 Cambiando a negocio: be a hero 5
+ 🔄 Evento businessChanged recibido
+ 📦 Cargando negocio desde tabla businesses...
+ 📦 Business ID: d7332d66-252b-4185-8889-773aca6e8b54
+ 📦 User ID: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔵 [API DIRECT] Getting categories for business: 8813d682-1c9c-4282-b834-e7b0b9974d12
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🔍 Sidebar - Business actualizado: Object
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting categories for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔍 [SALES] Estado: Object
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Categories retrieved: 0
+ 🔄 [SALES] Categorías actualizadas: Array(0)
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+zcqoussqgigskextorag.supabase.co/rest/v1/businesses?select=*&id=eq.d7332d66-252b-4185-8889-773aca6e8b54&owner_id=eq.8813d682-1c9c-4282-b834-e7b0b9974d12:1  Failed to load resource: the server responded with a status of 406 ()
+ ⚠️ Negocio no encontrado: d7332d66-252b-4185-8889-773aca6e8b54
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Categories retrieved: 0
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+ ✅ [API DIRECT] Customers retrieved: 0
+ 🔥🔥🔥 BusinessProvider RENDERIZADO 🔥🔥🔥
+ 🔥 ANTES DEL useEffect - user: post_visual@hotmail.com
+ ✅ [BUSINESS PROTECTED] Todo listo, renderizando contenido
+ 🛡️🛡️🛡️ INICIO useEffect - authLoading: false user: post_visual@hotmail.com initialLoad: true Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [1] Punto de control 1 Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [2] Evaluando condición... Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [3] shouldLoad: false Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [7] ❌ Esperando... authLoading: false user: true initialLoad: true Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🛡️ [8] FIN useEffect Component Stack
+    at IH (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:23250:25)
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at YE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8764:15)
+    at Vj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21220:25)
+    at zj (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:21114:25)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/xX
+    at KM (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8371:29)
+    at WE (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8294:5)
+    at cL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8729:11)
+    at uL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8767:13)
+    at oL (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:8569:11)
+    at HO (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kk1niP8dKfY83sG4gcbCLH-5WX0Xgug~T~mY3YYvro-ccAovQb3-kKibms7QunqLYQHM8aFZ63WfH9PEMdPEPGMq7FsZci3Jz18XZHmqtBmRSn3VTZ~4LK7i9A4RNhpPnF1eIPL2eHo1O5lmt2gppnH44BU0TJTvCKlywhYUWwhvwUd~YCgnL8Iq982NDZqyRVN9f0WJpGiXks62ci8m47x~-q74h1xRbirH9jaMDBG7Vsn-k9XT6x38f5zoeUvc-g0AMzH9cvGzCm967xJIqAdPCNgMP85TT4jqnVULZA-SKi6IFczEXFC-vS6YdCQXkc49-YW-GKIo5H~27~kPMQ__:3873:5)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/_X
+    at sI (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:4420)
+    at O (code_components_preview_iframe-38049e48d7f0a436.min.js.br:572:13398)
+    at ri (code_components_preview_iframe-38049e48d7f0a436.min.js.br:626:13959)
+    at bQ (code_components_preview_iframe-38049e48d7f0a436.min.js.br:643:10321)
+    at ec8a7fa6-1147-42a1-8d12-3f5de7f3b760-v2-figmaiframepreview.figma.site/div
+    at sP (code_components_preview_iframe-38049e48d7f0a436.min.js.br:117:13985)
+    at T1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:234835)
+    at yO (code_components_preview_iframe-38049e48d7f0a436.min.js.br:633:246097)
+    at o1 (code_components_preview_iframe-38049e48d7f0a436.min.js.br:102:157136)
+    at ho (code_components_preview_iframe-38049e48d7f0a436.min.js.br:436:8433)
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ 🔵 [API DIRECT] Getting products for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting customers for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API DIRECT] Getting employees for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API] Getting sales for business: d7332d66-252b-4185-8889-773aca6e8b54
+ 🔵 [API] Getting expenses for business: d7332d66-252b-4185-8889-773aca6e8b54
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Products retrieved: 5
+ ✅ Productos cargados en SalesPage: 5 productos
+ ✅ [API DIRECT] Employees retrieved: 1
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/sales:1  Failed to load resource: the server responded with a status of 404 ()
+ ⚠️ [API] Edge Function /admin/sales returned 404, falling back to direct query
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses:1  Failed to load resource: the server responded with a status of 404 ()
+zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/admin/expenses:1  Failed to load resource: the server responded with a status of 404 ()
+ ⚠️ [API] Edge Function /admin/expenses returned 404, falling back to direct query
+(anonymous) @ code_components_prev…f0a436.min.js.br:90
+ ✅ [API] Sales via direct query: 0
+ ✅ [API] Expenses via direct query: 0
+ ✅ [API DIRECT] Products retrieved: 5

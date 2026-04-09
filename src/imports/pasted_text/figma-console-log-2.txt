@@ -1,0 +1,91 @@
+ Running frontend commit 107bbd51e86fce9a104f472597b3e63a6aa8ffa6
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 34 scripts (5985689b), 34 from cache (5985689b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [bootstrap_waiting_on_user_state] You appear to be logging a relative timestamp and not an epoch timestamp. Try adding performance.timeOrigin to the timestamp.
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: 640e7c0c7a50f673af49d46032d102e256b5e667, stamp: 8E3CE7D760547CC6
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+(index):1  Failed to load resource: net::ERR_FAILED
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (AMD)" renderer:"ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 555X, Unspecified Version)" deviceArchitecture:"gcn-4" deviceDescription:"" webGPUDevice:"" webGPUVendor:"amd" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 2182.9ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/5Fd3OHhMY2lssTlq3IRIEy?role=editor&tracking_session_id=XSDkYtbItX2WmB0q&version=151&recentReload=0&file-load-streaming-compression&user-id=1041165271660718653&client_release=107bbd51e86fce9a104f472597b3e63a6aa8ffa6
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=EO3DJ8mhyggwldBV-0&preview-route=%2Fsales:1 Access to image at 'https://www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1' from origin 'https://www.figma.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.gravatar.com/avatar/f72347b1009cb6be3366371a55abb608?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_r_v2.png?c=1:1  Failed to load resource: net::ERR_FAILED
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=EO3DJ8mhyggwldBV-0&preview-route=%2Fsales:1 The resource https://www.figma.com/api/user/state?team_id=1308841176238026529&file_key=5Fd3OHhMY2lssTlq3IRIEy&fuid=1041165271660718653 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=EO3DJ8mhyggwldBV-0&preview-route=%2Fsales:1 The resource https://www.figma.com/api/session/state?fuid=1041165271660718653 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=9.96s maxmem=182034704
+/api/make/fetch_ds_code_gen_status:1  Failed to load resource: the server responded with a status of 400 ()
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ 🔵 Creando nueva instancia de Supabase Client
+ 🚀 [APP] App component loading...
+ 🔒 [PROTECTED] loading: true user: undefined
+ 🔐 AuthContext: Inicializando...
+ 📦 Sesión obtenida: Inactiva
+ ℹ️ No hay sesión activa
+ ✅ AuthContext inicializado, loading=false
+ 🚫 [PROTECTED] No hay usuario, redirigiendo a login
+ 🔒 [PROTECTED] loading: false user: undefined
+ ℹ️ No hay usuario autenticado
+ 🔄 Auth state changed: INITIAL_SESSION
+ 🔍 Leyendo localStorage: null
+ 📦 Cuentas guardadas encontradas: 0
+ 📦 Detalle de cuentas: Array(0)
+ ℹ️ No hay cuentas, mostrando formulario completo
+ 🚀 [APP] App component loading...
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=EO3DJ8mhyggwldBV-0&preview-route=%2Flogin:1 The resource https://www.figma.com/api/user/state?team_id=1308841176238026529&file_key=5Fd3OHhMY2lssTlq3IRIEy&fuid=1041165271660718653 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+/make/5Fd3OHhMY2lssTlq3IRIEy/POS?p=f&t=EO3DJ8mhyggwldBV-0&preview-route=%2Flogin:1 The resource https://www.figma.com/api/session/state?fuid=1041165271660718653 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+ 🔐 Iniciando sesión con: beahero_ec@hotmail.com
+zcqoussqgigskextorag.supabase.co/auth/v1/token?grant_type=password:1  Failed to load resource: the server responded with a status of 400 ()
+zcqoussqgigskextorag.supabase.co/auth/v1/token?grant_type=password:1  Failed to load resource: the server responded with a status of 400 ()
+ ❌ Error de autenticación: AuthApiError: Invalid login credentials
+    at F4 (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=AA6Ud~GToTVa0BKJaMBOLMO7CV2ctutjREJpLZGGK-i0bmuiScoHyKad~XXU~jczm7wVNxqt-CmEjML-8OtLb-SydpW9YxfOV3xC4cSc9cuZtsIBYKL8Q-rzlgDLqxAoJLI8DTjJOBoPEKTPXHb7CZw8Zs3DHhNUz3osDESSyFTzslB253X9DjvoHpGn4nq3pflEUIjyMLHWhNr0xIzf7M4WGQ05zcCzHvMFEeolKu7i6UXIJSHNQuoQ0a7lCtJbFHZmYlSVsg5HWI8Yv13nYre7LdCKhvhQL2Cv5vagPE7c7oaQVSI4KzPKtx~x4xqDpTXsjovZAB7i7bHPWdnCyg__:16583:9)
+    at async SU (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=AA6Ud~GToTVa0BKJaMBOLMO7CV2ctutjREJpLZGGK-i0bmuiScoHyKad~XXU~jczm7wVNxqt-CmEjML-8OtLb-SydpW9YxfOV3xC4cSc9cuZtsIBYKL8Q-rzlgDLqxAoJLI8DTjJOBoPEKTPXHb7CZw8Zs3DHhNUz3osDESSyFTzslB253X9DjvoHpGn4nq3pflEUIjyMLHWhNr0xIzf7M4WGQ05zcCzHvMFEeolKu7i6UXIJSHNQuoQ0a7lCtJbFHZmYlSVsg5HWI8Yv13nYre7LdCKhvhQL2Cv5vagPE7c7oaQVSI4KzPKtx~x4xqDpTXsjovZAB7i7bHPWdnCyg__:16609:15)
+    at async vr (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=AA6Ud~GToTVa0BKJaMBOLMO7CV2ctutjREJpLZGGK-i0bmuiScoHyKad~XXU~jczm7wVNxqt-CmEjML-8OtLb-SydpW9YxfOV3xC4cSc9cuZtsIBYKL8Q-rzlgDLqxAoJLI8DTjJOBoPEKTPXHb7CZw8Zs3DHhNUz3osDESSyFTzslB253X9DjvoHpGn4nq3pflEUIjyMLHWhNr0xIzf7M4WGQ05zcCzHvMFEeolKu7i6UXIJSHNQuoQ0a7lCtJbFHZmYlSVsg5HWI8Yv13nYre7LdCKhvhQL2Cv5vagPE7c7oaQVSI4KzPKtx~x4xqDpTXsjovZAB7i7bHPWdnCyg__:16595:87)
+    at async pj.signInWithPassword (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=AA6Ud~GToTVa0BKJaMBOLMO7CV2ctutjREJpLZGGK-i0bmuiScoHyKad~XXU~jczm7wVNxqt-CmEjML-8OtLb-SydpW9YxfOV3xC4cSc9cuZtsIBYKL8Q-rzlgDLqxAoJLI8DTjJOBoPEKTPXHb7CZw8Zs3DHhNUz3osDESSyFTzslB253X9DjvoHpGn4nq3pflEUIjyMLHWhNr0xIzf7M4WGQ05zcCzHvMFEeolKu7i6UXIJSHNQuoQ0a7lCtJbFHZmYlSVsg5HWI8Yv13nYre7LdCKhvhQL2Cv5vagPE7c7oaQVSI4KzPKtx~x4xqDpTXsjovZAB7i7bHPWdnCyg__:18317:13)
+    at async j (index.js?Expires=1774828800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=AA6Ud~GToTVa0BKJaMBOLMO7CV2ctutjREJpLZGGK-i0bmuiScoHyKad~XXU~jczm7wVNxqt-CmEjML-8OtLb-SydpW9YxfOV3xC4cSc9cuZtsIBYKL8Q-rzlgDLqxAoJLI8DTjJOBoPEKTPXHb7CZw8Zs3DHhNUz3osDESSyFTzslB253X9DjvoHpGn4nq3pflEUIjyMLHWhNr0xIzf7M4WGQ05zcCzHvMFEeolKu7i6UXIJSHNQuoQ0a7lCtJbFHZmYlSVsg5HWI8Yv13nYre7LdCKhvhQL2Cv5vagPE7c7oaQVSI4KzPKtx~x4xqDpTXsjovZAB7i7bHPWdnCyg__:73713:37)
+(anonymous) @ code_components_prev…153e7b.min.js.br:90
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ 🔐 Iniciando sesión con: beahero_ec@hotmail.com
+ 🔄 Auth state changed: SIGNED_IN
+ ℹ️ No hay negocio seleccionado
+ ✅ Sesión iniciada: beahero_ec@hotmail.com
+ 💾 Guardando cuenta en localStorage
+ 🔍 Leyendo localStorage: null
+ 💾 Guardando en localStorage: 1 cuentas
+ ✅ Verificación guardado: OK
+ ✅ Usuario ya tiene sesión activa, redirigiendo...
+ 🔄 Usuario y sesión listos, cargando negocios...
+ 🏢 ======== CARGANDO NEGOCIOS ========
+ 👤 Usuario: beahero_ec@hotmail.com
+ 🔍 Sidebar - Business actualizado: Object
+ 🔒 [PROTECTED] loading: false user: beahero_ec@hotmail.com
+ 🔍 [SALES] Estado: Object
+ ✅ Negocios encontrados: 1
+    1. jkj  (ID: 55d535a8-9f97-4e4e-9237-529f9b965534)
+ 💾 Business ID guardado: null
+ 🎯 Negocio seleccionado: jkj  (ID: 55d535a8-9f97-4e4e-9237-529f9b965534)
+ 🏢 ========================================
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()
+ 🔵 [API DIRECT] Getting customers for business: 55d535a8-9f97-4e4e-9237-529f9b965534
+ 🔵 [API DIRECT] Getting customers for business: 55d535a8-9f97-4e4e-9237-529f9b965534
+ 🔵 [API DIRECT] Getting categories for business: 55d535a8-9f97-4e4e-9237-529f9b965534
+ 🔵 [API DIRECT] Getting products for business: 55d535a8-9f97-4e4e-9237-529f9b965534
+ 🔍 [SALES] Estado: Object
+ ✅ [API DIRECT] Customers retrieved: 0
+ ✅ [API DIRECT] Products retrieved: 0
+ ✅ Productos cargados en SalesPage: 0 productos
+ ✅ [API DIRECT] Categories retrieved: 0
+ 📂 [SALES] Categorías cargadas desde Supabase: Array(0)
+ ✅ [API DIRECT] Customers retrieved: 0
+/api/integrations/supabase/5Fd3OHhMY2lssTlq3IRIEy/edge_functions/make-server/logs:1  Failed to load resource: the server responded with a status of 429 ()

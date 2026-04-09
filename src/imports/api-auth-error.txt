@@ -1,0 +1,578 @@
+ 🔍 [SALES] Estado: {businessLoading: false, currentBusiness: 'Negocio de Prueba'}
+ 🔑 Getting auth token, session exists: true
+ 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+ 🌐 API Call: /customers?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10
+ 🔑 Token disponible: true
+ 🔑 Getting auth token, session exists: true
+ 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+ 🌐 API Call: /customers?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10
+ 🔑 Token disponible: true
+ 🔑 Getting auth token, session exists: true
+ 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+ 🌐 API Call: /categories?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10
+ 🔑 Token disponible: true
+ 🔑 Getting auth token, session exists: true
+ 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+ 🌐 API Call: /products?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10
+ 🔑 Token disponible: true
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/customers?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10 401 (Unauthorized)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:56
+await in apiCall
+getCustomers @ api.ts:152
+(anonymous) @ PaymentSheet.tsx:91
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ 📡 Response status: 401
+ ❌ API Error: {code: 401, message: 'Invalid JWT'}
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:65
+await in apiCall
+getCustomers @ api.ts:152
+(anonymous) @ PaymentSheet.tsx:91
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ Error loading contacts: Error: HTTP 401
+    at apiCall (supabase.ts:66:11)
+    at async Module.getCustomers (api.ts:152:16)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ PaymentSheet.tsx:94
+Promise.catch
+(anonymous) @ PaymentSheet.tsx:93
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/categories?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10 401 (Unauthorized)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:56
+await in apiCall
+getCategories @ api.ts:123
+loadCategories @ SalesPage.tsx:77
+(anonymous) @ SalesPage.tsx:87
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ 📡 Response status: 401
+ ❌ API Error: {code: 401, message: 'Invalid JWT'}
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:65
+await in apiCall
+getCategories @ api.ts:123
+loadCategories @ SalesPage.tsx:77
+(anonymous) @ SalesPage.tsx:87
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ ❌ [SALES] Error al cargar categorías: Error: HTTP 401
+    at apiCall (supabase.ts:66:11)
+    at async Module.getCategories (api.ts:123:16)
+    at async loadCategories (SalesPage.tsx:77:28)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+loadCategories @ SalesPage.tsx:82
+await in loadCategories
+(anonymous) @ SalesPage.tsx:87
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/products?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10 401 (Unauthorized)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:56
+await in apiCall
+getProducts @ api.ts:94
+getProducts @ api.ts:163
+fetchProducts @ SalesPage.tsx:123
+(anonymous) @ SalesPage.tsx:143
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ 📡 Response status: 401
+ ❌ API Error: {code: 401, message: 'Invalid JWT'}
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:65
+await in apiCall
+getProducts @ api.ts:94
+getProducts @ api.ts:163
+fetchProducts @ SalesPage.tsx:123
+(anonymous) @ SalesPage.tsx:143
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ Error loading products: Error: HTTP 401
+    at apiCall (supabase.ts:66:11)
+    at async Module.getProducts (api.ts:94:16)
+    at async getProducts (api.ts:163:20)
+    at async fetchProducts (SalesPage.tsx:123:26)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+fetchProducts @ SalesPage.tsx:138
+await in fetchProducts
+(anonymous) @ SalesPage.tsx:143
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/customers?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10 401 (Unauthorized)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:56
+await in apiCall
+getCustomers @ api.ts:152
+(anonymous) @ ExpenseForm.tsx:93
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ 📡 Response status: 401
+ ❌ API Error: {code: 401, message: 'Invalid JWT'}
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:65
+await in apiCall
+getCustomers @ api.ts:152
+(anonymous) @ ExpenseForm.tsx:93
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ Error loading contacts: Error: HTTP 401
+    at apiCall (supabase.ts:66:11)
+    at async Module.getCustomers (api.ts:152:16)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ ExpenseForm.tsx:101
+Promise.catch
+(anonymous) @ ExpenseForm.tsx:100
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ 🔑 Getting auth token, session exists: true
+ 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+ 🌐 API Call: /categories?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10
+ 🔑 Token disponible: true
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/categories?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10 401 (Unauthorized)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:56
+await in apiCall
+getCategories @ api.ts:123
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_prev…bdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ SalesPage.tsx:106
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ 📡 Response status: 401
+ ❌ API Error: {code: 401, message: 'Invalid JWT'}
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:65
+await in apiCall
+getCategories @ api.ts:123
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_prev…bdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ SalesPage.tsx:106
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ ❌ [SALES] Error al actualizar categorías: Error: HTTP 401
+    at apiCall (supabase.ts:66:11)
+    at async Module.getCategories (api.ts:123:16)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_prev…bdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ SalesPage.tsx:106
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ 🔑 Getting auth token, session exists: true
+ 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+ 🌐 API Call: /categories?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10
+ 🔑 Token disponible: true
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/categories?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10 401 (Unauthorized)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:56
+await in apiCall
+getCategories @ api.ts:123
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_prev…bdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ SalesPage.tsx:106
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ 📡 Response status: 401
+ ❌ API Error: {code: 401, message: 'Invalid JWT'}
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:65
+await in apiCall
+getCategories @ api.ts:123
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_prev…bdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ SalesPage.tsx:106
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ ❌ [SALES] Error al actualizar categorías: Error: HTTP 401
+    at apiCall (supabase.ts:66:11)
+    at async Module.getCategories (api.ts:123:16)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_prev…bdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ SalesPage.tsx:106
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ 🔑 Getting auth token, session exists: true
+ 🔑 Token preview: eyJhbGciOiJFUzI1NiIs...
+ 🌐 API Call: /categories?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10
+ 🔑 Token disponible: true
+  GET https://zcqoussqgigskextorag.supabase.co/functions/v1/make-server-3508045b/categories?businessId=98286dbb-15af-4eb4-a47a-546cbb97bc10 401 (Unauthorized)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:56
+await in apiCall
+getCategories @ api.ts:123
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_prev…bdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ SalesPage.tsx:106
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ 📡 Response status: 401
+ ❌ API Error: {code: 401, message: 'Invalid JWT'}
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+apiCall @ supabase.ts:65
+await in apiCall
+getCategories @ api.ts:123
+handleCategoriesUpdated @ SalesPage.tsx:96
+i @ code_components_prev…bdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ SalesPage.tsx:106
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
+ ❌ [SALES] Error al actualizar categorías: Error: HTTP 401
+    at apiCall (supabase.ts:66:11)
+    at async Module.getCategories (api.ts:123:16)
+    at async handleCategoriesUpdated (SalesPage.tsx:96:28)
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+r @ code_components_prev…bdcfa0.min.js.br:69
+error @ code_components_prev…bdcfa0.min.js.br:28
+handleCategoriesUpdated @ SalesPage.tsx:101
+await in handleCategoriesUpdated
+i @ code_components_prev…bdcfa0.min.js.br:28
+setInterval
+(anonymous) @ code_components_prev…bdcfa0.min.js.br:28
+(anonymous) @ SalesPage.tsx:106
+TN @ code_components_prev…bdcfa0.min.js.br:89
+T7 @ code_components_prev…bdcfa0.min.js.br:89
+T8 @ code_components_prev…bdcfa0.min.js.br:89
+T6 @ code_components_prev…bdcfa0.min.js.br:89
+T4 @ code_components_prev…bdcfa0.min.js.br:89
+S1 @ code_components_prev…bdcfa0.min.js.br:89
+SQ @ code_components_prev…bdcfa0.min.js.br:89
+SO @ code_components_prev…bdcfa0.min.js.br:89
+pC @ code_components_prev…bdcfa0.min.js.br:89
+SJ @ code_components_prev…bdcfa0.min.js.br:89
+SZ @ code_components_prev…bdcfa0.min.js.br:89
+Sv @ code_components_prev…bdcfa0.min.js.br:89
+SS @ code_components_prev…bdcfa0.min.js.br:89
+V @ code_components_prev…dcfa0.min.js.br:113
+B @ code_components_prev…dcfa0.min.js.br:113
+eo @ code_components_prev…dcfa0.min.js.br:113
