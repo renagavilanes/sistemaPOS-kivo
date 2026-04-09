@@ -1,11 +1,12 @@
+# KIVO (POS)
 
-  # POS
+Proyecto **KIVO** — punto de venta. Bundle original basado en diseño Figma: https://www.figma.com/design/5Fd3OHhMY2lssTlq3IRIEy/POS.
 
-  This is a code bundle for POS. The original project is available at https://www.figma.com/design/5Fd3OHhMY2lssTlq3IRIEy/POS.
+Repositorio de producción: **KIVO-produccion**.
 
-  ## Running the code
+## Cómo ejecutar
 
-  Run `npm i` to install the dependencies.
-
-  Run `npm run dev` to start the development server.
-  
+```bash
+npm i
+npm run dev
+```
