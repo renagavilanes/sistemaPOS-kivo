@@ -6,7 +6,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       // Evita dependencias de Next/ThemeProvider en Vite.
       // `system` funciona bien y previene errores de mounting en móviles.
       theme={"system" as ToasterProps["theme"]}
-      className="toaster group"
+      className="toaster group notranslate"
       position="top-center"
       style={
         {

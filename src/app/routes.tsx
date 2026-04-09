@@ -50,7 +50,17 @@ function RootWithProviders() {
 
 function HomeRoute() {
   const { user, loading } = useAuth();
-  if (loading) return null;
+  // Evita desmontar la ruta por completo (null): en móvil Chrome eso + toasts/portales
+  // a veces provoca NotFoundError insertBefore al hidratar/reconciliar.
+  if (loading) {
+    return (
+      <div
+        className="min-h-[100dvh] bg-background"
+        aria-busy="true"
+        aria-label="Cargando"
+      />
+    );
+  }
   if (user) return <Navigate to="/sales" replace />;
   return <LandingPage />;
 }
@@ -84,6 +94,11 @@ export const router = createBrowserRouter([
         path: "auth",
         element: <Navigate to="/register" replace />,
       },
+      // Super Admin: ruta pública (como /login); el acceso real lo protege la clave en la propia página y en el Edge Function.
+      {
+        path: "superadmin",
+        Component: SuperAdminPage,
+      },
       // Rutas internas de diagnóstico/pruebas: solo en DEV para no exponerlas en producción.
       ...(IS_DEV
         ? [
@@ -103,7 +118,6 @@ export const router = createBrowserRouter([
             { path: "invite-direct/:token", Component: InvitePageDirect },
             { path: "test-invite", Component: TestInvite },
             { path: "diagnostic-employee", Component: DiagnosticEmployeePage },
-            { path: "superadmin", Component: SuperAdminPage },
           ]
         : []),
       {

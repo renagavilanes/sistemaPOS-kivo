@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { useAuth } from './AuthContext';
 import { supabase } from '../lib/supabase';
 import {
@@ -284,12 +285,15 @@ export function BusinessProvider({ children }: { children: React.ReactNode }) {
         loadBusinesses, // ⭐ EXPONER PÚBLICAMENTE
       }}
     >
-      {isSwitching && (
-        <BusinessLoadingOverlay 
-          businessName={switchingBusinessName} 
-          businessLogo={switchingBusinessLogo} 
-        />
-      )}
+      {typeof document !== 'undefined' && isSwitching
+        ? createPortal(
+            <BusinessLoadingOverlay
+              businessName={switchingBusinessName}
+              businessLogo={switchingBusinessLogo}
+            />,
+            document.body,
+          )
+        : null}
       {children}
     </BusinessContext.Provider>
   );

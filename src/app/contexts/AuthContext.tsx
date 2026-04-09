@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { APP_PATHNAME_EVENT } from '../routes';
 import { supabase } from '../lib/supabase';
 import {
@@ -330,84 +331,90 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     window.open(href, '_blank', 'noopener,noreferrer');
   };
 
-  return (
-    <AuthContext.Provider value={{ user, session, business, loading, signOut, refreshBusiness }}>
-      {!loading && !accountSuspended && pendingComunicado && !isSuperAdminRoute(appPathname) && (
-        <div className="fixed inset-0 z-[99990] flex items-center justify-center bg-slate-950/50 backdrop-blur-sm p-4">
-          <div
-            className="relative w-full max-w-md rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden text-slate-900"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="comunicado-title"
+  const comunicadoLayer =
+    !loading && !accountSuspended && pendingComunicado && !isSuperAdminRoute(appPathname) ? (
+      <div className="fixed inset-0 z-[99990] flex items-center justify-center bg-slate-950/50 backdrop-blur-sm p-4">
+        <div
+          className="relative w-full max-w-md rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden text-slate-900"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="comunicado-title"
+        >
+          <button
+            type="button"
+            className="absolute left-3 top-3 z-10 text-slate-500 hover:text-slate-900 text-2xl leading-none w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
+            onClick={() => void dismissComunicado()}
+            aria-label="Cerrar y omitir"
           >
+            ×
+          </button>
+          <div className="px-4 pt-12 pb-3 border-b border-slate-200 bg-white">
+            <h2 id="comunicado-title" className="text-lg font-semibold text-slate-900 pr-8 text-center">
+              {pendingComunicado.title}
+            </h2>
+          </div>
+          <div className="p-4 max-h-[min(60vh,420px)] overflow-y-auto bg-white">
+            {pendingComunicado.image_url ? (
+              <img
+                src={pendingComunicado.image_url}
+                alt=""
+                className="w-full rounded-xl mb-4 max-h-52 object-contain bg-slate-100 border border-slate-100 mx-auto"
+              />
+            ) : null}
+            <p className="text-sm text-slate-800 whitespace-pre-wrap leading-relaxed">{pendingComunicado.body}</p>
+          </div>
+          <div className="px-4 py-3 border-t border-slate-200 bg-slate-50 flex justify-center">
             <button
               type="button"
-              className="absolute left-3 top-3 z-10 text-slate-500 hover:text-slate-900 text-2xl leading-none w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
               onClick={() => void dismissComunicado()}
-              aria-label="Cerrar y omitir"
+              className="text-sm text-slate-600 hover:text-slate-900 underline underline-offset-2"
             >
-              ×
+              Omitir
             </button>
-            <div className="px-4 pt-12 pb-3 border-b border-slate-200 bg-white">
-              <h2 id="comunicado-title" className="text-lg font-semibold text-slate-900 pr-8 text-center">
-                {pendingComunicado.title}
-              </h2>
-            </div>
-            <div className="p-4 max-h-[min(60vh,420px)] overflow-y-auto bg-white">
-              {pendingComunicado.image_url ? (
-                <img
-                  src={pendingComunicado.image_url}
-                  alt=""
-                  className="w-full rounded-xl mb-4 max-h-52 object-contain bg-slate-100 border border-slate-100 mx-auto"
-                />
-              ) : null}
-              <p className="text-sm text-slate-800 whitespace-pre-wrap leading-relaxed">{pendingComunicado.body}</p>
-            </div>
-            <div className="px-4 py-3 border-t border-slate-200 bg-slate-50 flex justify-center">
-              <button
-                type="button"
-                onClick={() => void dismissComunicado()}
-                className="text-sm text-slate-600 hover:text-slate-900 underline underline-offset-2"
-              >
-                Omitir
-              </button>
-            </div>
           </div>
         </div>
-      )}
-      {accountSuspended && !isSuperAdminRoute(appPathname) && (
-        <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4">
-          <div
-            className="max-w-lg w-full rounded-2xl border border-red-900/50 bg-slate-900 p-8 shadow-2xl text-center"
-            role="alertdialog"
-            aria-labelledby="suspend-title"
-            aria-describedby="suspend-desc"
-          >
-            <h2 id="suspend-title" className="text-xl font-semibold text-red-300 mb-3">
-              Acceso restringido
-            </h2>
-            <p id="suspend-desc" className="text-slate-200 text-left whitespace-pre-wrap text-sm leading-relaxed mb-6">
-              {accountSuspended.message}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button
-                type="button"
-                onClick={openSupportWhatsApp}
-                className="w-full sm:flex-1 px-5 py-3 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition-colors"
-              >
-                Contactar soporte
-              </button>
-              <button
-                type="button"
-                onClick={() => void signOut()}
-                className="w-full sm:flex-1 px-5 py-3 rounded-xl bg-slate-100 text-slate-900 font-semibold hover:bg-white transition-colors"
-              >
-                Cerrar sesión
-              </button>
-            </div>
+      </div>
+    ) : null;
+
+  const suspendedLayer =
+    accountSuspended && !isSuperAdminRoute(appPathname) ? (
+      <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4">
+        <div
+          className="max-w-lg w-full rounded-2xl border border-red-900/50 bg-slate-900 p-8 shadow-2xl text-center"
+          role="alertdialog"
+          aria-labelledby="suspend-title"
+          aria-describedby="suspend-desc"
+        >
+          <h2 id="suspend-title" className="text-xl font-semibold text-red-300 mb-3">
+            Acceso restringido
+          </h2>
+          <p id="suspend-desc" className="text-slate-200 text-left whitespace-pre-wrap text-sm leading-relaxed mb-6">
+            {accountSuspended.message}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <button
+              type="button"
+              onClick={openSupportWhatsApp}
+              className="w-full sm:flex-1 px-5 py-3 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition-colors"
+            >
+              Contactar soporte
+            </button>
+            <button
+              type="button"
+              onClick={() => void signOut()}
+              className="w-full sm:flex-1 px-5 py-3 rounded-xl bg-slate-100 text-slate-900 font-semibold hover:bg-white transition-colors"
+            >
+              Cerrar sesión
+            </button>
           </div>
         </div>
-      )}
+      </div>
+    ) : null;
+
+  return (
+    <AuthContext.Provider value={{ user, session, business, loading, signOut, refreshBusiness }}>
+      {typeof document !== 'undefined' && comunicadoLayer ? createPortal(comunicadoLayer, document.body) : null}
+      {typeof document !== 'undefined' && suspendedLayer ? createPortal(suspendedLayer, document.body) : null}
       {children}
     </AuthContext.Provider>
   );

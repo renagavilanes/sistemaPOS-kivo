@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { ScreenFxOverlay, type ScreenFxId } from '../components/ScreenFxOverlay';
 
 type ScreenFxApi = {
@@ -35,14 +36,18 @@ export function ScreenFxProvider({ children }: { children: React.ReactNode }) {
     triggerInkDouble: () => trigger('ink-double'),
   }), [trigger]);
 
+  const overlay = (
+    <ScreenFxOverlay
+      fx={fx}
+      fxKey={fxKey}
+      xy={lastPointerRef.current}
+      onDone={() => setFx(null)}
+    />
+  );
+
   return (
     <Ctx.Provider value={value}>
-      <ScreenFxOverlay
-        fx={fx}
-        fxKey={fxKey}
-        xy={lastPointerRef.current}
-        onDone={() => setFx(null)}
-      />
+      {typeof document !== 'undefined' ? createPortal(overlay, document.body) : null}
       {children}
     </Ctx.Provider>
   );
