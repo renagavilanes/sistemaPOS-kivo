@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router';
+import { Link, useNavigate, useSearchParams } from 'react-router';
 import { toast } from 'sonner';
 import { LogIn, Mail, Loader2, Store, ArrowLeft, CheckCircle2, Lock, Eye, EyeOff, X, UserPlus } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
@@ -90,6 +90,30 @@ const removeAccount = (email: string) => {
     console.error('Error eliminando cuenta:', error);
   }
 };
+
+/** Cabecera alineada con la tarjeta de login; estilo glass suave, mismo degradado que la página. */
+function LoginScreenTopBar() {
+  return (
+    <header
+      className="pointer-events-none fixed left-0 right-0 top-0 z-30 pt-[max(0.75rem,env(safe-area-inset-top,0px))]"
+      role="navigation"
+      aria-label="Navegación"
+    >
+      <div className="pointer-events-auto mx-auto flex w-full max-w-md items-center justify-center px-4">
+        <Link
+          to="/"
+          className="group inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white/70 px-3.5 py-2.5 text-sm font-medium text-slate-600 shadow-[var(--shadow-card)] backdrop-blur-md transition-all hover:border-blue-200/90 hover:bg-white/95 hover:text-[var(--brand)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/35"
+        >
+          <ArrowLeft
+            className="h-4 w-4 shrink-0 text-slate-400 transition-colors group-hover:text-[var(--brand)]"
+            aria-hidden
+          />
+          Volver al inicio
+        </Link>
+      </div>
+    </header>
+  );
+}
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -498,31 +522,26 @@ export default function LoginPage() {
   // Renderizar según el paso
   if (step !== 'login') {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-slate-100 p-4">
-        <Card className="w-full max-w-md shadow-2xl">
-          <CardHeader className="relative text-center space-y-3">
-            <button
-              type="button"
-              onClick={() => navigate('/')}
-              className="absolute left-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 bg-white/70 text-gray-700 shadow-sm backdrop-blur hover:bg-white sm:hidden"
-              aria-label="Volver"
-            >
-              <ArrowLeft className="h-4 w-4" />
-            </button>
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-2 shadow-lg">
-              <Lock className="w-10 h-10 text-white" />
-            </div>
-            <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
-              Recuperar Contraseña
-            </CardTitle>
-            <CardDescription className="text-base">
-              {step === 'forgot-email' && 'Ingresa tu correo electrónico'}
-              {step === 'forgot-code' && 'Ingresa el código de verificación'}
-              {step === 'forgot-password' && 'Crea tu nueva contraseña'}
-            </CardDescription>
-          </CardHeader>
+      <>
+        <LoginScreenTopBar />
+        <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 via-slate-50 to-slate-100 pt-[calc(4.25rem+env(safe-area-inset-top,0px))]">
+          <div className="flex flex-1 items-center justify-center p-4">
+            <Card className="w-full max-w-md shadow-2xl">
+              <CardHeader className="relative space-y-3 text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-2 shadow-lg">
+                  <Lock className="w-10 h-10 text-white" />
+                </div>
+                <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
+                  Recuperar Contraseña
+                </CardTitle>
+                <CardDescription className="text-base">
+                  {step === 'forgot-email' && 'Ingresa tu correo electrónico'}
+                  {step === 'forgot-code' && 'Ingresa el código de verificación'}
+                  {step === 'forgot-password' && 'Crea tu nueva contraseña'}
+                </CardDescription>
+              </CardHeader>
 
-          <CardContent key={step}>
+              <CardContent key={step}>
             {/* Paso 1: Solicitar código */}
             {step === 'forgot-email' && (
               <form onSubmit={handleRequestCode} className="space-y-4">
@@ -715,36 +734,33 @@ export default function LoginPage() {
                 </Button>
               </form>
             )}
-          </CardContent>
-        </Card>
-      </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </>
     );
   }
 
   // Vista principal de login
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-slate-100 p-4">
-      <Card className="w-full max-w-md shadow-2xl">
-        <CardHeader className="relative text-center space-y-3">
-          <button
-            type="button"
-            onClick={() => navigate('/')}
-            className="absolute left-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 bg-white/70 text-gray-700 shadow-sm backdrop-blur hover:bg-white sm:hidden"
-            aria-label="Volver"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </button>
-          <div className="mx-auto mb-2">
-            <BrandLogo iconClassName="h-16" showText />
-          </div>
-          <CardDescription className="text-base">
-            {viewMode === 'accounts-list' && 'Selecciona tu cuenta'}
-            {viewMode === 'email-password' && 'Inicia sesión con tu cuenta'}
-            {viewMode === 'password-only' && 'Ingresa tu contraseña'}
-          </CardDescription>
-        </CardHeader>
+    <>
+      <LoginScreenTopBar />
+      <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 via-slate-50 to-slate-100 pt-[calc(4.25rem+env(safe-area-inset-top,0px))]">
+        <div className="flex flex-1 items-center justify-center p-4">
+          <Card className="w-full max-w-md shadow-2xl">
+            <CardHeader className="relative space-y-3 text-center">
+              <div className="mx-auto mb-2">
+                <BrandLogo iconClassName="h-16" showText />
+              </div>
+              <CardDescription className="text-base">
+                {viewMode === 'accounts-list' && 'Selecciona tu cuenta'}
+                {viewMode === 'email-password' && 'Inicia sesión con tu cuenta'}
+                {viewMode === 'password-only' && 'Ingresa tu contraseña'}
+              </CardDescription>
+            </CardHeader>
 
-        <CardContent key={viewMode}>
+            <CardContent key={viewMode}>
           {/* VISTA 1: Lista de cuentas guardadas */}
           {viewMode === 'accounts-list' && (
             <div className="space-y-3">
@@ -988,8 +1004,10 @@ export default function LoginPage() {
               </div>
             </form>
           )}
-        </CardContent>
-      </Card>
-    </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </>
   );
 }
