@@ -298,7 +298,9 @@ export default function VirtualCatalogPublicPage() {
       <div className="min-h-[100dvh] bg-gray-50 flex items-center justify-center px-6">
         <div className="w-full max-w-md bg-white rounded-2xl border border-gray-200 p-6 text-center space-y-3">
           <div className="text-base font-semibold text-gray-900">No disponible</div>
-          <div className="text-sm text-gray-600">{error || 'No se pudo cargar este catálogo.'}</div>
+          <div className="text-sm text-gray-600 text-left whitespace-pre-line break-words">
+            {error || 'No se pudo cargar este catálogo.'}
+          </div>
           <Button className="w-full rounded-xl" onClick={() => window.location.reload()}>
             Reintentar
           </Button>

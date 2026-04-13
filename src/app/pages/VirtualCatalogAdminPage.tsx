@@ -253,6 +253,10 @@ export default function VirtualCatalogAdminPage() {
                       {publicUrl || '/catalogo/(slug)'}
                     </span>
                   </p>
+                  <p className="text-xs text-amber-800 bg-amber-50 border border-amber-100 rounded-lg px-2 py-1.5">
+                    La URL solo funciona para clientes después de pulsar <strong>Guardar</strong>. Si abres el catálogo antes,
+                    el servidor responderá «Catálogo no encontrado».
+                  </p>
                 </div>
 
                 <div className="grid gap-2 sm:grid-cols-2">
