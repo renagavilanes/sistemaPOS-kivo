@@ -8,6 +8,7 @@ import { Label } from '../components/ui/label';
 import { LazyProductImage } from '../components/LazyProductImage';
 import { fetchPublicCatalogBySlug } from '../lib/virtualCatalogApi';
 import type { OutOfStockMode, PublicCatalogProduct, PublicCatalogResponse } from '../lib/virtualCatalogTypes';
+import { toWhatsAppWaMeDigits } from '../lib/whatsappPhone';
 import { formatCurrency } from '../utils/currency';
 import { toast } from 'sonner';
 
@@ -20,13 +21,12 @@ function cartStorageKey(slug: string) {
   return `virtual_catalog_cart_${slug}`;
 }
 
-function sanitizeWhatsAppNumber(raw: string): string {
-  return String(raw || '').replace(/[^\d]/g, '');
-}
-
 function buildWhatsAppUrl(phone: string, message: string): string {
-  const to = sanitizeWhatsAppNumber(phone);
+  const to = toWhatsAppWaMeDigits(phone);
   const text = encodeURIComponent(message);
+  if (!to) {
+    return `https://wa.me/?text=${text}`;
+  }
   return `https://wa.me/${to}?text=${text}`;
 }
 
@@ -42,39 +42,66 @@ function formatOrderMessage(params: {
   const fee = deliveryType === 'homeDelivery' ? Number(deliveryFee || 0) : 0;
   const total = subtotal + fee;
 
+  const line = '────────────────────';
+
   const customerBlock =
     deliveryType === 'pickup'
-      ? ['Cliente:', `Nombre: ${customer.name || '-'}`, `Teléfono: ${customer.phone || '-'}`].join('\n')
+      ? [
+          '*Datos del cliente*',
+          '',
+          `*Nombre:* ${customer.name || '—'}`,
+          `*Teléfono:* ${customer.phone || '—'}`,
+        ].join('\n')
       : [
-          'Cliente:',
-          `Nombre: ${customer.name || '-'}`,
-          `Teléfono: ${customer.phone || '-'}`,
-          `Cédula: ${customer.cedula || '-'}`,
-          'Entrega:',
-          'Tipo: Domicilio',
-          `Ciudad: ${customer.city || '-'}`,
-          `Dirección: ${customer.address || '-'}`,
-          `Calle principal: ${customer.mainStreet || '-'}`,
-          `Calle secundaria: ${customer.secondaryStreet || '-'}`,
-          `Referencia: ${customer.reference || '-'}`,
+          '*Datos del cliente*',
+          '',
+          `*Nombre:* ${customer.name || '—'}`,
+          `*Teléfono:* ${customer.phone || '—'}`,
+          `*Cédula:* ${customer.cedula || '—'}`,
+          '',
+          '*Entrega a domicilio*',
+          '',
+          `*Ciudad:* ${customer.city || '—'}`,
+          `*Dirección:* ${customer.address || '—'}`,
+          `*Calle principal:* ${customer.mainStreet || '—'}`,
+          `*Calle secundaria:* ${customer.secondaryStreet || '—'}`,
+          `*Referencia:* ${customer.reference || '—'}`,
         ].join('\n');
 
   const productsBlock = lines.length
-    ? lines.map((l) => `${l.name} x${l.quantity} → $${formatCurrency(l.unitPrice * l.quantity)}`).join('\n')
-    : '(sin productos)';
+    ? lines
+        .map(
+          (l) =>
+            `• ${l.name}\n   ×${l.quantity}  ·  *$${formatCurrency(l.unitPrice * l.quantity)}*`,
+        )
+        .join('\n\n')
+    : '_Sin productos_';
 
-  const feeLine = deliveryType === 'homeDelivery' && fee > 0 ? `Envío: $${formatCurrency(fee)}` : '';
+  const feeBlock =
+    deliveryType === 'homeDelivery' && fee > 0
+      ? [`*Envío:* $${formatCurrency(fee)}`, `*Subtotal productos:* $${formatCurrency(subtotal)}`].join('\n')
+      : '';
 
   return [
-    'NUEVO PEDIDO',
-    `Negocio: ${businessName}`,
+    '*NUEVO PEDIDO*',
+    '',
+    '*Negocio*',
+    businessName,
+    '',
+    line,
     '',
     customerBlock,
-    'Productos:',
+    '',
+    line,
+    '',
+    '*Productos*',
+    '',
     productsBlock,
-    '------------------------------',
-    `Total: $${formatCurrency(total)}`,
-    ...(feeLine ? ['', feeLine] : []),
+    '',
+    line,
+    '',
+    ...(feeBlock ? [feeBlock, ''] : []),
+    `*Total:* *$${formatCurrency(total)}*`,
   ].join('\n');
 }
 
