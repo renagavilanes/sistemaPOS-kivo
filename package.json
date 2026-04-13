@@ -6,7 +6,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "deploy:edge": "supabase functions deploy make-server-3508045b --project-ref zcqoussqgigskextorag"
+    "deploy:edge": "npx supabase functions deploy make-server-3508045b --project-ref zcqoussqgigskextorag"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
