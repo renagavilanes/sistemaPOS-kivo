@@ -8,9 +8,9 @@ function expandKnownCatalogError(message: string): string {
       'Catálogo no encontrado.',
       '',
       'Qué revisar:',
-      '• En el POS: Más → Catálogo virtual → mismo slug que en la URL → pulsa Guardar (sin guardar no se publica).',
-      '• La URL debe ser /catalogo/tu-slug exactamente como quedó guardado (minúsculas, sin espacios).',
-      '• En Supabase → Table Editor → business_settings: debe existir una fila con key «virtual_catalog» y en value.slug el mismo texto.',
+      '• En el POS: Catálogo virtual → pulsa Guardar cambios al menos una vez (así se publica el enlace).',
+      '• Si cambiaste de dispositivo o borraste datos, vuelve a guardar.',
+      '• En Supabase, tabla business_settings, key «virtual_catalog»: debe existir la fila de tu negocio.',
     ].join('\n');
   }
   if (m === 'Catálogo desactivado') {

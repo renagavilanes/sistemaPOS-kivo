@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { ArrowLeft, Download, LayoutGrid, QrCode } from 'lucide-react';
+import { ArrowLeft, LayoutGrid, QrCode, Share2 } from 'lucide-react';
 import QRCode from 'qrcode';
 import { toast } from 'sonner';
 
@@ -51,6 +51,8 @@ export default function VirtualCatalogAdminPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [cfg, setCfg] = useState<VirtualCatalogConfig>(defaultVirtualCatalogConfig());
+  /** Hay fila en business_settings: el enlace público ya existe en el servidor */
+  const [catalogPublished, setCatalogPublished] = useState(false);
 
   const publicUrl = useMemo(() => {
     const slug = normalizeCatalogSlug(cfg.slug);
@@ -80,6 +82,7 @@ export default function VirtualCatalogAdminPage() {
                 slug: suggestSlugFromBusinessName(business.name || 'negocio'),
               });
         setCfg(next);
+        setCatalogPublished(Boolean(row.id));
       } catch (e: any) {
         console.error(e);
         toast.error(e?.message || 'No se pudo cargar la configuración');
@@ -91,20 +94,30 @@ export default function VirtualCatalogAdminPage() {
     void run();
   }, [business?.id, business?.name, canAccessSettings, navigate]);
 
+  const resolveSlugForSave = async (): Promise<string | null> => {
+    if (!business?.id) return null;
+    let slug = normalizeCatalogSlug(cfg.slug);
+    if (!slug) {
+      slug = suggestSlugFromBusinessName(business.name || 'negocio');
+    }
+    if (!slug) return null;
+
+    const taken = await isCatalogSlugTaken({ slug, excludeBusinessId: business.id });
+    if (taken) {
+      const suffix = (business.id || '').replace(/-/g, '').slice(0, 6);
+      slug = `${slug}-${suffix}`;
+    }
+    return slug;
+  };
+
   const handleSave = async () => {
     if (!business?.id) return;
 
-    const slug = normalizeCatalogSlug(cfg.slug);
-    if (!slug) {
-      toast.error('El slug es obligatorio');
-      return;
-    }
-
     setSaving(true);
     try {
-      const taken = await isCatalogSlugTaken({ slug, excludeBusinessId: business.id });
-      if (taken) {
-        toast.error('Ese slug ya está en uso. Elige otro.');
+      const slug = await resolveSlugForSave();
+      if (!slug) {
+        toast.error('No se pudo generar el enlace del catálogo. Revisa el nombre del negocio.');
         setSaving(false);
         return;
       }
@@ -121,7 +134,8 @@ export default function VirtualCatalogAdminPage() {
 
       await upsertVirtualCatalogSettings(business.id, payload);
       setCfg(payload);
-      toast.success('Catálogo guardado');
+      setCatalogPublished(true);
+      toast.success('Cambios guardados');
     } catch (e: any) {
       console.error(e);
       toast.error(e?.message || 'No se pudo guardar');
@@ -130,9 +144,9 @@ export default function VirtualCatalogAdminPage() {
     }
   };
 
-  const downloadQrPng = async () => {
-    if (!publicUrl) {
-      toast.error('Primero define un slug válido');
+  const shareQrPng = async () => {
+    if (!catalogPublished || !publicUrl) {
+      toast.error('Guarda la configuración abajo para publicar el catálogo y poder compartirlo.');
       return;
     }
     try {
@@ -141,13 +155,52 @@ export default function VirtualCatalogAdminPage() {
         width: 900,
         errorCorrectionLevel: 'M',
       });
+      const res = await fetch(dataUrl);
+      const blob = await res.blob();
+      const name = `qr-catalogo-${normalizeCatalogSlug(cfg.slug) || 'tienda'}.png`;
+      const file = new File([blob], name, { type: 'image/png' });
+
+      if (typeof navigator !== 'undefined' && navigator.share && navigator.canShare?.({ files: [file] })) {
+        await navigator.share({
+          files: [file],
+          title: 'QR del catálogo',
+          text: `Escanea para abrir el catálogo.\n${publicUrl}`,
+        });
+        return;
+      }
+
       const a = document.createElement('a');
       a.href = dataUrl;
-      a.download = `catalogo-${normalizeCatalogSlug(cfg.slug) || 'qr'}.png`;
+      a.download = name;
       a.click();
+      toast.message('Tu dispositivo no tiene menú compartir para imágenes; se descargó el QR.');
     } catch (e: any) {
+      if (e?.name === 'AbortError') return;
       console.error(e);
-      toast.error('No se pudo generar el QR');
+      toast.error('No se pudo compartir el QR');
+    }
+  };
+
+  const shareCatalogLink = async () => {
+    if (!catalogPublished || !publicUrl) {
+      toast.error('Guarda la configuración abajo para publicar el catálogo y poder compartirlo.');
+      return;
+    }
+    try {
+      if (typeof navigator !== 'undefined' && navigator.share) {
+        await navigator.share({
+          title: business?.name ? `Catálogo — ${business.name}` : 'Catálogo',
+          text: 'Mira nuestro catálogo',
+          url: publicUrl,
+        });
+        return;
+      }
+      await navigator.clipboard.writeText(publicUrl);
+      toast.success('Enlace copiado');
+    } catch (e: any) {
+      if (e?.name === 'AbortError') return;
+      console.error(e);
+      toast.error('No se pudo compartir el enlace');
     }
   };
 
@@ -194,178 +247,169 @@ export default function VirtualCatalogAdminPage() {
           <div className="bg-white rounded-2xl border border-gray-200 p-6 text-sm text-gray-600">Cargando…</div>
         ) : (
           <>
+            <div className="bg-white rounded-2xl border border-gray-200 p-4 md:p-5 space-y-4 shadow-sm">
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Productos y precios del catálogo público se actualizan solos con tu inventario. Aquí compartes el acceso y
+                ajustas cómo se ve la tienda.
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Button
+                  type="button"
+                  onClick={() => void shareQrPng()}
+                  disabled={!catalogPublished || !publicUrl}
+                  className="h-12 rounded-xl bg-[#272B36] hover:bg-[#1f222b] text-white shadow-sm"
+                >
+                  <QrCode className="h-5 w-5 mr-2 shrink-0" />
+                  Compartir QR
+                </Button>
+                <Button
+                  type="button"
+                  onClick={() => void shareCatalogLink()}
+                  disabled={!catalogPublished || !publicUrl}
+                  className="h-12 rounded-xl bg-[#272B36] hover:bg-[#1f222b] text-white shadow-sm"
+                >
+                  <Share2 className="h-5 w-5 mr-2 shrink-0" />
+                  Compartir catálogo
+                </Button>
+              </div>
+              {(!catalogPublished || !publicUrl) && (
+                <p className="text-xs text-gray-500">
+                  Cuando guardes por primera vez en <strong>Configuración</strong>, podrás compartir el QR y el enlace.
+                </p>
+              )}
+            </div>
+
             <div className="bg-white rounded-2xl border border-gray-200">
               <div className="px-4 py-3 border-b bg-gray-50 flex items-center justify-between gap-3">
                 <div>
-                  <div className="text-base font-semibold text-gray-900">Estado</div>
-                  <div className="text-xs text-gray-600">Activa o desactiva el catálogo público</div>
+                  <div className="text-base font-semibold text-gray-900">Catálogo público</div>
+                  <div className="text-xs text-gray-600">Visible para clientes sin iniciar sesión</div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-gray-700">{cfg.enabled ? 'Activo' : 'Inactivo'}</span>
+                <div className="flex items-center gap-2 shrink-0">
+                  <span className="text-sm text-gray-700 hidden sm:inline">{cfg.enabled ? 'Activo' : 'Inactivo'}</span>
                   <Switch
                     checked={cfg.enabled}
                     onCheckedChange={(v) => setCfg((c) => ({ ...c, enabled: Boolean(v) }))}
                   />
                 </div>
               </div>
-              <div className="p-4 space-y-4">
-                <div className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
-                  <div className="font-semibold">WhatsApp de pedidos</div>
-                  <div className="mt-1 text-amber-900/90">
-                    Los pedidos se enviarán al <span className="font-semibold">Teléfono del Negocio</span> configurado en{' '}
-                    <Link to="/settings" className="underline font-semibold">
+              <div className="p-4 space-y-3">
+                <div className="space-y-2">
+                  <Label htmlFor="catalog-whatsapp-phone">WhatsApp para recibir pedidos</Label>
+                  <Input
+                    id="catalog-whatsapp-phone"
+                    readOnly
+                    value={business.phone?.trim() || ''}
+                    placeholder="Sin número — configúralo en Configuración"
+                    className="h-10 bg-gray-50 text-gray-900 border-gray-200 cursor-default"
+                  />
+                  <p className="text-xs text-gray-500">
+                    Los pedidos del catálogo se envían a este número. Para cambiarlo, ve a{' '}
+                    <Link to="/settings" className="text-[#272B36] font-medium underline underline-offset-2">
                       Configuración
                     </Link>
                     .
-                  </div>
-                  <div className="mt-2 text-sm">
-                    Teléfono actual:{' '}
-                    <span className="font-semibold">{business.phone?.trim() ? business.phone : '— (falta configurar)'}</span>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label>Slug del catálogo</Label>
-                  <div className="flex flex-col sm:flex-row gap-2">
-                    <Input
-                      value={cfg.slug}
-                      onChange={(e) => setCfg((c) => ({ ...c, slug: e.target.value }))}
-                      placeholder="mi-negocio"
-                      className="h-10"
-                    />
-                    <Button
-                      type="button"
-                      variant="outline"
-                      className="h-10"
-                      onClick={() =>
-                        setCfg((c) => ({
-                          ...c,
-                          slug: suggestSlugFromBusinessName(business.name || 'negocio'),
-                        }))
-                      }
-                    >
-                      Generar
-                    </Button>
-                  </div>
-                  <p className="text-xs text-gray-500">
-                    URL pública:{' '}
-                    <span className="font-mono text-gray-700">
-                      {publicUrl || '/catalogo/(slug)'}
-                    </span>
                   </p>
-                  <p className="text-xs text-amber-800 bg-amber-50 border border-amber-100 rounded-lg px-2 py-1.5">
-                    La URL solo funciona para clientes después de pulsar <strong>Guardar</strong>. Si abres el catálogo antes,
-                    el servidor responderá «Catálogo no encontrado».
-                  </p>
-                </div>
-
-                <div className="grid gap-2 sm:grid-cols-2">
-                  <Button type="button" variant="outline" onClick={downloadQrPng} disabled={!publicUrl}>
-                    <QrCode className="h-4 w-4 mr-2" />
-                    Descargar QR
-                  </Button>
-                  <Button type="button" variant="outline" asChild disabled={!publicUrl}>
-                    <a href={publicUrl || '#'} target="_blank" rel="noreferrer">
-                      <Download className="h-4 w-4 mr-2" />
-                      Abrir catálogo
-                    </a>
-                  </Button>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-gray-200">
-              <div className="px-4 py-3 border-b bg-gray-50">
-                <div className="text-base font-semibold text-gray-900">Productos sin stock</div>
-                <div className="text-xs text-gray-600">Define cómo se muestran en el catálogo público</div>
-              </div>
-              <div className="p-4 grid gap-2">
-                <RadioRow
-                  value="show"
-                  current={cfg.outOfStockMode}
-                  label="Mostrar normalmente"
-                  onPick={(v) => setCfg((c) => ({ ...c, outOfStockMode: v }))}
-                />
-                <RadioRow
-                  value="hide"
-                  current={cfg.outOfStockMode}
-                  label="No mostrar en el catálogo"
-                  onPick={(v) => setCfg((c) => ({ ...c, outOfStockMode: v }))}
-                />
-                <RadioRow
-                  value="mark_unavailable"
-                  current={cfg.outOfStockMode}
-                  label="Mostrar como “No disponible”"
-                  onPick={(v) => setCfg((c) => ({ ...c, outOfStockMode: v }))}
-                />
-              </div>
-            </div>
+            <div className="space-y-3">
+              <h2 className="text-lg font-semibold text-gray-900 px-0.5">Configuración</h2>
 
-            <div className="bg-white rounded-2xl border border-gray-200">
-              <div className="px-4 py-3 border-b bg-gray-50">
-                <div className="text-base font-semibold text-gray-900">Métodos de entrega</div>
-                <div className="text-xs text-gray-600">El cliente solo elige; tú defines reglas y costos</div>
-              </div>
-              <div className="p-4 space-y-4">
-                <div className="flex items-center justify-between gap-3">
-                  <div>
-                    <div className="text-sm font-semibold text-gray-900">Retiro en tienda</div>
-                    <div className="text-xs text-gray-600">Permitir retiro</div>
-                  </div>
-                  <Switch
-                    checked={cfg.delivery.pickup}
-                    onCheckedChange={(v) => setCfg((c) => ({ ...c, delivery: { ...c.delivery, pickup: Boolean(v) } }))}
+              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                <div className="px-4 py-3 border-b bg-gray-50">
+                  <div className="text-base font-semibold text-gray-900">Productos sin stock</div>
+                  <div className="text-xs text-gray-600">Cómo se muestran en el catálogo público</div>
+                </div>
+                <div className="p-4 grid gap-2">
+                  <RadioRow
+                    value="show"
+                    current={cfg.outOfStockMode}
+                    label="Mostrar normalmente"
+                    onPick={(v) => setCfg((c) => ({ ...c, outOfStockMode: v }))}
+                  />
+                  <RadioRow
+                    value="hide"
+                    current={cfg.outOfStockMode}
+                    label="No mostrar en el catálogo"
+                    onPick={(v) => setCfg((c) => ({ ...c, outOfStockMode: v }))}
+                  />
+                  <RadioRow
+                    value="mark_unavailable"
+                    current={cfg.outOfStockMode}
+                    label="Mostrar como “No disponible”"
+                    onPick={(v) => setCfg((c) => ({ ...c, outOfStockMode: v }))}
                   />
                 </div>
 
-                <div className="flex items-center justify-between gap-3">
-                  <div>
-                    <div className="text-sm font-semibold text-gray-900">Entrega a domicilio</div>
-                    <div className="text-xs text-gray-600">Permitir domicilio</div>
-                  </div>
-                  <Switch
-                    checked={cfg.delivery.homeDelivery}
-                    onCheckedChange={(v) =>
-                      setCfg((c) => ({
-                        ...c,
-                        delivery: { ...c.delivery, homeDelivery: Boolean(v) },
-                      }))
-                    }
-                  />
+                <div className="px-4 py-3 border-t border-b bg-gray-50">
+                  <div className="text-base font-semibold text-gray-900">Métodos de entrega</div>
+                  <div className="text-xs text-gray-600">El cliente elige; tú defines reglas y costos</div>
                 </div>
+                <div className="p-4 space-y-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <div className="text-sm font-semibold text-gray-900">Retiro en tienda</div>
+                      <div className="text-xs text-gray-600">Permitir retiro</div>
+                    </div>
+                    <Switch
+                      checked={cfg.delivery.pickup}
+                      onCheckedChange={(v) => setCfg((c) => ({ ...c, delivery: { ...c.delivery, pickup: Boolean(v) } }))}
+                    />
+                  </div>
 
-                {cfg.delivery.homeDelivery && (
-                  <div className="space-y-2">
-                    <Label>Precio adicional por envío (opcional)</Label>
-                    <Input
-                      type="number"
-                      min={0}
-                      step="0.01"
-                      value={String(cfg.delivery.homeDeliveryFee ?? 0)}
-                      onChange={(e) =>
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <div className="text-sm font-semibold text-gray-900">Entrega a domicilio</div>
+                      <div className="text-xs text-gray-600">Permitir domicilio</div>
+                    </div>
+                    <Switch
+                      checked={cfg.delivery.homeDelivery}
+                      onCheckedChange={(v) =>
                         setCfg((c) => ({
                           ...c,
-                          delivery: { ...c.delivery, homeDeliveryFee: Number(e.target.value || 0) },
+                          delivery: { ...c.delivery, homeDelivery: Boolean(v) },
                         }))
                       }
-                      className="h-10"
                     />
-                    <p className="text-xs text-gray-500">El cliente lo verá sumado al total (no puede editarlo).</p>
                   </div>
-                )}
+
+                  {cfg.delivery.homeDelivery && (
+                    <div className="space-y-2">
+                      <Label>Precio adicional por envío (opcional)</Label>
+                      <Input
+                        type="number"
+                        min={0}
+                        step="0.01"
+                        value={String(cfg.delivery.homeDeliveryFee ?? 0)}
+                        onChange={(e) =>
+                          setCfg((c) => ({
+                            ...c,
+                            delivery: { ...c.delivery, homeDeliveryFee: Number(e.target.value || 0) },
+                          }))
+                        }
+                        className="h-10"
+                      />
+                      <p className="text-xs text-gray-500">El cliente lo verá sumado al total.</p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="p-4 border-t bg-gray-50/80">
+                  <Button
+                    type="button"
+                    onClick={() => void handleSave()}
+                    disabled={saving}
+                    className="w-full sm:w-auto bg-[#272B36] hover:bg-[#1f222b] h-11 rounded-xl"
+                  >
+                    {saving ? 'Guardando…' : 'Guardar cambios'}
+                  </Button>
+                </div>
               </div>
             </div>
 
-            <div className="hidden md:block">
-              <Button
-                type="button"
-                onClick={() => void handleSave()}
-                disabled={saving}
-                className="w-full md:w-auto bg-[#272B36] hover:bg-[#1f222b] h-11 rounded-xl"
-              >
-                {saving ? 'Guardando…' : 'Guardar'}
-              </Button>
-            </div>
+            <div className="hidden md:block h-2" aria-hidden />
           </>
         )}
       </div>
@@ -377,7 +421,7 @@ export default function VirtualCatalogAdminPage() {
           disabled={saving || loading}
           className="w-full bg-[#272B36] hover:bg-[#1f222b] h-12 rounded-xl"
         >
-          {saving ? 'Guardando…' : 'Guardar'}
+          {saving ? 'Guardando…' : 'Guardar cambios'}
         </Button>
       </div>
     </div>
