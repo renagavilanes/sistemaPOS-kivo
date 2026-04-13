@@ -1,11 +1,19 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { ArrowLeft, LayoutGrid, QrCode, Share2 } from 'lucide-react';
+import { ArrowLeft, Copy, ExternalLink, LayoutGrid, QrCode, Share2 } from 'lucide-react';
 import QRCode from 'qrcode';
 import { toast } from 'sonner';
 
 import { PageHeader } from '../components/layout/PageHeader';
 import { Button } from '../components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '../components/ui/dialog';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Switch } from '../components/ui/switch';
@@ -53,6 +61,10 @@ export default function VirtualCatalogAdminPage() {
   const [cfg, setCfg] = useState<VirtualCatalogConfig>(defaultVirtualCatalogConfig());
   /** Hay fila en business_settings: el enlace público ya existe en el servidor */
   const [catalogPublished, setCatalogPublished] = useState(false);
+  const [qrPreviewOpen, setQrPreviewOpen] = useState(false);
+  const [qrDataUrl, setQrDataUrl] = useState<string | null>(null);
+  const [qrGenerating, setQrGenerating] = useState(false);
+  const [linkPreviewOpen, setLinkPreviewOpen] = useState(false);
 
   const publicUrl = useMemo(() => {
     const slug = normalizeCatalogSlug(cfg.slug);
@@ -144,50 +156,98 @@ export default function VirtualCatalogAdminPage() {
     }
   };
 
-  const shareQrPng = async () => {
+  const requirePublished = (): boolean => {
     if (!catalogPublished || !publicUrl) {
       toast.error('Guarda la configuración abajo para publicar el catálogo y poder compartirlo.');
-      return;
+      return false;
     }
+    return true;
+  };
+
+  const openQrPreview = async () => {
+    if (!requirePublished()) return;
+    setQrPreviewOpen(true);
+    setQrDataUrl(null);
+    setQrGenerating(true);
     try {
       const dataUrl = await QRCode.toDataURL(publicUrl, {
         margin: 1,
-        width: 900,
+        width: 640,
         errorCorrectionLevel: 'M',
       });
-      const res = await fetch(dataUrl);
-      const blob = await res.blob();
-      const name = `qr-catalogo-${normalizeCatalogSlug(cfg.slug) || 'tienda'}.png`;
+      setQrDataUrl(dataUrl);
+    } catch (e) {
+      console.error(e);
+      toast.error('No se pudo generar el código QR');
+      setQrPreviewOpen(false);
+    } finally {
+      setQrGenerating(false);
+    }
+  };
+
+  const shareQrWithSystem = async () => {
+    if (!qrDataUrl || !publicUrl) return;
+    const name = `qr-catalogo-${normalizeCatalogSlug(cfg.slug) || 'tienda'}.png`;
+    try {
+      const blob = await (await fetch(qrDataUrl)).blob();
       const file = new File([blob], name, { type: 'image/png' });
 
-      if (typeof navigator !== 'undefined' && navigator.share && navigator.canShare?.({ files: [file] })) {
+      if (navigator.share && navigator.canShare?.({ files: [file] })) {
         await navigator.share({
           files: [file],
           title: 'QR del catálogo',
-          text: `Escanea para abrir el catálogo.\n${publicUrl}`,
+          text: `Escanea para abrir: ${publicUrl}`,
         });
         return;
       }
 
-      const a = document.createElement('a');
-      a.href = dataUrl;
-      a.download = name;
-      a.click();
-      toast.message('Tu dispositivo no tiene menú compartir para imágenes; se descargó el QR.');
-    } catch (e: any) {
-      if (e?.name === 'AbortError') return;
+      if (navigator.share) {
+        await navigator.share({
+          title: business?.name ? `Catálogo — ${business.name}` : 'Catálogo',
+          text: `Escanea el QR o abre: ${publicUrl}`,
+          url: publicUrl,
+        });
+        return;
+      }
+
+      toast.message('Tu navegador no tiene menú compartir. Usa «Descargar» y envía la imagen.');
+    } catch (e: unknown) {
+      const err = e as { name?: string };
+      if (err?.name === 'AbortError') return;
       console.error(e);
-      toast.error('No se pudo compartir el QR');
+      toast.error('No se pudo abrir el menú compartir. Prueba con Descargar.');
     }
   };
 
-  const shareCatalogLink = async () => {
-    if (!catalogPublished || !publicUrl) {
-      toast.error('Guarda la configuración abajo para publicar el catálogo y poder compartirlo.');
-      return;
-    }
+  const downloadQrFromPreview = () => {
+    if (!qrDataUrl) return;
+    const name = `qr-catalogo-${normalizeCatalogSlug(cfg.slug) || 'tienda'}.png`;
+    const a = document.createElement('a');
+    a.href = qrDataUrl;
+    a.download = name;
+    a.click();
+    toast.success('Imagen descargada');
+  };
+
+  const openLinkPreview = () => {
+    if (!requirePublished()) return;
+    setLinkPreviewOpen(true);
+  };
+
+  const copyCatalogLink = async () => {
+    if (!publicUrl) return;
     try {
-      if (typeof navigator !== 'undefined' && navigator.share) {
+      await navigator.clipboard.writeText(publicUrl);
+      toast.success('Enlace copiado');
+    } catch {
+      toast.error('No se pudo copiar. Selecciona el texto manualmente.');
+    }
+  };
+
+  const shareCatalogLinkWithSystem = async () => {
+    if (!publicUrl) return;
+    try {
+      if (navigator.share) {
         await navigator.share({
           title: business?.name ? `Catálogo — ${business.name}` : 'Catálogo',
           text: 'Mira nuestro catálogo',
@@ -195,12 +255,11 @@ export default function VirtualCatalogAdminPage() {
         });
         return;
       }
-      await navigator.clipboard.writeText(publicUrl);
-      toast.success('Enlace copiado');
-    } catch (e: any) {
-      if (e?.name === 'AbortError') return;
-      console.error(e);
-      toast.error('No se pudo compartir el enlace');
+      await copyCatalogLink();
+    } catch (e: unknown) {
+      const err = e as { name?: string };
+      if (err?.name === 'AbortError') return;
+      await copyCatalogLink();
     }
   };
 
@@ -255,7 +314,7 @@ export default function VirtualCatalogAdminPage() {
               <div className="grid gap-3 sm:grid-cols-2">
                 <Button
                   type="button"
-                  onClick={() => void shareQrPng()}
+                  onClick={() => void openQrPreview()}
                   disabled={!catalogPublished || !publicUrl}
                   className="h-12 rounded-xl bg-[#272B36] hover:bg-[#1f222b] text-white shadow-sm"
                 >
@@ -264,7 +323,7 @@ export default function VirtualCatalogAdminPage() {
                 </Button>
                 <Button
                   type="button"
-                  onClick={() => void shareCatalogLink()}
+                  onClick={openLinkPreview}
                   disabled={!catalogPublished || !publicUrl}
                   className="h-12 rounded-xl bg-[#272B36] hover:bg-[#1f222b] text-white shadow-sm"
                 >
@@ -424,6 +483,79 @@ export default function VirtualCatalogAdminPage() {
           {saving ? 'Guardando…' : 'Guardar cambios'}
         </Button>
       </div>
+
+      <Dialog open={qrPreviewOpen} onOpenChange={setQrPreviewOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Código QR del catálogo</DialogTitle>
+            <DialogDescription>
+              Comparte esta imagen para que entren directo a tu tienda pública.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col items-center gap-4 py-2">
+            {qrGenerating && (
+              <div className="h-48 w-48 rounded-xl bg-gray-100 animate-pulse flex items-center justify-center text-sm text-gray-500">
+                Generando…
+              </div>
+            )}
+            {!qrGenerating && qrDataUrl && (
+              <img
+                src={qrDataUrl}
+                alt="Código QR del catálogo"
+                className="w-full max-w-[280px] rounded-xl border border-gray-200 bg-white p-2 shadow-sm"
+              />
+            )}
+          </div>
+          <DialogFooter className="flex-col gap-2 sm:flex-col">
+            <Button
+              type="button"
+              className="w-full bg-[#272B36] hover:bg-[#1f222b]"
+              disabled={!qrDataUrl}
+              onClick={() => void shareQrWithSystem()}
+            >
+              <Share2 className="h-4 w-4 mr-2" />
+              Compartir (sistema)
+            </Button>
+            <Button type="button" variant="outline" className="w-full" disabled={!qrDataUrl} onClick={downloadQrFromPreview}>
+              Descargar imagen
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={linkPreviewOpen} onOpenChange={setLinkPreviewOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Enlace del catálogo</DialogTitle>
+            <DialogDescription>Copia o abre el enlace para compartirlo donde quieras.</DialogDescription>
+          </DialogHeader>
+          <div className="space-y-3">
+            <Input readOnly value={publicUrl} className="font-mono text-xs h-11 bg-gray-50" onFocus={(e) => e.target.select()} />
+          </div>
+          <DialogFooter className="flex-col gap-2 sm:flex-col">
+            <Button type="button" className="w-full bg-[#272B36] hover:bg-[#1f222b]" onClick={() => void copyCatalogLink()}>
+              <Copy className="h-4 w-4 mr-2" />
+              Copiar enlace
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full"
+              onClick={() => publicUrl && window.open(publicUrl, '_blank', 'noopener,noreferrer')}
+              disabled={!publicUrl}
+            >
+              <ExternalLink className="h-4 w-4 mr-2" />
+              Abrir catálogo
+            </Button>
+            {typeof navigator !== 'undefined' && typeof navigator.share === 'function' && (
+              <Button type="button" variant="ghost" className="w-full" onClick={() => void shareCatalogLinkWithSystem()}>
+                <Share2 className="h-4 w-4 mr-2" />
+                Más opciones (compartir del sistema)
+              </Button>
+            )}
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
