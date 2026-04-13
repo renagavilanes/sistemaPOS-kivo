@@ -1,4 +1,4 @@
-import { Settings, Users, BookUser, ChevronRight, Store, LogOut, Building2, Plus, ChevronDown } from 'lucide-react';
+import { Settings, Users, BookUser, ChevronRight, Store, LogOut, Building2, Plus, ChevronDown, QrCode } from 'lucide-react';
 import { Link, useNavigate } from 'react-router';
 import { useAuth } from '../contexts/AuthContext';
 import { useBusiness } from '../contexts/BusinessContext';
@@ -40,6 +40,13 @@ const menuItems = [
     href: '/settings',
     color: 'bg-gray-100 text-gray-600',
   },
+  {
+    name: 'Catálogo virtual',
+    description: 'QR y catálogo público',
+    icon: QrCode,
+    href: '/catalog/settings',
+    color: 'bg-emerald-100 text-emerald-700',
+  },
 ];
 
 export default function MorePage() {
@@ -63,6 +70,8 @@ export default function MorePage() {
         case '/employees':
           return perms.employees?.view === true;
         case '/settings':
+          return perms.settings?.access === true;
+        case '/catalog/settings':
           return perms.settings?.access === true;
         default:
           return true;

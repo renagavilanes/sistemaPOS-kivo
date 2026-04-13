@@ -1,4 +1,4 @@
-import { ShoppingCart, BarChart3, Package, MoreHorizontal, Settings, BookUser, Users, LogOut } from 'lucide-react';
+import { ShoppingCart, BarChart3, Package, MoreHorizontal, Settings, BookUser, Users, LogOut, QrCode } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
@@ -28,6 +28,7 @@ const desktopNavigation = [
   { name: 'Vender', icon: ShoppingCart, href: '/sales' },
   { name: 'Movimientos', icon: BarChart3, href: '/movements' },
   { name: 'Productos', icon: Package, href: '/products' },
+  { name: 'Catálogo', icon: QrCode, href: '/catalog/settings' },
   { name: 'Contactos', icon: BookUser, href: '/contacts' },
   { name: 'Empleados', icon: Users, href: '/employees' },
   { name: 'Configuración', icon: Settings, href: '/settings' },
@@ -78,6 +79,8 @@ export function Sidebar() {
         case '/employees':
           return perms.employees?.view === true;
         case '/settings':
+          return perms.settings?.access === true;
+        case '/catalog/settings':
           return perms.settings?.access === true;
         case '/more':
           return true;
@@ -135,12 +138,14 @@ export function Sidebar() {
     <>
       {/* Mobile Bottom Navigation */}
       {/* Ocultar en páginas de Contactos, Empleados y Configuración */}
-      {!['/contacts', '/employees', '/settings'].includes(location.pathname) && (
+      {!['/contacts', '/employees', '/settings', '/catalog/settings'].includes(location.pathname) && (
         <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t shadow-lg">
           <nav className="flex items-center justify-around px-2 py-2 safe-area-inset-bottom">
             {currentMobileNav.map((item) => {
               // Para el tab "Más", considerarlo activo si estamos en contacts, employees o settings
-              const isMoreSection = ['/contacts', '/employees', '/settings', '/more'].includes(location.pathname);
+              const isMoreSection = ['/contacts', '/employees', '/settings', '/catalog/settings', '/more'].includes(
+                location.pathname,
+              );
               const isActive = item.href === '/more' 
                 ? isMoreSection 
                 : location.pathname === item.href;

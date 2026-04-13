@@ -5,6 +5,7 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 import * as kv from "./kv_store.tsx";
 import * as dbBusinesses from "./db_businesses.tsx";
 import * as dbProducts from "./db_products.tsx";
+import * as dbBusinessSettings from "./db_business_settings.tsx";
 import * as dbCustomers from "./db_customers.tsx";
 import * as dbSales from "./db_sales.tsx";
 import * as dbExpenses from "./db_expenses.tsx";
@@ -2520,6 +2521,91 @@ function mapProductRow(p: any) {
     updatedAt: p.updated_at,
   };
 }
+
+// ==================== PUBLIC VIRTUAL CATALOG ====================
+// Sin sesión: resuelve negocio por slug y devuelve payload sanitizado (sin costos internos).
+app.get("/make-server-3508045b/public/catalog/:slug", async (c) => {
+  try {
+    const slug = c.req.param("slug");
+    const businessId = await dbBusinessSettings.findBusinessIdByVirtualCatalogSlug(slug);
+    if (!businessId) {
+      return c.json({ error: "Catálogo no encontrado" }, 404);
+    }
+
+    const { data: biz, error: bizErr } = await supabaseAdmin
+      .from("businesses")
+      .select("id, name, phone, logo_url, active")
+      .eq("id", businessId)
+      .maybeSingle();
+
+    if (bizErr) return c.json({ error: bizErr.message }, 500);
+    if (!biz || biz.active === false) {
+      return c.json({ error: "Negocio no disponible" }, 404);
+    }
+
+    const row = await dbBusinessSettings.getVirtualCatalogRowByBusinessId(businessId);
+    const rawCfg = (row?.value ?? {}) as dbBusinessSettings.VirtualCatalogConfig;
+
+    const enabled = rawCfg.enabled !== false; // default true si existe fila vacía
+    if (!enabled) {
+      return c.json({ error: "Catálogo desactivado" }, 404);
+    }
+
+    const outOfStockMode: dbBusinessSettings.OutOfStockMode =
+      rawCfg.outOfStockMode === "hide" || rawCfg.outOfStockMode === "show" || rawCfg.outOfStockMode === "mark_unavailable"
+        ? rawCfg.outOfStockMode
+        : "mark_unavailable";
+
+    const delivery = {
+      pickup: rawCfg.delivery?.pickup !== false,
+      homeDelivery: rawCfg.delivery?.homeDelivery === true,
+      homeDeliveryFee: Number(rawCfg.delivery?.homeDeliveryFee || 0) || 0,
+    };
+
+    const productsRaw = await dbProducts.getProducts(businessId, { includeImage: true });
+
+    const publicProducts: any[] = [];
+    for (const p of productsRaw as any[]) {
+      const isActive = p?.is_active !== false;
+      if (!isActive) continue;
+
+      const stock = Number(p?.stock ?? 0) || 0;
+      const availability =
+        stock > 0 ? "available" : outOfStockMode === "mark_unavailable" ? "unavailable" : "out_of_stock";
+
+      if (outOfStockMode === "hide" && stock <= 0) continue;
+
+      publicProducts.push({
+        id: String(p.id),
+        name: String(p.name),
+        price: Number(p.price),
+        stock,
+        category: p.category || "Sin categoría",
+        image: p.image ?? "",
+        availability,
+      });
+    }
+
+    return c.json({
+      success: true,
+      business: {
+        id: String(biz.id),
+        name: String(biz.name || ""),
+        phone: biz.phone ? String(biz.phone) : "",
+        logoUrl: biz.logo_url ? String(biz.logo_url) : "",
+      },
+      catalog: {
+        slug: String(rawCfg.slug || "").trim(),
+        outOfStockMode,
+        delivery,
+      },
+      products: publicProducts,
+    });
+  } catch (e: any) {
+    console.error("[PUBLIC CATALOG] Error:", e);
+    return c.json({ error: e?.message || "Internal server error" }, 500);
+  }
+});
 
 // Un producto completo (imagen + descripción) para edición / detalle
 app.get("/make-server-3508045b/products/:id", async (c) => {

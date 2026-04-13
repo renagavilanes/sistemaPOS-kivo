@@ -357,7 +357,7 @@ export default function ServerStatusPage() {
             <h4 className="font-bold text-orange-900 mb-2 text-sm">🔧 Si ves "Failed to fetch":</h4>
             <ol className="list-decimal list-inside space-y-1 text-xs text-orange-800">
               <li>El Edge Function podría no estar desplegado en Supabase</li>
-              <li>Verifica que el archivo <code className="bg-orange-100 px-1 rounded">/supabase/functions/server/index.tsx</code> existe</li>
+              <li>Verifica que el archivo <code className="bg-orange-100 px-1 rounded">/supabase/functions/make-server-3508045b/index.tsx</code> existe</li>
               <li>El servidor de Supabase puede estar reiniciando</li>
               <li>Espera 60 segundos y haz click en "Reintentar"</li>
             </ol>

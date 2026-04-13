@@ -33,6 +33,9 @@ import SuperAdminPage from "./pages/SuperAdminPage";
 import LandingPage from "./pages/LandingPage";
 import MotionLabPage from "./pages/MotionLabPage";
 import { useAuth } from "./contexts/AuthContext";
+import CatalogPromptDemoPage from "./pages/CatalogPromptDemoPage";
+import VirtualCatalogPublicPage from "./pages/VirtualCatalogPublicPage";
+import VirtualCatalogAdminPage from "./pages/VirtualCatalogAdminPage";
 
 /** Sincroniza la ruta actual con AuthProvider (mismo origen que el router) para excepciones como el modal de bloqueo en /superadmin. */
 export const APP_PATHNAME_EVENT = "app:pathname";
@@ -99,6 +102,10 @@ export const router = createBrowserRouter([
         path: "superadmin",
         Component: SuperAdminPage,
       },
+      {
+        path: "catalogo/:slug",
+        Component: VirtualCatalogPublicPage,
+      },
       // Rutas internas de diagnóstico/pruebas: solo en DEV para no exponerlas en producción.
       ...(IS_DEV
         ? [
@@ -109,6 +116,7 @@ export const router = createBrowserRouter([
             { path: "direct-test", Component: DirectAccessTest },
             { path: "quick-test", Component: QuickTestPage },
             { path: "motion-lab", Component: MotionLabPage },
+            { path: "demo-catalogo", Component: CatalogPromptDemoPage },
             { path: "rls-setup", Component: RLSSetupPage },
             { path: "create-tables", Component: CreateTablesPage },
             { path: "simple-test", Component: SimpleTestPage },
@@ -136,6 +144,7 @@ export const router = createBrowserRouter([
           { path: "contacts", Component: ContactsPage },
           { path: "employees", Component: EmployeesPage },
           { path: "settings", Component: SettingsPage },
+          { path: "catalog/settings", Component: VirtualCatalogAdminPage },
         ],
       },
     ],
