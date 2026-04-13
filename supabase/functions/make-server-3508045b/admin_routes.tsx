@@ -1,6 +1,6 @@
 // admin_routes.tsx — RLS-bypass routes for sales, expenses & employees
 // Uses SERVICE_ROLE_KEY to bypass RLS for employees.
-// Called from index.tsx BEFORE the global CORS middleware, so we add CORS here explicitly.
+// Called from index.ts BEFORE the global CORS middleware, so we add CORS here explicitly.
 // deno-lint-ignore-file no-explicit-any
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { cors } from "npm:hono/cors";

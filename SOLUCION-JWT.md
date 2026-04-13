@@ -17,7 +17,7 @@ Es como intentar abrir una cerradura con una llave diferente.
 
 ## 🛠️ **LA SOLUCIÓN IMPLEMENTADA:**
 
-### **Cambios en el Servidor (`/supabase/functions/make-server-3508045b/index.tsx`):**
+### **Cambios en el Servidor (`/supabase/functions/make-server-3508045b/index.ts`):**
 
 **ANTES (❌ Incorrecto):**
 ```typescript
@@ -115,7 +115,7 @@ El diagnóstico debe mostrar **5 pasos en VERDE**:
 ## 📝 **CAMBIOS TÉCNICOS REALIZADOS:**
 
 ### Archivos modificados:
-1. ✅ `/supabase/functions/make-server-3508045b/index.tsx`
+1. ✅ `/supabase/functions/make-server-3508045b/index.ts`
    - Creados dos clientes de Supabase
    - Función `getUserIdFromAuth()` usa `supabaseAuth`
    - Endpoint `/test-auth` usa `supabaseAuth`

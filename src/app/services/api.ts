@@ -822,7 +822,7 @@ export async function updateSale(saleId: string, businessId: string, updates: Up
     if (body[k] === undefined) delete body[k];
   });
 
-  // Usar /sales/db-update (definido en index.tsx) para que un solo despliegue del bundle principal
+  // Usar /sales/db-update (definido en index.ts) para que un solo despliegue del bundle principal
   // persista todos los campos. /admin/sales queda como respaldo por si el despliegue antiguo solo tenía esa ruta.
   const patchUrl = (path: string) =>
     `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b${path}`;
