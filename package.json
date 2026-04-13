@@ -7,7 +7,7 @@
     "build": "vite build",
     "dev": "vite",
     "login:supabase": "npx --yes supabase login",
-    "deploy:edge": "npx --yes supabase functions deploy make-server-3508045b --project-ref zcqoussqgigskextorag"
+    "deploy:edge": "npx --yes supabase functions deploy make-server-3508045b --project-ref zcqoussqgigskextorag --use-api"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
