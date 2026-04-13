@@ -18,6 +18,7 @@ CREATE INDEX IF NOT EXISTS idx_business_settings_category ON public.business_set
 
 ALTER TABLE public.business_settings ENABLE ROW LEVEL SECURITY;
 
+-- Misma lógica que BusinessContext: dueño en businesses.owner_id; empleado en employees.user_id
 DROP POLICY IF EXISTS "Users can manage settings of their businesses" ON public.business_settings;
 CREATE POLICY "Users can manage settings of their businesses" ON public.business_settings
   FOR ALL
@@ -25,14 +26,20 @@ CREATE POLICY "Users can manage settings of their businesses" ON public.business
     business_id IN (
       SELECT id FROM public.businesses WHERE owner_id = auth.uid()
       UNION
-      SELECT business_id FROM public.business_users WHERE user_id = auth.uid()
+      SELECT e.business_id
+      FROM public.employees e
+      WHERE e.user_id = auth.uid()
+        AND COALESCE(e.is_active, true) = true
     )
   )
   WITH CHECK (
     business_id IN (
       SELECT id FROM public.businesses WHERE owner_id = auth.uid()
       UNION
-      SELECT business_id FROM public.business_users WHERE user_id = auth.uid()
+      SELECT e.business_id
+      FROM public.employees e
+      WHERE e.user_id = auth.uid()
+        AND COALESCE(e.is_active, true) = true
     )
   );
 
