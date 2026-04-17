@@ -14,6 +14,29 @@ async function getAccessToken(): Promise<string> {
   return supabaseAnonKey;
 }
 
+function normalizeAuthErrorMessage(raw: string): string {
+  const m = String(raw || '').trim();
+  const low = m.toLowerCase();
+  if (low.includes('jwt expired') || low === 'jwt expired') {
+    return 'Tu sesión expiró. Vuelve a iniciar sesión.';
+  }
+  if (low.includes('invalid jwt')) {
+    return 'Tu sesión no es válida. Vuelve a iniciar sesión.';
+  }
+  return m || 'Ocurrió un error.';
+}
+
+async function retryOnceOnJwtExpired<T>(run: () => Promise<{ data: T | null; error: any }>): Promise<{ data: T | null; error: any }> {
+  const first = await run();
+  const msg = first?.error?.message ?? first?.error?.error_description ?? '';
+  const low = String(msg || '').toLowerCase();
+  if (!first.error || !low.includes('jwt expired')) return first;
+
+  // Intentar refrescar y repetir una vez.
+  await supabase.auth.refreshSession().catch(() => null);
+  return await run();
+}
+
 // ==================== TYPES ====================
 
 export interface Product {
@@ -168,14 +191,16 @@ export async function getProducts(
     console.error('❌ [API DIRECT] Error getting products:', error);
 
     console.log('⚠️ Falling back to Supabase client...');
-    const { data, error: dbError } = await supabase
-      .from('products')
-      .select(includeImage ? '*' : PRODUCT_LIST_SELECT)
-      .eq('business_id', businessId)
-      .order('name');
+    const { data, error: dbError } = await retryOnceOnJwtExpired(() =>
+      supabase
+        .from('products')
+        .select(includeImage ? '*' : PRODUCT_LIST_SELECT)
+        .eq('business_id', businessId)
+        .order('name'),
+    );
 
     if (dbError) {
-      throw new Error(dbError.message);
+      throw new Error(normalizeAuthErrorMessage(dbError.message));
     }
 
     return (data || []).map((p: any) => mapProductFromApi(p));
@@ -236,7 +261,7 @@ export async function createProduct(businessId: string, product: Omit<Product, '
 
   if (error) {
     console.error('❌ [API DIRECT] Error creating product:', error);
-    throw new Error(error.message);
+    throw new Error(normalizeAuthErrorMessage(error.message));
   }
 
   console.log('✅ [API DIRECT] Product created:', data.id);
@@ -283,7 +308,7 @@ export async function updateProduct(productId: string, businessId: string, updat
 
   if (error) {
     console.error('❌ [API DIRECT] Error updating product:', error);
-    throw new Error(error.message);
+    throw new Error(normalizeAuthErrorMessage(error.message));
   }
 
   console.log('✅ [API DIRECT] Product updated');
@@ -316,7 +341,7 @@ export async function deleteProduct(productId: string, businessId: string): Prom
 
   if (error) {
     console.error('❌ [API DIRECT] Error deleting product:', error);
-    throw new Error(error.message);
+    throw new Error(normalizeAuthErrorMessage(error.message));
   }
 
   console.log('✅ [API DIRECT] Product deleted');
@@ -393,7 +418,7 @@ export async function createCategory(businessId: string, category: Omit<Category
 
   if (error) {
     console.error('❌ [API DIRECT] Error creating category:', error);
-    throw new Error(error.message);
+    throw new Error(normalizeAuthErrorMessage(error.message));
   }
 
   console.log('✅ [API DIRECT] Category created:', data.id);
@@ -424,7 +449,7 @@ export async function updateCategory(categoryId: string, businessId: string, upd
 
   if (error) {
     console.error('❌ [API DIRECT] Error updating category:', error);
-    throw new Error(error.message);
+    throw new Error(normalizeAuthErrorMessage(error.message));
   }
 
   console.log('✅ [API DIRECT] Category updated');
@@ -449,7 +474,7 @@ export async function deleteCategory(categoryId: string, businessId: string): Pr
 
   if (error) {
     console.error('❌ [API DIRECT] Error deleting category:', error);
-    throw new Error(error.message);
+    throw new Error(normalizeAuthErrorMessage(error.message));
   }
 
   console.log('✅ [API DIRECT] Category deleted');
@@ -660,7 +685,10 @@ export async function getSales(
   if (options?.to) query = query.lte('created_at', options.to);
   if (options?.limit) query = query.limit(options.limit);
   const { data, error } = await query;
-  if (error) { console.error('❌ [API] Direct getSales error:', error); throw new Error(error.message); }
+  if (error) {
+    console.error('❌ [API] Direct getSales error:', error);
+    throw new Error(normalizeAuthErrorMessage(error.message));
+  }
   console.log('✅ [API] Sales via direct query:', data?.length || 0);
   return (data || []).map(mapSaleRow);
 }
@@ -677,7 +705,7 @@ export async function getSaleById(saleId: string, businessId: string): Promise<S
 
   if (error) {
     console.error('❌ [API DIRECT] Error getting sale:', error);
-    throw new Error(error.message);
+    throw new Error(normalizeAuthErrorMessage(error.message));
   }
 
   return {
@@ -931,7 +959,10 @@ export async function getExpenses(businessId: string, options?: { from?: string;
   if (options?.to) query = query.lte('created_at', options.to);
   if (options?.limit) query = query.limit(options.limit);
   const { data, error } = await query;
-  if (error) { console.error('❌ [API] Direct getExpenses error:', error); throw new Error(error.message); }
+  if (error) {
+    console.error('❌ [API] Direct getExpenses error:', error);
+    throw new Error(normalizeAuthErrorMessage(error.message));
+  }
   console.log('✅ [API] Expenses via direct query:', data?.length || 0);
   return (data || []).map(mapExpenseRow);
 }
@@ -988,7 +1019,7 @@ export async function deleteExpense(expenseId: string, businessId: string): Prom
 
   if (error) {
     console.error('❌ [API DIRECT] Error deleting expense:', error);
-    throw new Error(error.message);
+    throw new Error(normalizeAuthErrorMessage(error.message));
   }
 
   console.log('✅ [API DIRECT] Expense deleted');
@@ -1017,7 +1048,7 @@ export async function updateExpense(expenseId: string, businessId: string, updat
 
   if (error) {
     console.error('❌ [API DIRECT] Error updating expense:', error);
-    throw new Error(error.message);
+    throw new Error(normalizeAuthErrorMessage(error.message));
   }
 
   console.log('✅ [API DIRECT] Expense updated');
