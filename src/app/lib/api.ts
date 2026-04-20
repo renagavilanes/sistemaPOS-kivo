@@ -402,6 +402,7 @@ export async function getClients() {
     email: c.email || '',
     address: c.address,
     taxId: c.taxId,
+    cedula: c.cedula,
     creditLimit: c.creditLimit || 0,
     currentBalance: c.currentBalance || 0,
   }));
@@ -416,6 +417,7 @@ export interface CreateClientData {
   name: string;
   phone?: string;
   email?: string;
+  cedula?: string;
 }
 
 export async function createClient(data: CreateClientData) {
@@ -430,6 +432,7 @@ export async function createClient(data: CreateClientData) {
     name: data.name,
     phone: data.phone,
     email: data.email,
+    cedula: data.cedula,
     type: 'customer',
     creditLimit: 0,
     currentBalance: 0,

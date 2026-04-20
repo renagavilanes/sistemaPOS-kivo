@@ -71,6 +71,8 @@ export interface Customer {
   phone?: string;
   address?: string;
   taxId?: string;
+  /** Cédula / documento (opcional, único por negocio si existe) */
+  cedula?: string;
   /** Rol en contactos: ventas (customer), gastos (supplier) o ambos */
   type?: 'customer' | 'supplier' | 'both';
   creditLimit?: number;
@@ -499,6 +501,7 @@ function mapCustomerFromApi(c: any): Customer {
     phone: c.phone ?? undefined,
     address: c.address ?? undefined,
     taxId: c.taxId ?? c.tax_id,
+    cedula: c.cedula ?? undefined,
     type,
     creditLimit: c.creditLimit ?? c.credit_limit,
     currentBalance: c.currentBalance ?? c.current_balance,
@@ -548,6 +551,7 @@ export async function createCustomer(businessId: string, customer: Omit<Customer
       phone: customer.phone,
       address: customer.address,
       tax_id: customer.taxId,
+      cedula: customer.cedula,
       /** Preferir snake_case: evita que proxies o runtimes traten `type` de forma especial */
       contact_type: customer.type ?? 'customer',
       type: customer.type ?? 'customer',
@@ -582,6 +586,7 @@ export async function updateCustomer(customerId: string, businessId: string, upd
       phone: updates.phone,
       address: updates.address,
       tax_id: updates.taxId,
+      cedula: updates.cedula,
       ...(updates.type !== undefined && {
         contact_type: updates.type,
         type: updates.type,

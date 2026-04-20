@@ -3257,6 +3257,7 @@ app.get("/make-server-3508045b/customers", async (c) => {
       phone: c.phone || null,
       address: c.address || null,
       taxId: c.tax_id || null,
+      cedula: c.cedula || null,
       type: c.contact_type || 'customer',
       creditLimit: c.credit_limit || 0,
       currentBalance: c.current_balance || 0,
@@ -3279,6 +3280,7 @@ app.post("/make-server-3508045b/customers", async (c) => {
 
     const body = await c.req.json();
     const { name, email, phone, address, tax_id } = body;
+    const cedula = typeof body.cedula === 'string' ? body.cedula : body.id_number;
     const contactTypeRaw =
       body.contact_type ?? body.contactType ?? body.type ?? body.customer_type;
 
@@ -3290,6 +3292,7 @@ app.post("/make-server-3508045b/customers", async (c) => {
       phone,
       address,
       tax_id,
+      cedula,
       contact_type: contactTypeRaw,
     });
 
@@ -3301,6 +3304,7 @@ app.post("/make-server-3508045b/customers", async (c) => {
       phone: row.phone || null,
       address: row.address || null,
       taxId: row.tax_id || null,
+      cedula: row.cedula || null,
       type: row.contact_type || 'customer',
       creditLimit: row.credit_limit || 0,
       currentBalance: row.current_balance || 0,
@@ -3324,6 +3328,7 @@ app.put("/make-server-3508045b/customers/:id", async (c) => {
     const customerId = c.req.param('id');
     const body = await c.req.json();
     const { name, email, phone, address, tax_id } = body;
+    const cedula = body.cedula ?? body.id_number;
 
     const updates: any = {};
     if (name !== undefined) updates.name = name;
@@ -3331,6 +3336,7 @@ app.put("/make-server-3508045b/customers/:id", async (c) => {
     if (phone !== undefined) updates.phone = phone;
     if (address !== undefined) updates.address = address;
     if (tax_id !== undefined) updates.tax_id = tax_id;
+    if (cedula !== undefined) updates.cedula = cedula;
     if (
       body.contact_type !== undefined ||
       body.contactType !== undefined ||
@@ -3351,6 +3357,7 @@ app.put("/make-server-3508045b/customers/:id", async (c) => {
       phone: row.phone || null,
       address: row.address || null,
       taxId: row.tax_id || null,
+      cedula: row.cedula || null,
       type: row.contact_type || 'customer',
       creditLimit: row.credit_limit || 0,
       currentBalance: row.current_balance || 0,

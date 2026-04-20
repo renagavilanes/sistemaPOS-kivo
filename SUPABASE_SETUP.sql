@@ -91,6 +91,7 @@ CREATE TABLE IF NOT EXISTS customers (
   phone TEXT,
   address TEXT,
   tax_id TEXT,
+  cedula TEXT,
   contact_type TEXT NOT NULL DEFAULT 'customer' CHECK (contact_type IN ('customer', 'supplier', 'both')),
   credit_limit DECIMAL(10,2) DEFAULT 0,
   current_balance DECIMAL(10,2) DEFAULT 0,
@@ -100,6 +101,7 @@ CREATE TABLE IF NOT EXISTS customers (
 
 CREATE INDEX IF NOT EXISTS idx_customers_business_id ON customers(business_id);
 CREATE INDEX IF NOT EXISTS idx_customers_email ON customers(business_id, email) WHERE email IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS customers_business_cedula_unique ON customers(business_id, cedula) WHERE cedula IS NOT NULL AND btrim(cedula) <> '';
 
 -- 5. TABLA: sales
 CREATE TABLE IF NOT EXISTS sales (

@@ -1864,13 +1864,10 @@ export default function MovementsPage() {
       if (baseMovement.type === 'sale') {
         if (baseMovement.client && baseMovement.client !== '-') {
           const clientName = displayClientName(baseMovement.client);
-          const client = mockClients.find(c => c.name === clientName);
-          if (client?.phone) {
-            enrichedMovement.clientPhone = client.phone;
-          }
-          if (client?.email) {
-            enrichedMovement.clientEmail = client.email;
-          }
+          const client = customers.find((c: any) => String(c?.name || '').trim() === clientName);
+          if (client?.phone) enrichedMovement.clientPhone = client.phone;
+          if (client?.email) enrichedMovement.clientEmail = client.email;
+          if (client?.cedula) enrichedMovement.clientCedula = client.cedula;
         }
       }
       

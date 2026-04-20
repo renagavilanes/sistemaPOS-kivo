@@ -76,6 +76,7 @@ CREATE TABLE IF NOT EXISTS customers (
   phone TEXT,
   address TEXT,
   tax_id TEXT,
+  cedula TEXT,
   credit_limit DECIMAL(15,2) DEFAULT 0,
   current_debt DECIMAL(15,2) DEFAULT 0,
   notes TEXT,
@@ -86,6 +87,7 @@ CREATE TABLE IF NOT EXISTS customers (
 
 CREATE INDEX IF NOT EXISTS idx_customers_business ON customers(business_id);
 CREATE INDEX IF NOT EXISTS idx_customers_active ON customers(business_id, active);
+CREATE UNIQUE INDEX IF NOT EXISTS customers_business_cedula_unique ON customers(business_id, cedula) WHERE cedula IS NOT NULL AND btrim(cedula) <> '';
 
 -- =====================================================
 -- 5. TABLA DE EMPLEADOS

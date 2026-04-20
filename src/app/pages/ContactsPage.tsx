@@ -21,6 +21,7 @@ interface Contact {
   name: string;
   email: string | null;
   phone: string | null;
+  cedula: string | null;
   type: 'customer' | 'supplier' | 'both';
   /** Deuda por ventas a crédito (cliente) */
   credit_balance: number;
@@ -47,6 +48,7 @@ export default function ContactsPage() {
     name: '',
     phone: '',
     email: '',
+    cedula: '',
     type: 'customer' as 'customer' | 'supplier' | 'both'
   });
 
@@ -74,6 +76,7 @@ export default function ContactsPage() {
       const term = searchTerm.toLowerCase();
       filtered = filtered.filter(c => 
         c.name.toLowerCase().includes(term) ||
+        c.cedula?.toLowerCase().includes(term) ||
         c.email?.toLowerCase().includes(term) ||
         c.phone?.includes(term)
       );
@@ -149,6 +152,7 @@ export default function ContactsPage() {
           name: c.name,
           email: c.email || null,
           phone: c.phone || null,
+          cedula: (c as any).cedula || null,
           type: contactType,
           credit_balance,
           supplier_debt,
@@ -170,6 +174,7 @@ export default function ContactsPage() {
         name: contact.name,
         phone: contact.phone || '',
         email: contact.email || '',
+        cedula: contact.cedula || '',
         type: contact.type
       });
     } else {
@@ -178,6 +183,7 @@ export default function ContactsPage() {
         name: '',
         phone: '',
         email: '',
+        cedula: '',
         type: 'customer'
       });
     }
@@ -191,6 +197,7 @@ export default function ContactsPage() {
       name: '',
       phone: '',
       email: '',
+      cedula: '',
       type: 'customer'
     });
   };
@@ -215,6 +222,7 @@ export default function ContactsPage() {
           name: formData.name.trim(),
           phone: formData.phone.trim() || undefined,
           email: formData.email.trim() || undefined,
+          cedula: formData.cedula.trim() || undefined,
           type: formData.type,
         });
         toast.success('Contacto actualizado correctamente');
@@ -224,6 +232,7 @@ export default function ContactsPage() {
           name: formData.name.trim(),
           phone: formData.phone.trim() || undefined,
           email: formData.email.trim() || undefined,
+          cedula: formData.cedula.trim() || undefined,
           type: formData.type,
           creditLimit: 0,
           currentBalance: 0
@@ -336,7 +345,7 @@ export default function ContactsPage() {
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                   <Input
-                    placeholder="Buscar contacto..."
+                    placeholder="Buscar por nombre o cédula..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="pl-10 h-10"
@@ -532,7 +541,7 @@ export default function ContactsPage() {
                 <div className="flex-1 relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                   <Input
-                    placeholder="Buscar por nombre, teléfono o correo..."
+                    placeholder="Buscar por nombre o cédula..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="pl-10"
@@ -673,6 +682,7 @@ export default function ContactsPage() {
                       <thead className={dataTableThead}>
                         <tr>
                           <th className={dthLeft}>Nombre</th>
+                          <th className={dthLeft}>Cédula</th>
                           <th className={dthLeft}>Tipo</th>
                           <th className={dthLeft}>Teléfono</th>
                           <th className={dthLeft}>Correo</th>
@@ -685,6 +695,9 @@ export default function ContactsPage() {
                           <tr key={contact.id} className="hover:bg-gray-50">
                             <td className="py-3 px-4">
                               <div className="font-medium text-gray-900">{contact.name}</div>
+                            </td>
+                            <td className="py-3 px-4 text-gray-600">
+                              {contact.cedula || '-'}
                             </td>
                             <td className="py-3 px-4">
                               <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getTypeBadgeColor(contact.type)}`}>
@@ -764,6 +777,19 @@ export default function ContactsPage() {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="Ej: Juan Pérez"
                 required
+              />
+            </div>
+
+            {/* Cedula */}
+            <div className="space-y-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Cédula (opcional)
+              </label>
+              <Input
+                value={formData.cedula}
+                onChange={(e) => setFormData({ ...formData, cedula: e.target.value })}
+                placeholder="Ej: 1804321532"
+                inputMode="numeric"
               />
             </div>
 

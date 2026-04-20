@@ -46,9 +46,11 @@ export async function createCustomer(businessId: string, customerData: {
   phone?: string;
   address?: string;
   tax_id?: string;
+  cedula?: string;
   contact_type?: string;
 }) {
   const contact_type = normalizeContactType(customerData.contact_type);
+  const cedula = typeof customerData.cedula === 'string' ? customerData.cedula.trim() : '';
   const { data, error } = await supabase
     .from('customers')
     .insert({
@@ -58,6 +60,7 @@ export async function createCustomer(businessId: string, customerData: {
       phone: customerData.phone || null,
       address: customerData.address || null,
       tax_id: customerData.tax_id || null,
+      cedula: cedula ? cedula : null,
       contact_type,
     })
     .select()
@@ -74,11 +77,16 @@ export async function updateCustomer(customerId: string, businessId: string, upd
   phone?: string;
   address?: string;
   tax_id?: string;
+  cedula?: string | null;
   contact_type?: string;
 }) {
   const patch: Record<string, unknown> = { ...updates };
   if (updates.contact_type !== undefined) {
     patch.contact_type = normalizeContactType(updates.contact_type);
+  }
+  if (updates.cedula !== undefined) {
+    const c = typeof updates.cedula === 'string' ? updates.cedula.trim() : '';
+    patch.cedula = c ? c : null;
   }
   const { data, error } = await supabase
     .from('customers')

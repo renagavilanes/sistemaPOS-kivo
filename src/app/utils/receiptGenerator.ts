@@ -33,6 +33,7 @@ interface Movement {
   client?: string;
   clientPhone?: string;
   clientEmail?: string;
+  clientCedula?: string;
   paymentMethods?: Array<{ method: string; amount: number }>;
   status?: string;
   employee?: string;
@@ -45,6 +46,7 @@ interface Movement {
   profit?: number;
   expenseCategory?: string;
   supplier?: string;
+  supplierCedula?: string;
   notes?: string;
 }
 
@@ -517,7 +519,8 @@ export const generateReceiptPDF = (
     const hasName = movement.client && movement.client !== '-';
     const phone = (movement.clientPhone || '').trim();
     const email = (movement.clientEmail || '').trim();
-    if (hasName || phone || email) {
+    const cedula = (movement.clientCedula || '').trim();
+    if (hasName || phone || email || cedula) {
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(8);
       doc.setTextColor(...COLOR_BRAND_DARK);
@@ -530,6 +533,10 @@ export const generateReceiptPDF = (
         const nl = doc.splitTextToSize(String(movement.client), INNER_MM);
         doc.text(nl, MARGIN_MM, y);
         y += nl.length * 3.4;
+      }
+      if (cedula) {
+        doc.text(`Cédula: ${cedula}`, MARGIN_MM, y);
+        y += SP_CLIENT_LINE;
       }
       if (phone) {
         doc.text(`Tel. ${phone}`, MARGIN_MM, y);
@@ -563,6 +570,9 @@ export const generateReceiptPDF = (
     }
     if (movement.supplier) {
       y = lineLeftRight(doc, y, 'Proveedor', movement.supplier);
+    }
+    if (movement.supplierCedula) {
+      y = lineLeftRight(doc, y, 'Cédula', movement.supplierCedula);
     }
     if (movement.notes) {
       const nl = doc.splitTextToSize(movement.notes, INNER_MM);

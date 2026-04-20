@@ -60,6 +60,7 @@ interface Customer {
   phone: string | null;
   address: string | null;
   tax_id: string | null;
+  cedula?: string | null;
   credit_limit: number;
   credit_balance: number;
   type: 'customer' | 'supplier' | 'both'; // Tipo: Cliente, Proveedor, o Ambos
@@ -620,6 +621,7 @@ export function createCustomer(businessId: string, data: {
   phone?: string;
   address?: string;
   tax_id?: string;
+  cedula?: string;
   credit_limit?: number;
   type?: 'customer' | 'supplier' | 'both';
 }): Customer {
@@ -633,6 +635,7 @@ export function createCustomer(businessId: string, data: {
     phone: data.phone || null,
     address: data.address || null,
     tax_id: data.tax_id || null,
+    cedula: data.cedula ? data.cedula.trim() : null,
     credit_limit: data.credit_limit || 0,
     credit_balance: 0,
     type: data.type || 'customer',

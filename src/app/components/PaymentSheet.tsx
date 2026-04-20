@@ -43,6 +43,14 @@ interface PaymentSheetProps {
   userRole: UserRole;
 }
 
+function guessSearchKind(raw: string): 'cedula' | 'text' {
+  const t = (raw || '').trim();
+  if (!t) return 'text';
+  const digits = t.replace(/\D/g, '');
+  // Si predominan números, asumimos cédula/documento.
+  return digits.length >= Math.max(6, Math.ceil(t.length * 0.7)) ? 'cedula' : 'text';
+}
+
 interface PaymentField {
   id: string;
   amount: string;
@@ -99,6 +107,7 @@ export function PaymentSheet({
     type: 'both' as 'customer' | 'supplier' | 'both',
     phone: '',
     email: '',
+    cedula: '',
   });
 
   // Load all contacts from API
@@ -234,6 +243,7 @@ export function PaymentSheet({
         name: newClientForm.name.trim(),
         phone: newClientForm.phone.trim() || undefined,
         email: newClientForm.email.trim() || undefined,
+        cedula: newClientForm.cedula.trim() || undefined,
         type: 'customer',
         creditLimit: 0,
         currentBalance: 0
@@ -254,6 +264,7 @@ export function PaymentSheet({
         type: 'both',
         phone: '',
         email: '',
+        cedula: '',
       });
     } catch (error) {
       console.error('Error creating client:', error);
@@ -641,6 +652,19 @@ export function PaymentSheet({
               />
             </div>
 
+            {/* Cedula */}
+            <div className="space-y-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Cédula (opcional)
+              </label>
+              <Input
+                value={newClientForm.cedula}
+                onChange={(e) => setNewClientForm({ ...newClientForm, cedula: e.target.value })}
+                placeholder="Ej: 1804321532"
+                inputMode="numeric"
+              />
+            </div>
+
             {/* Phone */}
             <div className="space-y-2">
               <label className="block text-sm font-medium text-gray-700">
@@ -679,6 +703,7 @@ export function PaymentSheet({
                     type: 'both',
                     phone: '',
                     email: '',
+                    cedula: '',
                   });
                 }}
                 className="flex-1"
@@ -726,7 +751,7 @@ export function PaymentSheet({
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <Input
-                    placeholder="Buscar por nombre, email o teléfono..."
+                    placeholder="Buscar por nombre o cédula..."
                     value={clientSearchTerm}
                     onChange={(e) => setClientSearchTerm(e.target.value)}
                     className="pl-10"
@@ -743,7 +768,8 @@ export function PaymentSheet({
                       return (
                         client.name.toLowerCase().includes(searchLower) ||
                         client.email?.toLowerCase().includes(searchLower) ||
-                        client.phone?.toLowerCase().includes(searchLower)
+                        client.phone?.toLowerCase().includes(searchLower) ||
+                        client.cedula?.toLowerCase().includes(searchLower)
                       );
                     });
 
@@ -759,19 +785,50 @@ export function PaymentSheet({
                           className="w-full text-left p-4 bg-white border rounded-lg hover:bg-gray-50 transition-colors active:scale-[0.98]"
                         >
                           <p className="font-medium text-base">{client.name}</p>
-                          {(client.phone || client.email) && (
+                          {(client.cedula || client.phone || client.email) && (
                             <p className="text-sm text-gray-500 mt-1">
-                              {[client.phone, client.email].filter(Boolean).join(' • ')}
+                              {[
+                                client.cedula ? `Cédula: ${client.cedula}` : null,
+                                client.phone,
+                                client.email,
+                              ]
+                                .filter(Boolean)
+                                .join(' • ')}
                             </p>
                           )}
                         </button>
                       ))
                     ) : (
-                      <p className="text-sm text-gray-500 text-center py-8">
-                        {clientSearchTerm 
-                          ? 'No se encontraron clientes con ese término de búsqueda.'
-                          : 'No hay clientes registrados. Agrega uno nuevo.'}
-                      </p>
+                      <div className="text-sm text-gray-500 text-center py-8 space-y-3">
+                        <p>
+                          {clientSearchTerm 
+                            ? 'No se encontraron clientes con ese término de búsqueda.'
+                            : 'No hay clientes registrados. Agrega uno nuevo.'}
+                        </p>
+                        {clientSearchTerm.trim() && canCreateContact && (
+                          <div className="flex justify-center">
+                            <Button
+                              type="button"
+                              size="sm"
+                              onClick={() => {
+                                const term = clientSearchTerm.trim();
+                                const kind = guessSearchKind(term);
+                                setClientDialogOpen(false);
+                                setNewClientForm({
+                                  name: kind === 'text' ? term : '',
+                                  type: 'both',
+                                  phone: '',
+                                  email: '',
+                                  cedula: kind === 'cedula' ? term : '',
+                                });
+                                setIsCreatingClient(true);
+                              }}
+                            >
+                              Crear contacto con {guessSearchKind(clientSearchTerm) === 'cedula' ? 'cédula' : 'nombre'}: {clientSearchTerm.trim()}
+                            </Button>
+                          </div>
+                        )}
+                      </div>
                     );
                   })()}
                 </div>
@@ -810,7 +867,7 @@ export function PaymentSheet({
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <Input
-                  placeholder="Buscar por nombre, email o teléfono..."
+                    placeholder="Buscar por nombre o cédula..."
                   value={clientSearchTerm}
                   onChange={(e) => setClientSearchTerm(e.target.value)}
                   className="pl-10"
@@ -826,7 +883,8 @@ export function PaymentSheet({
                     return (
                       client.name.toLowerCase().includes(searchLower) ||
                       client.email?.toLowerCase().includes(searchLower) ||
-                      client.phone?.toLowerCase().includes(searchLower)
+                      client.phone?.toLowerCase().includes(searchLower) ||
+                      client.cedula?.toLowerCase().includes(searchLower)
                     );
                   });
 
@@ -842,19 +900,50 @@ export function PaymentSheet({
                         className="w-full text-left p-3 border rounded-lg hover:bg-gray-50 transition-colors"
                       >
                         <p className="font-medium">{client.name}</p>
-                        {(client.phone || client.email) && (
+                        {(client.cedula || client.phone || client.email) && (
                           <p className="text-sm text-gray-500">
-                            {[client.phone, client.email].filter(Boolean).join(' • ')}
+                            {[
+                              client.cedula ? `Cédula: ${client.cedula}` : null,
+                              client.phone,
+                              client.email,
+                            ]
+                              .filter(Boolean)
+                              .join(' • ')}
                           </p>
                         )}
                       </button>
                     ))
                   ) : (
-                    <p className="text-sm text-gray-500 text-center py-4">
-                      {clientSearchTerm 
-                        ? 'No se encontraron clientes con ese término de búsqueda.'
-                        : 'No hay clientes registrados. Agrega uno nuevo.'}
-                    </p>
+                    <div className="text-sm text-gray-500 text-center py-4 space-y-3">
+                      <p>
+                        {clientSearchTerm 
+                          ? 'No se encontraron clientes con ese término de búsqueda.'
+                          : 'No hay clientes registrados. Agrega uno nuevo.'}
+                      </p>
+                      {clientSearchTerm.trim() && canCreateContact && (
+                        <div className="flex justify-center">
+                          <Button
+                            type="button"
+                            size="sm"
+                            onClick={() => {
+                              const term = clientSearchTerm.trim();
+                              const kind = guessSearchKind(term);
+                              setClientDialogOpen(false);
+                              setNewClientForm({
+                                name: kind === 'text' ? term : '',
+                                type: 'both',
+                                phone: '',
+                                email: '',
+                                cedula: kind === 'cedula' ? term : '',
+                              });
+                              setIsCreatingClient(true);
+                            }}
+                          >
+                            Crear contacto con {guessSearchKind(clientSearchTerm) === 'cedula' ? 'cédula' : 'nombre'}: {clientSearchTerm.trim()}
+                          </Button>
+                        </div>
+                      )}
+                    </div>
                   );
                 })()}
               </div>

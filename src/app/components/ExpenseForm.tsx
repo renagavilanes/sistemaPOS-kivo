@@ -39,6 +39,7 @@ interface ExpenseFormProps {
     date: string;
     category: string;
     supplier?: string;
+    supplierContact?: { id: string; name: string; phone?: string; email?: string; cedula?: string };
     paymentMethod: 'Efectivo' | 'Tarjeta' | 'Transferencia' | 'Otros' | '-';
     amount: number;
     name?: string;
@@ -57,6 +58,13 @@ interface ExpenseFormProps {
   };
 }
 
+function guessSearchKind(raw: string): 'cedula' | 'text' {
+  const t = (raw || '').trim();
+  if (!t) return 'text';
+  const digits = t.replace(/\D/g, '');
+  return digits.length >= Math.max(6, Math.ceil(t.length * 0.7)) ? 'cedula' : 'text';
+}
+
 export function ExpenseForm({ 
   open, 
   onOpenChange, 
@@ -67,8 +75,9 @@ export function ExpenseForm({
 }: ExpenseFormProps) {
   const { currentBusiness } = useBusiness();
   const isMobile = useIsMobile();
-  const [contacts, setContacts] = useState<{ id: string; name: string; phone?: string; email?: string }[]>([]);
+  const [contacts, setContacts] = useState<{ id: string; name: string; phone?: string; email?: string; cedula?: string }[]>([]);
   const [contactSearchTerm, setContactSearchTerm] = useState('');
+  const [selectedSupplierContact, setSelectedSupplierContact] = useState<{ id: string; name: string; phone?: string; email?: string; cedula?: string } | null>(null);
   
   // ✅ FIX: Usar fecha LOCAL en lugar de UTC
   const getLocalDateString = () => {
@@ -98,6 +107,7 @@ export function ExpenseForm({
     type: 'supplier' as 'customer' | 'supplier' | 'both',
     phone: '',
     email: '',
+    cedula: '',
   });
 
   // Load all contacts from API
@@ -108,7 +118,8 @@ export function ExpenseForm({
           id: c.id, 
           name: c.name,
           phone: c.phone,
-          email: c.email 
+          email: c.email,
+          cedula: (c as any).cedula,
         })));
       }).catch(error => {
         console.error('Error loading contacts:', error);
@@ -136,6 +147,7 @@ export function ExpenseForm({
         setAmount('');
         setExpenseName('');
         setSelectedSupplier('');
+        setSelectedSupplierContact(null);
         setPaymentMethod('Efectivo');
       }
     }
@@ -159,6 +171,7 @@ export function ExpenseForm({
       date: expenseDate,
       category,
       supplier: selectedSupplier ? selectedSupplier : undefined,
+      supplierContact: selectedSupplierContact ? selectedSupplierContact : undefined,
       paymentMethod: expenseStatus === 'deuda' ? '-' : paymentMethod,
       amount: totalValue,
       name: expenseName || undefined,
@@ -172,6 +185,7 @@ export function ExpenseForm({
     setAmount('');
     setExpenseName('');
     setSelectedSupplier('');
+    setSelectedSupplierContact(null);
     setPaymentMethod('Efectivo');
     onOpenChange(false);
   };
@@ -192,6 +206,7 @@ export function ExpenseForm({
         name: newSupplierForm.name.trim(),
         phone: newSupplierForm.phone.trim() || undefined,
         email: newSupplierForm.email.trim() || undefined,
+        cedula: newSupplierForm.cedula.trim() || undefined,
         type: 'supplier',
         creditLimit: 0,
         currentBalance: 0
@@ -202,11 +217,19 @@ export function ExpenseForm({
         id: newSupplier.id, 
         name: newSupplier.name,
         phone: newSupplier.phone,
-        email: newSupplier.email 
+        email: newSupplier.email,
+        cedula: (newSupplier as any).cedula,
       }]);
       
       // Select the newly created supplier
       setSelectedSupplier(newSupplier.name);
+      setSelectedSupplierContact({
+        id: newSupplier.id,
+        name: newSupplier.name,
+        phone: newSupplier.phone,
+        email: newSupplier.email,
+        cedula: (newSupplier as any).cedula,
+      });
       
       // Close modals and reset form
       setIsCreatingSupplier(false);
@@ -217,6 +240,7 @@ export function ExpenseForm({
         type: 'supplier',
         phone: '',
         email: '',
+        cedula: '',
       });
     } catch (error) {
       console.error('Error creating supplier:', error);
@@ -452,7 +476,7 @@ export function ExpenseForm({
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <Input
-                    placeholder="Buscar por nombre, email o teléfono..."
+                    placeholder="Buscar por nombre o cédula..."
                     value={contactSearchTerm}
                     onChange={(e) => setContactSearchTerm(e.target.value)}
                     className="pl-10"
@@ -469,7 +493,8 @@ export function ExpenseForm({
                       return (
                         contact.name.toLowerCase().includes(searchLower) ||
                         contact.email?.toLowerCase().includes(searchLower) ||
-                        contact.phone?.toLowerCase().includes(searchLower)
+                        contact.phone?.toLowerCase().includes(searchLower) ||
+                        (contact as any).cedula?.toLowerCase().includes(searchLower)
                       );
                     });
 
@@ -479,25 +504,57 @@ export function ExpenseForm({
                           key={contact.id}
                           onClick={() => {
                             setSelectedSupplier(contact.name);
+                            setSelectedSupplierContact(contact as any);
                             setSupplierDialogOpen(false);
                             setContactSearchTerm('');
                           }}
                           className="w-full text-left p-4 bg-white border rounded-lg hover:bg-gray-50 transition-colors active:scale-[0.98]"
                         >
                           <p className="font-medium text-base">{contact.name}</p>
-                          {(contact.phone || contact.email) && (
+                          {((contact as any).cedula || contact.phone || contact.email) && (
                             <p className="text-sm text-gray-500 mt-1">
-                              {[contact.phone, contact.email].filter(Boolean).join(' • ')}
+                              {[
+                                (contact as any).cedula ? `Cédula: ${(contact as any).cedula}` : null,
+                                contact.phone,
+                                contact.email,
+                              ]
+                                .filter(Boolean)
+                                .join(' • ')}
                             </p>
                           )}
                         </button>
                       ))
                     ) : (
-                      <p className="text-sm text-gray-500 text-center py-8">
-                        {contactSearchTerm 
-                          ? 'No se encontraron contactos con ese término de búsqueda.'
-                          : 'No hay contactos registrados. Agrega uno nuevo.'}
-                      </p>
+                      <div className="text-sm text-gray-500 text-center py-8 space-y-3">
+                        <p>
+                          {contactSearchTerm 
+                            ? 'No se encontraron contactos con ese término de búsqueda.'
+                            : 'No hay contactos registrados. Agrega uno nuevo.'}
+                        </p>
+                        {contactSearchTerm.trim() && (
+                          <div className="flex justify-center">
+                            <Button
+                              type="button"
+                              size="sm"
+                              onClick={() => {
+                                const term = contactSearchTerm.trim();
+                                const kind = guessSearchKind(term);
+                                setSupplierDialogOpen(false);
+                                setNewSupplierForm({
+                                  name: kind === 'text' ? term : '',
+                                  type: 'supplier',
+                                  phone: '',
+                                  email: '',
+                                  cedula: kind === 'cedula' ? term : '',
+                                });
+                                setIsCreatingSupplier(true);
+                              }}
+                            >
+                              Crear contacto con {guessSearchKind(contactSearchTerm) === 'cedula' ? 'cédula' : 'nombre'}: {contactSearchTerm.trim()}
+                            </Button>
+                          </div>
+                        )}
+                      </div>
                     );
                   })()}
                 </div>
@@ -535,7 +592,7 @@ export function ExpenseForm({
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <Input
-                  placeholder="Buscar por nombre, email o teléfono..."
+                    placeholder="Buscar por nombre o cédula..."
                   value={contactSearchTerm}
                   onChange={(e) => setContactSearchTerm(e.target.value)}
                   className="pl-10"
@@ -551,7 +608,8 @@ export function ExpenseForm({
                     return (
                       contact.name.toLowerCase().includes(searchLower) ||
                       contact.email?.toLowerCase().includes(searchLower) ||
-                      contact.phone?.toLowerCase().includes(searchLower)
+                      contact.phone?.toLowerCase().includes(searchLower) ||
+                      (contact as any).cedula?.toLowerCase().includes(searchLower)
                     );
                   });
 
@@ -561,25 +619,57 @@ export function ExpenseForm({
                         key={contact.id}
                         onClick={() => {
                           setSelectedSupplier(contact.name);
+                          setSelectedSupplierContact(contact as any);
                           setSupplierDialogOpen(false);
                           setContactSearchTerm('');
                         }}
                         className="w-full text-left p-3 border rounded-lg hover:bg-gray-50 transition-colors"
                       >
                         <p className="font-medium">{contact.name}</p>
-                        {(contact.phone || contact.email) && (
+                        {((contact as any).cedula || contact.phone || contact.email) && (
                           <p className="text-sm text-gray-500">
-                            {[contact.phone, contact.email].filter(Boolean).join(' • ')}
+                            {[
+                              (contact as any).cedula ? `Cédula: ${(contact as any).cedula}` : null,
+                              contact.phone,
+                              contact.email,
+                            ]
+                              .filter(Boolean)
+                              .join(' • ')}
                           </p>
                         )}
                       </button>
                     ))
                   ) : (
-                    <p className="text-sm text-gray-500 text-center py-4">
-                      {contactSearchTerm 
-                        ? 'No se encontraron contactos con ese término de búsqueda.'
-                        : 'No hay contactos registrados. Agrega uno nuevo.'}
-                    </p>
+                    <div className="text-sm text-gray-500 text-center py-4 space-y-3">
+                      <p>
+                        {contactSearchTerm 
+                          ? 'No se encontraron contactos con ese término de búsqueda.'
+                          : 'No hay contactos registrados. Agrega uno nuevo.'}
+                      </p>
+                      {contactSearchTerm.trim() && (
+                        <div className="flex justify-center">
+                          <Button
+                            type="button"
+                            size="sm"
+                            onClick={() => {
+                              const term = contactSearchTerm.trim();
+                              const kind = guessSearchKind(term);
+                              setSupplierDialogOpen(false);
+                              setNewSupplierForm({
+                                name: kind === 'text' ? term : '',
+                                type: 'supplier',
+                                phone: '',
+                                email: '',
+                                cedula: kind === 'cedula' ? term : '',
+                              });
+                              setIsCreatingSupplier(true);
+                            }}
+                          >
+                            Crear contacto con {guessSearchKind(contactSearchTerm) === 'cedula' ? 'cédula' : 'nombre'}: {contactSearchTerm.trim()}
+                          </Button>
+                        </div>
+                      )}
+                    </div>
                   );
                 })()}
               </div>
@@ -607,6 +697,19 @@ export function ExpenseForm({
                 onChange={(e) => setNewSupplierForm({ ...newSupplierForm, name: e.target.value })}
                 placeholder="Ej: Juan Pérez o Distribuidora XYZ"
                 required
+              />
+            </div>
+
+            {/* Cedula */}
+            <div className="space-y-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Cédula (opcional)
+              </label>
+              <Input
+                value={newSupplierForm.cedula}
+                onChange={(e) => setNewSupplierForm({ ...newSupplierForm, cedula: e.target.value })}
+                placeholder="Ej: 1804321532"
+                inputMode="numeric"
               />
             </div>
 
@@ -648,6 +751,7 @@ export function ExpenseForm({
                     type: 'supplier',
                     phone: '',
                     email: '',
+                    cedula: '',
                   });
                 }}
                 className="flex-1"
