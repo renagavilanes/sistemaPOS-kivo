@@ -11,7 +11,6 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  mix-blend-mode: screen;
 }
 
 .kivo-landing-fx .kivo-fx-mesh::before,
@@ -20,7 +19,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.26;
+  opacity: 0.18;
 }
 
 .kivo-landing-fx .kivo-fx-mesh::before {
