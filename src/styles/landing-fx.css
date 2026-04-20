@@ -1,0 +1,161 @@
+/* FX solo para LandingPage (se activa con .kivo-landing-fx en <html>) */
+
+.kivo-landing-fx body {
+  overflow-x: hidden;
+}
+
+/* ─── Animated mesh background ─── */
+.kivo-landing-fx .kivo-fx-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.kivo-landing-fx .kivo-fx-mesh::before,
+.kivo-landing-fx .kivo-fx-mesh::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+}
+
+.kivo-landing-fx .kivo-fx-mesh::before {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(47, 128, 255, 1), transparent 70%);
+  top: -200px;
+  right: -100px;
+}
+
+.kivo-landing-fx .kivo-fx-mesh::after {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 1), transparent 70%);
+  bottom: 16%;
+  left: -120px;
+}
+
+.kivo-landing-fx-motion .kivo-fx-mesh::before {
+  animation: kivo-orb1 14s ease-in-out infinite alternate;
+}
+.kivo-landing-fx-motion .kivo-fx-mesh::after {
+  animation: kivo-orb2 18s ease-in-out infinite alternate;
+}
+
+@keyframes kivo-orb1 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-80px, 120px) scale(1.2);
+  }
+}
+
+@keyframes kivo-orb2 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(60px, -80px) scale(1.15);
+  }
+}
+
+/* ─── Scroll reveal ─── */
+.kivo-landing-fx [data-fx-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.kivo-landing-fx .kivo-reveal-visible[data-fx-reveal] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Ripple ─── */
+.kivo-landing-fx [data-fx-ripple] {
+  position: relative;
+  overflow: hidden;
+}
+
+.kivo-landing-fx .kivo-fx-ripple {
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(0);
+  pointer-events: none;
+  animation: kivo-ripple 0.5s ease-out forwards;
+}
+
+@keyframes kivo-ripple {
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* ─── Optional custom cursor ─── */
+.kivo-landing-fx-fine.kivo-landing-fx-motion body.kivo-landing-fx-cursor {
+  cursor: none;
+}
+
+.kivo-landing-fx .kivo-fx-cursor {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(47, 128, 255, 1);
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.1s,
+    width 0.2s,
+    height 0.2s,
+    opacity 0.2s;
+  mix-blend-mode: screen;
+  opacity: 0;
+}
+
+.kivo-landing-fx .kivo-fx-cursor-ring {
+  position: fixed;
+  z-index: 9998;
+  pointer-events: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(47, 128, 255, 0.45);
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.18s ease,
+    width 0.25s,
+    height 0.25s,
+    opacity 0.25s;
+  opacity: 0;
+}
+
+.kivo-landing-fx-fine.kivo-landing-fx-motion .kivo-fx-cursor,
+.kivo-landing-fx-fine.kivo-landing-fx-motion .kivo-fx-cursor-ring {
+  opacity: 1;
+}
+
+/* Accesibilidad: evita animaciones si el usuario lo pide */
+@media (prefers-reduced-motion: reduce) {
+  .kivo-landing-fx-motion .kivo-fx-mesh::before,
+  .kivo-landing-fx-motion .kivo-fx-mesh::after {
+    animation: none !important;
+  }
+  .kivo-landing-fx [data-fx-reveal] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
