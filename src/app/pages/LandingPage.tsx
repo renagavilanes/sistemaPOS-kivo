@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import { BrandLogo } from '../components/BrandLogo';
 import { Button } from '../components/ui/button';
-import { LandingFxOverlay } from '../components/landing/LandingFxOverlay';
 
 type Feature = {
   icon: React.ReactNode;
@@ -460,12 +459,11 @@ export default function LandingPage() {
   return (
     <div className="dark min-h-screen bg-[#070A12] text-white">
       <div className="relative">
-        <LandingFxOverlay enableCursor={false} />
         <GlowBackground />
 
         <header className="relative">
           <Container>
-            <div className="flex items-center justify-between py-5" data-fx-reveal style={{ ['--reveal-delay' as any]: '0ms' }}>
+            <div className="flex items-center justify-between py-5">
               <Link to="/" className="inline-flex items-center gap-3">
                 <BrandLogo iconClassName="h-10" />
               </Link>
@@ -473,7 +471,7 @@ export default function LandingPage() {
                 <Button asChild variant="ghost" className="text-white/80 hover:text-white">
                   <Link to="/login">Iniciar sesión</Link>
                 </Button>
-                <Button asChild className="bg-[var(--brand)] text-white hover:bg-[var(--brand)]/90" data-fx-ripple>
+                <Button asChild className="bg-[var(--brand)] text-white hover:bg-[var(--brand)]/90">
                   <Link to="/register">Crear cuenta</Link>
                 </Button>
               </div>
@@ -487,23 +485,22 @@ export default function LandingPage() {
             <Container>
               <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-12">
                 <div className="lg:col-span-6">
-                  <div data-fx-reveal style={{ ['--reveal-delay' as any]: '80ms' }} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/70">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/70">
                     <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
                     POS moderno para negocios reales
                   </div>
-                  <h1 data-fx-reveal style={{ ['--reveal-delay' as any]: '160ms' }} className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:mt-5 sm:text-5xl">
+                  <h1 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:mt-5 sm:text-5xl">
                     Controla tu negocio sin complicaciones
                   </h1>
-                  <p data-fx-reveal style={{ ['--reveal-delay' as any]: '240ms' }} className="mt-3 text-pretty text-sm text-white/70 sm:mt-4 sm:text-lg">
+                  <p className="mt-3 text-pretty text-sm text-white/70 sm:mt-4 sm:text-lg">
                     Ventas, gastos, inventario y empleados en un solo lugar.
                   </p>
 
                   {/* En móvil: CTAs en el mismo nivel (2 columnas). */}
-                  <div data-fx-reveal style={{ ['--reveal-delay' as any]: '320ms' }} className="mt-5 grid grid-cols-2 gap-3 sm:mt-7 sm:flex sm:flex-row sm:items-center">
+                  <div className="mt-5 grid grid-cols-2 gap-3 sm:mt-7 sm:flex sm:flex-row sm:items-center">
                     <Button
                       asChild
                       className="h-11 w-full bg-[var(--brand)] text-white hover:bg-[var(--brand)]/90 sm:w-auto"
-                      data-fx-ripple
                     >
                       <Link to="/register">Crear cuenta</Link>
                     </Button>
@@ -511,7 +508,6 @@ export default function LandingPage() {
                       asChild
                       variant="outline"
                       className="h-11 w-full border-white/15 bg-white/5 text-white hover:bg-white/10 sm:w-auto"
-                      data-fx-ripple
                     >
                       <Link to="/login">Iniciar sesión</Link>
                     </Button>
@@ -521,7 +517,7 @@ export default function LandingPage() {
                   </div>
 
                   {/* En móvil: 3 en el mismo nivel (compacto). */}
-                  <div data-fx-reveal style={{ ['--reveal-delay' as any]: '420ms' }} className="mt-5 grid grid-cols-3 gap-2 sm:mt-7 sm:gap-3">
+                  <div className="mt-5 grid grid-cols-3 gap-2 sm:mt-7 sm:gap-3">
                     <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 sm:p-4">
                       <div className="text-[13px] font-semibold sm:text-sm">Rápido</div>
                       <div className="mt-1 text-[11px] leading-snug text-white/60 sm:text-xs">
@@ -545,9 +541,7 @@ export default function LandingPage() {
 
                 <div className="lg:col-span-6">
                   <div className="mx-auto w-full max-w-[560px] lg:max-w-none">
-                    <div data-fx-reveal style={{ ['--reveal-delay' as any]: '260ms' }}>
-                      <Mockup />
-                    </div>
+                    <Mockup />
                   </div>
                 </div>
               </div>
@@ -557,48 +551,36 @@ export default function LandingPage() {
           {/* BENEFICIOS */}
           <section className="mt-12 sm:mt-20">
             <Container>
-              <div data-fx-reveal>
-                <SectionHeading
+              <SectionHeading
                 eyebrow="Beneficios"
                 title="Una base sólida para administrar sin estrés"
                 subtitle="Kivo reúne lo esencial del día a día: vender, controlar gastos, gestionar inventario y equipo, y entender tus números."
               />
-              </div>
-              <div data-fx-reveal style={{ ['--reveal-delay' as any]: '120ms' }}>
-                <BenefitsBento items={benefits} />
-              </div>
+              <BenefitsBento items={benefits} />
             </Container>
           </section>
 
           {/* FUNCIONALIDADES */}
           <section className="mt-12 sm:mt-20">
             <Container>
-              <div data-fx-reveal>
-                <SectionHeading
+              <SectionHeading
                 eyebrow="Funcionalidades"
                 title="Herramientas simples. Resultados potentes."
                 subtitle="Todo lo que necesitas para operar rápido, con orden y con claridad."
               />
-              </div>
-              <div data-fx-reveal style={{ ['--reveal-delay' as any]: '120ms' }}>
-                <FunctionalityNarrative items={functionalities} />
-              </div>
+              <FunctionalityNarrative items={functionalities} />
             </Container>
           </section>
 
           {/* PLANES */}
           <section id="planes" className="mt-12 scroll-mt-24 sm:mt-20">
             <Container>
-              <div data-fx-reveal>
-                <SectionHeading
+              <SectionHeading
                 eyebrow="Planes"
                 title="Elige el plan que se adapta a tu ritmo"
                 subtitle="Empieza gratis y evoluciona cuando tu operación lo necesite. El plan Pro es ideal para equipos y múltiples negocios."
               />
-              </div>
-              <div data-fx-reveal style={{ ['--reveal-delay' as any]: '120ms' }}>
-                <PlanCards plans={plans} />
-              </div>
+              <PlanCards plans={plans} />
               <p className="mt-4 text-xs text-white/50">
                 Nota: precios referenciales. Puedes ajustar estos valores cuando definas tu estrategia final.
               </p>
@@ -608,7 +590,7 @@ export default function LandingPage() {
           {/* CTA FINAL */}
           <section className="mt-12 sm:mt-20">
             <Container>
-              <div data-fx-reveal className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-8 sm:p-10">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-8 sm:p-10">
                 <div aria-hidden className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[var(--brand)]/20 blur-[90px]" />
                 <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
                   <div>
@@ -619,7 +601,7 @@ export default function LandingPage() {
                       Crea tu cuenta y configura tu primer negocio en minutos.
                     </p>
                   </div>
-                  <Button asChild className="h-11 bg-[var(--brand)] text-white hover:bg-[var(--brand)]/90" data-fx-ripple>
+                  <Button asChild className="h-11 bg-[var(--brand)] text-white hover:bg-[var(--brand)]/90">
                     <Link to="/register">Crear cuenta gratis</Link>
                   </Button>
                 </div>
