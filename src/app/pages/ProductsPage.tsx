@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { Search, Plus, Edit2, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2 } from 'lucide-react';
+import { Search, Plus, Edit2, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -834,11 +834,91 @@ export default function ProductsPage() {
                           </div>
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-right">
-                        <div className="text-gray-900">${formatCurrency(product.price)}</div>
+                      <td className="px-2 py-3 text-right">
+                        <div className="relative ml-auto w-24">
+                          <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                          <Input
+                            type="number"
+                            step="0.01"
+                            value={product.price}
+                            onChange={(e) => {
+                              const newPrice = parseFloat(e.target.value);
+                              if (!isNaN(newPrice)) {
+                                setProducts(prev =>
+                                  prev.map(p =>
+                                    p.id === product.id
+                                      ? { ...p, price: newPrice }
+                                      : p
+                                  )
+                                );
+                              }
+                            }}
+                            onBlur={async (e) => {
+                              const newPrice = parseFloat(e.target.value);
+                              console.log('💾 Intentando guardar precio:', { productId: product.id, newPrice, originalPrice: product.price });
+                              if (!isNaN(newPrice)) {
+                                try {
+                                  const result = await updateProduct(product.id, { price: newPrice });
+                                  console.log('✅ Precio guardado:', result);
+                                  window.dispatchEvent(new Event('productsUpdated'));
+                                  toast.success('Precio actualizado');
+                                } catch (error) {
+                                  console.error('❌ Error al actualizar precio:', error);
+                                  toast.error('Error al guardar el precio');
+                                }
+                              }
+                            }}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter') {
+                                e.currentTarget.blur();
+                              }
+                            }}
+                            className="h-9 w-full text-right pl-7"
+                          />
+                        </div>
                       </td>
-                      <td className="px-4 py-3 text-right">
-                        <div className="text-gray-900">${formatCurrency(product.cost)}</div>
+                      <td className="px-2 py-3 text-right">
+                        <div className="relative ml-auto w-24">
+                          <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                          <Input
+                            type="number"
+                            step="0.01"
+                            value={product.cost}
+                            onChange={(e) => {
+                              const newCost = parseFloat(e.target.value);
+                              if (!isNaN(newCost)) {
+                                setProducts(prev =>
+                                  prev.map(p =>
+                                    p.id === product.id
+                                      ? { ...p, cost: newCost }
+                                      : p
+                                  )
+                                );
+                              }
+                            }}
+                            onBlur={async (e) => {
+                              const newCost = parseFloat(e.target.value);
+                              console.log('💾 Intentando guardar costo:', { productId: product.id, newCost, originalCost: product.cost });
+                              if (!isNaN(newCost)) {
+                                try {
+                                  const result = await updateProduct(product.id, { cost: newCost });
+                                  console.log('✅ Costo guardado:', result);
+                                  window.dispatchEvent(new Event('productsUpdated'));
+                                  toast.success('Costo actualizado');
+                                } catch (error) {
+                                  console.error('❌ Error al actualizar costo:', error);
+                                  toast.error('Error al guardar el costo');
+                                }
+                              }
+                            }}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter') {
+                                e.currentTarget.blur();
+                              }
+                            }}
+                            className="h-9 w-full text-right pl-7"
+                          />
+                        </div>
                       </td>
                       <td className="px-2 py-3 text-right">
                         <div className="flex items-center justify-end gap-2">
