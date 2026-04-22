@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { Search, Plus, Edit2, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign } from 'lucide-react';
+import { Search, Plus, Edit2, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -16,6 +16,7 @@ import { BusinessSelectorModal } from '../components/BusinessSelectorModal';
 import { PageHeader } from '../components/layout/PageHeader';
 import { Product } from '../types';
 import { toast } from 'sonner';
+import ExcelJS from 'exceljs';
 import { useScreenFx } from '../contexts/ScreenFxContext';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { LazyProductImage } from '../components/LazyProductImage';
@@ -133,6 +134,266 @@ export default function ProductsPage() {
   const { currentBusiness, businesses, switchBusiness } = useBusiness();
   const navigate = useNavigate();
   const [productsLoading, setProductsLoading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const [importDialogOpen, setImportDialogOpen] = useState(false);
+  const [importing, setImporting] = useState(false);
+  const [duplicateDialogOpen, setDuplicateDialogOpen] = useState(false);
+  const [pendingImportRows, setPendingImportRows] = useState<Array<{
+    rowNumber: number;
+    name: string;
+    price: number;
+    cost: number;
+    stock: number;
+    category: string;
+  }> | null>(null);
+  const [duplicateNames, setDuplicateNames] = useState<string[]>([]);
+  const [duplicateSummary, setDuplicateSummary] = useState<{ inFile: number; existing: number }>({ inFile: 0, existing: 0 });
+
+  const downloadImportTemplate = async () => {
+    try {
+      const workbook = new ExcelJS.Workbook();
+      const ws = workbook.addWorksheet('Productos');
+      ws.columns = [
+        { header: 'Nombre', key: 'name', width: 30 },
+        { header: 'Precio', key: 'price', width: 12 },
+        { header: 'Costo', key: 'cost', width: 12 },
+        { header: 'Stock', key: 'stock', width: 10 },
+        { header: 'Categoría', key: 'category', width: 18 },
+      ];
+      ws.getRow(1).font = { bold: true };
+      ws.addRow({ name: 'Ej: Café Americano', price: 3500, cost: 1200, stock: 100, category: 'Bebidas' });
+      ws.addRow({ name: 'Ej: Croissant', price: 4000, cost: 1800, stock: 50, category: 'Panadería' });
+
+      const buffer = await workbook.xlsx.writeBuffer();
+      const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `Plantilla_Productos_${new Date().toISOString().slice(0, 10)}.xlsx`;
+      link.click();
+      window.URL.revokeObjectURL(url);
+    } catch (e) {
+      console.error('Error descargando plantilla:', e);
+      toast.error('No se pudo descargar la plantilla');
+    }
+  };
+
+  const normalizeHeader = (h: unknown) =>
+    String(h ?? '')
+      .trim()
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+
+  const handleImportExcelFile = async (file: File) => {
+    if (!currentBusiness?.id) {
+      toast.error('No hay negocio seleccionado');
+      return;
+    }
+    setImporting(true);
+    try {
+      const ab = await file.arrayBuffer();
+      const workbook = new ExcelJS.Workbook();
+      await workbook.xlsx.load(ab);
+      const ws = workbook.worksheets[0];
+      if (!ws) throw new Error('El Excel no tiene hojas');
+
+      const headerRow = ws.getRow(1);
+      const headerToCol: Record<string, number> = {};
+      headerRow.eachCell((cell, colNumber) => {
+        const key = normalizeHeader(cell.value as any);
+        if (key) headerToCol[key] = colNumber;
+      });
+
+      const col = (names: string[]) => {
+        for (const n of names) {
+          const c = headerToCol[normalizeHeader(n)];
+          if (c) return c;
+        }
+        return 0;
+      };
+
+      const cName = col(['Nombre', 'Producto', 'name']);
+      const cPrice = col(['Precio', 'price']);
+      const cCost = col(['Costo', 'cost']);
+      const cStock = col(['Stock', 'Cantidad', 'Inventario', 'stock']);
+      const cCategory = col(['Categoría', 'Categoria', 'category']);
+
+      if (!cName || !cPrice || !cCost || !cStock) {
+        throw new Error('La plantilla debe tener columnas: Nombre, Precio, Costo, Stock (Categoría es opcional).');
+      }
+
+      const rows: Array<{
+        rowNumber: number;
+        name: string;
+        price: number;
+        cost: number;
+        stock: number;
+        category: string;
+      }> = [];
+      const errors: string[] = [];
+
+      // Procesar desde la fila 2
+      for (let r = 2; r <= ws.rowCount; r++) {
+        const row = ws.getRow(r);
+        const name = String(row.getCell(cName).value ?? '').trim();
+        const price = Number(row.getCell(cPrice).value ?? NaN);
+        const cost = Number(row.getCell(cCost).value ?? NaN);
+        const stock = Number(row.getCell(cStock).value ?? NaN);
+        const category = cCategory ? String(row.getCell(cCategory).value ?? '').trim() : '';
+
+        // Saltar filas vacías
+        if (!name && !row.hasValues) continue;
+
+        if (!name || !Number.isFinite(price) || !Number.isFinite(cost) || !Number.isFinite(stock)) {
+          errors.push(`Fila ${r}: datos inválidos (Nombre/Precio/Costo/Stock).`);
+          continue;
+        }
+
+        rows.push({
+          rowNumber: r,
+          name,
+          price,
+          cost,
+          stock: Math.max(0, Math.floor(stock)),
+          category: category || 'Sin categoría',
+        });
+      }
+
+      if (errors.length) {
+        console.warn('Errores importación (validación):', errors);
+        toast.error(`El archivo tiene ${errors.length} filas inválidas (ver consola).`);
+        return;
+      }
+
+      // Detectar duplicados: en archivo y contra inventario actual (por nombre normalizado)
+      const normalizeName = (s: string) => normalizeText(String(s || '').trim());
+      const seen = new Map<string, number>();
+      const dupInFile = new Set<string>();
+      for (const rr of rows) {
+        const k = normalizeName(rr.name);
+        const n = (seen.get(k) || 0) + 1;
+        seen.set(k, n);
+        if (n > 1) dupInFile.add(rr.name);
+      }
+
+      const existingByKey = new Map<string, Product>();
+      products.forEach((p) => existingByKey.set(normalizeName(p.name), p));
+      const dupExisting = new Set<string>();
+      for (const rr of rows) {
+        if (existingByKey.has(normalizeName(rr.name))) dupExisting.add(rr.name);
+      }
+
+      const dupNames = Array.from(new Set([...Array.from(dupInFile), ...Array.from(dupExisting)])).slice(0, 20);
+
+      if (dupInFile.size || dupExisting.size) {
+        setPendingImportRows(rows);
+        setDuplicateNames(dupNames);
+        setDuplicateSummary({ inFile: dupInFile.size, existing: dupExisting.size });
+        setDuplicateDialogOpen(true);
+        return;
+      }
+
+      // No hay duplicados → importar directo creando
+      let ok = 0;
+      let failed = 0;
+      const importErrors: string[] = [];
+      for (const rr of rows) {
+        try {
+          await apiService.createProduct(currentBusiness.id, {
+            name: rr.name,
+            price: rr.price,
+            cost: rr.cost,
+            stock: rr.stock,
+            category: rr.category,
+            image: '',
+          } as any);
+          ok++;
+        } catch (e: any) {
+          failed++;
+          importErrors.push(`Fila ${rr.rowNumber}: ${e?.message || 'error creando producto'}`);
+        }
+      }
+
+      await reloadProducts();
+      window.dispatchEvent(new Event('productsUpdated'));
+
+      if (failed === 0) toast.success(`Importación masiva lista: ${ok} productos`);
+      else {
+        console.warn('Errores importación:', importErrors);
+        toast.error(`Importación masiva: ${ok} ok, ${failed} con error (ver consola)`);
+      }
+    } catch (e: any) {
+      console.error('Error importando Excel:', e);
+      toast.error(e?.message || 'No se pudo importar el Excel');
+    } finally {
+      setImporting(false);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    }
+  };
+
+  const runImportWithDuplicatePolicy = async (policy: 'keep' | 'replace') => {
+    if (!currentBusiness?.id || !pendingImportRows) return;
+    setImporting(true);
+    try {
+      const normalizeName = (s: string) => normalizeText(String(s || '').trim());
+      const existingByKey = new Map<string, Product>();
+      products.forEach((p) => existingByKey.set(normalizeName(p.name), p));
+
+      let ok = 0;
+      let updated = 0;
+      let failed = 0;
+      const importErrors: string[] = [];
+
+      for (const rr of pendingImportRows) {
+        try {
+          const existing = existingByKey.get(normalizeName(rr.name));
+          if (policy === 'replace' && existing) {
+            await apiService.updateProduct(existing.id, currentBusiness.id, {
+              name: existing.name, // mantener nombre original
+              price: rr.price,
+              cost: rr.cost,
+              stock: rr.stock,
+              category: rr.category,
+            } as any);
+            updated++;
+          } else {
+            await apiService.createProduct(currentBusiness.id, {
+              name: rr.name,
+              price: rr.price,
+              cost: rr.cost,
+              stock: rr.stock,
+              category: rr.category,
+              image: '',
+            } as any);
+            ok++;
+          }
+        } catch (e: any) {
+          failed++;
+          importErrors.push(`Fila ${rr.rowNumber}: ${e?.message || 'error importando producto'}`);
+        }
+      }
+
+      await reloadProducts();
+      window.dispatchEvent(new Event('productsUpdated'));
+
+      if (failed === 0) {
+        toast.success(policy === 'replace'
+          ? `Importación lista: ${ok} creados, ${updated} reemplazados`
+          : `Importación lista: ${ok} productos`);
+      } else {
+        console.warn('Errores importación:', importErrors);
+        toast.error(`Importación: ${ok} creados, ${updated} reemplazados, ${failed} con error (ver consola)`);
+      }
+    } finally {
+      setImporting(false);
+      setDuplicateDialogOpen(false);
+      setPendingImportRows(null);
+      setDuplicateNames([]);
+      setDuplicateSummary({ inFile: 0, existing: 0 });
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    }
+  };
 
   // Business selector modal state
   const [businessModalOpen, setBusinessModalOpen] = useState(false);
@@ -193,6 +454,7 @@ export default function ProductsPage() {
     return matchesSearch && matchesCategory;
   });
 
+
   // Sorted products
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     if (!sortOption) {
@@ -225,6 +487,8 @@ export default function ProductsPage() {
         return a.name.localeCompare(b.name);
     }
   });
+
+  // El pedido a proveedor ahora vive en /purchase-order (página completa)
 
   // Handle create/edit product
   const handleSaveProduct = async () => {
@@ -569,15 +833,43 @@ export default function ProductsPage() {
                   Categorías
                 </Button>
                 <Button
-                  onClick={() => {
-                    resetForm();
-                    setCreateSheetOpen(true);
-                  }}
-                  className="flex-1 sm:flex-none bg-gray-900 hover:bg-gray-800"
+                  variant="outline"
+                  onClick={() => navigate('/purchase-order')}
+                  className="flex-1 sm:flex-none"
                 >
-                  <Plus className="w-4 h-4 mr-2" />
-                  Crear productos
+                  <ClipboardList className="w-4 h-4 mr-2" />
+                  Crear pedido
                 </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button className="flex-1 sm:flex-none bg-gray-900 hover:bg-gray-800">
+                      <Plus className="w-4 h-4 mr-2" />
+                      Crear productos
+                      <ChevronDown className="w-4 h-4 ml-2 opacity-80" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-64">
+                    <DropdownMenuLabel>Productos</DropdownMenuLabel>
+                    <DropdownMenuItem
+                      onClick={() => {
+                        resetForm();
+                        setCreateSheetOpen(true);
+                      }}
+                    >
+                      <Plus className="w-4 h-4 mr-2" />
+                      Crear producto
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem
+                      onClick={() => {
+                        setImportDialogOpen(true);
+                      }}
+                    >
+                      <FileSpreadsheet className="w-4 h-4 mr-2" />
+                      Importar desde Excel (carga masiva)
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </div>
           </div>
@@ -1454,6 +1746,137 @@ export default function ProductsPage() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      {/* Importación masiva desde Excel */}
+      <Dialog open={importDialogOpen} onOpenChange={setImportDialogOpen}>
+        <DialogContent className="sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle>Importar productos desde Excel</DialogTitle>
+            <DialogDescription>
+              Esto es una <b>importación masiva</b>. Descarga la plantilla, llénala y súbela aquí.
+              Columnas requeridas: <b>Nombre</b>, <b>Precio</b>, <b>Costo</b>, <b>Stock</b>. Categoría es opcional.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-4">
+            <div className="flex flex-col sm:flex-row gap-2">
+              <Button variant="outline" onClick={downloadImportTemplate} className="flex-1">
+                <Download className="w-4 h-4 mr-2" />
+                Descargar plantilla
+              </Button>
+              <Button
+                onClick={() => fileInputRef.current?.click()}
+                disabled={importing}
+                className="flex-1 bg-gray-900 hover:bg-gray-800 disabled:opacity-50"
+              >
+                {importing ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Importando...
+                  </>
+                ) : (
+                  <>
+                    <Upload className="w-4 h-4 mr-2" />
+                    Subir Excel
+                  </>
+                )}
+              </Button>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".xlsx"
+                className="hidden"
+                onChange={(e) => {
+                  const f = e.target.files?.[0];
+                  if (f) handleImportExcelFile(f);
+                }}
+              />
+            </div>
+
+            <div className="text-xs text-gray-500">
+              Nota: en esta primera versión, la importación <b>crea</b> productos. Si el mismo nombre ya existe, quedará duplicado.
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Duplicados detectados en importación */}
+      <Dialog open={duplicateDialogOpen} onOpenChange={setDuplicateDialogOpen}>
+        <DialogContent className="sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle>Productos duplicados detectados</DialogTitle>
+            <DialogDescription>
+              Encontré posibles duplicados por <b>nombre</b>.
+              {duplicateSummary.existing > 0 && (
+                <> {duplicateSummary.existing} ya existen en tu inventario.</>
+              )}
+              {duplicateSummary.inFile > 0 && (
+                <> {duplicateSummary.inFile} están repetidos dentro del mismo Excel.</>
+              )}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-3">
+            <div className="text-sm text-gray-700">
+              Ejemplos:
+            </div>
+            <div className="max-h-40 overflow-auto border rounded-md bg-gray-50 p-3 text-sm text-gray-800">
+              {duplicateNames.length ? (
+                <ul className="list-disc pl-5 space-y-1">
+                  {duplicateNames.map((n) => (
+                    <li key={n} className="break-words">{n}</li>
+                  ))}
+                </ul>
+              ) : (
+                <div>No hay nombres para mostrar.</div>
+              )}
+            </div>
+
+            <div className="text-xs text-gray-500">
+              - <b>Conservar ambos</b>: crea todos los productos (quedarán duplicados).<br />
+              - <b>Reemplazar</b>: si ya existe un producto con ese nombre, se actualiza (precio/costo/stock/categoría).<br />
+              - <b>Cancelar</b>: no se importa nada.
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-2 pt-2">
+              <Button
+                variant="outline"
+                className="flex-1"
+                onClick={() => {
+                  setDuplicateDialogOpen(false);
+                  setPendingImportRows(null);
+                  setDuplicateNames([]);
+                  setDuplicateSummary({ inFile: 0, existing: 0 });
+                }}
+              >
+                Cancelar
+              </Button>
+              <Button
+                variant="outline"
+                className="flex-1"
+                disabled={importing}
+                onClick={() => runImportWithDuplicatePolicy('keep')}
+              >
+                Conservar ambos
+              </Button>
+              <Button
+                className="flex-1 bg-gray-900 hover:bg-gray-800 disabled:opacity-50"
+                disabled={importing}
+                onClick={() => runImportWithDuplicatePolicy('replace')}
+              >
+                {importing ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Procesando...
+                  </>
+                ) : (
+                  'Reemplazar'
+                )}
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Sort Sheet */}
       <Sheet open={sortDialogOpen} onOpenChange={setSortDialogOpen}>

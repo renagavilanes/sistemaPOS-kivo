@@ -6,6 +6,7 @@ import { BusinessProtectedRoute } from "./components/BusinessProtectedRoute";
 import SalesPage from "./pages/SalesPage";
 import MovementsPage from "./pages/MovementsPage";
 import ProductsPage from "./pages/ProductsPage";
+import PurchaseOrderPage from "./pages/PurchaseOrderPage";
 import MorePage from "./pages/MorePage";
 import ContactsPage from "./pages/ContactsPage";
 import EmployeesPage from "./pages/EmployeesPage";
@@ -140,6 +141,7 @@ export const router = createBrowserRouter([
           { path: "sales", Component: SalesPage },
           { path: "movements", Component: MovementsPage },
           { path: "products", Component: ProductsPage },
+          { path: "purchase-order", Component: PurchaseOrderPage },
           { path: "more", Component: MorePage },
           { path: "contacts", Component: ContactsPage },
           { path: "employees", Component: EmployeesPage },
