@@ -943,24 +943,21 @@ export default function SalesPage() {
         {/* Floating Cart Button - Mobile and Tablet */}
         {activeTab === 'sale' && cartItems.length > 0 && (
           <div className="lg:hidden fixed bottom-16 left-0 right-0 z-50 p-4 bg-gradient-to-t from-white via-white to-transparent pointer-events-none">
-            <div className="pointer-events-none bg-gray-50 rounded-t-xl border border-gray-200 border-b-0 p-4">
-              <p className="text-sm text-gray-600 font-medium flex items-center justify-between">
-                <span>Total:</span>
-                <span className="font-bold text-gray-900 text-lg">${formatCurrency(total)}</span>
-              </p>
-            </div>
             <Button
               size="lg"
-              className="w-full h-14 rounded-b-xl shadow-lg bg-gray-900 hover:bg-gray-800 text-white pointer-events-auto flex items-center justify-between px-6"
+              className="w-full h-12 rounded-xl shadow-lg bg-gray-900 hover:bg-gray-800 text-white pointer-events-auto flex items-center justify-between px-4"
               onClick={() => setMobileCartSheetOpen(true)}
             >
-              <div className="flex items-center gap-3">
-                <div className="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center">
-                  <span className="font-bold text-base">{cartItems.reduce((sum, item) => sum + item.quantity, 0)}</span>
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="bg-white/20 rounded-full w-9 h-9 flex items-center justify-center flex-shrink-0">
+                  <span className="font-bold text-sm">{cartItems.reduce((sum, item) => sum + item.quantity, 0)}</span>
                 </div>
-                <span className="font-semibold text-base">Ver carrito</span>
+                <span className="font-semibold text-sm truncate">Ver carrito</span>
               </div>
-              <ChevronRight className="w-5 h-5" />
+              <div className="flex items-center gap-2 flex-shrink-0 pl-3">
+                <span className="font-bold text-base tabular-nums">${formatCurrency(total)}</span>
+                <ChevronRight className="w-5 h-5" />
+              </div>
             </Button>
           </div>
         )}
