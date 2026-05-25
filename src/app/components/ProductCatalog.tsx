@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Search, Package, Plus, Minus } from 'lucide-react';
 import { Product, CartItem } from '../types';
 import { Input } from './ui/input';
@@ -44,13 +44,17 @@ export function ProductCatalog({
       .replace(/[\u0300-\u036f]/g, '');
   };
 
-  const filteredProducts = products.filter((product) => {
-    const matchesCategory = selectedCategory === 'Todas' || product.category === selectedCategory;
-    const normalizedProductName = normalizeText(product.name);
-    const normalizedSearchTerm = normalizeText(searchTerm);
-    const matchesSearch = normalizedProductName.includes(normalizedSearchTerm);
-    return matchesCategory && matchesSearch;
-  });
+  const filteredProducts = useMemo(() => {
+    const filtered = products.filter((product) => {
+      const matchesCategory = selectedCategory === 'Todas' || product.category === selectedCategory;
+      const normalizedProductName = normalizeText(product.name);
+      const normalizedSearchTerm = normalizeText(searchTerm);
+      const matchesSearch = normalizedProductName.includes(normalizedSearchTerm);
+      return matchesCategory && matchesSearch;
+    });
+    // Mismo orden por defecto que Inventario: nombre A→Z
+    return [...filtered].sort((a, b) => a.name.localeCompare(b.name));
+  }, [products, selectedCategory, searchTerm]);
 
   // Get quantity from cart for each product
   const getProductQuantity = (productId: string) => {

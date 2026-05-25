@@ -60,9 +60,7 @@ export function CartItemEditSheet({
   };
 
   const handleIncrement = () => {
-    if (localQuantity < item.product.stock) {
-      setLocalQuantity(prev => prev + 1);
-    }
+    setLocalQuantity((prev) => prev + 1);
   };
 
   const handleDecrement = () => {
@@ -136,16 +134,10 @@ export function CartItemEditSheet({
                   variant="outline"
                   className="h-14 w-14 rounded-full border-2"
                   onClick={handleIncrement}
-                  disabled={localQuantity >= item.product.stock}
                 >
                   <Plus className="w-6 h-6" />
                 </Button>
               </div>
-              {localQuantity >= item.product.stock && (
-                <p className="text-xs text-amber-600 text-center">
-                  Stock máximo disponible: {item.product.stock}
-                </p>
-              )}
             </div>
 
             {/* Price Control */}

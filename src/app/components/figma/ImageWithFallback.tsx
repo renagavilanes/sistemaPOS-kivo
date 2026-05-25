@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { cn } from '../ui/utils'
 
 export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElement>) {
@@ -9,6 +9,10 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
   }
 
   const { src, alt, style, className, ...rest } = props
+
+  useEffect(() => {
+    setDidError(false)
+  }, [src])
 
   return didError || !src ? (
     <div

@@ -19,7 +19,7 @@ import { toast } from 'sonner';
 import ExcelJS from 'exceljs';
 import { useScreenFx } from '../contexts/ScreenFxContext';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { LazyProductImage } from '../components/LazyProductImage';
+import { LazyProductImage, invalidateProductImageCache, setProductImageCache } from '../components/LazyProductImage';
 import { exportProductsToExcel } from '../utils/productExcelExport';
 import { getProducts, createProduct, updateProduct, deleteProduct, initializeDemoProducts } from '../lib/api';
 import * as apiService from '../services/api';
@@ -528,12 +528,37 @@ export default function ProductsPage() {
         });
 
         if (result.success) {
-          // Reload products
-          await reloadProducts();
-          
-          // Dispatch custom event to notify other components
-          window.dispatchEvent(new Event('productsUpdated'));
-          
+          const savedImage = productImage || result.product?.image || editingProduct.image || '';
+          const productId = editingProduct.id;
+
+          if (currentBusiness.id) {
+            invalidateProductImageCache(currentBusiness.id, productId);
+            if (savedImage) setProductImageCache(currentBusiness.id, productId, savedImage);
+          }
+
+          setProducts((prev) =>
+            prev.map((p) =>
+              p.id === productId
+                ? {
+                    ...p,
+                    name: productName,
+                    price,
+                    cost,
+                    stock,
+                    category: productCategory || p.category,
+                    image: savedImage,
+                  }
+                : p,
+            ),
+          );
+
+          window.dispatchEvent(
+            new CustomEvent('productsUpdated', {
+              detail: { businessId: currentBusiness.id, productId, image: savedImage },
+            }),
+          );
+
+          void reloadProducts();
           toast.success('Producto actualizado correctamente');
         }
       } else {
@@ -548,12 +573,36 @@ export default function ProductsPage() {
         });
 
         if (result.success) {
-          // Reload products
-          await reloadProducts();
-          
-          // Dispatch custom event to notify other components
-          window.dispatchEvent(new Event('productsUpdated'));
-          
+          const savedImage = productImage || result.product?.image || '';
+          const productId = result.product?.id;
+
+          if (productId && currentBusiness.id) {
+            invalidateProductImageCache(currentBusiness.id, productId);
+            if (savedImage) setProductImageCache(currentBusiness.id, productId, savedImage);
+          }
+
+          if (productId) {
+            setProducts((prev) => [
+              {
+                id: productId,
+                name: productName,
+                price,
+                cost,
+                stock,
+                category: productCategory || 'Sin categoría',
+                image: savedImage,
+              },
+              ...prev,
+            ]);
+          }
+
+          window.dispatchEvent(
+            new CustomEvent('productsUpdated', {
+              detail: { businessId: currentBusiness.id, productId, image: savedImage },
+            }),
+          );
+
+          void reloadProducts();
           triggerInkDouble();
           toast.success('Producto creado correctamente');
         }
@@ -740,7 +789,12 @@ export default function ProductsPage() {
           image: cleanImage,
         };
       });
-      setProducts(mappedProducts);
+      setProducts((prev) =>
+        mappedProducts.map((p) => ({
+          ...p,
+          image: p.image || prev.find((e) => e.id === p.id)?.image || '',
+        })),
+      );
     } catch (error) {
       console.error('Error loading products:', error);
     } finally {
@@ -780,7 +834,12 @@ export default function ProductsPage() {
             image: cleanImage,
           };
         });
-        setProducts(mappedProducts);
+        setProducts((prev) =>
+          mappedProducts.map((p) => ({
+            ...p,
+            image: p.image || prev.find((e) => e.id === p.id)?.image || '',
+          })),
+        );
       } catch (error) {
         console.error('Error loading products:', error);
       } finally {
@@ -790,16 +849,22 @@ export default function ProductsPage() {
 
     loadProducts();
 
-    // Escuchar evento de cambio de negocio
     const handleBusinessChanged = () => {
       console.log('🔄 Evento businessChanged recibido - recargando productos');
       loadProducts();
     };
+
+    const handleProductsUpdated = () => {
+      console.log('🔄 Inventario actualizado (venta eliminada u otro cambio), recargando...');
+      loadProducts();
+    };
     
     window.addEventListener('businessChanged', handleBusinessChanged);
+    window.addEventListener('productsUpdated', handleProductsUpdated);
     
     return () => {
       window.removeEventListener('businessChanged', handleBusinessChanged);
+      window.removeEventListener('productsUpdated', handleProductsUpdated);
     };
   }, [currentBusiness?.id]);
 
@@ -1433,11 +1498,11 @@ export default function ProductsPage() {
                 <Label>Imagen del producto</Label>
                 <div className="flex flex-col gap-4">
                   {productImage && (
-                    <div className="w-full h-48 rounded-lg overflow-hidden bg-gray-100 relative">
+                    <div className="w-full h-[8.4rem] rounded-lg overflow-hidden bg-gray-100 relative">
                       <ImageWithFallback
                         src={productImage}
                         alt="Preview"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                       />
                       <Button
                         variant="ghost"

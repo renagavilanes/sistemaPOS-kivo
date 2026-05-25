@@ -4,6 +4,7 @@
 // deno-lint-ignore-file no-explicit-any
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { cors } from "npm:hono/cors";
+import { restoreProductStockOnSaleDelete } from "./sale_stock.ts";
 
 export function registerAdminRoutes(app: any): void {
   const admin = createClient(
@@ -79,6 +80,11 @@ export function registerAdminRoutes(app: any): void {
       const businessId = c.req.header("X-Business-ID");
       if (!businessId) return c.json({ error: "Missing X-Business-ID header" }, 400);
       const saleId = c.req.param("saleId");
+
+      const stockResult = await restoreProductStockOnSaleDelete(admin, saleId, businessId);
+      if (stockResult.error) return c.json({ error: stockResult.error }, 500);
+      if (stockResult.notFound) return c.json({ error: "Sale not found" }, 404);
+
       const { error } = await admin.from("sales").delete().eq("id", saleId).eq("business_id", businessId);
       if (error) return c.json({ error: error.message }, 500);
       return c.json({ success: true });

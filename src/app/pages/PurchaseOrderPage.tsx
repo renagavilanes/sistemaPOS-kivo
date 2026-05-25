@@ -258,9 +258,9 @@ export default function PurchaseOrderPage() {
       </div>
 
       <ScrollArea className="flex-1">
-        <div className="px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-5 gap-6">
-          {/* Cabecera */}
-          <div className="lg:col-span-2 space-y-5">
+        <div className="px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Cabecera + agregar productos (más ancho para nombres largos) */}
+          <div className="lg:col-span-7 space-y-5">
             <div className="bg-white border rounded-lg p-4 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -332,9 +332,9 @@ export default function PurchaseOrderPage() {
                         key={p.id}
                         type="button"
                         onClick={() => addProduct(p)}
-                        className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 text-left"
+                        className="w-full flex items-start gap-3 p-3 hover:bg-gray-50 text-left"
                       >
-                        <div className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded bg-gray-100">
+                        <div className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded bg-gray-100 mt-0.5">
                           <LazyProductImage
                             fillParent
                             productId={p.id}
@@ -344,11 +344,16 @@ export default function PurchaseOrderPage() {
                           />
                         </div>
 
-                        <div className="min-w-0 flex-1 flex items-center h-11">
-                          <div className="text-sm font-semibold text-gray-900 truncate">{p.name}</div>
+                        <div className="min-w-0 flex-1 py-0.5">
+                          <div
+                            className="text-sm font-semibold text-gray-900 leading-snug break-words line-clamp-2"
+                            title={p.name}
+                          >
+                            {p.name}
+                          </div>
                         </div>
 
-                        <div className="flex items-center gap-2 flex-shrink-0">
+                        <div className="flex items-center gap-2 flex-shrink-0 self-center">
                           {(() => {
                             const added = itemsQtyByProduct.get(p.id) || 0;
                             return added > 0 ? (
@@ -381,7 +386,7 @@ export default function PurchaseOrderPage() {
           </div>
 
           {/* Items del pedido */}
-          <div className="lg:col-span-3 space-y-4">
+          <div className="lg:col-span-5 space-y-4">
             <div className="bg-white border rounded-lg p-4">
               <div className="font-semibold text-gray-900 mb-3">Productos en el pedido</div>
               {items.length === 0 ? (
@@ -401,8 +406,13 @@ export default function PurchaseOrderPage() {
                               className="h-full w-full object-cover object-center"
                             />
                           </div>
-                          <div className="min-w-0">
-                            <div className="font-semibold text-gray-900 truncate">{i.name}</div>
+                          <div className="min-w-0 flex-1">
+                            <div
+                              className="font-semibold text-gray-900 leading-snug break-words line-clamp-2"
+                              title={i.name}
+                            >
+                              {i.name}
+                            </div>
                           </div>
                         </div>
 

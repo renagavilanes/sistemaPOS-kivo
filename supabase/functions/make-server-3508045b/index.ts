@@ -13,6 +13,7 @@ import * as dbEmployees from "./db_employees.tsx";
 import { createEmployeeV3 } from "./employee_creation_v3.tsx";
 import { sendInvitationEmail } from "./send_invitation.tsx";
 import { registerAdminRoutes } from "./admin_routes.tsx";
+import { restoreProductStockOnSaleDelete } from "./sale_stock.ts";
 
 const app = new Hono();
 
@@ -2459,6 +2460,11 @@ app.delete("/make-server-3508045b/db/sales/:saleId", async (c) => {
     const businessId = c.req.header('X-Business-ID');
     if (!businessId) return c.json({ error: 'Missing X-Business-ID header' }, 400);
     const saleId = c.req.param('saleId');
+
+    const stockResult = await restoreProductStockOnSaleDelete(supabaseAdmin, saleId, businessId);
+    if (stockResult.error) return c.json({ error: stockResult.error }, 500);
+    if (stockResult.notFound) return c.json({ error: 'Sale not found' }, 404);
+
     const { error } = await supabaseAdmin.from('sales').delete().eq('id', saleId).eq('business_id', businessId);
     if (error) return c.json({ error: error.message }, 500);
     return c.json({ success: true });
@@ -2830,6 +2836,13 @@ app.delete("/make-server-3508045b/sales/db-delete/:saleId", async (c) => {
     const businessId = c.req.header('X-Business-ID');
     if (!businessId) return c.json({ error: 'Missing X-Business-ID header' }, 400);
     const saleId = c.req.param('saleId');
+
+    const stockResult = await restoreProductStockOnSaleDelete(supabaseAdmin, saleId, businessId);
+    if (stockResult.error) {
+      console.error('❌ [SALES/DB-DELETE] Stock restore error:', stockResult.error);
+      return c.json({ error: stockResult.error }, 500);
+    }
+    if (stockResult.notFound) return c.json({ error: 'Sale not found' }, 404);
 
     const { error } = await supabaseAdmin
       .from('sales')

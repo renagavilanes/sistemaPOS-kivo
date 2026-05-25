@@ -158,7 +158,12 @@ export default function SalesPage() {
           image: p.image || '',
         }));
         console.log('✅ Productos cargados en SalesPage:', mappedProducts.length, 'productos');
-        setProducts(mappedProducts);
+        setProducts((prev) =>
+          mappedProducts.map((p) => ({
+            ...p,
+            image: p.image || prev.find((e) => e.id === p.id)?.image || '',
+          })),
+        );
       } catch (error) {
         console.error('Error loading products:', error);
       } finally {
@@ -168,7 +173,17 @@ export default function SalesPage() {
 
     loadProducts();
 
-    const handleProductsUpdated = () => {
+    const handleProductsUpdated = (e: Event) => {
+      const detail = (e as CustomEvent<{ productId?: string; image?: string; businessId?: string }>).detail;
+      if (detail?.businessId && detail.businessId !== currentBusiness.id) return;
+
+      if (detail?.productId && detail.image) {
+        setProducts((prev) =>
+          prev.map((p) => (p.id === detail.productId ? { ...p, image: detail.image! } : p)),
+        );
+        return;
+      }
+
       console.log('🔄 Productos actualizados (evento personalizado), recargando...');
       loadProducts();
     };
@@ -274,13 +289,9 @@ export default function SalesPage() {
     const existingItem = cartItems.find(item => item.product.id === product.id);
     
     if (existingItem) {
-      if (existingItem.quantity < product.stock) {
-        const updatedItem = { ...existingItem, quantity: existingItem.quantity + 1 };
-        const otherItems = cartItems.filter(item => item.product.id !== product.id);
-        setCartItems([updatedItem, ...otherItems]);
-      } else {
-        toast.error('Stock insuficiente');
-      }
+      const updatedItem = { ...existingItem, quantity: existingItem.quantity + 1 };
+      const otherItems = cartItems.filter(item => item.product.id !== product.id);
+      setCartItems([updatedItem, ...otherItems]);
     } else {
       setCartItems([{
         product,

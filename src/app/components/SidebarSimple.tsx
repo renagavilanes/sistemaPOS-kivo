@@ -6,7 +6,7 @@ import { BusinessSwitcher } from './BusinessSwitcher';
 const mobileNavigation = [
   { name: 'Vender', icon: ShoppingCart, href: '/sales' },
   { name: 'Movimientos', icon: BarChart3, href: '/movements' },
-  { name: 'Productos', icon: Package, href: '/products' },
+  { name: 'Inventario', icon: Package, href: '/products' },
   { name: 'Más', icon: MoreHorizontal, href: '/more' },
 ];
 

@@ -797,6 +797,7 @@ export default function MovementsPage() {
   // Delete Confirmation Dialog states
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [movementToDelete, setMovementToDelete] = useState<any>(null);
+  const [isDeleting, setIsDeleting] = useState(false);
   
   // Date Period Sheet state
   const [datePeriodSheetOpen, setDatePeriodSheetOpen] = useState(false);
@@ -1821,29 +1822,32 @@ export default function MovementsPage() {
   };
 
   const confirmDelete = async () => {
-    if (!movementToDelete || !currentBusiness?.id) return;
-    
+    if (!movementToDelete || !currentBusiness?.id || isDeleting) return;
+
+    const deletedId = movementToDelete.id;
+    const deletedType = movementToDelete.type;
+    const businessId = currentBusiness.id;
+
+    setIsDeleting(true);
     try {
-      // Delete via API based on type
-      if (movementToDelete.type === 'sale') {
-        await apiService.deleteSale(movementToDelete.id, currentBusiness.id);
-      } else if (movementToDelete.type === 'expense') {
-        await apiService.deleteExpense(movementToDelete.id, currentBusiness.id);
+      if (deletedType === 'sale') {
+        await apiService.deleteSale(deletedId, businessId);
+        window.dispatchEvent(new Event('productsUpdated'));
+      } else if (deletedType === 'expense') {
+        await apiService.deleteExpense(deletedId, businessId);
       }
-      
-      // Remove from movements array in state
-      setMovements(movements.filter(m => m.id !== movementToDelete.id));
-      
+
+      setMovements((prev) => prev.filter((m) => m.id !== deletedId));
       toast.success('Movimiento eliminado correctamente');
+      setDeleteDialogOpen(false);
+      setDetailSheetOpen(false);
+      setMovementToDelete(null);
     } catch (error) {
       console.error('Error deleting movement:', error);
       toast.error('Error al eliminar el movimiento');
+    } finally {
+      setIsDeleting(false);
     }
-    
-    // Close dialogs
-    setDeleteDialogOpen(false);
-    setDetailSheetOpen(false);
-    setMovementToDelete(null);
   };
 
   // Handle print receipt - Abre modal con vista previa del PDF
@@ -3341,7 +3345,7 @@ export default function MovementsPage() {
               {/* Products List */}
               {selectedMovement.type === 'sale' && selectedMovement.products && selectedMovement.products.length > 0 && (
                 <div className="border-t pt-4">
-                  <h3 className="text-sm font-semibold text-gray-900 mb-3">Productos ({selectedMovement.products.length})</h3>
+                  <h3 className="text-sm font-semibold text-gray-900 mb-3">Inventario ({selectedMovement.products.length})</h3>
                   <div className="space-y-2">
                     {selectedMovement.products.map((product: any) => {
                       const lineName =
@@ -3386,20 +3390,31 @@ export default function MovementsPage() {
             </div>
 
             {/* Footer Actions */}
-            <SheetFooter className="sticky bottom-0 bg-white border-t pt-4 pb-2 flex-row gap-2 z-10">
-              <Button variant="outline" size="icon" onClick={handlePrintReceipt}>
-                <Receipt className="w-4 h-4" />
+            <SheetFooter className="sticky bottom-0 bg-white border-t px-6 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] flex-row gap-3 z-10">
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-12 w-12 shrink-0"
+                onClick={handlePrintReceipt}
+              >
+                <Receipt className="w-5 h-5" />
               </Button>
-              
+
               {canEditMovement && (
-                <Button variant="outline" className="flex-1" onClick={openEditSheet}>
-                  <Edit className="w-4 h-4 mr-2" />
+                <Button variant="outline" size="lg" className="flex-1 h-12" onClick={openEditSheet}>
+                  <Edit className="w-5 h-5 mr-2" />
                   Editar
                 </Button>
               )}
               {canDeleteMovement && (
-                <Button variant="destructive" className="flex-1" onClick={handleDeleteClick}>
-                  <Trash2 className="w-4 h-4 mr-2" />
+                <Button
+                  variant="destructive"
+                  size="lg"
+                  className="flex-1 h-12"
+                  onClick={handleDeleteClick}
+                  disabled={isDeleting}
+                >
+                  <Trash2 className="w-5 h-5 mr-2" />
                   Eliminar
                 </Button>
               )}
@@ -3892,7 +3907,14 @@ export default function MovementsPage() {
       )}
 
       {/* Delete Confirmation Dialog */}
-      <Dialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+      <Dialog
+        open={deleteDialogOpen}
+        onOpenChange={(open) => {
+          if (isDeleting) return;
+          setDeleteDialogOpen(open);
+          if (!open) setMovementToDelete(null);
+        }}
+      >
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-red-600">
@@ -3939,18 +3961,31 @@ export default function MovementsPage() {
           <div className="flex gap-3 mt-4">
             <Button
               variant="outline"
-              className="flex-1"
+              size="lg"
+              className="flex-1 h-12"
+              disabled={isDeleting}
               onClick={() => setDeleteDialogOpen(false)}
             >
               Cancelar
             </Button>
             <Button
               variant="destructive"
-              className="flex-1"
+              size="lg"
+              className="flex-1 h-12"
+              disabled={isDeleting}
               onClick={confirmDelete}
             >
-              <Trash2 className="w-4 h-4 mr-2" />
-              Eliminar
+              {isDeleting ? (
+                <>
+                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                  Eliminando...
+                </>
+              ) : (
+                <>
+                  <Trash2 className="w-5 h-5 mr-2" />
+                  Eliminar
+                </>
+              )}
             </Button>
           </div>
         </DialogContent>

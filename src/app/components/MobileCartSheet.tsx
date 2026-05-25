@@ -113,13 +113,11 @@ export function MobileCartSheet({
           <>
             {/* Scrollable Items Area */}
             <ScrollArea className="flex-1 overflow-auto bg-gray-50">
-              <div className="p-4 space-y-3">
+              <div className="p-3 space-y-2">
                 {items.map((item) => (
-                  <SectionCard key={item.product.id}>
-                    {/* Header: Image + Name + Delete */}
-                    <div className="flex items-center gap-3 mb-3">
-                      {/* Image */}
-                      <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
+                  <SectionCard key={item.product.id} padded={false} className="p-3">
+                    <div className="flex items-start gap-2 mb-2">
+                      <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-md bg-gray-100">
                         <LazyProductImage
                           fillParent
                           productId={item.product.id}
@@ -130,24 +128,22 @@ export function MobileCartSheet({
                         />
                       </div>
 
-                      {/* Product Name */}
-                      <h3 className="flex-1 font-semibold text-base text-gray-900">{item.product.name}</h3>
+                      <h3 className="flex-1 min-w-0 font-semibold text-sm leading-snug text-gray-900 line-clamp-2 pt-0.5">
+                        {item.product.name}
+                      </h3>
 
-                      {/* Delete Button */}
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="h-10 w-10 p-0 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg border-2 border-red-600"
+                        className="h-8 w-8 p-0 shrink-0 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md border-2 border-red-600"
                         onClick={() => onRemoveItem(item.product.id)}
                       >
-                        <Trash2 className="w-5 h-5" />
+                        <Trash2 className="w-4 h-4" />
                       </Button>
                     </div>
 
-                    {/* Quantity + Price Controls */}
-                    <div className="flex items-center gap-3 mb-2">
-                      {/* Quantity Controls */}
-                      <div className="flex items-center justify-between gap-2 border-2 border-gray-200 rounded-full px-3 h-10 flex-1">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <div className="flex items-center justify-between gap-1 border-2 border-gray-200 rounded-full px-3 h-9 flex-1">
                         <Button
                           size="sm"
                           variant="ghost"
@@ -162,14 +158,13 @@ export function MobileCartSheet({
                           variant="ghost"
                           className="h-7 w-7 p-0 rounded-full hover:bg-gray-100"
                           onClick={() => onUpdateQuantity(item.product.id, item.quantity + 1)}
-                          disabled={item.quantity >= item.product.stock}
                         >
                           <Plus className="w-3.5 h-3.5" />
                         </Button>
                       </div>
 
                       {/* Price Display/Edit */}
-                      <div className="flex items-center justify-center border-2 border-gray-200 rounded-full px-3 h-10 flex-1">
+                      <div className="flex items-center justify-center border-2 border-gray-200 rounded-full px-3 h-9 flex-1">
                         {canEditPrice ? (
                           <Input
                             type="number"
@@ -179,13 +174,12 @@ export function MobileCartSheet({
                             className="h-7 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-white"
                           />
                         ) : (
-                          <span className="text-base font-semibold text-gray-900">$ {formatCurrency(item.priceAtSale)}</span>
+                          <span className="text-sm font-semibold text-gray-900">$ {formatCurrency(item.priceAtSale)}</span>
                         )}
                       </div>
                     </div>
 
-                    {/* Price per unit */}
-                    <div className="text-sm text-gray-600">
+                    <div className="text-xs text-gray-500">
                       Precio por {item.quantity} unidade{item.quantity !== 1 ? 's' : ''}: ${formatCurrency(calculateSubtotal(item))}
                     </div>
                   </SectionCard>

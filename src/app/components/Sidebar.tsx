@@ -27,7 +27,7 @@ import { BrandLogo } from './BrandLogo';
 const desktopNavigation = [
   { name: 'Vender', icon: ShoppingCart, href: '/sales' },
   { name: 'Movimientos', icon: BarChart3, href: '/movements' },
-  { name: 'Productos', icon: Package, href: '/products' },
+  { name: 'Inventario', icon: Package, href: '/products' },
   { name: 'Catálogo', icon: QrCode, href: '/catalog/settings' },
   { name: 'Contactos', icon: BookUser, href: '/contacts' },
   { name: 'Empleados', icon: Users, href: '/employees' },
@@ -38,7 +38,7 @@ const desktopNavigation = [
 const mobileNavigation = [
   { name: 'Vender', icon: ShoppingCart, href: '/sales' },
   { name: 'Movimientos', icon: BarChart3, href: '/movements' },
-  { name: 'Productos', icon: Package, href: '/products' },
+  { name: 'Inventario', icon: Package, href: '/products' },
   { name: 'Más', icon: MoreHorizontal, href: '/more' },
 ];
 

@@ -59,7 +59,7 @@ const getPermissionLabel = (key: string) => {
   const labels: Record<string, string> = {
     sales: 'Ventas',
     expenses: 'Gastos',
-    products: 'Productos',
+    products: 'Inventario',
     movements: 'Movimientos',
     reports: 'Reportes',
     employees: 'Empleados',

@@ -16,6 +16,26 @@ function cacheKey(businessId: string, productId: string) {
 const imageSrcCache = new Map<string, string>();
 const fetchInflight = new Map<string, Promise<string>>();
 
+/** Limpia caché de imagen tras crear/editar producto para que se vea al instante. */
+export function invalidateProductImageCache(businessId: string, productId?: string) {
+  if (productId) {
+    const key = cacheKey(businessId, productId);
+    imageSrcCache.delete(key);
+    fetchInflight.delete(key);
+    return;
+  }
+  for (const key of imageSrcCache.keys()) {
+    if (key.startsWith(`${businessId}::`)) imageSrcCache.delete(key);
+  }
+  for (const key of fetchInflight.keys()) {
+    if (key.startsWith(`${businessId}::`)) fetchInflight.delete(key);
+  }
+}
+
+export function setProductImageCache(businessId: string, productId: string, src: string) {
+  imageSrcCache.set(cacheKey(businessId, productId), usableProductImageSrc(src));
+}
+
 async function resolveProductImageSrc(businessId: string, productId: string): Promise<string> {
   const key = cacheKey(businessId, productId);
   if (imageSrcCache.has(key)) {
@@ -73,8 +93,43 @@ export function LazyProductImage({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setSrc(usableProductImageSrc(initialSrc));
-  }, [initialSrc]);
+    const next = usableProductImageSrc(initialSrc);
+    setSrc(next);
+    if (businessId && productId && next) {
+      setProductImageCache(businessId, productId, next);
+    }
+  }, [initialSrc, businessId, productId]);
+
+  useEffect(() => {
+    const refreshFromServer = () => {
+      if (!businessId || !productId) return;
+      const immediate = usableProductImageSrc(initialSrc);
+      if (immediate) {
+        setSrc(immediate);
+        setProductImageCache(businessId, productId, immediate);
+        return;
+      }
+      invalidateProductImageCache(businessId, productId);
+      void resolveProductImageSrc(businessId, productId).then(setSrc);
+    };
+
+    const onProductsUpdated = (e: Event) => {
+      const detail = (e as CustomEvent<{ productId?: string; businessId?: string; image?: string }>).detail;
+      if (detail?.businessId && detail.businessId !== businessId) return;
+      if (detail?.productId && detail.productId !== productId) return;
+
+      if (detail?.image) {
+        const url = usableProductImageSrc(detail.image);
+        setSrc(url);
+        if (businessId && productId) setProductImageCache(businessId, productId, url);
+        return;
+      }
+      refreshFromServer();
+    };
+
+    window.addEventListener('productsUpdated', onProductsUpdated);
+    return () => window.removeEventListener('productsUpdated', onProductsUpdated);
+  }, [businessId, productId, initialSrc]);
 
   useEffect(() => {
     const immediate = usableProductImageSrc(initialSrc);
