@@ -1268,7 +1268,7 @@ export async function inviteEmployee(businessId: string, employee: {
   phone?: string | null;
   role: string;
   permissions: any;
-}): Promise<{ success: boolean; invitationLink: string }> {
+}): Promise<{ success: boolean; invitationLink: string; emailSent: boolean; emailError?: string }> {
   console.log('🚀 [INVITE] Creating employee invitation...');
   console.log('📧 [INVITE] Email:', employee.email);
   console.log('👤 [INVITE] Name:', employee.name);
@@ -1310,7 +1310,10 @@ export async function inviteEmployee(businessId: string, employee: {
   console.log('🔗 [INVITE] Link generado:', invitationLink);
   console.log('📧 [INVITE] Sending email via server...');
   
-  // 5. Send email via server
+  // 5. Send email via server (el empleado ya está creado — no fallar todo si el correo falla)
+  let emailSent = false;
+  let emailError: string | undefined;
+
   try {
     const emailResponse = await fetch(
       `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/send-invitation`,
@@ -1323,28 +1326,32 @@ export async function inviteEmployee(businessId: string, employee: {
         body: JSON.stringify({
           email: employee.email,
           name: employee.name,
+          businessName,
           invitationLink: invitationLink,
         }),
       }
     );
-    
-    if (!emailResponse.ok) {
-      const errorData = await emailResponse.json();
+
+    if (emailResponse.ok) {
+      emailSent = true;
+      console.log('✅ [INVITE] Email sent successfully via server!');
+    } else {
+      const errorData = await emailResponse.json().catch(() => ({}));
+      emailError = errorData.error || errorData.message || 'No se pudo enviar el correo de invitación';
       console.error('❌ [INVITE] Error sending email:', errorData);
-      throw new Error('No se pudo enviar el correo de invitación');
     }
-    
-    console.log('✅ [INVITE] Email sent successfully via server!');
-  } catch (emailError: any) {
-    console.error('❌ [INVITE] Email error:', emailError);
-    throw new Error(`Error al enviar correo: ${emailError.message}`);
+  } catch (err: any) {
+    emailError = err.message || 'Error de red al enviar el correo';
+    console.error('❌ [INVITE] Email error:', err);
   }
-  
-  console.log('✅ [INVITE] Employee invitation created and email sent!');
-  
+
+  console.log('✅ [INVITE] Employee invitation created', emailSent ? '+ email sent' : '(email pending)');
+
   return {
     success: true,
     invitationLink,
+    emailSent,
+    emailError,
   };
 }
 

@@ -313,16 +313,22 @@ export default function EmployeesPage() {
           role: mapRoleToStorage(employeeRole),
           permissions: customPermissions,
         });
-        
-        // Show success message
-        triggerInkDouble();
-        toast.success('✅ Invitación enviada exitosamente', {
-          description: `Se ha enviado un correo a ${employeeEmail} con las instrucciones para completar su registro.`,
-          duration: 5000,
-        });
-        
-        // Reload employees to show the new one
+
         await loadEmployees();
+
+        if (result.emailSent) {
+          triggerInkDouble();
+          toast.success('✅ Invitación enviada exitosamente', {
+            description: `Se ha enviado un correo a ${employeeEmail} con las instrucciones para completar su registro.`,
+            duration: 5000,
+          });
+        } else {
+          triggerInkDouble();
+          toast.warning('Empleado agregado, pero el correo no se envió', {
+            description: result.emailError || 'El empleado ya está en la lista. Puedes volver a invitarlo para reenviar el correo.',
+            duration: 7000,
+          });
+        }
       }
     } catch (error: any) {
       toast.error(error.message || `Error al ${editingEmployee ? 'actualizar' : 'crear'} empleado`);

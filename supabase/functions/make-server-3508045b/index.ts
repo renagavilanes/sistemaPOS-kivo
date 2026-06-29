@@ -11,7 +11,6 @@ import * as dbSales from "./db_sales.tsx";
 import * as dbExpenses from "./db_expenses.tsx";
 import * as dbEmployees from "./db_employees.tsx";
 import { createEmployeeV3 } from "./employee_creation_v3.tsx";
-import { sendInvitationEmail } from "./send_invitation.tsx";
 import { registerAdminRoutes } from "./admin_routes.tsx";
 import { restoreProductStockOnSaleDelete } from "./sale_stock.ts";
 
@@ -4213,8 +4212,49 @@ app.post("/make-server-3508045b/create-employee-v2", async (c) => {
 // NEW V3 ENDPOINT - Completely separate to force redeploy
 app.post("/make-server-3508045b/create-employee-v3", createEmployeeV3);
 
-// SEND INVITATION EMAIL ENDPOINT
-app.post("/make-server-3508045b/send-invitation", sendInvitationEmail);
+// SEND INVITATION EMAIL ENDPOINT — usa el mismo helper Brevo que el registro
+app.post("/make-server-3508045b/send-invitation", async (c) => {
+  try {
+    const body = await c.req.json();
+    const { email, name, invitationLink, businessName } = body;
+
+    if (!email || !invitationLink) {
+      return c.json({ error: 'Email e invitationLink son requeridos' }, 400);
+    }
+
+    const displayName = name || email.split('@')[0];
+    const biz = businessName || 'el negocio';
+
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html>
+      <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+      <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
+          <h1 style="color: white; margin: 0; font-size: 28px;">¡Te invitaron a ${biz}! 🎉</h1>
+        </div>
+        <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;">
+          <p>Hola <strong>${displayName}</strong>,</p>
+          <p>Has sido invitado a unirte a <strong>${biz}</strong>. Crea tu cuenta con el botón:</p>
+          <div style="text-align: center; margin: 30px 0;">
+            <a href="${invitationLink}" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: bold; display: inline-block;">
+              Completar mi registro
+            </a>
+          </div>
+          <p style="font-size: 12px; color: #999; word-break: break-all; background: white; padding: 10px; border-radius: 5px;">${invitationLink}</p>
+          <p style="font-size: 12px; color: #999; text-align: center;">Válido por 7 días.</p>
+        </div>
+      </body>
+      </html>`;
+
+    await sendEmailWithBrevo(email, `Invitación a ${biz} — Sistema POS`, htmlContent);
+    console.log('✅ [SEND-INVITE] Email sent to:', email);
+    return c.json({ success: true, message: 'Email sent successfully' });
+  } catch (error: any) {
+    console.error('❌ [SEND-INVITE] Error:', error.message);
+    return c.json({ error: error.message || 'Failed to send email' }, 500);
+  }
+});
 
 // CHECK IF USER EXISTS (for invite links)
 app.post("/make-server-3508045b/check-user-exists", async (c) => {
