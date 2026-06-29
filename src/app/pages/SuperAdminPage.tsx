@@ -1385,6 +1385,8 @@ function ProductsSuperTable({
   const [bulkDelOpen, setBulkDelOpen] = useState(false);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const selectAllRef = useRef<HTMLInputElement>(null);
+  const [searchName, setSearchName] = useState('');
+  const [stockSortDir, setStockSortDir] = useState<'desc' | 'asc'>('desc');
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [cost, setCost] = useState('');
@@ -1394,12 +1396,35 @@ function ProductsSuperTable({
   const [busy, setBusy] = useState(false);
   const [localErr, setLocalErr] = useState('');
 
-  const productIds = useMemo(() => products.map(p => String(p.id)).filter(Boolean), [products]);
+  const norm = (s: unknown) =>
+    String(s ?? '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .trim();
+
+  const visibleProducts = useMemo(() => {
+    const q = norm(searchName);
+    const filtered = q
+      ? products.filter(p => norm(p?.name).includes(q))
+      : products;
+    const sorted = [...filtered].sort((a, b) => {
+      const av = Number(a?.stock ?? 0);
+      const bv = Number(b?.stock ?? 0);
+      return stockSortDir === 'desc' ? (bv - av) : (av - bv);
+    });
+    return sorted;
+  }, [products, searchName, stockSortDir]);
+
+  const visibleIds = useMemo(
+    () => visibleProducts.map(p => String(p.id)).filter(Boolean),
+    [visibleProducts],
+  );
 
   useEffect(() => {
-    const set = new Set(productIds);
+    const set = new Set(visibleIds);
     setSelectedIds(prev => prev.filter(id => set.has(id)));
-  }, [productIds]);
+  }, [visibleIds]);
 
   useEffect(() => {
     if (editP) {
@@ -1412,7 +1437,7 @@ function ProductsSuperTable({
     }
   }, [editP]);
 
-  const allSelected = productIds.length > 0 && selectedIds.length === productIds.length;
+  const allSelected = visibleIds.length > 0 && visibleIds.every(id => selectedIds.includes(id));
   const someSelected = selectedIds.length > 0 && !allSelected;
   useEffect(() => {
     if (selectAllRef.current) selectAllRef.current.indeterminate = someSelected;
@@ -1428,6 +1453,14 @@ function ProductsSuperTable({
 
   return (
     <>
+      <div className="mb-3">
+        <input
+          value={searchName}
+          onChange={e => setSearchName(e.target.value)}
+          placeholder="Buscar por nombre de producto…"
+          className="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm placeholder:text-slate-500"
+        />
+      </div>
       {selectedIds.length > 0 && (
         <div className="flex flex-wrap items-center justify-between gap-2 mb-2 px-1">
           <span className="text-sm text-slate-400">{selectedIds.length} producto(s) seleccionado(s)</span>
@@ -1449,16 +1482,26 @@ function ProductsSuperTable({
                   ref={selectAllRef}
                   type="checkbox"
                   checked={allSelected}
-                  onChange={() => setSelectedIds(allSelected ? [] : [...productIds])}
+                  onChange={() => setSelectedIds(allSelected ? [] : Array.from(new Set([...selectedIds, ...visibleIds])))}
                   className="rounded border-slate-500 bg-slate-900 text-indigo-600"
                   aria-label="Seleccionar todos los productos"
                 />
               </th>
-              <th className="px-3 py-2 text-left">Nombre</th>
+              <th className="px-3 py-2 text-left w-[28rem] min-w-[28rem] max-w-[28rem]">Nombre</th>
               <th className="px-3 py-2 text-right">Precio</th>
               <th className="px-3 py-2 text-right">Costo</th>
               <th className="px-3 py-2 text-left">SKU</th>
-              <th className="px-3 py-2 text-right">Stock</th>
+              <th className="px-3 py-2 text-right">
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-end gap-2 w-full hover:text-slate-200"
+                  onClick={() => setStockSortDir(d => (d === 'desc' ? 'asc' : 'desc'))}
+                  title="Ordenar por stock"
+                >
+                  <span>Stock</span>
+                  <span className="text-slate-400">{stockSortDir === 'desc' ? '↓' : '↑'}</span>
+                </button>
+              </th>
               <th className="px-3 py-2 text-left">Categoría</th>
               <th className="px-3 py-2 text-left">Creado</th>
               <th className="px-3 py-2 text-left">Última modificación</th>
@@ -1466,7 +1509,7 @@ function ProductsSuperTable({
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800">
-            {products.map((p, i) => {
+            {visibleProducts.map((p, i) => {
               const pid = String(p.id ?? '');
               return (
               <tr key={p.id || `p-${i}`} className="hover:bg-slate-800/30">
@@ -1481,7 +1524,7 @@ function ProductsSuperTable({
                     />
                   ) : null}
                 </td>
-                <td className="px-3 py-2 text-slate-100 font-medium max-w-[200px] truncate" title={p.name}>{p.name ?? '—'}</td>
+                <td className="px-3 py-2 text-slate-100 font-medium w-[28rem] min-w-[28rem] max-w-[28rem] truncate" title={p.name}>{p.name ?? '—'}</td>
                 <td className="px-3 py-2 text-right tabular-nums text-slate-200">{formatMoney(p.price)}</td>
                 <td className="px-3 py-2 text-right tabular-nums text-amber-200/90">{p.cost != null ? formatMoney(p.cost) : '—'}</td>
                 <td className="px-3 py-2 text-slate-400 font-mono text-xs">{p.sku ?? '—'}</td>

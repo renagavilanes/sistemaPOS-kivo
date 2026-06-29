@@ -215,13 +215,19 @@ async function handleUsers(): Promise<Response> {
     const pu = publicMap.get(u.id);
     const md = (pu?.metadata ?? {}) as Record<string, unknown>;
     const access = readAccessFromMetadata(md);
+    const lastActivityAt =
+      typeof (md as any).last_activity_at === "string" ? String((md as any).last_activity_at) : "";
+    const lastRelevantAt =
+      (u.last_sign_in_at && String(u.last_sign_in_at) > lastActivityAt)
+        ? String(u.last_sign_in_at)
+        : (lastActivityAt || (u.last_sign_in_at ? String(u.last_sign_in_at) : ""));
     return {
       id: u.id,
       email: u.email,
       name: u.user_metadata?.name || u.user_metadata?.full_name || "",
       created_at: u.created_at,
       last_sign_in_at: u.last_sign_in_at || null,
-      is_active: !!(u.last_sign_in_at && u.last_sign_in_at > thirtyDaysAgo),
+      is_active: !!(lastRelevantAt && lastRelevantAt > thirtyDaysAgo),
       blocked: access.blocked,
       block_message: access.block_message,
       block_history: access.block_history,
