@@ -1338,6 +1338,9 @@ export async function inviteEmployee(businessId: string, employee: {
     } else {
       const errorData = await emailResponse.json().catch(() => ({}));
       emailError = errorData.error || errorData.message || 'No se pudo enviar el correo de invitación';
+      if (emailError.includes('unrecognised IP') || emailError.includes('authorised_ips')) {
+        emailError = 'Brevo bloqueó el correo: autoriza la IP de Supabase en Brevo → Seguridad → IPs autorizadas (o desactiva la restricción).';
+      }
       console.error('❌ [INVITE] Error sending email:', errorData);
     }
   } catch (err: any) {

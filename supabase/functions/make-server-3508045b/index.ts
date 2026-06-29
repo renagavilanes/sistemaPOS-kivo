@@ -787,6 +787,20 @@ function generateVerificationCode(): string {
 }
 
 // Helper function to send email via Brevo
+function formatBrevoError(responseText: string): string {
+  const low = responseText.toLowerCase();
+  if (low.includes('unrecognised ip') || low.includes('unrecognized ip') || low.includes('authorised_ips')) {
+    return 'Brevo bloqueó el envío: la IP de Supabase no está autorizada. En Brevo → Seguridad → IPs autorizadas, haz clic en el enlace del correo de Brevo o desactiva la restricción de IP (recomendado con Supabase).';
+  }
+  try {
+    const parsed = JSON.parse(responseText);
+    if (parsed?.message) return String(parsed.message);
+  } catch {
+    // texto plano
+  }
+  return responseText || 'Error desconocido al enviar correo';
+}
+
 async function sendEmailWithBrevo(to: string, subject: string, htmlContent: string) {
   const brevoApiKey = Deno.env.get('BREVO_API_KEY');
   const senderEmail = Deno.env.get('BREVO_SENDER_EMAIL');
@@ -839,7 +853,7 @@ async function sendEmailWithBrevo(to: string, subject: string, htmlContent: stri
 
     if (!response.ok) {
       console.error('❌ Brevo API error:', responseText);
-      throw new Error(`Failed to send email: ${responseText}`);
+      throw new Error(formatBrevoError(responseText));
     }
 
     console.log('✅ Email sent successfully!');
