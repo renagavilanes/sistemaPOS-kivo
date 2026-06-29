@@ -99,6 +99,48 @@ function buildInviteUrl(token: string): string {
   return `${getAppBaseUrl()}/invite/${token}`;
 }
 
+function buildInvitationEmailHtml(displayName: string, biz: string, invitationLink: string): string {
+  const safeName = displayName.replace(/</g, '&lt;');
+  const safeBiz = biz.replace(/</g, '&lt;');
+  return `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación a ${safeBiz}</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f3f4f6;font-family:Arial,Helvetica,sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#f3f4f6;padding:24px 12px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:560px;background-color:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
+          <tr>
+            <td bgcolor="#2563eb" style="background-color:#2563eb;padding:28px 24px;text-align:center;">
+              <p style="margin:0;color:#ffffff;font-size:22px;font-weight:bold;line-height:1.35;">Te invitaron a ${safeBiz}</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:28px 24px;color:#374151;font-size:16px;line-height:1.6;">
+              <p style="margin:0 0 16px;">Hola <strong>${safeName}</strong>,</p>
+              <p style="margin:0 0 24px;">Has sido invitado a unirte a <strong>${safeBiz}</strong> en Kivo. Pulsa el botón para crear tu contraseña y acceder.</p>
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin:0 auto 24px;">
+                <tr>
+                  <td bgcolor="#2563eb" style="background-color:#2563eb;border-radius:8px;">
+                    <a href="${invitationLink}" target="_blank" style="display:inline-block;padding:14px 32px;color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;">Completar mi registro</a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:0;font-size:13px;color:#6b7280;text-align:center;">Este enlace es válido por 7 días.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
+
 function requireSuperadminKey(c: any): Response | null {
   if (!HARDEN_PUBLIC) return null;
   const provided = (c.req.header('X-Superadmin-Key') ?? '').trim();
@@ -4239,29 +4281,9 @@ app.post("/make-server-3508045b/send-invitation", async (c) => {
     const displayName = name || email.split('@')[0];
     const biz = businessName || 'el negocio';
 
-    const htmlContent = `
-      <!DOCTYPE html>
-      <html>
-      <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-      <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
-          <h1 style="color: white; margin: 0; font-size: 28px;">¡Te invitaron a ${biz}! 🎉</h1>
-        </div>
-        <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;">
-          <p>Hola <strong>${displayName}</strong>,</p>
-          <p>Has sido invitado a unirte a <strong>${biz}</strong>. Crea tu cuenta con el botón:</p>
-          <div style="text-align: center; margin: 30px 0;">
-            <a href="${invitationLink}" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: bold; display: inline-block;">
-              Completar mi registro
-            </a>
-          </div>
-          <p style="font-size: 12px; color: #999; word-break: break-all; background: white; padding: 10px; border-radius: 5px;">${invitationLink}</p>
-          <p style="font-size: 12px; color: #999; text-align: center;">Válido por 7 días.</p>
-        </div>
-      </body>
-      </html>`;
+    const htmlContent = buildInvitationEmailHtml(displayName, biz, invitationLink);
 
-    await sendEmailWithBrevo(email, `Invitación a ${biz} — Sistema POS`, htmlContent);
+    await sendEmailWithBrevo(email, `Invitación a ${biz} — Kivo`, htmlContent);
     console.log('✅ [SEND-INVITE] Email sent to:', email);
     return c.json({ success: true, message: 'Email sent successfully' });
   } catch (error: any) {
@@ -4295,6 +4317,84 @@ app.post("/make-server-3508045b/check-user-exists", async (c) => {
   } catch (error: any) {
     console.error('❌ [CHECK-USER] Fatal error:', error);
     return c.json({ error: error.message }, 500);
+  }
+});
+
+// Registro directo desde enlace de invitación (sin código por correo)
+app.post("/make-server-3508045b/complete-invite-signup", async (c) => {
+  try {
+    const { businessId, email, password, name, phone } = await c.req.json();
+
+    if (!businessId || !email || !password) {
+      return c.json({ error: 'businessId, email y password son requeridos' }, 400);
+    }
+    if (password.length < 6) {
+      return c.json({ error: 'La contraseña debe tener al menos 6 caracteres' }, 400);
+    }
+
+    const emailClean = String(email).trim().toLowerCase();
+
+    const { data: empRows, error: empErr } = await supabaseAdmin
+      .from('employees')
+      .select('id, user_id, is_active')
+      .eq('business_id', businessId)
+      .ilike('email', emailClean)
+      .eq('is_active', true)
+      .limit(1);
+
+    if (empErr || !empRows?.length) {
+      return c.json({ error: 'No hay una invitación activa para este correo en este negocio' }, 404);
+    }
+
+    const employee = empRows[0];
+    if (employee.user_id) {
+      return c.json({ error: 'Este empleado ya tiene cuenta vinculada. Inicia sesión.' }, 409);
+    }
+
+    const { data: listData } = await supabaseAdmin.auth.admin.listUsers();
+    const existing = listData?.users?.find((u: { email?: string }) => u.email?.toLowerCase() === emailClean);
+    if (existing) {
+      return c.json({ error: 'Este correo ya está registrado. Inicia sesión con tu contraseña.' }, 409);
+    }
+
+    const displayName = name || emailClean.split('@')[0];
+
+    const { data: authData, error: authError } = await supabaseAdmin.auth.admin.createUser({
+      email: emailClean,
+      password,
+      email_confirm: true,
+      user_metadata: { name: displayName, phone: phone || null, role: 'employee' },
+    });
+
+    if (authError || !authData.user) {
+      return c.json({ error: authError?.message || 'Error al crear usuario' }, 500);
+    }
+
+    const userId = authData.user.id;
+
+    await supabaseAdmin.from('users').upsert({
+      id: userId,
+      email: emailClean,
+      full_name: displayName,
+      created_at: new Date().toISOString(),
+    }, { onConflict: 'id' });
+
+    const { error: linkErr } = await supabaseAdmin
+      .from('employees')
+      .update({ user_id: userId, is_active: true, updated_at: new Date().toISOString() })
+      .eq('id', employee.id)
+      .eq('business_id', businessId);
+
+    if (linkErr) {
+      await supabaseAdmin.auth.admin.deleteUser(userId);
+      return c.json({ error: 'Error al vincular empleado con la cuenta' }, 500);
+    }
+
+    console.log('✅ [COMPLETE-INVITE] User created and linked:', userId);
+    return c.json({ success: true, userId });
+  } catch (error: any) {
+    console.error('❌ [COMPLETE-INVITE] Error:', error);
+    return c.json({ error: error.message || 'Internal server error' }, 500);
   }
 });
 

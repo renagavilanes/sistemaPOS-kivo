@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, Plus, Edit2, Trash2, X, UserPlus, Shield, CheckCircle2, XCircle, ChevronLeft, Wrench } from 'lucide-react';
-import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicEnv';
+import { Search, Plus, Edit2, Trash2, X, UserPlus, Shield, CheckCircle2, XCircle, ChevronLeft, Clock } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -118,7 +117,6 @@ export default function EmployeesPage() {
   const [employeeToDelete, setEmployeeToDelete] = useState<Employee | null>(null);
   const [editingEmployee, setEditingEmployee] = useState<Employee | null>(null);
   const [loading, setLoading] = useState(false);
-  const [repairingId, setRepairingId] = useState<string | null>(null);
 
   // Form states
   const [employeeName, setEmployeeName] = useState('');
@@ -413,37 +411,29 @@ export default function EmployeesPage() {
 
   const navigate = useNavigate();
 
-  const handleRepairLink = async (employee: Employee) => {
-    if (!currentBusiness) return;
-    setRepairingId(employee.id);
-    try {
-      console.log('🔧 [REPAIR] Iniciando reparación para:', employee.email);
-      const res = await fetch(
-        `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/repair-employee-link`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${supabaseAnonKey}`,
-          },
-          body: JSON.stringify({ businessId: currentBusiness.id, email: employee.email }),
-        }
+  const renderEmployeeStatus = (employee: Employee) => {
+    if (!employee.isActive) {
+      return (
+        <>
+          <XCircle className="w-4 h-4 text-gray-400" />
+          <span className="text-sm text-gray-500">Inactivo</span>
+        </>
       );
-      const data = await res.json();
-      console.log('🔧 [REPAIR] Respuesta:', res.status, data);
-      if (!res.ok) throw new Error(data.error || `Error ${res.status} al reparar vínculo`);
-      
-      toast.success('✅ Vínculo reparado', {
-        description: data.message,
-        duration: 5000,
-      });
-      await loadEmployees();
-    } catch (err: any) {
-      console.error('❌ [REPAIR] Error:', err);
-      toast.error(err.message || 'Error al reparar vínculo');
-    } finally {
-      setRepairingId(null);
     }
+    if (!employee.userId) {
+      return (
+        <>
+          <Clock className="w-4 h-4 text-amber-600" />
+          <span className="text-sm text-amber-700 font-medium">Invitación pendiente</span>
+        </>
+      );
+    }
+    return (
+      <>
+        <CheckCircle2 className="w-4 h-4 text-green-600" />
+        <span className="text-sm text-green-600 font-medium">Activo</span>
+      </>
+    );
   };
 
   return (
@@ -618,17 +608,7 @@ export default function EmployeesPage() {
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center justify-center gap-1.5">
-                          {employee.isActive ? (
-                            <>
-                              <CheckCircle2 className="w-4 h-4 text-green-600" />
-                              <span className="text-sm text-green-600 font-medium">Activo</span>
-                            </>
-                          ) : (
-                            <>
-                              <XCircle className="w-4 h-4 text-gray-400" />
-                              <span className="text-sm text-gray-500">Inactivo</span>
-                            </>
-                          )}
+                          {renderEmployeeStatus(employee)}
                         </div>
                       </td>
                       <td className="px-4 py-3">
@@ -652,18 +632,6 @@ export default function EmployeesPage() {
                               disabled={loading}
                             >
                               <Trash2 className="w-4 h-4 text-red-600" />
-                            </Button>
-                          )}
-                          {/* Botón reparar — visible cuando userId es null o undefined (invitado sin vincular) */}
-                          {!employee.userId && !employee.isOwner && (
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              title="Reparar vínculo de cuenta"
-                              onClick={() => handleRepairLink(employee)}
-                              disabled={loading || repairingId === employee.id}
-                            >
-                              <Wrench className={`w-4 h-4 ${repairingId === employee.id ? 'animate-spin text-gray-400' : 'text-blue-600'}`} />
                             </Button>
                           )}
                         </div>
@@ -738,22 +706,6 @@ export default function EmployeesPage() {
                       <Trash2 className="w-4 h-4 text-red-600" />
                     </Button>
                   )}
-                  {/* Botón reparar — visible cuando userId es null o undefined (invitado sin vincular) */}
-                  {!employee.isOwner && !employee.userId && (
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      title="Reparar vínculo de cuenta"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleRepairLink(employee);
-                      }}
-                      className="h-8 w-8 -mt-1 -mr-1"
-                      disabled={loading || repairingId === employee.id}
-                    >
-                      <Wrench className={`w-4 h-4 ${repairingId === employee.id ? 'animate-spin text-gray-400' : 'text-blue-600'}`} />
-                    </Button>
-                  )}
                 </div>
                 
                 <div className="flex items-center justify-between">
@@ -761,17 +713,7 @@ export default function EmployeesPage() {
                     {employee.role}
                   </Badge>
                   <div className="flex items-center gap-1.5">
-                    {employee.isActive ? (
-                      <>
-                        <CheckCircle2 className="w-4 h-4 text-green-600" />
-                        <span className="text-sm text-green-600 font-medium">Activo</span>
-                      </>
-                    ) : (
-                      <>
-                        <XCircle className="w-4 h-4 text-gray-400" />
-                        <span className="text-sm text-gray-500">Inactivo</span>
-                      </>
-                    )}
+                    {renderEmployeeStatus(employee)}
                   </div>
                 </div>
               </div>
