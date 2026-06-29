@@ -1,5 +1,6 @@
 import { supabase } from '../lib/supabase';
 import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicEnv';
+import { buildInviteUrl } from '../utils/appUrl';
 
 // Helper to create Supabase client directly
 function createClientDirect() {
@@ -1303,24 +1304,8 @@ export async function inviteEmployee(businessId: string, employee: {
     timestamp: Date.now()
   }));
   
-  // 4. Create invitation link
-  // IMPORTANTE: Usar la URL de Figma Make con preview-route en lugar del iframe directo
-  // Intentar obtener el figmaFileKey de la URL actual
-  let figmaFileKey = '5Fd3OHhMY2lssTlq3IRIEy'; // Default fallback
-  
-  try {
-    // Intentar extraer de la URL del padre (window.top)
-    const parentUrl = window.top?.location.href || window.location.href;
-    const makeMatch = parentUrl.match(/figma\.com\/make\/([^\/]+)/);
-    if (makeMatch && makeMatch[1]) {
-      figmaFileKey = makeMatch[1];
-      console.log('📍 [INVITE] Figma file key detectado:', figmaFileKey);
-    }
-  } catch (err) {
-    console.log('⚠️ [INVITE] No se pudo detectar file key, usando default');
-  }
-  
-  const invitationLink = `https://www.figma.com/make/${figmaFileKey}/POS#/invite/${invitationToken}`;
+  // 4. Create invitation link (ruta real de la app, no Figma)
+  const invitationLink = buildInviteUrl(invitationToken);
   
   console.log('🔗 [INVITE] Link generado:', invitationLink);
   console.log('📧 [INVITE] Sending email via server...');

@@ -190,6 +190,31 @@ export function registerAdminRoutes(app: any): void {
       const b = await c.req.json();
       console.log("👥 [ADMIN/EMPLOYEES] POST for business:", businessId, "email:", b.email);
 
+      // Si existe un empleado inactivo con el mismo correo, reactivarlo en lugar de insertar
+      const { data: inactiveRow } = await admin
+        .from("employees")
+        .select("*")
+        .eq("business_id", businessId)
+        .ilike("email", b.email)
+        .eq("is_active", false)
+        .maybeSingle();
+
+      if (inactiveRow) {
+        const { data, error } = await admin.from("employees").update({
+          name:        b.name,
+          phone:       b.phone ?? null,
+          role:        b.role || "cashier",
+          permissions: b.permissions ?? {},
+          is_active:   true,
+          user_id:     null,
+          updated_at:  new Date().toISOString(),
+        }).eq("id", inactiveRow.id).eq("business_id", businessId).select().single();
+
+        if (error) { console.error("❌ [ADMIN/EMPLOYEES/POST] reactivate", error.message); return c.json({ error: error.message }, 500); }
+        console.log("✅ [ADMIN/EMPLOYEES/POST] reactivated:", data.id, data.email);
+        return c.json({ success: true, employee: data, reactivated: true });
+      }
+
       // Safely handle user_id
       let safeUserId: string | null = null;
       if (b.user_id && typeof b.user_id === "string" && b.user_id.length > 0 && b.user_id !== "undefined") {

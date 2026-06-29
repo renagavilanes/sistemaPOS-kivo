@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
-import { supabase } from '../lib/supabase';
 import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicEnv';
 
 interface InviteData {
@@ -11,6 +10,7 @@ interface InviteData {
   role: string;
   permissions: any;
   phone: string | null;
+  timestamp?: number;
 }
 
 export default function InviteNew() {
@@ -28,20 +28,23 @@ export default function InviteNew() {
       }
 
       try {
-        // Decodificar token
         const inviteData: InviteData = JSON.parse(atob(token));
         console.log('📧 Invitación decodificada:', inviteData);
 
-        // Guardar el token en localStorage para procesarlo después del login/registro
+        if (inviteData.timestamp) {
+          const age = Date.now() - inviteData.timestamp;
+          if (age > 7 * 24 * 60 * 60 * 1000) {
+            setError('Este enlace de invitación ha expirado. Solicita una nueva invitación.');
+            setChecking(false);
+            return;
+          }
+        }
+
         localStorage.setItem('pending_invitation', token);
 
-        // Verificar si el usuario ya existe consultando al servidor
-        console.log('🔍 Verificando si el usuario existe...');
-        
-        // Agregar timeout para evitar esperas infinitas
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 segundos timeout
-        
+        const timeoutId = setTimeout(() => controller.abort(), 10000);
+
         try {
           const response = await fetch(
             `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/check-user-exists`,
@@ -59,37 +62,28 @@ export default function InviteNew() {
           clearTimeout(timeoutId);
 
           if (!response.ok) {
-            console.error('❌ Error del servidor:', response.status, response.statusText);
-            const errorText = await response.text();
-            console.error('📄 Respuesta de error:', errorText);
             throw new Error(`Error del servidor: ${response.status}`);
           }
 
           const data = await response.json();
-          console.log('📥 Respuesta del servidor:', data);
-          
           const { exists: userExists } = data;
-          console.log('👤 Usuario existe:', userExists);
 
+          const businessName = encodeURIComponent(inviteData.businessName || '');
           if (userExists) {
-            // Redirigir a login con el email pre-cargado
-            console.log('➡️ Redirigiendo a login...');
-            window.location.href = `#/login?email=${encodeURIComponent(inviteData.email)}&invite=true`;
+            navigate(`/login?email=${encodeURIComponent(inviteData.email)}&invite=true&businessName=${businessName}`, { replace: true });
           } else {
-            // Redirigir a registro con datos pre-cargados
-            console.log('➡️ Redirigiendo a registro...');
-            window.location.href = `#/register?email=${encodeURIComponent(inviteData.email)}&name=${encodeURIComponent(inviteData.name)}&invite=true`;
+            navigate(
+              `/register?email=${encodeURIComponent(inviteData.email)}&name=${encodeURIComponent(inviteData.name)}&invite=true&businessName=${businessName}`,
+              { replace: true },
+            );
           }
         } catch (fetchError: any) {
           clearTimeout(timeoutId);
-          
           if (fetchError.name === 'AbortError') {
-            console.error('⏱️ Timeout al verificar usuario');
             throw new Error('Timeout al conectar con el servidor. Por favor intenta de nuevo.');
           }
           throw fetchError;
         }
-
       } catch (err: any) {
         console.error('❌ Error procesando invitación:', err);
         setError(err.message || 'Token corrupto o inválido');
@@ -108,7 +102,7 @@ export default function InviteNew() {
           <h1 className="text-2xl font-bold mb-2">Error</h1>
           <p className="text-gray-600 mb-6">{error}</p>
           <button
-            onClick={() => window.location.href = '#/login'}
+            onClick={() => navigate('/login')}
             className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700"
           >
             Ir a inicio de sesión

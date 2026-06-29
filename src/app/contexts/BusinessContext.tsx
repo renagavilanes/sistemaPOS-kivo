@@ -87,7 +87,8 @@ export function BusinessProvider({ children }: { children: React.ReactNode }) {
       const { data: employeeData, error: employeeError } = await supabase
         .from('employees')
         .select('business_id, role, permissions, is_active')
-        .eq('user_id', user.id);
+        .eq('user_id', user.id)
+        .eq('is_active', true);
 
       if (employeeError) {
         console.error('⚠️ Error obteniendo empleados:', employeeError);

@@ -58,18 +58,40 @@ export default function RegisterPage() {
     confirmPassword: '',
   });
 
-  // Cargar datos de invitación si vienen en la URL
+  const isInviteFlow = searchParams.get('invite') === 'true';
+  const [invitedBusinessName, setInvitedBusinessName] = useState('');
+  const [inviteeName, setInviteeName] = useState('');
+
+  // Cargar datos de invitación si vienen en la URL o en localStorage
   useEffect(() => {
     const emailParam = searchParams.get('email');
     const nameParam = searchParams.get('name');
-    const isInvite = searchParams.get('invite') === 'true';
-    
-    if (isInvite && emailParam) {
-      console.log('📧 [REGISTER] Invitación detectada:', emailParam);
+    const businessNameParam = searchParams.get('businessName');
+    const inviteFromUrl = searchParams.get('invite') === 'true';
+
+    let businessName = businessNameParam ? decodeURIComponent(businessNameParam) : '';
+    let name = nameParam ? decodeURIComponent(nameParam) : '';
+
+    if (inviteFromUrl) {
+      try {
+        const pending = localStorage.getItem('pending_invitation');
+        if (pending) {
+          const inviteData = JSON.parse(atob(pending));
+          businessName = inviteData.businessName || businessName;
+          name = inviteData.name || name;
+        }
+      } catch {
+        // token inválido en localStorage — se ignora
+      }
+    }
+
+    if (inviteFromUrl && emailParam) {
+      console.log('📧 [REGISTER] Invitación detectada:', emailParam, businessName);
+      setInvitedBusinessName(businessName);
+      setInviteeName(name);
       setFormData(prev => ({
         ...prev,
         email: emailParam,
-        businessName: nameParam || prev.businessName,
       }));
     }
   }, [searchParams]);
@@ -78,7 +100,7 @@ export default function RegisterPage() {
   const handleSendCode = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.businessName.trim()) {
+    if (!isInviteFlow && !formData.businessName.trim()) {
       toast.error('El nombre del negocio es requerido');
       return;
     }
@@ -93,19 +115,32 @@ export default function RegisterPage() {
     try {
       console.log('📧 Enviando código de verificación a:', formData.email);
 
+      const endpoint = isInviteFlow
+        ? 'register-invited-user'
+        : 'register-business';
+
+      const body = isInviteFlow
+        ? {
+            email: formData.email,
+            name: inviteeName || formData.email.split('@')[0],
+            businessName: invitedBusinessName,
+            phone: formData.phone || null,
+          }
+        : {
+            businessName: formData.businessName,
+            email: formData.email,
+            phone: formData.phone || null,
+          };
+
       const response = await fetch(
-        `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/register-business`,
+        `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/${endpoint}`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${supabaseAnonKey}`,
           },
-          body: JSON.stringify({
-            businessName: formData.businessName,
-            email: formData.email,
-            phone: formData.phone || null,
-          }),
+          body: JSON.stringify(body),
         }
       );
 
@@ -274,7 +309,7 @@ export default function RegisterPage() {
 
       // 5. Redirigir al POS
       setTimeout(() => {
-        navigate('/', { replace: true });
+        navigate('/sales', { replace: true });
       }, 1500);
 
     } catch (error: any) {
@@ -315,8 +350,10 @@ export default function RegisterPage() {
               <BrandLogo iconClassName="h-16" showText />
             </div>
             <CardDescription className="text-base">
-              {step === 'business-info' 
-                ? 'Crea tu cuenta y gestiona tu negocio'
+              {step === 'business-info'
+                ? isInviteFlow
+                  ? `Crea tu cuenta para unirte a ${invitedBusinessName || 'el negocio'}`
+                  : 'Crea tu cuenta y gestiona tu negocio'
                 : 'Verifica tu correo y crea tu contraseña'
               }
             </CardDescription>
@@ -326,21 +363,32 @@ export default function RegisterPage() {
             {/* PASO 1: Información del Negocio */}
             {step === 'business-info' && (
               <form onSubmit={handleSendCode} className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="businessName" className="text-gray-700 font-medium flex items-center gap-2">
-                    <Store className="w-4 h-4" />
-                    Nombre del Negocio *
-                  </Label>
-                  <Input
-                    id="businessName"
-                    type="text"
-                    placeholder="Mi Tienda"
-                    value={formData.businessName}
-                    onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-                    required
-                    className="h-11"
-                  />
-                </div>
+                {isInviteFlow && invitedBusinessName && (
+                  <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-4">
+                    <p className="text-sm text-indigo-900">
+                      Te unirás al negocio <strong>{invitedBusinessName}</strong> como empleado.
+                      Solo necesitas crear tu cuenta; no debes registrar un negocio nuevo.
+                    </p>
+                  </div>
+                )}
+
+                {!isInviteFlow && (
+                  <div className="space-y-2">
+                    <Label htmlFor="businessName" className="text-gray-700 font-medium flex items-center gap-2">
+                      <Store className="w-4 h-4" />
+                      Nombre del Negocio *
+                    </Label>
+                    <Input
+                      id="businessName"
+                      type="text"
+                      placeholder="Mi Tienda"
+                      value={formData.businessName}
+                      onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+                      required
+                      className="h-11"
+                    />
+                  </div>
+                )}
 
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-gray-700 font-medium flex items-center gap-2">
@@ -352,9 +400,10 @@ export default function RegisterPage() {
                     type="email"
                     placeholder="correo@ejemplo.com"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) => !isInviteFlow && setFormData({ ...formData, email: e.target.value })}
+                    readOnly={isInviteFlow}
                     required
-                    className="h-11"
+                    className={`h-11 ${isInviteFlow ? 'bg-gray-50' : ''}`}
                     autoComplete="email"
                   />
                 </div>
@@ -388,7 +437,7 @@ export default function RegisterPage() {
                   ) : (
                     <>
                       <Mail className="w-5 h-5 mr-2" />
-                      Enviar Código de Verificación
+                      {isInviteFlow ? 'Enviar código a mi correo' : 'Enviar Código de Verificación'}
                     </>
                   )}
                 </Button>
@@ -499,8 +548,8 @@ export default function RegisterPage() {
                     </>
                   ) : (
                     <>
-                      <Store className="w-5 h-5 mr-2" />
-                      Crear Cuenta
+                      {isInviteFlow ? <ShieldCheck className="w-5 h-5 mr-2" /> : <Store className="w-5 h-5 mr-2" />}
+                      {isInviteFlow ? 'Crear mi cuenta' : 'Crear Cuenta'}
                     </>
                   )}
                 </Button>

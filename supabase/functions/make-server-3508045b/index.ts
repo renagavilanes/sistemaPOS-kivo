@@ -90,6 +90,16 @@ function verificationCodeMatches(storedCode: string, submitted: string): boolean
   return submitted === '999999';
 }
 
+function getAppBaseUrl(): string {
+  const appUrl = (Deno.env.get('APP_URL') ?? '').trim();
+  if (appUrl) return appUrl.replace(/\/$/, '');
+  return 'https://kivo-produccion.vercel.app';
+}
+
+function buildInviteUrl(token: string): string {
+  return `${getAppBaseUrl()}/invite/${token}`;
+}
+
 function requireSuperadminKey(c: any): Response | null {
   if (!HARDEN_PUBLIC) return null;
   const provided = (c.req.header('X-Superadmin-Key') ?? '').trim();
@@ -1349,6 +1359,102 @@ app.post("/make-server-3508045b/register-business", async (c) => {
   }
 });
 
+// Registro de empleado invitado — solo crea cuenta, sin negocio propio
+app.post("/make-server-3508045b/register-invited-user", async (c) => {
+  try {
+    const body = await c.req.json();
+    const { email, name, businessName, phone } = body;
+
+    if (!email || !name) {
+      return c.json({ error: 'Email y nombre son requeridos' }, 400);
+    }
+
+    const existingBusinessId = await kv.get(`business:email:${email}`);
+    if (existingBusinessId) {
+      return c.json({
+        error: 'Este correo ya está registrado. Por favor inicia sesión.',
+        code: 'ALREADY_VERIFIED',
+      }, 400);
+    }
+
+    const { data: listData } = await supabaseAdmin.auth.admin.listUsers();
+    const authExists = listData?.users?.some((u: any) => u.email?.toLowerCase() === email.toLowerCase());
+    if (authExists) {
+      return c.json({
+        error: 'Este correo ya está registrado. Por favor inicia sesión.',
+        code: 'ALREADY_VERIFIED',
+      }, 400);
+    }
+
+    const existingVerification = await kv.get(`verification:${email}`);
+    if (existingVerification) {
+      const parsed = JSON.parse(existingVerification);
+      if (Date.now() < parsed.expiresAt) {
+        const htmlContent = `
+          <!DOCTYPE html><html><head><meta charset="utf-8"></head><body>
+          <p>Hola ${name},</p>
+          <p>Tu código para unirte a <strong>${businessName || 'el negocio'}</strong>:</p>
+          <p style="font-size:28px;font-weight:bold;letter-spacing:6px;">${parsed.code}</p>
+          </body></html>`;
+        try {
+          await sendEmailWithBrevo(email, '🔐 Tu código - Sistema POS', htmlContent);
+        } catch (emailError: any) {
+          console.error('⚠️ No se pudo reenviar email:', emailError.message);
+        }
+        return c.json({ success: true, message: 'Código reenviado', resent: true });
+      }
+    }
+
+    const code = generateVerificationCode();
+    const expiresAt = Date.now() + 15 * 60 * 1000;
+
+    await kv.set(`verification:${email}`, JSON.stringify({
+      code,
+      isInvite: true,
+      inviteeName: name,
+      invitedBusinessName: businessName || '',
+      phone: phone || null,
+      expiresAt,
+    }));
+
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html>
+      <head><meta charset="utf-8">
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: linear-gradient(135deg, #3b82f6 0%, #9333ea 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+          .content { background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px; }
+          .code { font-size: 32px; font-weight: bold; letter-spacing: 8px; color: #3b82f6; text-align: center; padding: 20px; background: white; border-radius: 8px; margin: 20px 0; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header"><h1>¡Te invitaron a ${businessName || 'un negocio'}!</h1></div>
+          <div class="content">
+            <h2>Hola ${name},</h2>
+            <p>Usa este código para crear tu cuenta y unirte al equipo:</p>
+            <div class="code">${code}</div>
+            <p>Este código expira en 15 minutos.</p>
+          </div>
+        </div>
+      </body>
+      </html>`;
+
+    try {
+      await sendEmailWithBrevo(email, `🎉 Invitación a ${businessName || 'Sistema POS'}`, htmlContent);
+    } catch (emailError: any) {
+      console.error('⚠️ Error enviando email de invitado:', emailError.message);
+    }
+
+    return c.json({ success: true, message: 'Código enviado' });
+  } catch (error: any) {
+    console.error('Error register-invited-user:', error);
+    return c.json({ error: error.message || 'Internal server error' }, 500);
+  }
+});
+
 // Simplified registration endpoint - creates user and business directly without email verification
 app.post("/make-server-3508045b/verify-code-with-password", async (c) => {
   try {
@@ -1374,7 +1480,19 @@ app.post("/make-server-3508045b/verify-code-with-password", async (c) => {
       }, 400);
     }
 
-    const { code: storedCode, businessName, phone, expiresAt } = JSON.parse(verificationData);
+    const {
+      code: storedCode,
+      businessName,
+      phone,
+      expiresAt,
+      isInvite,
+      inviteeName,
+      invitedBusinessName,
+    } = JSON.parse(verificationData);
+
+    const displayName = isInvite
+      ? (inviteeName || email.split('@')[0])
+      : businessName;
 
     // Check if code expired
     if (Date.now() > expiresAt) {
@@ -1397,7 +1515,7 @@ app.post("/make-server-3508045b/verify-code-with-password", async (c) => {
     }
 
     console.log('✅ Código verificado correctamente');
-    console.log('📝 Business info:', { businessName, phone });
+    console.log('📝 Registration info:', { businessName, phone, isInvite, displayName });
 
     // Check if user already exists in Supabase Auth
     try {
@@ -1434,11 +1552,12 @@ app.post("/make-server-3508045b/verify-code-with-password", async (c) => {
     const { data: authData, error: authError } = await supabase.auth.admin.createUser({
       email,
       password,
-      email_confirm: true, // Auto-confirm email
+      email_confirm: true,
       user_metadata: {
-        business_name: businessName,
+        name: displayName,
+        business_name: isInvite ? (invitedBusinessName || '') : businessName,
         phone,
-        role: 'admin',
+        role: isInvite ? 'employee' : 'admin',
       },
     });
 
@@ -1460,7 +1579,7 @@ app.post("/make-server-3508045b/verify-code-with-password", async (c) => {
         .insert({
           id: authData.user.id,
           email: email,
-          full_name: businessName, // Store business name as full_name temporarily
+          full_name: displayName,
           created_at: new Date().toISOString(),
         });
 
@@ -1490,7 +1609,21 @@ app.post("/make-server-3508045b/verify-code-with-password", async (c) => {
       }, 500);
     }
 
-    // Store business data in database
+    if (isInvite) {
+      await kv.del(`verification:${email}`);
+      console.log('✅ Invited user account created (no business)');
+      return c.json({
+        success: true,
+        isInvite: true,
+        message: 'Account created successfully',
+        user: {
+          id: authData.user.id,
+          email: authData.user.email,
+        },
+      });
+    }
+
+    // Store business data in database (solo registro de dueño)
     const businessId = authData.user.id;
     const businessData = {
       id: businessId,
@@ -3721,8 +3854,7 @@ app.post("/make-server-3508045b/invite-employee", async (c) => {
     const roleName = roleNames[role] || role;
 
     // Build invitation URL (frontend will handle this route)
-    const figmaFileKey = Deno.env.get('FIGMA_FILE_KEY') || '5Fd3OHhMY2lssTlq3IRIEy';
-    const invitationUrl = `https://www.figma.com/make/${figmaFileKey}/POS#/invite/${token}`;
+    const invitationUrl = buildInviteUrl(token);
 
     // Prepare email content based on user existence
     let htmlContent = '';

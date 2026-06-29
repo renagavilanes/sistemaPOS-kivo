@@ -59,13 +59,10 @@ export async function getEmployeeByEmail(businessId: string, email: string): Pro
     .select('*')
     .eq('business_id', businessId)
     .ilike('email', email)
-    .single();
+    .eq('is_active', true)
+    .maybeSingle();
 
   if (error) {
-    if (error.code === 'PGRST116') {
-      // No rows returned
-      return null;
-    }
     console.error('Error getting employee by email:', error);
     throw new Error(`Error getting employee by email: ${error.message}`);
   }
