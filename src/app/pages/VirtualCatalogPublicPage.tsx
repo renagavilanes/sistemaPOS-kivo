@@ -391,7 +391,7 @@ export default function VirtualCatalogPublicPage() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:py-5 grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-4">
+      <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:py-5 grid grid-cols-1 lg:grid-cols-[1fr_420px] lg:items-start gap-4">
         <div className="space-y-4 lg:order-1">
           <div className={`bg-white rounded-2xl border border-gray-200 p-4 ${mobileStep !== 'products' ? 'hidden lg:block' : ''}`}>
             <div className="space-y-3">
@@ -477,22 +477,11 @@ export default function VirtualCatalogPublicPage() {
                       <div className="text-xs text-gray-500 truncate">{p.category || '—'}</div>
                     </div>
 
-                    <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center justify-between gap-2 min-h-[28px]">
                       <div className="font-bold text-gray-900 text-base">${formatCurrency(p.price)}</div>
-                      {p.availability === 'unavailable' ? (
-                        <span className="text-xs text-gray-600 bg-gray-100 rounded-full px-2 py-1 font-medium">No disponible</span>
-                      ) : p.stock <= 0 ? (
-                        <span className="text-xs text-orange-700 bg-orange-50 rounded-full px-2 py-1 font-medium">Sin stock</span>
-                      ) : (
-                        <span className="text-xs text-gray-500 bg-gray-100 rounded-full px-2 py-1 font-medium">Disponible</span>
-                      )}
-                    </div>
-
-                    {qty > 0 && (
-                      <div className="flex items-center justify-between gap-2 flex-wrap">
-                        <div className="text-xs text-gray-500 shrink-0">Cantidad</div>
+                      {qty > 0 ? (
                         <div
-                          className="flex items-center gap-2 bg-gray-100 rounded-full px-2 py-1 max-w-full"
+                          className="flex items-center bg-gray-100 rounded-full px-0.5 shrink-0"
                           onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
@@ -500,7 +489,7 @@ export default function VirtualCatalogPublicPage() {
                         >
                           <button
                             type="button"
-                            className="rounded-full h-8 w-8 p-0 hover:bg-gray-200 flex items-center justify-center shrink-0"
+                            className="rounded-full h-7 w-7 p-0 hover:bg-gray-200 flex items-center justify-center shrink-0"
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
@@ -508,12 +497,12 @@ export default function VirtualCatalogPublicPage() {
                             }}
                             aria-label="Disminuir"
                           >
-                            <Minus className="w-4 h-4" />
+                            <Minus className="w-3.5 h-3.5" />
                           </button>
-                          <span className="font-semibold text-sm min-w-[20px] text-center text-gray-900 shrink-0">{qty}</span>
+                          <span className="font-semibold text-sm min-w-[18px] text-center text-gray-900 shrink-0">{qty}</span>
                           <button
                             type="button"
-                            className="rounded-full h-8 w-8 p-0 hover:bg-gray-200 flex items-center justify-center shrink-0"
+                            className="rounded-full h-7 w-7 p-0 hover:bg-gray-200 flex items-center justify-center shrink-0"
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
@@ -521,11 +510,17 @@ export default function VirtualCatalogPublicPage() {
                             }}
                             aria-label="Aumentar"
                           >
-                            <Plus className="w-4 h-4" />
+                            <Plus className="w-3.5 h-3.5" />
                           </button>
                         </div>
-                      </div>
-                    )}
+                      ) : p.availability === 'unavailable' ? (
+                        <span className="text-xs text-gray-600 bg-gray-100 rounded-full px-2 py-1 font-medium">No disponible</span>
+                      ) : p.stock <= 0 ? (
+                        <span className="text-xs text-orange-700 bg-orange-50 rounded-full px-2 py-1 font-medium">Sin stock</span>
+                      ) : (
+                        <span className="text-xs text-gray-500 bg-gray-100 rounded-full px-2 py-1 font-medium">Disponible</span>
+                      )}
+                    </div>
                   </div>
                 </button>
               );
@@ -723,15 +718,15 @@ export default function VirtualCatalogPublicPage() {
           </div>
         </div>
 
-        {/* Desktop column */}
-        <div className="space-y-4 hidden lg:block lg:order-2">
-          <div className="bg-white rounded-2xl border border-gray-200 p-4">
-            <div className="flex items-center justify-between">
+        {/* Desktop column: anclada al viewport; el listado del carrito hace scroll interno */}
+        <div className="hidden lg:flex lg:flex-col lg:order-2 lg:sticky lg:top-[4.75rem] lg:h-[calc(100dvh-5.5rem)] lg:self-start gap-4 overflow-hidden">
+          <div className="bg-white rounded-2xl border border-gray-200 p-4 flex flex-col min-h-0 flex-1 overflow-hidden">
+            <div className="flex items-center justify-between shrink-0">
               <h2 className="text-base font-semibold text-gray-900">Carrito</h2>
               <span className="text-sm text-gray-600">{cartCount} item(s)</span>
             </div>
 
-            <div className="mt-3 space-y-2">
+            <div className="mt-3 space-y-2 min-h-0 flex-1 overflow-y-auto overscroll-contain pr-0.5">
               {cart.length === 0 ? (
                 <div className="rounded-xl bg-gray-50 border border-gray-200 p-4 text-sm text-gray-600">Agrega productos para armar tu pedido.</div>
               ) : (
@@ -770,7 +765,7 @@ export default function VirtualCatalogPublicPage() {
               )}
             </div>
 
-            <div className="mt-4 rounded-xl bg-gray-50 border border-gray-200 p-3 space-y-1">
+            <div className="mt-4 rounded-xl bg-gray-50 border border-gray-200 p-3 space-y-1 shrink-0">
               <div className="flex items-center justify-between text-sm">
                 <span className="text-gray-600">Subtotal</span>
                 <span className="font-semibold text-gray-900">${formatCurrency(subtotal)}</span>
@@ -787,96 +782,98 @@ export default function VirtualCatalogPublicPage() {
               </div>
             </div>
 
-            <div className="mt-3">
+            <div className="mt-3 shrink-0">
               <Button variant="outline" className="w-full rounded-xl" onClick={() => setCart([])} disabled={cart.length === 0}>
                 Vaciar carrito
               </Button>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl border border-gray-200 p-4 space-y-4">
-            <div className="space-y-2">
-              <Label>Método de entrega</Label>
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  onClick={() => setDeliveryType('pickup')}
-                  disabled={!data.catalog.delivery.pickup}
-                  className={`rounded-xl border border-gray-200 px-3 py-2 text-sm font-semibold flex items-center justify-center gap-2 transition-colors ${
-                    deliveryType === 'pickup' ? 'bg-[#272B36] text-white border-[#272B36]' : 'bg-white hover:bg-gray-50'
-                  } ${!data.catalog.delivery.pickup ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                  <Store className="h-4 w-4" />
-                  Retiro
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setDeliveryType('homeDelivery')}
-                  disabled={!data.catalog.delivery.homeDelivery}
-                  className={`rounded-xl border border-gray-200 px-3 py-2 text-sm font-semibold flex items-center justify-center gap-2 transition-colors ${
-                    deliveryType === 'homeDelivery' ? 'bg-[#272B36] text-white border-[#272B36]' : 'bg-white hover:bg-gray-50'
-                  } ${!data.catalog.delivery.homeDelivery ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                  <Truck className="h-4 w-4" />
-                  Domicilio
-                </button>
-              </div>
-            </div>
-
-            {deliveryType === 'homeDelivery' && fee > 0 && (
-              <div className="rounded-xl bg-gray-50 border border-gray-200 p-3 text-sm text-gray-700">
-                Envío: <span className="font-semibold">${formatCurrency(fee)}</span> (se suma al total)
-              </div>
-            )}
-
-            <div className="grid gap-3 md:grid-cols-2">
+          <div className="bg-white rounded-2xl border border-gray-200 p-4 flex flex-col min-h-0 shrink-0 max-h-[min(52vh,28rem)]">
+            <div className="space-y-4 min-h-0 overflow-y-auto overscroll-contain pr-0.5">
               <div className="space-y-2">
-                <Label>Nombre *</Label>
-                <Input value={customer.name} onChange={(e) => setCustomer((c) => ({ ...c, name: e.target.value }))} />
+                <Label>Método de entrega</Label>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setDeliveryType('pickup')}
+                    disabled={!data.catalog.delivery.pickup}
+                    className={`rounded-xl border border-gray-200 px-3 py-2 text-sm font-semibold flex items-center justify-center gap-2 transition-colors ${
+                      deliveryType === 'pickup' ? 'bg-[#272B36] text-white border-[#272B36]' : 'bg-white hover:bg-gray-50'
+                    } ${!data.catalog.delivery.pickup ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  >
+                    <Store className="h-4 w-4" />
+                    Retiro
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setDeliveryType('homeDelivery')}
+                    disabled={!data.catalog.delivery.homeDelivery}
+                    className={`rounded-xl border border-gray-200 px-3 py-2 text-sm font-semibold flex items-center justify-center gap-2 transition-colors ${
+                      deliveryType === 'homeDelivery' ? 'bg-[#272B36] text-white border-[#272B36]' : 'bg-white hover:bg-gray-50'
+                    } ${!data.catalog.delivery.homeDelivery ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  >
+                    <Truck className="h-4 w-4" />
+                    Domicilio
+                  </button>
+                </div>
               </div>
-              <div className="space-y-2">
-                <Label>Teléfono *</Label>
-                <Input value={customer.phone} onChange={(e) => setCustomer((c) => ({ ...c, phone: e.target.value }))} />
-              </div>
-            </div>
 
-            {deliveryType === 'homeDelivery' && (
-              <>
-                <div className="grid gap-3 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label>Cédula *</Label>
-                    <Input value={customer.cedula} onChange={(e) => setCustomer((c) => ({ ...c, cedula: e.target.value }))} />
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Ciudad *</Label>
-                    <Input value={customer.city} onChange={(e) => setCustomer((c) => ({ ...c, city: e.target.value }))} />
-                  </div>
+              {deliveryType === 'homeDelivery' && fee > 0 && (
+                <div className="rounded-xl bg-gray-50 border border-gray-200 p-3 text-sm text-gray-700">
+                  Envío: <span className="font-semibold">${formatCurrency(fee)}</span> (se suma al total)
+                </div>
+              )}
+
+              <div className="grid gap-3 md:grid-cols-2">
+                <div className="space-y-2">
+                  <Label>Nombre *</Label>
+                  <Input value={customer.name} onChange={(e) => setCustomer((c) => ({ ...c, name: e.target.value }))} />
                 </div>
                 <div className="space-y-2">
-                  <Label>Dirección *</Label>
-                  <Input value={customer.address} onChange={(e) => setCustomer((c) => ({ ...c, address: e.target.value }))} />
+                  <Label>Teléfono *</Label>
+                  <Input value={customer.phone} onChange={(e) => setCustomer((c) => ({ ...c, phone: e.target.value }))} />
                 </div>
-                <div className="grid gap-3 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label>Calle principal *</Label>
-                    <Input value={customer.mainStreet} onChange={(e) => setCustomer((c) => ({ ...c, mainStreet: e.target.value }))} />
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Calle secundaria *</Label>
-                    <Input
-                      value={customer.secondaryStreet}
-                      onChange={(e) => setCustomer((c) => ({ ...c, secondaryStreet: e.target.value }))}
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label>Referencia *</Label>
-                  <Input value={customer.reference} onChange={(e) => setCustomer((c) => ({ ...c, reference: e.target.value }))} />
-                </div>
-              </>
-            )}
+              </div>
 
-            <Button className="w-full h-12 bg-green-600 hover:bg-green-700 rounded-xl" onClick={sendWhatsApp}>
+              {deliveryType === 'homeDelivery' && (
+                <>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label>Cédula *</Label>
+                      <Input value={customer.cedula} onChange={(e) => setCustomer((c) => ({ ...c, cedula: e.target.value }))} />
+                    </div>
+                    <div className="space-y-2">
+                      <Label>Ciudad *</Label>
+                      <Input value={customer.city} onChange={(e) => setCustomer((c) => ({ ...c, city: e.target.value }))} />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Dirección *</Label>
+                    <Input value={customer.address} onChange={(e) => setCustomer((c) => ({ ...c, address: e.target.value }))} />
+                  </div>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label>Calle principal *</Label>
+                      <Input value={customer.mainStreet} onChange={(e) => setCustomer((c) => ({ ...c, mainStreet: e.target.value }))} />
+                    </div>
+                    <div className="space-y-2">
+                      <Label>Calle secundaria *</Label>
+                      <Input
+                        value={customer.secondaryStreet}
+                        onChange={(e) => setCustomer((c) => ({ ...c, secondaryStreet: e.target.value }))}
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Referencia *</Label>
+                    <Input value={customer.reference} onChange={(e) => setCustomer((c) => ({ ...c, reference: e.target.value }))} />
+                  </div>
+                </>
+              )}
+            </div>
+
+            <Button className="w-full h-12 bg-green-600 hover:bg-green-700 rounded-xl mt-4 shrink-0" onClick={sendWhatsApp}>
               <MessageCircle className="h-4 w-4 mr-2" />
               Enviar pedido por WhatsApp
             </Button>
