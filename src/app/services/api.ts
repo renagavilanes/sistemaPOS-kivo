@@ -266,22 +266,8 @@ export async function createProduct(businessId: string, product: Omit<Product, '
 
   const body = await response.json().catch(() => ({}));
   if (!response.ok) {
-    console.warn('⚠️ [API] Edge Function create product failed, falling back to direct insert:', body);
-    const insertData: any = {
-      business_id: businessId,
-      name: product.name,
-      price: product.price,
-      cost: product.cost || 0,
-      stock: product.stock || 0,
-      category: product.category || 'Sin categoría',
-    };
-    if (product.image) insertData.image = product.image;
-    if (product.barcode) insertData.barcode = product.barcode;
-    if (product.description) insertData.description = product.description;
-    if (product.isActive !== undefined) insertData.is_active = product.isActive;
-    const { data, error } = await supabase.from('products').insert(insertData).select().single();
-    if (error) throw new Error(normalizeAuthErrorMessage(error.message));
-    return mapProductFromApi(data);
+    console.error('❌ [API] Error creating product:', body);
+    throw new Error((body as any).error || `Error ${response.status} al crear producto`);
   }
   const { product: p } = body as { product?: any };
   if (!p) throw new Error('Respuesta inválida del servidor');
@@ -308,26 +294,8 @@ export async function updateProduct(productId: string, businessId: string, updat
 
   const body = await response.json().catch(() => ({}));
   if (!response.ok) {
-    console.warn('⚠️ [API] Edge Function update product failed, falling back to direct update:', body);
-    const updateData: any = { updated_at: new Date().toISOString() };
-    if (updates.name !== undefined) updateData.name = updates.name;
-    if (updates.price !== undefined) updateData.price = updates.price;
-    if (updates.cost !== undefined) updateData.cost = updates.cost;
-    if (updates.stock !== undefined) updateData.stock = updates.stock;
-    if (updates.category !== undefined) updateData.category = updates.category;
-    if (updates.image !== undefined) updateData.image = updates.image;
-    if (updates.barcode !== undefined) updateData.barcode = updates.barcode;
-    if (updates.description !== undefined) updateData.description = updates.description;
-    if (updates.isActive !== undefined) updateData.is_active = updates.isActive;
-    const { data, error } = await supabase
-      .from('products')
-      .update(updateData)
-      .eq('id', productId)
-      .eq('business_id', businessId)
-      .select()
-      .single();
-    if (error) throw new Error(normalizeAuthErrorMessage(error.message));
-    return mapProductFromApi(data);
+    console.error('❌ [API] Error updating product:', body);
+    throw new Error((body as any).error || `Error ${response.status} al actualizar producto`);
   }
   const { product: p } = body as { product?: any };
   if (!p) throw new Error('Respuesta inválida del servidor');

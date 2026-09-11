@@ -54,7 +54,6 @@ export async function createProduct(businessId: string, productData: {
   const insert: Record<string, unknown> = {
     business_id: businessId,
     name: productData.name,
-    sku: productData.sku || null,
     price: productData.price,
     cost: productData.cost || 0,
     stock: productData.stock || 0,
