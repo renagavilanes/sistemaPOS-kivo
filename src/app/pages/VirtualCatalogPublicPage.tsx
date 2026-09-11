@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router';
 import { ArrowLeft, MessageCircle, Minus, Plus, ShoppingCart, Store, Truck } from 'lucide-react';
 
@@ -6,7 +6,7 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { LazyProductImage } from '../components/LazyProductImage';
-import { fetchPublicCatalogBySlug } from '../lib/virtualCatalogApi';
+import { fetchPublicCatalogBySlug, fetchPublicCatalogImages } from '../lib/virtualCatalogApi';
 import type { OutOfStockMode, PublicCatalogProduct, PublicCatalogResponse } from '../lib/virtualCatalogTypes';
 import { toWhatsAppWaMeDigits } from '../lib/whatsappPhone';
 import { formatCurrency } from '../utils/currency';
@@ -130,6 +130,7 @@ export default function VirtualCatalogPublicPage() {
   });
 
   const [cart, setCart] = useState<CartLine[]>([]);
+  const catalogImageAttemptedRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     if (!slug) {
@@ -143,6 +144,7 @@ export default function VirtualCatalogPublicPage() {
       setError(null);
       try {
         const res = await fetchPublicCatalogBySlug(slug);
+        catalogImageAttemptedRef.current = new Set();
         setData(res);
 
         // Defaults de entrega según config
@@ -178,6 +180,41 @@ export default function VirtualCatalogPublicPage() {
 
     void run();
   }, [slug]);
+
+  useEffect(() => {
+    if (!slug || !data?.products?.length) return;
+    const missing = data.products
+      .filter((p) => !p.image && !catalogImageAttemptedRef.current.has(p.id))
+      .map((p) => p.id);
+    if (missing.length === 0) return;
+    missing.forEach((id) => catalogImageAttemptedRef.current.add(id));
+    let cancelled = false;
+    const run = async () => {
+      for (let i = 0; i < missing.length; i += 8) {
+        if (cancelled) return;
+        const chunk = missing.slice(i, i + 8);
+        const images = await fetchPublicCatalogImages(slug, chunk);
+        if (cancelled) return;
+        if (!Object.keys(images).length) continue;
+        setData((prev) => {
+          if (!prev) return prev;
+          return {
+            ...prev,
+            products: prev.products.map((p) => (images[p.id] ? { ...p, image: images[p.id] } : p)),
+          };
+        });
+        setCart((prev) =>
+          prev.map((line) =>
+            images[line.product.id] ? { ...line, product: { ...line.product, image: images[line.product.id] } } : line,
+          ),
+        );
+      }
+    };
+    void run();
+    return () => {
+      cancelled = true;
+    };
+  }, [slug, data]);
 
   useEffect(() => {
     if (!slug) return;

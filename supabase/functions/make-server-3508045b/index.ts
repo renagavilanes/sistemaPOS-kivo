@@ -2756,7 +2756,7 @@ app.get("/make-server-3508045b/public/catalog/:slug", async (c) => {
       homeDeliveryFee: Number(rawCfg.delivery?.homeDeliveryFee || 0) || 0,
     };
 
-    const productsRaw = await dbProducts.getProducts(businessId, { includeImage: true });
+    const productsRaw = await dbProducts.getProducts(businessId, { includeImage: false });
 
     const publicProducts: any[] = [];
     for (const p of productsRaw as any[]) {
@@ -2775,7 +2775,7 @@ app.get("/make-server-3508045b/public/catalog/:slug", async (c) => {
         price: Number(p.price),
         stock,
         category: p.category || "Sin categoría",
-        image: p.image ?? "",
+        image: "",
         availability,
       });
     }
@@ -2797,6 +2797,37 @@ app.get("/make-server-3508045b/public/catalog/:slug", async (c) => {
     });
   } catch (e: any) {
     console.error("[PUBLIC CATALOG] Error:", e);
+    return c.json({ error: e?.message || "Internal server error" }, 500);
+  }
+});
+
+app.get("/make-server-3508045b/public/catalog/:slug/images", async (c) => {
+  try {
+    const slug = c.req.param("slug");
+    const businessId = await dbBusinessSettings.findBusinessIdByVirtualCatalogSlug(slug);
+    if (!businessId) {
+      return c.json({ error: "Catálogo no encontrado" }, 404);
+    }
+
+    const row = await dbBusinessSettings.getVirtualCatalogRowByBusinessId(businessId);
+    const rawCfg = (row?.value ?? {}) as dbBusinessSettings.VirtualCatalogConfig;
+    if (rawCfg.enabled === false) {
+      return c.json({ error: "Catálogo desactivado" }, 404);
+    }
+
+    const ids = String(c.req.query("ids") || "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+    const rows = await dbProducts.getProductImagesByIds(businessId, ids);
+    const images: Record<string, string> = {};
+    for (const r of rows) {
+      if (r?.id && r.image) images[String(r.id)] = String(r.image);
+    }
+    return c.json({ success: true, images });
+  } catch (e: any) {
+    console.error("[PUBLIC CATALOG IMAGES] Error:", e);
     return c.json({ error: e?.message || "Internal server error" }, 500);
   }
 });

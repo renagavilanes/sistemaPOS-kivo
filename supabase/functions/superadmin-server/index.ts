@@ -138,12 +138,12 @@ async function handleStats(): Promise<Response> {
   ).length;
 
   const [bizR, prodR, empR, saleR, expR, custR] = await Promise.all([
-    admin.from("businesses").select("*", { count: "exact", head: true }),
-    admin.from("products").select("*", { count: "exact", head: true }),
-    admin.from("employees").select("*", { count: "exact", head: true }),
-    admin.from("sales").select("*", { count: "exact", head: true }),
-    admin.from("expenses").select("*", { count: "exact", head: true }),
-    admin.from("customers").select("*", { count: "exact", head: true }),
+    admin.from("businesses").select("id", { count: "exact", head: true }),
+    admin.from("products").select("id", { count: "exact", head: true }),
+    admin.from("employees").select("id", { count: "exact", head: true }),
+    admin.from("sales").select("id", { count: "exact", head: true }),
+    admin.from("expenses").select("id", { count: "exact", head: true }),
+    admin.from("customers").select("id", { count: "exact", head: true }),
   ]);
 
   return json({
@@ -384,11 +384,25 @@ async function handleBusinessDetail(url: URL): Promise<Response> {
     data: sales,
     error: sErr,
   }, { data: expenses, error: xErr }] = await Promise.all([
-    admin.from("products").select("*").eq("business_id", businessId).order("name", { ascending: true }),
-    admin.from("employees").select("*").eq("business_id", businessId).order("name", { ascending: true }),
-    admin.from("customers").select("*").eq("business_id", businessId).order("name", { ascending: true }),
-    admin.from("sales").select("*").eq("business_id", businessId).order("created_at", { ascending: false }).limit(200),
-    admin.from("expenses").select("*").eq("business_id", businessId).order("created_at", { ascending: false }).limit(200),
+    admin
+      .from("products")
+      .select("id, business_id, name, price, cost, stock, category, barcode, is_active, created_at, updated_at")
+      .eq("business_id", businessId)
+      .order("name", { ascending: true }),
+    admin.from("employees").select("id, business_id, name, email, phone, role, is_active, is_owner, created_at, updated_at").eq("business_id", businessId).order("name", { ascending: true }),
+    admin.from("customers").select("id, business_id, name, email, phone, address, tax_id, cedula, type, credit_limit, created_at").eq("business_id", businessId).order("name", { ascending: true }),
+    admin
+      .from("sales")
+      .select("id, business_id, sale_number, total, subtotal, discount, tax, payment_method, payment_status, paid_amount, change_amount, customer_id, notes, created_at, created_by")
+      .eq("business_id", businessId)
+      .order("created_at", { ascending: false })
+      .limit(200),
+    admin
+      .from("expenses")
+      .select("id, business_id, category, description, amount, payment_method, payment_status, notes, created_at, created_by")
+      .eq("business_id", businessId)
+      .order("created_at", { ascending: false })
+      .limit(200),
   ]);
 
   const firstErr = pErr || eErr || cErr || sErr || xErr;

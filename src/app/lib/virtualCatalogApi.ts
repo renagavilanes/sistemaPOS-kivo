@@ -39,6 +39,29 @@ function messageFromCatalogErrorBody(body: unknown, status: number): string {
   return `Error ${status}`;
 }
 
+export async function fetchPublicCatalogImages(
+  slug: string,
+  ids: string[],
+): Promise<Record<string, string>> {
+  const s = String(slug || '').trim();
+  const unique = [...new Set(ids.map((id) => String(id || '').trim()).filter(Boolean))].slice(0, 12);
+  if (!s || unique.length === 0) return {};
+
+  const url = `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/public/catalog/${encodeURIComponent(
+    s,
+  )}/images?ids=${unique.map(encodeURIComponent).join(',')}`;
+
+  const res = await fetch(url, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${supabaseAnonKey}`,
+    },
+  });
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok) return {};
+  return ((body as any).images || {}) as Record<string, string>;
+}
+
 export async function fetchPublicCatalogBySlug(slug: string): Promise<PublicCatalogResponse> {
   const s = String(slug || '').trim();
   if (!s) {
