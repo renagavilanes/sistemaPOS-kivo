@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Area,
   AreaChart,
@@ -38,7 +38,8 @@ type AnalyticsPayload = {
   series: { date: string; salesCount: number; salesTotal: number; expensesTotal: number; newUsers: number }[];
   topBusinesses: { id: string; name: string; count: number; total: number }[];
   paymentMethods: { method: string; count: number; total: number }[];
-  scope?: { type: 'all' } | { type: 'business'; id: string; name: string };
+  modules?: { id: string; name: string; events: number; businesses: number }[];
+  scope?: { type: 'all' } | { type: 'business'; id: string; name: string } | { type: 'businesses'; ids: string[]; names: string[] };
 };
 
 type BusinessOption = { id: string; name: string };
@@ -115,7 +116,9 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
   const [preset, setPreset] = useState<PresetId>('30d');
   const [from, setFrom] = useState(() => rangeForPreset('30d').from);
   const [to, setTo] = useState(() => rangeForPreset('30d').to);
-  const [businessId, setBusinessId] = useState('');
+  const [selectedBizIds, setSelectedBizIds] = useState<string[]>([]);
+  const [bizOpen, setBizOpen] = useState(false);
+  const bizMenuRef = useRef<HTMLDivElement>(null);
   const [data, setData] = useState<AnalyticsPayload | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -124,7 +127,17 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
     () => [...businesses].sort((a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base' })),
     [businesses],
   );
-  const scoped = businessId !== '';
+  const scoped = selectedBizIds.length > 0;
+  const bizIdsKey = selectedBizIds.slice().sort().join(',');
+
+  useEffect(() => {
+    if (!bizOpen) return;
+    const onDoc = (e: MouseEvent) => {
+      if (!bizMenuRef.current?.contains(e.target as Node)) setBizOpen(false);
+    };
+    document.addEventListener('mousedown', onDoc);
+    return () => document.removeEventListener('mousedown', onDoc);
+  }, [bizOpen]);
 
   const applyPreset = (id: PresetId) => {
     setPreset(id);
@@ -143,9 +156,8 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
     setLoading(true);
     setError('');
     try {
-      const q = `?key=${encodeURIComponent(key)}&from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}${
-        businessId ? `&businessId=${encodeURIComponent(businessId)}` : ''
-      }`;
+      const ids = bizIdsKey ? `&businessIds=${encodeURIComponent(bizIdsKey)}` : '';
+      const q = `?key=${encodeURIComponent(key)}&from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}${ids}`;
       const res = await fetch(`${superadminApiBase()}/superadmin/analytics${q}`, {
         headers: { Authorization: `Bearer ${supabaseAnonKey}` },
       });
@@ -164,7 +176,7 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
     } finally {
       setLoading(false);
     }
-  }, [from, to, businessId]);
+  }, [from, to, bizIdsKey]);
 
   useEffect(() => {
     void load();
@@ -178,17 +190,37 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
   }, [data]);
 
   const k = data?.kpis;
+  const scopeTitle =
+    selectedBizIds.length === 1
+      ? (businessOptions.find((b) => b.id === selectedBizIds[0])?.name
+        || (data?.scope && 'names' in data.scope ? data.scope.names[0] : '')
+        || (data?.scope?.type === 'business' ? data.scope.name : ''))
+      : selectedBizIds.length > 1
+        ? `${selectedBizIds.length} negocios`
+        : '';
+  const bizButtonLabel =
+    selectedBizIds.length === 0
+      ? 'Todos los negocios'
+      : selectedBizIds.length === 1
+        ? (businessOptions.find((b) => b.id === selectedBizIds[0])?.name || '1 negocio')
+        : `${selectedBizIds.length} negocios`;
+
+  const toggleBiz = (id: string) => {
+    setSelectedBizIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+  };
+
+  const maxModuleEvents = Math.max(1, ...(data?.modules || []).map((m) => m.events));
 
   return (
     <div className="space-y-5">
-      <div className="flex flex-col lg:flex-row lg:items-end gap-3">
-        <div className="flex flex-wrap gap-1.5">
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 whitespace-nowrap">
+        <div className="flex gap-1 shrink-0">
           {PRESETS.map((p) => (
             <button
               key={p.id}
               type="button"
               onClick={() => applyPreset(p.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
+              className={`px-2.5 py-1 rounded-lg text-[11px] font-medium border transition-colors ${
                 preset === p.id
                   ? 'bg-indigo-600 border-indigo-500 text-white'
                   : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
@@ -198,51 +230,62 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap items-center gap-2 ml-auto">
-          <label className="text-xs text-slate-400">
-            Negocio
-            <select
-              value={businessId}
-              onChange={(e) => setBusinessId(e.target.value)}
-              className="ml-2 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white max-w-[14rem]"
+        <div className="flex items-center gap-2 ml-auto shrink-0">
+          <div className="relative" ref={bizMenuRef}>
+            <button
+              type="button"
+              onClick={() => setBizOpen((o) => !o)}
+              className="bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-[11px] text-white max-w-[13rem] truncate"
             >
-              <option value="">Todos los negocios</option>
-              {businessOptions.map((b) => (
-                <option key={b.id} value={b.id}>
-                  {b.name || 'Sin nombre'}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="text-xs text-slate-400">
-            Desde
-            <input
-              type="date"
-              value={from}
-              onChange={(e) => {
-                setPreset('custom');
-                setFrom(e.target.value);
-              }}
-              className="ml-2 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white"
-            />
-          </label>
-          <label className="text-xs text-slate-400">
-            Hasta
-            <input
-              type="date"
-              value={to}
-              onChange={(e) => {
-                setPreset('custom');
-                setTo(e.target.value);
-              }}
-              className="ml-2 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white"
-            />
-          </label>
+              {bizButtonLabel}
+            </button>
+            {bizOpen && (
+              <div className="absolute right-0 top-full mt-1 z-30 w-64 rounded-xl border border-slate-700 bg-slate-900 shadow-xl py-1 max-h-72 overflow-y-auto">
+                <label className="flex items-center gap-2 px-3 py-1.5 text-xs text-slate-200 hover:bg-slate-800 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={selectedBizIds.length === 0}
+                    onChange={() => setSelectedBizIds([])}
+                  />
+                  Todos los negocios
+                </label>
+                <div className="border-t border-slate-800 my-1" />
+                {businessOptions.map((b) => (
+                  <label key={b.id} className="flex items-center gap-2 px-3 py-1.5 text-xs text-slate-200 hover:bg-slate-800 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={selectedBizIds.includes(b.id)}
+                      onChange={() => toggleBiz(b.id)}
+                    />
+                    <span className="truncate">{b.name || 'Sin nombre'}</span>
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+          <input
+            type="date"
+            value={from}
+            onChange={(e) => {
+              setPreset('custom');
+              setFrom(e.target.value);
+            }}
+            className="bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-[11px] text-white w-[9.2rem]"
+          />
+          <input
+            type="date"
+            value={to}
+            onChange={(e) => {
+              setPreset('custom');
+              setTo(e.target.value);
+            }}
+            className="bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-[11px] text-white w-[9.2rem]"
+          />
           <button
             type="button"
             onClick={() => void load()}
             disabled={loading}
-            className="px-3 py-1.5 rounded-lg text-sm bg-slate-800 border border-slate-700 hover:bg-slate-700 disabled:opacity-50"
+            className="px-2.5 py-1 rounded-lg text-[11px] bg-slate-800 border border-slate-700 hover:bg-slate-700 disabled:opacity-50"
           >
             {loading ? 'Cargando…' : 'Aplicar'}
           </button>
@@ -265,7 +308,7 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
           <div className="lg:col-span-7 rounded-2xl bg-emerald-950/40 border border-emerald-900/50 px-5 py-5 sm:px-6 sm:py-6">
             <div className="text-sm text-emerald-200/80">
               Ventas del periodo
-              {data?.scope?.type === 'business' ? ` · ${data.scope.name}` : ''}
+              {scopeTitle ? ` · ${scopeTitle}` : ''}
             </div>
             <div className="mt-1 text-4xl sm:text-5xl font-semibold tracking-tight tabular-nums text-white">
               ${formatCurrency(k.salesTotal.value)}
@@ -453,6 +496,31 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
                     <div className="h-full rounded-full bg-indigo-400/80" style={{ width: `${w}%` }} />
                   </div>
                   <span className="tabular-nums text-slate-200">${formatCurrency(p.total)}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {!!data?.modules?.length && (
+        <div className="px-1 pt-2">
+          <div className="text-sm font-medium text-white">Módulos más usados</div>
+          <div className="text-[11px] text-slate-500 mb-3">
+            Altas del periodo: ventas, gastos, productos, contactos, empleados. Catálogo cuenta configuraciones guardadas y negocios con catálogo activo.
+          </div>
+          <div className="space-y-2.5 max-w-xl">
+            {data.modules.map((m) => {
+              const w = Math.max(6, Math.round((m.events / maxModuleEvents) * 100));
+              return (
+                <div key={m.id} className="grid grid-cols-[7rem_1fr_auto] items-center gap-3 text-sm">
+                  <span className="text-slate-300 truncate">{m.name}</span>
+                  <div className="h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                    <div className="h-full rounded-full bg-violet-400/80" style={{ width: `${w}%` }} />
+                  </div>
+                  <span className="text-[11px] text-slate-400 tabular-nums whitespace-nowrap">
+                    {m.events} · {m.businesses} neg.
+                  </span>
                 </div>
               );
             })}

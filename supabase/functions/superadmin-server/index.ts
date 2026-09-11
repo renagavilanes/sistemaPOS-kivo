@@ -822,12 +822,32 @@ function pctChange(curr: number, prev: number): number | null {
   return ((curr - prev) / Math.abs(prev)) * 100;
 }
 
+function parseScopedBusinessIds(url: URL): string[] {
+  const raw = `${url.searchParams.get("businessIds") ?? ""},${url.searchParams.get("businessId") ?? ""}`;
+  const seen = new Set<string>();
+  for (const part of raw.split(",")) {
+    const s = part.trim();
+    if (isUuid(s)) seen.add(s);
+  }
+  return [...seen];
+}
+
+function applyBusinessFilter<Q extends { eq: Function; in: Function }>(q: Q, businessIds?: string[]): Q {
+  if (!businessIds?.length) return q;
+  if (businessIds.length === 1) return q.eq("business_id", businessIds[0]);
+  return q.in("business_id", businessIds);
+}
+
+function uniqueBizIds(rows: { business_id?: string | null }[]): number {
+  return new Set(rows.map((r) => r.business_id).filter(Boolean)).size;
+}
+
 async function fetchCreatedInRange<T extends Record<string, unknown>>(
   table: string,
   columns: string,
   fromIso: string,
   toExclusiveIso: string,
-  businessId?: string,
+  businessIds?: string[],
 ): Promise<T[]> {
   const page = 1000;
   const maxPages = 40;
@@ -841,7 +861,7 @@ async function fetchCreatedInRange<T extends Record<string, unknown>>(
       .lt("created_at", toExclusiveIso)
       .order("created_at", { ascending: true })
       .range(from, from + page - 1);
-    if (businessId) q = q.eq("business_id", businessId);
+    q = applyBusinessFilter(q as any, businessIds);
     const { data, error } = await q;
     if (error) throw error;
     const rows = (data ?? []) as T[];
@@ -888,24 +908,27 @@ async function handleAnalytics(url: URL): Promise<Response> {
   const scanEndIso = toEnd.toISOString();
   const days = Math.max(1, Math.round(durationMs / (24 * 60 * 60 * 1000)));
   const grain: "day" | "week" = days > 90 ? "week" : "day";
-  const scopedBizId = isUuid(url.searchParams.get("businessId") ?? "")
-    ? String(url.searchParams.get("businessId")).trim()
-    : "";
+  const scopedIds = parseScopedBusinessIds(url);
+  const isScoped = scopedIds.length > 0;
 
   type SaleRow = { created_at: string; total: number | null; business_id: string | null; payment_method: string | null };
   type ExpRow = { created_at: string; amount: number | null; business_id: string | null };
   type IdRow = { created_at: string; business_id?: string | null };
 
-  const [sales, expenses, customers, employees, businesses] = await Promise.all([
-    fetchCreatedInRange<SaleRow>("sales", "created_at, total, business_id, payment_method", scanStartIso, scanEndIso, scopedBizId || undefined),
-    fetchCreatedInRange<ExpRow>("expenses", "created_at, amount, business_id", scanStartIso, scanEndIso, scopedBizId || undefined),
-    fetchCreatedInRange<IdRow>("customers", "created_at, business_id", scanStartIso, scanEndIso, scopedBizId || undefined),
-    fetchCreatedInRange<IdRow>("employees", "created_at, business_id", scanStartIso, scanEndIso, scopedBizId || undefined),
+  const [sales, expenses, customers, employees, products, catalogSettings, businesses] = await Promise.all([
+    fetchCreatedInRange<SaleRow>("sales", "created_at, total, business_id, payment_method", scanStartIso, scanEndIso, scopedIds.length ? scopedIds : undefined),
+    fetchCreatedInRange<ExpRow>("expenses", "created_at, amount, business_id", scanStartIso, scanEndIso, scopedIds.length ? scopedIds : undefined),
+    fetchCreatedInRange<IdRow>("customers", "created_at, business_id", scanStartIso, scanEndIso, scopedIds.length ? scopedIds : undefined),
+    fetchCreatedInRange<IdRow>("employees", "created_at, business_id", scanStartIso, scanEndIso, scopedIds.length ? scopedIds : undefined),
+    fetchCreatedInRange<IdRow>("products", "created_at, business_id", scanStartIso, scanEndIso, scopedIds.length ? scopedIds : undefined),
+    admin.from("business_settings").select("business_id, created_at, updated_at, value").eq("key", "virtual_catalog").then((r) =>
+      r.error ? { data: [] as unknown[] } : r
+    ),
     admin.from("businesses").select("id, name, owner_id, created_at"),
   ]);
 
   let allAuthUsers: { created_at?: string; last_sign_in_at?: string | null }[] = [];
-  if (!scopedBizId) {
+  if (!isScoped) {
     let pg = 1;
     while (pg <= 20) {
       const { data, error } = await admin.auth.admin.listUsers({ page: pg, perPage: 1000 });
@@ -949,27 +972,25 @@ async function handleAnalytics(url: URL): Promise<Response> {
   const employeesCur = employees.filter((r) => inRange(r.created_at, fromMs, toMs)).length;
   const employeesPrev = employees.filter((r) => inRange(r.created_at, prevFromMs, prevToMs)).length;
 
-  const usersCur = scopedBizId
+  const usersCur = isScoped
     ? employeesCur
     : allAuthUsers.filter((u) => u.created_at && inRange(u.created_at, fromMs, toMs)).length;
-  const usersPrev = scopedBizId
+  const usersPrev = isScoped
     ? employeesPrev
     : allAuthUsers.filter((u) => u.created_at && inRange(u.created_at, prevFromMs, prevToMs)).length;
-  const activeUsers = scopedBizId
+  const activeUsers = isScoped
     ? 0
     : allAuthUsers.filter((u) => u.last_sign_in_at && inRange(String(u.last_sign_in_at), fromMs, toMs)).length;
 
   const bizRows = (businesses.data ?? []) as { id: string; name: string; created_at: string }[];
-  const scopedBiz = scopedBizId ? bizRows.find((b) => b.id === scopedBizId) : null;
-  const bizCur = scopedBizId
-    ? (scopedBiz?.created_at && inRange(scopedBiz.created_at, fromMs, toMs) ? 1 : 0)
+  const scopedBizRows = isScoped ? bizRows.filter((b) => scopedIds.includes(b.id)) : bizRows;
+  const bizCur = isScoped
+    ? scopedBizRows.filter((b) => b.created_at && inRange(b.created_at, fromMs, toMs)).length
     : bizRows.filter((b) => b.created_at && inRange(b.created_at, fromMs, toMs)).length;
-  const bizPrev = scopedBizId
+  const bizPrev = isScoped
     ? 0
     : bizRows.filter((b) => b.created_at && inRange(b.created_at, prevFromMs, prevToMs)).length;
-  const activeBiz = scopedBizId
-    ? (salesCur.length > 0 ? 1 : 0)
-    : new Set(salesCur.map((s) => s.business_id).filter(Boolean)).size;
+  const activeBiz = new Set(salesCur.map((s) => s.business_id).filter(Boolean)).size;
 
   const seriesMap = new Map<string, { salesCount: number; salesTotal: number; expensesTotal: number; newUsers: number }>();
   const ensure = (key: string) => {
@@ -985,7 +1006,7 @@ async function handleAnalytics(url: URL): Promise<Response> {
     const b = ensure(bucketKey(r.created_at, grain));
     b.expensesTotal += Number(r.amount) || 0;
   }
-  if (scopedBizId) {
+  if (isScoped) {
     for (const r of employees) {
       if (!inRange(r.created_at, fromMs, toMs)) continue;
       ensure(bucketKey(r.created_at, grain)).newUsers += 1;
@@ -1011,7 +1032,7 @@ async function handleAnalytics(url: URL): Promise<Response> {
     byBiz.set(id, cur);
   }
   const nameById = new Map(bizRows.map((b) => [b.id, b.name || "Sin nombre"]));
-  const topBusinesses = scopedBizId
+  const topBusinesses = scopedIds.length === 1
     ? []
     : [...byBiz.entries()]
       .sort((a, b) => b[1].total - a[1].total)
@@ -1030,6 +1051,28 @@ async function handleAnalytics(url: URL): Promise<Response> {
     .sort((a, b) => b[1].total - a[1].total)
     .map(([method, v]) => ({ method, ...v }));
 
+  const productsCur = products.filter((r) => inRange(r.created_at, fromMs, toMs));
+  const catalogRows = ((catalogSettings.data ?? []) as {
+    business_id: string;
+    created_at?: string;
+    updated_at?: string;
+    value?: { enabled?: boolean } | null;
+  }).filter((r) => !isScoped || scopedIds.includes(r.business_id));
+  const catalogEvents = catalogRows.filter((r) => {
+    const ts = r.updated_at || r.created_at || "";
+    return ts && inRange(ts, fromMs, toMs);
+  });
+  const catalogEnabled = catalogRows.filter((r) => r.value?.enabled !== false);
+
+  const modules = [
+    { id: "sales", name: "Vender", events: salesCur.length, businesses: uniqueBizIds(salesCur) },
+    { id: "expenses", name: "Gastos", events: expCur.length, businesses: uniqueBizIds(expCur) },
+    { id: "products", name: "Inventario", events: productsCur.length, businesses: uniqueBizIds(productsCur) },
+    { id: "contacts", name: "Contactos", events: customers.filter((r) => inRange(r.created_at, fromMs, toMs)).length, businesses: uniqueBizIds(customers.filter((r) => inRange(r.created_at, fromMs, toMs))) },
+    { id: "employees", name: "Empleados", events: employeesCur, businesses: uniqueBizIds(employees.filter((r) => inRange(r.created_at, fromMs, toMs))) },
+    { id: "catalog", name: "Catálogo", events: catalogEvents.length, businesses: uniqueBizIds(catalogEnabled) },
+  ].sort((a, b) => b.events - a.events || b.businesses - a.businesses);
+
   const kpi = (curr: number, prev: number) => ({ value: curr, previous: prev, changePct: pctChange(curr, prev) });
 
   return json({
@@ -1038,8 +1081,12 @@ async function handleAnalytics(url: URL): Promise<Response> {
     fromYmd,
     toYmd,
     grain,
-    scope: scopedBizId
-      ? { type: "business", id: scopedBizId, name: scopedBiz?.name || "Negocio" }
+    scope: isScoped
+      ? {
+        type: "businesses",
+        ids: scopedIds,
+        names: scopedIds.map((id) => nameById.get(id) || "Negocio"),
+      }
       : { type: "all" },
     previousFrom: prevStart.toISOString(),
     previousTo: new Date(prevEnd.getTime() - 1).toISOString(),
@@ -1060,6 +1107,7 @@ async function handleAnalytics(url: URL): Promise<Response> {
     series,
     topBusinesses,
     paymentMethods,
+    modules,
   });
 }
 
