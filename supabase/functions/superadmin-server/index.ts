@@ -101,7 +101,9 @@ async function tryUploadComunicadoDataUrl(dataUrl: string): Promise<string | nul
  * Localiza el segmento tras "superadmin" aunque el pathname venga como
  * /functions/v1/swift-task/superadmin/mutate, /superadmin/mutate o sin barra inicial.
  */
-function matchRoute(pathname: string): "stats" | "users" | "business" | "comunicados" | "mutate" | null {
+function matchRoute(
+  pathname: string,
+): "stats" | "users" | "business" | "comunicados" | "analytics" | "mutate" | null {
   const pathOnly = pathname.split("?")[0].replace(/\/+$/, "") || "/";
   const parts = pathOnly.split("/").filter(Boolean);
   const i = parts.indexOf("superadmin");
@@ -111,6 +113,7 @@ function matchRoute(pathname: string): "stats" | "users" | "business" | "comunic
   if (sub === "users") return "users";
   if (sub === "business") return "business";
   if (sub === "comunicados") return "comunicados";
+  if (sub === "analytics") return "analytics";
   if (sub === "mutate") return "mutate";
   return null;
 }
@@ -801,6 +804,232 @@ async function handleMutate(req: Request): Promise<Response> {
   }
 }
 
+function ymdOk(s: string): boolean {
+  return /^\d{4}-\d{2}-\d{2}$/.test(s);
+}
+
+function dayStartEc(ymd: string): Date {
+  return new Date(`${ymd}T00:00:00.000-05:00`);
+}
+
+function addDays(d: Date, n: number): Date {
+  return new Date(d.getTime() + n * 24 * 60 * 60 * 1000);
+}
+
+function pctChange(curr: number, prev: number): number | null {
+  if (!Number.isFinite(curr) || !Number.isFinite(prev)) return null;
+  if (prev === 0) return curr === 0 ? 0 : 100;
+  return ((curr - prev) / Math.abs(prev)) * 100;
+}
+
+async function fetchCreatedInRange<T extends Record<string, unknown>>(
+  table: string,
+  columns: string,
+  fromIso: string,
+  toExclusiveIso: string,
+): Promise<T[]> {
+  const page = 1000;
+  const maxPages = 40;
+  const all: T[] = [];
+  let from = 0;
+  for (let p = 0; p < maxPages; p++) {
+    const { data, error } = await admin
+      .from(table)
+      .select(columns)
+      .gte("created_at", fromIso)
+      .lt("created_at", toExclusiveIso)
+      .order("created_at", { ascending: true })
+      .range(from, from + page - 1);
+    if (error) throw error;
+    const rows = (data ?? []) as T[];
+    all.push(...rows);
+    if (rows.length < page) break;
+    from += page;
+  }
+  return all;
+}
+
+function bucketKey(iso: string, grain: "day" | "week"): string {
+  const d = new Date(iso);
+  if (grain === "day") return d.toISOString().slice(0, 10);
+  const utc = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const day = utc.getUTCDay() || 7;
+  utc.setUTCDate(utc.getUTCDate() - day + 1);
+  return utc.toISOString().slice(0, 10);
+}
+
+function inRange(iso: string, fromMs: number, toMs: number): boolean {
+  const t = new Date(iso).getTime();
+  return t >= fromMs && t < toMs;
+}
+
+async function handleAnalytics(url: URL): Promise<Response> {
+  const today = new Date();
+  const defaultTo = today.toLocaleDateString("en-CA", { timeZone: "America/Guayaquil" });
+  const defaultFromDate = addDays(dayStartEc(defaultTo), -29);
+  const defaultFrom = defaultFromDate.toLocaleDateString("en-CA", { timeZone: "America/Guayaquil" });
+
+  const fromYmd = ymdOk(url.searchParams.get("from") ?? "") ? String(url.searchParams.get("from")) : defaultFrom;
+  const toYmd = ymdOk(url.searchParams.get("to") ?? "") ? String(url.searchParams.get("to")) : defaultTo;
+  let fromStart = dayStartEc(fromYmd);
+  let toEnd = addDays(dayStartEc(toYmd), 1);
+  if (!(fromStart < toEnd)) {
+    fromStart = dayStartEc(defaultFrom);
+    toEnd = addDays(dayStartEc(defaultTo), 1);
+  }
+
+  const durationMs = toEnd.getTime() - fromStart.getTime();
+  const prevStart = new Date(fromStart.getTime() - durationMs);
+  const prevEnd = fromStart;
+  const scanStartIso = prevStart.toISOString();
+  const scanEndIso = toEnd.toISOString();
+  const days = Math.max(1, Math.round(durationMs / (24 * 60 * 60 * 1000)));
+  const grain: "day" | "week" = days > 90 ? "week" : "day";
+
+  type SaleRow = { created_at: string; total: number | null; business_id: string | null; payment_method: string | null };
+  type ExpRow = { created_at: string; amount: number | null; business_id: string | null };
+  type IdRow = { created_at: string; business_id?: string | null };
+
+  const [sales, expenses, customers, employees, businesses] = await Promise.all([
+    fetchCreatedInRange<SaleRow>("sales", "created_at, total, business_id, payment_method", scanStartIso, scanEndIso),
+    fetchCreatedInRange<ExpRow>("expenses", "created_at, amount, business_id", scanStartIso, scanEndIso),
+    fetchCreatedInRange<IdRow>("customers", "created_at", scanStartIso, scanEndIso),
+    fetchCreatedInRange<IdRow>("employees", "created_at", scanStartIso, scanEndIso),
+    admin.from("businesses").select("id, name, owner_id, created_at"),
+  ]);
+
+  let allAuthUsers: { created_at?: string; last_sign_in_at?: string | null }[] = [];
+  let pg = 1;
+  while (pg <= 20) {
+    const { data, error } = await admin.auth.admin.listUsers({ page: pg, perPage: 1000 });
+    if (error || !data?.users?.length) break;
+    allAuthUsers = allAuthUsers.concat(data.users as any);
+    if (data.users.length < 1000) break;
+    pg++;
+  }
+
+  const fromMs = fromStart.getTime();
+  const toMs = toEnd.getTime();
+  const prevFromMs = prevStart.getTime();
+  const prevToMs = prevEnd.getTime();
+
+  const sumSales = (rows: SaleRow[]) =>
+    rows.reduce((a, r) => a + (Number(r.total) || 0), 0);
+  const sumExp = (rows: ExpRow[]) =>
+    rows.reduce((a, r) => a + (Number(r.amount) || 0), 0);
+
+  const salesCur = sales.filter((r) => inRange(r.created_at, fromMs, toMs));
+  const salesPrev = sales.filter((r) => inRange(r.created_at, prevFromMs, prevToMs));
+  const expCur = expenses.filter((r) => inRange(r.created_at, fromMs, toMs));
+  const expPrev = expenses.filter((r) => inRange(r.created_at, prevFromMs, prevToMs));
+
+  const salesCount = salesCur.length;
+  const salesTotal = sumSales(salesCur);
+  const salesCountPrev = salesPrev.length;
+  const salesTotalPrev = sumSales(salesPrev);
+  const expensesCount = expCur.length;
+  const expensesTotal = sumExp(expCur);
+  const expensesCountPrev = expPrev.length;
+  const expensesTotalPrev = sumExp(expPrev);
+  const avgTicket = salesCount ? salesTotal / salesCount : 0;
+  const avgTicketPrev = salesCountPrev ? salesTotalPrev / salesCountPrev : 0;
+  const net = salesTotal - expensesTotal;
+  const netPrev = salesTotalPrev - expensesTotalPrev;
+
+  const usersCur = allAuthUsers.filter((u) => u.created_at && inRange(u.created_at, fromMs, toMs)).length;
+  const usersPrev = allAuthUsers.filter((u) => u.created_at && inRange(u.created_at, prevFromMs, prevToMs)).length;
+  const activeUsers = allAuthUsers.filter((u) => u.last_sign_in_at && inRange(String(u.last_sign_in_at), fromMs, toMs)).length;
+
+  const bizRows = (businesses.data ?? []) as { id: string; name: string; created_at: string }[];
+  const bizCur = bizRows.filter((b) => b.created_at && inRange(b.created_at, fromMs, toMs)).length;
+  const bizPrev = bizRows.filter((b) => b.created_at && inRange(b.created_at, prevFromMs, prevToMs)).length;
+  const activeBiz = new Set(salesCur.map((s) => s.business_id).filter(Boolean)).size;
+
+  const customersCur = customers.filter((r) => inRange(r.created_at, fromMs, toMs)).length;
+  const customersPrev = customers.filter((r) => inRange(r.created_at, prevFromMs, prevToMs)).length;
+  const employeesCur = employees.filter((r) => inRange(r.created_at, fromMs, toMs)).length;
+  const employeesPrev = employees.filter((r) => inRange(r.created_at, prevFromMs, prevToMs)).length;
+
+  const seriesMap = new Map<string, { salesCount: number; salesTotal: number; expensesTotal: number; newUsers: number }>();
+  const ensure = (key: string) => {
+    if (!seriesMap.has(key)) seriesMap.set(key, { salesCount: 0, salesTotal: 0, expensesTotal: 0, newUsers: 0 });
+    return seriesMap.get(key)!;
+  };
+  for (const r of salesCur) {
+    const b = ensure(bucketKey(r.created_at, grain));
+    b.salesCount += 1;
+    b.salesTotal += Number(r.total) || 0;
+  }
+  for (const r of expCur) {
+    const b = ensure(bucketKey(r.created_at, grain));
+    b.expensesTotal += Number(r.amount) || 0;
+  }
+  for (const u of allAuthUsers) {
+    if (!u.created_at || !inRange(u.created_at, fromMs, toMs)) continue;
+    ensure(bucketKey(u.created_at, grain)).newUsers += 1;
+  }
+
+  const series = [...seriesMap.entries()]
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([date, v]) => ({ date, ...v }));
+
+  const byBiz = new Map<string, { count: number; total: number }>();
+  for (const r of salesCur) {
+    const id = r.business_id;
+    if (!id) continue;
+    const cur = byBiz.get(id) || { count: 0, total: 0 };
+    cur.count += 1;
+    cur.total += Number(r.total) || 0;
+    byBiz.set(id, cur);
+  }
+  const nameById = new Map(bizRows.map((b) => [b.id, b.name || "Sin nombre"]));
+  const topBusinesses = [...byBiz.entries()]
+    .sort((a, b) => b[1].total - a[1].total)
+    .slice(0, 8)
+    .map(([id, v]) => ({ id, name: nameById.get(id) || "Sin nombre", ...v }));
+
+  const payMap = new Map<string, { count: number; total: number }>();
+  for (const r of salesCur) {
+    const k = String(r.payment_method || "sin método").trim() || "sin método";
+    const cur = payMap.get(k) || { count: 0, total: 0 };
+    cur.count += 1;
+    cur.total += Number(r.total) || 0;
+    payMap.set(k, cur);
+  }
+  const paymentMethods = [...payMap.entries()]
+    .sort((a, b) => b[1].total - a[1].total)
+    .map(([method, v]) => ({ method, ...v }));
+
+  const kpi = (curr: number, prev: number) => ({ value: curr, previous: prev, changePct: pctChange(curr, prev) });
+
+  return json({
+    from: fromStart.toISOString(),
+    to: new Date(toEnd.getTime() - 1).toISOString(),
+    fromYmd,
+    toYmd,
+    grain,
+    previousFrom: prevStart.toISOString(),
+    previousTo: new Date(prevEnd.getTime() - 1).toISOString(),
+    kpis: {
+      salesTotal: kpi(salesTotal, salesTotalPrev),
+      salesCount: kpi(salesCount, salesCountPrev),
+      avgTicket: kpi(avgTicket, avgTicketPrev),
+      expensesTotal: kpi(expensesTotal, expensesTotalPrev),
+      expensesCount: kpi(expensesCount, expensesCountPrev),
+      net: kpi(net, netPrev),
+      newUsers: kpi(usersCur, usersPrev),
+      newBusinesses: kpi(bizCur, bizPrev),
+      newCustomers: kpi(customersCur, customersPrev),
+      newEmployees: kpi(employeesCur, employeesPrev),
+      activeUsers,
+      activeBusinesses: activeBiz,
+    },
+    series,
+    topBusinesses,
+    paymentMethods,
+  });
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
@@ -831,6 +1060,7 @@ Deno.serve(async (req) => {
     if (route === "users") return await handleUsers();
     if (route === "business") return await handleBusinessDetail(url);
     if (route === "comunicados") return await handleComunicados();
+    if (route === "analytics") return await handleAnalytics(url);
     return json({ error: "Not found" }, 404);
   } catch (e: any) {
     return json({ error: e?.message ?? String(e) }, 500);

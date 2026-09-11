@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, useCallback, useRef, type ReactNode } fro
 import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicEnv';
 import { superadminEdgeFunctionSlug } from '/utils/supabase/superadminEdgeSlug';
 import { ComunicadosAdminTab } from '../components/superadmin/ComunicadosAdminTab';
+import { AnalyticsAdminTab } from '../components/superadmin/AnalyticsAdminTab';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -2642,7 +2643,7 @@ export default function SuperAdminPage() {
   const [businesses, setBusinesses] = useState<BizRow[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [tab, setTab] = useState<'users' | 'businesses' | 'comunicados'>('users');
+  const [tab, setTab] = useState<'users' | 'businesses' | 'comunicados' | 'analytics'>('users');
   const [search, setSearch] = useState('');
   const [lastRefresh, setLastRefresh] = useState<Date | null>(null);
 
@@ -2987,17 +2988,23 @@ export default function SuperAdminPage() {
         {/* Tabs + Search */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-3">
           <div className="flex flex-wrap bg-slate-900 border border-slate-800 rounded-xl p-1 gap-1">
-            {(['users', 'businesses', 'comunicados'] as const).map(t => (
+            {(['users', 'businesses', 'comunicados', 'analytics'] as const).map(t => (
               <button
                 key={t}
                 onClick={() => { setTab(t); setSearch(''); }}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${tab === t ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
               >
-                {t === 'comunicados' ? '📢 Comunicados' : t === 'users' ? `👤 Usuarios (${users.length})` : `🏪 Negocios (${businesses.length})`}
+                {t === 'comunicados'
+                  ? '📢 Comunicados'
+                  : t === 'analytics'
+                    ? '📊 Reportes'
+                    : t === 'users'
+                      ? `👤 Usuarios (${users.length})`
+                      : `🏪 Negocios (${businesses.length})`}
               </button>
             ))}
           </div>
-          {tab !== 'comunicados' && (
+          {tab !== 'comunicados' && tab !== 'analytics' && (
             <>
               <input
                 type="text"
@@ -3012,6 +3019,8 @@ export default function SuperAdminPage() {
             </>
           )}
         </div>
+
+        {tab === 'analytics' && <AnalyticsAdminTab />}
 
         {tab === 'comunicados' && (
           <ComunicadosAdminTab users={users} onGlobalReload={() => void loadData()} />
