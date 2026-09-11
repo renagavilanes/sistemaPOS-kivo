@@ -228,6 +228,23 @@ function fmtTime(iso: string | null) {
     + ' ' + d.toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' });
 }
 
+/** Columnas fijas al scroll horizontal en tabla de usuarios (checkbox → email). */
+const USER_STICKY_HEAD: Record<string, string> = {
+  _select: 'sticky left-0 z-20 min-w-[40px] w-[40px] bg-slate-900',
+  _actions: 'sticky left-[40px] z-20 min-w-[52px] bg-slate-900',
+  _danger: 'sticky left-[92px] z-20 min-w-[76px] bg-slate-900',
+  _access: 'sticky left-[168px] z-20 min-w-[112px] bg-slate-900',
+  email: 'sticky left-[280px] z-20 min-w-[200px] max-w-[220px] bg-slate-900 shadow-[8px_0_16px_-6px_rgba(0,0,0,0.65)] border-r border-slate-700/80',
+};
+
+const USER_STICKY_BODY: Record<string, string> = {
+  _select: 'sticky left-0 z-10 min-w-[40px] w-[40px] bg-slate-900 group-hover:bg-slate-800',
+  _actions: 'sticky left-[40px] z-10 min-w-[52px] bg-slate-900 group-hover:bg-slate-800',
+  _danger: 'sticky left-[92px] z-10 min-w-[76px] bg-slate-900 group-hover:bg-slate-800',
+  _access: 'sticky left-[168px] z-10 min-w-[112px] bg-slate-900 group-hover:bg-slate-800',
+  email: 'sticky left-[280px] z-10 min-w-[200px] max-w-[220px] bg-slate-900 group-hover:bg-slate-800 shadow-[8px_0_16px_-6px_rgba(0,0,0,0.65)] border-r border-slate-700/80',
+};
+
 function num(n: number) {
   return n.toLocaleString('es');
 }
@@ -2625,7 +2642,7 @@ export default function SuperAdminPage() {
   const [businesses, setBusinesses] = useState<BizRow[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [tab, setTab] = useState<'users' | 'businesses' | 'comunicados'>('comunicados');
+  const [tab, setTab] = useState<'users' | 'businesses' | 'comunicados'>('users');
   const [search, setSearch] = useState('');
   const [lastRefresh, setLastRefresh] = useState<Date | null>(null);
 
@@ -2970,7 +2987,7 @@ export default function SuperAdminPage() {
         {/* Tabs + Search */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-3">
           <div className="flex flex-wrap bg-slate-900 border border-slate-800 rounded-xl p-1 gap-1">
-            {(['comunicados', 'users', 'businesses'] as const).map(t => (
+            {(['users', 'businesses', 'comunicados'] as const).map(t => (
               <button
                 key={t}
                 onClick={() => { setTab(t); setSearch(''); }}
@@ -3040,7 +3057,7 @@ export default function SuperAdminPage() {
                       <th
                         key={col.key}
                         onClick={col.key === '_select' || col.key === '_actions' || col.key === '_danger' || col.key === '_access' ? undefined : () => toggleUserSort(col.key as keyof UserRow)}
-                        className={`px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider select-none whitespace-nowrap ${col.key === '_select' || col.key === '_actions' || col.key === '_danger' || col.key === '_access' ? '' : 'cursor-pointer hover:text-white'}`}
+                        className={`px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider select-none whitespace-nowrap ${USER_STICKY_HEAD[col.key] ?? ''} ${col.key === '_select' || col.key === '_actions' || col.key === '_danger' || col.key === '_access' ? '' : 'cursor-pointer hover:text-white'}`}
                       >
                         {col.key === '_select' ? (
                           <input
@@ -3064,8 +3081,8 @@ export default function SuperAdminPage() {
                     <tr><td colSpan={16} className="text-center text-slate-500 py-10">{loading ? 'Cargando...' : 'Sin resultados'}</td></tr>
                   )}
                   {filteredUsers.map(u => (
-                    <tr key={u.id} className="bg-slate-900/40 hover:bg-slate-800/50 transition-colors">
-                      <td className="px-2 py-2 align-middle">
+                    <tr key={u.id} className="group bg-slate-900/40 hover:bg-slate-800/50 transition-colors">
+                      <td className={`px-2 py-2 align-middle ${USER_STICKY_BODY._select}`}>
                         <input
                           type="checkbox"
                           checked={selectedUserIds.includes(u.id)}
@@ -3074,7 +3091,7 @@ export default function SuperAdminPage() {
                           aria-label={`Seleccionar ${u.email}`}
                         />
                       </td>
-                      <td className="px-4 py-2 whitespace-nowrap">
+                      <td className={`px-4 py-2 whitespace-nowrap ${USER_STICKY_BODY._actions}`}>
                         <button
                           type="button"
                           onClick={() => openUserOverview(u)}
@@ -3083,7 +3100,7 @@ export default function SuperAdminPage() {
                           Ver
                         </button>
                       </td>
-                      <td className="px-4 py-2 whitespace-nowrap">
+                      <td className={`px-4 py-2 whitespace-nowrap ${USER_STICKY_BODY._danger}`}>
                         <button
                           type="button"
                           onClick={() => { setUserDelErr(''); setUserToDelete(u); }}
@@ -3092,7 +3109,7 @@ export default function SuperAdminPage() {
                           Eliminar
                         </button>
                       </td>
-                      <td className="px-4 py-2 whitespace-nowrap">
+                      <td className={`px-4 py-2 whitespace-nowrap ${USER_STICKY_BODY._access}`}>
                         <div className="flex flex-col gap-1 items-start">
                           <button
                             type="button"
@@ -3112,7 +3129,7 @@ export default function SuperAdminPage() {
                           </button>
                         </div>
                       </td>
-                      <td className="px-4 py-3">
+                      <td className={`px-4 py-3 ${USER_STICKY_BODY.email}`}>
                         <button
                           type="button"
                           onClick={() => openUserOverview(u)}
