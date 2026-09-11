@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router';
 import { ArrowLeft, MessageCircle, Minus, Plus, ShoppingCart, Store, Truck } from 'lucide-react';
 
@@ -116,6 +116,7 @@ export default function VirtualCatalogPublicPage() {
   const [mobileStep, setMobileStep] = useState<MobileStep>('products');
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('Todas');
+  const categoryScrollerRef = useRef<HTMLDivElement>(null);
 
   const [deliveryType, setDeliveryType] = useState<DeliveryType>('pickup');
   const [customer, setCustomer] = useState<Record<string, string>>({
@@ -205,6 +206,13 @@ export default function VirtualCatalogPublicPage() {
     if (selectedCategory !== 'Todas') list = list.filter((p) => (p.category || '') === selectedCategory);
     return list;
   }, [data?.products, search, selectedCategory]);
+
+  useEffect(() => {
+    const root = categoryScrollerRef.current;
+    if (!root) return;
+    const active = root.querySelector('[data-active-category="true"]') as HTMLElement | null;
+    active?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+  }, [selectedCategory]);
 
   const cartCount = cart.reduce((sum, l) => sum + l.quantity, 0);
   const subtotal = cart.reduce((sum, l) => sum + l.product.price * l.quantity, 0);
@@ -400,16 +408,20 @@ export default function VirtualCatalogPublicPage() {
                 <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Buscar producto..." className="h-10" />
               </div>
               {categories.length > 1 && (
-                <div className="space-y-2">
+                <div className="space-y-2 min-w-0">
                   <Label>Categorías</Label>
-                  <div className="flex flex-wrap gap-2">
+                  <div
+                    ref={categoryScrollerRef}
+                    className="flex gap-2 overflow-x-auto overscroll-x-contain snap-x snap-mandatory pb-0.5 -mx-1 px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                  >
                     {categories.map((cat) => (
                       <button
                         key={cat}
                         type="button"
+                        data-active-category={selectedCategory === cat ? 'true' : undefined}
                         onClick={() => setSelectedCategory(cat)}
-                        className={`rounded-full border border-gray-200 px-3 py-1.5 text-sm font-medium transition-colors ${
-                          selectedCategory === cat ? 'bg-[#272B36] text-white border-[#272B36]' : 'bg-white text-gray-700 hover:bg-gray-50'
+                        className={`shrink-0 snap-start whitespace-nowrap rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
+                          selectedCategory === cat ? 'bg-[#272B36] text-white border-[#272B36]' : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50'
                         }`}
                       >
                         {cat}
