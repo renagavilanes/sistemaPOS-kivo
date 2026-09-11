@@ -38,7 +38,10 @@ type AnalyticsPayload = {
   series: { date: string; salesCount: number; salesTotal: number; expensesTotal: number; newUsers: number }[];
   topBusinesses: { id: string; name: string; count: number; total: number }[];
   paymentMethods: { method: string; count: number; total: number }[];
+  scope?: { type: 'all' } | { type: 'business'; id: string; name: string };
 };
+
+type BusinessOption = { id: string; name: string };
 
 function superadminApiBase(): string {
   const slug = superadminEdgeFunctionSlug;
@@ -108,13 +111,20 @@ const tooltipStyle = {
   fontSize: 12,
 };
 
-export function AnalyticsAdminTab() {
+export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOption[] }) {
   const [preset, setPreset] = useState<PresetId>('30d');
   const [from, setFrom] = useState(() => rangeForPreset('30d').from);
   const [to, setTo] = useState(() => rangeForPreset('30d').to);
+  const [businessId, setBusinessId] = useState('');
   const [data, setData] = useState<AnalyticsPayload | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const businessOptions = useMemo(
+    () => [...businesses].sort((a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base' })),
+    [businesses],
+  );
+  const scoped = businessId !== '';
 
   const applyPreset = (id: PresetId) => {
     setPreset(id);
@@ -133,7 +143,9 @@ export function AnalyticsAdminTab() {
     setLoading(true);
     setError('');
     try {
-      const q = `?key=${encodeURIComponent(key)}&from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
+      const q = `?key=${encodeURIComponent(key)}&from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}${
+        businessId ? `&businessId=${encodeURIComponent(businessId)}` : ''
+      }`;
       const res = await fetch(`${superadminApiBase()}/superadmin/analytics${q}`, {
         headers: { Authorization: `Bearer ${supabaseAnonKey}` },
       });
@@ -152,7 +164,7 @@ export function AnalyticsAdminTab() {
     } finally {
       setLoading(false);
     }
-  }, [from, to]);
+  }, [from, to, businessId]);
 
   useEffect(() => {
     void load();
@@ -187,6 +199,21 @@ export function AnalyticsAdminTab() {
           ))}
         </div>
         <div className="flex flex-wrap items-center gap-2 ml-auto">
+          <label className="text-xs text-slate-400">
+            Negocio
+            <select
+              value={businessId}
+              onChange={(e) => setBusinessId(e.target.value)}
+              className="ml-2 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white max-w-[14rem]"
+            >
+              <option value="">Todos los negocios</option>
+              {businessOptions.map((b) => (
+                <option key={b.id} value={b.id}>
+                  {b.name || 'Sin nombre'}
+                </option>
+              ))}
+            </select>
+          </label>
           <label className="text-xs text-slate-400">
             Desde
             <input
@@ -236,7 +263,10 @@ export function AnalyticsAdminTab() {
       {k && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
           <div className="lg:col-span-7 rounded-2xl bg-emerald-950/40 border border-emerald-900/50 px-5 py-5 sm:px-6 sm:py-6">
-            <div className="text-sm text-emerald-200/80">Ventas del periodo</div>
+            <div className="text-sm text-emerald-200/80">
+              Ventas del periodo
+              {data?.scope?.type === 'business' ? ` · ${data.scope.name}` : ''}
+            </div>
             <div className="mt-1 text-4xl sm:text-5xl font-semibold tracking-tight tabular-nums text-white">
               ${formatCurrency(k.salesTotal.value)}
             </div>
@@ -316,9 +346,11 @@ export function AnalyticsAdminTab() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         {chartRows.length > 0 && (
-          <div className="lg:col-span-7 rounded-2xl bg-slate-900/40 px-4 sm:px-5 py-4">
+          <div className={`${data?.topBusinesses?.length ? 'lg:col-span-7' : 'lg:col-span-12'} rounded-2xl bg-slate-900/40 px-4 sm:px-5 py-4`}>
             <div className="text-sm font-medium text-white">Volumen</div>
-            <div className="text-[11px] text-slate-500 mb-2">Índigo = ventas · cian = usuarios nuevos</div>
+            <div className="text-[11px] text-slate-500 mb-2">
+              {scoped ? 'Índigo = ventas · cian = empleados nuevos' : 'Índigo = ventas · cian = usuarios nuevos'}
+            </div>
             <div className="h-52">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartRows} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
@@ -327,7 +359,7 @@ export function AnalyticsAdminTab() {
                   <YAxis stroke="#64748b" fontSize={11} tickLine={false} width={28} />
                   <Tooltip contentStyle={tooltipStyle} />
                   <Bar dataKey="salesCount" name="Ventas" fill="#818cf8" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="newUsers" name="Usuarios nuevos" fill="#22d3ee" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="newUsers" name={scoped ? 'Empleados nuevos' : 'Usuarios nuevos'} fill="#22d3ee" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -364,18 +396,22 @@ export function AnalyticsAdminTab() {
 
       {k && (
         <div className="flex flex-wrap gap-x-8 gap-y-4 px-1 py-2 text-sm border-t border-slate-800/80 pt-5">
-          <div>
-            <div className="text-slate-500 text-xs">Usuarios nuevos</div>
-            <div className="font-medium tabular-nums">
-              {Math.round(k.newUsers.value)} <Delta pct={k.newUsers.changePct} compact />
+          {!scoped && (
+            <div>
+              <div className="text-slate-500 text-xs">Usuarios nuevos</div>
+              <div className="font-medium tabular-nums">
+                {Math.round(k.newUsers.value)} <Delta pct={k.newUsers.changePct} compact />
+              </div>
             </div>
-          </div>
-          <div>
-            <div className="text-slate-500 text-xs">Negocios nuevos</div>
-            <div className="font-medium tabular-nums">
-              {Math.round(k.newBusinesses.value)} <Delta pct={k.newBusinesses.changePct} compact />
+          )}
+          {!scoped && (
+            <div>
+              <div className="text-slate-500 text-xs">Negocios nuevos</div>
+              <div className="font-medium tabular-nums">
+                {Math.round(k.newBusinesses.value)} <Delta pct={k.newBusinesses.changePct} compact />
+              </div>
             </div>
-          </div>
+          )}
           <div>
             <div className="text-slate-500 text-xs">Contactos nuevos</div>
             <div className="font-medium tabular-nums">
@@ -388,14 +424,18 @@ export function AnalyticsAdminTab() {
               {Math.round(k.newEmployees.value)} <Delta pct={k.newEmployees.changePct} compact />
             </div>
           </div>
-          <div>
-            <div className="text-slate-500 text-xs">Negocios con ventas</div>
-            <div className="font-medium tabular-nums">{k.activeBusinesses}</div>
-          </div>
-          <div>
-            <div className="text-slate-500 text-xs">Usuarios que entraron</div>
-            <div className="font-medium tabular-nums">{k.activeUsers}</div>
-          </div>
+          {!scoped && (
+            <div>
+              <div className="text-slate-500 text-xs">Negocios con ventas</div>
+              <div className="font-medium tabular-nums">{k.activeBusinesses}</div>
+            </div>
+          )}
+          {!scoped && (
+            <div>
+              <div className="text-slate-500 text-xs">Usuarios que entraron</div>
+              <div className="font-medium tabular-nums">{k.activeUsers}</div>
+            </div>
+          )}
         </div>
       )}
 

@@ -827,19 +827,22 @@ async function fetchCreatedInRange<T extends Record<string, unknown>>(
   columns: string,
   fromIso: string,
   toExclusiveIso: string,
+  businessId?: string,
 ): Promise<T[]> {
   const page = 1000;
   const maxPages = 40;
   const all: T[] = [];
   let from = 0;
   for (let p = 0; p < maxPages; p++) {
-    const { data, error } = await admin
+    let q = admin
       .from(table)
       .select(columns)
       .gte("created_at", fromIso)
       .lt("created_at", toExclusiveIso)
       .order("created_at", { ascending: true })
       .range(from, from + page - 1);
+    if (businessId) q = q.eq("business_id", businessId);
+    const { data, error } = await q;
     if (error) throw error;
     const rows = (data ?? []) as T[];
     all.push(...rows);
@@ -885,27 +888,32 @@ async function handleAnalytics(url: URL): Promise<Response> {
   const scanEndIso = toEnd.toISOString();
   const days = Math.max(1, Math.round(durationMs / (24 * 60 * 60 * 1000)));
   const grain: "day" | "week" = days > 90 ? "week" : "day";
+  const scopedBizId = isUuid(url.searchParams.get("businessId") ?? "")
+    ? String(url.searchParams.get("businessId")).trim()
+    : "";
 
   type SaleRow = { created_at: string; total: number | null; business_id: string | null; payment_method: string | null };
   type ExpRow = { created_at: string; amount: number | null; business_id: string | null };
   type IdRow = { created_at: string; business_id?: string | null };
 
   const [sales, expenses, customers, employees, businesses] = await Promise.all([
-    fetchCreatedInRange<SaleRow>("sales", "created_at, total, business_id, payment_method", scanStartIso, scanEndIso),
-    fetchCreatedInRange<ExpRow>("expenses", "created_at, amount, business_id", scanStartIso, scanEndIso),
-    fetchCreatedInRange<IdRow>("customers", "created_at", scanStartIso, scanEndIso),
-    fetchCreatedInRange<IdRow>("employees", "created_at", scanStartIso, scanEndIso),
+    fetchCreatedInRange<SaleRow>("sales", "created_at, total, business_id, payment_method", scanStartIso, scanEndIso, scopedBizId || undefined),
+    fetchCreatedInRange<ExpRow>("expenses", "created_at, amount, business_id", scanStartIso, scanEndIso, scopedBizId || undefined),
+    fetchCreatedInRange<IdRow>("customers", "created_at, business_id", scanStartIso, scanEndIso, scopedBizId || undefined),
+    fetchCreatedInRange<IdRow>("employees", "created_at, business_id", scanStartIso, scanEndIso, scopedBizId || undefined),
     admin.from("businesses").select("id, name, owner_id, created_at"),
   ]);
 
   let allAuthUsers: { created_at?: string; last_sign_in_at?: string | null }[] = [];
-  let pg = 1;
-  while (pg <= 20) {
-    const { data, error } = await admin.auth.admin.listUsers({ page: pg, perPage: 1000 });
-    if (error || !data?.users?.length) break;
-    allAuthUsers = allAuthUsers.concat(data.users as any);
-    if (data.users.length < 1000) break;
-    pg++;
+  if (!scopedBizId) {
+    let pg = 1;
+    while (pg <= 20) {
+      const { data, error } = await admin.auth.admin.listUsers({ page: pg, perPage: 1000 });
+      if (error || !data?.users?.length) break;
+      allAuthUsers = allAuthUsers.concat(data.users as any);
+      if (data.users.length < 1000) break;
+      pg++;
+    }
   }
 
   const fromMs = fromStart.getTime();
@@ -936,19 +944,32 @@ async function handleAnalytics(url: URL): Promise<Response> {
   const net = salesTotal - expensesTotal;
   const netPrev = salesTotalPrev - expensesTotalPrev;
 
-  const usersCur = allAuthUsers.filter((u) => u.created_at && inRange(u.created_at, fromMs, toMs)).length;
-  const usersPrev = allAuthUsers.filter((u) => u.created_at && inRange(u.created_at, prevFromMs, prevToMs)).length;
-  const activeUsers = allAuthUsers.filter((u) => u.last_sign_in_at && inRange(String(u.last_sign_in_at), fromMs, toMs)).length;
-
-  const bizRows = (businesses.data ?? []) as { id: string; name: string; created_at: string }[];
-  const bizCur = bizRows.filter((b) => b.created_at && inRange(b.created_at, fromMs, toMs)).length;
-  const bizPrev = bizRows.filter((b) => b.created_at && inRange(b.created_at, prevFromMs, prevToMs)).length;
-  const activeBiz = new Set(salesCur.map((s) => s.business_id).filter(Boolean)).size;
-
   const customersCur = customers.filter((r) => inRange(r.created_at, fromMs, toMs)).length;
   const customersPrev = customers.filter((r) => inRange(r.created_at, prevFromMs, prevToMs)).length;
   const employeesCur = employees.filter((r) => inRange(r.created_at, fromMs, toMs)).length;
   const employeesPrev = employees.filter((r) => inRange(r.created_at, prevFromMs, prevToMs)).length;
+
+  const usersCur = scopedBizId
+    ? employeesCur
+    : allAuthUsers.filter((u) => u.created_at && inRange(u.created_at, fromMs, toMs)).length;
+  const usersPrev = scopedBizId
+    ? employeesPrev
+    : allAuthUsers.filter((u) => u.created_at && inRange(u.created_at, prevFromMs, prevToMs)).length;
+  const activeUsers = scopedBizId
+    ? 0
+    : allAuthUsers.filter((u) => u.last_sign_in_at && inRange(String(u.last_sign_in_at), fromMs, toMs)).length;
+
+  const bizRows = (businesses.data ?? []) as { id: string; name: string; created_at: string }[];
+  const scopedBiz = scopedBizId ? bizRows.find((b) => b.id === scopedBizId) : null;
+  const bizCur = scopedBizId
+    ? (scopedBiz?.created_at && inRange(scopedBiz.created_at, fromMs, toMs) ? 1 : 0)
+    : bizRows.filter((b) => b.created_at && inRange(b.created_at, fromMs, toMs)).length;
+  const bizPrev = scopedBizId
+    ? 0
+    : bizRows.filter((b) => b.created_at && inRange(b.created_at, prevFromMs, prevToMs)).length;
+  const activeBiz = scopedBizId
+    ? (salesCur.length > 0 ? 1 : 0)
+    : new Set(salesCur.map((s) => s.business_id).filter(Boolean)).size;
 
   const seriesMap = new Map<string, { salesCount: number; salesTotal: number; expensesTotal: number; newUsers: number }>();
   const ensure = (key: string) => {
@@ -964,9 +985,16 @@ async function handleAnalytics(url: URL): Promise<Response> {
     const b = ensure(bucketKey(r.created_at, grain));
     b.expensesTotal += Number(r.amount) || 0;
   }
-  for (const u of allAuthUsers) {
-    if (!u.created_at || !inRange(u.created_at, fromMs, toMs)) continue;
-    ensure(bucketKey(u.created_at, grain)).newUsers += 1;
+  if (scopedBizId) {
+    for (const r of employees) {
+      if (!inRange(r.created_at, fromMs, toMs)) continue;
+      ensure(bucketKey(r.created_at, grain)).newUsers += 1;
+    }
+  } else {
+    for (const u of allAuthUsers) {
+      if (!u.created_at || !inRange(u.created_at, fromMs, toMs)) continue;
+      ensure(bucketKey(u.created_at, grain)).newUsers += 1;
+    }
   }
 
   const series = [...seriesMap.entries()]
@@ -983,10 +1011,12 @@ async function handleAnalytics(url: URL): Promise<Response> {
     byBiz.set(id, cur);
   }
   const nameById = new Map(bizRows.map((b) => [b.id, b.name || "Sin nombre"]));
-  const topBusinesses = [...byBiz.entries()]
-    .sort((a, b) => b[1].total - a[1].total)
-    .slice(0, 8)
-    .map(([id, v]) => ({ id, name: nameById.get(id) || "Sin nombre", ...v }));
+  const topBusinesses = scopedBizId
+    ? []
+    : [...byBiz.entries()]
+      .sort((a, b) => b[1].total - a[1].total)
+      .slice(0, 8)
+      .map(([id, v]) => ({ id, name: nameById.get(id) || "Sin nombre", ...v }));
 
   const payMap = new Map<string, { count: number; total: number }>();
   for (const r of salesCur) {
@@ -1008,6 +1038,9 @@ async function handleAnalytics(url: URL): Promise<Response> {
     fromYmd,
     toYmd,
     grain,
+    scope: scopedBizId
+      ? { type: "business", id: scopedBizId, name: scopedBiz?.name || "Negocio" }
+      : { type: "all" },
     previousFrom: prevStart.toISOString(),
     previousTo: new Date(prevEnd.getTime() - 1).toISOString(),
     kpis: {

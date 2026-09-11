@@ -3020,7 +3020,7 @@ export default function SuperAdminPage() {
           )}
         </div>
 
-        {tab === 'analytics' && <AnalyticsAdminTab />}
+        {tab === 'analytics' && <AnalyticsAdminTab businesses={businesses} />}
 
         {tab === 'comunicados' && (
           <ComunicadosAdminTab users={users} onGlobalReload={() => void loadData()} />
