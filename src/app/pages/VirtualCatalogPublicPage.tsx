@@ -17,6 +17,10 @@ type MobileStep = 'products' | 'cart' | 'checkout';
 
 type CartLine = { product: PublicCatalogProduct; quantity: number };
 
+function digitsOnly(raw: string, maxLen: number) {
+  return String(raw || '').replace(/\D/g, '').slice(0, maxLen);
+}
+
 function cartStorageKey(slug: string) {
   return `virtual_catalog_cart_${slug}`;
 }
@@ -276,10 +280,15 @@ export default function VirtualCatalogPublicPage() {
     if (deliveryType === 'homeDelivery' && !d.homeDelivery) return 'Domicilio no disponible';
 
     if (!customer.name.trim()) return 'Nombre es obligatorio';
-    if (!customer.phone.trim()) return 'Teléfono es obligatorio';
+    const phone = digitsOnly(customer.phone, 15);
+    if (!phone) return 'Teléfono es obligatorio';
+    if (phone.length < 7) return 'El teléfono debe tener solo números (mínimo 7 dígitos)';
 
     if (deliveryType === 'homeDelivery') {
-      const required = ['cedula', 'city', 'address', 'mainStreet', 'secondaryStreet', 'reference'] as const;
+      const cedula = digitsOnly(customer.cedula, 10);
+      if (!cedula) return 'Cédula es obligatorio';
+      if (cedula.length !== 10) return 'La cédula debe tener 10 dígitos';
+      const required = ['city', 'address', 'mainStreet', 'secondaryStreet', 'reference'] as const;
       for (const k of required) {
         if (!String(customer[k] || '').trim()) return 'Completa todos los datos de entrega';
       }
@@ -683,7 +692,15 @@ export default function VirtualCatalogPublicPage() {
                 </div>
                 <div className="space-y-2">
                   <Label>Teléfono *</Label>
-                  <Input value={customer.phone} onChange={(e) => setCustomer((c) => ({ ...c, phone: e.target.value }))} />
+                  <Input
+                    value={customer.phone}
+                    onChange={(e) => setCustomer((c) => ({ ...c, phone: digitsOnly(e.target.value, 15) }))}
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    autoComplete="tel"
+                    maxLength={15}
+                  />
                 </div>
               </div>
 
@@ -692,7 +709,15 @@ export default function VirtualCatalogPublicPage() {
                   <div className="grid gap-3 md:grid-cols-2">
                     <div className="space-y-2">
                       <Label>Cédula *</Label>
-                      <Input value={customer.cedula} onChange={(e) => setCustomer((c) => ({ ...c, cedula: e.target.value }))} />
+                      <Input
+                        value={customer.cedula}
+                        onChange={(e) => setCustomer((c) => ({ ...c, cedula: digitsOnly(e.target.value, 10) }))}
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        autoComplete="off"
+                        maxLength={10}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label>Ciudad *</Label>
@@ -845,7 +870,15 @@ export default function VirtualCatalogPublicPage() {
                 </div>
                 <div className="space-y-2">
                   <Label>Teléfono *</Label>
-                  <Input value={customer.phone} onChange={(e) => setCustomer((c) => ({ ...c, phone: e.target.value }))} />
+                  <Input
+                    value={customer.phone}
+                    onChange={(e) => setCustomer((c) => ({ ...c, phone: digitsOnly(e.target.value, 15) }))}
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    autoComplete="tel"
+                    maxLength={15}
+                  />
                 </div>
               </div>
 
@@ -854,7 +887,15 @@ export default function VirtualCatalogPublicPage() {
                   <div className="grid gap-3 md:grid-cols-2">
                     <div className="space-y-2">
                       <Label>Cédula *</Label>
-                      <Input value={customer.cedula} onChange={(e) => setCustomer((c) => ({ ...c, cedula: e.target.value }))} />
+                      <Input
+                        value={customer.cedula}
+                        onChange={(e) => setCustomer((c) => ({ ...c, cedula: digitsOnly(e.target.value, 10) }))}
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        autoComplete="off"
+                        maxLength={10}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label>Ciudad *</Label>
