@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
   Area,
   AreaChart,
@@ -112,13 +113,42 @@ const tooltipStyle = {
   fontSize: 12,
 };
 
+const MODULE_COPY: Record<string, { events: (n: number) => string; shops: (n: number) => string }> = {
+  sales: {
+    events: (n) => (n === 1 ? '1 venta registrada' : `${n} ventas registradas`),
+    shops: (n) => (n === 1 ? 'en 1 negocio' : `en ${n} negocios`),
+  },
+  expenses: {
+    events: (n) => (n === 1 ? '1 gasto registrado' : `${n} gastos registrados`),
+    shops: (n) => (n === 1 ? 'en 1 negocio' : `en ${n} negocios`),
+  },
+  products: {
+    events: (n) => (n === 1 ? '1 producto nuevo' : `${n} productos nuevos`),
+    shops: (n) => (n === 1 ? 'en 1 negocio' : `en ${n} negocios`),
+  },
+  contacts: {
+    events: (n) => (n === 1 ? '1 contacto nuevo' : `${n} contactos nuevos`),
+    shops: (n) => (n === 1 ? 'en 1 negocio' : `en ${n} negocios`),
+  },
+  employees: {
+    events: (n) => (n === 1 ? '1 empleado nuevo' : `${n} empleados nuevos`),
+    shops: (n) => (n === 1 ? 'en 1 negocio' : `en ${n} negocios`),
+  },
+  catalog: {
+    events: (n) => (n === 1 ? '1 ajuste de catálogo' : `${n} ajustes de catálogo`),
+    shops: (n) => (n === 1 ? '1 negocio lo tiene activo' : `${n} negocios lo tienen activo`),
+  },
+};
+
 export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOption[] }) {
   const [preset, setPreset] = useState<PresetId>('30d');
   const [from, setFrom] = useState(() => rangeForPreset('30d').from);
   const [to, setTo] = useState(() => rangeForPreset('30d').to);
   const [selectedBizIds, setSelectedBizIds] = useState<string[]>([]);
   const [bizOpen, setBizOpen] = useState(false);
+  const bizBtnRef = useRef<HTMLButtonElement>(null);
   const bizMenuRef = useRef<HTMLDivElement>(null);
+  const [bizMenuPos, setBizMenuPos] = useState({ top: 0, left: 0, width: 260 });
   const [data, setData] = useState<AnalyticsPayload | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -132,11 +162,27 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
 
   useEffect(() => {
     if (!bizOpen) return;
-    const onDoc = (e: MouseEvent) => {
-      if (!bizMenuRef.current?.contains(e.target as Node)) setBizOpen(false);
+    const place = () => {
+      const r = bizBtnRef.current?.getBoundingClientRect();
+      if (!r) return;
+      const width = 260;
+      const left = Math.min(Math.max(8, r.right - width), window.innerWidth - width - 8);
+      setBizMenuPos({ top: r.bottom + 6, left, width });
     };
+    place();
+    const onDoc = (e: MouseEvent) => {
+      const t = e.target as Node;
+      if (bizBtnRef.current?.contains(t) || bizMenuRef.current?.contains(t)) return;
+      setBizOpen(false);
+    };
+    window.addEventListener('resize', place);
+    window.addEventListener('scroll', place, true);
     document.addEventListener('mousedown', onDoc);
-    return () => document.removeEventListener('mousedown', onDoc);
+    return () => {
+      window.removeEventListener('resize', place);
+      window.removeEventListener('scroll', place, true);
+      document.removeEventListener('mousedown', onDoc);
+    };
   }, [bizOpen]);
 
   const applyPreset = (id: PresetId) => {
@@ -213,7 +259,7 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
 
   return (
     <div className="space-y-5">
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 whitespace-nowrap">
+      <div className="flex items-center gap-2 overflow-visible whitespace-nowrap">
         <div className="flex gap-1 shrink-0">
           {PRESETS.map((p) => (
             <button
@@ -231,38 +277,54 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
           ))}
         </div>
         <div className="flex items-center gap-2 ml-auto shrink-0">
-          <div className="relative" ref={bizMenuRef}>
-            <button
-              type="button"
-              onClick={() => setBizOpen((o) => !o)}
-              className="bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-[11px] text-white max-w-[13rem] truncate"
+          <button
+            ref={bizBtnRef}
+            type="button"
+            onClick={() => setBizOpen((o) => !o)}
+            className="bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-[11px] text-white max-w-[13rem] inline-flex items-center gap-1.5"
+          >
+            <span className="truncate">{bizButtonLabel}</span>
+            <span className="text-slate-500 shrink-0">{bizOpen ? '▴' : '▾'}</span>
+          </button>
+          {bizOpen && createPortal(
+            <div
+              ref={bizMenuRef}
+              style={{ position: 'fixed', top: bizMenuPos.top, left: bizMenuPos.left, width: bizMenuPos.width, zIndex: 80 }}
+              className="rounded-xl border border-slate-600 bg-slate-900 shadow-2xl py-1 max-h-72 overflow-y-auto"
             >
-              {bizButtonLabel}
-            </button>
-            {bizOpen && (
-              <div className="absolute right-0 top-full mt-1 z-30 w-64 rounded-xl border border-slate-700 bg-slate-900 shadow-xl py-1 max-h-72 overflow-y-auto">
-                <label className="flex items-center gap-2 px-3 py-1.5 text-xs text-slate-200 hover:bg-slate-800 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={selectedBizIds.length === 0}
-                    onChange={() => setSelectedBizIds([])}
-                  />
-                  Todos los negocios
-                </label>
-                <div className="border-t border-slate-800 my-1" />
-                {businessOptions.map((b) => (
-                  <label key={b.id} className="flex items-center gap-2 px-3 py-1.5 text-xs text-slate-200 hover:bg-slate-800 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={selectedBizIds.includes(b.id)}
-                      onChange={() => toggleBiz(b.id)}
-                    />
+              <button
+                type="button"
+                onClick={() => setSelectedBizIds([])}
+                className="flex w-full items-center gap-2 px-3 py-2 text-xs text-left text-slate-200 hover:bg-slate-800"
+              >
+                <span className={`w-3.5 h-3.5 rounded border flex items-center justify-center text-[10px] ${selectedBizIds.length === 0 ? 'bg-indigo-500 border-indigo-400 text-white' : 'border-slate-500'}`}>
+                  {selectedBizIds.length === 0 ? '✓' : ''}
+                </span>
+                Todos los negocios
+              </button>
+              <div className="border-t border-slate-800 my-1" />
+              {businessOptions.length === 0 && (
+                <div className="px-3 py-2 text-xs text-slate-500">No hay negocios cargados</div>
+              )}
+              {businessOptions.map((b) => {
+                const on = selectedBizIds.includes(b.id);
+                return (
+                  <button
+                    key={b.id}
+                    type="button"
+                    onClick={() => toggleBiz(b.id)}
+                    className="flex w-full items-center gap-2 px-3 py-2 text-xs text-left text-slate-200 hover:bg-slate-800"
+                  >
+                    <span className={`w-3.5 h-3.5 rounded border flex items-center justify-center text-[10px] shrink-0 ${on ? 'bg-indigo-500 border-indigo-400 text-white' : 'border-slate-500'}`}>
+                      {on ? '✓' : ''}
+                    </span>
                     <span className="truncate">{b.name || 'Sin nombre'}</span>
-                  </label>
-                ))}
-              </div>
-            )}
-          </div>
+                  </button>
+                );
+              })}
+            </div>,
+            document.body,
+          )}
           <input
             type="date"
             value={from}
@@ -482,51 +544,54 @@ export function AnalyticsAdminTab({ businesses = [] }: { businesses?: BusinessOp
         </div>
       )}
 
-      {!!data?.paymentMethods?.length && (
-        <div className="px-1">
-          <div className="text-sm font-medium text-white mb-3">Cómo pagan</div>
-          <div className="space-y-2.5 max-w-xl">
-            {data.paymentMethods.map((p) => {
-              const max = data.paymentMethods[0]?.total || 1;
-              const w = Math.max(6, Math.round((p.total / max) * 100));
-              return (
-                <div key={p.method} className="grid grid-cols-[7rem_1fr_auto] items-center gap-3 text-sm">
-                  <span className="text-slate-300 capitalize truncate">{p.method}</span>
-                  <div className="h-1.5 rounded-full bg-slate-800 overflow-hidden">
-                    <div className="h-full rounded-full bg-indigo-400/80" style={{ width: `${w}%` }} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-1">
+        {!!data?.paymentMethods?.length && (
+          <div>
+            <div className="text-sm font-medium text-white mb-3">Cómo pagan</div>
+            <div className="space-y-2.5">
+              {data.paymentMethods.map((p) => {
+                const max = data.paymentMethods[0]?.total || 1;
+                const w = Math.max(6, Math.round((p.total / max) * 100));
+                return (
+                  <div key={p.method} className="grid grid-cols-[7rem_1fr_auto] items-center gap-3 text-sm">
+                    <span className="text-slate-300 capitalize truncate">{p.method}</span>
+                    <div className="h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                      <div className="h-full rounded-full bg-indigo-400/80" style={{ width: `${w}%` }} />
+                    </div>
+                    <span className="tabular-nums text-slate-200">${formatCurrency(p.total)}</span>
                   </div>
-                  <span className="tabular-nums text-slate-200">${formatCurrency(p.total)}</span>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {!!data?.modules?.length && (
-        <div className="px-1 pt-2">
-          <div className="text-sm font-medium text-white">Módulos más usados</div>
-          <div className="text-[11px] text-slate-500 mb-3">
-            Altas del periodo: ventas, gastos, productos, contactos, empleados. Catálogo cuenta configuraciones guardadas y negocios con catálogo activo.
-          </div>
-          <div className="space-y-2.5 max-w-xl">
-            {data.modules.map((m) => {
-              const w = Math.max(6, Math.round((m.events / maxModuleEvents) * 100));
-              return (
-                <div key={m.id} className="grid grid-cols-[7rem_1fr_auto] items-center gap-3 text-sm">
-                  <span className="text-slate-300 truncate">{m.name}</span>
-                  <div className="h-1.5 rounded-full bg-slate-800 overflow-hidden">
-                    <div className="h-full rounded-full bg-violet-400/80" style={{ width: `${w}%` }} />
+        {!!data?.modules?.length && (
+          <div>
+            <div className="text-sm font-medium text-white">Módulos más usados</div>
+            <div className="text-[11px] text-slate-500 mb-3">Qué tanto usaron cada parte de Kivo en este periodo</div>
+            <div className="space-y-3">
+              {data.modules.map((m) => {
+                const w = Math.max(6, Math.round((m.events / maxModuleEvents) * 100));
+                const copy = MODULE_COPY[m.id];
+                return (
+                  <div key={m.id}>
+                    <div className="flex items-baseline justify-between gap-2 text-sm">
+                      <span className="text-slate-200">{m.name}</span>
+                      <span className="text-[11px] text-slate-400 text-right">
+                        {copy ? `${copy.events(m.events)} · ${copy.shops(m.businesses)}` : `${m.events} acciones`}
+                      </span>
+                    </div>
+                    <div className="mt-1 h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                      <div className="h-full rounded-full bg-violet-400/80" style={{ width: `${w}%` }} />
+                    </div>
                   </div>
-                  <span className="text-[11px] text-slate-400 tabular-nums whitespace-nowrap">
-                    {m.events} · {m.businesses} neg.
-                  </span>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
