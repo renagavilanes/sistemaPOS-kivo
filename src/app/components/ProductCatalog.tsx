@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import { Search, Package, Plus, Minus } from 'lucide-react';
 import { Product, CartItem } from '../types';
 import { Input } from './ui/input';
@@ -21,6 +21,7 @@ interface ProductCatalogProps {
   onUpdateQuantity?: (productId: string, quantity: number) => void;
   canEditPrice?: boolean; // Allows editing product price before adding to cart
   loading?: boolean;
+  modeTabs?: ReactNode;
 }
 
 export function ProductCatalog({
@@ -35,6 +36,7 @@ export function ProductCatalog({
   onUpdateQuantity,
   canEditPrice = false,
   loading = false,
+  modeTabs,
 }: ProductCatalogProps) {
   // Function to remove accents/tildes from text
   const normalizeText = (text: string) => {
@@ -96,7 +98,12 @@ export function ProductCatalog({
   return (
     <div className="flex flex-col h-full lg:bg-gray-50">
       {/* Search */}
-      <div className="p-4 border-b bg-white">
+      <div className="p-4 border-b bg-white space-y-3">
+        {modeTabs ? (
+          <div className="hidden lg:flex justify-center">
+            {modeTabs}
+          </div>
+        ) : null}
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           <Input

@@ -732,15 +732,27 @@ export default function SalesPage() {
     );
   }
 
+  const saleModeTabs = !isEditingMovement ? (
+    <PrimaryTabs
+      value={activeTab}
+      onValueChange={handleTabChange}
+      className="w-[80%]"
+      tabs={[
+        { value: 'sale', label: 'Venta', icon: <CartIcon className="w-4 h-4" /> },
+        { value: 'freeSale', label: 'Venta libre', icon: <CircleDollarSign className="w-4 h-4" /> },
+        { value: 'expense', label: 'Gasto', icon: <DollarSign className="w-4 h-4" />, hidden: !canCreateExpense },
+      ]}
+    />
+  ) : null;
+
   return (
     <div className="h-screen flex flex-col">
       {/* Header */}
       <PageHeader
         desktop={
+          isEditingMovement ? (
           <header className="bg-white border-b px-4 sm:px-6 py-4">
-            {/* Editing Mode Banner */}
-            {isEditingMovement && (
-              <div className="mb-3 bg-blue-50 border border-blue-200 rounded-lg p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
                   <p className="text-sm font-medium text-blue-900">Editando productos de una venta</p>
@@ -773,27 +785,8 @@ export default function SalesPage() {
                   </Button>
                 </div>
               </div>
-            )}
-
-            <div className="flex items-center justify-between">
-              {/* Mode Toggle - Centered on desktop */}
-              {!isEditingMovement && (
-                <div className="flex flex-1 justify-center">
-                  <PrimaryTabs
-                    value={activeTab}
-                    onValueChange={handleTabChange}
-                    listClassName="max-w-[560px]"
-                    tabs={[
-                      { value: 'sale', label: 'Venta', icon: <CartIcon className="w-4 h-4" /> },
-                      { value: 'freeSale', label: 'Venta libre', icon: <CircleDollarSign className="w-4 h-4" /> },
-                      { value: 'expense', label: 'Gasto', icon: <DollarSign className="w-4 h-4" />, hidden: !canCreateExpense },
-                    ]}
-                  />
-                </div>
-              )}
-
-            </div>
           </header>
+          ) : null
         }
         mobile={
           <header className="bg-[#272B36] border-b border-slate-700 px-4 sm:px-6 py-3 shadow-sm">
@@ -884,6 +877,9 @@ export default function SalesPage() {
       <main className="flex-1 overflow-hidden">
         {activeTab === 'freeSale' ? (
           <div className="h-full overflow-auto flex flex-col items-center justify-start p-6 sm:p-10 bg-gray-50/80">
+            {saleModeTabs ? (
+              <div className="hidden lg:flex justify-center w-full max-w-md mb-6">{saleModeTabs}</div>
+            ) : null}
             <div className="w-full max-w-md space-y-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
               <div className="space-y-1">
                 <h2 className="text-lg font-semibold text-gray-900">Venta libre</h2>
@@ -931,6 +927,7 @@ export default function SalesPage() {
               cartItems={cartItems}
               onUpdateQuantity={handleUpdateQuantity}
               canEditPrice={canEditPrice}
+              modeTabs={saleModeTabs}
             />
           </div>
 
