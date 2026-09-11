@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router';
-import { ArrowLeft, MessageCircle, Minus, Plus, ShoppingCart, Store, Truck } from 'lucide-react';
+import { ArrowLeft, ChevronRight, MessageCircle, Minus, Plus, ShoppingCart, Store, Truck } from 'lucide-react';
 
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -436,7 +436,7 @@ export default function VirtualCatalogPublicPage() {
           <div
             className={`grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 min-w-0 ${
               mobileStep !== 'products' ? 'hidden lg:grid' : ''
-            }`}
+            } ${cartCount > 0 ? 'pb-24 lg:pb-0' : ''}`}
           >
             {filteredProducts.map((p) => {
               const qty = getQtyInCart(p.id);
@@ -892,6 +892,27 @@ export default function VirtualCatalogPublicPage() {
           </div>
         </div>
       </div>
+
+      {cartCount > 0 && mobileStep === 'products' && (
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] bg-gradient-to-t from-gray-50 via-gray-50 to-transparent pointer-events-none">
+          <Button
+            size="lg"
+            className="w-full h-12 rounded-xl shadow-lg bg-gray-900 hover:bg-gray-800 text-white pointer-events-auto flex items-center justify-between px-4"
+            onClick={() => setMobileStep('cart')}
+          >
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="bg-white/20 rounded-full w-9 h-9 flex items-center justify-center flex-shrink-0">
+                <span className="font-bold text-sm">{cartCount}</span>
+              </div>
+              <span className="font-semibold text-sm truncate">Ver carrito</span>
+            </div>
+            <div className="flex items-center gap-2 flex-shrink-0 pl-3">
+              <span className="font-bold text-base tabular-nums">${formatCurrency(total)}</span>
+              <ChevronRight className="w-5 h-5" />
+            </div>
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
