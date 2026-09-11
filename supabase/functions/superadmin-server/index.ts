@@ -390,7 +390,7 @@ async function handleBusinessDetail(url: URL): Promise<Response> {
       .eq("business_id", businessId)
       .order("name", { ascending: true }),
     admin.from("employees").select("id, business_id, name, email, phone, role, is_active, is_owner, created_at, updated_at").eq("business_id", businessId).order("name", { ascending: true }),
-    admin.from("customers").select("id, business_id, name, email, phone, address, tax_id, cedula, type, credit_limit, created_at").eq("business_id", businessId).order("name", { ascending: true }),
+    admin.from("customers").select("id, business_id, name, email, phone, address, tax_id, cedula, contact_type, credit_limit, created_at").eq("business_id", businessId).order("name", { ascending: true }),
     admin
       .from("sales")
       .select("id, business_id, sale_number, total, subtotal, discount, tax, payment_method, payment_status, paid_amount, change_amount, customer_id, notes, created_at, created_by")
