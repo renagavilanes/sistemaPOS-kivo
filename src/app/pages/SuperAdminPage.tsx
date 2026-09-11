@@ -2769,7 +2769,7 @@ export default function SuperAdminPage() {
       if (!statsRes.ok) throw new Error(`Stats error ${statsRes.status}: ${statsData.error || statsText}`);
       if (!usersRes.ok) throw new Error(`Users error ${usersRes.status}: ${usersData.error || usersText}`);
 
-      setStats(statsData);
+      setStats(usersData.stats || statsData);
       setUsers(usersData.users || []);
       setBusinesses(usersData.businesses || []);
       setLastRefresh(new Date());

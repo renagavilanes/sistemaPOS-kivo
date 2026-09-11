@@ -123,21 +123,8 @@ function validateKey(url: URL): Response | null {
 }
 
 async function handleStats(): Promise<Response> {
-  let allUsers: any[] = [];
-  let pg = 1;
-  while (true) {
-    const { data, error } = await admin.auth.admin.listUsers({ page: pg, perPage: 1000 });
-    if (error || !data?.users?.length) break;
-    allUsers = allUsers.concat(data.users);
-    if (data.users.length < 1000) break;
-    pg++;
-  }
-  const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
-  const activeUsers = allUsers.filter(
-    (u: any) => u.last_sign_in_at && u.last_sign_in_at > thirtyDaysAgo,
-  ).length;
-
-  const [bizR, prodR, empR, saleR, expR, custR] = await Promise.all([
+  const [usersR, bizR, prodR, empR, saleR, expR, custR] = await Promise.all([
+    admin.from("users").select("id", { count: "exact", head: true }),
     admin.from("businesses").select("id", { count: "exact", head: true }),
     admin.from("products").select("id", { count: "exact", head: true }),
     admin.from("employees").select("id", { count: "exact", head: true }),
@@ -147,7 +134,7 @@ async function handleStats(): Promise<Response> {
   ]);
 
   return json({
-    users: { total: allUsers.length, active: activeUsers },
+    users: { total: usersR.count ?? 0, active: 0 },
     businesses: bizR.count ?? 0,
     products: prodR.count ?? 0,
     employees: empR.count ?? 0,
@@ -155,6 +142,33 @@ async function handleStats(): Promise<Response> {
     expenses: expR.count ?? 0,
     customers: custR.count ?? 0,
   });
+}
+
+/** PostgREST limita a 1000 filas: hay que paginar o los conteos quedan cortos. */
+async function tallyByBusinessId(table: string): Promise<Map<string, number>> {
+  const map = new Map<string, number>();
+  const page = 1000;
+  let from = 0;
+  for (;;) {
+    const { data, error } = await admin
+      .from(table)
+      .select("business_id")
+      .range(from, from + page - 1);
+    if (error) throw error;
+    const rows = data ?? [];
+    for (const r of rows) {
+      const id = (r as { business_id?: string }).business_id;
+      if (!id) continue;
+      map.set(id, (map.get(id) || 0) + 1);
+    }
+    if (rows.length < page) break;
+    from += page;
+  }
+  return map;
+}
+
+function countIn(map: Map<string, number>, bizId: string): number {
+  return map.get(bizId) || 0;
 }
 
 async function handleUsers(): Promise<Response> {
@@ -175,27 +189,27 @@ async function handleUsers(): Promise<Response> {
     .from("businesses")
     .select("id, name, owner_id, created_at");
 
-  const [{ data: products }, { data: employees }, { data: sales }, { data: expenses }, { data: customers }] =
-    await Promise.all([
-      admin.from("products").select("business_id"),
-      admin.from("employees").select("business_id"),
-      admin.from("sales").select("business_id"),
-      admin.from("expenses").select("business_id"),
-      admin.from("customers").select("business_id"),
-    ]);
+  const [productMap, employeeMap, saleMap, expenseMap, customerMap] = await Promise.all([
+    tallyByBusinessId("products"),
+    tallyByBusinessId("employees"),
+    tallyByBusinessId("sales"),
+    tallyByBusinessId("expenses"),
+    tallyByBusinessId("customers"),
+  ]);
 
-  const countBy = (arr: any[] | null, bizId: string) =>
-    (arr ?? []).filter((r: any) => r.business_id === bizId).length;
-
-  const enriched = (businesses ?? []).map((b: any) => ({
-    ...b,
-    products: countBy(products, b.id),
-    employees: countBy(employees, b.id),
-    sales: countBy(sales, b.id),
-    expenses: countBy(expenses, b.id),
-    customers: countBy(customers, b.id),
-    movements: countBy(sales, b.id) + countBy(expenses, b.id),
-  }));
+  const enriched = (businesses ?? []).map((b: any) => {
+    const sales = countIn(saleMap, b.id);
+    const expenses = countIn(expenseMap, b.id);
+    return {
+      ...b,
+      products: countIn(productMap, b.id),
+      employees: countIn(employeeMap, b.id),
+      sales,
+      expenses,
+      customers: countIn(customerMap, b.id),
+      movements: sales + expenses,
+    };
+  });
 
   const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
   const usersData = allAuthUsers.map((u: any) => {
@@ -235,7 +249,22 @@ async function handleUsers(): Promise<Response> {
     };
   });
 
-  return json({ users: usersData, businesses: enriched });
+  const sumMap = (m: Map<string, number>) => [...m.values()].reduce((a, n) => a + n, 0);
+  const activeUsers = usersData.filter((u: any) => u.is_active).length;
+
+  return json({
+    users: usersData,
+    businesses: enriched,
+    stats: {
+      users: { total: usersData.length, active: activeUsers },
+      businesses: (businesses ?? []).length,
+      products: sumMap(productMap),
+      employees: sumMap(employeeMap),
+      sales: sumMap(saleMap),
+      expenses: sumMap(expenseMap),
+      customers: sumMap(customerMap),
+    },
+  });
 }
 
 function isMissingComunicadosTable(err: { message?: string; code?: string } | null): boolean {
@@ -380,17 +409,22 @@ async function handleBusinessDetail(url: URL): Promise<Response> {
   if (bErr) return json({ error: bErr.message }, 500);
   if (!business) return json({ error: "Negocio no encontrado" }, 404);
 
-  const [{ data: products, error: pErr }, { data: employees, error: eErr }, { data: customers, error: cErr }, {
-    data: sales,
-    error: sErr,
-  }, { data: expenses, error: xErr }] = await Promise.all([
+  const [productQ, employeeQ, customerQ, saleQ, expenseQ] = await Promise.all([
     admin
       .from("products")
       .select("id, business_id, name, price, cost, stock, category, barcode, is_active, created_at, updated_at")
       .eq("business_id", businessId)
       .order("name", { ascending: true }),
-    admin.from("employees").select("id, business_id, name, email, phone, role, is_active, is_owner, created_at, updated_at").eq("business_id", businessId).order("name", { ascending: true }),
-    admin.from("customers").select("id, business_id, name, email, phone, address, tax_id, cedula, contact_type, credit_limit, created_at").eq("business_id", businessId).order("name", { ascending: true }),
+    admin
+      .from("employees")
+      .select("id, business_id, name, email, phone, role, is_active, is_owner, created_at, updated_at")
+      .eq("business_id", businessId)
+      .order("name", { ascending: true }),
+    admin
+      .from("customers")
+      .select("id, business_id, name, email, phone, address, tax_id, cedula, contact_type, credit_limit, created_at")
+      .eq("business_id", businessId)
+      .order("name", { ascending: true }),
     admin
       .from("sales")
       .select("id, business_id, sale_number, total, subtotal, discount, tax, payment_method, payment_status, paid_amount, change_amount, customer_id, notes, created_at, created_by")
@@ -405,16 +439,18 @@ async function handleBusinessDetail(url: URL): Promise<Response> {
       .limit(200),
   ]);
 
-  const firstErr = pErr || eErr || cErr || sErr || xErr;
-  if (firstErr) return json({ error: firstErr.message }, 500);
+  const warnings = [productQ.error, employeeQ.error, customerQ.error, saleQ.error, expenseQ.error]
+    .map((e) => e?.message)
+    .filter(Boolean) as string[];
 
   return json({
     business,
-    products: products ?? [],
-    employees: employees ?? [],
-    customers: customers ?? [],
-    sales: sales ?? [],
-    expenses: expenses ?? [],
+    products: productQ.data ?? [],
+    employees: employeeQ.data ?? [],
+    customers: customerQ.data ?? [],
+    sales: saleQ.data ?? [],
+    expenses: expenseQ.data ?? [],
+    warnings,
   });
 }
 
