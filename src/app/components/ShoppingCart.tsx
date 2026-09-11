@@ -63,9 +63,9 @@ export function ShoppingCart({
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#272B36] text-white">
+    <div className="flex flex-col h-full bg-gray-50">
       {/* Header */}
-      <div className="p-4 border-b border-white/10 flex-shrink-0">
+      <div className="p-4 border-b border-white/10 bg-[#272B36] text-white flex-shrink-0">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="font-semibold text-lg text-white">Carrito</h2>
@@ -87,9 +87,9 @@ export function ShoppingCart({
 
       {/* Cart Items */}
       {items.length === 0 ? (
-        <div className="flex flex-col items-center justify-center flex-1 text-white/40">
+        <div className="flex flex-col items-center justify-center flex-1 text-gray-400">
           <CartIcon className="w-16 h-16 mb-2" />
-          <p className="text-base text-white/70">Carrito vacío</p>
+          <p className="text-base">Carrito vacío</p>
           <p className="text-sm">Agrega productos para comenzar</p>
         </div>
       ) : (
@@ -101,12 +101,12 @@ export function ShoppingCart({
                 {items.map((item) => (
                   <div 
                     key={item.product.id} 
-                    className="bg-white/10 rounded-lg p-3 hover:bg-white/[0.14] transition-colors xl:cursor-default cursor-pointer"
+                    className="bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition-shadow xl:cursor-default cursor-pointer active:bg-gray-50 xl:active:bg-white"
                     onClick={() => handleCardClick(item)}
                   >
                     {/* Header: Image + Name + Delete */}
                     <div className="flex items-start gap-2 mb-2">
-                      <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-md bg-white/10">
+                      <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-md bg-gray-100">
                         <LazyProductImage
                           fillParent
                           productId={item.product.id}
@@ -117,14 +117,14 @@ export function ShoppingCart({
                         />
                       </div>
 
-                      <h3 className="flex-1 min-w-0 font-semibold text-sm leading-snug text-white line-clamp-2 pt-0.5">
+                      <h3 className="flex-1 min-w-0 font-semibold text-sm leading-snug text-gray-900 line-clamp-2 pt-0.5">
                         {item.product.name}
                       </h3>
 
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="hidden xl:flex h-8 w-8 p-0 shrink-0 text-red-300 hover:text-red-200 hover:bg-white/10 rounded-md border-2 border-red-400/70"
+                        className="hidden xl:flex h-8 w-8 p-0 shrink-0 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md border-2 border-red-600"
                         onClick={(e) => {
                           e.stopPropagation();
                           onRemoveItem(item.product.id);
@@ -136,11 +136,11 @@ export function ShoppingCart({
 
                     {/* Quantity + Price Controls - Desktop only */}
                     <div className="hidden xl:flex items-center gap-2 mb-1.5">
-                      <div className="flex items-center justify-between gap-1 border-2 border-white/20 rounded-full px-3 h-9 flex-1">
+                      <div className="flex items-center justify-between gap-1 border-2 border-gray-200 rounded-full px-3 h-9 flex-1">
                         <Button
                           size="sm"
                           variant="ghost"
-                          className="h-7 w-7 p-0 rounded-full text-white hover:bg-white/10"
+                          className="h-7 w-7 p-0 rounded-full hover:bg-gray-100"
                           onClick={(e) => {
                             e.stopPropagation();
                             onUpdateQuantity(item.product.id, Math.max(1, item.quantity - 1));
@@ -148,11 +148,11 @@ export function ShoppingCart({
                         >
                           <Minus className="w-3.5 h-3.5" />
                         </Button>
-                        <span className="font-semibold text-sm text-white">{item.quantity}</span>
+                        <span className="font-semibold text-sm text-gray-900">{item.quantity}</span>
                         <Button
                           size="sm"
                           variant="ghost"
-                          className="h-7 w-7 p-0 rounded-full text-white hover:bg-white/10"
+                          className="h-7 w-7 p-0 rounded-full hover:bg-gray-100"
                           onClick={(e) => {
                             e.stopPropagation();
                             onUpdateQuantity(item.product.id, item.quantity + 1);
@@ -162,7 +162,7 @@ export function ShoppingCart({
                         </Button>
                       </div>
 
-                      <div className="flex items-center justify-center border-2 border-white/20 rounded-full px-3 h-9 flex-1">
+                      <div className="flex items-center justify-center border-2 border-gray-200 rounded-full px-3 h-9 flex-1">
                         {canEditPrice ? (
                           <Input
                             type="number"
@@ -173,15 +173,15 @@ export function ShoppingCart({
                               onUpdatePrice(item.product.id, parseFloat(e.target.value) || 0);
                             }}
                             onClick={(e) => e.stopPropagation()}
-                            className="h-7 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-transparent text-white"
+                            className="h-7 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-white"
                           />
                         ) : (
-                          <span className="text-sm font-semibold text-white">$ {formatCurrency(item.priceAtSale)}</span>
+                          <span className="text-sm font-semibold text-gray-900">$ {formatCurrency(item.priceAtSale)}</span>
                         )}
                       </div>
                     </div>
 
-                    <div className="text-xs text-white/50">
+                    <div className="text-xs text-gray-500">
                       Precio por {item.quantity} unidade{item.quantity !== 1 ? 's' : ''}: ${formatCurrency(calculateSubtotal(item))}
                     </div>
                   </div>
@@ -191,21 +191,21 @@ export function ShoppingCart({
           </div>
 
           {/* Fixed Footer: Total Summary & Checkout */}
-          <div className="p-4 border-t border-white/10 space-y-4 flex-shrink-0">
+          <div className="p-4 border-t bg-white space-y-4 flex-shrink-0">
             <div className="space-y-2">
-              <div className="flex justify-between text-sm text-white/60">
+              <div className="flex justify-between text-sm text-gray-600">
                 <span>Total productos:</span>
-                <span className="font-medium text-white">{items.reduce((sum, item) => sum + item.quantity, 0)}</span>
+                <span className="font-medium text-gray-900 tabular-nums">{items.reduce((sum, item) => sum + item.quantity, 0)}</span>
               </div>
-              <Separator className="bg-white/10" />
+              <Separator />
               <div className="flex justify-between items-center">
-                <span className="text-lg font-semibold text-white">Total:</span>
-                <span className="text-2xl font-bold text-white">${formatCurrency(total)}</span>
+                <span className="text-lg font-semibold text-gray-900">Total:</span>
+                <span className="text-2xl font-bold text-gray-900">${formatCurrency(total)}</span>
               </div>
             </div>
             <Button 
               onClick={onProceedToPayment}
-              className="w-full h-12 text-base font-semibold bg-white text-[#272B36] hover:bg-white/90"
+              className="w-full h-12 text-base font-semibold bg-gray-900 hover:bg-gray-800"
             >
               {isEditingMovement ? 'Guardar productos' : 'Continuar con el pago'}
             </Button>
