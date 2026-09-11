@@ -47,6 +47,8 @@ export function registerAdminRoutes(app: any): void {
       const selectCols =
         fields === "balance"
           ? "id,customer_id,total,payment_status,paid_amount"
+          : fields === "list"
+          ? "id,business_id,customer_id,sale_number,total,subtotal,tax,discount,payment_method,payment_status,paid_amount,change_amount,items,payments,notes,created_by,created_at"
           : "*";
       let q: any = admin.from("sales").select(selectCols).eq("business_id", businessId).order("created_at", { ascending: false });
       if (from) q = q.gte("created_at", from);
@@ -64,7 +66,12 @@ export function registerAdminRoutes(app: any): void {
       const businessId = c.req.header("X-Business-ID");
       if (!businessId) return c.json({ error: "Missing X-Business-ID header" }, 400);
       const from = c.req.query("from"); const to = c.req.query("to"); const lim = c.req.query("limit");
-      let q: any = admin.from("expenses").select("*").eq("business_id", businessId).order("created_at", { ascending: false });
+      const fields = c.req.query("fields");
+      const selectCols =
+        fields === "list"
+          ? "id,business_id,category,description,amount,payment_method,payment_status,notes,created_by,created_at"
+          : "*";
+      let q: any = admin.from("expenses").select(selectCols).eq("business_id", businessId).order("created_at", { ascending: false });
       if (from) q = q.gte("created_at", from);
       if (to)   q = q.lte("created_at", to);
       if (lim)  q = q.limit(Number(lim));

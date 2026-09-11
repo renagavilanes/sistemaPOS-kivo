@@ -39,7 +39,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../com
 import { DateCalendar } from '../components/DateCalendar';
 import { MonthYearPicker } from '../components/MonthYearPicker';
 import { YearPicker } from '../components/YearPicker';
-import { format, startOfWeek, endOfWeek, isWithinInterval, startOfMonth, endOfMonth, startOfYear, endOfYear } from 'date-fns';
+import { format, startOfWeek, endOfWeek, isWithinInterval, startOfMonth, endOfMonth, startOfYear, endOfYear, startOfDay, endOfDay } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { toast } from 'sonner';
 import { exportMovementsToExcel } from '../utils/excelExport';
@@ -112,6 +112,38 @@ const isDateInRange = (dateStr: string, filter: string, selectedDay: Date, weekS
       return true;
   }
 };
+
+function movementsServerRange(opts: {
+  dateFilter: string;
+  selectedDay: Date;
+  weekStart: Date;
+  weekEnd: Date;
+  selectedMonth: number;
+  selectedYear: number;
+}): { from?: string; to?: string; limit?: number } {
+  const padMs = 14 * 60 * 60 * 1000;
+  const wrap = (fromD: Date, toD: Date) => ({
+    from: new Date(fromD.getTime() - padMs).toISOString(),
+    to: new Date(toD.getTime() + padMs).toISOString(),
+  });
+  switch (opts.dateFilter) {
+    case 'daily':
+      return wrap(startOfDay(opts.selectedDay), endOfDay(opts.selectedDay));
+    case 'weekly':
+    case 'custom':
+      return wrap(startOfDay(opts.weekStart), endOfDay(opts.weekEnd));
+    case 'monthly': {
+      const d = new Date(opts.selectedYear, opts.selectedMonth, 1);
+      return wrap(startOfMonth(d), endOfMonth(d));
+    }
+    case 'yearly': {
+      const d = new Date(opts.selectedYear, 0, 1);
+      return wrap(startOfYear(d), endOfYear(d));
+    }
+    default:
+      return { limit: 2500 };
+  }
+}
 
 // Mock data for movements
 const mockMovements = [
@@ -416,40 +448,29 @@ export default function MovementsPage() {
   
   // Movements state
   const [movements, setMovements] = useState<any[]>([]);
-  
-  // Load all data when business changes - OPTIMIZED: Load everything in parallel
+  const lookupsRef = useRef({ products: [] as any[], customers: [] as any[], employees: [] as any[] });
+  const lastTxRef = useRef({ sales: [] as any[], expenses: [] as any[] });
+
+  // Lookups en segundo plano (nombres). No bloquean la tabla.
   useEffect(() => {
     if (!currentBusiness?.id) return;
-    
-    const loadData = async () => {
-      setLoading(true);
-      try {
-        // Load ALL data in parallel for maximum speed
-        const [productsData, customersData, employeesData, salesData, expensesData] = await Promise.all([
-          apiService.getProducts(currentBusiness.id),
-          apiService.getCustomers(currentBusiness.id),
-          apiService.getEmployees(currentBusiness.id),
-          apiService.getSales(currentBusiness.id),
-          apiService.getExpenses(currentBusiness.id),
-        ]);
-        
-        setProducts(productsData);
-        setCustomers(customersData);
-        setEmployees(employeesData);
-        
-        // Process movements immediately with loaded data
-        processMovements(salesData, expensesData, productsData, customersData, employeesData);
-        
-      } catch (error) {
-        console.error('Error loading data:', error);
-        toast.error('Error al cargar datos');
-      } finally {
-        setLoading(false);
-      }
-    };
-    
-    loadData();
+    let cancelled = false;
+    void Promise.all([
+      apiService.getCustomers(currentBusiness.id),
+      apiService.getEmployees(currentBusiness.id),
+    ]).then(([customersData, employeesData]) => {
+      if (cancelled) return;
+      setCustomers(customersData);
+      setEmployees(employeesData);
+    }).catch((error) => {
+      console.error('Error loading lookups:', error);
+    });
+    return () => { cancelled = true; };
   }, [currentBusiness?.id]);
+
+  useEffect(() => {
+    lookupsRef.current = { products, customers, employees };
+  }, [products, customers, employees]);
   
   // Helper function to process movements (extracted for reusability)
   const processMovements = (
@@ -461,10 +482,16 @@ export default function MovementsPage() {
   ) => {
     try {
           
-      // Helper function to get current product image by ID
+      const productById = new Map(productsData.map((prod: any) => [prod.id, prod]));
+      const customerById = new Map(customersData.map((c: any) => [c.id, c]));
+      const employeeByUserId = new Map(
+        employeesData.filter((emp: any) => emp.userId).map((emp: any) => [emp.userId, emp]),
+      );
+      const ownerEmployee = employeesData.find((emp: any) => emp.is_owner === true);
+
       const getCurrentProductImage = (productId: string | null, fallbackImage: string): string => {
         if (productId) {
-          const currentProduct = productsData.find(prod => prod.id === productId);
+          const currentProduct = productById.get(productId);
           if (currentProduct && currentProduct.image) {
             return currentProduct.image;
           }
@@ -472,23 +499,18 @@ export default function MovementsPage() {
         return (fallbackImage && !fallbackImage.includes('unsplash.com')) ? fallbackImage : '';
       };
       
-      // Helper function to get client name by ID
       const getClientName = (customerId: string | null): string => {
         if (!customerId) return '-';
-        const client = customersData.find(c => c.id === customerId);
+        const client = customerById.get(customerId);
         return client ? client.name : '-';
       };
       
-      // Helper function to get employee name by UUID
       const getEmployeeName = (createdBy: string | null): string => {
         if (!createdBy) return 'Usuario';
-        
-        let employee = employeesData.find(emp => emp.userId === createdBy);
-        
+        let employee = employeeByUserId.get(createdBy);
         if (!employee && createdBy === currentBusiness?.id) {
-          employee = employeesData.find(emp => emp.is_owner === true);
+          employee = ownerEmployee;
         }
-        
         return employee ? employee.name : 'Usuario';
       };
           
@@ -644,6 +666,46 @@ export default function MovementsPage() {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [weekStart, setWeekStart] = useState(startOfWeek(new Date(), { weekStartsOn: 1 }));
   const [weekEnd, setWeekEnd] = useState(endOfWeek(new Date(), { weekStartsOn: 1 }));
+
+  useEffect(() => {
+    if (!currentBusiness?.id) return;
+    let cancelled = false;
+    const range = movementsServerRange({
+      dateFilter,
+      selectedDay,
+      weekStart,
+      weekEnd,
+      selectedMonth,
+      selectedYear,
+    });
+    const loadTx = async () => {
+      setLoading(true);
+      try {
+        const [salesData, expensesData] = await Promise.all([
+          apiService.getSales(currentBusiness.id, { ...range, fields: 'list' }),
+          apiService.getExpenses(currentBusiness.id, { ...range, fields: 'list' }),
+        ]);
+        if (cancelled) return;
+        lastTxRef.current = { sales: salesData, expenses: expensesData };
+        const L = lookupsRef.current;
+        processMovements(salesData, expensesData, L.products, L.customers, L.employees);
+      } catch (error) {
+        if (cancelled) return;
+        console.error('Error loading data:', error);
+        toast.error('Error al cargar datos');
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    };
+    void loadTx();
+    return () => { cancelled = true; };
+  }, [currentBusiness?.id, dateFilter, selectedDay, weekStart, weekEnd, selectedMonth, selectedYear]);
+
+  useEffect(() => {
+    const { sales, expenses } = lastTxRef.current;
+    if (sales.length === 0 && expenses.length === 0) return;
+    processMovements(sales, expenses, products, customers, employees);
+  }, [customers, employees, products]);
 
   // Filter Sheet states
   const [filterSheetOpen, setFilterSheetOpen] = useState(false);
@@ -1732,10 +1794,19 @@ export default function MovementsPage() {
         createdAt: createdAtIso,
       });
 
+      const range = movementsServerRange({
+        dateFilter,
+        selectedDay,
+        weekStart,
+        weekEnd,
+        selectedMonth,
+        selectedYear,
+      });
       const [salesData, expensesData] = await Promise.all([
-        apiService.getSales(currentBusiness.id),
-        apiService.getExpenses(currentBusiness.id),
+        apiService.getSales(currentBusiness.id, { ...range, fields: 'list' }),
+        apiService.getExpenses(currentBusiness.id, { ...range, fields: 'list' }),
       ]);
+      lastTxRef.current = { sales: salesData, expenses: expensesData };
       processMovements(salesData, expensesData, products, customers, employees);
 
       const refreshed = salesData.find((s) => s.id === selectedMovement.id);

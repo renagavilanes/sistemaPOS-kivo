@@ -644,16 +644,16 @@ function mapSaleRow(s: any): Sale {
 
 export async function getSales(
   businessId: string,
-  options?: { from?: string; to?: string; limit?: number; fields?: 'full' | 'balance' },
+  options?: { from?: string; to?: string; limit?: number; fields?: 'full' | 'balance' | 'list' },
 ): Promise<Sale[]> {
-  console.log('🔵 [API] Getting sales for business:', businessId, options?.fields === 'balance' ? '(balance rows)' : '');
+  console.log('🔵 [API] Getting sales for business:', businessId, options?.fields ? `(${options.fields})` : '');
 
   const accessToken = await getAccessToken();
   const params = new URLSearchParams();
   if (options?.from) params.set('from', options.from);
   if (options?.to) params.set('to', options.to);
   if (options?.limit) params.set('limit', String(options.limit));
-  if (options?.fields === 'balance') params.set('fields', 'balance');
+  if (options?.fields === 'balance' || options?.fields === 'list') params.set('fields', options.fields);
   const qs = params.toString() ? '?' + params.toString() : '';
 
   // Try the Edge Function server (bypasses RLS for all roles)
@@ -676,6 +676,8 @@ export async function getSales(
   const saleSelect =
     options?.fields === 'balance'
       ? 'id,customer_id,total,payment_status,paid_amount'
+      : options?.fields === 'list'
+      ? 'id,business_id,customer_id,sale_number,total,subtotal,tax,discount,payment_method,payment_status,paid_amount,change_amount,items,payments,notes,created_by,created_at'
       : '*';
   let query = supabase.from('sales').select(saleSelect).eq('business_id', businessId).order('created_at', { ascending: false });
   if (options?.from) query = query.gte('created_at', options.from);
@@ -924,7 +926,7 @@ function mapExpenseRow(e: any): Expense {
   };
 }
 
-export async function getExpenses(businessId: string, options?: { from?: string; to?: string; limit?: number }): Promise<Expense[]> {
+export async function getExpenses(businessId: string, options?: { from?: string; to?: string; limit?: number; fields?: 'full' | 'list' }): Promise<Expense[]> {
   console.log('🔵 [API] Getting expenses for business:', businessId);
 
   const accessToken = await getAccessToken();
@@ -932,6 +934,7 @@ export async function getExpenses(businessId: string, options?: { from?: string;
   if (options?.from) params.set('from', options.from);
   if (options?.to) params.set('to', options.to);
   if (options?.limit) params.set('limit', String(options.limit));
+  if (options?.fields === 'list') params.set('fields', 'list');
   const qs = params.toString() ? '?' + params.toString() : '';
 
   // Try the Edge Function server (bypasses RLS for all roles)
@@ -951,7 +954,11 @@ export async function getExpenses(businessId: string, options?: { from?: string;
   }
 
   // Fallback: direct Supabase query
-  let query = supabase.from('expenses').select('*').eq('business_id', businessId).order('created_at', { ascending: false });
+  let query = supabase.from('expenses').select(
+    options?.fields === 'list'
+      ? 'id,business_id,category,description,amount,payment_method,payment_status,notes,created_by,created_at'
+      : '*',
+  ).eq('business_id', businessId).order('created_at', { ascending: false });
   if (options?.from) query = query.gte('created_at', options.from);
   if (options?.to) query = query.lte('created_at', options.to);
   if (options?.limit) query = query.limit(options.limit);
