@@ -62,6 +62,31 @@ export async function fetchPublicCatalogImages(
   return ((body as any).images || {}) as Record<string, string>;
 }
 
+const publicCatalogImageCache = new Map<string, string>();
+const publicCatalogImageInflight = new Map<string, Promise<string>>();
+
+export async function fetchPublicCatalogImage(slug: string, productId: string): Promise<string> {
+  const key = `${slug}::${productId}`;
+  if (publicCatalogImageCache.has(key)) return publicCatalogImageCache.get(key) || '';
+  let pending = publicCatalogImageInflight.get(key);
+  if (!pending) {
+    pending = fetchPublicCatalogImages(slug, [productId])
+      .then((images) => {
+        const src = images[productId] || '';
+        publicCatalogImageCache.set(key, src);
+        publicCatalogImageInflight.delete(key);
+        return src;
+      })
+      .catch(() => {
+        publicCatalogImageCache.set(key, '');
+        publicCatalogImageInflight.delete(key);
+        return '';
+      });
+    publicCatalogImageInflight.set(key, pending);
+  }
+  return pending;
+}
+
 export async function fetchPublicCatalogBySlug(slug: string): Promise<PublicCatalogResponse> {
   const s = String(slug || '').trim();
   if (!s) {

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useBusiness } from '../contexts/BusinessContext';
 import { getProductById } from '../services/api';
+import { fetchPublicCatalogImage } from '../lib/virtualCatalogApi';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 function usableProductImageSrc(src: string | undefined | null): string {
@@ -74,7 +75,10 @@ export interface LazyProductImageProps {
    * Rellena un ancestro con `position: relative` y tamaño definido (p. ej. aspect-ratio).
    * Evita en Safari/WebKit que `h-full` sobre la imagen se resuelva mal dentro de flex.
    */
-  fillParent?: boolean;
+  /**
+   * Catálogo público: pide la foto por el slug, solo cuando el producto entra en pantalla.
+   */
+  publicCatalogSlug?: string;
 }
 
 export function LazyProductImage({
@@ -84,9 +88,11 @@ export function LazyProductImage({
   initialSrc,
   eager = false,
   fillParent = false,
+  publicCatalogSlug,
 }: LazyProductImageProps) {
   const { currentBusiness } = useBusiness();
   const businessId = currentBusiness?.id ?? '';
+  const publicSlug = String(publicCatalogSlug || '').trim();
 
   const fromProps = usableProductImageSrc(initialSrc);
   const [src, setSrc] = useState(fromProps);
@@ -102,6 +108,10 @@ export function LazyProductImage({
 
   useEffect(() => {
     const refreshFromServer = () => {
+      if (publicSlug && productId) {
+        void fetchPublicCatalogImage(publicSlug, productId).then(setSrc);
+        return;
+      }
       if (!businessId || !productId) return;
       const immediate = usableProductImageSrc(initialSrc);
       if (immediate) {
@@ -129,26 +139,40 @@ export function LazyProductImage({
 
     window.addEventListener('productsUpdated', onProductsUpdated);
     return () => window.removeEventListener('productsUpdated', onProductsUpdated);
-  }, [businessId, productId, initialSrc]);
+  }, [businessId, productId, initialSrc, publicSlug]);
 
   useEffect(() => {
     const immediate = usableProductImageSrc(initialSrc);
     if (immediate) {
       return;
     }
-    if (!businessId || !productId) {
-      setSrc('');
-      return;
-    }
 
-    const key = cacheKey(businessId, productId);
-    if (imageSrcCache.has(key)) {
-      setSrc(imageSrcCache.get(key)!);
-      return;
+    const load = () => {
+      if (publicSlug && productId) {
+        void fetchPublicCatalogImage(publicSlug, productId).then(setSrc);
+        return;
+      }
+      if (!businessId || !productId) {
+        setSrc('');
+        return;
+      }
+      void resolveProductImageSrc(businessId, productId).then(setSrc);
+    };
+
+    if (!publicSlug) {
+      if (!businessId || !productId) {
+        setSrc('');
+        return;
+      }
+      const key = cacheKey(businessId, productId);
+      if (imageSrcCache.has(key)) {
+        setSrc(imageSrcCache.get(key)!);
+        return;
+      }
     }
 
     if (eager) {
-      void resolveProductImageSrc(businessId, productId).then(setSrc);
+      load();
       return;
     }
 
@@ -164,9 +188,9 @@ export function LazyProductImage({
           if (!entries[0]?.isIntersecting) return;
           io?.disconnect();
           io = null;
-          void resolveProductImageSrc(businessId, productId).then(setSrc);
+          load();
         },
-        { root: null, rootMargin: '200px', threshold: 0.01 },
+        { root: null, rootMargin: '120px', threshold: 0.01 },
       );
       io.observe(el);
     };
@@ -179,7 +203,7 @@ export function LazyProductImage({
       cancelAnimationFrame(raf);
       io?.disconnect();
     };
-  }, [businessId, productId, initialSrc, eager]);
+  }, [businessId, productId, initialSrc, eager, publicSlug]);
 
   return (
     <div

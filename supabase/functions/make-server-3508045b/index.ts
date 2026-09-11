@@ -3018,7 +3018,7 @@ app.post("/make-server-3508045b/sales/db-create", async (c) => {
       .eq('business_id', businessId)
       .order('created_at', { ascending: false })
       .limit(1)
-      .single();
+      .maybeSingle();
 
     let saleNumber = 'V-0001';
     if (lastSale?.sale_number) {
@@ -3052,7 +3052,7 @@ app.post("/make-server-3508045b/sales/db-create", async (c) => {
     const { data, error } = await supabaseAdmin
       .from('sales')
       .insert(insertData)
-      .select()
+      .select('id, business_id, customer_id, sale_number, total, subtotal, tax, discount, payment_method, payment_status, paid_amount, change_amount, items, payments, notes, created_by, created_at')
       .single();
 
     if (error) {
@@ -3062,28 +3062,31 @@ app.post("/make-server-3508045b/sales/db-create", async (c) => {
 
     console.log('✅ [SALES/DB-CREATE] Sale created:', data.id, data.sale_number);
 
-    // Update product stock
+    const qtyByProduct = new Map<string, number>();
     for (const item of items) {
       const productId = item.productId || item.product_id;
-      const qty = item.quantity || 1;
+      const qty = Number(item.quantity) || 1;
       if (!productId) continue;
-
-      const { data: prod } = await supabaseAdmin
+      qtyByProduct.set(productId, (qtyByProduct.get(productId) || 0) + qty);
+    }
+    const productIds = [...qtyByProduct.keys()];
+    if (productIds.length > 0) {
+      const { data: prods } = await supabaseAdmin
         .from('products')
-        .select('stock')
-        .eq('id', productId)
+        .select('id, stock')
         .eq('business_id', businessId)
-        .single();
-
-      if (prod) {
-        const newStock = Math.max(0, prod.stock - qty);
-        await supabaseAdmin
-          .from('products')
-          .update({ stock: newStock })
-          .eq('id', productId)
-          .eq('business_id', businessId);
-        console.log(`📦 Stock updated: product ${productId} → ${newStock}`);
-      }
+        .in('id', productIds);
+      await Promise.all(
+        (prods || []).map((prod: any) => {
+          const qty = qtyByProduct.get(prod.id) || 0;
+          const newStock = Math.max(0, Number(prod.stock || 0) - qty);
+          return supabaseAdmin
+            .from('products')
+            .update({ stock: newStock })
+            .eq('id', prod.id)
+            .eq('business_id', businessId);
+        }),
+      );
     }
 
     return c.json({ success: true, sale: data });
