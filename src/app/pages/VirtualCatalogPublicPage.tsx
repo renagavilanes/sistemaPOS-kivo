@@ -353,18 +353,19 @@ export default function VirtualCatalogPublicPage() {
         <div className="mx-auto w-full max-w-6xl px-4 py-3 sm:py-3.5">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-3 min-w-0">
-              <button
-                type="button"
-                onClick={() => {
-                  if (mobileStep === 'checkout') setMobileStep('cart');
-                  else if (mobileStep === 'cart') setMobileStep('products');
-                  else window.history.back();
-                }}
-                className="lg:hidden h-9 w-9 rounded-xl border border-white/20 bg-white/10 hover:bg-white/15 text-white flex items-center justify-center flex-shrink-0 active:scale-[0.98]"
-                aria-label="Volver"
-              >
-                <ArrowLeft className="h-4 w-4" />
-              </button>
+              {mobileStep !== 'products' && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (mobileStep === 'checkout') setMobileStep('cart');
+                    else setMobileStep('products');
+                  }}
+                  className="lg:hidden h-9 w-9 rounded-xl border border-white/20 bg-white/10 hover:bg-white/15 text-white flex items-center justify-center flex-shrink-0 active:scale-[0.98]"
+                  aria-label="Volver"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                </button>
+              )}
 
               <div className="h-10 w-10 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
                 {data.business.logoUrl ? (
