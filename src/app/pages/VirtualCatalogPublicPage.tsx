@@ -399,10 +399,10 @@ export default function VirtualCatalogPublicPage() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:py-5 grid grid-cols-1 lg:grid-cols-[1fr_420px] lg:items-start gap-4">
-        <div className="space-y-4 lg:order-1">
-          <div className={`bg-white rounded-2xl border border-gray-200 p-4 ${mobileStep !== 'products' ? 'hidden lg:block' : ''}`}>
-            <div className="space-y-3">
+      <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:py-5 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start gap-4 overflow-x-hidden">
+        <div className="space-y-4 lg:order-1 min-w-0">
+          <div className={`bg-white rounded-2xl border border-gray-200 p-4 min-w-0 ${mobileStep !== 'products' ? 'hidden lg:block' : ''}`}>
+            <div className="space-y-3 min-w-0">
               <div className="space-y-2">
                 <Label>Buscar</Label>
                 <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Buscar producto..." className="h-10" />
@@ -412,7 +412,7 @@ export default function VirtualCatalogPublicPage() {
                   <Label>Categorías</Label>
                   <div
                     ref={categoryScrollerRef}
-                    className="flex gap-2 overflow-x-auto overscroll-x-contain snap-x snap-mandatory pb-0.5 -mx-1 px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                    className="flex w-full min-w-0 max-w-full gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-0.5 [scrollbar-width:thin]"
                   >
                     {categories.map((cat) => (
                       <button
@@ -420,7 +420,7 @@ export default function VirtualCatalogPublicPage() {
                         type="button"
                         data-active-category={selectedCategory === cat ? 'true' : undefined}
                         onClick={() => setSelectedCategory(cat)}
-                        className={`shrink-0 snap-start whitespace-nowrap rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
+                        className={`shrink-0 whitespace-nowrap rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
                           selectedCategory === cat ? 'bg-[#272B36] text-white border-[#272B36]' : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50'
                         }`}
                       >
@@ -434,7 +434,7 @@ export default function VirtualCatalogPublicPage() {
           </div>
 
           <div
-            className={`grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 ${
+            className={`grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 min-w-0 ${
               mobileStep !== 'products' ? 'hidden lg:grid' : ''
             }`}
           >
@@ -731,7 +731,7 @@ export default function VirtualCatalogPublicPage() {
         </div>
 
         {/* Desktop: compacto; scroll interno del carrito solo si WhatsApp llega al pie del viewport */}
-        <div className="hidden lg:flex lg:flex-col lg:order-2 lg:sticky lg:top-[4.75rem] lg:max-h-[calc(100dvh-5.5rem)] lg:self-start gap-4 overflow-hidden">
+        <div className="hidden lg:flex lg:flex-col lg:order-2 lg:sticky lg:top-[4.75rem] lg:w-[420px] lg:max-w-[420px] lg:max-h-[calc(100dvh-5.5rem)] lg:self-start gap-4 overflow-hidden">
           <div className="bg-white rounded-2xl border border-gray-200 p-4 flex flex-col min-h-0 flex-1 overflow-hidden">
             <div className="flex items-center justify-between shrink-0">
               <h2 className="text-base font-semibold text-gray-900">Carrito</h2>
