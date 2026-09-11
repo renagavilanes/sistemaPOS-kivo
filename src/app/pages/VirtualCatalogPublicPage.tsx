@@ -718,8 +718,8 @@ export default function VirtualCatalogPublicPage() {
           </div>
         </div>
 
-        {/* Desktop column: anclada al viewport; el listado del carrito hace scroll interno */}
-        <div className="hidden lg:flex lg:flex-col lg:order-2 lg:sticky lg:top-[4.75rem] lg:h-[calc(100dvh-5.5rem)] lg:self-start gap-4 overflow-hidden">
+        {/* Desktop: compacto; scroll interno del carrito solo si WhatsApp llega al pie del viewport */}
+        <div className="hidden lg:flex lg:flex-col lg:order-2 lg:sticky lg:top-[4.75rem] lg:max-h-[calc(100dvh-5.5rem)] lg:self-start gap-4 overflow-hidden">
           <div className="bg-white rounded-2xl border border-gray-200 p-4 flex flex-col min-h-0 flex-1 overflow-hidden">
             <div className="flex items-center justify-between shrink-0">
               <h2 className="text-base font-semibold text-gray-900">Carrito</h2>
@@ -789,8 +789,8 @@ export default function VirtualCatalogPublicPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl border border-gray-200 p-4 flex flex-col min-h-0 shrink-0 max-h-[min(52vh,28rem)]">
-            <div className="space-y-4 min-h-0 overflow-y-auto overscroll-contain pr-0.5">
+          <div className="bg-white rounded-2xl border border-gray-200 p-4 flex flex-col min-h-0 shrink-0">
+            <div className="space-y-4">
               <div className="space-y-2">
                 <Label>Método de entrega</Label>
                 <div className="grid grid-cols-2 gap-2">
