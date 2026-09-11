@@ -472,7 +472,7 @@ export default function VirtualCatalogPublicPage() {
                         className="h-full w-full object-cover object-center"
                       />
                     </div>
-                    <div className="sm:hidden h-20 w-full bg-gray-100 overflow-hidden">
+                    <div className="sm:hidden relative h-[6.5rem] w-full shrink-0 overflow-hidden bg-gray-100">
                       <LazyProductImage
                         fillParent
                         productId={p.id}
