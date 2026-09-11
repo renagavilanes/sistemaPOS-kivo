@@ -192,8 +192,8 @@ export function MobileCartSheet({
               <div className="space-y-2">
                 <div className="flex justify-between text-sm text-gray-600">
                   <span>Total productos:</span>
-                  <span className="font-medium text-gray-900">
-                    ${items.reduce((sum, item) => sum + item.quantity, 0)}
+                  <span className="font-medium text-gray-900 tabular-nums">
+                    {items.reduce((sum, item) => sum + item.quantity, 0)}
                   </span>
                 </div>
                 <Separator />
