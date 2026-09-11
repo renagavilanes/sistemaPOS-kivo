@@ -72,7 +72,7 @@ export default function MorePage() {
         case '/settings':
           return perms.settings?.access === true;
         case '/catalog/settings':
-          return perms.settings?.access === true;
+          return perms.catalog?.view === true;
         default:
           return true;
       }

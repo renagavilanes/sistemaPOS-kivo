@@ -64,6 +64,7 @@ const getPermissionLabel = (key: string) => {
     employees: 'Empleados',
     settings: 'Configuración',
     contacts: 'Contactos',
+    catalog: 'Catálogo',
   };
   return labels[key] || key;
 };
@@ -93,6 +94,7 @@ const ADMIN_PERMISSIONS = {
   employees: { view: true, create: true, edit: true, delete: true },
   settings: { access: true },
   contacts: { view: true, create: true, edit: true },
+  catalog: { view: true, edit: true },
 };
 
 export default function EmployeesPage() {
@@ -108,6 +110,7 @@ export default function EmployeesPage() {
   const canCreate = isCurrentUserOwner || empPerms.create === true;
   const canEdit   = isCurrentUserOwner || empPerms.edit   === true;
   const canDelete = isCurrentUserOwner || empPerms.delete === true;
+  const canEditOwnerName = isCurrentUserOwner;
   // ─────────────────────────────────────────────────────────────────────────
 
   const [employees, setEmployees] = useState<Employee[]>([]);
@@ -231,6 +234,10 @@ export default function EmployeesPage() {
   const handleSaveEmployee = async () => {
     // Si estamos editando al propietario, solo validar nombre
     if (editingEmployee?.isOwner) {
+      if (!isCurrentUserOwner) {
+        toast.error('Solo el dueño del negocio puede editar este nombre');
+        return;
+      }
       if (!employeeName) {
         toast.error('Por favor ingresa un nombre');
         return;
@@ -613,7 +620,7 @@ export default function EmployeesPage() {
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center justify-end gap-2">
-                          {canEdit && (
+                          {((employee.isOwner && canEditOwnerName) || (!employee.isOwner && canEdit)) && (
                             <Button
                               variant="ghost"
                               size="sm"
@@ -674,8 +681,11 @@ export default function EmployeesPage() {
             {filteredEmployees.map((employee) => (
               <div
                 key={employee.id}
-                className={`bg-white rounded-lg border p-4 ${canEdit ? 'cursor-pointer' : ''}`}
-                onClick={() => canEdit && handleEditEmployee(employee)}
+                className={`bg-white rounded-lg border p-4 ${((employee.isOwner && canEditOwnerName) || (!employee.isOwner && canEdit)) ? 'cursor-pointer' : ''}`}
+                onClick={() => {
+                  if (employee.isOwner && canEditOwnerName) handleEditEmployee(employee);
+                  else if (!employee.isOwner && canEdit) handleEditEmployee(employee);
+                }}
               >
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex-1">
@@ -774,7 +784,11 @@ export default function EmployeesPage() {
                 <Input
                   placeholder="Ej: Juan Pérez"
                   value={employeeName}
-                  onChange={(e) => setEmployeeName(e.target.value)}
+                  onChange={(e) => {
+                    if (editingEmployee?.isOwner && !canEditOwnerName) return;
+                    setEmployeeName(e.target.value);
+                  }}
+                  readOnly={Boolean(editingEmployee?.isOwner && !canEditOwnerName)}
                   className="h-12"
                 />
               </div>
@@ -863,14 +877,10 @@ export default function EmployeesPage() {
                   </div>
                   <div className="space-y-3">
                     {/* Lista fija de módulos para garantizar que siempre aparezcan todos, incluso si faltan en BD */}
-                    {(['sales', 'products', 'movements', 'contacts', 'reports', 'employees', 'settings'] as const).map((moduleKey) => {
+                    {(['sales', 'products', 'movements', 'contacts', 'catalog', 'employees'] as const).map((moduleKey) => {
                       const modulePermissions = (customPermissions as any)[moduleKey] ?? {};
-                      // El módulo "reports" está integrado en Movimientos, no se muestra aquí
-                      // El módulo "settings" es solo para el owner, no se expone a empleados
-                      if (moduleKey === 'reports' || moduleKey === 'settings') return null;
                       return (
                       <div key={moduleKey} className="border rounded-lg overflow-hidden">
-                        {(moduleKey === 'reports' || moduleKey === 'settings') ? null : (<>
                         <div className="bg-gray-100 px-3 py-2 border-b">
                           <span className="text-sm font-semibold text-gray-900">
                             {getPermissionLabel(moduleKey)}
@@ -883,12 +893,21 @@ export default function EmployeesPage() {
                               ? (['view', 'edit', 'delete', 'export', 'reports'] as const).map(k => [k, (modulePermissions as any)[k] ?? false] as [string, boolean])
                               : moduleKey === 'contacts'
                               ? (['view', 'create', 'edit'] as const).map(k => [k, (modulePermissions as any)[k] ?? false] as [string, boolean])
+                              : moduleKey === 'products'
+                              ? (['view', 'edit', 'create', 'delete'] as const).map(k => [k, (modulePermissions as any)[k] ?? false] as [string, boolean])
+                              : moduleKey === 'employees'
+                              ? (['view', 'edit', 'create', 'delete'] as const).map(k => [k, (modulePermissions as any)[k] ?? false] as [string, boolean])
+                              : moduleKey === 'catalog'
+                              ? (['view', 'edit'] as const).map(k => [k, (modulePermissions as any)[k] ?? false] as [string, boolean])
                               : Object.entries(modulePermissions)
                             )
                             .map(([actionKey, actionValue]) => {
                               const salesCreate = (customPermissions as any).sales?.create ?? false;
                               const movementsView = (customPermissions as any).movements?.view ?? false;
                               const contactsView = (customPermissions as any).contacts?.view ?? false;
+                              const productsView = (customPermissions as any).products?.view ?? false;
+                              const employeesView = (customPermissions as any).employees?.view ?? false;
+                              const catalogView = (customPermissions as any).catalog?.view ?? false;
 
                               // Ventas: edit y createExpense dependen de create
                               const isSalesEdit = moduleKey === 'sales' && actionKey === 'edit';
@@ -899,11 +918,17 @@ export default function EmployeesPage() {
 
                               // Contactos: create y edit dependen de view
                               const isContactsDependant = moduleKey === 'contacts' && (actionKey === 'create' || actionKey === 'edit');
+                              const isProductsDependant = moduleKey === 'products' && (actionKey === 'edit' || actionKey === 'create' || actionKey === 'delete');
+                              const isEmployeesDependant = moduleKey === 'employees' && (actionKey === 'edit' || actionKey === 'create' || actionKey === 'delete');
+                              const isCatalogDependant = moduleKey === 'catalog' && actionKey === 'edit';
 
                               const isDisabled =
                                 ((isSalesEdit || isSalesCreateExpense) && !salesCreate) ||
                                 (isMovementsDependant && !movementsView) ||
-                                (isContactsDependant && !contactsView);
+                                (isContactsDependant && !contactsView) ||
+                                (isProductsDependant && !productsView) ||
+                                (isEmployeesDependant && !employeesView) ||
+                                (isCatalogDependant && !catalogView);
 
                               // Descripciones por acción y módulo
                               const getDescription = () => {
@@ -920,6 +945,22 @@ export default function EmployeesPage() {
                                   if (actionKey === 'view') return 'Acceso a la pantalla de contactos';
                                   if (actionKey === 'create') return 'Puede agregar nuevos clientes y proveedores';
                                   if (actionKey === 'edit') return 'Puede editar los datos de un contacto';
+                                }
+                                if (moduleKey === 'products') {
+                                  if (actionKey === 'view') return 'Acceso a la pantalla de inventario';
+                                  if (actionKey === 'edit') return 'Puede modificar precio, costo, stock y datos del producto';
+                                  if (actionKey === 'create') return 'Puede agregar productos al inventario';
+                                  if (actionKey === 'delete') return 'Puede eliminar productos';
+                                }
+                                if (moduleKey === 'employees') {
+                                  if (actionKey === 'view') return 'Acceso a la pantalla de empleados';
+                                  if (actionKey === 'edit') return 'Puede editar empleados (no el nombre del propietario)';
+                                  if (actionKey === 'create') return 'Puede invitar empleados';
+                                  if (actionKey === 'delete') return 'Puede eliminar empleados';
+                                }
+                                if (moduleKey === 'catalog') {
+                                  if (actionKey === 'view') return 'Puede ver el catálogo virtual y compartir enlace/QR';
+                                  if (actionKey === 'edit') return 'Puede cambiar opciones y guardar la configuración';
                                 }
                                 return null;
                               };
@@ -977,6 +1018,40 @@ export default function EmployeesPage() {
                                             edit: newView ? (prev as any).contacts?.edit ?? false : false,
                                           },
                                         }));
+                                      } else if (moduleKey === 'products' && actionKey === 'view') {
+                                        const newView = !(actionValue as boolean);
+                                        setCustomPermissions(prev => ({
+                                          ...prev,
+                                          products: {
+                                            ...(prev as any).products,
+                                            view: newView,
+                                            edit: newView ? (prev as any).products?.edit ?? false : false,
+                                            create: newView ? (prev as any).products?.create ?? false : false,
+                                            delete: newView ? (prev as any).products?.delete ?? false : false,
+                                          },
+                                        }));
+                                      } else if (moduleKey === 'employees' && actionKey === 'view') {
+                                        const newView = !(actionValue as boolean);
+                                        setCustomPermissions(prev => ({
+                                          ...prev,
+                                          employees: {
+                                            ...(prev as any).employees,
+                                            view: newView,
+                                            edit: newView ? (prev as any).employees?.edit ?? false : false,
+                                            create: newView ? (prev as any).employees?.create ?? false : false,
+                                            delete: newView ? (prev as any).employees?.delete ?? false : false,
+                                          },
+                                        }));
+                                      } else if (moduleKey === 'catalog' && actionKey === 'view') {
+                                        const newView = !(actionValue as boolean);
+                                        setCustomPermissions(prev => ({
+                                          ...prev,
+                                          catalog: {
+                                            ...(prev as any).catalog,
+                                            view: newView,
+                                            edit: newView ? (prev as any).catalog?.edit ?? false : false,
+                                          },
+                                        }));
                                       } else {
                                         setCustomPermissions(prev => ({
                                           ...prev,
@@ -992,9 +1067,8 @@ export default function EmployeesPage() {
                               );
                             })}
                         </div>
-                        </>)}
                       </div>
-                      )
+                      );
                     })}
                   </div>
                   <p className="text-xs text-gray-500">

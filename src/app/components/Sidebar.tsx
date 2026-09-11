@@ -81,7 +81,7 @@ export function Sidebar() {
         case '/settings':
           return perms.settings?.access === true;
         case '/catalog/settings':
-          return perms.settings?.access === true;
+          return perms.catalog?.view === true;
         case '/more':
           return true;
         default:

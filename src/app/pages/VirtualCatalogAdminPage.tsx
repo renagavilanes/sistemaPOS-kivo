@@ -34,13 +34,17 @@ function RadioRow(props: {
   current: OutOfStockMode;
   label: string;
   onPick: (v: OutOfStockMode) => void;
+  disabled?: boolean;
 }) {
   const active = props.current === props.value;
   return (
     <button
       type="button"
+      disabled={props.disabled}
       onClick={() => props.onPick(props.value)}
       className={`w-full text-left rounded-xl border px-3 py-2 text-sm transition-colors ${
+        props.disabled ? 'opacity-60 cursor-default' : ''
+      } ${
         active ? 'border-[#272B36] bg-gray-50' : 'border-gray-200 hover:bg-gray-50'
       }`}
     >
@@ -54,7 +58,9 @@ export default function VirtualCatalogAdminPage() {
   const { currentBusiness: business } = useBusiness();
 
   const isOwner = business?.role === 'owner' || business?.permissions?.all === true;
-  const canAccessSettings = isOwner || business?.permissions?.settings?.access === true;
+  const catalogPerms = business?.permissions?.catalog || {};
+  const canViewCatalog = isOwner || catalogPerms.view === true;
+  const canEditCatalog = isOwner || catalogPerms.edit === true;
 
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -75,8 +81,8 @@ export default function VirtualCatalogAdminPage() {
 
   useEffect(() => {
     if (!business?.id) return;
-    if (!canAccessSettings) {
-      toast.error('No tienes permiso para configurar el catálogo');
+    if (!canViewCatalog) {
+      toast.error('No tienes permiso para ver el catálogo');
       navigate('/sales', { replace: true });
       return;
     }
@@ -104,7 +110,7 @@ export default function VirtualCatalogAdminPage() {
     };
 
     void run();
-  }, [business?.id, business?.name, canAccessSettings, navigate]);
+  }, [business?.id, business?.name, canViewCatalog, navigate]);
 
   const resolveSlugForSave = async (): Promise<string | null> => {
     if (!business?.id) return null;
@@ -124,6 +130,10 @@ export default function VirtualCatalogAdminPage() {
 
   const handleSave = async () => {
     if (!business?.id) return;
+    if (!canEditCatalog) {
+      toast.error('No tienes permiso para editar el catálogo');
+      return;
+    }
 
     setSaving(true);
     try {
@@ -348,7 +358,8 @@ export default function VirtualCatalogAdminPage() {
                   <span className="text-sm text-gray-700 hidden sm:inline">{cfg.enabled ? 'Activo' : 'Inactivo'}</span>
                   <Switch
                     checked={cfg.enabled}
-                    onCheckedChange={(v) => setCfg((c) => ({ ...c, enabled: Boolean(v) }))}
+                    disabled={!canEditCatalog}
+                    onCheckedChange={(v) => canEditCatalog && setCfg((c) => ({ ...c, enabled: Boolean(v) }))}
                   />
                 </div>
               </div>
@@ -386,19 +397,22 @@ export default function VirtualCatalogAdminPage() {
                     value="show"
                     current={cfg.outOfStockMode}
                     label="Mostrar normalmente"
-                    onPick={(v) => setCfg((c) => ({ ...c, outOfStockMode: v }))}
+                    disabled={!canEditCatalog}
+                    onPick={(v) => canEditCatalog && setCfg((c) => ({ ...c, outOfStockMode: v }))}
                   />
                   <RadioRow
                     value="hide"
                     current={cfg.outOfStockMode}
                     label="No mostrar en el catálogo"
-                    onPick={(v) => setCfg((c) => ({ ...c, outOfStockMode: v }))}
+                    disabled={!canEditCatalog}
+                    onPick={(v) => canEditCatalog && setCfg((c) => ({ ...c, outOfStockMode: v }))}
                   />
                   <RadioRow
                     value="mark_unavailable"
                     current={cfg.outOfStockMode}
                     label="Mostrar como “No disponible”"
-                    onPick={(v) => setCfg((c) => ({ ...c, outOfStockMode: v }))}
+                    disabled={!canEditCatalog}
+                    onPick={(v) => canEditCatalog && setCfg((c) => ({ ...c, outOfStockMode: v }))}
                   />
                 </div>
 
@@ -414,7 +428,8 @@ export default function VirtualCatalogAdminPage() {
                     </div>
                     <Switch
                       checked={cfg.delivery.pickup}
-                      onCheckedChange={(v) => setCfg((c) => ({ ...c, delivery: { ...c.delivery, pickup: Boolean(v) } }))}
+                      disabled={!canEditCatalog}
+                      onCheckedChange={(v) => canEditCatalog && setCfg((c) => ({ ...c, delivery: { ...c.delivery, pickup: Boolean(v) } }))}
                     />
                   </div>
 
@@ -425,8 +440,9 @@ export default function VirtualCatalogAdminPage() {
                     </div>
                     <Switch
                       checked={cfg.delivery.homeDelivery}
+                      disabled={!canEditCatalog}
                       onCheckedChange={(v) =>
-                        setCfg((c) => ({
+                        canEditCatalog && setCfg((c) => ({
                           ...c,
                           delivery: { ...c.delivery, homeDelivery: Boolean(v) },
                         }))
@@ -442,12 +458,14 @@ export default function VirtualCatalogAdminPage() {
                         min={0}
                         step="0.01"
                         value={String(cfg.delivery.homeDeliveryFee ?? 0)}
-                        onChange={(e) =>
+                        readOnly={!canEditCatalog}
+                        onChange={(e) => {
+                          if (!canEditCatalog) return;
                           setCfg((c) => ({
                             ...c,
                             delivery: { ...c.delivery, homeDeliveryFee: Number(e.target.value || 0) },
-                          }))
-                        }
+                          }));
+                        }}
                         className="h-10"
                       />
                       <p className="text-xs text-gray-500">El cliente lo verá sumado al total.</p>
@@ -455,6 +473,7 @@ export default function VirtualCatalogAdminPage() {
                   )}
                 </div>
 
+                {canEditCatalog && (
                 <div className="p-4 border-t bg-gray-50/80">
                   <Button
                     type="button"
@@ -465,6 +484,7 @@ export default function VirtualCatalogAdminPage() {
                     {saving ? 'Guardando…' : 'Guardar cambios'}
                   </Button>
                 </div>
+                )}
               </div>
             </div>
 
@@ -473,6 +493,7 @@ export default function VirtualCatalogAdminPage() {
         )}
       </div>
 
+      {canEditCatalog && (
       <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 z-10">
         <Button
           type="button"
@@ -483,6 +504,7 @@ export default function VirtualCatalogAdminPage() {
           {saving ? 'Guardando…' : 'Guardar cambios'}
         </Button>
       </div>
+      )}
 
       <Dialog open={qrPreviewOpen} onOpenChange={setQrPreviewOpen}>
         <DialogContent className="sm:max-w-md">

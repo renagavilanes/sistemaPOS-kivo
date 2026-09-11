@@ -92,6 +92,11 @@ export interface ContactsPermissions {
   edit: boolean;      // Editar contactos existentes
 }
 
+export interface CatalogPermissions {
+  view: boolean;      // Ver configuración del catálogo
+  edit: boolean;      // Modificar inputs, checks y guardar
+}
+
 export interface EmployeePermissions {
   sales: SalesPermissions;
   expenses: ExpensesPermissions;
@@ -101,6 +106,7 @@ export interface EmployeePermissions {
   employees: EmployeesPermissions;
   settings: SettingsPermissions;
   contacts: ContactsPermissions;
+  catalog?: CatalogPermissions;
 }
 
 export interface Employee {

@@ -2861,7 +2861,7 @@ app.post("/make-server-3508045b/products", async (c) => {
     }
 
     const body = await c.req.json();
-    const { name, price, cost, stock, category, image } = body;
+    const { name, price, cost, stock, category, image, barcode, description, isActive } = body;
 
     if (!name || price === undefined) {
       return c.json({ error: 'Name and price are required' }, 400);
@@ -2876,28 +2876,72 @@ app.post("/make-server-3508045b/products", async (c) => {
       stock: stock || 0,
       category: category || 'Otros',
       image: image || '',
+      barcode,
+      description,
+      is_active: isActive,
     });
-
-    // Map database fields to frontend format
-    const mappedProduct = {
-      id: product.id,
-      businessId: product.business_id,
-      name: product.name,
-      price: product.price,
-      cost: product.cost || 0,
-      stock: product.stock || 0,
-      category: product.category || 'Otros',
-      image: product.image || '',
-      createdAt: product.created_at,
-      updatedAt: product.updated_at,
-    };
 
     return c.json({
       success: true,
-      product: mappedProduct,
+      product: mapProductRow(product),
     });
   } catch (error: any) {
     console.error('Error creating product:', error);
+    return c.json({ error: error.message || 'Internal server error' }, 500);
+  }
+});
+
+app.patch("/make-server-3508045b/products/:id", async (c) => {
+  try {
+    const businessId = await getBusinessIdFromRequest(c);
+    if (!businessId) {
+      return c.json({ error: 'Unauthorized' }, 401);
+    }
+    const id = c.req.param('id');
+    if (!id) {
+      return c.json({ error: 'Missing product id' }, 400);
+    }
+
+    const body = await c.req.json();
+    const updates: Record<string, unknown> = { updated_at: new Date().toISOString() };
+    if (body.name !== undefined) updates.name = body.name;
+    if (body.price !== undefined) updates.price = body.price;
+    if (body.cost !== undefined) updates.cost = body.cost;
+    if (body.stock !== undefined) updates.stock = body.stock;
+    if (body.category !== undefined) updates.category = body.category;
+    if (body.image !== undefined) updates.image = body.image;
+    if (body.barcode !== undefined) updates.barcode = body.barcode;
+    if (body.description !== undefined) updates.description = body.description;
+    if (body.isActive !== undefined) updates.is_active = body.isActive;
+
+    const product = await dbProducts.updateProduct(id, businessId, updates as any);
+    return c.json({ success: true, product: mapProductRow(product) });
+  } catch (error: any) {
+    if (error?.code === 'PGRST116') {
+      return c.json({ error: 'Producto no encontrado' }, 404);
+    }
+    console.error('Error updating product:', error);
+    return c.json({ error: error.message || 'Internal server error' }, 500);
+  }
+});
+
+app.delete("/make-server-3508045b/products/:id", async (c) => {
+  try {
+    const businessId = await getBusinessIdFromRequest(c);
+    if (!businessId) {
+      return c.json({ error: 'Unauthorized' }, 401);
+    }
+    const id = c.req.param('id');
+    if (!id) {
+      return c.json({ error: 'Missing product id' }, 400);
+    }
+    await dbProducts.deactivateProduct(id, businessId);
+    return c.json({ success: true });
+  } catch (error: any) {
+    if (error?.code === 'PGRST116') {
+      return c.json({ error: 'Producto no encontrado' }, 404);
+    }
+    console.error('Error deleting product:', error);
     return c.json({ error: error.message || 'Internal server error' }, 500);
   }
 });

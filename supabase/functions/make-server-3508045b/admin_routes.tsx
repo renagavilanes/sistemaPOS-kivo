@@ -158,6 +158,74 @@ export function registerAdminRoutes(app: any): void {
     } catch (e: any) { return c.json({ error: e.message }, 500); }
   });
 
+  app.patch("/make-server-3508045b/admin/expenses/:id", async (c: any) => {
+    try {
+      const businessId = c.req.header("X-Business-ID");
+      if (!businessId) return c.json({ error: "Missing X-Business-ID header" }, 400);
+      const id = c.req.param("id");
+      if (!id) return c.json({ error: "Missing expense id" }, 400);
+      const b = await c.req.json();
+      const upd: Record<string, any> = {};
+      if (b.notes !== undefined) upd.notes = b.notes;
+      if (b.category !== undefined) upd.category = b.category;
+      if (b.description !== undefined) upd.description = b.description;
+      if (b.amount !== undefined) upd.amount = Number(b.amount);
+      if (b.paymentMethod !== undefined) upd.payment_method = b.paymentMethod;
+      if (b.paymentStatus !== undefined) {
+        const rawStatus = String(b.paymentStatus).toLowerCase();
+        upd.payment_status =
+          rawStatus === "pending" || rawStatus === "debt" || rawStatus === "deuda"
+            ? "pending"
+            : rawStatus === "partial"
+              ? "partial"
+              : "paid";
+      }
+      if (b.createdAt !== undefined) upd.created_at = b.createdAt;
+      if (b.receiptImage !== undefined) upd.receipt_image = b.receiptImage;
+      if (Object.keys(upd).length === 0) {
+        return c.json({ error: "No fields to update" }, 400);
+      }
+      const { data, error } = await admin
+        .from("expenses")
+        .update(upd)
+        .eq("id", id)
+        .eq("business_id", businessId)
+        .select()
+        .single();
+      if (error) return c.json({ error: error.message }, 500);
+      return c.json({ success: true, expense: data });
+    } catch (e: any) { return c.json({ error: e.message }, 500); }
+  });
+
+  app.post("/make-server-3508045b/admin/categories", async (c: any) => {
+    try {
+      const businessId = c.req.header("X-Business-ID");
+      if (!businessId) return c.json({ error: "Missing X-Business-ID header" }, 400);
+      const b = await c.req.json();
+      const name = String(b.name || "").trim();
+      if (!name) return c.json({ error: "Name is required" }, 400);
+      const { data, error } = await admin.from("categories").insert({
+        business_id: businessId,
+        name,
+        color: b.color || "#3B82F6",
+      }).select().single();
+      if (error) return c.json({ error: error.message }, 500);
+      return c.json({ success: true, category: data });
+    } catch (e: any) { return c.json({ error: e.message }, 500); }
+  });
+
+  app.delete("/make-server-3508045b/admin/categories/:id", async (c: any) => {
+    try {
+      const businessId = c.req.header("X-Business-ID");
+      if (!businessId) return c.json({ error: "Missing X-Business-ID header" }, 400);
+      const id = c.req.param("id");
+      if (!id) return c.json({ error: "Missing category id" }, 400);
+      const { error } = await admin.from("categories").delete().eq("id", id).eq("business_id", businessId);
+      if (error) return c.json({ error: error.message }, 500);
+      return c.json({ success: true });
+    } catch (e: any) { return c.json({ error: e.message }, 500); }
+  });
+
   // ════════════════════════════════════════════════════════════════════════════
   // EMPLOYEE ROUTES — All use SERVICE_ROLE_KEY to bypass RLS
   // ════════════════════════════════════════════════════════════════════════════

@@ -838,17 +838,13 @@ export default function ContactsPage() {
             </div>
 
             {/* Actions */}
-            <div className="sticky bottom-0 left-0 right-0 flex gap-3 pt-4 pb-4 bg-white border-t -mx-6 px-6 mt-6">
+            {/* Actions */}
+            <div className="sticky bottom-0 left-0 right-0 pt-4 pb-[max(1rem,env(safe-area-inset-bottom))] bg-white border-t -mx-6 px-6 mt-6">
               <Button
-                type="button"
-                variant="outline"
-                onClick={handleCloseSheet}
-                className="flex-1"
+                type="submit"
+                className="w-full h-12 rounded-xl shadow-lg bg-gray-900 hover:bg-gray-800 text-white"
               >
-                Cancelar
-              </Button>
-              <Button type="submit" className="flex-1">
-                {editingContact ? 'Actualizar' : 'Crear'}
+                {editingContact ? 'Actualizar contacto' : 'Guardar contacto'}
               </Button>
             </div>
           </form>

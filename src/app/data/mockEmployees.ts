@@ -11,6 +11,7 @@ export const rolePermissions: Record<EmployeeRole, EmployeePermissions> = {
     employees: { view: true, create: true, edit: true, delete: true },
     settings: { access: true },
     contacts: { view: true, create: true, edit: true },
+    catalog: { view: true, edit: true },
   },
   Gerente: {
     sales: { view: true, create: true },
@@ -21,6 +22,7 @@ export const rolePermissions: Record<EmployeeRole, EmployeePermissions> = {
     employees: { view: true, create: false, edit: false, delete: false },
     settings: { access: false },
     contacts: { view: true, create: true, edit: true },
+    catalog: { view: true, edit: true },
   },
   Cajero: {
     sales: { view: true, create: true },
@@ -31,6 +33,7 @@ export const rolePermissions: Record<EmployeeRole, EmployeePermissions> = {
     employees: { view: false, create: false, edit: false, delete: false },
     settings: { access: false },
     contacts: { view: false, create: false, edit: false },
+    catalog: { view: false, edit: false },
   },
   Inventario: {
     sales: { view: false, create: false },
@@ -41,6 +44,7 @@ export const rolePermissions: Record<EmployeeRole, EmployeePermissions> = {
     employees: { view: false, create: false, edit: false, delete: false },
     settings: { access: false },
     contacts: { view: false, create: false, edit: false },
+    catalog: { view: false, edit: false },
   },
   'Solo lectura': {
     sales: { view: true, create: false },
@@ -51,6 +55,7 @@ export const rolePermissions: Record<EmployeeRole, EmployeePermissions> = {
     employees: { view: false, create: false, edit: false, delete: false },
     settings: { access: false },
     contacts: { view: true, create: false, edit: false },
+    catalog: { view: false, edit: false },
   },
 };
 

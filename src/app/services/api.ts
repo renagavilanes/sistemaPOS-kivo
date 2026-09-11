@@ -238,116 +238,124 @@ export async function getProductById(businessId: string, productId: string): Pro
 }
 
 export async function createProduct(businessId: string, product: Omit<Product, 'id' | 'businessId' | 'createdAt' | 'updatedAt'>): Promise<Product> {
-  console.log('🔵 [API DIRECT] Creating product:', product.name);
-  
-  // Match EXACTLY with SQL schema (lines 10-24 of SUPABASE_SETUP.sql)
-  const insertData: any = {
-    business_id: businessId,
-    name: product.name,
-    price: product.price,
-    cost: product.cost || 0,
-    stock: product.stock || 0,
-    category: product.category || 'Sin categoría',
-  };
-  
-  // Optional fields from SQL schema
-  if (product.image) insertData.image = product.image;
-  if (product.barcode) insertData.barcode = product.barcode;
-  if (product.description) insertData.description = product.description;
-  if (product.isActive !== undefined) insertData.is_active = product.isActive;
-  
-  const { data, error } = await supabase
-    .from('products')
-    .insert(insertData)
-    .select()
-    .single();
+  console.log('🔵 [API] Creating product via Edge Function:', product.name);
 
-  if (error) {
-    console.error('❌ [API DIRECT] Error creating product:', error);
-    throw new Error(normalizeAuthErrorMessage(error.message));
+  const accessToken = await getAccessToken();
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/products`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+        'X-Business-ID': businessId,
+      },
+      body: JSON.stringify({
+        name: product.name,
+        price: product.price,
+        cost: product.cost || 0,
+        stock: product.stock || 0,
+        category: product.category || 'Sin categoría',
+        image: product.image || '',
+        barcode: product.barcode,
+        description: product.description,
+        isActive: product.isActive,
+      }),
+    },
+  );
+
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    console.warn('⚠️ [API] Edge Function create product failed, falling back to direct insert:', body);
+    const insertData: any = {
+      business_id: businessId,
+      name: product.name,
+      price: product.price,
+      cost: product.cost || 0,
+      stock: product.stock || 0,
+      category: product.category || 'Sin categoría',
+    };
+    if (product.image) insertData.image = product.image;
+    if (product.barcode) insertData.barcode = product.barcode;
+    if (product.description) insertData.description = product.description;
+    if (product.isActive !== undefined) insertData.is_active = product.isActive;
+    const { data, error } = await supabase.from('products').insert(insertData).select().single();
+    if (error) throw new Error(normalizeAuthErrorMessage(error.message));
+    return mapProductFromApi(data);
   }
-
-  console.log('✅ [API DIRECT] Product created:', data.id);
-  
-  return {
-    id: data.id,
-    businessId: data.business_id,
-    name: data.name,
-    price: data.price,
-    cost: data.cost,
-    stock: data.stock,
-    category: data.category,
-    image: data.image,
-    barcode: data.barcode,
-    description: data.description,
-    isActive: data.is_active,
-    createdAt: data.created_at,
-    updatedAt: data.updated_at,
-  };
+  const { product: p } = body as { product?: any };
+  if (!p) throw new Error('Respuesta inválida del servidor');
+  console.log('✅ [API] Product created:', p.id);
+  return mapProductFromApi(p);
 }
 
 export async function updateProduct(productId: string, businessId: string, updates: Partial<Product>): Promise<Product> {
-  console.log('🔵 [API DIRECT] Updating product:', productId);
-  
-  const updateData: any = {};
-  if (updates.name !== undefined) updateData.name = updates.name;
-  if (updates.price !== undefined) updateData.price = updates.price;
-  if (updates.cost !== undefined) updateData.cost = updates.cost;
-  if (updates.stock !== undefined) updateData.stock = updates.stock;
-  if (updates.category !== undefined) updateData.category = updates.category;
-  if (updates.image !== undefined) updateData.image = updates.image;
-  if (updates.barcode !== undefined) updateData.barcode = updates.barcode;
-  if (updates.description !== undefined) updateData.description = updates.description;
-  if (updates.isActive !== undefined) updateData.is_active = updates.isActive;
-  updateData.updated_at = new Date().toISOString();
+  console.log('🔵 [API] Updating product via Edge Function:', productId);
 
-  const { data, error } = await supabase
-    .from('products')
-    .update(updateData)
-    .eq('id', productId)
-    .eq('business_id', businessId)
-    .select()
-    .single();
+  const accessToken = await getAccessToken();
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/products/${encodeURIComponent(productId)}`,
+    {
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+        'X-Business-ID': businessId,
+      },
+      body: JSON.stringify(updates),
+    },
+  );
 
-  if (error) {
-    console.error('❌ [API DIRECT] Error updating product:', error);
-    throw new Error(normalizeAuthErrorMessage(error.message));
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    console.warn('⚠️ [API] Edge Function update product failed, falling back to direct update:', body);
+    const updateData: any = { updated_at: new Date().toISOString() };
+    if (updates.name !== undefined) updateData.name = updates.name;
+    if (updates.price !== undefined) updateData.price = updates.price;
+    if (updates.cost !== undefined) updateData.cost = updates.cost;
+    if (updates.stock !== undefined) updateData.stock = updates.stock;
+    if (updates.category !== undefined) updateData.category = updates.category;
+    if (updates.image !== undefined) updateData.image = updates.image;
+    if (updates.barcode !== undefined) updateData.barcode = updates.barcode;
+    if (updates.description !== undefined) updateData.description = updates.description;
+    if (updates.isActive !== undefined) updateData.is_active = updates.isActive;
+    const { data, error } = await supabase
+      .from('products')
+      .update(updateData)
+      .eq('id', productId)
+      .eq('business_id', businessId)
+      .select()
+      .single();
+    if (error) throw new Error(normalizeAuthErrorMessage(error.message));
+    return mapProductFromApi(data);
   }
-
-  console.log('✅ [API DIRECT] Product updated');
-  
-  return {
-    id: data.id,
-    businessId: data.business_id,
-    name: data.name,
-    price: data.price,
-    cost: data.cost,
-    stock: data.stock,
-    category: data.category,
-    image: data.image,
-    barcode: data.barcode,
-    description: data.description,
-    isActive: data.is_active,
-    createdAt: data.created_at,
-    updatedAt: data.updated_at,
-  };
+  const { product: p } = body as { product?: any };
+  if (!p) throw new Error('Respuesta inválida del servidor');
+  console.log('✅ [API] Product updated');
+  return mapProductFromApi(p);
 }
 
 export async function deleteProduct(productId: string, businessId: string): Promise<void> {
-  console.log('🔵 [API DIRECT] Deleting product:', productId);
-  
-  const { error } = await supabase
-    .from('products')
-    .delete()
-    .eq('id', productId)
-    .eq('business_id', businessId);
+  console.log('🔵 [API] Deleting product via Edge Function:', productId);
 
-  if (error) {
-    console.error('❌ [API DIRECT] Error deleting product:', error);
-    throw new Error(normalizeAuthErrorMessage(error.message));
+  const accessToken = await getAccessToken();
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/products/${encodeURIComponent(productId)}`,
+    {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'X-Business-ID': businessId,
+      },
+    },
+  );
+
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}));
+    console.error('❌ [API] Error deleting product:', body);
+    throw new Error((body as any).error || `Error ${response.status} al eliminar producto`);
   }
-
-  console.log('✅ [API DIRECT] Product deleted');
+  console.log('✅ [API] Product deleted');
 }
 
 // ==================== CATEGORIES ====================
@@ -407,25 +415,34 @@ export async function getCategories(businessId: string): Promise<Category[]> {
 }
 
 export async function createCategory(businessId: string, category: Omit<Category, 'id' | 'businessId' | 'createdAt'>): Promise<Category> {
-  console.log('🔵 [API DIRECT] Creating category:', category.name);
+  console.log('🔵 [API] Creating category via Edge Function:', category.name);
 
-  const { data, error } = await supabase
-    .from('categories')
-    .insert({
-      business_id: businessId,
-      name: category.name,
-      color: category.color || '#3B82F6',
-    })
-    .select()
-    .single();
+  const accessToken = await getAccessToken();
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/admin/categories`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+        'X-Business-ID': businessId,
+      },
+      body: JSON.stringify({
+        name: category.name,
+        color: category.color || '#3B82F6',
+      }),
+    },
+  );
 
-  if (error) {
-    console.error('❌ [API DIRECT] Error creating category:', error);
-    throw new Error(normalizeAuthErrorMessage(error.message));
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    console.error('❌ [API] Error creating category:', body);
+    throw new Error((body as any).error || `Error ${response.status} al crear categoría`);
   }
+  const data = (body as any).category;
+  if (!data) throw new Error('Respuesta inválida del servidor');
+  console.log('✅ [API] Category created:', data.id);
 
-  console.log('✅ [API DIRECT] Category created:', data.id);
-  
   return {
     id: data.id,
     businessId: data.business_id,
@@ -467,20 +484,26 @@ export async function updateCategory(categoryId: string, businessId: string, upd
 }
 
 export async function deleteCategory(categoryId: string, businessId: string): Promise<void> {
-  console.log('🔵 [API DIRECT] Deleting category:', categoryId);
-  
-  const { error } = await supabase
-    .from('categories')
-    .delete()
-    .eq('id', categoryId)
-    .eq('business_id', businessId);
+  console.log('🔵 [API] Deleting category via Edge Function:', categoryId);
 
-  if (error) {
-    console.error('❌ [API DIRECT] Error deleting category:', error);
-    throw new Error(normalizeAuthErrorMessage(error.message));
+  const accessToken = await getAccessToken();
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/admin/categories/${encodeURIComponent(categoryId)}`,
+    {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'X-Business-ID': businessId,
+      },
+    },
+  );
+
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}));
+    console.error('❌ [API] Error deleting category:', body);
+    throw new Error((body as any).error || `Error ${response.status} al eliminar categoría`);
   }
-
-  console.log('✅ [API DIRECT] Category deleted');
+  console.log('✅ [API] Category deleted');
 }
 
 // ==================== CUSTOMERS ====================
@@ -1032,33 +1055,39 @@ export async function deleteExpense(expenseId: string, businessId: string): Prom
 }
 
 export async function updateExpense(expenseId: string, businessId: string, updates: Partial<Expense>): Promise<Expense> {
-  console.log('🔵 [API DIRECT] Updating expense:', expenseId);
-  
-  const updateData: any = {};
-  if (updates.notes !== undefined) updateData.notes = updates.notes;
-  if (updates.category !== undefined) updateData.category = updates.category;
-  if (updates.description !== undefined) updateData.description = updates.description;
-  if (updates.amount !== undefined) updateData.amount = updates.amount;
-  if (updates.paymentMethod !== undefined) updateData.payment_method = updates.paymentMethod;
-  if (updates.paymentStatus !== undefined) updateData.payment_status = updates.paymentStatus;
-  if (updates.createdAt !== undefined) updateData.created_at = updates.createdAt;
-  // No updated_at column in expenses table
+  console.log('🔵 [API] Updating expense via Edge Function:', expenseId);
 
-  const { data, error } = await supabase
-    .from('expenses')
-    .update(updateData)
-    .eq('id', expenseId)
-    .eq('business_id', businessId)
-    .select()
-    .single();
+  const accessToken = await getAccessToken();
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/admin/expenses/${encodeURIComponent(expenseId)}`,
+    {
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+        'X-Business-ID': businessId,
+      },
+      body: JSON.stringify({
+        notes: updates.notes,
+        category: updates.category,
+        description: updates.description,
+        amount: updates.amount,
+        paymentMethod: updates.paymentMethod,
+        paymentStatus: updates.paymentStatus,
+        createdAt: updates.createdAt,
+        receiptImage: updates.receiptImage,
+      }),
+    },
+  );
 
-  if (error) {
-    console.error('❌ [API DIRECT] Error updating expense:', error);
-    throw new Error(normalizeAuthErrorMessage(error.message));
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    console.error('❌ [API] Error updating expense:', body);
+    throw new Error((body as any).error || `Error ${response.status} al actualizar gasto`);
   }
-
-  console.log('✅ [API DIRECT] Expense updated');
-
+  const data = (body as any).expense;
+  if (!data) throw new Error('Respuesta inválida del servidor');
+  console.log('✅ [API] Expense updated');
   return mapExpenseRow(data);
 }
 

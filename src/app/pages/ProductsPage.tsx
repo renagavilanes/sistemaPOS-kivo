@@ -132,6 +132,13 @@ export default function ProductsPage() {
   const [loading, setLoading] = useState(false);
 
   const { currentBusiness, businesses, switchBusiness } = useBusiness();
+  const isCurrentUserOwner = currentBusiness?.role === 'owner' || currentBusiness?.permissions?.all === true;
+  const productPerms = isCurrentUserOwner
+    ? { view: true, create: true, edit: true, delete: true }
+    : (currentBusiness?.permissions?.products || {});
+  const canCreateProduct = isCurrentUserOwner || productPerms.create === true;
+  const canEditProduct = isCurrentUserOwner || productPerms.edit === true;
+  const canDeleteProduct = isCurrentUserOwner || productPerms.delete === true;
   const navigate = useNavigate();
   const [productsLoading, setProductsLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -492,6 +499,14 @@ export default function ProductsPage() {
 
   // Handle create/edit product
   const handleSaveProduct = async () => {
+    if (editingProduct && !canEditProduct) {
+      toast.error('No tienes permiso para editar productos');
+      return;
+    }
+    if (!editingProduct && !canCreateProduct) {
+      toast.error('No tienes permiso para crear productos');
+      return;
+    }
     if (!productName || !productPrice || !productCost || !productStock) {
       toast.error('Por favor completa todos los campos obligatorios');
       return;
@@ -694,6 +709,10 @@ export default function ProductsPage() {
 
   // ✅ Función para agregar categoría
   const handleAddCategory = async () => {
+    if (!canEditProduct) {
+      toast.error('No tienes permiso para editar el inventario');
+      return;
+    }
     console.log('🚨 [ADD CATEGORY] ========================================');
     console.log('🚨 [ADD CATEGORY] FUNCIÓN EJECUTADA');
     console.log('📝 Valor ingresado RAW:', `"${newCategoryName}"`);
@@ -736,6 +755,10 @@ export default function ProductsPage() {
 
   // ✅ Función para eliminar categoría
   const handleDeleteCategory = async (category: string) => {
+    if (!canEditProduct) {
+      toast.error('No tienes permiso para editar el inventario');
+      return;
+    }
     console.log('🗑️ Eliminando categoría:', category);
     
     if (!currentBusiness) {
@@ -905,6 +928,7 @@ export default function ProductsPage() {
                   <ClipboardList className="w-4 h-4 mr-2" />
                   Crear pedido
                 </Button>
+                {canCreateProduct && (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button className="flex-1 sm:flex-none bg-gray-900 hover:bg-gray-800">
@@ -935,6 +959,7 @@ export default function ProductsPage() {
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
+                )}
               </div>
             </div>
           </div>
@@ -1198,7 +1223,9 @@ export default function ProductsPage() {
                             type="number"
                             step="0.01"
                             value={product.price}
+                            readOnly={!canEditProduct}
                             onChange={(e) => {
+                              if (!canEditProduct) return;
                               const newPrice = parseFloat(e.target.value);
                               if (!isNaN(newPrice)) {
                                 setProducts(prev =>
@@ -1211,26 +1238,22 @@ export default function ProductsPage() {
                               }
                             }}
                             onBlur={async (e) => {
+                              if (!canEditProduct) return;
                               const newPrice = parseFloat(e.target.value);
-                              console.log('💾 Intentando guardar precio:', { productId: product.id, newPrice, originalPrice: product.price });
-                              if (!isNaN(newPrice)) {
-                                try {
-                                  const result = await updateProduct(product.id, { price: newPrice });
-                                  console.log('✅ Precio guardado:', result);
-                                  window.dispatchEvent(new Event('productsUpdated'));
-                                  toast.success('Precio actualizado');
-                                } catch (error) {
-                                  console.error('❌ Error al actualizar precio:', error);
-                                  toast.error('Error al guardar el precio');
-                                }
+                              if (isNaN(newPrice)) return;
+                              try {
+                                await updateProduct(product.id, { price: newPrice });
+                                window.dispatchEvent(new Event('productsUpdated'));
+                                toast.success('Precio actualizado');
+                              } catch (error) {
+                                console.error('❌ Error al actualizar precio:', error);
+                                toast.error('Error al guardar el precio');
                               }
                             }}
                             onKeyDown={(e) => {
-                              if (e.key === 'Enter') {
-                                e.currentTarget.blur();
-                              }
+                              if (e.key === 'Enter') e.currentTarget.blur();
                             }}
-                            className="h-9 w-full text-right pl-7"
+                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : ''}`}
                           />
                         </div>
                       </td>
@@ -1241,7 +1264,9 @@ export default function ProductsPage() {
                             type="number"
                             step="0.01"
                             value={product.cost}
+                            readOnly={!canEditProduct}
                             onChange={(e) => {
+                              if (!canEditProduct) return;
                               const newCost = parseFloat(e.target.value);
                               if (!isNaN(newCost)) {
                                 setProducts(prev =>
@@ -1254,26 +1279,22 @@ export default function ProductsPage() {
                               }
                             }}
                             onBlur={async (e) => {
+                              if (!canEditProduct) return;
                               const newCost = parseFloat(e.target.value);
-                              console.log('💾 Intentando guardar costo:', { productId: product.id, newCost, originalCost: product.cost });
-                              if (!isNaN(newCost)) {
-                                try {
-                                  const result = await updateProduct(product.id, { cost: newCost });
-                                  console.log('✅ Costo guardado:', result);
-                                  window.dispatchEvent(new Event('productsUpdated'));
-                                  toast.success('Costo actualizado');
-                                } catch (error) {
-                                  console.error('❌ Error al actualizar costo:', error);
-                                  toast.error('Error al guardar el costo');
-                                }
+                              if (isNaN(newCost)) return;
+                              try {
+                                await updateProduct(product.id, { cost: newCost });
+                                window.dispatchEvent(new Event('productsUpdated'));
+                                toast.success('Costo actualizado');
+                              } catch (error) {
+                                console.error('❌ Error al actualizar costo:', error);
+                                toast.error('Error al guardar el costo');
                               }
                             }}
                             onKeyDown={(e) => {
-                              if (e.key === 'Enter') {
-                                e.currentTarget.blur();
-                              }
+                              if (e.key === 'Enter') e.currentTarget.blur();
                             }}
-                            className="h-9 w-full text-right pl-7"
+                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : ''}`}
                           />
                         </div>
                       </td>
@@ -1292,7 +1313,9 @@ export default function ProductsPage() {
                         <Input
                           type="number"
                           value={product.stock}
+                          readOnly={!canEditProduct}
                           onChange={(e) => {
+                            if (!canEditProduct) return;
                             const newStock = parseInt(e.target.value);
                             if (!isNaN(newStock)) {
                               setProducts(prev =>
@@ -1305,30 +1328,27 @@ export default function ProductsPage() {
                             }
                           }}
                           onBlur={async (e) => {
+                            if (!canEditProduct) return;
                             const newStock = parseInt(e.target.value);
-                            console.log('💾 Intentando guardar stock:', { productId: product.id, newStock, originalStock: product.stock });
-                            if (!isNaN(newStock)) {
-                              try {
-                                const result = await updateProduct(product.id, { stock: newStock });
-                                console.log('✅ Stock guardado:', result);
-                                window.dispatchEvent(new Event('productsUpdated'));
-                                toast.success('Stock actualizado');
-                              } catch (error) {
-                                console.error('❌ Error al actualizar stock:', error);
-                                toast.error('Error al guardar el stock');
-                              }
+                            if (isNaN(newStock)) return;
+                            try {
+                              await updateProduct(product.id, { stock: newStock });
+                              window.dispatchEvent(new Event('productsUpdated'));
+                              toast.success('Stock actualizado');
+                            } catch (error) {
+                              console.error('❌ Error al actualizar stock:', error);
+                              toast.error('Error al guardar el stock');
                             }
                           }}
                           onKeyDown={(e) => {
-                            if (e.key === 'Enter') {
-                              e.currentTarget.blur();
-                            }
+                            if (e.key === 'Enter') e.currentTarget.blur();
                           }}
-                          className="h-9 w-20 text-right ml-auto"
+                          className={`h-9 w-20 text-right ml-auto ${!canEditProduct ? 'bg-gray-50 cursor-default' : ''}`}
                         />
                       </td>
                       <td className="px-2 py-3">
                         <div className="flex items-center justify-end gap-2 mx-[12px] my-[0px]">
+                          {canEditProduct && (
                           <Button
                             variant="ghost"
                             size="icon"
@@ -1336,6 +1356,8 @@ export default function ProductsPage() {
                           >
                             <Edit2 className="w-4 h-4" />
                           </Button>
+                          )}
+                          {canDeleteProduct && (
                           <Button
                             variant="ghost"
                             size="icon"
@@ -1343,6 +1365,7 @@ export default function ProductsPage() {
                           >
                             <Trash2 className="w-4 h-4 text-red-600" />
                           </Button>
+                          )}
                         </div>
                       </td>
                     </tr>
@@ -1393,7 +1416,7 @@ export default function ProductsPage() {
                 <div
                   key={product.id}
                   className="bg-white rounded-lg border p-3 flex gap-3"
-                  onClick={() => handleEditProduct(product)}
+                  onClick={() => canEditProduct && handleEditProduct(product)}
                 >
                   {/* Imagen pequeña */}
                   <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
@@ -1415,6 +1438,7 @@ export default function ProductsPage() {
                         </div>
                         <div className="text-xs text-gray-500">{product.category}</div>
                       </div>
+                      {canDeleteProduct && (
                       <Button
                         variant="ghost"
                         size="icon"
@@ -1426,6 +1450,7 @@ export default function ProductsPage() {
                       >
                         <Trash2 className="w-4 h-4 text-red-600" />
                       </Button>
+                      )}
                     </div>
 
                     <div className="flex items-center gap-2 flex-wrap">
@@ -1451,6 +1476,7 @@ export default function ProductsPage() {
       </div>
 
       {/* Floating Action Button - Mobile */}
+      {canCreateProduct && (
       <div className="md:hidden fixed bottom-20 right-4 z-10">
         <Button
           onClick={() => {
@@ -1463,6 +1489,7 @@ export default function ProductsPage() {
           <Plus className="w-6 h-6" />
         </Button>
       </div>
+      )}
 
       {/* Create/Edit Product Sheet */}
       <Sheet open={createSheetOpen} onOpenChange={setCreateSheetOpen}>
@@ -1734,6 +1761,7 @@ export default function ProductsPage() {
 
           <div className="flex-1 overflow-hidden flex flex-col">
             <div className="px-6 pt-4 pb-2 flex-shrink-0">
+              {canEditProduct ? (
               <form 
                 className="flex gap-2"
                 onSubmit={(e) => {
@@ -1756,6 +1784,9 @@ export default function ProductsPage() {
                   <Plus className="w-4 h-4" />
                 </Button>
               </form>
+              ) : (
+                <p className="text-sm text-gray-500">Solo puedes consultar las categorías.</p>
+              )}
             </div>
             
             <ScrollArea className="flex-1 px-6">
@@ -1771,7 +1802,7 @@ export default function ProductsPage() {
                       className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                     >
                       <span className="font-medium text-gray-900">{category}</span>
-                      {customCategories.includes(category) && (
+                      {canEditProduct && customCategories.includes(category) && (
                         <Button
                           type="button"
                           variant="ghost"

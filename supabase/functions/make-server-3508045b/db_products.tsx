@@ -48,21 +48,26 @@ export async function createProduct(businessId: string, productData: {
   category?: string;
   image?: string;
   description?: string;
+  barcode?: string;
+  is_active?: boolean;
 }) {
+  const insert: Record<string, unknown> = {
+    business_id: businessId,
+    name: productData.name,
+    sku: productData.sku || null,
+    price: productData.price,
+    cost: productData.cost || 0,
+    stock: productData.stock || 0,
+    category: productData.category || 'Otros',
+    image: productData.image || null,
+    description: productData.description || null,
+  };
+  if (productData.barcode !== undefined) insert.barcode = productData.barcode || null;
+  if (productData.is_active !== undefined) insert.is_active = productData.is_active;
+
   const { data, error } = await supabase
     .from('products')
-    .insert({
-      business_id: businessId,
-      name: productData.name,
-      sku: productData.sku || null,
-      price: productData.price,
-      cost: productData.cost || 0,
-      stock: productData.stock || 0,
-      category: productData.category || 'Otros',
-      image: productData.image || null,
-      description: productData.description || null,
-      // NOTE: No 'active' column in this table
-    })
+    .insert(insert)
     .select()
     .single();
 
@@ -80,6 +85,9 @@ export async function updateProduct(productId: string, businessId: string, updat
   category?: string;
   image?: string;
   description?: string;
+  barcode?: string | null;
+  is_active?: boolean;
+  updated_at?: string;
 }) {
   const { data, error } = await supabase
     .from('products')
