@@ -88,41 +88,16 @@ function rangeForPreset(id: Exclude<PresetId, 'custom'>): { from: string; to: st
   return { from: `${to.slice(0, 4)}-01-01`, to };
 }
 
-function Delta({ pct }: { pct: number | null }) {
+function Delta({ pct, compact }: { pct: number | null; compact?: boolean }) {
   if (pct == null || !Number.isFinite(pct)) return <span className="text-slate-500">—</span>;
   const up = pct > 0.5;
   const down = pct < -0.5;
   const cls = up ? 'text-emerald-400' : down ? 'text-rose-400' : 'text-slate-400';
   const sign = pct > 0 ? '+' : '';
-  return <span className={cls}>{sign}{pct.toFixed(1)}%</span>;
-}
-
-function KpiCard({
-  label,
-  value,
-  pct,
-  hint,
-}: {
-  label: string;
-  value: string;
-  pct?: number | null;
-  hint?: string;
-}) {
   return (
-    <div className="rounded-xl border border-slate-800 bg-slate-900 p-3 sm:p-4 min-w-0">
-      <div className="text-[11px] uppercase tracking-wide text-slate-400">{label}</div>
-      <div className="mt-1 text-xl sm:text-2xl font-semibold tabular-nums text-white truncate">{value}</div>
-      <div className="mt-1 text-xs flex items-center gap-2">
-        {pct !== undefined ? (
-          <>
-            <Delta pct={pct} />
-            <span className="text-slate-500">vs periodo anterior</span>
-          </>
-        ) : hint ? (
-          <span className="text-slate-500">{hint}</span>
-        ) : null}
-      </div>
-    </div>
+    <span className={`${cls} tabular-nums ${compact ? 'text-xs' : 'text-sm font-medium'}`}>
+      {sign}{pct.toFixed(1)}%
+    </span>
   );
 }
 
@@ -252,72 +227,104 @@ export function AnalyticsAdminTab() {
       )}
 
       {loading && !data && (
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="h-24 rounded-xl bg-slate-800 animate-pulse" />
-          ))}
+        <div className="space-y-4">
+          <div className="h-36 rounded-2xl bg-slate-800/80 animate-pulse" />
+          <div className="h-64 rounded-2xl bg-slate-800/80 animate-pulse" />
         </div>
       )}
 
       {k && (
-        <>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            <KpiCard label="Ventas ($)" value={`$${formatCurrency(k.salesTotal.value)}`} pct={k.salesTotal.changePct} />
-            <KpiCard label="Nº de ventas" value={String(Math.round(k.salesCount.value))} pct={k.salesCount.changePct} />
-            <KpiCard label="Ticket promedio" value={`$${formatCurrency(k.avgTicket.value)}`} pct={k.avgTicket.changePct} />
-            <KpiCard label="Neto (ventas − gastos)" value={`$${formatCurrency(k.net.value)}`} pct={k.net.changePct} />
-            <KpiCard label="Gastos ($)" value={`$${formatCurrency(k.expensesTotal.value)}`} pct={k.expensesTotal.changePct} />
-            <KpiCard label="Usuarios nuevos" value={String(Math.round(k.newUsers.value))} pct={k.newUsers.changePct} />
-            <KpiCard label="Negocios nuevos" value={String(Math.round(k.newBusinesses.value))} pct={k.newBusinesses.changePct} />
-            <KpiCard
-              label="Actividad"
-              value={`${k.activeBusinesses} negocios`}
-              hint={`${k.activeUsers} usuarios con sesión en el periodo`}
-            />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <div className="lg:col-span-7 rounded-2xl bg-emerald-950/40 border border-emerald-900/50 px-5 py-5 sm:px-6 sm:py-6">
+            <div className="text-sm text-emerald-200/80">Ventas del periodo</div>
+            <div className="mt-1 text-4xl sm:text-5xl font-semibold tracking-tight tabular-nums text-white">
+              ${formatCurrency(k.salesTotal.value)}
+            </div>
+            <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm">
+              <Delta pct={k.salesTotal.changePct} />
+              <span className="text-slate-400">vs el periodo anterior del mismo largo</span>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+              <div>
+                <div className="text-slate-400">Nº de ventas</div>
+                <div className="text-lg font-medium tabular-nums text-white">
+                  {Math.round(k.salesCount.value)} <Delta pct={k.salesCount.changePct} compact />
+                </div>
+              </div>
+              <div>
+                <div className="text-slate-400">Ticket promedio</div>
+                <div className="text-lg font-medium tabular-nums text-white">
+                  ${formatCurrency(k.avgTicket.value)} <Delta pct={k.avgTicket.changePct} compact />
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            <KpiCard label="Nº de gastos" value={String(Math.round(k.expensesCount.value))} pct={k.expensesCount.changePct} />
-            <KpiCard label="Contactos nuevos" value={String(Math.round(k.newCustomers.value))} pct={k.newCustomers.changePct} />
-            <KpiCard label="Empleados nuevos" value={String(Math.round(k.newEmployees.value))} pct={k.newEmployees.changePct} />
-            <KpiCard
-              label="Comparación"
-              value={`${data.fromYmd} → ${data.toYmd}`}
-              hint={data.grain === 'week' ? 'Serie agrupada por semana' : 'Serie diaria'}
-            />
+
+          <div className="lg:col-span-5 flex flex-col gap-3">
+            <div className="flex-1 rounded-2xl px-5 py-4 bg-slate-900/80">
+              <div className="text-sm text-slate-400">Neto</div>
+              <div className="text-2xl sm:text-3xl font-semibold tabular-nums text-white">${formatCurrency(k.net.value)}</div>
+              <div className="mt-1 text-xs text-slate-500">
+                Ventas − gastos · <Delta pct={k.net.changePct} compact />
+              </div>
+            </div>
+            <div className="rounded-2xl px-5 py-4 bg-slate-900/50 flex items-end justify-between gap-3">
+              <div>
+                <div className="text-sm text-slate-400">Gastos</div>
+                <div className="text-xl font-semibold tabular-nums text-amber-200">${formatCurrency(k.expensesTotal.value)}</div>
+              </div>
+              <div className="text-right text-xs text-slate-500">
+                {Math.round(k.expensesCount.value)} movimientos
+                <div>
+                  <Delta pct={k.expensesTotal.changePct} compact />
+                </div>
+              </div>
+            </div>
           </div>
-        </>
+        </div>
       )}
 
       {chartRows.length > 0 && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-4">
-            <div className="text-sm font-medium text-white">Ventas y gastos ($)</div>
-            <div className="text-[11px] text-slate-500 mb-2">Suma del periodo seleccionado</div>
-            <div className="h-56">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={chartRows} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
-                  <CartesianGrid stroke="#1e293b" strokeDasharray="3 3" />
-                  <XAxis dataKey="label" stroke="#64748b" fontSize={11} tickLine={false} />
-                  <YAxis stroke="#64748b" fontSize={11} tickLine={false} width={48} />
-                  <Tooltip
-                    contentStyle={tooltipStyle}
-                    formatter={(v: number, name: string) => [`$${formatCurrency(Number(v) || 0)}`, name]}
-                  />
-                  <Area type="monotone" dataKey="salesTotal" name="Ventas" stroke="#34d399" fill="#34d39933" strokeWidth={2} />
-                  <Area type="monotone" dataKey="expensesTotal" name="Gastos" stroke="#fbbf24" fill="#fbbf2433" strokeWidth={2} />
-                </AreaChart>
-              </ResponsiveContainer>
+        <div className="rounded-2xl bg-slate-900/40 px-4 sm:px-5 py-4">
+          <div className="flex items-baseline justify-between gap-3 mb-3">
+            <div>
+              <div className="text-sm font-medium text-white">Evolución de dinero</div>
+              <div className="text-[11px] text-slate-500">Verde ventas · ámbar gastos</div>
+            </div>
+            <div className="text-[11px] text-slate-500 hidden sm:block">
+              {data?.fromYmd} → {data?.toYmd}
+              {data?.grain === 'week' ? ' · por semana' : ' · diario'}
             </div>
           </div>
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-4">
-            <div className="text-sm font-medium text-white">Cantidad de ventas y usuarios nuevos</div>
-            <div className="text-[11px] text-slate-500 mb-2">Barras = ventas · Área = altas de usuario</div>
-            <div className="h-56">
+          <div className="h-72">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={chartRows} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+                <CartesianGrid stroke="#1e293b" strokeDasharray="3 3" />
+                <XAxis dataKey="label" stroke="#64748b" fontSize={11} tickLine={false} />
+                <YAxis stroke="#64748b" fontSize={11} tickLine={false} width={52} />
+                <Tooltip
+                  contentStyle={tooltipStyle}
+                  formatter={(v: number, name: string) => [`$${formatCurrency(Number(v) || 0)}`, name]}
+                />
+                <Area type="monotone" dataKey="salesTotal" name="Ventas" stroke="#34d399" fill="#34d39933" strokeWidth={2} />
+                <Area type="monotone" dataKey="expensesTotal" name="Gastos" stroke="#fbbf24" fill="#fbbf2433" strokeWidth={2} />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+        {chartRows.length > 0 && (
+          <div className="lg:col-span-7 rounded-2xl bg-slate-900/40 px-4 sm:px-5 py-4">
+            <div className="text-sm font-medium text-white">Volumen</div>
+            <div className="text-[11px] text-slate-500 mb-2">Índigo = ventas · cian = usuarios nuevos</div>
+            <div className="h-52">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartRows} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
                   <CartesianGrid stroke="#1e293b" strokeDasharray="3 3" />
                   <XAxis dataKey="label" stroke="#64748b" fontSize={11} tickLine={false} />
-                  <YAxis stroke="#64748b" fontSize={11} tickLine={false} width={32} />
+                  <YAxis stroke="#64748b" fontSize={11} tickLine={false} width={28} />
                   <Tooltip contentStyle={tooltipStyle} />
                   <Bar dataKey="salesCount" name="Ventas" fill="#818cf8" radius={[4, 4, 0, 0]} />
                   <Bar dataKey="newUsers" name="Usuarios nuevos" fill="#22d3ee" radius={[4, 4, 0, 0]} />
@@ -325,57 +332,93 @@ export function AnalyticsAdminTab() {
               </ResponsiveContainer>
             </div>
           </div>
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {!!data?.topBusinesses?.length && (
-          <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
-            <div className="px-4 py-3 border-b border-slate-800 text-sm font-medium">Top negocios por ventas</div>
-            <table className="w-full text-sm">
-              <thead className="text-xs text-slate-400">
-                <tr>
-                  <th className="text-left font-medium px-4 py-2">Negocio</th>
-                  <th className="text-right font-medium px-3 py-2">Ventas</th>
-                  <th className="text-right font-medium px-4 py-2">Monto</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.topBusinesses.map((b) => (
-                  <tr key={b.id} className="border-t border-slate-800/80">
-                    <td className="px-4 py-2 text-slate-200 truncate max-w-[220px]">{b.name}</td>
-                    <td className="px-3 py-2 text-right tabular-nums text-indigo-300">{b.count}</td>
-                    <td className="px-4 py-2 text-right tabular-nums text-emerald-400">${formatCurrency(b.total)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         )}
-        {!!data?.paymentMethods?.length && (
-          <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
-            <div className="px-4 py-3 border-b border-slate-800 text-sm font-medium">Métodos de pago</div>
-            <table className="w-full text-sm">
-              <thead className="text-xs text-slate-400">
-                <tr>
-                  <th className="text-left font-medium px-4 py-2">Método</th>
-                  <th className="text-right font-medium px-3 py-2">Usos</th>
-                  <th className="text-right font-medium px-4 py-2">Monto</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.paymentMethods.map((p) => (
-                  <tr key={p.method} className="border-t border-slate-800/80">
-                    <td className="px-4 py-2 text-slate-200 capitalize">{p.method}</td>
-                    <td className="px-3 py-2 text-right tabular-nums text-slate-300">{p.count}</td>
-                    <td className="px-4 py-2 text-right tabular-nums text-emerald-400">${formatCurrency(p.total)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+        {!!data?.topBusinesses?.length && (
+          <div className="lg:col-span-5 px-1 sm:px-2">
+            <div className="text-sm font-medium text-white mb-3">Quién vende más</div>
+            <ol className="space-y-3">
+              {data.topBusinesses.map((b, i) => {
+                const max = data.topBusinesses[0]?.total || 1;
+                const w = Math.max(8, Math.round((b.total / max) * 100));
+                return (
+                  <li key={b.id}>
+                    <div className="flex items-baseline justify-between gap-2 text-sm">
+                      <span className="text-slate-200 truncate">
+                        <span className="text-slate-500 tabular-nums mr-2">{i + 1}</span>
+                        {b.name}
+                      </span>
+                      <span className="tabular-nums text-emerald-400 shrink-0">${formatCurrency(b.total)}</span>
+                    </div>
+                    <div className="mt-1 h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                      <div className="h-full rounded-full bg-emerald-500/80" style={{ width: `${w}%` }} />
+                    </div>
+                    <div className="text-[11px] text-slate-500 mt-0.5">{b.count} ventas</div>
+                  </li>
+                );
+              })}
+            </ol>
           </div>
         )}
       </div>
+
+      {k && (
+        <div className="flex flex-wrap gap-x-8 gap-y-4 px-1 py-2 text-sm border-t border-slate-800/80 pt-5">
+          <div>
+            <div className="text-slate-500 text-xs">Usuarios nuevos</div>
+            <div className="font-medium tabular-nums">
+              {Math.round(k.newUsers.value)} <Delta pct={k.newUsers.changePct} compact />
+            </div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs">Negocios nuevos</div>
+            <div className="font-medium tabular-nums">
+              {Math.round(k.newBusinesses.value)} <Delta pct={k.newBusinesses.changePct} compact />
+            </div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs">Contactos nuevos</div>
+            <div className="font-medium tabular-nums">
+              {Math.round(k.newCustomers.value)} <Delta pct={k.newCustomers.changePct} compact />
+            </div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs">Empleados nuevos</div>
+            <div className="font-medium tabular-nums">
+              {Math.round(k.newEmployees.value)} <Delta pct={k.newEmployees.changePct} compact />
+            </div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs">Negocios con ventas</div>
+            <div className="font-medium tabular-nums">{k.activeBusinesses}</div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs">Usuarios que entraron</div>
+            <div className="font-medium tabular-nums">{k.activeUsers}</div>
+          </div>
+        </div>
+      )}
+
+      {!!data?.paymentMethods?.length && (
+        <div className="px-1">
+          <div className="text-sm font-medium text-white mb-3">Cómo pagan</div>
+          <div className="space-y-2.5 max-w-xl">
+            {data.paymentMethods.map((p) => {
+              const max = data.paymentMethods[0]?.total || 1;
+              const w = Math.max(6, Math.round((p.total / max) * 100));
+              return (
+                <div key={p.method} className="grid grid-cols-[7rem_1fr_auto] items-center gap-3 text-sm">
+                  <span className="text-slate-300 capitalize truncate">{p.method}</span>
+                  <div className="h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                    <div className="h-full rounded-full bg-indigo-400/80" style={{ width: `${w}%` }} />
+                  </div>
+                  <span className="tabular-nums text-slate-200">${formatCurrency(p.total)}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
