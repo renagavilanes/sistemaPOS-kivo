@@ -196,8 +196,15 @@ export function ProductCatalog({
                         alt={product.name}
                         className="h-full w-full object-cover object-center"
                       />
+                      {quantity > 0 && (
+                        <div className="absolute top-2 right-2 z-10 pointer-events-none">
+                          <span className="flex h-8 min-w-8 items-center justify-center rounded-lg bg-[#272B36] px-2 text-sm font-semibold tabular-nums text-white shadow-md">
+                            {quantity}
+                          </span>
+                        </div>
+                      )}
                       {product.stock <= 0 && (
-                        <div className="absolute top-2 right-2">
+                        <div className={`absolute top-2 z-10 pointer-events-none ${quantity > 0 ? 'left-2' : 'right-2'}`}>
                           <span className="text-xs bg-orange-500 text-white px-2 py-0.5 rounded-full font-medium">
                             Stock: {product.stock}
                           </span>
