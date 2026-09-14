@@ -4,6 +4,7 @@ import { RouterProvider } from 'react-router';
 import { router } from './routes';
 import { AuthProvider } from './contexts/AuthContext';
 import { BusinessProvider } from './contexts/BusinessContext';
+import { BusinessFavicon } from './components/BusinessFavicon';
 
 export default function App() {
   console.log('🚀 [APP] App component loading...');
@@ -12,6 +13,7 @@ export default function App() {
     <ErrorBoundary>
       <AuthProvider>
         <BusinessProvider>
+          <BusinessFavicon />
           <RouterProvider router={router} />
           <Toaster />
         </BusinessProvider>

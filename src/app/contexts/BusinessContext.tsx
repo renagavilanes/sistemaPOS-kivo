@@ -22,6 +22,7 @@ interface Business {
   country?: string;
   currency?: string;
   logo?: string;
+  logo_url?: string;
   active?: boolean;
   created_at?: string;
   updated_at?: string;
