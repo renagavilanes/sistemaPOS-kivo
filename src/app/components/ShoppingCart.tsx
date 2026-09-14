@@ -181,9 +181,11 @@ export function ShoppingCart({
                         </Button>
                       </div>
 
-                      <div className="flex items-center justify-center border-2 border-gray-200 rounded-full px-3 h-9 flex-1">
+                      <div className="flex items-center justify-center gap-1 border-2 border-gray-200 rounded-full px-3 h-9 flex-1">
                         {canEditPrice ? (
-                          <Input
+                          <>
+                            <span className="text-sm font-semibold text-gray-900">$</span>
+                            <Input
                             type="number"
                             step="0.01"
                             value={item.priceAtSale}
@@ -192,8 +194,9 @@ export function ShoppingCart({
                               onUpdatePrice(item.product.id, parseFloat(e.target.value) || 0);
                             }}
                             onClick={(e) => e.stopPropagation()}
-                            className="h-7 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-white"
+                            className="h-7 min-w-0 flex-1 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-transparent"
                           />
+                          </>
                         ) : (
                           <span className="text-sm font-semibold text-gray-900">$ {formatCurrency(item.priceAtSale)}</span>
                         )}
@@ -201,7 +204,7 @@ export function ShoppingCart({
                     </div>
 
                     <div className="text-xs text-gray-500">
-                      Precio por {item.quantity} unidade{item.quantity !== 1 ? 's' : ''}: ${formatCurrency(calculateSubtotal(item))}
+                      Precio por {item.quantity} {item.quantity === 1 ? 'unidad' : 'unidades'}: $ {formatCurrency(calculateSubtotal(item))}
                     </div>
                   </div>
                 ))}
