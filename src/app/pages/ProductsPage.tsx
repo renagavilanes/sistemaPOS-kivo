@@ -25,6 +25,7 @@ import { getProducts, createProduct, updateProduct, deleteProduct, initializeDem
 import * as apiService from '../services/api';
 import { useBusiness } from '../contexts/BusinessContext';
 import { formatCurrency } from '../utils/currency';
+import { optimizeImageForProduct, packedImageForSave, parseProductImage } from '../utils/productImage';
 import {
   dataTableTheadSticky,
   dthLeft,
@@ -41,64 +42,6 @@ const normalizeText = (text: string) => {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase();
-};
-
-const fileToDataUrl = (file: File): Promise<string> =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onloadend = () => resolve((reader.result as string) || '');
-    reader.onerror = () => reject(new Error('No se pudo leer la imagen.'));
-    reader.readAsDataURL(file);
-  });
-
-const loadImageElement = (file: File): Promise<HTMLImageElement> =>
-  new Promise((resolve, reject) => {
-    const objectUrl = URL.createObjectURL(file);
-    const img = new Image();
-    img.onload = () => {
-      URL.revokeObjectURL(objectUrl);
-      resolve(img);
-    };
-    img.onerror = () => {
-      URL.revokeObjectURL(objectUrl);
-      reject(new Error('No se pudo cargar la imagen seleccionada.'));
-    };
-    img.src = objectUrl;
-  });
-
-const optimizeImageForProduct = async (file: File): Promise<string> => {
-  // Mantiene buena calidad para futuro catálogo y mejora peso para POS.
-  const MAX_DIMENSION = 1280;
-  const QUALITY = 0.82;
-
-  if (!file.type.startsWith('image/')) {
-    throw new Error('El archivo seleccionado no es una imagen.');
-  }
-
-  const img = await loadImageElement(file);
-  const width = img.naturalWidth || img.width;
-  const height = img.naturalHeight || img.height;
-  const scale = Math.min(1, MAX_DIMENSION / Math.max(width, height));
-  const targetWidth = Math.max(1, Math.round(width * scale));
-  const targetHeight = Math.max(1, Math.round(height * scale));
-
-  const canvas = document.createElement('canvas');
-  canvas.width = targetWidth;
-  canvas.height = targetHeight;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) throw new Error('No se pudo procesar la imagen.');
-  ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
-
-  const blob: Blob = await new Promise((resolve, reject) => {
-    canvas.toBlob(
-      (result) => (result ? resolve(result) : reject(new Error('No se pudo generar la imagen optimizada.'))),
-      'image/webp',
-      QUALITY,
-    );
-  });
-
-  const optimizedFile = new File([blob], file.name.replace(/\.\w+$/, '.webp'), { type: 'image/webp' });
-  return fileToDataUrl(optimizedFile);
 };
 
 export default function ProductsPage() {
@@ -533,17 +476,23 @@ export default function ProductsPage() {
         // Update existing product
         console.log('🖼️ Actualizando producto con imagen:', productImage || editingProduct.image);
         
+        const imageToSave = productImage
+          ? productImage.startsWith('{')
+            ? productImage
+            : await packedImageForSave(productImage)
+          : editingProduct.image || '';
+
         const result = await updateProduct(editingProduct.id, {
           name: productName,
           price,
           cost,
           stock,
           category: productCategory || editingProduct.category,
-          image: productImage || editingProduct.image,
+          image: imageToSave,
         });
 
         if (result.success) {
-          const savedImage = productImage || result.product?.image || editingProduct.image || '';
+          const savedImage = imageToSave || result.product?.image || editingProduct.image || '';
           const productId = editingProduct.id;
 
           if (currentBusiness.id) {
@@ -578,17 +527,23 @@ export default function ProductsPage() {
         }
       } else {
         // Create new product
+        const imageToSave = productImage
+          ? productImage.startsWith('{')
+            ? productImage
+            : await packedImageForSave(productImage)
+          : '';
+
         const result = await createProduct({
           name: productName,
           price,
           cost,
           stock,
           category: productCategory || 'Sin categoría',
-          image: productImage || '',
+          image: imageToSave,
         });
 
         if (result.success) {
-          const savedImage = productImage || result.product?.image || '';
+          const savedImage = imageToSave || result.product?.image || '';
           const productId = result.product?.id;
 
           if (productId && currentBusiness.id) {
@@ -1528,7 +1483,7 @@ export default function ProductsPage() {
                   {productImage && (
                     <div className="w-full h-[8.4rem] rounded-lg overflow-hidden bg-gray-100 relative">
                       <ImageWithFallback
-                        src={productImage}
+                        src={parseProductImage(productImage).full || productImage}
                         alt="Preview"
                         className="w-full h-full object-cover object-center"
                       />
@@ -1564,12 +1519,17 @@ export default function ProductsPage() {
 
                           setImageProcessing(true);
                           try {
-                            const optimizedDataUrl = await optimizeImageForProduct(file);
-                            setProductImage(optimizedDataUrl);
+                            const packed = await optimizeImageForProduct(file);
+                            setProductImage(packed);
                           } catch (error) {
                             console.warn('No se pudo optimizar la imagen, usando original:', error);
                             try {
-                              const originalDataUrl = await fileToDataUrl(file);
+                              const originalDataUrl = await new Promise<string>((resolve, reject) => {
+                                const reader = new FileReader();
+                                reader.onloadend = () => resolve((reader.result as string) || '');
+                                reader.onerror = () => reject(new Error('No se pudo leer la imagen.'));
+                                reader.readAsDataURL(file);
+                              });
                               setProductImage(originalDataUrl);
                             } catch {
                               toast.error('No se pudo cargar la imagen seleccionada');

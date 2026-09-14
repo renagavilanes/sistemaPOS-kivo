@@ -27,7 +27,7 @@ export async function getProducts(businessId: string, options?: { includeImage?:
 
 // Get a single product
 export async function getProductImagesByIds(businessId: string, ids: string[]) {
-  const unique = [...new Set(ids.filter(Boolean))].slice(0, 12);
+  const unique = [...new Set(ids.filter(Boolean))].slice(0, 32);
   if (unique.length === 0) return [] as Array<{ id: string; image: string | null }>;
 
   const { data, error } = await supabase

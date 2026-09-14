@@ -2801,6 +2801,44 @@ app.get("/make-server-3508045b/public/catalog/:slug", async (c) => {
   }
 });
 
+function displayThumbFromStoredImage(raw: unknown): string {
+  const s = typeof raw === 'string' ? raw : '';
+  if (!s) return '';
+  if (s.startsWith('{')) {
+    try {
+      const j = JSON.parse(s) as { thumb?: unknown; full?: unknown };
+      const thumb = typeof j.thumb === 'string' ? j.thumb : '';
+      const full = typeof j.full === 'string' ? j.full : '';
+      return thumb || full || '';
+    } catch {
+      return s;
+    }
+  }
+  return s;
+}
+
+app.get("/make-server-3508045b/products/images", async (c) => {
+  try {
+    const businessId = await getBusinessIdFromRequest(c);
+    if (!businessId) {
+      return c.json({ error: 'Unauthorized' }, 401);
+    }
+    const ids = String(c.req.query("ids") || "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const rows = await dbProducts.getProductImagesByIds(businessId, ids);
+    const images: Record<string, string> = {};
+    for (const r of rows) {
+      if (r?.id && r.image) images[String(r.id)] = displayThumbFromStoredImage(r.image);
+    }
+    return c.json({ success: true, images });
+  } catch (e: any) {
+    console.error("[PRODUCT IMAGES] Error:", e);
+    return c.json({ error: e?.message || "Internal server error" }, 500);
+  }
+});
+
 app.get("/make-server-3508045b/public/catalog/:slug/images", async (c) => {
   try {
     const slug = c.req.param("slug");
@@ -2823,7 +2861,7 @@ app.get("/make-server-3508045b/public/catalog/:slug/images", async (c) => {
     const rows = await dbProducts.getProductImagesByIds(businessId, ids);
     const images: Record<string, string> = {};
     for (const r of rows) {
-      if (r?.id && r.image) images[String(r.id)] = String(r.image);
+      if (r?.id && r.image) images[String(r.id)] = displayThumbFromStoredImage(r.image);
     }
     return c.json({ success: true, images });
   } catch (e: any) {

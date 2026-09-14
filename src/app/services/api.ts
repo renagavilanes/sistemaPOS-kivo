@@ -237,6 +237,29 @@ export async function getProductById(businessId: string, productId: string): Pro
   return mapProductFromApi(p);
 }
 
+export async function getProductImages(
+  businessId: string,
+  ids: string[],
+): Promise<Record<string, string>> {
+  const unique = [...new Set(ids.map((id) => String(id || '').trim()).filter(Boolean))].slice(0, 32);
+  if (!businessId || unique.length === 0) return {};
+
+  const accessToken = await getAccessToken();
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/products/images?ids=${unique.map(encodeURIComponent).join(',')}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'X-Business-ID': businessId,
+      },
+    },
+  );
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) return {};
+  return ((body as any).images || {}) as Record<string, string>;
+}
+
 export async function createProduct(businessId: string, product: Omit<Product, 'id' | 'businessId' | 'createdAt' | 'updatedAt'>): Promise<Product> {
   console.log('🔵 [API] Creating product via Edge Function:', product.name);
 

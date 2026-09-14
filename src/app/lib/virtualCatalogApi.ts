@@ -44,7 +44,7 @@ export async function fetchPublicCatalogImages(
   ids: string[],
 ): Promise<Record<string, string>> {
   const s = String(slug || '').trim();
-  const unique = [...new Set(ids.map((id) => String(id || '').trim()).filter(Boolean))].slice(0, 12);
+  const unique = [...new Set(ids.map((id) => String(id || '').trim()).filter(Boolean))].slice(0, 32);
   if (!s || unique.length === 0) return {};
 
   const url = `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/public/catalog/${encodeURIComponent(

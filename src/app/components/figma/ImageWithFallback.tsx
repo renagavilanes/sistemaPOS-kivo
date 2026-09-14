@@ -44,6 +44,7 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
       alt={alt}
       className={cn('max-h-full max-w-full', className)}
       style={style}
+      decoding="async"
       {...rest}
       onError={handleError}
     />
