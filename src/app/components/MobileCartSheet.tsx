@@ -1,4 +1,5 @@
-import { Trash2, Plus, Minus, ShoppingCart as CartIcon, X } from 'lucide-react';
+import { Trash2, Plus, Minus, X } from 'lucide-react';
+import { CartEmptyState } from './CartEmptyState';
 import { CartItem, UserRole } from '../types';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -104,11 +105,28 @@ export function MobileCartSheet({
 
         {/* Cart Items */}
         {items.length === 0 ? (
-          <div className="flex flex-col items-center justify-center flex-1 text-gray-400">
-            <CartIcon className="w-16 h-16 mb-2" />
-            <p className="text-base">Carrito vacío</p>
-            <p className="text-sm">Agrega productos para comenzar</p>
-          </div>
+          <>
+            <CartEmptyState />
+            <div className="px-6 py-4 border-t bg-white space-y-4 flex-shrink-0">
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm text-gray-600">
+                  <span>Total productos:</span>
+                  <span className="font-medium text-gray-900 tabular-nums">0</span>
+                </div>
+                <Separator />
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-semibold text-gray-900">Total:</span>
+                  <span className="text-2xl font-bold text-gray-900">$0</span>
+                </div>
+              </div>
+              <Button
+                disabled
+                className="w-full h-12 text-base font-semibold bg-gray-900 hover:bg-gray-800 disabled:opacity-40"
+              >
+                Continuar con el pago
+              </Button>
+            </div>
+          </>
         ) : (
           <>
             {/* Scrollable Items Area */}

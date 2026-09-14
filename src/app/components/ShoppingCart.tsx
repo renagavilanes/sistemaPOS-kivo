@@ -1,4 +1,5 @@
 import { Trash2, Plus, Minus, ShoppingCart as CartIcon } from 'lucide-react';
+import { CartEmptyState } from './CartEmptyState';
 import { CartItem, UserRole } from '../types';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -64,34 +65,52 @@ export function ShoppingCart({
 
   return (
     <div className="flex flex-col h-full bg-gray-50">
-      {/* Header */}
-      <div className="p-4 border-b border-white/10 bg-[#272B36] text-white flex-shrink-0">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="font-semibold text-lg text-white">Carrito</h2>
-            <p className="text-sm text-white/60">{items.length} producto{items.length !== 1 ? 's' : ''}</p>
-          </div>
-          {items.length > 0 && (
-            <Button
-              size="sm"
-              variant="ghost"
-              onClick={() => setClearCartDialogOpen(true)}
-              className="h-9 px-3 text-red-300 hover:text-red-200 hover:bg-white/10"
-            >
-              <Trash2 className="w-4 h-4 mr-2" />
-              <span className="text-sm">Vaciar</span>
-            </Button>
-          )}
+      {/* Header: mismo tono que tablas (Inventario) */}
+      <div className="flex h-[3.3rem] shrink-0 items-center justify-between gap-3 bg-slate-600 px-3 text-white">
+        <div className="flex min-w-0 items-center gap-2">
+          <CartIcon className="h-4 w-4 shrink-0 text-white/70" strokeWidth={1.75} />
+          <h2 className="truncate text-[15px] font-semibold leading-none">Carrito</h2>
+          <span className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] font-medium tabular-nums text-white/70">
+            {items.length}
+          </span>
         </div>
+        {items.length > 0 && (
+          <Button
+            size="sm"
+            variant="ghost"
+            onClick={() => setClearCartDialogOpen(true)}
+            className="h-8 shrink-0 px-2 text-red-300 hover:bg-white/10 hover:text-red-200"
+          >
+            <Trash2 className="mr-1.5 h-3.5 w-3.5" />
+            <span className="text-xs">Vaciar</span>
+          </Button>
+        )}
       </div>
 
       {/* Cart Items */}
       {items.length === 0 ? (
-        <div className="flex flex-col items-center justify-center flex-1 text-gray-400">
-          <CartIcon className="w-16 h-16 mb-2" />
-          <p className="text-base">Carrito vacío</p>
-          <p className="text-sm">Agrega productos para comenzar</p>
-        </div>
+        <>
+          <CartEmptyState />
+          <div className="p-4 border-t bg-white space-y-4 flex-shrink-0">
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm text-gray-600">
+                <span>Total productos:</span>
+                <span className="font-medium text-gray-900 tabular-nums">0</span>
+              </div>
+              <Separator />
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-semibold text-gray-900">Total:</span>
+                <span className="text-2xl font-bold text-gray-900">$0</span>
+              </div>
+            </div>
+            <Button
+              disabled
+              className="w-full h-12 text-base font-semibold bg-gray-900 hover:bg-gray-800 disabled:opacity-40"
+            >
+              Continuar con el pago
+            </Button>
+          </div>
+        </>
       ) : (
         <>
           {/* Scrollable Items Area */}
