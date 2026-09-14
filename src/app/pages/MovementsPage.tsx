@@ -2685,18 +2685,18 @@ export default function MovementsPage() {
               <table className="w-full table-fixed">
                 <colgroup>
                   <col />
-                  <col className="w-32" />
                   <col className="w-36" />
                   <col className="w-40" />
-                  <col className="w-24" />
+                  <col className="w-44" />
+                  <col className="w-28" />
                 </colgroup>
                 <thead className={dataTableThead}>
                   <tr>
                     <th className={`${dthMovement} px-4`}>Concepto</th>
-                    <th className={`${dthMovement} px-3`}>Valor</th>
-                    <th className={`${dthMovement} px-3`}>Medio de pago</th>
-                    <th className={`${dthMovement} px-3 whitespace-nowrap`}>Fecha y hora</th>
-                    <th className={`${dthMovement} pl-3 pr-4 text-right`}>Estado</th>
+                    <th className={`${dthMovement} px-4`}>Valor</th>
+                    <th className={`${dthMovement} px-4`}>Medio de pago</th>
+                    <th className={`${dthMovement} px-4 whitespace-nowrap`}>Fecha y hora</th>
+                    <th className={`${dthMovement} pl-4 pr-5 text-right`}>Estado</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y">
@@ -2704,10 +2704,10 @@ export default function MovementsPage() {
                     Array.from({ length: 8 }).map((_, idx) => (
                       <tr key={`movements-skeleton-row-${idx}`}>
                         <td className="px-4 py-3"><Skeleton className="h-4 w-56 max-w-full" /></td>
-                        <td className="px-3 py-3"><Skeleton className="h-4 w-16" /></td>
-                        <td className="px-3 py-3"><Skeleton className="h-5 w-20 rounded-full" /></td>
-                        <td className="px-3 py-3"><Skeleton className="h-4 w-16" /></td>
-                        <td className="pl-3 pr-4 py-3"><Skeleton className="h-5 w-14 rounded-full ml-auto" /></td>
+                        <td className="px-4 py-3"><Skeleton className="h-4 w-16" /></td>
+                        <td className="px-4 py-3"><Skeleton className="h-5 w-20 rounded-full" /></td>
+                        <td className="px-4 py-3"><Skeleton className="h-4 w-16" /></td>
+                        <td className="pl-4 pr-5 py-3"><Skeleton className="h-5 w-14 rounded-full ml-auto" /></td>
                       </tr>
                     ))
                   ) : filteredMovements.length === 0 ? (
@@ -2779,7 +2779,7 @@ export default function MovementsPage() {
                             </div>
                           </div>
                         </td>
-                        <td className="px-3 py-3 align-top overflow-hidden">
+                        <td className="px-4 py-3 align-top overflow-hidden">
                           <div className="flex flex-col min-w-0">
                             <span className="text-sm font-semibold text-gray-900">${formatCurrency(movement.total)}</span>
                             {!movement.isPartialPayment && movement.type === 'sale' && (
@@ -2789,18 +2789,18 @@ export default function MovementsPage() {
                             )}
                           </div>
                         </td>
-                        <td className="px-3 py-3 align-top overflow-hidden">
+                        <td className="px-4 py-3 align-top overflow-hidden">
                           <Badge variant="outline" className="text-xs max-w-full min-w-0 shrink overflow-hidden">
                             {paymentMethodLabel}
                           </Badge>
                         </td>
-                        <td className="px-3 py-3 align-top overflow-hidden">
+                        <td className="px-4 py-3 align-top overflow-hidden">
                           <div className="flex flex-col min-w-0">
                             <span className="text-sm text-gray-900">{formatDate(movement.date)}</span>
                             <span className="text-xs text-gray-500">{movement.time}</span>
                           </div>
                         </td>
-                        <td className="pl-3 pr-4 py-3 align-top text-right overflow-hidden">
+                        <td className="pl-4 pr-5 py-3 align-top text-right overflow-hidden">
                           <Badge
                             className={`text-xs ${movementPaymentStatusBadgeClass(movement.status)}`}
                           >

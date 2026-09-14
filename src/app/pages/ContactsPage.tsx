@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Plus, Search, Pencil, Trash2, User, Building2, Users, Mail, Phone, ChevronLeft } from 'lucide-react';
+import { Plus, Search, Trash2, User, Building2, Users, Mail, Phone, ChevronLeft } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -440,7 +440,11 @@ export default function ContactsPage() {
                 </div>
               ) : (
                 filteredContacts.map((contact) => (
-                  <div key={contact.id} className="bg-white rounded-lg border p-4 active:bg-gray-50 transition-colors">
+                  <div
+                    key={contact.id}
+                    className={`bg-white rounded-lg border p-4 transition-colors ${canEditContact ? 'cursor-pointer active:bg-gray-50' : ''}`}
+                    onClick={() => canEditContact && handleOpenSheet(contact)}
+                  >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex-1 min-w-0">
                         <h3 className="font-semibold text-gray-900 mb-1">{contact.name}</h3>
@@ -448,24 +452,20 @@ export default function ContactsPage() {
                           {getTypeLabel(contact.type)}
                         </span>
                       </div>
-                      <div className="flex gap-1 ml-2">
-                        {canEditContact && (
+                      {canEditContact && (
+                        <div className="flex gap-1 ml-2">
                           <button
-                            onClick={() => handleOpenSheet(contact)}
-                            className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
-                          >
-                            <Pencil className="w-4 h-4" />
-                          </button>
-                        )}
-                        {canEditContact && (
-                          <button
-                            onClick={() => handleDelete(contact)}
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleDelete(contact);
+                            }}
                             className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
-                        )}
-                      </div>
+                        </div>
+                      )}
                     </div>
 
                     <div className="space-y-2">
@@ -486,7 +486,10 @@ export default function ContactsPage() {
                           <div className="text-xs text-gray-500">Deuda pendiente</div>
                           <button
                             type="button"
-                            onClick={() => handleOpenDebtInMovements(contact)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOpenDebtInMovements(contact);
+                            }}
                             className="text-red-600 font-semibold hover:underline underline-offset-2"
                           >
                             ${formatCurrency(contact.credit_balance + contact.supplier_debt)}
@@ -692,7 +695,11 @@ export default function ContactsPage() {
                       </thead>
                       <tbody className="divide-y">
                         {filteredContacts.map((contact) => (
-                          <tr key={contact.id} className="hover:bg-gray-50">
+                          <tr
+                            key={contact.id}
+                            className={`hover:bg-gray-50 ${canEditContact ? 'cursor-pointer' : ''}`}
+                            onClick={() => canEditContact && handleOpenSheet(contact)}
+                          >
                             <td className="py-3 px-4">
                               <div className="font-medium text-gray-900">{contact.name}</div>
                             </td>
@@ -714,7 +721,10 @@ export default function ContactsPage() {
                               {contact.credit_balance + contact.supplier_debt > 0 ? (
                                 <button
                                   type="button"
-                                  onClick={() => handleOpenDebtInMovements(contact)}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleOpenDebtInMovements(contact);
+                                  }}
                                   className="text-red-600 font-medium hover:underline underline-offset-2"
                                 >
                                   ${formatCurrency(contact.credit_balance + contact.supplier_debt)}
@@ -729,14 +739,10 @@ export default function ContactsPage() {
                                   <Button
                                     variant="ghost"
                                     size="sm"
-                                    onClick={() => handleOpenSheet(contact)}
-                                  >
-                                    <Pencil className="w-4 h-4" />
-                                  </Button>
-                                  <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    onClick={() => handleDelete(contact)}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleDelete(contact);
+                                    }}
                                     className="text-red-600 hover:text-red-700 hover:bg-red-50"
                                   >
                                     <Trash2 className="w-4 h-4" />

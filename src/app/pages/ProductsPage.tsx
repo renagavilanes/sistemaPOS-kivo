@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { Search, Plus, Edit2, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet } from 'lucide-react';
+import { Search, Plus, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -1154,7 +1154,11 @@ export default function ProductsPage() {
                   const profitPercentage = ((profit / product.price) * 100).toFixed(0);
 
                   return (
-                    <tr key={product.id} className="hover:bg-gray-50">
+                    <tr
+                      key={product.id}
+                      className={`hover:bg-gray-50 ${canEditProduct ? 'cursor-pointer' : ''}`}
+                      onClick={() => canEditProduct && handleEditProduct(product)}
+                    >
                       <td className="pl-4 pr-0 py-3 w-auto">
                         <div className="flex items-center gap-3">
                           <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded bg-gray-100">
@@ -1180,6 +1184,7 @@ export default function ProductsPage() {
                             step="0.01"
                             value={product.price}
                             readOnly={!canEditProduct}
+                            onClick={(e) => e.stopPropagation()}
                             onChange={(e) => {
                               if (!canEditProduct) return;
                               const newPrice = parseFloat(e.target.value);
@@ -1221,6 +1226,7 @@ export default function ProductsPage() {
                             step="0.01"
                             value={product.cost}
                             readOnly={!canEditProduct}
+                            onClick={(e) => e.stopPropagation()}
                             onChange={(e) => {
                               if (!canEditProduct) return;
                               const newCost = parseFloat(e.target.value);
@@ -1270,6 +1276,7 @@ export default function ProductsPage() {
                           type="number"
                           value={product.stock}
                           readOnly={!canEditProduct}
+                          onClick={(e) => e.stopPropagation()}
                           onChange={(e) => {
                             if (!canEditProduct) return;
                             const newStock = parseInt(e.target.value);
@@ -1304,20 +1311,14 @@ export default function ProductsPage() {
                       </td>
                       <td className="px-2 py-3">
                         <div className="flex items-center justify-end gap-2 mx-[12px] my-[0px]">
-                          {canEditProduct && (
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => handleEditProduct(product)}
-                          >
-                            <Edit2 className="w-4 h-4" />
-                          </Button>
-                          )}
                           {canDeleteProduct && (
                           <Button
                             variant="ghost"
                             size="icon"
-                            onClick={() => handleDeleteClick(product)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleDeleteClick(product);
+                            }}
                           >
                             <Trash2 className="w-4 h-4 text-red-600" />
                           </Button>
@@ -1371,7 +1372,7 @@ export default function ProductsPage() {
               return (
                 <div
                   key={product.id}
-                  className="bg-white rounded-lg border p-3 flex gap-3"
+                  className={`bg-white rounded-lg border p-3 flex gap-3 ${canEditProduct ? 'cursor-pointer' : ''}`}
                   onClick={() => canEditProduct && handleEditProduct(product)}
                 >
                   {/* Imagen pequeña */}
