@@ -56,8 +56,8 @@ export function ShoppingCart({
   const total = items.reduce((sum, item) => sum + calculateSubtotal(item), 0);
 
   const handleCardClick = (item: CartItem) => {
-    // Only open sheet on mobile (xl breakpoint is 1280px)
-    if (window.innerWidth < 1280) {
+    // Solo abrir ficha de edición en móvil (< lg); en tablet/escritorio hay controles en la tarjeta.
+    if (window.innerWidth < 1024) {
       setEditingItem(item);
       setEditSheetOpen(true);
     }
@@ -120,7 +120,7 @@ export function ShoppingCart({
                 {items.map((item) => (
                   <div 
                     key={item.product.id} 
-                    className="bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition-shadow xl:cursor-default cursor-pointer active:bg-gray-50 xl:active:bg-white"
+                    className="bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition-shadow lg:cursor-default cursor-pointer active:bg-gray-50 lg:active:bg-white"
                     onClick={() => handleCardClick(item)}
                   >
                     {/* Header: Image + Name + Delete */}
@@ -143,7 +143,7 @@ export function ShoppingCart({
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="hidden xl:flex h-8 w-8 p-0 shrink-0 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md border-2 border-red-600"
+                        className="hidden lg:flex h-8 w-8 p-0 shrink-0 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md border-2 border-red-600"
                         onClick={(e) => {
                           e.stopPropagation();
                           onRemoveItem(item.product.id);
@@ -153,8 +153,8 @@ export function ShoppingCart({
                       </Button>
                     </div>
 
-                    {/* Quantity + Price Controls - Desktop only */}
-                    <div className="hidden xl:flex items-center gap-2 mb-1.5">
+                    {/* Quantity + Price: tablet y escritorio; en móvil se ocultan */}
+                    <div className="hidden lg:flex items-center gap-2 mb-1.5">
                       <div className="flex items-center justify-between gap-1 border-2 border-gray-200 rounded-full px-3 h-9 flex-1">
                         <Button
                           size="sm"
