@@ -3218,7 +3218,7 @@ export default function SuperAdminPage() {
                       <th
                         key={col.key}
                         onClick={col.key === '_select' || col.key === '_actions' || col.key === '_danger' ? undefined : () => toggleBizSort(col.key as keyof BizRow)}
-                        className={`px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider select-none whitespace-nowrap ${col.key === '_select' || col.key === '_actions' || col.key === '_danger' ? '' : 'cursor-pointer hover:text-white'}`}
+                        className={`px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider select-none whitespace-nowrap ${col.key === '_select' || col.key === '_actions' || col.key === '_danger' ? '' : 'cursor-pointer hover:text-white'}${col.key === 'name' ? ' min-w-[22ch] w-[22ch]' : ''}`}
                       >
                         {col.key === '_select' ? (
                           <input
@@ -3270,11 +3270,12 @@ export default function SuperAdminPage() {
                           Eliminar
                         </button>
                       </td>
-                      <td className="px-4 py-3">
+                      <td className="px-4 py-3 min-w-[22ch] w-[22ch] max-w-[22ch]">
                         <button
                           type="button"
                           onClick={() => openBusiness(b.id, 'resumen', null)}
-                          className="text-left font-medium text-white hover:text-indigo-300"
+                          className="block w-full text-left font-medium text-white hover:text-indigo-300 whitespace-nowrap truncate"
+                          title={b.name}
                         >
                           {b.name}
                         </button>
