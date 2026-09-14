@@ -2681,33 +2681,38 @@ export default function MovementsPage() {
           {/* Table Content */}
           <div className="md:bg-white md:rounded-b-lg md:border md:border-gray-300/90 md:shadow-[var(--shadow-card)] flex-1 flex flex-col overflow-hidden">
             {/* Desktop Table */}
-            <div className="hidden md:block overflow-auto flex-1">
-              <table className="w-full">
+            <div className="hidden md:block overflow-y-auto overflow-x-hidden flex-1 min-w-0">
+              <table className="w-full table-fixed">
+                <colgroup>
+                  <col />
+                  <col className="w-32" />
+                  <col className="w-36" />
+                  <col className="w-40" />
+                  <col className="w-24" />
+                </colgroup>
                 <thead className={dataTableThead}>
                   <tr>
-                    <th className={`${dthMovement} w-[30%]`}>Concepto</th>
-                    <th className={`${dthMovement} w-[15%]`}>Valor</th>
-                    <th className={`${dthMovement} w-[14%]`}>Medio de pago</th>
-                    <th className={`${dthMovement} w-[17%]`}>Fecha y hora</th>
-                    <th className={`${dthMovement} w-[12%]`}>Empleado</th>
-                    <th className={`${dthMovement} w-[12%]`}>Estado</th>
+                    <th className={`${dthMovement} px-4`}>Concepto</th>
+                    <th className={`${dthMovement} px-3`}>Valor</th>
+                    <th className={`${dthMovement} px-3`}>Medio de pago</th>
+                    <th className={`${dthMovement} px-3 whitespace-nowrap`}>Fecha y hora</th>
+                    <th className={`${dthMovement} pl-3 pr-4 text-right`}>Estado</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y">
                   {loading ? (
                     Array.from({ length: 8 }).map((_, idx) => (
                       <tr key={`movements-skeleton-row-${idx}`}>
-                        <td className="px-4 py-3"><Skeleton className="h-4 w-56" /></td>
-                        <td className="px-4 py-3"><Skeleton className="h-4 w-24" /></td>
-                        <td className="px-4 py-3"><Skeleton className="h-5 w-24 rounded-full" /></td>
-                        <td className="px-4 py-3"><Skeleton className="h-4 w-32" /></td>
-                        <td className="px-4 py-3"><Skeleton className="h-4 w-24" /></td>
-                        <td className="px-4 py-3"><Skeleton className="h-5 w-16 rounded-full" /></td>
+                        <td className="px-4 py-3"><Skeleton className="h-4 w-56 max-w-full" /></td>
+                        <td className="px-3 py-3"><Skeleton className="h-4 w-16" /></td>
+                        <td className="px-3 py-3"><Skeleton className="h-5 w-20 rounded-full" /></td>
+                        <td className="px-3 py-3"><Skeleton className="h-4 w-16" /></td>
+                        <td className="pl-3 pr-4 py-3"><Skeleton className="h-5 w-14 rounded-full ml-auto" /></td>
                       </tr>
                     ))
                   ) : filteredMovements.length === 0 ? (
                     <tr>
-                      <td colSpan={6} className="px-4 py-12">
+                      <td colSpan={5} className="px-4 py-12">
                         <div className="flex flex-col items-center">
                           <Receipt className="w-16 h-16 text-gray-300 mb-4" />
                           <p className="text-gray-500 text-lg mb-2">No hay movimientos</p>
@@ -2757,15 +2762,15 @@ export default function MovementsPage() {
                           setDetailSheetOpen(true);
                         }}
                       >
-                        <td className="px-4 py-3">
-                          <div className="flex items-center gap-2">
+                        <td className="px-4 py-3 min-w-0 overflow-hidden">
+                          <div className="flex items-center gap-2 min-w-0">
                             {movement.isPartialPayment && (
                               <div className="flex flex-col items-center justify-center w-5 h-5 rounded bg-gray-200 text-gray-600 text-xs font-medium flex-shrink-0">
                                 {movement.paymentIndex}
                               </div>
                             )}
-                            <div className="flex flex-col">
-                              <span className="text-sm font-medium text-gray-900 line-clamp-2">{movement.productConcept}</span>
+                            <div className="flex flex-col min-w-0">
+                              <span className="text-sm font-medium text-gray-900 line-clamp-2 break-words">{movement.productConcept}</span>
                               {movement.isPartialPayment && (
                                 <span className="text-xs text-gray-500">
                                   Pago {movement.paymentIndex} de {movement.totalPayments}
@@ -2774,29 +2779,28 @@ export default function MovementsPage() {
                             </div>
                           </div>
                         </td>
-                        <td className="px-4 py-3">
-                          <div className="flex flex-col">
+                        <td className="px-3 py-3 align-top overflow-hidden">
+                          <div className="flex flex-col min-w-0">
                             <span className="text-sm font-semibold text-gray-900">${formatCurrency(movement.total)}</span>
                             {!movement.isPartialPayment && movement.type === 'sale' && (
-                              <span className={`text-xs font-medium ${movement.profit >= 0 ? 'text-emerald-700' : 'text-rose-700'}`}>
+                              <span className={`text-xs font-medium leading-tight ${movement.profit >= 0 ? 'text-emerald-700' : 'text-rose-700'}`}>
                                 Ganancia: ${formatCurrency(movement.profit)}
                               </span>
                             )}
                           </div>
                         </td>
-                        <td className="px-4 py-3">
-                          <Badge variant="outline" className="text-xs">
+                        <td className="px-3 py-3 align-top overflow-hidden">
+                          <Badge variant="outline" className="text-xs max-w-full min-w-0 shrink overflow-hidden">
                             {paymentMethodLabel}
                           </Badge>
                         </td>
-                        <td className="px-4 py-3">
-                          <div className="flex flex-col">
+                        <td className="px-3 py-3 align-top overflow-hidden">
+                          <div className="flex flex-col min-w-0">
                             <span className="text-sm text-gray-900">{formatDate(movement.date)}</span>
                             <span className="text-xs text-gray-500">{movement.time}</span>
                           </div>
                         </td>
-                        <td className="px-4 py-3 text-sm text-gray-600">{movement.employee}</td>
-                        <td className="px-4 py-3">
+                        <td className="pl-3 pr-4 py-3 align-top text-right overflow-hidden">
                           <Badge
                             className={`text-xs ${movementPaymentStatusBadgeClass(movement.status)}`}
                           >
@@ -2839,7 +2843,7 @@ export default function MovementsPage() {
                   </p>
                 </div>
               ) : (
-                <div className="p-1.5 sm:p-2 space-y-1.5 sm:space-y-2">
+                <div className="p-2 sm:p-3 space-y-2">
                   {(() => {
                     const renderedIds = new Set();
                     
@@ -2907,8 +2911,8 @@ export default function MovementsPage() {
                                       setDetailSheetOpen(true);
                                     }}
                                   >
-                                    <div className="flex items-start justify-between gap-2">
-                                      <div className="flex items-start gap-2 flex-1 min-w-0">
+                                    <div className="flex items-start justify-between gap-4">
+                                      <div className="flex items-start gap-3 flex-1 min-w-0">
                                         <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-900 text-white text-xs font-bold flex-shrink-0">
                                           {payment.paymentIndex}
                                         </span>
@@ -2947,7 +2951,7 @@ export default function MovementsPage() {
                       return (
                         <div 
                           key={movement.id} 
-                          className="bg-white rounded-lg sm:p-2.5 shadow-sm border border-gray-100 active:bg-gray-50 transition-colors p-[12px]"
+                          className="bg-white rounded-lg shadow-sm border border-gray-100 active:bg-gray-50 transition-colors p-3.5 sm:p-4"
                           onClick={() => {
                             const originalMovement = movement.isPartialPayment 
                               ? movements.find(m => m.id === movement.originalId)
@@ -2956,7 +2960,7 @@ export default function MovementsPage() {
                             setDetailSheetOpen(true);
                           }}
                         >
-                          <div className="flex items-start gap-2 sm:gap-3">
+                          <div className="flex items-start gap-3">
                             {/* Icon */}
                             <div className={`flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center ${
                               movement.type === 'sale' ? 'bg-teal-50' : 'bg-red-50'
@@ -2971,24 +2975,24 @@ export default function MovementsPage() {
                             {/* Content */}
                             <div className="flex-1 min-w-0">
                               {/* Title and Amount Row */}
-                              <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-2 gap-y-1">
-                                <h3 className="font-semibold text-gray-900 text-base sm:text-base leading-tight break-words line-clamp-2 col-start-1 row-start-1">
+                              <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-2">
+                                <h3 className="font-semibold text-gray-900 text-base leading-tight break-words line-clamp-2 col-start-1 row-start-1 pr-1">
                                   {movement.productConcept}
                                 </h3>
-                                <p className={`font-bold text-base sm:text-base whitespace-nowrap col-start-2 row-start-1 self-start ${
+                                <p className={`font-bold text-base whitespace-nowrap col-start-2 row-start-1 self-start pl-1 ${
                                   movement.type === 'sale' ? 'text-teal-600' : 'text-red-600'
                                 }`}>
                                   ${formatCurrency(movement.total)}
                                 </p>
                                 {/* Details Row */}
-                                <div className="col-start-1 row-start-2 flex items-center gap-1 sm:gap-1.5 text-sm sm:text-sm text-gray-500 flex-wrap min-w-0">
+                                <div className="col-start-1 row-start-2 flex items-center gap-1.5 text-sm text-gray-500 flex-wrap min-w-0 pr-1">
                                   <span className="flex-shrink-0">{paymentMethodLabel}</span>
                                   <span className="flex-shrink-0">•</span>
                                   <span className="flex-shrink-0">{formatDate(movement.date)}</span>
                                   <span className="flex-shrink-0">-</span>
                                   <span className="flex-shrink-0">{movement.time}</span>
                                 </div>
-                                <div className="col-start-2 row-start-2 self-end justify-self-end">
+                                <div className="col-start-2 row-start-2 self-end justify-self-end pl-1">
                                   <Badge
                                     className={`text-xs h-5 px-2 ${movementPaymentStatusBadgeClass(movement.status)}`}
                                   >

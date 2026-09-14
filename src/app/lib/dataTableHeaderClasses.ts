@@ -22,6 +22,6 @@ export const dthRightTight =
 export const dthCenter =
   `${headerBg} text-center px-4 py-3 text-sm font-semibold text-white`;
 
-/** Movimientos: cabeceras en mayúsculas y un poco más densas */
+/** Movimientos: cabeceras en mayúsculas y un poco más densas (padding por columna) */
 export const dthMovement =
-  `${headerBg} px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-white`;
+  `${headerBg} py-3 text-left text-xs font-semibold uppercase tracking-wide text-white`;
