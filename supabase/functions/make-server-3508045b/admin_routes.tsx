@@ -165,6 +165,18 @@ export function registerAdminRoutes(app: any): void {
     } catch (e: any) { return c.json({ error: e.message }, 500); }
   });
 
+  app.delete("/make-server-3508045b/admin/expenses/:id", async (c: any) => {
+    try {
+      const businessId = c.req.header("X-Business-ID");
+      if (!businessId) return c.json({ error: "Missing X-Business-ID header" }, 400);
+      const id = c.req.param("id");
+      if (!id) return c.json({ error: "Missing expense id" }, 400);
+      const { error } = await admin.from("expenses").delete().eq("id", id).eq("business_id", businessId);
+      if (error) return c.json({ error: error.message }, 500);
+      return c.json({ success: true });
+    } catch (e: any) { return c.json({ error: e.message }, 500); }
+  });
+
   app.patch("/make-server-3508045b/admin/expenses/:id", async (c: any) => {
     try {
       const businessId = c.req.header("X-Business-ID");

@@ -31,8 +31,8 @@ export const exportProductsToExcel = async (
 ): Promise<boolean> => {
   try {
     const totalReferences = filteredProducts.length;
-    const totalInventoryCost = filteredProducts.reduce((sum, p) => sum + p.cost * p.stock, 0);
-    const totalInventoryValue = filteredProducts.reduce((sum, p) => sum + p.price * p.stock, 0);
+    const totalInventoryCost = filteredProducts.reduce((sum, p) => sum + p.cost * Math.max(0, p.stock), 0);
+    const totalInventoryValue = filteredProducts.reduce((sum, p) => sum + p.price * Math.max(0, p.stock), 0);
     const totalPotentialProfit = totalInventoryValue - totalInventoryCost;
     const totalStockUnits = filteredProducts.reduce((sum, p) => sum + p.stock, 0);
 

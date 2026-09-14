@@ -1013,20 +1013,27 @@ export async function createExpense(businessId: string, expense: Omit<Expense, '
 }
 
 export async function deleteExpense(expenseId: string, businessId: string): Promise<void> {
-  console.log('🔵 [API DIRECT] Deleting expense:', expenseId);
-  
-  const { error } = await supabase
-    .from('expenses')
-    .delete()
-    .eq('id', expenseId)
-    .eq('business_id', businessId);
+  console.log('🔵 [API] Deleting expense via Edge Function:', expenseId);
 
-  if (error) {
-    console.error('❌ [API DIRECT] Error deleting expense:', error);
-    throw new Error(normalizeAuthErrorMessage(error.message));
+  const accessToken = await getAccessToken();
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/admin/expenses/${encodeURIComponent(expenseId)}`,
+    {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'X-Business-ID': businessId,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    const errBody = await response.json().catch(() => ({ error: response.statusText }));
+    console.error('❌ [API] Error deleting expense:', errBody);
+    throw new Error(errBody.error || `Error ${response.status} al eliminar gasto`);
   }
 
-  console.log('✅ [API DIRECT] Expense deleted');
+  console.log('✅ [API] Expense deleted via server:', expenseId);
 }
 
 export async function updateExpense(expenseId: string, businessId: string, updates: Partial<Expense>): Promise<Expense> {
