@@ -120,14 +120,15 @@ export function Sidebar() {
           <Link
             key={item.name}
             to={item.href}
-            className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors text-sm ${
+            title={item.name}
+            className={`flex items-center lg:justify-center xl:justify-start gap-2 lg:px-0 xl:px-3 py-2 rounded-md transition-colors text-sm ${
               isActive
                 ? 'bg-blue-50 text-blue-600 font-medium'
                 : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
             <Icon className="w-[18px] h-[18px] flex-shrink-0" />
-            <span>{item.name}</span>
+            <span className="hidden xl:inline">{item.name}</span>
           </Link>
         );
       })}
@@ -180,44 +181,50 @@ export function Sidebar() {
       )}
 
       {/* Desktop Sidebar */}
-      <div className="hidden lg:flex lg:flex-col lg:fixed lg:inset-y-0 lg:w-[240px] lg:border-r lg:bg-white">
+      <div className="hidden lg:flex lg:flex-col lg:fixed lg:inset-y-0 lg:w-16 xl:w-[240px] lg:border-r lg:bg-white">
         {/* Logo */}
-        <div className="flex items-center justify-start px-3 py-3 border-b">
+        <div className="flex items-center justify-center xl:justify-start px-2 xl:px-3 py-3 border-b">
+          <img
+            src="/branding/kivo-icon.png"
+            alt="Kivo"
+            className="xl:hidden h-8 w-8 object-contain"
+          />
           <BrandLogo
-            className="w-full justify-start"
+            className="hidden xl:inline-flex w-full justify-start"
             iconClassName="h-10 w-[158px] max-w-none object-left"
           />
         </div>
 
         {/* Business Switcher */}
-        <div className="border-b px-2 py-3">
-          <BusinessSwitcher />
+        <div className="border-b px-1 xl:px-2 py-3">
+          <BusinessSwitcher compactOnTablet />
         </div>
 
         {/* Navigation */}
-        <div className="flex-1 px-2 py-3 overflow-y-auto">
+        <div className="flex-1 px-1 xl:px-2 py-3 overflow-y-auto">
           <DesktopNavLinks />
         </div>
 
         {/* User Menu con Cerrar Sesión */}
-        <div className="border-t px-2 py-3">
+        <div className="border-t px-1 xl:px-2 py-3">
           <Button 
             variant="ghost"
             onClick={() => setIsSignOutDialogOpen(true)}
-            className="w-full justify-start gap-2 h-auto py-2 px-3 hover:bg-gray-50 bg-transparent text-red-600 hover:text-red-700 hover:bg-red-50"
+            title="Cerrar sesión"
+            className="w-full lg:justify-center xl:justify-start gap-2 h-auto py-2 px-1 xl:px-3 hover:bg-gray-50 bg-transparent text-red-600 hover:text-red-700 hover:bg-red-50"
           >
-            <div className="flex items-center gap-2 flex-1 min-w-0">
+            <div className="flex items-center gap-2 min-w-0 lg:justify-center xl:justify-start w-full">
               <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
                 <span className="text-sm font-semibold text-gray-700">
                   {user?.email?.charAt(0).toUpperCase() || 'U'}
                 </span>
               </div>
-              <div className="flex-1 min-w-0 text-left">
+              <div className="hidden xl:block flex-1 min-w-0 text-left">
                 <div className="text-xs truncate text-[#000000]">
                   {user?.email}
                 </div>
               </div>
-              <LogOut className="w-4 h-4 flex-shrink-0" />
+              <LogOut className="hidden xl:block w-4 h-4 flex-shrink-0" />
             </div>
           </Button>
         </div>

@@ -139,7 +139,7 @@ export function ProductCatalog({
       {/* Products Grid */}
       <ScrollArea className="flex-1">
         {loading ? (
-          <div className="p-4 pb-32 lg:pb-4 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 lg:gap-4">
+        <div className="p-4 pb-32 lg:pb-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-3 lg:gap-4">
             {Array.from({ length: 10 }).map((_, idx) => (
               <div key={`sale-product-skeleton-${idx}`} className="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm">
                 <div className="hidden lg:block">
@@ -176,7 +176,7 @@ export function ProductCatalog({
             </div>
           </div>
         ) : (
-        <div className="p-4 pb-32 lg:pb-4 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 lg:gap-4">
+        <div className="p-4 pb-32 lg:pb-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-3 lg:gap-4">
           {filteredProducts.map((product) => {
             const quantity = getProductQuantity(product.id);
             

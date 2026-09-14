@@ -35,7 +35,7 @@ const getRoleLabel = (business: any) => {
   return map[business.employee_role] || 'Empleado';
 };
 
-export function BusinessSwitcher() {
+export function BusinessSwitcher({ compactOnTablet = false }: { compactOnTablet?: boolean }) {
   const { currentBusiness, businesses, switchBusiness, createBusiness } = useBusiness();
   const { user } = useAuth();
   const [isBusinessSheetOpen, setIsBusinessSheetOpen] = useState(false);
@@ -88,9 +88,12 @@ export function BusinessSwitcher() {
       <Button
         variant="ghost"
         onClick={() => setIsBusinessSheetOpen(true)}
-        className="w-full justify-between gap-2 h-auto py-3 px-3 hover:bg-gray-50 bg-transparent"
+        title={currentBusiness?.name || 'Mi Negocio'}
+        className={`w-full h-auto py-3 hover:bg-gray-50 bg-transparent ${
+          compactOnTablet ? 'lg:justify-center lg:px-1 xl:justify-between xl:px-3' : 'justify-between gap-2 px-3'
+        }`}
       >
-        <div className="flex items-center gap-2 flex-1 min-w-0">
+        <div className={`flex items-center gap-2 min-w-0 ${compactOnTablet ? 'lg:justify-center xl:flex-1' : 'flex-1'}`}>
           {/* Logo */}
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
             {currentLogo ? (
@@ -105,7 +108,7 @@ export function BusinessSwitcher() {
           </div>
 
           {/* Nombre y rol */}
-          <div className="flex-1 min-w-0 text-left">
+          <div className={`min-w-0 text-left ${compactOnTablet ? 'hidden xl:block flex-1' : 'flex-1'}`}>
             <div className="text-sm font-semibold truncate text-gray-900">
               {currentBusiness?.name || 'Mi Negocio'}
             </div>
@@ -114,7 +117,7 @@ export function BusinessSwitcher() {
         </div>
 
         {/* Icono dropdown */}
-        <ChevronDown className="w-4 h-4 text-gray-400 flex-shrink-0" />
+        <ChevronDown className={`w-4 h-4 text-gray-400 flex-shrink-0 ${compactOnTablet ? 'hidden xl:block' : ''}`} />
       </Button>
 
       {/* Sheet para seleccionar negocio */}

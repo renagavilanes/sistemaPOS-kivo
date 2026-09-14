@@ -6,7 +6,7 @@ export default function RootLayout() {
   return (
     <ScreenFxProvider>
       <Sidebar />
-      <div className="lg:pl-[240px]">
+      <div className="lg:pl-16 xl:pl-[240px]">
         <Outlet />
       </div>
     </ScreenFxProvider>
