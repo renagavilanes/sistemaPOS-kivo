@@ -112,7 +112,8 @@ export function BusinessProvider({ children }: { children: React.ReactNode }) {
             const empRow = allEmpRows.find((e: any) => e.is_active === true) || allEmpRows[0];
             console.log(`🏢 Permisos para negocio ${biz.name}: is_active=${empRow?.is_active}, role=${empRow?.role}`);
             return { 
-              ...biz, 
+              ...biz,
+              logo: biz.logo || biz.logo_url || undefined,
               role: 'employee' as const,
               employee_role: empRow?.role || 'employee',
               permissions: empRow?.permissions || null
@@ -124,7 +125,13 @@ export function BusinessProvider({ children }: { children: React.ReactNode }) {
       // 4. Combinar listas (sin duplicados)
       const allBusinesses: Business[] = [];
       (ownedBusinesses || []).forEach((b: any) => {
-        allBusinesses.push({ ...b, role: 'owner' as const, employee_role: null, permissions: { all: true } });
+        allBusinesses.push({
+          ...b,
+          logo: b.logo || b.logo_url || undefined,
+          role: 'owner' as const,
+          employee_role: null,
+          permissions: { all: true },
+        });
       });
       employeeBusinesses.forEach(eb => {
         const existingIndex = allBusinesses.findIndex(b => b.id === eb.id);
@@ -178,7 +185,7 @@ export function BusinessProvider({ children }: { children: React.ReactNode }) {
       // Mostrar loading overlay
       setIsSwitching(true);
       setSwitchingBusinessName(business.name);
-      setSwitchingBusinessLogo(business.logo || null);
+      setSwitchingBusinessLogo(business.logo || business.logo_url || null);
       
       setCurrentBusiness(business);
       persistCurrentBusinessId(user?.id, businessId);

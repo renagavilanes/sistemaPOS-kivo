@@ -29,21 +29,3 @@ export function BusinessFavicon() {
 
   return null;
 }
-
-  useEffect(() => {
-    let cancelled = false;
-    const isCancelled = () => cancelled;
-    if (!logo) {
-      applyKivoAppIcons();
-      return () => {
-        cancelled = true;
-      };
-    }
-    void applyBusinessAppIcons(logo, isCancelled);
-    return () => {
-      cancelled = true;
-    };
-  }, [currentBusiness?.id, logo]);
-
-  return null;
-}
