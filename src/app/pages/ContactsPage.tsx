@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Plus, Search, Trash2, User, Building2, Users, Mail, Phone, ChevronLeft } from 'lucide-react';
+import { Plus, Search, Trash2, User, Building2, Users, Mail, Phone, ChevronLeft, X } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -764,12 +764,23 @@ export default function ContactsPage() {
       </div>
 
       {/* Add/Edit Sheet */}
-      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+      <Sheet open={isSheetOpen} onOpenChange={(open) => { if (!open) handleCloseSheet(); }}>
         <SheetContent className="w-full sm:max-w-md overflow-y-auto">
-          <SheetHeader>
-            <SheetTitle>
-              {editingContact ? 'Editar Contacto' : 'Nuevo Contacto'}
-            </SheetTitle>
+          <SheetHeader className="border-b pb-4">
+            <div className="flex items-start justify-between gap-4">
+              <SheetTitle className="flex-1">
+                {editingContact ? 'Editar Contacto' : 'Nuevo Contacto'}
+              </SheetTitle>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                onClick={handleCloseSheet}
+                className="h-8 w-8 rounded-full flex-shrink-0"
+              >
+                <X className="w-4 h-4" />
+              </Button>
+            </div>
           </SheetHeader>
 
           <form onSubmit={handleSubmit} className="mx-[24px] my-[0px] p-[0px] space-y-6">
