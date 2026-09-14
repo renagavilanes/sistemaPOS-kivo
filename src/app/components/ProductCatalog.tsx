@@ -139,10 +139,10 @@ export function ProductCatalog({
       {/* Products Grid */}
       <ScrollArea className="flex-1">
         {loading ? (
-        <div className="p-3 pb-32 lg:pb-3 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 lg:gap-3">
+        <div className="p-3 pb-32 lg:pb-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 lg:gap-3">
             {Array.from({ length: 10 }).map((_, idx) => (
               <div key={`sale-product-skeleton-${idx}`} className="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm">
-                <div className="hidden lg:block">
+                <div className="hidden md:block">
                   <Skeleton className="w-full aspect-[4/3] rounded-none" />
                   <div className="w-full flex flex-col items-center gap-1 px-2.5 py-1.5">
                     <Skeleton className="h-6 w-24" />
@@ -151,7 +151,7 @@ export function ProductCatalog({
                   </div>
                 </div>
 
-                <div className="lg:hidden flex gap-3 p-3">
+                <div className="md:hidden flex gap-3 p-3">
                   <Skeleton className="w-16 h-16 rounded-lg flex-shrink-0" />
                   <div className="flex-1 min-w-0 space-y-2">
                     <Skeleton className="h-4 w-3/4" />
@@ -176,7 +176,7 @@ export function ProductCatalog({
             </div>
           </div>
         ) : (
-        <div className="p-3 pb-32 lg:pb-3 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 lg:gap-3">
+        <div className="p-3 pb-32 lg:pb-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 lg:gap-3">
           {filteredProducts.map((product) => {
             const quantity = getProductQuantity(product.id);
             
@@ -188,7 +188,7 @@ export function ProductCatalog({
                 }`}
               >
                 {/* Desktop view - clickable card */}
-                <div className="hidden lg:block">
+                <div className="hidden md:block">
                   <Button
                     variant="ghost"
                     className="h-auto p-0 w-full hover:bg-gray-50 flex flex-col"
@@ -263,7 +263,7 @@ export function ProductCatalog({
                 </div>
 
                 {/* Mobile & Tablet view - with quantity controls */}
-                <div className="lg:hidden flex gap-3 p-3">
+                <div className="md:hidden flex gap-3 p-3">
                   {/* Product Image (20% menor que 20×20 → 16×16) */}
                   <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
                     <LazyProductImage

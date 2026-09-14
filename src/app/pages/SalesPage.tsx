@@ -749,6 +749,7 @@ export default function SalesPage() {
     <div className="h-screen flex flex-col">
       {/* Header */}
       <PageHeader
+        desktopFrom="lg"
         desktop={
           isEditingMovement ? (
           <header className="bg-white border-b px-4 sm:px-6 py-4">
@@ -829,7 +830,7 @@ export default function SalesPage() {
 
             <div className="flex items-center justify-between">
               {/* Business Selector - Solo móvil */}
-              <div className="md:hidden flex-1 min-w-0 mr-3">
+              <div className="lg:hidden flex-1 min-w-0 mr-3">
                 <button
                   onClick={() => setBusinessModalOpen(true)}
                   className="flex items-center gap-2 hover:opacity-80 transition-opacity w-full text-left"
@@ -857,7 +858,7 @@ export default function SalesPage() {
 
             {/* Mode Toggle - Mobile version */}
             {!isEditingMovement && (
-              <div className="md:hidden mt-3">
+              <div className="lg:hidden mt-3">
                 <PrimaryTabs
                   value={activeTab}
                   onValueChange={handleTabChange}
