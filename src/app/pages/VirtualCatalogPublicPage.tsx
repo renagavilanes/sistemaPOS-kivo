@@ -409,8 +409,8 @@ export default function VirtualCatalogPublicPage() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:py-5 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start gap-4 overflow-x-hidden">
-        <div className="space-y-4 lg:order-1 min-w-0">
+      <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:py-5 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start gap-4">
+        <div className="space-y-4 lg:order-1 min-w-0 overflow-x-clip">
           <div className={`bg-white rounded-2xl border border-gray-200 p-4 min-w-0 ${mobileStep !== 'products' ? 'hidden lg:block' : ''}`}>
             <div className="space-y-3 min-w-0">
               <div className="space-y-2">
