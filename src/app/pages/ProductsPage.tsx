@@ -452,7 +452,7 @@ export default function ProductsPage() {
 
   // Calculations
   const totalReferences = products.length;
-  const totalInventoryCost = products.reduce((sum, p) => sum + (p.cost * p.stock), 0);
+  const totalInventoryCost = products.reduce((sum, p) => sum + p.cost * Math.max(0, p.stock), 0);
 
   // Filtered products
   const filteredProducts = products.filter(product => {
@@ -892,8 +892,9 @@ export default function ProductsPage() {
   }, [currentBusiness?.id]);
 
   return (
-    <div className="h-full flex flex-col bg-gray-50">
+    <div className="h-[100dvh] max-h-[100dvh] flex flex-col overflow-hidden overscroll-none bg-gray-50">
       <PageHeader
+        className="shrink-0"
         desktop={
           <div className="bg-white border-b px-4 sm:px-6 py-4">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -1024,7 +1025,7 @@ export default function ProductsPage() {
       />
 
       {/* Search and Filters - Desktop */}
-      <div className="hidden md:block bg-white border-b px-4 sm:px-6 py-4">
+      <div className="hidden md:block shrink-0 bg-white border-b px-4 sm:px-6 py-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -1084,7 +1085,7 @@ export default function ProductsPage() {
       </div>
 
       {/* Search and Filters - Mobile */}
-      <div className="md:hidden bg-white border-b py-3">
+      <div className="md:hidden shrink-0 bg-white border-b py-3">
         <div className="flex gap-2 mb-3 px-4">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -1140,9 +1141,9 @@ export default function ProductsPage() {
       </div>
 
       {/* Products Table - Desktop */}
-      <div className="hidden md:block flex-1 overflow-auto px-4 sm:px-6 py-4">
-        <div className="bg-white rounded-lg border overflow-hidden flex flex-col h-full">
-          <div className="overflow-x-auto overflow-y-auto flex-1">
+      <div className="hidden md:flex flex-1 min-h-0 overflow-hidden px-4 sm:px-6 py-4">
+        <div className="bg-white rounded-lg border overflow-hidden flex flex-col min-h-0 h-full w-full">
+          <div className="overflow-x-auto overflow-y-auto overscroll-contain flex-1 min-h-0">
             <table className="w-full">
               <thead className={dataTableTheadSticky}>
                 <tr>
@@ -1379,7 +1380,7 @@ export default function ProductsPage() {
       </div>
 
       {/* Products Grid - Mobile */}
-      <div className="md:hidden flex-1 overflow-auto px-4 py-4 pb-20">
+      <div className="md:hidden flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 py-4 pb-24">
         {productsLoading ? (
           <div className="flex flex-col gap-3">
             {Array.from({ length: 5 }).map((_, idx) => (
