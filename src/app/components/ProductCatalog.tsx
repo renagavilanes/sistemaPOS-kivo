@@ -139,12 +139,12 @@ export function ProductCatalog({
       {/* Products Grid */}
       <ScrollArea className="flex-1">
         {loading ? (
-        <div className="p-4 pb-32 lg:pb-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-3 lg:gap-4">
+        <div className="p-3 pb-32 lg:pb-3 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 lg:gap-3">
             {Array.from({ length: 10 }).map((_, idx) => (
               <div key={`sale-product-skeleton-${idx}`} className="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm">
                 <div className="hidden lg:block">
-                  <Skeleton className="w-full aspect-[5/4] rounded-none" />
-                  <div className="w-full flex flex-col items-center gap-2 px-[16px] py-[8px]">
+                  <Skeleton className="w-full aspect-[4/3] rounded-none" />
+                  <div className="w-full flex flex-col items-center gap-1 px-2.5 py-1.5">
                     <Skeleton className="h-6 w-24" />
                     <Skeleton className="h-4 w-32" />
                     <Skeleton className="h-4 w-20 rounded-full" />
@@ -176,7 +176,7 @@ export function ProductCatalog({
             </div>
           </div>
         ) : (
-        <div className="p-4 pb-32 lg:pb-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-3 lg:gap-4">
+        <div className="p-3 pb-32 lg:pb-3 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 lg:gap-3">
           {filteredProducts.map((product) => {
             const quantity = getProductQuantity(product.id);
             
@@ -195,7 +195,7 @@ export function ProductCatalog({
                     onClick={() => handleAddToCartWithPrice(product)}
                   >
                     {/* Imagen ~20% menos alta que 1:1 (altura = 80% del ancho) para compactar la tarjeta */}
-                    <div className="relative aspect-[5/4] w-full shrink-0 overflow-hidden bg-gray-100">
+                    <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-gray-100">
                       <LazyProductImage
                         fillParent
                         productId={product.id}
@@ -205,7 +205,7 @@ export function ProductCatalog({
                       />
                       {quantity > 0 && (
                         <div className="absolute top-2 right-2 z-10 pointer-events-none">
-                          <span className="flex h-8 min-w-8 items-center justify-center rounded-lg bg-[#272B36] px-2 text-sm font-semibold tabular-nums text-white shadow-md">
+                          <span className="flex h-7 min-w-7 items-center justify-center rounded-md bg-[#272B36] px-1.5 text-xs font-semibold tabular-nums text-white shadow-md">
                             {quantity}
                           </span>
                         </div>
@@ -220,29 +220,27 @@ export function ProductCatalog({
                     </div>
                     
                     {/* Content */}
-                    <div className="w-full flex flex-col items-center gap-2 px-[16px] py-[8px]">
-                      {/* Price */}
+                    <div className="w-full flex flex-col items-center gap-1 px-2.5 py-1.5">
                       {canEditPrice ? (
                         <div
                           className="flex items-center gap-0.5"
                           onClick={e => e.stopPropagation()}
                         >
-                          <span className="font-bold text-gray-900 text-lg">${formatCurrency(product.price)}</span>
+                          <span className="font-bold text-gray-900 text-base">${formatCurrency(product.price)}</span>
                         </div>
                       ) : (
-                        <span className="font-bold text-gray-900 text-lg">${formatCurrency(product.price)}</span>
+                        <span className="font-bold text-gray-900 text-base">${formatCurrency(product.price)}</span>
                       )}
                       
-                      {/* Name - Fixed height container for alignment */}
-                      <div className="w-full h-[40px] flex items-center justify-center px-2">
+                      <div className="w-full min-h-[2.25rem] flex items-center justify-center px-0.5">
                         <p 
-                          className="font-medium text-sm text-gray-700 text-center w-full"
+                          className="font-medium text-xs text-gray-700 text-center w-full"
                           style={{
                             display: '-webkit-box',
                             WebkitLineClamp: '2',
                             WebkitBoxOrient: 'vertical',
                             overflow: 'hidden',
-                            lineHeight: '1.4',
+                            lineHeight: '1.3',
                             wordWrap: 'break-word',
                             whiteSpace: 'normal'
                           } as React.CSSProperties}
@@ -251,13 +249,12 @@ export function ProductCatalog({
                         </p>
                       </div>
                       
-                      {/* Stock badge */}
                       {product.stock > 0 ? (
-                        <span className="text-xs text-gray-500 bg-gray-100 rounded-full px-[12px] py-[4px] mx-[0px] my-[4px]">
+                        <span className="text-[11px] text-gray-500 bg-gray-100 rounded-full px-2 py-0.5">
                           {product.stock} disponibles
                         </span>
                       ) : (
-                        <span className="text-xs text-orange-600 bg-orange-50 px-3 py-1 rounded-full font-medium">
+                        <span className="text-[11px] text-orange-600 bg-orange-50 px-2 py-0.5 rounded-full font-medium">
                           Stock: {product.stock}
                         </span>
                       )}
