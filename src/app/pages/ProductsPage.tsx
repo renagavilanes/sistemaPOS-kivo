@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, type FocusEvent } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { Search, Plus, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet } from 'lucide-react';
 import { Button } from '../components/ui/button';
@@ -48,10 +48,72 @@ const stopOpenProductDetail = (e: { stopPropagation: () => void }) => {
   e.stopPropagation();
 };
 
-const selectInlineNumber = (e: FocusEvent<HTMLInputElement>) => {
-  e.stopPropagation();
-  e.currentTarget.select();
-};
+function InlineNumberField({
+  value,
+  integer,
+  readOnly,
+  className,
+  onCommit,
+}: {
+  value: number;
+  integer?: boolean;
+  readOnly?: boolean;
+  className?: string;
+  onCommit: (next: number) => void | Promise<void>;
+}) {
+  const [draft, setDraft] = useState(String(value));
+  const focusedRef = useRef(false);
+  const startValueRef = useRef(value);
+
+  useEffect(() => {
+    if (!focusedRef.current) setDraft(String(value));
+  }, [value]);
+
+  const parseDraft = (raw: string) => {
+    const normalized = raw.trim().replace(',', '.');
+    return integer ? parseInt(normalized, 10) : parseFloat(normalized);
+  };
+
+  return (
+    <Input
+      type="text"
+      inputMode={integer ? 'numeric' : 'decimal'}
+      readOnly={readOnly}
+      value={draft}
+      onPointerDown={stopOpenProductDetail}
+      onMouseDown={(e) => {
+        stopOpenProductDetail(e);
+        if (readOnly) return;
+        if (document.activeElement !== e.currentTarget) {
+          e.preventDefault();
+          e.currentTarget.focus();
+        }
+      }}
+      onFocus={(e) => {
+        focusedRef.current = true;
+        startValueRef.current = value;
+        setDraft(String(value));
+        requestAnimationFrame(() => e.currentTarget.select());
+      }}
+      onChange={(e) => {
+        if (readOnly) return;
+        setDraft(e.target.value);
+      }}
+      onBlur={() => {
+        focusedRef.current = false;
+        const next = parseDraft(draft);
+        if (!Number.isFinite(next)) {
+          setDraft(String(startValueRef.current));
+          return;
+        }
+        setDraft(String(next));
+        if (next === startValueRef.current) return;
+        void onCommit(next);
+      }}
+      className={className}
+    />
+  );
+}
 
 export default function ProductsPage() {
   const { triggerInkDouble } = useScreenFx();
@@ -1152,92 +1214,52 @@ export default function ProductsPage() {
                       <td className="px-2 py-3 text-right">
                         <div className="relative ml-auto w-24">
                           <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
-                          <Input
-                            type="number"
-                            inputMode="decimal"
-                            step="0.01"
+                          <InlineNumberField
                             value={product.price}
                             readOnly={!canEditProduct}
-                            onPointerDown={stopOpenProductDetail}
-                            onMouseDown={stopOpenProductDetail}
-                            onClick={stopOpenProductDetail}
-                            onFocus={selectInlineNumber}
-                            onChange={(e) => {
-                              if (!canEditProduct) return;
-                              const newPrice = parseFloat(e.target.value);
-                              if (!isNaN(newPrice)) {
-                                setProducts(prev =>
-                                  prev.map(p =>
-                                    p.id === product.id
-                                      ? { ...p, price: newPrice }
-                                      : p
-                                  )
-                                );
-                              }
-                            }}
-                            onBlur={async (e) => {
-                              if (!canEditProduct) return;
-                              const newPrice = parseFloat(e.target.value);
-                              if (isNaN(newPrice)) return;
+                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
+                            onCommit={async (newPrice) => {
+                              const previous = product.price;
+                              setProducts((prev) =>
+                                prev.map((p) => (p.id === product.id ? { ...p, price: newPrice } : p)),
+                              );
                               try {
                                 await updateProduct(product.id, { price: newPrice });
-                                window.dispatchEvent(new Event('productsUpdated'));
                                 toast.success('Precio actualizado');
                               } catch (error) {
+                                setProducts((prev) =>
+                                  prev.map((p) => (p.id === product.id ? { ...p, price: previous } : p)),
+                                );
                                 console.error('❌ Error al actualizar precio:', error);
                                 toast.error('Error al guardar el precio');
                               }
                             }}
-                            onKeyDown={(e) => {
-                              if (e.key === 'Enter') e.currentTarget.blur();
-                            }}
-                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
                           />
                         </div>
                       </td>
                       <td className="px-2 py-3 text-right">
                         <div className="relative ml-auto w-24">
                           <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
-                          <Input
-                            type="number"
-                            inputMode="decimal"
-                            step="0.01"
+                          <InlineNumberField
                             value={product.cost}
                             readOnly={!canEditProduct}
-                            onPointerDown={stopOpenProductDetail}
-                            onMouseDown={stopOpenProductDetail}
-                            onClick={stopOpenProductDetail}
-                            onFocus={selectInlineNumber}
-                            onChange={(e) => {
-                              if (!canEditProduct) return;
-                              const newCost = parseFloat(e.target.value);
-                              if (!isNaN(newCost)) {
-                                setProducts(prev =>
-                                  prev.map(p =>
-                                    p.id === product.id
-                                      ? { ...p, cost: newCost }
-                                      : p
-                                  )
-                                );
-                              }
-                            }}
-                            onBlur={async (e) => {
-                              if (!canEditProduct) return;
-                              const newCost = parseFloat(e.target.value);
-                              if (isNaN(newCost)) return;
+                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
+                            onCommit={async (newCost) => {
+                              const previous = product.cost;
+                              setProducts((prev) =>
+                                prev.map((p) => (p.id === product.id ? { ...p, cost: newCost } : p)),
+                              );
                               try {
                                 await updateProduct(product.id, { cost: newCost });
-                                window.dispatchEvent(new Event('productsUpdated'));
                                 toast.success('Costo actualizado');
                               } catch (error) {
+                                setProducts((prev) =>
+                                  prev.map((p) => (p.id === product.id ? { ...p, cost: previous } : p)),
+                                );
                                 console.error('❌ Error al actualizar costo:', error);
                                 toast.error('Error al guardar el costo');
                               }
                             }}
-                            onKeyDown={(e) => {
-                              if (e.key === 'Enter') e.currentTarget.blur();
-                            }}
-                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
                           />
                         </div>
                       </td>
@@ -1253,45 +1275,27 @@ export default function ProductsPage() {
                         </div>
                       </td>
                       <td className="px-4 py-3 text-right">
-                        <Input
-                          type="number"
-                          inputMode="numeric"
+                        <InlineNumberField
                           value={product.stock}
+                          integer
                           readOnly={!canEditProduct}
-                          onPointerDown={stopOpenProductDetail}
-                          onMouseDown={stopOpenProductDetail}
-                          onClick={stopOpenProductDetail}
-                          onFocus={selectInlineNumber}
-                          onChange={(e) => {
-                            if (!canEditProduct) return;
-                            const newStock = parseInt(e.target.value);
-                            if (!isNaN(newStock)) {
-                              setProducts(prev =>
-                                prev.map(p =>
-                                  p.id === product.id
-                                    ? { ...p, stock: newStock }
-                                    : p
-                                )
-                              );
-                            }
-                          }}
-                          onBlur={async (e) => {
-                            if (!canEditProduct) return;
-                            const newStock = parseInt(e.target.value);
-                            if (isNaN(newStock)) return;
+                          className={`h-9 w-20 text-right ml-auto ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
+                          onCommit={async (newStock) => {
+                            const previous = product.stock;
+                            setProducts((prev) =>
+                              prev.map((p) => (p.id === product.id ? { ...p, stock: newStock } : p)),
+                            );
                             try {
                               await updateProduct(product.id, { stock: newStock });
-                              window.dispatchEvent(new Event('productsUpdated'));
                               toast.success('Stock actualizado');
                             } catch (error) {
+                              setProducts((prev) =>
+                                prev.map((p) => (p.id === product.id ? { ...p, stock: previous } : p)),
+                              );
                               console.error('❌ Error al actualizar stock:', error);
                               toast.error('Error al guardar el stock');
                             }
                           }}
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter') e.currentTarget.blur();
-                          }}
-                          className={`h-9 w-20 text-right ml-auto ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
                         />
                       </td>
                       <td className="px-2 py-3">
