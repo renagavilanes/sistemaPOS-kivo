@@ -19,6 +19,8 @@ interface ProductCatalogProps {
   categories: string[];
   cartItems?: any[]; // For showing quantity in mobile
   onUpdateQuantity?: (productId: string, quantity: number) => void;
+  /** Cantidades ya descontadas en inventario (editar venta). */
+  originalCartQuantities?: Record<string, number>;
   canEditPrice?: boolean; // Allows editing product price before adding to cart
   loading?: boolean;
   modeTabs?: ReactNode;
@@ -34,6 +36,7 @@ export function ProductCatalog({
   categories,
   cartItems = [],
   onUpdateQuantity,
+  originalCartQuantities = {},
   canEditPrice = false,
   loading = false,
   modeTabs,
@@ -62,6 +65,12 @@ export function ProductCatalog({
   const getProductQuantity = (productId: string) => {
     const cartItem = cartItems.find(item => item.product.id === productId);
     return cartItem ? cartItem.quantity : 0;
+  };
+
+  const getAvailableStock = (product: Product) => {
+    const inCart = getProductQuantity(product.id);
+    const alreadySold = originalCartQuantities[product.id] ?? 0;
+    return product.stock - Math.max(0, inCart - alreadySold);
   };
 
   const handleQuantityChange = (product: Product, newQuantity: number) => {
@@ -179,6 +188,7 @@ export function ProductCatalog({
         <div className="p-3 pb-32 lg:pb-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 lg:gap-3">
           {filteredProducts.map((product) => {
             const quantity = getProductQuantity(product.id);
+            const available = getAvailableStock(product);
             
             return (
               <div
@@ -210,10 +220,10 @@ export function ProductCatalog({
                           </span>
                         </div>
                       )}
-                      {product.stock <= 0 && (
+                      {available <= 0 && (
                         <div className={`absolute top-2 z-10 pointer-events-none ${quantity > 0 ? 'left-2' : 'right-2'}`}>
                           <span className="text-xs bg-orange-500 text-white px-2 py-0.5 rounded-full font-medium">
-                            Stock: {product.stock}
+                            Stock: {available}
                           </span>
                         </div>
                       )}
@@ -249,13 +259,13 @@ export function ProductCatalog({
                         </p>
                       </div>
                       
-                      {product.stock > 0 ? (
+                      {available > 0 ? (
                         <span className="text-[11px] text-gray-500 bg-gray-100 rounded-full px-2 py-0.5">
-                          {product.stock} disponibles
+                          {available} disponibles
                         </span>
                       ) : (
                         <span className="text-[11px] text-orange-600 bg-orange-50 px-2 py-0.5 rounded-full font-medium">
-                          Stock: {product.stock}
+                          Stock: {available}
                         </span>
                       )}
                     </div>
@@ -273,10 +283,10 @@ export function ProductCatalog({
                       alt={product.name}
                       className="h-full w-full object-cover object-center"
                     />
-                    {product.stock <= 0 && (
+                    {available <= 0 && (
                       <div className="absolute top-1 right-1">
                         <span className="text-xs bg-orange-500 text-white px-1.5 py-0.5 rounded-full font-medium leading-none">
-                          {product.stock}
+                          {available}
                         </span>
                       </div>
                     )}
@@ -285,8 +295,8 @@ export function ProductCatalog({
                   {/* Product Info */}
                   <div className="flex-1 min-w-0">
                     <h3 className="font-medium text-sm mb-1 line-clamp-2 text-gray-900">{product.name}</h3>
-                    <p className={`text-xs mb-2 ${product.stock <= 0 ? 'text-orange-500 font-medium' : 'text-gray-500'}`}>
-                      {product.stock > 0 ? `${product.stock} disponibles` : `Stock: ${product.stock}`}
+                    <p className={`text-xs mb-2 ${available <= 0 ? 'text-orange-500 font-medium' : 'text-gray-500'}`}>
+                      {available > 0 ? `${available} disponibles` : `Stock: ${available}`}
                     </p>
                     {canEditPrice ? (
                       <div className="flex items-center gap-0.5">

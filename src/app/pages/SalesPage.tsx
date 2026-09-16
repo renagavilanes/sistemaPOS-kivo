@@ -75,6 +75,7 @@ export default function SalesPage() {
   const [freeSaleSubtotal, setFreeSaleSubtotal] = useState(0);
   const [isFreeSaleCheckout, setIsFreeSaleCheckout] = useState(false);
   const [isEditingMovement, setIsEditingMovement] = useState(false);
+  const [originalCartQuantities, setOriginalCartQuantities] = useState<Record<string, number>>({});
   const [mobileCartSheetOpen, setMobileCartSheetOpen] = useState(false);
   const hasLoadedRef = useRef(false);
 
@@ -138,6 +139,7 @@ export default function SalesPage() {
     setSearchTerm('');
     setSelectedCategory('Todas');
     setIsEditingMovement(false);
+    setOriginalCartQuantities({});
     hasLoadedRef.current = false;
 
     const loadProducts = async () => {
@@ -254,6 +256,9 @@ export default function SalesPage() {
           });
           
           setCartItems(loadedCartItems);
+          setOriginalCartQuantities(
+            Object.fromEntries(loadedCartItems.map((item) => [item.product.id, item.quantity])),
+          );
           setIsEditingMovement(true);
           toast.success(`${loadedCartItems.length} producto(s) cargado(s) para edición`);
         }
@@ -920,6 +925,7 @@ export default function SalesPage() {
               onAddToCart={handleAddToCart}
               categories={categories}
               cartItems={cartItems}
+              originalCartQuantities={originalCartQuantities}
               onUpdateQuantity={handleUpdateQuantity}
               canEditPrice={canEditPrice}
               modeTabs={saleModeTabs}
