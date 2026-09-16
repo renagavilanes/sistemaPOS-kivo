@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Separator } from './ui/separator';
 import { ScrollArea } from './ui/scroll-area';
-import { formatCurrency } from '../utils/currency';
+import { formatCurrency, parseLocaleNumber } from '../utils/currency';
 import { useState } from 'react';
 import { CartItemEditSheet } from './CartItemEditSheet';
 import { LazyProductImage } from './LazyProductImage';
@@ -186,12 +186,12 @@ export function ShoppingCart({
                           <>
                             <span className="text-sm font-semibold text-gray-900">$</span>
                             <Input
-                            type="number"
-                            step="0.01"
+                            type="text"
+                            inputMode="decimal"
                             value={item.priceAtSale}
                             onChange={(e) => {
                               e.stopPropagation();
-                              onUpdatePrice(item.product.id, parseFloat(e.target.value) || 0);
+                              onUpdatePrice(item.product.id, parseLocaleNumber(e.target.value) || 0);
                             }}
                             onClick={(e) => e.stopPropagation()}
                             className="h-7 min-w-0 flex-1 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-transparent"

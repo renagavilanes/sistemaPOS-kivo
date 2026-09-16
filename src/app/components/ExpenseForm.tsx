@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { ScrollArea } from './ui/scroll-area';
-import { formatCurrency } from '../utils/currency';
+import { formatCurrency, parseLocaleNumber } from '../utils/currency';
 import {
   Sheet,
   SheetContent,
@@ -153,10 +153,10 @@ export function ExpenseForm({
     }
   }, [open, isEditMode, initialData, today]);
 
-  const totalValue = parseFloat(amount) || 0;
+  const totalValue = parseLocaleNumber(amount) || 0;
 
   const handleConfirm = () => {
-    if (!category || !amount) {
+    if (!category || !Number.isFinite(parseLocaleNumber(amount))) {
       return;
     }
 
@@ -333,8 +333,8 @@ export function ExpenseForm({
             <div className="space-y-2">
               <Label>Valor*</Label>
               <Input
-                type="number"
-                step="0.01"
+                type="text"
+                inputMode="decimal"
                 placeholder="0"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}

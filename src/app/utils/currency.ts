@@ -36,3 +36,31 @@ export function formatCurrency(value: number, decimals?: number): string {
   // Otherwise, show decimals with comma
   return `${integerWithDots},${decimal}`;
 }
+
+/**
+ * Acepta 3,94 y 3.94 (y 1.234,50). El teclado y type=number del navegador
+ * suelen rechazar la coma y el campo queda vacío.
+ */
+export function parseLocaleNumber(raw: string | number | null | undefined): number {
+  if (typeof raw === 'number') return Number.isFinite(raw) ? raw : NaN;
+  const t = String(raw ?? '').trim().replace(/\s/g, '').replace(/\$/g, '');
+  if (!t || t === '-' || t === ',' || t === '.') return NaN;
+
+  let normalized: string;
+  if (t.includes(',') && t.includes('.')) {
+    const lastComma = t.lastIndexOf(',');
+    const lastDot = t.lastIndexOf('.');
+    if (lastComma > lastDot) {
+      normalized = t.replace(/\./g, '').replace(',', '.');
+    } else {
+      normalized = t.replace(/,/g, '');
+    }
+  } else if (t.includes(',')) {
+    normalized = t.replace(/,/g, '.');
+  } else {
+    normalized = t;
+  }
+
+  const n = parseFloat(normalized);
+  return Number.isFinite(n) ? n : NaN;
+}

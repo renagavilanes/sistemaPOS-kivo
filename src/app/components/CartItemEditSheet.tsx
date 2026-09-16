@@ -3,7 +3,7 @@ import { Minus, Plus, Trash2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from './ui/sheet';
-import { formatCurrency } from '../utils/currency';
+import { formatCurrency, parseLocaleNumber } from '../utils/currency';
 import type { CartItem, UserRole } from '../types';
 import { LazyProductImage } from './LazyProductImage';
 
@@ -45,7 +45,7 @@ export function CartItemEditSheet({
 
   if (!item) return null;
 
-  const priceNum = parseFloat(localPrice) || 0;
+  const priceNum = parseLocaleNumber(localPrice) || 0;
   const subtotal = priceNum * localQuantity;
 
   const handleConfirm = () => {
@@ -147,8 +147,8 @@ export function CartItemEditSheet({
                 <div className="relative">
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-semibold text-gray-700">$</span>
                   <Input
-                    type="number"
-                    step="0.01"
+                    type="text"
+                    inputMode="decimal"
                     value={localPrice}
                     onChange={(e) => setLocalPrice(e.target.value)}
                     className="h-16 text-2xl font-bold text-center pl-8 border-2"

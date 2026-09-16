@@ -14,7 +14,7 @@ import { ReceiptPreviewModal } from '../components/ReceiptPreviewModal';
 import { Product, CartItem, Expense, UserRole } from '../types';
 import { mockClients, expenseCategories } from '../data/mockData';
 import { toast } from 'sonner';
-import { formatCurrency } from '../utils/currency';
+import { formatCurrency, parseLocaleNumber } from '../utils/currency';
 import { Tabs, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { ShoppingCart as CartIcon } from 'lucide-react';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '../components/ui/dropdown-menu';
@@ -382,20 +382,7 @@ export default function SalesPage() {
     }
   };
 
-  const parseMoneyInput = (raw: string): number => {
-    const t = raw.trim();
-    if (!t) return NaN;
-    let normalized: string;
-    if (t.includes(',') && t.includes('.')) {
-      normalized = t.replace(/\./g, '').replace(',', '.');
-    } else if (t.includes(',')) {
-      normalized = t.replace(',', '.');
-    } else {
-      normalized = t;
-    }
-    const n = parseFloat(normalized);
-    return Number.isFinite(n) ? n : NaN;
-  };
+  const parseMoneyInput = (raw: string): number => parseLocaleNumber(raw);
 
   const handleProceedFreeSale = () => {
     const parsed = parseMoneyInput(freeSaleAmountInput);

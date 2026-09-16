@@ -29,7 +29,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from './ui/select';
-import { formatCurrency } from '../utils/currency';
+import { formatCurrency, parseLocaleNumber } from '../utils/currency';
 import { useBusiness } from '../contexts/BusinessContext';
 import * as apiService from '../services/api';
 import { useIsMobile } from '../hooks/useIsMobile';
@@ -124,19 +124,19 @@ export function PaymentSheet({
 
   // Calculate discount
   const subtotal = total;
-  const discountValue = parseFloat(discountAmount) || 0;
+  const discountValue = parseLocaleNumber(discountAmount) || 0;
   const totalWithDiscount = subtotal - discountValue;
 
   const handleDiscountPercentChange = (value: string) => {
     setDiscountPercent(value);
-    const percent = parseFloat(value) || 0;
+    const percent = parseLocaleNumber(value) || 0;
     const amount = (subtotal * percent) / 100;
     setDiscountAmount(amount.toFixed(2));
   };
 
   const handleDiscountAmountChange = (value: string) => {
     setDiscountAmount(value);
-    const amount = parseFloat(value) || 0;
+    const amount = parseLocaleNumber(value) || 0;
     const percent = subtotal > 0 ? (amount / subtotal) * 100 : 0;
     setDiscountPercent(percent.toFixed(2));
   };
@@ -169,7 +169,7 @@ export function PaymentSheet({
   const totalPaid = numPayments === 1 
     ? totalWithDiscount 
     : paymentFields.reduce((sum, field) => {
-        const amount = parseFloat(field.amount) || 0;
+        const amount = parseLocaleNumber(field.amount) || 0;
         return sum + amount;
       }, 0);
 
@@ -191,7 +191,7 @@ export function PaymentSheet({
           ? [{ method: singlePaymentMethod, amount: totalWithDiscount }]
           : paymentFields.map(field => ({
               method: field.method,
-              amount: parseFloat(field.amount) || 0
+              amount: parseLocaleNumber(field.amount) || 0
             }));
 
     const saleData = {
@@ -201,8 +201,8 @@ export function PaymentSheet({
       saleDate,
       receiptNote,
       discount: discountActive ? {
-        percent: parseFloat(discountPercent) || 0,
-        amount: parseFloat(discountAmount) || 0
+        percent: parseLocaleNumber(discountPercent) || 0,
+        amount: parseLocaleNumber(discountAmount) || 0
       } : { percent: 0, amount: 0 }
     };
 
@@ -386,8 +386,8 @@ export function PaymentSheet({
                 <div className="grid grid-cols-2 gap-3">
                   <div className="relative">
                     <Input
-                      type="number"
-                      step="0.01"
+                      type="text"
+                      inputMode="decimal"
                       value={discountPercent}
                       onChange={(e) => handleDiscountPercentChange(e.target.value)}
                       className="pr-8 h-12 text-base"
@@ -398,8 +398,8 @@ export function PaymentSheet({
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                     <Input
-                      type="number"
-                      step="0.01"
+                      type="text"
+                      inputMode="decimal"
                       value={discountAmount}
                       onChange={(e) => handleDiscountAmountChange(e.target.value)}
                       className="pl-7 h-12 text-base"
@@ -510,8 +510,8 @@ export function PaymentSheet({
                             <div className="relative">
                               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                               <Input
-                                type="number"
-                                step="0.01"
+                                type="text"
+                                inputMode="decimal"
                                 placeholder="0"
                                 value={field.amount}
                                 onChange={(e) => updatePaymentField(field.id, 'amount', e.target.value)}

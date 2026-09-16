@@ -24,7 +24,7 @@ import { exportProductsToExcel } from '../utils/productExcelExport';
 import { getProducts, createProduct, updateProduct, deleteProduct, initializeDemoProducts } from '../lib/api';
 import * as apiService from '../services/api';
 import { useBusiness } from '../contexts/BusinessContext';
-import { formatCurrency } from '../utils/currency';
+import { formatCurrency, parseLocaleNumber } from '../utils/currency';
 import { optimizeImageForProduct, packedImageForSave, parseProductImage } from '../utils/productImage';
 import {
   dataTableTheadSticky,
@@ -79,8 +79,9 @@ function InlineNumberField({
   }, [value]);
 
   const parseDraft = (raw: string) => {
-    const normalized = raw.trim().replace(',', '.');
-    return integer ? parseInt(normalized, 10) : parseFloat(normalized);
+    const n = parseLocaleNumber(raw);
+    if (!Number.isFinite(n)) return NaN;
+    return integer ? Math.trunc(n) : n;
   };
 
   return (
@@ -540,19 +541,28 @@ export default function ProductsPage() {
       toast.error('No tienes permiso para crear productos');
       return;
     }
-    if (!productName || !productPrice || !productCost || !productStock) {
-      toast.error('Por favor completa todos los campos obligatorios');
+    if (!productName.trim()) {
+      toast.error('Escribe el nombre del producto');
       return;
     }
 
-    const price = parseFloat(productPrice);
-    const cost = parseFloat(productCost);
-    const stock = parseInt(productStock);
+    const price = parseLocaleNumber(productPrice);
+    const cost = parseLocaleNumber(productCost);
+    const stock = parseLocaleNumber(productStock);
 
-    if (isNaN(price) || isNaN(cost) || isNaN(stock)) {
-      toast.error('Por favor ingresa valores numéricos válidos');
+    if (!Number.isFinite(price) || price < 0) {
+      toast.error('Ingresa el precio de venta');
       return;
     }
+    if (!Number.isFinite(cost) || cost < 0) {
+      toast.error('Ingresa el costo');
+      return;
+    }
+    if (!Number.isFinite(stock) || stock < 0) {
+      toast.error('Ingresa la cantidad disponible');
+      return;
+    }
+    const stockQty = Math.trunc(stock);
 
     if (!currentBusiness) {
       toast.error('No hay un negocio seleccionado');
@@ -576,7 +586,7 @@ export default function ProductsPage() {
           name: productName,
           price,
           cost,
-          stock,
+          stock: stockQty,
           category: productCategory || editingProduct.category,
           image: imageToSave,
         });
@@ -598,7 +608,7 @@ export default function ProductsPage() {
                     name: productName,
                     price,
                     cost,
-                    stock,
+                    stock: stockQty,
                     category: productCategory || p.category,
                     image: savedImage,
                   }
@@ -627,7 +637,7 @@ export default function ProductsPage() {
           name: productName,
           price,
           cost,
-          stock,
+          stock: stockQty,
           category: productCategory || 'Sin categoría',
           image: imageToSave,
         });
@@ -648,7 +658,7 @@ export default function ProductsPage() {
                 name: productName,
                 price,
                 cost,
-                stock,
+                stock: stockQty,
                 category: productCategory || 'Sin categoría',
                 image: savedImage,
               },
@@ -1596,8 +1606,8 @@ export default function ProductsPage() {
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                     <Input
-                      type="number"
-                      step="0.01"
+                      type="text"
+                      inputMode="decimal"
                       placeholder="0"
                       value={productPrice}
                       onChange={(e) => setProductPrice(e.target.value)}
@@ -1610,8 +1620,8 @@ export default function ProductsPage() {
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                     <Input
-                      type="number"
-                      step="0.01"
+                      type="text"
+                      inputMode="decimal"
                       placeholder="0"
                       value={productCost}
                       onChange={(e) => setProductCost(e.target.value)}
@@ -1625,7 +1635,8 @@ export default function ProductsPage() {
               <div className="space-y-2">
                 <Label>Cantidad disponible*</Label>
                 <Input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
                   placeholder="0"
                   value={productStock}
                   onChange={(e) => setProductStock(e.target.value)}
@@ -1678,14 +1689,16 @@ export default function ProductsPage() {
               </div>
 
               {/* Profit Preview */}
-              {productPrice && productCost && (
+              {Number.isFinite(parseLocaleNumber(productPrice)) && Number.isFinite(parseLocaleNumber(productCost)) && (
                 <div className="bg-gray-50 rounded-lg p-4">
                   <div className="text-sm text-gray-600 mb-1">Ganancia por unidad</div>
                   <div className="text-2xl font-bold text-gray-900">
-                    ${formatCurrency(parseFloat(productPrice) - parseFloat(productCost))}
+                    ${formatCurrency(parseLocaleNumber(productPrice) - parseLocaleNumber(productCost))}
                   </div>
                   <div className="text-sm text-green-600 font-medium mt-1">
-                    {(((parseFloat(productPrice) - parseFloat(productCost)) / parseFloat(productPrice)) * 100).toFixed(0)}% de margen
+                    {parseLocaleNumber(productPrice) > 0
+                      ? `${(((parseLocaleNumber(productPrice) - parseLocaleNumber(productCost)) / parseLocaleNumber(productPrice)) * 100).toFixed(0)}% de margen`
+                      : '—'}
                   </div>
                 </div>
               )}

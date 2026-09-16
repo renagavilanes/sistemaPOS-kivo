@@ -23,7 +23,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from './ui/alert-dialog';
-import { formatCurrency } from '../utils/currency';
+import { formatCurrency, parseLocaleNumber } from '../utils/currency';
 import { useState } from 'react';
 
 interface MobileCartSheetProps {
@@ -187,10 +187,10 @@ export function MobileCartSheet({
                           <>
                             <span className="text-sm font-semibold text-gray-900">$</span>
                             <Input
-                            type="number"
-                            step="0.01"
+                            type="text"
+                            inputMode="decimal"
                             value={item.priceAtSale}
-                            onChange={(e) => onUpdatePrice(item.product.id, parseFloat(e.target.value) || 0)}
+                            onChange={(e) => onUpdatePrice(item.product.id, parseLocaleNumber(e.target.value) || 0)}
                             className="h-7 min-w-0 flex-1 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-transparent"
                           />
                           </>
