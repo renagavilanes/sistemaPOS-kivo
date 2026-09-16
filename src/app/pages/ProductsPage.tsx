@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { Search, Plus, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet } from 'lucide-react';
+import { Search, Plus, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet, ArrowLeftRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -179,6 +179,13 @@ export default function ProductsPage() {
   const canCreateProduct = isCurrentUserOwner || productPerms.create === true;
   const canEditProduct = isCurrentUserOwner || productPerms.edit === true;
   const canDeleteProduct = isCurrentUserOwner || productPerms.delete === true;
+  const canTransferInventory =
+    canEditProduct &&
+    businesses.filter((b) => {
+      if (b.id === currentBusiness?.id) return false;
+      if (b.role === 'owner' || b.permissions?.all === true) return true;
+      return b.permissions?.products?.edit === true;
+    }).length > 0;
   const navigate = useNavigate();
   const [productsLoading, setProductsLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -943,6 +950,16 @@ export default function ProductsPage() {
                   <ClipboardList className="w-4 h-4 mr-2" />
                   Crear pedido
                 </Button>
+                {canTransferInventory && (
+                  <Button
+                    variant="outline"
+                    onClick={() => navigate('/inventory-transfer')}
+                    className="hidden lg:inline-flex"
+                  >
+                    <ArrowLeftRight className="w-4 h-4 mr-2" />
+                    Trasladar
+                  </Button>
+                )}
                 {canCreateProduct && (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -1496,13 +1513,13 @@ export default function ProductsPage() {
               <div className="space-y-2">
                 <Label>Imagen del producto</Label>
                 <div className="flex flex-col gap-4">
-                  {productImage && (
-                    <div className="w-full h-[8.4rem] rounded-lg overflow-hidden bg-gray-100 relative">
-                      <ImageWithFallback
-                        src={parseProductImage(productImage).full || productImage}
-                        alt="Preview"
-                        className="w-full h-full object-cover object-center"
-                      />
+                  <div className="w-full h-[8.4rem] rounded-lg overflow-hidden bg-gray-100 relative">
+                    <ImageWithFallback
+                      src={productImage ? parseProductImage(productImage).full || productImage : ''}
+                      alt="Preview"
+                      className="w-full h-full object-cover object-center"
+                    />
+                    {productImage ? (
                       <Button
                         variant="ghost"
                         size="icon"
@@ -1511,8 +1528,8 @@ export default function ProductsPage() {
                       >
                         <X className="w-4 h-4" />
                       </Button>
-                    </div>
-                  )}
+                    ) : null}
+                  </div>
                   <div className="flex gap-2">
                     <label className="flex-1">
                       <div className="flex items-center justify-center gap-2 h-12 px-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-gray-400 cursor-pointer transition-colors">

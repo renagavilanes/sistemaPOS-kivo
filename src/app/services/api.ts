@@ -1,6 +1,7 @@
 import { supabase } from '../lib/supabase';
 import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicEnv';
 import { buildInviteUrl } from '../utils/appUrl';
+import { runInventoryTransfer } from '../utils/inventoryTransferLogic';
 
 // Helper to create Supabase client directly
 function createClientDirect() {
@@ -347,6 +348,21 @@ export async function deleteProduct(productId: string, businessId: string): Prom
     throw new Error((body as any).error || `Error ${response.status} al eliminar producto`);
   }
   console.log('✅ [API] Product deleted');
+}
+
+export async function transferInventory(params: {
+  fromBusinessId: string;
+  toBusinessId: string;
+  items: Array<{ fromProductId: string; quantity: number; toProductId: string | null }>;
+}): Promise<void> {
+  await runInventoryTransfer(params, {
+    getProduct: getProductById,
+    updateStock: async (productId, businessId, stock) => {
+      await updateProduct(productId, businessId, { stock });
+    },
+    createProduct: (businessId, product) => createProduct(businessId, product),
+    deleteProduct,
+  });
 }
 
 // ==================== CATEGORIES ====================

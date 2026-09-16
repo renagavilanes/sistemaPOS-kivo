@@ -115,22 +115,6 @@ export default function PurchaseOrderPage() {
 
   const quickList = useMemo(() => sortedProducts.slice(0, 40), [sortedProducts]);
 
-  const stockIndicator = (stock: number) => {
-    const zero = stock === 0;
-    const low = stock > 0 && stock < 5;
-    const label = zero ? 'Sin stock' : low ? 'Bajo' : 'OK';
-    const cls = zero
-      ? 'bg-red-500'
-      : low
-        ? 'bg-amber-500'
-        : 'bg-emerald-500';
-    return (
-      <span className="flex items-center gap-1.5" title={label} aria-label={label}>
-        <span className={`h-2.5 w-2.5 rounded-full ${cls}`} />
-      </span>
-    );
-  };
-
   const itemsQtyByProduct = useMemo(() => {
     const map = new Map<string, number>();
     for (const i of items) map.set(i.productId, (map.get(i.productId) || 0) + (Number(i.quantity) || 0));
@@ -338,14 +322,14 @@ export default function PurchaseOrderPage() {
                   ) : quickList.length === 0 ? (
                     <div className="p-4 text-sm text-gray-500">No hay resultados</div>
                   ) : (
-                    quickList.map((p) => (
-                      <button
+                    quickList.map((p) => {
+                      const added = itemsQtyByProduct.get(p.id) || 0;
+                      return (
+                      <div
                         key={p.id}
-                        type="button"
-                        onClick={() => addProduct(p)}
-                        className="w-full flex items-start gap-3 p-3 hover:bg-gray-50 text-left"
+                        className="w-full flex items-center gap-3 p-3 hover:bg-gray-50"
                       >
-                        <div className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded bg-gray-100 mt-0.5">
+                        <div className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded bg-gray-100">
                           <LazyProductImage
                             fillParent
                             productId={p.id}
@@ -355,38 +339,38 @@ export default function PurchaseOrderPage() {
                           />
                         </div>
 
-                        <div className="min-w-0 flex-1 py-0.5">
+                        <button
+                          type="button"
+                          onClick={() => addProduct(p)}
+                          className="min-w-0 flex-1 text-left"
+                        >
                           <div
                             className="text-sm font-semibold text-gray-900 leading-snug break-words line-clamp-2"
                             title={p.name}
                           >
                             {p.name}
                           </div>
-                        </div>
+                          <div className="text-xs text-gray-500">Stock {p.stock}</div>
+                        </button>
 
-                        <div className="flex items-center gap-2 flex-shrink-0 self-center">
-                          {(() => {
-                            const added = itemsQtyByProduct.get(p.id) || 0;
-                            return added > 0 ? (
-                              <Badge variant="secondary" className="bg-gray-100 text-gray-900">
-                                En pedido: {added}
-                              </Badge>
-                            ) : null;
-                          })()}
+                        {added > 0 ? (
+                          <Badge variant="secondary" className="bg-gray-100 text-gray-900 tabular-nums">
+                            {added}
+                          </Badge>
+                        ) : null}
 
-                          <div className="text-right min-w-[88px]">
-                            <div className="text-[11px] text-gray-500 leading-none">Stock</div>
-                            <div className="text-base font-bold text-gray-900 leading-tight">{p.stock}</div>
-                          </div>
-
-                          {stockIndicator(p.stock)}
-
-                          <div className="h-9 w-9 rounded-md border flex items-center justify-center text-gray-700 bg-white">
-                            <Plus className="w-4 h-4" />
-                          </div>
-                        </div>
-                      </button>
-                    ))
+                        <Button
+                          type="button"
+                          size="sm"
+                          className="rounded-full h-10 w-10 p-0 bg-gray-900 hover:bg-gray-800 shrink-0"
+                          onClick={() => addProduct(p)}
+                          aria-label={`Agregar ${p.name}`}
+                        >
+                          <Plus className="h-5 w-5" />
+                        </Button>
+                      </div>
+                      );
+                    })
                   )}
                 </div>
               </div>
@@ -428,45 +412,42 @@ export default function PurchaseOrderPage() {
                         </div>
 
                         <div className="flex items-center gap-2 flex-shrink-0">
-                          <Button
-                            type="button"
-                            variant="outline"
-                            size="icon"
-                            className="h-8 w-8"
-                            onClick={() => updateItem(i.productId, { quantity: Math.max(0, i.quantity - 1) })}
-                            aria-label="Disminuir cantidad"
-                          >
-                            <Minus className="h-4 w-4" />
-                          </Button>
-                          <Input
-                            type="number"
-                            value={i.quantity}
-                            onChange={(e) => {
-                              const n = Math.floor(Number(e.target.value) || 0);
-                              updateItem(i.productId, { quantity: Math.max(0, n) });
-                            }}
-                            className="h-8 w-16 text-right"
-                            aria-label="Cantidad"
-                          />
-                          <Button
-                            type="button"
-                            variant="outline"
-                            size="icon"
-                            className="h-8 w-8"
-                            onClick={() => updateItem(i.productId, { quantity: i.quantity + 1 })}
-                            aria-label="Aumentar cantidad"
-                          >
-                            <Plus className="h-4 w-4" />
-                          </Button>
+                          <div className="flex items-center justify-between gap-1 border-2 border-gray-200 rounded-full px-3 h-9 w-[148px]">
+                            <Button
+                              type="button"
+                              size="sm"
+                              variant="ghost"
+                              className="h-7 w-7 p-0 rounded-full hover:bg-gray-100"
+                              onClick={() => {
+                                if (i.quantity <= 1) removeItem(i.productId);
+                                else updateItem(i.productId, { quantity: i.quantity - 1 });
+                              }}
+                              aria-label="Disminuir cantidad"
+                            >
+                              <Minus className="w-3.5 h-3.5" />
+                            </Button>
+                            <span className="font-semibold text-sm text-gray-900 tabular-nums">{i.quantity}</span>
+                            <Button
+                              type="button"
+                              size="sm"
+                              variant="ghost"
+                              className="h-7 w-7 p-0 rounded-full hover:bg-gray-100"
+                              onClick={() => updateItem(i.productId, { quantity: i.quantity + 1 })}
+                              aria-label="Aumentar cantidad"
+                            >
+                              <Plus className="w-3.5 h-3.5" />
+                            </Button>
+                          </div>
                           <Button
                             type="button"
                             variant="ghost"
                             size="icon"
+                            className="h-8 w-8 text-gray-400 hover:text-red-600"
                             onClick={() => removeItem(i.productId)}
                             title="Quitar"
                             aria-label="Quitar producto"
                           >
-                            <Trash2 className="w-4 h-4 text-red-600" />
+                            <Trash2 className="w-4 h-4" />
                           </Button>
                         </div>
                       </div>

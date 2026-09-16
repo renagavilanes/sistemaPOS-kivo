@@ -226,6 +226,11 @@ export interface LazyProductImageProps {
    * Catálogo público: pide la foto por el slug, solo cuando el producto entra en pantalla.
    */
   publicCatalogSlug?: string;
+  /**
+   * Negocio dueño del producto. Si no se pasa, usa el negocio actual.
+   * Hace falta al mostrar fichas de otro negocio (p. ej. traslado).
+   */
+  businessId?: string;
 }
 
 export function LazyProductImage({
@@ -236,9 +241,10 @@ export function LazyProductImage({
   eager = false,
   fillParent = false,
   publicCatalogSlug,
+  businessId: businessIdProp,
 }: LazyProductImageProps) {
   const { currentBusiness } = useBusiness();
-  const businessId = currentBusiness?.id ?? '';
+  const businessId = businessIdProp || currentBusiness?.id || '';
   const publicSlug = String(publicCatalogSlug || '').trim();
 
   const fromProps = displayProductImageSrc(initialSrc);

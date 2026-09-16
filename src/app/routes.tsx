@@ -7,6 +7,7 @@ import SalesPage from "./pages/SalesPage";
 import MovementsPage from "./pages/MovementsPage";
 import ProductsPage from "./pages/ProductsPage";
 import PurchaseOrderPage from "./pages/PurchaseOrderPage";
+import InventoryTransferPage from "./pages/InventoryTransferPage";
 import MorePage from "./pages/MorePage";
 import ContactsPage from "./pages/ContactsPage";
 import EmployeesPage from "./pages/EmployeesPage";
@@ -142,6 +143,7 @@ export const router = createBrowserRouter([
           { path: "movements", Component: MovementsPage },
           { path: "products", Component: ProductsPage },
           { path: "purchase-order", Component: PurchaseOrderPage },
+          { path: "inventory-transfer", Component: InventoryTransferPage },
           { path: "more", Component: MorePage },
           { path: "contacts", Component: ContactsPage },
           { path: "employees", Component: EmployeesPage },

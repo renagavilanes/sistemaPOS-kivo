@@ -4,6 +4,7 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '../components/ui/sheet';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '../components/ui/alert-dialog';
 import { useBusiness } from '../contexts/BusinessContext';
 // REMOVIDO: import { useData } from '../contexts/DataContext';
 import * as apiService from '../services/api';
@@ -40,6 +41,9 @@ export default function ContactsPage() {
   const [typeFilter, setTypeFilter] = useState<ContactType>('all');
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [editingContact, setEditingContact] = useState<Contact | null>(null);
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [contactToDelete, setContactToDelete] = useState<Contact | null>(null);
+  const [deleting, setDeleting] = useState(false);
   /** true al inicio si ya hay negocio → evita un frame de “vacío” antes del fetch */
   const [loading, setLoading] = useState(() => Boolean(currentBusiness?.id));
   
@@ -254,18 +258,25 @@ export default function ContactsPage() {
     }
   };
 
-  const handleDelete = async (contact: Contact) => {
-    if (!currentBusiness?.id) return;
-    
-    if (confirm(`¿Eliminar a ${contact.name}?`)) {
-      try {
-        await apiService.deleteCustomer(contact.id, currentBusiness.id);
-        toast.success('Contacto eliminado');
-        await loadContacts(); // ✅ Reload contacts
-      } catch (error) {
-        console.error('Error al eliminar:', error);
-        toast.error('Error al eliminar el contacto');
-      }
+  const handleDelete = (contact: Contact) => {
+    setContactToDelete(contact);
+    setDeleteDialogOpen(true);
+  };
+
+  const handleConfirmDelete = async () => {
+    if (!currentBusiness?.id || !contactToDelete) return;
+    setDeleting(true);
+    try {
+      await apiService.deleteCustomer(contactToDelete.id, currentBusiness.id);
+      toast.success('Contacto eliminado');
+      setDeleteDialogOpen(false);
+      setContactToDelete(null);
+      await loadContacts();
+    } catch (error) {
+      console.error('Error al eliminar:', error);
+      toast.error('Error al eliminar el contacto');
+    } finally {
+      setDeleting(false);
     }
   };
 
@@ -872,6 +883,30 @@ export default function ContactsPage() {
           </form>
         </SheetContent>
       </Sheet>
+
+      <AlertDialog open={deleteDialogOpen} onOpenChange={(open) => !deleting && setDeleteDialogOpen(open)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>¿Eliminar contacto?</AlertDialogTitle>
+            <AlertDialogDescription>
+              ¿Estás seguro de que deseas eliminar a "{contactToDelete?.name}"? Esta acción no se puede deshacer.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={deleting}>Cancelar</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={(e) => {
+                e.preventDefault();
+                void handleConfirmDelete();
+              }}
+              disabled={deleting}
+              className="bg-red-600 hover:bg-red-700"
+            >
+              {deleting ? 'Eliminando…' : 'Eliminar'}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }
