@@ -59,6 +59,9 @@ export default function ContactsPage() {
       setContacts([]);
       return;
     }
+    setSearchTerm('');
+    setTypeFilter('all');
+    setContacts([]);
     void loadContacts();
   }, [currentBusiness?.id]);
 
@@ -86,21 +89,22 @@ export default function ContactsPage() {
   }, [contacts, searchTerm, typeFilter]);
 
   const loadContacts = async () => {
-    if (!currentBusiness?.id) return;
+    const businessId = currentBusiness?.id;
+    if (!businessId) return;
     
     setLoading(true);
     
     try {
       // Clientes + ventas + gastos (para deuda de proveedor por nombre en description).
-      const customersPromise = apiService.getCustomers(currentBusiness.id);
+      const customersPromise = apiService.getCustomers(businessId);
       const salesPromise = apiService
-        .getSales(currentBusiness.id, { fields: 'balance' })
+        .getSales(businessId, { fields: 'balance' })
         .catch((salesErr) => {
           console.warn('⚠️ ContactsPage: could not load sales for debt calc:', salesErr);
           return [];
         });
       const expensesPromise = apiService
-        .getExpenses(currentBusiness.id, { limit: 8000 })
+        .getExpenses(businessId, { limit: 8000 })
         .catch((expErr) => {
           console.warn('⚠️ ContactsPage: could not load expenses for supplier debt:', expErr);
           return [];
@@ -158,12 +162,13 @@ export default function ContactsPage() {
           supplier_debt,
         };
       });
+      if (currentBusiness?.id !== businessId) return;
       setContacts(mapped);
     } catch (error) {
       console.error('Error loading contacts:', error);
       toast.error('Error al cargar los contactos');
     } finally {
-      setLoading(false);
+      if (currentBusiness?.id === businessId) setLoading(false);
     }
   };
 

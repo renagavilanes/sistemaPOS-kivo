@@ -189,6 +189,11 @@ export function BusinessProvider({ children }: { children: React.ReactNode }) {
       
       setCurrentBusiness(business);
       persistCurrentBusinessId(user?.id, businessId);
+      try {
+        localStorage.removeItem('editingMovement');
+      } catch {
+        // ignore
+      }
       
       // Disparar evento para que todas las páginas recarguen sus datos
       window.dispatchEvent(new CustomEvent('businessChanged', { 

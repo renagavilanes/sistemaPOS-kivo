@@ -49,11 +49,20 @@ export default function PurchaseOrderPage() {
   const [exporting, setExporting] = useState(false);
 
   useEffect(() => {
-    if (!currentBusiness?.id) return;
+    if (!currentBusiness?.id) {
+      setProducts([]);
+      return;
+    }
+    const businessId = currentBusiness.id;
+    let cancelled = false;
+    setSearchTerm('');
+    setItems([]);
+    setProducts([]);
     const load = async () => {
       setProductsLoading(true);
       try {
-        const productsData = await apiService.getProducts(currentBusiness.id);
+        const productsData = await apiService.getProducts(businessId);
+        if (cancelled) return;
         const mappedProducts = productsData.map((p: any) => ({
           id: p.id,
           name: p.name,
@@ -65,13 +74,15 @@ export default function PurchaseOrderPage() {
         }));
         setProducts(mappedProducts);
       } catch (e) {
+        if (cancelled) return;
         console.error('Error cargando productos para pedido:', e);
         toast.error('No se pudieron cargar los productos');
       } finally {
-        setProductsLoading(false);
+        if (!cancelled) setProductsLoading(false);
       }
     };
-    load();
+    void load();
+    return () => { cancelled = true; };
   }, [currentBusiness?.id]);
 
   // Precargar datos del negocio si el usuario no ha escrito nada

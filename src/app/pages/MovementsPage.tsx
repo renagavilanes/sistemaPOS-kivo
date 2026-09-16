@@ -453,16 +453,24 @@ export default function MovementsPage() {
 
   // Lookups en segundo plano (nombres). No bloquean la tabla.
   useEffect(() => {
-    if (!currentBusiness?.id) return;
+    if (!currentBusiness?.id) {
+      setCustomers([]);
+      setEmployees([]);
+      return;
+    }
+    const businessId = currentBusiness.id;
     let cancelled = false;
+    setCustomers([]);
+    setEmployees([]);
     void Promise.all([
-      apiService.getCustomers(currentBusiness.id),
-      apiService.getEmployees(currentBusiness.id),
+      apiService.getCustomers(businessId),
+      apiService.getEmployees(businessId),
     ]).then(([customersData, employeesData]) => {
       if (cancelled) return;
       setCustomers(customersData);
       setEmployees(employeesData);
     }).catch((error) => {
+      if (cancelled) return;
       console.error('Error loading lookups:', error);
     });
     return () => { cancelled = true; };
@@ -668,8 +676,16 @@ export default function MovementsPage() {
   const [weekEnd, setWeekEnd] = useState(endOfWeek(new Date(), { weekStartsOn: 1 }));
 
   useEffect(() => {
-    if (!currentBusiness?.id) return;
+    if (!currentBusiness?.id) {
+      lastTxRef.current = { sales: [], expenses: [] };
+      setMovements([]);
+      return;
+    }
+    const businessId = currentBusiness.id;
     let cancelled = false;
+    lastTxRef.current = { sales: [], expenses: [] };
+    setMovements([]);
+    setSearchTerm('');
     const range = movementsServerRange({
       dateFilter,
       selectedDay,
@@ -682,8 +698,8 @@ export default function MovementsPage() {
       setLoading(true);
       try {
         const [salesData, expensesData] = await Promise.all([
-          apiService.getSales(currentBusiness.id, { ...range, fields: 'list' }),
-          apiService.getExpenses(currentBusiness.id, { ...range, fields: 'list' }),
+          apiService.getSales(businessId, { ...range, fields: 'list' }),
+          apiService.getExpenses(businessId, { ...range, fields: 'list' }),
         ]);
         if (cancelled) return;
         lastTxRef.current = { sales: salesData, expenses: expensesData };

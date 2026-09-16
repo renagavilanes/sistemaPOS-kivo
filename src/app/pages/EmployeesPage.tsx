@@ -131,18 +131,20 @@ export default function EmployeesPage() {
 
   // Load employees from API
   useEffect(() => {
-    if (currentBusiness && user) {
-      loadEmployees();
+    setSearchTerm('');
+    if (currentBusiness?.id && user) {
+      void loadEmployees();
     }
-  }, [currentBusiness, user]);
+  }, [currentBusiness?.id, user?.id]);
 
   const loadEmployees = async () => {
     if (!currentBusiness || !user) return;
+    const businessId = currentBusiness.id;
     
     setLoading(true);
     try {
       console.log('📥 Loading employees from API...');
-      const employeesData = await api.getEmployees(currentBusiness.id);
+      const employeesData = await api.getEmployees(businessId);
       
       console.log('✅ Employees loaded:', employeesData.length);
       
@@ -160,6 +162,7 @@ export default function EmployeesPage() {
         createdAt: emp.created_at
       }));
       
+      if (currentBusiness?.id !== businessId) return;
       setEmployees(transformedEmployees);
       
       // 🔧 AUTO-REPARACIÓN: Si no hay empleados, crear el empleado owner automáticamente

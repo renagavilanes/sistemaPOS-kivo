@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, type FocusEvent } from 'react';
 import { useNavigate } from 'react-router';
 import { Search, Plus, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet } from 'lucide-react';
 import { Button } from '../components/ui/button';
@@ -42,6 +42,15 @@ const normalizeText = (text: string) => {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase();
+};
+
+const stopOpenProductDetail = (e: { stopPropagation: () => void }) => {
+  e.stopPropagation();
+};
+
+const selectInlineNumber = (e: FocusEvent<HTMLInputElement>) => {
+  e.stopPropagation();
+  e.currentTarget.select();
 };
 
 export default function ProductsPage() {
@@ -358,40 +367,26 @@ export default function ProductsPage() {
   
   // ✅ CARGAR categorías desde Supabase al iniciar
   useEffect(() => {
-    if (!currentBusiness) return;
-    
+    if (!currentBusiness?.id) {
+      setCustomCategories([]);
+      return;
+    }
+    const businessId = currentBusiness.id;
+    let cancelled = false;
     const loadCategories = async () => {
       try {
-        const categories = await apiService.getCategories(currentBusiness.id);
-        const categoryNames = categories.map(c => c.name);
-        console.log('📂 [LOAD] Categorías cargadas desde Supabase:', categoryNames);
-        setCustomCategories(categoryNames);
+        const categories = await apiService.getCategories(businessId);
+        if (cancelled) return;
+        setCustomCategories(categories.map(c => c.name));
       } catch (error) {
+        if (cancelled) return;
         console.error('❌ Error al cargar categorías:', error);
         setCustomCategories([]);
       }
     };
-    
-    loadCategories();
-  }, [currentBusiness?.id]); // Solo ejecutar cuando cambia el negocio
-
-  // Escuchar cambios de negocio
-  useEffect(() => {
-    const handleBusinessChange = () => {
-      console.log('🔄 Negocio cambió, recargando categorías...');
-      if (currentBusiness) {
-        apiService.getCategories(currentBusiness.id).then(categories => {
-          const categoryNames = categories.map(c => c.name);
-          setCustomCategories(categoryNames);
-        }).catch(error => {
-          console.error('Error recargando categorías:', error);
-        });
-      }
-    };
-
-    window.addEventListener('businessChanged', handleBusinessChange);
-    return () => window.removeEventListener('businessChanged', handleBusinessChange);
-  }, [currentBusiness]);
+    void loadCategories();
+    return () => { cancelled = true; };
+  }, [currentBusiness?.id]);
 
   // Calculations
   const totalReferences = products.length;
@@ -740,108 +735,84 @@ export default function ProductsPage() {
     }
   };
 
+  const mapListedProduct = (p: any): Product => {
+    let cleanImage = p.image || '';
+    if (cleanImage && (
+      cleanImage.includes('photo-1670225597315-782633cfbd2a') ||
+      (cleanImage.includes('unsplash.com') && cleanImage.length > 100)
+    )) {
+      cleanImage = '';
+    }
+    return {
+      id: p.id,
+      name: p.name,
+      price: p.price,
+      cost: p.cost,
+      stock: p.stock,
+      category: p.category || 'Sin categoría',
+      image: cleanImage,
+    };
+  };
+
   // Function to reload products
   const reloadProducts = async () => {
-    if (!currentBusiness?.id) return;
+    const businessId = currentBusiness?.id;
+    if (!businessId) return;
     
     setProductsLoading(true);
     try {
-      const productsData = await apiService.getProducts(currentBusiness.id);
-      
-      const mappedProducts = productsData.map((p: any) => {
-        let cleanImage = p.image || '';
-        if (cleanImage && (
-          cleanImage.includes('photo-1670225597315-782633cfbd2a') ||
-          cleanImage.includes('unsplash.com') && cleanImage.length > 100
-        )) {
-          cleanImage = '';
-        }
-        
-        return {
-          id: p.id,
-          name: p.name,
-          price: p.price,
-          cost: p.cost,
-          stock: p.stock,
-          category: p.category || 'Sin categoría',
-          image: cleanImage,
-        };
-      });
-      setProducts((prev) =>
-        mappedProducts.map((p) => ({
-          ...p,
-          image: p.image || prev.find((e) => e.id === p.id)?.image || '',
-        })),
-      );
+      const productsData = await apiService.getProducts(businessId);
+      if (currentBusiness?.id !== businessId) return;
+      setProducts(productsData.map(mapListedProduct));
     } catch (error) {
       console.error('Error loading products:', error);
     } finally {
-      setProductsLoading(false);
+      if (currentBusiness?.id === businessId) setProductsLoading(false);
     }
   };
 
   // Load products when business changes
   useEffect(() => {
-    if (!currentBusiness?.id) return;
+    if (!currentBusiness?.id) {
+      setProducts([]);
+      return;
+    }
+
+    const businessId = currentBusiness.id;
+    let cancelled = false;
+    setProducts([]);
+    setSearchTerm('');
+    setSelectedCategory('Todas');
+    setSortOption(null);
+    setTempSortOption(null);
 
     const loadProducts = async () => {
       setProductsLoading(true);
       try {
-        const productsData = await apiService.getProducts(currentBusiness.id);
-        
-        const mappedProducts = productsData.map((p: any) => {
-          // 🧹 Limpiar URLs de imágenes inválidas o problemáticas
-          let cleanImage = p.image || '';
-          
-          // Si la URL contiene ciertos patterns problemáticos, limpiarla
-          if (cleanImage && (
-            cleanImage.includes('photo-1670225597315-782633cfbd2a') || // URL placeholder antigua
-            cleanImage.includes('unsplash.com') && cleanImage.length > 100 // URLs de Unsplash muy largas que suelen fallar
-          )) {
-            console.log('🧹 Limpiando URL de imagen problemática:', cleanImage);
-            cleanImage = '';
-          }
-          
-          return {
-            id: p.id,
-            name: p.name,
-            price: p.price,
-            cost: p.cost,
-            stock: p.stock,
-            category: p.category || 'Sin categoría',
-            image: cleanImage,
-          };
-        });
-        setProducts((prev) =>
-          mappedProducts.map((p) => ({
-            ...p,
-            image: p.image || prev.find((e) => e.id === p.id)?.image || '',
-          })),
-        );
+        const productsData = await apiService.getProducts(businessId);
+        if (cancelled) return;
+        setProducts(productsData.map(mapListedProduct));
       } catch (error) {
+        if (cancelled) return;
         console.error('Error loading products:', error);
       } finally {
-        setProductsLoading(false);
+        if (!cancelled) setProductsLoading(false);
       }
     };
 
     loadProducts();
 
-    const handleBusinessChanged = () => {
-      console.log('🔄 Evento businessChanged recibido - recargando productos');
-      loadProducts();
+    const handleProductsUpdated = (e: Event) => {
+      const detail = (e as CustomEvent<{ businessId?: string }>).detail;
+      if (detail?.businessId && detail.businessId !== businessId) return;
+      console.log('🔄 Inventario actualizado (venta eliminada u otro cambio), recargando...');
+      void loadProducts();
     };
 
-    const handleProductsUpdated = () => {
-      console.log('🔄 Inventario actualizado (venta eliminada u otro cambio), recargando...');
-      loadProducts();
-    };
-    
-    window.addEventListener('businessChanged', handleBusinessChanged);
     window.addEventListener('productsUpdated', handleProductsUpdated);
-    
+
     return () => {
-      window.removeEventListener('businessChanged', handleBusinessChanged);
+      cancelled = true;
       window.removeEventListener('productsUpdated', handleProductsUpdated);
     };
   }, [currentBusiness?.id]);
@@ -1156,10 +1127,12 @@ export default function ProductsPage() {
                   return (
                     <tr
                       key={product.id}
-                      className={`hover:bg-gray-50 ${canEditProduct ? 'cursor-pointer' : ''}`}
-                      onClick={() => canEditProduct && handleEditProduct(product)}
+                      className="hover:bg-gray-50"
                     >
-                      <td className="pl-4 pr-0 py-3 w-auto">
+                      <td
+                        className={`pl-4 pr-0 py-3 w-auto ${canEditProduct ? 'cursor-pointer' : ''}`}
+                        onClick={() => canEditProduct && handleEditProduct(product)}
+                      >
                         <div className="flex items-center gap-3">
                           <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded bg-gray-100">
                             <LazyProductImage
@@ -1181,10 +1154,14 @@ export default function ProductsPage() {
                           <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                           <Input
                             type="number"
+                            inputMode="decimal"
                             step="0.01"
                             value={product.price}
                             readOnly={!canEditProduct}
-                            onClick={(e) => e.stopPropagation()}
+                            onPointerDown={stopOpenProductDetail}
+                            onMouseDown={stopOpenProductDetail}
+                            onClick={stopOpenProductDetail}
+                            onFocus={selectInlineNumber}
                             onChange={(e) => {
                               if (!canEditProduct) return;
                               const newPrice = parseFloat(e.target.value);
@@ -1214,7 +1191,7 @@ export default function ProductsPage() {
                             onKeyDown={(e) => {
                               if (e.key === 'Enter') e.currentTarget.blur();
                             }}
-                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : ''}`}
+                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
                           />
                         </div>
                       </td>
@@ -1223,10 +1200,14 @@ export default function ProductsPage() {
                           <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                           <Input
                             type="number"
+                            inputMode="decimal"
                             step="0.01"
                             value={product.cost}
                             readOnly={!canEditProduct}
-                            onClick={(e) => e.stopPropagation()}
+                            onPointerDown={stopOpenProductDetail}
+                            onMouseDown={stopOpenProductDetail}
+                            onClick={stopOpenProductDetail}
+                            onFocus={selectInlineNumber}
                             onChange={(e) => {
                               if (!canEditProduct) return;
                               const newCost = parseFloat(e.target.value);
@@ -1256,7 +1237,7 @@ export default function ProductsPage() {
                             onKeyDown={(e) => {
                               if (e.key === 'Enter') e.currentTarget.blur();
                             }}
-                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : ''}`}
+                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
                           />
                         </div>
                       </td>
@@ -1274,9 +1255,13 @@ export default function ProductsPage() {
                       <td className="px-4 py-3 text-right">
                         <Input
                           type="number"
+                          inputMode="numeric"
                           value={product.stock}
                           readOnly={!canEditProduct}
-                          onClick={(e) => e.stopPropagation()}
+                          onPointerDown={stopOpenProductDetail}
+                          onMouseDown={stopOpenProductDetail}
+                          onClick={stopOpenProductDetail}
+                          onFocus={selectInlineNumber}
                           onChange={(e) => {
                             if (!canEditProduct) return;
                             const newStock = parseInt(e.target.value);
@@ -1306,7 +1291,7 @@ export default function ProductsPage() {
                           onKeyDown={(e) => {
                             if (e.key === 'Enter') e.currentTarget.blur();
                           }}
-                          className={`h-9 w-20 text-right ml-auto ${!canEditProduct ? 'bg-gray-50 cursor-default' : ''}`}
+                          className={`h-9 w-20 text-right ml-auto ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
                         />
                       </td>
                       <td className="px-2 py-3">

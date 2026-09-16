@@ -100,54 +100,51 @@ export default function SalesPage() {
 
   // ✅ CARGAR categorías desde Supabase al iniciar
   useEffect(() => {
-    if (!currentBusiness) return;
-    
+    if (!currentBusiness?.id) {
+      setCustomCategories([]);
+      return;
+    }
+    const businessId = currentBusiness.id;
+    let cancelled = false;
+
     const loadCategories = async () => {
       try {
-        const categories = await apiService.getCategories(currentBusiness.id);
-        const categoryNames = categories.map(c => c.name);
-        console.log('📂 [SALES] Categorías cargadas desde Supabase:', categoryNames);
-        setCustomCategories(categoryNames);
+        const categories = await apiService.getCategories(businessId);
+        if (cancelled) return;
+        setCustomCategories(categories.map(c => c.name));
       } catch (error) {
+        if (cancelled) return;
         console.error('❌ [SALES] Error al cargar categorías:', error);
         setCustomCategories([]);
       }
     };
-    
-    loadCategories();
-  }, [currentBusiness?.id]);
 
-
-  // ✅ Escuchar cambios en categorías
-  useEffect(() => {
-    if (!currentBusiness) return;
-
-    const handleCategoriesUpdated = async () => {
-      try {
-        const categories = await apiService.getCategories(currentBusiness.id);
-        const categoryNames = categories.map(c => c.name);
-        console.log('🔄 [SALES] Categorías actualizadas:', categoryNames);
-        setCustomCategories(categoryNames);
-      } catch (error) {
-        console.error('❌ [SALES] Error al actualizar categorías:', error);
-      }
-    };
-
-    window.addEventListener('businessChanged', handleCategoriesUpdated);
-
-    return () => {
-      window.removeEventListener('businessChanged', handleCategoriesUpdated);
-    };
+    void loadCategories();
+    return () => { cancelled = true; };
   }, [currentBusiness?.id]);
 
   // Load products when business changes
   useEffect(() => {
-    if (!currentBusiness?.id) return;
+    if (!currentBusiness?.id) {
+      setProducts([]);
+      setCartItems([]);
+      return;
+    }
+
+    const businessId = currentBusiness.id;
+    let cancelled = false;
+    setProducts([]);
+    setCartItems([]);
+    setSearchTerm('');
+    setSelectedCategory('Todas');
+    setIsEditingMovement(false);
+    hasLoadedRef.current = false;
 
     const loadProducts = async () => {
       setProductsLoading(true);
       try {
-        const productsData = await apiService.getProducts(currentBusiness.id);
+        const productsData = await apiService.getProducts(businessId);
+        if (cancelled) return;
         const mappedProducts = productsData.map((p: any) => ({
           id: p.id,
           name: p.name,
@@ -158,24 +155,20 @@ export default function SalesPage() {
           image: p.image || '',
         }));
         console.log('✅ Productos cargados en SalesPage:', mappedProducts.length, 'productos');
-        setProducts((prev) =>
-          mappedProducts.map((p) => ({
-            ...p,
-            image: p.image || prev.find((e) => e.id === p.id)?.image || '',
-          })),
-        );
+        setProducts(mappedProducts);
       } catch (error) {
+        if (cancelled) return;
         console.error('Error loading products:', error);
       } finally {
-        setProductsLoading(false);
+        if (!cancelled) setProductsLoading(false);
       }
     };
 
-    loadProducts();
+    void loadProducts();
 
     const handleProductsUpdated = (e: Event) => {
       const detail = (e as CustomEvent<{ productId?: string; image?: string; businessId?: string }>).detail;
-      if (detail?.businessId && detail.businessId !== currentBusiness.id) return;
+      if (detail?.businessId && detail.businessId !== businessId) return;
 
       if (detail?.productId && detail.image) {
         setProducts((prev) =>
@@ -185,12 +178,13 @@ export default function SalesPage() {
       }
 
       console.log('🔄 Productos actualizados (evento personalizado), recargando...');
-      loadProducts();
+      void loadProducts();
     };
 
     window.addEventListener('productsUpdated', handleProductsUpdated);
 
     return () => {
+      cancelled = true;
       window.removeEventListener('productsUpdated', handleProductsUpdated);
     };
   }, [currentBusiness?.id]);
