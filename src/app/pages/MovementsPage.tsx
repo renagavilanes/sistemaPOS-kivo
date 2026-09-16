@@ -2233,9 +2233,8 @@ export default function MovementsPage() {
                     )}
                     {canReportsMovement && (
                       <Button
-                        variant="outline"
                         size="sm"
-                        className="hidden md:flex"
+                        className="hidden md:flex bg-gray-900 text-white hover:bg-gray-800"
                         onClick={() => setReportsSheetOpen(true)}
                       >
                         <FileText className="w-4 h-4 mr-2" />
@@ -4373,6 +4372,7 @@ export default function MovementsPage() {
         onOpenChange={setReportsSheetOpen}
         data={reportsData}
         filterLabel={getFilterLabel()}
+        period={(dateFilter as 'daily' | 'weekly' | 'monthly' | 'yearly' | 'all') || 'all'}
       />
 
       {/* Receipt Preview Modal */}

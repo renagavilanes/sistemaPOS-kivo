@@ -1,9 +1,10 @@
-import { FileText, TrendingUp, DollarSign, ShoppingCart, Percent, CreditCard, X, Download } from 'lucide-react';
+import { FileText, TrendingUp, DollarSign, ShoppingCart, CreditCard, X, Download } from 'lucide-react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from './ui/sheet';
 import { Separator } from './ui/separator';
 import { ScrollArea } from './ui/scroll-area';
 import { useState } from 'react';
 import { formatCurrency } from '../utils/currency';
+import { reportNetProfitInsight, formatReportInsight, type ReportPeriod } from '../utils/reportInsight';
 import {
   excelBorderHeader,
   excelBorderThin,
@@ -47,9 +48,10 @@ interface ReportsSheetProps {
   onOpenChange: (open: boolean) => void;
   data: ReportsData;
   filterLabel: string;
+  period?: ReportPeriod;
 }
 
-export function ReportsSheet({ open, onOpenChange, data, filterLabel }: ReportsSheetProps) {
+export function ReportsSheet({ open, onOpenChange, data, filterLabel, period = 'all' }: ReportsSheetProps) {
   const [productSortBy, setProductSortBy] = useState<'quantity' | 'revenue'>('revenue');
   
   const {
@@ -573,100 +575,17 @@ export function ReportsSheet({ open, onOpenChange, data, filterLabel }: ReportsS
 
               {/* Análisis contextual */}
               <div className="mt-3 pt-3 border-t border-white/10 w-full">
-                <p className="text-xs text-gray-400 leading-relaxed w-full" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word', maxWidth: '100%' }}>
-                  {(() => {
-                    const margin = salesTotal > 0 ? ((salesTotal - productsCost) / salesTotal) * 100 : 0;
-                    const expenseRatio = salesTotal > 0 ? (expensesTotal / salesTotal) * 100 : 0;
-                    const profitRatio = salesTotal > 0 ? (netProfit / salesTotal) * 100 : 0;
-                    const grossProfit = salesTotal - productsCost;
-                    
-                    // Caso 1: Sin actividad registrada
-                    if (salesTotal === 0 && expensesTotal === 0 && productsCost === 0) {
-                      return '📊 Sin actividad registrada. Comienza a registrar ventas y gastos para obtener análisis.';
-                    }
-                    
-                    // Caso 2: Sin ventas pero hay gastos
-                    if (salesTotal === 0 && expensesTotal > 0) {
-                      return `⚠️ Tienes gastos de $${formatCurrency(expensesTotal)} sin ventas registradas. Necesitas generar ingresos para cubrir estos gastos.`;
-                    }
-                    
-                    // Caso 3: Pérdidas porque los gastos son mayores que la utilidad bruta
-                    if (netProfit < 0 && expensesTotal > grossProfit && grossProfit > 0) {
-                      const excessExpense = expensesTotal - grossProfit;
-                      const targetExpense = grossProfit * 0.7; // objetivo: gastos al 70% de utilidad bruta
-                      const needToReduce = expensesTotal - targetExpense;
-                      return `⚠️ Tu utilidad bruta de $${formatCurrency(grossProfit)} no cubre los gastos de $${formatCurrency(expensesTotal)}. Reduce gastos en $${formatCurrency(needToReduce)} o aumenta ventas en $${formatCurrency(excessExpense)}.`;
-                    }
-                    
-                    // Caso 4: Pérdidas por margen negativo o muy bajo
-                    if (netProfit < 0 && margin <= 0) {
-                      const minPrice = productsCost * 1.4; // margen objetivo del 40%
-                      return `🔴 Vendes a pérdida: costo $${formatCurrency(productsCost)} vs ventas $${formatCurrency(salesTotal)}. Ajusta precios a mínimo $${formatCurrency(minPrice)} para un margen saludable del 40%.`;
-                    }
-                    
-                    // Caso 5: Pérdidas con margen bajo
-                    if (netProfit < 0 && margin > 0 && margin < 20) {
-                      const neededSales = (productsCost + expensesTotal) / 0.6; // margen objetivo 40%
-                      const salesIncrease = neededSales - salesTotal;
-                      return `⚠️ Margen insuficiente (${formatCurrency(margin, 1)}%). Aumenta ventas en $${formatCurrency(salesIncrease)} manteniendo costos, o sube precios un ${formatCurrency((salesIncrease/salesTotal)*100, 0)}%.`;
-                    }
-                    
-                    // Caso 6: Punto de equilibrio (ganancia muy baja)
-                    if (netProfit >= 0 && profitRatio < 5 && profitRatio > 0) {
-                      const targetProfit = salesTotal * 0.15; // objetivo 15%
-                      const needToImprove = targetProfit - netProfit;
-                      const optionA = expensesTotal * 0.3; // reducir gastos 30%
-                      const optionB = needToImprove / margin * 100; // vender más
-                      return `📍 Ganancia de solo ${formatCurrency(profitRatio, 1)}%. Para llegar a 15% necesitas: reducir gastos $${formatCurrency(optionA)} o vender $${formatCurrency(optionB)} adicionales.`;
-                    }
-                    
-                    // Caso 7: Ganancia positiva pero margen de producto muy ajustado
-                    if (netProfit > 0 && margin > 0 && margin < 25) {
-                      const currentAvgPrice = salesTotal / salesCount;
-                      const targetPrice = currentAvgPrice * 1.15; // aumentar 15%
-                      const potentialExtraProfit = (salesTotal * 0.15);
-                      return `💡 Tu margen es ${formatCurrency(margin, 1)}%. Aumentando precios de $${formatCurrency(currentAvgPrice)} a $${formatCurrency(targetPrice)} (15%) ganarías $${formatCurrency(potentialExtraProfit)} más al mes.`;
-                    }
-                    
-                    // Caso 8: Ganancia positiva pero gastos muy altos
-                    if (netProfit > 0 && expenseRatio > 25) {
-                      const idealExpense = salesTotal * 0.20; // objetivo 20%
-                      const savingsNeeded = expensesTotal - idealExpense;
-                      const newProfit = netProfit + savingsNeeded;
-                      return `💡 Gastos altos: $${formatCurrency(expensesTotal)} (${formatCurrency(expenseRatio, 0)}%). Reduciendo a $${formatCurrency(idealExpense)} (20%), tu ganancia subiría a $${formatCurrency(newProfit)}.`;
-                    }
-                    
-                    // Caso 9: Buen desempeño pero hay oportunidad específica
-                    if (profitRatio >= 10 && profitRatio < 20 && margin < 45) {
-                      const potentialWithBetterMargin = salesTotal * 0.45 - productsCost;
-                      const potentialNetProfit = potentialWithBetterMargin - expensesTotal;
-                      const extraProfit = potentialNetProfit - netProfit;
-                      return `📈 Buen rendimiento (${formatCurrency(profitRatio, 1)}% ganancia). Con margen del 45% en vez de ${formatCurrency(margin, 1)}%, ganarías $${formatCurrency(extraProfit)} más mensual.`;
-                    }
-                    
-                    // Caso 10: Rendimiento excelente
-                    if (profitRatio >= 20) {
-                      const monthlyProfit = netProfit;
-                      const annualProjection = monthlyProfit * 12;
-                      return `✅ ¡Excelente! ${formatCurrency(profitRatio, 1)}% de ganancia neta. A este ritmo proyectas $${formatCurrency(annualProjection)} anuales. Mantén este desempeño.`;
-                    }
-                    
-                    // Caso 11: Buen desempeño
-                    if (profitRatio >= 10) {
-                      const toExcellent = (salesTotal * 0.20) - netProfit;
-                      return `✅ Buen negocio con ${formatCurrency(profitRatio, 1)}% de ganancia. Para llegar a "excelente" (20%), necesitas $${formatCurrency(toExcellent)} más por período.`;
-                    }
-                    
-                    // Caso 12: Ganancia moderada
-                    if (profitRatio >= 5) {
-                      const toGood = (salesTotal * 0.12) - netProfit;
-                      const percentNeeded = (toGood / salesTotal) * 100;
-                      return `📊 Ganancia moderada (${formatCurrency(profitRatio, 1)}%). Reduciendo costos/gastos un ${formatCurrency(percentNeeded, 1)}% alcanzarías el objetivo de 12% de ganancia neta.`;
-                    }
-                    
-                    // Default
-                    return '📊 Continúa monitoreando tus métricas. Analiza cada período para identificar oportunidades de mejora.';
-                  })()}
+                <p className="text-xs text-gray-400 leading-relaxed w-full line-clamp-3" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', maxWidth: '100%' }}>
+                  {formatReportInsight(
+                    reportNetProfitInsight({
+                      salesTotal,
+                      productsCost,
+                      expensesTotal,
+                      netProfit,
+                      salesCount,
+                      period,
+                    }),
+                  )}
                 </p>
               </div>
             </div>
