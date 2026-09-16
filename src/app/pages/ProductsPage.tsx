@@ -548,7 +548,8 @@ export default function ProductsPage() {
 
     const price = parseLocaleNumber(productPrice);
     const cost = parseLocaleNumber(productCost);
-    const stock = parseLocaleNumber(productStock);
+    const stockRaw = productStock.trim();
+    const stock = stockRaw === '' ? 0 : parseLocaleNumber(productStock);
 
     if (!Number.isFinite(price) || price < 0) {
       toast.error('Ingresa el precio de venta');
@@ -559,7 +560,7 @@ export default function ProductsPage() {
       return;
     }
     if (!Number.isFinite(stock) || stock < 0) {
-      toast.error('Ingresa la cantidad disponible');
+      toast.error('La cantidad no es válida');
       return;
     }
     const stockQty = Math.trunc(stock);
@@ -1633,7 +1634,7 @@ export default function ProductsPage() {
 
               {/* Stock */}
               <div className="space-y-2">
-                <Label>Cantidad disponible*</Label>
+                <Label>Cantidad disponible</Label>
                 <Input
                   type="text"
                   inputMode="numeric"
