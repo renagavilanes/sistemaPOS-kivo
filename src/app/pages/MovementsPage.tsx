@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { Search, Filter, Calendar, MoreVertical, Download, FileText, TrendingUp, DollarSign, CreditCard, ChevronLeft, ChevronRight, X, Users, ChevronRight as ChevronRightIcon, User, Building2, Printer, Receipt, Edit, Trash2, ShoppingCart, Plus, Minus, Check, Banknote, MoreHorizontal, ChevronDown, ChevronUp, Percent, ArrowLeft, Loader2 } from 'lucide-react';
 import { ExpenseForm } from '../components/ExpenseForm';
@@ -44,6 +44,7 @@ import { es } from 'date-fns/locale';
 import { toast } from 'sonner';
 import { exportMovementsToExcel } from '../utils/excelExport';
 import { useBusiness } from '../contexts/BusinessContext';
+import { useAuth } from '../contexts/AuthContext';
 // REMOVIDO: import { useData } from '../contexts/DataContext';
 import * as apiService from '../services/api';
 import { printReceipt, shareReceipt } from '../utils/receiptGenerator';
@@ -426,10 +427,34 @@ const mockMovements = [
   },
 ];
 
+function sellersForEdit(
+  employees: any[],
+  currentUser: { id: string; email?: string } | null,
+  currentBusiness: { id?: string; name?: string } | null,
+) {
+  const list = (employees || []).map((e) => {
+    if (e.is_owner && !e.userId && currentUser?.id) {
+      return { ...e, userId: currentUser.id };
+    }
+    return { ...e };
+  });
+  if (currentUser?.id && !list.some((e) => e.userId === currentUser.id)) {
+    list.unshift({
+      id: `user:${currentUser.id}`,
+      userId: currentUser.id,
+      name: currentUser.email || currentBusiness?.name || 'Propietario',
+      role: 'Propietario',
+      is_owner: true,
+    });
+  }
+  return list;
+}
+
 function resolveMovementSeller(
   movement: any,
   employeeList: any[],
   fallback?: any | null,
+  ctx?: { currentUserId?: string | null; businessId?: string | null },
 ) {
   const tryMatch = (candidate: any) => {
     if (!candidate) return null;
@@ -458,13 +483,40 @@ function resolveMovementSeller(
   const name = movement?.employee;
   if (name && name !== 'Usuario') {
     const byName = employeeList.find((e) => e.name === name);
-    if (byName) return byName;
+    if (byName) {
+      if (!byName.userId && createdBy && createdBy !== ctx?.businessId) {
+        return { ...byName, userId: createdBy };
+      }
+      return byName;
+    }
   }
+  if (createdBy && ctx?.businessId && createdBy === ctx.businessId) {
+    const owner = employeeList.find((e) => e.is_owner);
+    if (owner) return owner;
+  }
+  if (createdBy && ctx?.currentUserId && createdBy === ctx.currentUserId) {
+    const me =
+      employeeList.find((e) => e.userId === ctx.currentUserId) ||
+      employeeList.find((e) => e.is_owner);
+    if (me) return me;
+  }
+  if (createdBy && createdBy !== ctx?.businessId) {
+    return {
+      id: createdBy,
+      userId: createdBy,
+      name: name && name !== 'Usuario' ? name : 'Vendedor original',
+    };
+  }
+  const owner = employeeList.find((e) => e.is_owner);
+  if (owner) return owner;
+  const me = employeeList.find((e) => e.userId === ctx?.currentUserId);
+  if (me) return me;
   return fallback || null;
 }
 
 export default function MovementsPage() {
   const { currentBusiness, businesses, switchBusiness, createBusiness } = useBusiness();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -482,6 +534,20 @@ export default function MovementsPage() {
   const [customers, setCustomers] = useState<any[]>([]);
   const [employees, setEmployees] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
+
+  const sellerOptions = useMemo(
+    () => sellersForEdit(employees, user, currentBusiness),
+    [employees, user, currentBusiness],
+  );
+
+  const resolveSeller = useCallback(
+    (movement: any, fallback?: any | null) =>
+      resolveMovementSeller(movement, sellerOptions, fallback, {
+        currentUserId: user?.id ?? null,
+        businessId: currentBusiness?.id ?? null,
+      }),
+    [sellerOptions, user?.id, currentBusiness?.id],
+  );
   
   // Movements state
   const [movements, setMovements] = useState<any[]>([]);
@@ -553,7 +619,7 @@ export default function MovementsPage() {
       const getEmployeeName = (createdBy: string | null): string => {
         if (!createdBy) return 'Usuario';
         let employee = employeeByUserId.get(createdBy);
-        if (!employee && createdBy === currentBusiness?.id) {
+        if (!employee && (createdBy === currentBusiness?.id || createdBy === user?.id)) {
           employee = ownerEmployee;
         }
         return employee ? employee.name : 'Usuario';
@@ -1042,11 +1108,7 @@ export default function MovementsPage() {
             }
 
             setEditSelectedEmployee(
-              resolveMovementSeller(
-                updatedMovement,
-                employees,
-                movementData.editSelectedEmployee,
-              ),
+              resolveSeller(updatedMovement, movementData.editSelectedEmployee),
             );
               
               setEditNote(movementData.editNote || updatedMovement.productConcept);
@@ -1093,7 +1155,7 @@ export default function MovementsPage() {
     return () => {
       window.removeEventListener('focus', handleFocus);
     };
-  }, [movements, employees]);
+  }, [movements, employees, resolveSeller]);
 
   // Auto-scroll to selected filter option on mobile
   useEffect(() => {
@@ -1163,11 +1225,9 @@ export default function MovementsPage() {
       console.log('Loading client:', selectedMovement.client, 'Display name:', clientName, 'Found:', client);
       setEditSelectedClient(client || null);
       
-      const employee = resolveMovementSeller(selectedMovement, employees);
+      const employee = resolveSeller(selectedMovement);
       if (employee) {
         setEditSelectedEmployee(employee);
-      } else if (employees.length > 0) {
-        setEditSelectedEmployee(null);
       }
       
       setEditNote(selectedMovement.productConcept);
@@ -1216,7 +1276,7 @@ export default function MovementsPage() {
       
       console.log('Data loaded successfully');
     }
-  }, [editSheetOpen, selectedMovement, employees, movementToEditSaleTab, applySaleDiscountToEditState]);
+  }, [editSheetOpen, selectedMovement, sellerOptions, resolveSeller, movementToEditSaleTab, applySaleDiscountToEditState]);
 
   /** `none` = sin medio aplicable (venta a crédito / gasto en deuda); no sale en filtros. */
   const paymentMethods = [
@@ -1622,7 +1682,7 @@ export default function MovementsPage() {
     console.log('Setting client:', movementToEdit.client, 'Found:', client?.name || 'null');
     setEditSelectedClient(client || null);
     
-    setEditSelectedEmployee(resolveMovementSeller(movementToEdit, employees));
+    setEditSelectedEmployee(resolveSeller(movementToEdit));
     
     setEditNote(movementToEdit.productConcept);
     setEditNumPayments(1);
@@ -1814,15 +1874,15 @@ export default function MovementsPage() {
       paymentMethodDb = 'Otros';
     }
 
-    if (!editSelectedEmployee) {
+    const resolvedSeller = editSelectedEmployee || resolveSeller(selectedMovement);
+    const rawCreatedBy = selectedMovement.createdBy;
+    const sellerUserId =
+      (typeof resolvedSeller?.userId === 'string' && resolvedSeller.userId) ||
+      (typeof rawCreatedBy === 'string' && rawCreatedBy !== currentBusiness.id ? rawCreatedBy : '') ||
+      user?.id ||
+      '';
+    if (!sellerUserId) {
       toast.error('Selecciona un vendedor.');
-      return;
-    }
-    const sellerUserId = editSelectedEmployee.userId;
-    if (!sellerUserId || typeof sellerUserId !== 'string') {
-      toast.error(
-        'Este vendedor no tiene cuenta vinculada. Solo puedes asignar empleados que ya hayan aceptado la invitación.',
-      );
       return;
     }
 
@@ -3746,7 +3806,7 @@ export default function MovementsPage() {
                           <DialogDescription>Elige un vendedor de la lista.</DialogDescription>
                         </DialogHeader>
                         <div className="space-y-2 mt-4">
-                          {employees.map((employee) => (
+                          {sellerOptions.map((employee) => (
                             <button
                               key={employee.id}
                               onClick={() => {
