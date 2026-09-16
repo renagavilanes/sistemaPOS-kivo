@@ -12,7 +12,7 @@ import * as dbExpenses from "./db_expenses.tsx";
 import * as dbEmployees from "./db_employees.tsx";
 import { createEmployeeV3 } from "./employee_creation_v3.tsx";
 import { registerAdminRoutes } from "./admin_routes.tsx";
-import { restoreProductStockOnSaleDelete } from "./sale_stock.ts";
+import { restoreProductStockOnSaleDelete, applySaleItemsStockDelta } from "./sale_stock.ts";
 
 const app = new Hono();
 
@@ -3190,6 +3190,27 @@ app.patch("/make-server-3508045b/sales/db-update/:saleId", async (c) => {
     if (body.items !== undefined) {
       if (!Array.isArray(body.items) || body.items.length === 0) {
         return c.json({ error: 'items must be a non-empty array' }, 400);
+      }
+      const { data: existing, error: existingErr } = await supabaseAdmin
+        .from('sales')
+        .select('items')
+        .eq('id', saleId)
+        .eq('business_id', businessId)
+        .single();
+      if (existingErr) {
+        console.error('❌ [SALES/DB-UPDATE] Error reading sale items:', existingErr);
+        return c.json({ error: existingErr.message }, 500);
+      }
+      if (!existing) return c.json({ error: 'Sale not found' }, 404);
+      const stockResult = await applySaleItemsStockDelta(
+        supabaseAdmin,
+        businessId,
+        Array.isArray(existing.items) ? existing.items : [],
+        body.items,
+      );
+      if (stockResult.error) {
+        console.error('❌ [SALES/DB-UPDATE] Stock delta error:', stockResult.error);
+        return c.json({ error: stockResult.error }, 500);
       }
       updateData.items = body.items;
     }

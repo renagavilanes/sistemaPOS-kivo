@@ -1905,6 +1905,9 @@ export default function MovementsPage() {
         notes: editNote || null,
         createdAt: createdAtIso,
       });
+      window.dispatchEvent(new CustomEvent('productsUpdated', {
+        detail: { businessId: currentBusiness.id },
+      }));
 
       const range = movementsServerRange({
         dateFilter,

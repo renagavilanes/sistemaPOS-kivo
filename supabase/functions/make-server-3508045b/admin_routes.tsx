@@ -4,7 +4,7 @@
 // deno-lint-ignore-file no-explicit-any
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { cors } from "npm:hono/cors";
-import { restoreProductStockOnSaleDelete } from "./sale_stock.ts";
+import { restoreProductStockOnSaleDelete, applySaleItemsStockDelta } from "./sale_stock.ts";
 
 export function registerAdminRoutes(app: any): void {
   const admin = createClient(
@@ -124,6 +124,21 @@ export function registerAdminRoutes(app: any): void {
         if (!Array.isArray(body.items) || body.items.length === 0) {
           return c.json({ error: "items must be a non-empty array" }, 400);
         }
+        const { data: existing, error: existingErr } = await admin
+          .from("sales")
+          .select("items")
+          .eq("id", saleId)
+          .eq("business_id", businessId)
+          .single();
+        if (existingErr) return c.json({ error: existingErr.message }, 500);
+        if (!existing) return c.json({ error: "Sale not found" }, 404);
+        const stockResult = await applySaleItemsStockDelta(
+          admin,
+          businessId,
+          Array.isArray(existing.items) ? existing.items : [],
+          body.items,
+        );
+        if (stockResult.error) return c.json({ error: stockResult.error }, 500);
         upd.items = body.items;
       }
       if (Object.keys(upd).length === 0) {
