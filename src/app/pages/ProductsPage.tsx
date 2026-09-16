@@ -119,6 +119,11 @@ function InlineNumberField({
         if (readOnly) return;
         setDraft(e.target.value);
       }}
+      onKeyDown={(e) => {
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        e.currentTarget.blur();
+      }}
       onBlur={() => {
         focusedRef.current = false;
         selectOnMouseUpRef.current = false;
