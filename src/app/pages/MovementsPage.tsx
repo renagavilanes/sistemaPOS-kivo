@@ -426,6 +426,43 @@ const mockMovements = [
   },
 ];
 
+function resolveMovementSeller(
+  movement: any,
+  employeeList: any[],
+  fallback?: any | null,
+) {
+  const tryMatch = (candidate: any) => {
+    if (!candidate) return null;
+    const match = employeeList.find(
+      (e) =>
+        (candidate.userId && e.userId === candidate.userId) ||
+        (candidate.id && e.id === candidate.id),
+    );
+    if (match) return match;
+    if (typeof candidate.userId === 'string' && candidate.userId) return candidate;
+    return null;
+  };
+
+  const fromFallback = tryMatch(fallback) || tryMatch(movement?.editSelectedEmployee);
+  if (fromFallback) return fromFallback;
+
+  const createdBy = movement?.createdBy || movement?.employeeUserId;
+  if (createdBy) {
+    const byUser = employeeList.find((e) => e.userId === createdBy);
+    if (byUser) return byUser;
+  }
+  if (movement?.employeeId) {
+    const byId = employeeList.find((e) => e.id === movement.employeeId);
+    if (byId) return byId;
+  }
+  const name = movement?.employee;
+  if (name && name !== 'Usuario') {
+    const byName = employeeList.find((e) => e.name === name);
+    if (byName) return byName;
+  }
+  return fallback || null;
+}
+
 export default function MovementsPage() {
   const { currentBusiness, businesses, switchBusiness, createBusiness } = useBusiness();
   const navigate = useNavigate();
@@ -558,7 +595,8 @@ export default function MovementsPage() {
           cost: totalCost,
           profit: totalAmount - totalCost,
           employee: getEmployeeName(movement.createdBy),
-          employeeId: null,
+          employeeId: employeeByUserId.get(movement.createdBy)?.id ?? null,
+          createdBy: movement.createdBy ?? null,
           client: getClientName(movement.customerId),
           paymentMethod: (() => {
             const ps = String(movement.paymentStatus ?? '').toLowerCase();
@@ -619,7 +657,8 @@ export default function MovementsPage() {
           cost: amount,
           profit: -amount,
           employee: getEmployeeName(movement.createdBy),
-          employeeId: null,
+          employeeId: employeeByUserId.get(movement.createdBy)?.id ?? null,
+          createdBy: movement.createdBy ?? null,
           client: '-',
           supplier: movement.description || '',
           paymentMethod: (() => {
@@ -963,54 +1002,52 @@ export default function MovementsPage() {
           
           // Check if products were edited
           if (movementData.productsEdited) {
-            // Find the movement being edited
-            const movement = movements.find(m => m.id === movementData.id);
-            
-            if (movement) {
-              // Calculate new total based on updated products
-              const newTotal = movementData.products.reduce((sum: number, product: any) => {
-                return sum + (product.price * product.quantity);
-              }, 0);
-              
-              // Calculate new profit based on updated products
-              const totalCost = movementData.products.reduce((sum: number, product: any) => {
-                return sum + ((product.cost || 0) * product.quantity);
-              }, 0);
-              const newProfit = newTotal - totalCost;
-              
-              // Create updated movement using data from localStorage (not from movements array)
-              const updatedMovement = { 
-                ...movementData, // Use localStorage data first
-                products: movementData.products,
-                total: newTotal,
-                profit: newProfit,
-                // Preserve edited fields from localStorage
-                date: movementData.editDate || movementData.date,
-                time: movementData.editTime || movementData.time,
-                client: movementData.editSelectedClient?.name || movementData.client,
-                employee: movementData.editSelectedEmployee?.name || movementData.employee,
-                productConcept: movementData.editNote || movementData.productConcept
-              };
-              
-              setSelectedMovement(updatedMovement);
-              
-              // Restore all saved states from localStorage (always prefer localStorage values)
-              setEditDate(movementData.editDate || movementData.date);
-              setEditTime(movementData.editTime || movementData.time);
-              
-              // Restore client
-              if (movementData.editSelectedClient) {
-                setEditSelectedClient(movementData.editSelectedClient);
-              } else {
-                setEditSelectedClient(null);
-              }
-              
-              // Restore employee
-              if (movementData.editSelectedEmployee) {
-                setEditSelectedEmployee(movementData.editSelectedEmployee);
-              } else {
-                setEditSelectedEmployee(null);
-              }
+            const listMovement = movements.find((m) => m.id === movementData.id);
+            const newTotal = movementData.products.reduce((sum: number, product: any) => {
+              return sum + (product.price * product.quantity);
+            }, 0);
+
+            const totalCost = movementData.products.reduce((sum: number, product: any) => {
+              return sum + ((product.cost || 0) * product.quantity);
+            }, 0);
+            const newProfit = newTotal - totalCost;
+
+            const updatedMovement = {
+              ...(listMovement || {}),
+              ...movementData,
+              products: movementData.products,
+              total: newTotal,
+              profit: newProfit,
+              date: movementData.editDate || movementData.date,
+              time: movementData.editTime || movementData.time,
+              client: movementData.editSelectedClient?.name || movementData.client,
+              employee: movementData.editSelectedEmployee?.name || movementData.employee,
+              createdBy:
+                movementData.editSelectedEmployee?.userId ||
+                movementData.createdBy ||
+                listMovement?.createdBy ||
+                null,
+              productConcept: movementData.editNote || movementData.productConcept,
+            };
+
+            setSelectedMovement(updatedMovement);
+
+            setEditDate(movementData.editDate || movementData.date);
+            setEditTime(movementData.editTime || movementData.time);
+
+            if (movementData.editSelectedClient) {
+              setEditSelectedClient(movementData.editSelectedClient);
+            } else {
+              setEditSelectedClient(null);
+            }
+
+            setEditSelectedEmployee(
+              resolveMovementSeller(
+                updatedMovement,
+                employees,
+                movementData.editSelectedEmployee,
+              ),
+            );
               
               setEditNote(movementData.editNote || updatedMovement.productConcept);
               setEditNumPayments(movementData.editNumPayments || 1);
@@ -1036,7 +1073,6 @@ export default function MovementsPage() {
               // Remove the flag but keep the data for further edits
               movementData.productsEdited = false;
               localStorage.setItem('editingMovement', JSON.stringify(movementData));
-            }
           }
         } catch (error) {
           console.error('Error loading edited products:', error);
@@ -1057,7 +1093,7 @@ export default function MovementsPage() {
     return () => {
       window.removeEventListener('focus', handleFocus);
     };
-  }, [movements]);
+  }, [movements, employees]);
 
   // Auto-scroll to selected filter option on mobile
   useEffect(() => {
@@ -1127,10 +1163,12 @@ export default function MovementsPage() {
       console.log('Loading client:', selectedMovement.client, 'Display name:', clientName, 'Found:', client);
       setEditSelectedClient(client || null);
       
-      // Set employee
-      const employee = employees.find(e => e.name === selectedMovement.employee);
-      console.log('Loading employee:', selectedMovement.employee, 'Found:', employee);
-      setEditSelectedEmployee(employee || null);
+      const employee = resolveMovementSeller(selectedMovement, employees);
+      if (employee) {
+        setEditSelectedEmployee(employee);
+      } else if (employees.length > 0) {
+        setEditSelectedEmployee(null);
+      }
       
       setEditNote(selectedMovement.productConcept);
       
@@ -1178,7 +1216,7 @@ export default function MovementsPage() {
       
       console.log('Data loaded successfully');
     }
-  }, [editSheetOpen, selectedMovement, movementToEditSaleTab, applySaleDiscountToEditState]);
+  }, [editSheetOpen, selectedMovement, employees, movementToEditSaleTab, applySaleDiscountToEditState]);
 
   /** `none` = sin medio aplicable (venta a crédito / gasto en deuda); no sale en filtros. */
   const paymentMethods = [
@@ -1584,10 +1622,7 @@ export default function MovementsPage() {
     console.log('Setting client:', movementToEdit.client, 'Found:', client?.name || 'null');
     setEditSelectedClient(client || null);
     
-    // Set employee
-    const employee = employees.find(e => e.name === movementToEdit.employee);
-    console.log('Setting employee:', movementToEdit.employee, 'Found:', employee?.name || 'null');
-    setEditSelectedEmployee(employee || null);
+    setEditSelectedEmployee(resolveMovementSeller(movementToEdit, employees));
     
     setEditNote(movementToEdit.productConcept);
     setEditNumPayments(1);
@@ -1673,7 +1708,8 @@ export default function MovementsPage() {
     // Guardar datos en localStorage para recuperarlos al volver
     localStorage.setItem('editingMovement', JSON.stringify({
       ...selectedMovement,
-      isEditingProducts: true, // ← Agregar bandera aquí
+      isEditingProducts: true,
+      createdBy: editSelectedEmployee?.userId || selectedMovement.createdBy || null,
       editDate,
       editTime,
       editSelectedClient,
