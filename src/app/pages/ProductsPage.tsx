@@ -48,6 +48,14 @@ const stopOpenProductDetail = (e: { stopPropagation: () => void }) => {
   e.stopPropagation();
 };
 
+function sameNumericValue(a: number, b: number, integer?: boolean) {
+  const left = Number(a);
+  const right = Number(b);
+  if (!Number.isFinite(left) || !Number.isFinite(right)) return false;
+  if (integer) return Math.trunc(left) === Math.trunc(right);
+  return Math.round(left * 10000) === Math.round(right * 10000);
+}
+
 function InlineNumberField({
   value,
   integer,
@@ -63,7 +71,8 @@ function InlineNumberField({
 }) {
   const [draft, setDraft] = useState(String(value));
   const focusedRef = useRef(false);
-  const startValueRef = useRef(value);
+  const startValueRef = useRef(Number(value));
+  const selectOnMouseUpRef = useRef(false);
 
   useEffect(() => {
     if (!focusedRef.current) setDraft(String(value));
@@ -85,15 +94,26 @@ function InlineNumberField({
         stopOpenProductDetail(e);
         if (readOnly) return;
         if (document.activeElement !== e.currentTarget) {
-          e.preventDefault();
-          e.currentTarget.focus();
+          selectOnMouseUpRef.current = true;
         }
+      }}
+      onMouseUp={(e) => {
+        if (!selectOnMouseUpRef.current) return;
+        e.preventDefault();
+        e.currentTarget.select();
+      }}
+      onClick={(e) => {
+        stopOpenProductDetail(e);
+        if (!selectOnMouseUpRef.current) return;
+        e.preventDefault();
+        e.currentTarget.select();
+        selectOnMouseUpRef.current = false;
       }}
       onFocus={(e) => {
         focusedRef.current = true;
-        startValueRef.current = value;
-        setDraft(String(value));
-        requestAnimationFrame(() => e.currentTarget.select());
+        startValueRef.current = Number(value);
+        selectOnMouseUpRef.current = true;
+        e.currentTarget.select();
       }}
       onChange={(e) => {
         if (readOnly) return;
@@ -101,13 +121,14 @@ function InlineNumberField({
       }}
       onBlur={() => {
         focusedRef.current = false;
+        selectOnMouseUpRef.current = false;
         const next = parseDraft(draft);
         if (!Number.isFinite(next)) {
           setDraft(String(startValueRef.current));
           return;
         }
         setDraft(String(next));
-        if (next === startValueRef.current) return;
+        if (sameNumericValue(next, startValueRef.current, integer)) return;
         void onCommit(next);
       }}
       className={className}
