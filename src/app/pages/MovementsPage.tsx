@@ -1283,8 +1283,20 @@ export default function MovementsPage() {
 
   const paymentMethodsForFilter = paymentMethods.filter((m) => m.id !== 'none');
 
-  const paymentMethodLabelForMovement = (methodId: string) =>
-    methodId === 'none' ? '—' : paymentMethods.find((m) => m.id === methodId)?.label ?? '—';
+  const paymentMethodLabelForMovement = (methodId: string) => {
+    const id = String(methodId ?? '').toLowerCase();
+    if (!id || id === 'none' || id === '-' || id === '—') return '—';
+    if (id === 'multiple' || id === 'múltiple') return 'Múltiple';
+    const known = paymentMethods.find(
+      (m) => m.id === id || m.label.toLowerCase() === id,
+    );
+    if (known) return known.label;
+    if (id === 'efectivo') return 'Efectivo';
+    if (id === 'tarjeta') return 'Tarjeta';
+    if (id === 'transferencia') return 'Transferencia';
+    if (id === 'otros' || id === 'otro') return 'Otro';
+    return 'Otro';
+  };
 
   // Build employee list from actual employees
   const getInitials = (name: string) => {
@@ -1565,15 +1577,23 @@ export default function MovementsPage() {
   
   // Calculate payment methods distribution
   const paymentMethodsMap: { [key: string]: { count: number; total: number } } = {};
-  salesMovements.forEach(m => {
-    const method = paymentMethodLabelForMovement(m.paymentMethod);
+  const addPaymentMethodStat = (methodId: string, amount: number) => {
+    const method = paymentMethodLabelForMovement(methodId);
     if (!paymentMethodsMap[method]) {
       paymentMethodsMap[method] = { count: 0, total: 0 };
     }
     paymentMethodsMap[method].count += 1;
-    paymentMethodsMap[method].total += m.total;
+    paymentMethodsMap[method].total += amount;
+  };
+  salesMovements.forEach(m => {
+    const lines = expandPartialPayments(m);
+    lines.forEach((line: any) => {
+      addPaymentMethodStat(line.paymentMethod, Number(line.total) || 0);
+    });
   });
-  const paymentMethodsData = Object.entries(paymentMethodsMap).map(([method, data]) => ({
+  const paymentMethodsData = Object.entries(paymentMethodsMap)
+    .filter(([method]) => method !== '—')
+    .map(([method, data]) => ({
     method,
     count: data.count,
     total: data.total
