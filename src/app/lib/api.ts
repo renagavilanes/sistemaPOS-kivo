@@ -72,6 +72,7 @@ export async function createSale(data: CreateSaleData) {
     quantity: item.quantity,
     subtotal: item.priceAtSale * item.quantity,
     discount: 0,
+    cost: Number(item.product.cost) || 0,
   }));
 
   // Estado de pago en BD
@@ -179,6 +180,7 @@ export async function createFreeSale(data: CreateFreeSaleData) {
       subtotal,
       discount: 0,
       freeSale: true,
+      cost: 0,
     },
   ];
 

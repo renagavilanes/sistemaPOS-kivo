@@ -1056,7 +1056,7 @@ export default function ProductsPage() {
       />
 
       {/* Search and Filters - Desktop */}
-      <div className="hidden md:block shrink-0 bg-white border-b px-4 sm:px-6 py-4">
+      <div className="hidden md:block shrink-0 bg-white border-b px-4 sm:px-6 pt-4 pb-3">
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -1095,10 +1095,10 @@ export default function ProductsPage() {
         </div>
 
         {/* Category filters */}
-        <div className="px-[12px] py-[0px] mx-[0px] my-[12px]">
+        <div className="mt-3">
           <div className="flex items-center gap-2">
             <div className="w-0 flex-1 overflow-x-auto scrollbar-hide">
-              <div className="flex flex-nowrap gap-2 min-w-max px-[0px] pt-[12px] pb-[8px]">
+              <div className="flex flex-nowrap gap-2 min-w-max py-0">
                 {['Todas', ...allCategories].map((category) => (
                   <Badge
                     key={category}
@@ -1172,7 +1172,7 @@ export default function ProductsPage() {
       </div>
 
       {/* Products Table - Desktop */}
-      <div className="hidden md:flex flex-1 min-h-0 overflow-hidden px-4 sm:px-6 py-4">
+      <div className="hidden md:flex flex-1 min-h-0 overflow-hidden px-4 sm:px-6 pt-3 pb-4">
         <div className="bg-white rounded-lg border overflow-hidden flex flex-col min-h-0 h-full w-full">
           <div className="overflow-x-auto overflow-y-auto overscroll-contain flex-1 min-h-0">
             <table className="w-full">

@@ -248,7 +248,7 @@ export default function SalesPage() {
                 category: product.category || 'Otros',
                 image: product.image,
                 stock: 100,
-                cost: product.cost || (product.price ? product.price * 0.6 : 0)
+                cost: product.cost || 0
               },
               quantity: product.quantity,
               priceAtSale: product.price || 0

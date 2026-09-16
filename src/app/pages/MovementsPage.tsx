@@ -51,17 +51,10 @@ import { printReceipt, shareReceipt } from '../utils/receiptGenerator';
 import { getClients, buildLocalDateTimeFromDateAndTime } from '../lib/api';
 import { formatCurrency } from '../utils/currency';
 import { formatDate } from '../utils/date';
+import { saleItemUnitCost, saleItemsTotalCost, saleProfit } from '../utils/saleProfit';
 import { PageHeader } from '../components/layout/PageHeader';
 import { SectionCard } from '../components/layout/SectionCard';
 import { dataTableThead, dthMovement } from '../lib/dataTableHeaderClasses';
-
-/** Línea de venta libre (JSON en `sales.items`): sin producto de catálogo → costo 0, ganancia = total. */
-function isFreeSaleLineItem(item: any): boolean {
-  if (item?.freeSale === true) return true;
-  const pid = item?.productId ?? item?.product_id;
-  if (pid != null && pid !== '') return false;
-  return String(item?.name || '').trim() === 'Venta libre';
-}
 
 /** Pagado = verde, Deuda = rojo (misma lógica en tabla y Excel) */
 function movementPaymentStatusLabel(status: string): string {
@@ -559,19 +552,23 @@ export default function MovementsPage() {
     if (!currentBusiness?.id) {
       setCustomers([]);
       setEmployees([]);
+      setProducts([]);
       return;
     }
     const businessId = currentBusiness.id;
     let cancelled = false;
     setCustomers([]);
     setEmployees([]);
+    setProducts([]);
     void Promise.all([
       apiService.getCustomers(businessId),
       apiService.getEmployees(businessId),
-    ]).then(([customersData, employeesData]) => {
+      apiService.getProducts(businessId),
+    ]).then(([customersData, employeesData, productsData]) => {
       if (cancelled) return;
       setCustomers(customersData);
       setEmployees(employeesData);
+      setProducts(productsData);
     }).catch((error) => {
       if (cancelled) return;
       console.error('Error loading lookups:', error);
@@ -629,10 +626,7 @@ export default function MovementsPage() {
       const salesMovements = salesData.map((movement: any) => {
         const items = movement.items || [];
         const totalQuantity = items.reduce((sum: number, item: any) => sum + (Number(item.quantity) || 0), 0);
-        const totalCost = items.reduce((sum: number, item: any) => {
-          if (isFreeSaleLineItem(item)) return sum;
-          return sum + ((Number(item.price) || 0) * (Number(item.quantity) || 0) * 0.6);
-        }, 0);
+        const totalCost = saleItemsTotalCost(items, productById);
         const totalAmount = Number(movement.total) || 0;
         
         let productConcept = movement.notes || 'Venta general';
@@ -659,7 +653,7 @@ export default function MovementsPage() {
           quantity: totalQuantity,
           total: totalAmount,
           cost: totalCost,
-          profit: totalAmount - totalCost,
+          profit: saleProfit(totalAmount, items, productById),
           employee: getEmployeeName(movement.createdBy),
           employeeId: employeeByUserId.get(movement.createdBy)?.id ?? null,
           createdBy: movement.createdBy ?? null,
@@ -695,7 +689,7 @@ export default function MovementsPage() {
             name: item.name || 'Producto',
             quantity: Number(item.quantity) || 0,
             price: Number(item.price) || 0,
-            cost: isFreeSaleLineItem(item) ? 0 : Number(item.price) * 0.6 || 0,
+            cost: saleItemUnitCost(item, productById.get(item.productId || item.product_id)),
             image: getCurrentProductImage(item.productId, '')
           })),
           notes: movement.notes,
@@ -1852,6 +1846,7 @@ export default function MovementsPage() {
         quantity: qty,
         subtotal: price * qty,
         discount: 0,
+        cost: Number(product.cost) || 0,
       };
     });
 
@@ -1927,14 +1922,8 @@ export default function MovementsPage() {
       const refreshed = salesData.find((s) => s.id === selectedMovement.id);
       if (refreshed) {
         const itemsDb = refreshed.items || [];
-        const totalCostRef = itemsDb.reduce(
-          (sum: number, item: any) =>
-            sum +
-            (isFreeSaleLineItem(item)
-              ? 0
-              : (Number(item.price) || 0) * (Number(item.quantity) || 0) * 0.6),
-          0,
-        );
+        const productByIdRef = new Map(products.map((prod: any) => [prod.id, prod]));
+        const totalCostRef = saleItemsTotalCost(itemsDb, productByIdRef);
         const totalAmt = Number(refreshed.total) || 0;
         const saleDateTime = new Date(refreshed.createdAt);
         setSelectedMovement({
@@ -1953,7 +1942,7 @@ export default function MovementsPage() {
             name: item.name || 'Producto',
             quantity: Number(item.quantity) || 0,
             price: Number(item.price) || 0,
-            cost: isFreeSaleLineItem(item) ? 0 : Number(item.price) * 0.6 || 0,
+            cost: saleItemUnitCost(item, productByIdRef.get(item.productId || item.product_id)),
             image: selectedMovement.products?.find((p: any) => p.product_id === item.productId || p.id === item.productId)?.image || '',
           })),
           total: totalAmt,

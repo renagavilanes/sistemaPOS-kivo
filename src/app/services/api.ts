@@ -112,6 +112,8 @@ export interface SaleItem {
   subtotal: number;
   discount?: number;
   freeSale?: boolean;
+  /** Costo unitario al momento de la venta (del producto en catálogo). */
+  cost?: number;
 }
 
 export interface Payment {
