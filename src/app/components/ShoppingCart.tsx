@@ -2,12 +2,12 @@ import { Trash2, Plus, Minus, ShoppingCart as CartIcon } from 'lucide-react';
 import { CartEmptyState } from './CartEmptyState';
 import { CartItem, UserRole } from '../types';
 import { Button } from './ui/button';
-import { Input } from './ui/input';
 import { Separator } from './ui/separator';
 import { ScrollArea } from './ui/scroll-area';
-import { formatCurrency, parseLocaleNumber } from '../utils/currency';
+import { formatCurrency } from '../utils/currency';
 import { useState } from 'react';
 import { CartItemEditSheet } from './CartItemEditSheet';
+import { CartPriceField } from './CartPriceField';
 import { LazyProductImage } from './LazyProductImage';
 import {
   AlertDialog,
@@ -185,17 +185,12 @@ export function ShoppingCart({
                         {canEditPrice ? (
                           <>
                             <span className="text-sm font-semibold text-gray-900">$</span>
-                            <Input
-                            type="text"
-                            inputMode="decimal"
-                            value={item.priceAtSale}
-                            onChange={(e) => {
-                              e.stopPropagation();
-                              onUpdatePrice(item.product.id, parseLocaleNumber(e.target.value) || 0);
-                            }}
-                            onClick={(e) => e.stopPropagation()}
-                            className="h-7 min-w-0 flex-1 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-transparent"
-                          />
+                            <CartPriceField
+                              productId={item.product.id}
+                              price={item.priceAtSale}
+                              onCommit={onUpdatePrice}
+                              className="h-7 min-w-0 flex-1 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-transparent"
+                            />
                           </>
                         ) : (
                           <span className="text-sm font-semibold text-gray-900">$ {formatCurrency(item.priceAtSale)}</span>

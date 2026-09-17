@@ -2,7 +2,6 @@ import { Trash2, Plus, Minus, X } from 'lucide-react';
 import { CartEmptyState } from './CartEmptyState';
 import { CartItem, UserRole } from '../types';
 import { Button } from './ui/button';
-import { Input } from './ui/input';
 import { Separator } from './ui/separator';
 import { ScrollArea } from './ui/scroll-area';
 import { LazyProductImage } from './LazyProductImage';
@@ -23,8 +22,9 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from './ui/alert-dialog';
-import { formatCurrency, parseLocaleNumber } from '../utils/currency';
+import { formatCurrency } from '../utils/currency';
 import { useState } from 'react';
+import { CartPriceField } from './CartPriceField';
 
 interface MobileCartSheetProps {
   open: boolean;
@@ -186,13 +186,12 @@ export function MobileCartSheet({
                         {canEditPrice ? (
                           <>
                             <span className="text-sm font-semibold text-gray-900">$</span>
-                            <Input
-                            type="text"
-                            inputMode="decimal"
-                            value={item.priceAtSale}
-                            onChange={(e) => onUpdatePrice(item.product.id, parseLocaleNumber(e.target.value) || 0)}
-                            className="h-7 min-w-0 flex-1 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-transparent"
-                          />
+                            <CartPriceField
+                              productId={item.product.id}
+                              price={item.priceAtSale}
+                              onCommit={onUpdatePrice}
+                              className="h-7 min-w-0 flex-1 text-sm font-semibold text-center border-0 p-0 focus-visible:ring-0 bg-transparent"
+                            />
                           </>
                         ) : (
                           <span className="text-sm font-semibold text-gray-900">$ {formatCurrency(item.priceAtSale)}</span>
