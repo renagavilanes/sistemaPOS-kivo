@@ -3075,27 +3075,27 @@ export default function MovementsPage() {
                                       setDetailSheetOpen(true);
                                     }}
                                   >
-                                    <div className="flex items-start justify-between gap-4">
+                                    <div className="flex items-start justify-between gap-3">
                                       <div className="flex items-start gap-3 flex-1 min-w-0">
                                         <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-900 text-white text-xs font-bold flex-shrink-0">
                                           {payment.paymentIndex}
                                         </span>
-                                        <div className="flex-1 min-w-0">
-                                          <p className="text-sm text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis mb-1">
-                                            {payMethod} • {formatDate(payment.date)} - {payment.time}
-                                          </p>
-                                          <Badge
-                                            className={`text-sm h-6 ${movementPaymentStatusBadgeClass(payment.status)}`}
-                                          >
-                                            {movementPaymentStatusLabel(payment.status)}
-                                          </Badge>
-                                        </div>
+                                        <p className="text-sm text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis">
+                                          {payMethod} • {formatDate(payment.date)} - {payment.time}
+                                        </p>
                                       </div>
-                                      <p className={`font-bold text-base flex-shrink-0 whitespace-nowrap ${
-                                        payment.type === 'sale' ? 'text-teal-600' : 'text-red-600'
-                                      }`}>
-                                        ${formatCurrency(payment.total)}
-                                      </p>
+                                      <div className="flex flex-col items-end shrink-0">
+                                        <p className={`font-bold text-base whitespace-nowrap leading-tight ${
+                                          payment.type === 'sale' ? 'text-teal-600' : 'text-red-600'
+                                        }`}>
+                                          ${formatCurrency(payment.total)}
+                                        </p>
+                                        <Badge
+                                          className={`mt-1 text-xs h-5 px-2 ${movementPaymentStatusBadgeClass(payment.status)}`}
+                                        >
+                                          {movementPaymentStatusLabel(payment.status)}
+                                        </Badge>
+                                      </div>
                                     </div>
                                   </div>
                                 );
@@ -3142,7 +3142,7 @@ export default function MovementsPage() {
                                   {paymentMethodLabel} • {formatDate(movement.date)} - {movement.time}
                                 </p>
                               </div>
-                              <div className="flex flex-col items-start shrink-0 pt-0.5">
+                              <div className="flex flex-col items-end shrink-0 pt-0.5">
                                 <p className={`font-bold text-base whitespace-nowrap leading-tight ${
                                   movement.type === 'sale' ? 'text-teal-600' : 'text-red-600'
                                 }`}>
