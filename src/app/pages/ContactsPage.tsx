@@ -11,6 +11,7 @@ import * as apiService from '../services/api';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router';
 import { formatCurrency } from '../utils/currency';
+import { searchTextMatches } from '../utils/searchText';
 import { PageHeader } from '../components/layout/PageHeader';
 import { SectionCard } from '../components/layout/SectionCard';
 import { Skeleton } from '../components/ui/skeleton';
@@ -80,12 +81,11 @@ export default function ContactsPage() {
 
     // Filter by search term
     if (searchTerm.trim()) {
-      const term = searchTerm.toLowerCase();
-      filtered = filtered.filter(c => 
-        c.name.toLowerCase().includes(term) ||
-        c.cedula?.toLowerCase().includes(term) ||
-        c.email?.toLowerCase().includes(term) ||
-        c.phone?.includes(term)
+      filtered = filtered.filter(c =>
+        searchTextMatches(c.name, searchTerm) ||
+        searchTextMatches(c.cedula, searchTerm) ||
+        searchTextMatches(c.email, searchTerm) ||
+        searchTextMatches(c.phone, searchTerm)
       );
     }
 

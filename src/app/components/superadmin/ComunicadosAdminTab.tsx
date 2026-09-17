@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { supabaseAnonKey, supabaseProjectId } from '../../../utils/supabase/publicEnv';
 import { superadminEdgeFunctionSlug } from '/utils/supabase/superadminEdgeSlug';
+import { searchTextMatches } from '../../utils/searchText';
 /** Campos mínimos del listado de usuarios del Super Admin */
 export type ComunicadoUserRow = {
   id: string;
@@ -141,7 +142,7 @@ export function ComunicadosAdminTab({
   const filteredUsers = useMemo(() => {
     const q = filters.search.trim().toLowerCase();
     return users.filter(u => {
-      if (q && !u.email.toLowerCase().includes(q) && !u.name.toLowerCase().includes(q)) return false;
+      if (q && !searchTextMatches(u.email, filters.search) && !searchTextMatches(u.name, filters.search)) return false;
       if (filters.activeOnly && !u.is_active) return false;
       if (filters.inactiveOnly && u.is_active) return false;
       if (filters.blockedOnly && !u.blocked) return false;

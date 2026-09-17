@@ -10,6 +10,7 @@ import { fetchPublicCatalogBySlug } from '../lib/virtualCatalogApi';
 import type { OutOfStockMode, PublicCatalogProduct, PublicCatalogResponse } from '../lib/virtualCatalogTypes';
 import { toWhatsAppWaMeDigits } from '../lib/whatsappPhone';
 import { formatCurrency } from '../utils/currency';
+import { searchTextMatches } from '../utils/searchText';
 import { toast } from 'sonner';
 
 type DeliveryType = 'pickup' | 'homeDelivery';
@@ -204,9 +205,8 @@ export default function VirtualCatalogPublicPage() {
   }, [data?.products]);
 
   const filteredProducts = useMemo(() => {
-    const q = search.trim().toLowerCase();
     let list = (data?.products || []).slice();
-    if (q) list = list.filter((p) => p.name.toLowerCase().includes(q));
+    list = list.filter((p) => searchTextMatches(p.name, search));
     if (selectedCategory !== 'Todas') list = list.filter((p) => (p.category || '') === selectedCategory);
     return list;
   }, [data?.products, search, selectedCategory]);

@@ -3,6 +3,7 @@ import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicE
 import { superadminEdgeFunctionSlug } from '/utils/supabase/superadminEdgeSlug';
 import { ComunicadosAdminTab } from '../components/superadmin/ComunicadosAdminTab';
 import { AnalyticsAdminTab } from '../components/superadmin/AnalyticsAdminTab';
+import { searchTextMatches } from '../utils/searchText';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -2809,7 +2810,7 @@ export default function SuperAdminPage() {
   const filteredUsers = useMemo(() => {
     const q = search.toLowerCase();
     const filtered = users.filter(u =>
-      !q || u.email.toLowerCase().includes(q) || u.name.toLowerCase().includes(q)
+      !q || searchTextMatches(u.email, search) || searchTextMatches(u.name, search)
     );
     return [...filtered].sort((a, b) => {
       const av = a[userSort.col] ?? '';
@@ -2853,7 +2854,7 @@ export default function SuperAdminPage() {
     const q = search.toLowerCase();
     const filtered = businesses.filter(b => {
       const ownerEmail = ownerMap[b.owner_id] || '';
-      return !q || b.name.toLowerCase().includes(q) || ownerEmail.toLowerCase().includes(q);
+      return !q || searchTextMatches(b.name, search) || searchTextMatches(ownerEmail, search);
     });
     return [...filtered].sort((a, b) => {
       const av = a[bizSort.col] ?? '';

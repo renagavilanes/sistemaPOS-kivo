@@ -25,6 +25,7 @@ import { getProducts, createProduct, updateProduct, deleteProduct, initializeDem
 import * as apiService from '../services/api';
 import { useBusiness } from '../contexts/BusinessContext';
 import { formatCurrency, parseLocaleNumber } from '../utils/currency';
+import { normalizeSearchText as normalizeText, searchTextMatches } from '../utils/searchText';
 import { optimizeImageForProduct, packedImageForSave, parseProductImage } from '../utils/productImage';
 import {
   dataTableTheadSticky,
@@ -35,14 +36,6 @@ import {
 // REMOVIDO: import { useData } from '../contexts/DataContext';
 
 // v1.0.2 - Database integration
-
-// Función auxiliar para normalizar texto (remover tildes)
-const normalizeText = (text: string) => {
-  return text
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
-};
 
 const stopOpenProductDetail = (e: { stopPropagation: () => void }) => {
   e.stopPropagation();
@@ -490,7 +483,7 @@ export default function ProductsPage() {
 
   // Filtered products
   const filteredProducts = products.filter(product => {
-    const matchesSearch = normalizeText(product.name).includes(normalizeText(searchTerm));
+    const matchesSearch = searchTextMatches(product.name, searchTerm);
     const matchesCategory = selectedCategory === 'Todas' || product.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });

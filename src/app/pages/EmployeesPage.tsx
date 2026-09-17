@@ -26,14 +26,7 @@ import {
   dthRight,
   dthCenter,
 } from '../lib/dataTableHeaderClasses';
-
-// Función auxiliar para normalizar texto (remover tildes)
-const normalizeText = (text: string) => {
-  return text
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
-};
+import { searchTextMatches } from '../utils/searchText';
 
 // Función para validar email
 const validateEmail = (email: string) => {
@@ -223,9 +216,9 @@ export default function EmployeesPage() {
 
   // Filtered employees
   const filteredEmployees = employees.filter(employee => {
-    const matchesSearch = 
-      normalizeText(employee.name).includes(normalizeText(searchTerm)) ||
-      normalizeText(employee.email).includes(normalizeText(searchTerm));
+    const matchesSearch =
+      searchTextMatches(employee.name, searchTerm) ||
+      searchTextMatches(employee.email, searchTerm);
     return matchesSearch;
   });
 

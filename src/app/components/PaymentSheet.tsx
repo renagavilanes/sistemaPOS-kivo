@@ -30,6 +30,7 @@ import {
   SelectValue,
 } from './ui/select';
 import { formatCurrency, parseLocaleNumber } from '../utils/currency';
+import { searchTextMatches } from '../utils/searchText';
 import { useBusiness } from '../contexts/BusinessContext';
 import * as apiService from '../services/api';
 import { useIsMobile } from '../hooks/useIsMobile';
@@ -763,15 +764,12 @@ export function PaymentSheet({
               <ScrollArea className="flex-1 bg-gray-50">
                 <div className="p-4 space-y-2">
                   {(() => {
-                    const filteredClients = clients.filter(client => {
-                      const searchLower = clientSearchTerm.toLowerCase();
-                      return (
-                        client.name.toLowerCase().includes(searchLower) ||
-                        client.email?.toLowerCase().includes(searchLower) ||
-                        client.phone?.toLowerCase().includes(searchLower) ||
-                        client.cedula?.toLowerCase().includes(searchLower)
-                      );
-                    });
+                    const filteredClients = clients.filter(client =>
+                      searchTextMatches(client.name, clientSearchTerm) ||
+                      searchTextMatches(client.email, clientSearchTerm) ||
+                      searchTextMatches(client.phone, clientSearchTerm) ||
+                      searchTextMatches(client.cedula, clientSearchTerm)
+                    );
 
                     return filteredClients.length > 0 ? (
                       filteredClients.map((client) => (
@@ -878,15 +876,12 @@ export function PaymentSheet({
             <ScrollArea className="flex-1 mt-4">
               <div className="space-y-2">
                 {(() => {
-                  const filteredClients = clients.filter(client => {
-                    const searchLower = clientSearchTerm.toLowerCase();
-                    return (
-                      client.name.toLowerCase().includes(searchLower) ||
-                      client.email?.toLowerCase().includes(searchLower) ||
-                      client.phone?.toLowerCase().includes(searchLower) ||
-                      client.cedula?.toLowerCase().includes(searchLower)
-                    );
-                  });
+                  const filteredClients = clients.filter(client =>
+                    searchTextMatches(client.name, clientSearchTerm) ||
+                    searchTextMatches(client.email, clientSearchTerm) ||
+                    searchTextMatches(client.phone, clientSearchTerm) ||
+                    searchTextMatches(client.cedula, clientSearchTerm)
+                  );
 
                   return filteredClients.length > 0 ? (
                     filteredClients.map((client) => (

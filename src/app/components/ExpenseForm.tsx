@@ -5,6 +5,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { ScrollArea } from './ui/scroll-area';
 import { formatCurrency, parseLocaleNumber } from '../utils/currency';
+import { searchTextMatches } from '../utils/searchText';
 import {
   Sheet,
   SheetContent,
@@ -506,15 +507,12 @@ export function ExpenseForm({
               <ScrollArea className="flex-1 bg-gray-50">
                 <div className="p-4 space-y-2">
                   {(() => {
-                    const filteredContacts = contacts.filter(contact => {
-                      const searchLower = contactSearchTerm.toLowerCase();
-                      return (
-                        contact.name.toLowerCase().includes(searchLower) ||
-                        contact.email?.toLowerCase().includes(searchLower) ||
-                        contact.phone?.toLowerCase().includes(searchLower) ||
-                        (contact as any).cedula?.toLowerCase().includes(searchLower)
-                      );
-                    });
+                    const filteredContacts = contacts.filter(contact =>
+                      searchTextMatches(contact.name, contactSearchTerm) ||
+                      searchTextMatches(contact.email, contactSearchTerm) ||
+                      searchTextMatches(contact.phone, contactSearchTerm) ||
+                      searchTextMatches((contact as any).cedula, contactSearchTerm)
+                    );
 
                     return filteredContacts.length > 0 ? (
                       filteredContacts.map((contact) => (
@@ -621,15 +619,12 @@ export function ExpenseForm({
             <ScrollArea className="flex-1 mt-4">
               <div className="space-y-2">
                 {(() => {
-                  const filteredContacts = contacts.filter(contact => {
-                    const searchLower = contactSearchTerm.toLowerCase();
-                    return (
-                      contact.name.toLowerCase().includes(searchLower) ||
-                      contact.email?.toLowerCase().includes(searchLower) ||
-                      contact.phone?.toLowerCase().includes(searchLower) ||
-                      (contact as any).cedula?.toLowerCase().includes(searchLower)
-                    );
-                  });
+                  const filteredContacts = contacts.filter(contact =>
+                    searchTextMatches(contact.name, contactSearchTerm) ||
+                    searchTextMatches(contact.email, contactSearchTerm) ||
+                    searchTextMatches(contact.phone, contactSearchTerm) ||
+                    searchTextMatches((contact as any).cedula, contactSearchTerm)
+                  );
 
                   return filteredContacts.length > 0 ? (
                     filteredContacts.map((contact) => (

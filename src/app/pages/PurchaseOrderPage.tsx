@@ -13,13 +13,7 @@ import * as apiService from '../services/api';
 import { exportPurchaseOrderToExcel } from '../utils/purchaseOrderExcelExport';
 import { Product } from '../types';
 import { LazyProductImage } from '../components/LazyProductImage';
-
-const normalizeText = (text: string) => {
-  return text
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
-};
+import { searchTextMatches } from '../utils/searchText';
 
 export default function PurchaseOrderPage() {
   const navigate = useNavigate();
@@ -93,9 +87,7 @@ export default function PurchaseOrderPage() {
   }, [currentBusiness?.id, currentBusiness?.phone, currentBusiness?.address]);
 
   const filteredProducts = useMemo(() => {
-    const q = normalizeText(searchTerm);
-    if (!q) return products;
-    return products.filter((p) => normalizeText(p.name).includes(q));
+    return products.filter((p) => searchTextMatches(p.name, searchTerm));
   }, [products, searchTerm]);
 
   const sortedProducts = useMemo(() => {

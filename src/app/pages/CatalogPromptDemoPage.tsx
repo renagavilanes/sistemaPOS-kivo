@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { formatCurrency } from '../utils/currency';
+import { searchTextMatches } from '../utils/searchText';
 import { toast } from 'sonner';
 
 type DeliveryType = 'pickup' | 'homeDelivery';
@@ -211,13 +212,12 @@ export default function CatalogPromptDemoPage() {
   }, []);
 
   const filteredProducts = useMemo(() => {
-    const q = search.trim().toLowerCase();
     let list = demoProducts.slice();
 
     // Demo: no mostramos UI de filtros; mantenemos comportamiento de "mark_unavailable"
 
-    if (q) {
-      list = list.filter((p) => p.name.toLowerCase().includes(q));
+    if (search.trim()) {
+      list = list.filter((p) => searchTextMatches(p.name, search));
     }
     if (selectedCategory !== 'Todas') {
       list = list.filter((p) => (p.category || '') === selectedCategory);

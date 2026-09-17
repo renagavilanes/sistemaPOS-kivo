@@ -6,6 +6,7 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Skeleton } from './ui/skeleton';
 import { formatCurrency } from '../utils/currency';
+import { searchTextMatches } from '../utils/searchText';
 import { ScrollArea } from './ui/scroll-area';
 import { LazyProductImage } from './LazyProductImage';
 
@@ -41,21 +42,10 @@ export function ProductCatalog({
   loading = false,
   modeTabs,
 }: ProductCatalogProps) {
-  // Function to remove accents/tildes from text
-  const normalizeText = (text: string) => {
-    return text
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '');
-  };
-
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
       const matchesCategory = selectedCategory === 'Todas' || product.category === selectedCategory;
-      const normalizedProductName = normalizeText(product.name);
-      const normalizedSearchTerm = normalizeText(searchTerm);
-      const matchesSearch = normalizedProductName.includes(normalizedSearchTerm);
-      return matchesCategory && matchesSearch;
+      return matchesCategory && searchTextMatches(product.name, searchTerm);
     });
     // Mismo orden por defecto que Inventario: nombre A→Z
     return [...filtered].sort((a, b) => a.name.localeCompare(b.name));

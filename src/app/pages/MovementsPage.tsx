@@ -45,6 +45,7 @@ import { toast } from 'sonner';
 import { exportMovementsToExcel } from '../utils/excelExport';
 import { useBusiness } from '../contexts/BusinessContext';
 import { useAuth } from '../contexts/AuthContext';
+import { CURRENT_BUSINESS_ID_KEY } from '../lib/businessSelectionStorage';
 // REMOVIDO: import { useData } from '../contexts/DataContext';
 import * as apiService from '../services/api';
 import { printReceipt, shareReceipt } from '../utils/receiptGenerator';
@@ -52,6 +53,7 @@ import { getClients, buildLocalDateTimeFromDateAndTime } from '../lib/api';
 import { formatCurrency } from '../utils/currency';
 import { formatDate } from '../utils/date';
 import { saleItemUnitCost, saleItemsTotalCost, saleProfit } from '../utils/saleProfit';
+import { searchTextMatches } from '../utils/searchText';
 import { PageHeader } from '../components/layout/PageHeader';
 import { SectionCard } from '../components/layout/SectionCard';
 import { dataTableThead, dthMovement } from '../lib/dataTableHeaderClasses';
@@ -137,6 +139,24 @@ function movementsServerRange(opts: {
     default:
       return { limit: 2500 };
   }
+}
+
+const PERSISTED_DATE_FILTERS = new Set(['daily', 'weekly', 'monthly', 'yearly']);
+
+function movementsDateFilterStorageKey(businessId: string) {
+  return `movements_date_filter_${businessId}`;
+}
+
+function readSavedMovementsDateFilter(businessId?: string | null): string {
+  try {
+    const id = businessId || localStorage.getItem(CURRENT_BUSINESS_ID_KEY);
+    if (!id) return 'weekly';
+    const raw = localStorage.getItem(movementsDateFilterStorageKey(id));
+    if (raw && PERSISTED_DATE_FILTERS.has(raw)) return raw;
+  } catch {
+    /* ignore */
+  }
+  return 'weekly';
 }
 
 // Mock data for movements
@@ -763,7 +783,7 @@ export default function MovementsPage() {
   };
   
   const [typeFilter, setTypeFilter] = useState('sale');
-  const [dateFilter, setDateFilter] = useState('weekly');
+  const [dateFilter, setDateFilter] = useState(() => readSavedMovementsDateFilter());
   const [searchTerm, setSearchTerm] = useState('');
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   
@@ -773,6 +793,27 @@ export default function MovementsPage() {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [weekStart, setWeekStart] = useState(startOfWeek(new Date(), { weekStartsOn: 1 }));
   const [weekEnd, setWeekEnd] = useState(endOfWeek(new Date(), { weekStartsOn: 1 }));
+
+  useEffect(() => {
+    if (!currentBusiness?.id) return;
+    setDateFilter(readSavedMovementsDateFilter(currentBusiness.id));
+    const now = new Date();
+    setSelectedDay(now);
+    setSelectedMonth(now.getMonth());
+    setSelectedYear(now.getFullYear());
+    setWeekStart(startOfWeek(now, { weekStartsOn: 1 }));
+    setWeekEnd(endOfWeek(now, { weekStartsOn: 1 }));
+  }, [currentBusiness?.id]);
+
+  useEffect(() => {
+    if (!currentBusiness?.id) return;
+    if (!PERSISTED_DATE_FILTERS.has(dateFilter)) return;
+    try {
+      localStorage.setItem(movementsDateFilterStorageKey(currentBusiness.id), dateFilter);
+    } catch {
+      /* ignore */
+    }
+  }, [dateFilter, currentBusiness?.id]);
 
   useEffect(() => {
     if (!currentBusiness?.id) {
@@ -1438,9 +1479,9 @@ export default function MovementsPage() {
       !applyTypeFilter || typeFilter === 'all' || movement.type === typeFilter;
     const matchesSearch =
       !searchTerm ||
-      (movement.productConcept || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (movement.client || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (movement.id || '').includes(searchTerm);
+      searchTextMatches(movement.productConcept, searchTerm) ||
+      searchTextMatches(movement.client, searchTerm) ||
+      searchTextMatches(movement.id, searchTerm);
     const matchesDate =
       dateFilter === 'all' ||
       isDateInRange(movement.date, dateFilter, selectedDay, weekStart, weekEnd, selectedMonth, selectedYear);
@@ -1516,8 +1557,8 @@ export default function MovementsPage() {
 
   // Calculate totals - Apply ALL filters including search, payment methods, employees, clients, and suppliers
   const allMovementsForStats = movements.filter((movement) => {
-    const matchesSearch = movement.productConcept.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         movement.id.includes(searchTerm);
+    const matchesSearch = searchTextMatches(movement.productConcept, searchTerm) ||
+                         searchTextMatches(movement.id, searchTerm);
     const matchesDate = dateFilter === 'all' || isDateInRange(movement.date, dateFilter, selectedDay, weekStart, weekEnd, selectedMonth, selectedYear);
     
     // Apply payment method filter
@@ -3040,13 +3081,9 @@ export default function MovementsPage() {
                                           {payment.paymentIndex}
                                         </span>
                                         <div className="flex-1 min-w-0">
-                                          <div className="flex items-center gap-1.5 text-sm text-gray-500 flex-wrap mb-1">
-                                            <span className="flex-shrink-0">{payMethod}</span>
-                                            <span className="flex-shrink-0">•</span>
-                                            <span className="flex-shrink-0">{formatDate(payment.date)}</span>
-                                            <span className="flex-shrink-0">-</span>
-                                            <span className="flex-shrink-0">{payment.time}</span>
-                                          </div>
+                                          <p className="text-sm text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis mb-1">
+                                            {payMethod} • {formatDate(payment.date)} - {payment.time}
+                                          </p>
                                           <Badge
                                             className={`text-sm h-6 ${movementPaymentStatusBadgeClass(payment.status)}`}
                                           >
@@ -3096,35 +3133,27 @@ export default function MovementsPage() {
                             </div>
 
                             {/* Content */}
-                            <div className="flex-1 min-w-0">
-                              {/* Title and Amount Row */}
-                              <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-2">
-                                <h3 className="font-semibold text-gray-900 text-base leading-tight break-words line-clamp-2 col-start-1 row-start-1 pr-1">
+                            <div className="flex-1 min-w-0 flex items-start gap-3">
+                              <div className="flex-1 min-w-0">
+                                <h3 className="font-semibold text-gray-900 text-base leading-tight break-words line-clamp-2">
                                   {movement.productConcept}
                                 </h3>
-                                <p className={`font-bold text-base whitespace-nowrap col-start-2 row-start-1 self-start pl-1 ${
+                                <p className="mt-0.5 text-sm text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis">
+                                  {paymentMethodLabel} • {formatDate(movement.date)} - {movement.time}
+                                </p>
+                              </div>
+                              <div className="flex flex-col items-start shrink-0 pt-0.5">
+                                <p className={`font-bold text-base whitespace-nowrap leading-tight ${
                                   movement.type === 'sale' ? 'text-teal-600' : 'text-red-600'
                                 }`}>
                                   ${formatCurrency(movement.total)}
                                 </p>
-                                {/* Details Row */}
-                                <div className="col-start-1 row-start-2 flex items-center gap-1.5 text-sm text-gray-500 flex-wrap min-w-0 pr-1">
-                                  <span className="flex-shrink-0">{paymentMethodLabel}</span>
-                                  <span className="flex-shrink-0">•</span>
-                                  <span className="flex-shrink-0">{formatDate(movement.date)}</span>
-                                  <span className="flex-shrink-0">-</span>
-                                  <span className="flex-shrink-0">{movement.time}</span>
-                                </div>
-                                <div className="col-start-2 row-start-2 self-end justify-self-end pl-1">
-                                  <Badge
-                                    className={`text-xs h-5 px-2 ${movementPaymentStatusBadgeClass(movement.status)}`}
-                                  >
-                                    {movementPaymentStatusLabel(movement.status)}
-                                  </Badge>
-                                </div>
+                                <Badge
+                                  className={`mt-1 text-xs h-5 px-2 ${movementPaymentStatusBadgeClass(movement.status)}`}
+                                >
+                                  {movementPaymentStatusLabel(movement.status)}
+                                </Badge>
                               </div>
-
-                              {/* Status moved under amount (mobile compact) */}
                             </div>
                           </div>
                         </div>
@@ -3236,7 +3265,7 @@ export default function MovementsPage() {
                     className="w-full p-3 rounded-lg border border-gray-300 focus:border-teal-500"
                   />
                   {employeesList
-                    .filter(e => e.name.toLowerCase().includes(employeeSearch.toLowerCase()))
+                    .filter(e => searchTextMatches(e.name, employeeSearch))
                     .map((employee) => (
                       <button
                         key={employee.id}
@@ -3294,7 +3323,7 @@ export default function MovementsPage() {
                     className="w-full p-3 rounded-lg border border-gray-300 focus:border-teal-500"
                   />
                   {clientsList
-                    .filter(c => c.name.toLowerCase().includes(clientSearch.toLowerCase()))
+                    .filter(c => searchTextMatches(c.name, clientSearch))
                     .map((client) => (
                       <button
                         key={client.id}
@@ -3352,7 +3381,7 @@ export default function MovementsPage() {
                     className="w-full p-3 rounded-lg border border-gray-300 focus:border-teal-500"
                   />
                   {suppliersList
-                    .filter(s => s.name.toLowerCase().includes(supplierSearch.toLowerCase()))
+                    .filter(s => searchTextMatches(s.name, supplierSearch))
                     .map((supplier) => (
                       <button
                         key={supplier.id}

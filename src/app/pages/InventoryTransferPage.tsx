@@ -31,6 +31,7 @@ import {
   rematchLine,
   type TransferLine,
 } from '../utils/inventoryTransferLogic';
+import { searchTextMatches } from '../utils/searchText';
 
 function businessLogoSrc(business: { logo?: string; logo_url?: string } | null | undefined) {
   return String(business?.logo || business?.logo_url || '').trim();
@@ -193,18 +194,16 @@ export default function InventoryTransferPage() {
   }, [lines]);
 
   const catalog = useMemo(() => {
-    const q = searchTerm.trim().toLowerCase();
     return originProducts
       .filter((p) => p.isActive !== false)
-      .filter((p) => !q || p.name.toLowerCase().includes(q))
+      .filter((p) => searchTextMatches(p.name, searchTerm))
       .sort((a, b) => a.name.localeCompare(b.name, 'es'));
   }, [originProducts, searchTerm]);
 
   const pickerList = useMemo(() => {
-    const q = pickerSearch.trim().toLowerCase();
     return destProducts
       .filter((p) => p.isActive !== false)
-      .filter((p) => !q || p.name.toLowerCase().includes(q))
+      .filter((p) => searchTextMatches(p.name, pickerSearch))
       .sort((a, b) => a.name.localeCompare(b.name, 'es'));
   }, [destProducts, pickerSearch]);
 
