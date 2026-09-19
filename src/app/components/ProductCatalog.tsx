@@ -1,5 +1,5 @@
 import { useMemo, useState, type ReactNode } from 'react';
-import { Search, Package, Plus, Minus } from 'lucide-react';
+import { Search, Package, Plus, Minus, X } from 'lucide-react';
 import { Product, CartItem } from '../types';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
@@ -104,14 +104,37 @@ export function ProductCatalog({
           </div>
         ) : null}
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
           <Input
             type="text"
             placeholder="Buscar producto..."
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="pl-10 h-10"
+            onFocus={(e) => {
+              const el = e.currentTarget;
+              requestAnimationFrame(() => el.select());
+            }}
+            onMouseDown={(e) => {
+              const el = e.currentTarget;
+              if (!el.value) return;
+              e.preventDefault();
+              el.focus();
+              el.select();
+            }}
+            className={`pl-10 h-10 ${searchTerm ? 'pr-10' : ''}`}
+            autoComplete="off"
+            enterKeyHint="search"
           />
+          {searchTerm ? (
+            <button
+              type="button"
+              aria-label="Borrar búsqueda"
+              className="absolute right-1.5 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-100 hover:text-gray-600 lg:hidden"
+              onClick={() => onSearchChange('')}
+            >
+              <X className="h-4 w-4" />
+            </button>
+          ) : null}
         </div>
       </div>
 
