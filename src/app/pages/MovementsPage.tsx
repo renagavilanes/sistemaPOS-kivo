@@ -56,7 +56,7 @@ import { saleItemUnitCost, saleItemsTotalCost, saleProfit } from '../utils/saleP
 import { searchTextMatches } from '../utils/searchText';
 import { PageHeader } from '../components/layout/PageHeader';
 import { SectionCard } from '../components/layout/SectionCard';
-import { dataTableThead, dthMovement } from '../lib/dataTableHeaderClasses';
+import { dataTableTheadSticky, dthMovement } from '../lib/dataTableHeaderClasses';
 
 /** Pagado = verde, Deuda = rojo (misma lógica en tabla y Excel) */
 function movementPaymentStatusLabel(status: string): string {
@@ -2808,8 +2808,8 @@ export default function MovementsPage() {
       </div>
 
       {/* Tabs and Table */}
-      <div className="flex-1 px-0 md:px-4 sm:px-6 pb-0 md:pb-4 overflow-hidden">
-        <Tabs value={typeFilter} onValueChange={setTypeFilter} className="h-full flex flex-col">
+      <div className="flex-1 min-h-0 px-0 md:px-4 sm:px-6 pb-0 md:pb-4 overflow-hidden">
+        <Tabs value={typeFilter} onValueChange={setTypeFilter} className="h-full min-h-0 flex flex-col">
           {/* Tabs Header - Desktop */}
           <div className="hidden md:block bg-white rounded-t-lg border border-gray-300/90 shadow-[var(--shadow-card)] px-4 pt-4 pb-4 relative z-10">
             <TabsList className="w-full grid grid-cols-2 gap-2 p-2 bg-gray-100 h-auto">
@@ -2843,10 +2843,10 @@ export default function MovementsPage() {
           </div>
 
           {/* Table Content */}
-          <div className="md:bg-white md:rounded-b-lg md:border md:border-gray-300/90 md:shadow-[var(--shadow-card)] flex-1 flex flex-col overflow-hidden">
+          <div className="md:bg-white md:rounded-b-lg md:border md:border-gray-300/90 md:shadow-[var(--shadow-card)] flex-1 min-h-0 flex flex-col overflow-hidden">
             {/* Desktop Table */}
-            <div className="hidden md:block overflow-y-auto overflow-x-hidden flex-1 min-w-0">
-              <table className="w-full table-fixed">
+            <div className="hidden md:block overflow-y-auto overflow-x-hidden overscroll-contain flex-1 min-h-0 min-w-0">
+              <table className="w-full table-fixed border-separate border-spacing-0">
                 <colgroup>
                   <col />
                   <col className="w-36" />
@@ -2854,13 +2854,13 @@ export default function MovementsPage() {
                   <col className="w-44" />
                   <col className="w-28" />
                 </colgroup>
-                <thead className={dataTableThead}>
+                <thead className={dataTableTheadSticky}>
                   <tr>
-                    <th className={`${dthMovement} px-4`}>Concepto</th>
-                    <th className={`${dthMovement} px-4`}>Valor</th>
-                    <th className={`${dthMovement} px-4`}>Medio de pago</th>
-                    <th className={`${dthMovement} px-4 whitespace-nowrap`}>Fecha y hora</th>
-                    <th className={`${dthMovement} pl-4 pr-5 text-right`}>Estado</th>
+                    <th className={`${dthMovement} px-4 sticky top-0 z-10`}>Concepto</th>
+                    <th className={`${dthMovement} px-4 sticky top-0 z-10`}>Valor</th>
+                    <th className={`${dthMovement} px-4 sticky top-0 z-10`}>Medio de pago</th>
+                    <th className={`${dthMovement} px-4 whitespace-nowrap sticky top-0 z-10`}>Fecha y hora</th>
+                    <th className={`${dthMovement} pl-4 pr-5 text-right sticky top-0 z-10`}>Estado</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y">
