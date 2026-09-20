@@ -1001,15 +1001,15 @@ export default function ProductsPage() {
           </div>
         }
         mobile={
-          <div className="bg-[#272B36] border-b border-slate-700 px-3 py-2.5 shadow-sm">
+          <div className="bg-[#272B36] border-b border-slate-700 px-4 py-3.5 shadow-sm">
             <div className="flex items-center justify-between gap-2 mb-3">
               {/* Business Selector */}
               <div className="flex-1 min-w-0">
                 <button
                   onClick={() => setBusinessModalOpen(true)}
-                  className="flex items-center gap-2 hover:opacity-90 transition-opacity w-full text-left"
+                  className="flex items-center gap-2.5 hover:opacity-90 transition-opacity w-full text-left"
                 >
-                  <div className="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
                     {((currentBusiness as any)?.logo || (currentBusiness as any)?.logo_url) ? (
                       <img
                         src={(currentBusiness as any)?.logo || (currentBusiness as any)?.logo_url}
@@ -1017,14 +1017,14 @@ export default function ProductsPage() {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <Building2 className="w-4 h-4 text-white" />
+                      <Building2 className="w-5 h-5 text-white" />
                     )}
                   </div>
-                  <div className="flex items-center gap-1 flex-1 min-w-0">
-                    <span className="text-sm font-semibold text-white truncate">
+                  <div className="flex items-center gap-1.5 flex-1 min-w-0">
+                    <span className="text-[15px] font-semibold text-white truncate">
                       {currentBusiness?.name || 'Mi Negocio'}
                     </span>
-                    <ChevronDown className="w-3.5 h-3.5 text-white/70 flex-shrink-0" />
+                    <ChevronDown className="w-4 h-4 text-white/70 flex-shrink-0" />
                   </div>
                 </button>
               </div>

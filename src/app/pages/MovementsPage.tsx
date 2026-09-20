@@ -2287,15 +2287,15 @@ export default function MovementsPage() {
               </header>
             }
             mobile={
-              <header className="bg-[#272B36] border-b border-slate-700 px-3 py-2.5 shadow-sm sticky top-0 z-10">
+              <header className="bg-[#272B36] border-b border-slate-700 px-4 py-3.5 shadow-sm sticky top-0 z-10">
                 <div className="flex items-center justify-between gap-2">
                   {/* Business Selector */}
                   <button
                     onClick={() => setBusinessModalOpen(true)}
-                    className="flex items-center gap-2 hover:opacity-90 transition-opacity flex-1 min-w-0 text-left"
+                    className="flex items-center gap-2.5 hover:opacity-90 transition-opacity flex-1 min-w-0 text-left"
                   >
                     {/* Logo */}
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
                       {((currentBusiness as any)?.logo || (currentBusiness as any)?.logo_url) ? (
                         <img
                           src={(currentBusiness as any)?.logo || (currentBusiness as any)?.logo_url}
@@ -2303,16 +2303,16 @@ export default function MovementsPage() {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <Building2 className="w-4 h-4 text-white" />
+                        <Building2 className="w-5 h-5 text-white" />
                       )}
                     </div>
 
                     {/* Nombre del negocio */}
-                    <div className="flex items-center gap-1 flex-1 min-w-0">
-                      <span className="text-sm font-semibold text-white truncate">
+                    <div className="flex items-center gap-1.5 flex-1 min-w-0">
+                      <span className="text-[15px] font-semibold text-white truncate">
                         {currentBusiness?.name || 'Mi Negocio'}
                       </span>
-                      <ChevronDown className="w-3.5 h-3.5 text-white/70 flex-shrink-0" />
+                      <ChevronDown className="w-4 h-4 text-white/70 flex-shrink-0" />
                     </div>
                   </button>
 

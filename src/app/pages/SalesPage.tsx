@@ -776,7 +776,7 @@ export default function SalesPage() {
           ) : null
         }
         mobile={
-          <header className="bg-[#272B36] border-b border-slate-700 px-4 sm:px-6 py-3 shadow-sm">
+          <header className="bg-[#272B36] border-b border-slate-700 px-4 sm:px-6 py-3.5 shadow-sm">
             {/* Editing Mode Banner */}
             {isEditingMovement && (
               <div className="mb-3 bg-blue-50 border border-blue-200 rounded-lg p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
@@ -819,9 +819,9 @@ export default function SalesPage() {
               <div className="lg:hidden flex-1 min-w-0 mr-3">
                 <button
                   onClick={() => setBusinessModalOpen(true)}
-                  className="flex items-center gap-2 hover:opacity-80 transition-opacity w-full text-left"
+                  className="flex items-center gap-2.5 hover:opacity-80 transition-opacity w-full text-left"
                 >
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 overflow-hidden border border-white/20">
+                  <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 overflow-hidden border border-white/20">
                     {((currentBusiness as any)?.logo || (currentBusiness as any)?.logo_url) ? (
                       <img
                         src={(currentBusiness as any)?.logo || (currentBusiness as any)?.logo_url}
@@ -829,14 +829,14 @@ export default function SalesPage() {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                        <Building2 className="w-4 h-4 text-white" />
+                        <Building2 className="w-5 h-5 text-white" />
                     )}
                   </div>
-                  <div className="flex items-center gap-1 flex-1 min-w-0">
-                    <span className="text-sm font-semibold text-white truncate">
+                  <div className="flex items-center gap-1.5 flex-1 min-w-0">
+                    <span className="text-[15px] font-semibold text-white truncate">
                       {currentBusiness?.name || 'Mi Negocio'}
                     </span>
-                    <ChevronDown className="w-3.5 h-3.5 text-white/70 flex-shrink-0" />
+                    <ChevronDown className="w-4 h-4 text-white/70 flex-shrink-0" />
                   </div>
                 </button>
               </div>

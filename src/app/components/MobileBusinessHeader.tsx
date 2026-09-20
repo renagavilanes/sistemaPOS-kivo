@@ -85,13 +85,13 @@ export function MobileBusinessHeader({ rightContent }: MobileBusinessHeaderProps
     <>
       {/* Header fijo en móvil */}
       <div className="md:hidden sticky top-0 z-20 bg-white border-b">
-        <div className="flex items-center justify-between px-4 py-2.5">
+        <div className="flex items-center justify-between px-4 py-3.5">
           {/* Business Selector */}
           <DropdownMenu key={businessKey}>
             <DropdownMenuTrigger asChild>
-              <button className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-1 min-w-0 text-left">
-                {/* Logo circular más pequeño */}
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
+              <button className="flex items-center gap-2.5 hover:opacity-80 transition-opacity flex-1 min-w-0 text-left">
+                {/* Logo circular */}
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
                   {currentLogo ? (
                     <img
                       key={businessKey}
@@ -100,16 +100,16 @@ export function MobileBusinessHeader({ rightContent }: MobileBusinessHeaderProps
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <Building2 className="w-4 h-4 text-white" />
+                    <Building2 className="w-5 h-5 text-white" />
                   )}
                 </div>
 
                 {/* Nombre del negocio */}
-                <div className="flex items-center gap-1 flex-1 min-w-0">
-                  <span className="text-sm font-semibold text-gray-900 truncate">
+                <div className="flex items-center gap-1.5 flex-1 min-w-0">
+                  <span className="text-[15px] font-semibold text-gray-900 truncate">
                     {currentBusiness?.name || 'Mi Negocio'}
                   </span>
-                  <ChevronDown className="w-3.5 h-3.5 text-gray-500 flex-shrink-0" />
+                  <ChevronDown className="w-4 h-4 text-gray-500 flex-shrink-0" />
                 </div>
               </button>
             </DropdownMenuTrigger>
