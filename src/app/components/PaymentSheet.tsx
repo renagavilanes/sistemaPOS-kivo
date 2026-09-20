@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import { ArrowLeft, Check, ChevronRight, CreditCard, Banknote, Building2, MoreHorizontal, ChevronDown, ChevronUp, Percent, X, User, Users, Plus, Search, Loader2 } from 'lucide-react';
 import { CartItem, Payment, Client, UserRole } from '../types';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Badge } from './ui/badge';
-import { Separator } from './ui/separator';
 import { ScrollArea } from './ui/scroll-area';
 import { Textarea } from './ui/textarea';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './ui/collapsible';
@@ -29,6 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from './ui/select';
+import { cn } from './ui/utils';
 import { formatCurrency, parseLocaleNumber } from '../utils/currency';
 import { searchTextMatches } from '../utils/searchText';
 import { useBusiness } from '../contexts/BusinessContext';
@@ -56,6 +56,20 @@ interface PaymentField {
   id: string;
   amount: string;
   method: 'Efectivo' | 'Tarjeta' | 'Transferencia' | 'Otros';
+}
+
+/** Card ligera para separar bloques del formulario de pago. */
+function PaymentSection({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <div
+      className={cn(
+        'bg-white rounded-xl border border-gray-200 shadow-sm p-3.5 space-y-3',
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
 }
 
 export function PaymentSheet({
@@ -274,9 +288,9 @@ export function PaymentSheet({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-full sm:max-w-lg p-0 flex flex-col h-full overflow-x-hidden">
+      <SheetContent side="right" className="w-full sm:max-w-lg p-0 flex flex-col h-full overflow-x-hidden gap-0 bg-gray-100">
         {/* Header */}
-        <SheetHeader className="px-2 sm:px-6 py-2 sm:py-4 border-b flex-shrink-0">
+        <SheetHeader className="px-3 sm:px-6 py-2.5 sm:py-4 border-b flex-shrink-0 bg-white">
           <div className="flex items-center gap-2">
             <Button
               variant="ghost"
@@ -290,132 +304,127 @@ export function PaymentSheet({
           </div>
         </SheetHeader>
 
-        <ScrollArea className="flex-1">
-          <div className="p-2 sm:p-6 space-y-3 sm:space-y-6">
-            {/* Payment Type Toggle */}
-            <div className="flex gap-2">
-              <Button
-                variant={paymentType === 'pagada' ? 'default' : 'outline'}
-                className="flex-1 text-sm"
-                onClick={() => setPaymentType('pagada')}
-              >
-                Pagada
-              </Button>
-              <Button
-                variant={paymentType === 'credito' ? 'default' : 'outline'}
-                className="flex-1 text-sm"
-                onClick={() => setPaymentType('credito')}
-              >
-                A crédito
-              </Button>
-            </div>
-
-            {/* Sale Date */}
-            <div className="space-y-2">
-              <Label className="text-sm">Fecha de la venta *</Label>
-              <Input
-                type="date"
-                value={saleDate}
-                onChange={(e) => setSaleDate(e.target.value)}
-                className="text-sm"
-              />
-            </div>
-
-            {/* Client Selection */}
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                {paymentType === 'credito' && (
-                  <Badge variant="default" className="text-xs">Requerido</Badge>
-                )}
-                <Label className="text-sm">Cliente</Label>
-              </div>
-              {selectedClient ? (
-                <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg border">
-                  <div>
-                    <p className="font-medium">{selectedClient.name}</p>
-                    {selectedClient.phone && (
-                      <p className="text-sm text-gray-500">{selectedClient.phone}</p>
-                    )}
-                  </div>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    onClick={() => setSelectedClient(null)}
-                  >
-                    Cambiar
-                  </Button>
-                </div>
-              ) : (
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start"
-                  onClick={() => setClientDialogOpen(true)}
+        <ScrollArea className="flex-1 bg-gray-100">
+          <div className="p-3 pb-4 sm:p-6 space-y-3 min-h-full">
+            <PaymentSection>
+              <div className="flex gap-2">
+                <Button
+                  variant={paymentType === 'pagada' ? 'default' : 'outline'}
+                  className="flex-1 text-sm"
+                  onClick={() => setPaymentType('pagada')}
                 >
-                  Selecciona un cliente
+                  Pagada
                 </Button>
-              )}
-            </div>
-
-            <Separator />
-
-            {/* Discount Section */}
-            {!discountActive ? (
-              <button
-                onClick={() => setDiscountActive(true)}
-                className="flex items-center gap-2 text-gray-900 hover:text-gray-700 transition-colors"
-              >
-                <Percent className="w-5 h-5" />
-                <span className="font-medium underline">Agregar un descuento</span>
-              </button>
-            ) : (
-              <div className="bg-gray-50 p-4 rounded-lg space-y-3">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-semibold text-gray-900">Descuento</h3>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-8 w-8 rounded-full bg-gray-300 hover:bg-gray-400"
-                    onClick={() => {
-                      setDiscountActive(false);
-                      setDiscountPercent('0');
-                      setDiscountAmount('0');
-                    }}
-                  >
-                    <X className="w-4 h-4" />
-                  </Button>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="relative">
-                    <Input
-                      type="text"
-                      inputMode="decimal"
-                      value={discountPercent}
-                      onChange={(e) => handleDiscountPercentChange(e.target.value)}
-                      className="pr-8 h-12 text-base"
-                      placeholder="0"
-                    />
-                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">%</span>
-                  </div>
-                  <div className="relative">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-                    <Input
-                      type="text"
-                      inputMode="decimal"
-                      value={discountAmount}
-                      onChange={(e) => handleDiscountAmountChange(e.target.value)}
-                      className="pl-7 h-12 text-base"
-                      placeholder="0"
-                    />
-                  </div>
-                </div>
+                <Button
+                  variant={paymentType === 'credito' ? 'default' : 'outline'}
+                  className="flex-1 text-sm"
+                  onClick={() => setPaymentType('credito')}
+                >
+                  A crédito
+                </Button>
               </div>
-            )}
 
-            <Separator />
+              <div className="space-y-2">
+                <Label className="text-sm">Fecha de la venta *</Label>
+                <Input
+                  type="date"
+                  value={saleDate}
+                  onChange={(e) => setSaleDate(e.target.value)}
+                  className="text-sm"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  {paymentType === 'credito' && (
+                    <Badge variant="default" className="text-xs">Requerido</Badge>
+                  )}
+                  <Label className="text-sm">Cliente</Label>
+                </div>
+                {selectedClient ? (
+                  <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg border">
+                    <div>
+                      <p className="font-medium">{selectedClient.name}</p>
+                      {selectedClient.phone && (
+                        <p className="text-sm text-gray-500">{selectedClient.phone}</p>
+                      )}
+                    </div>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => setSelectedClient(null)}
+                    >
+                      Cambiar
+                    </Button>
+                  </div>
+                ) : (
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start"
+                    onClick={() => setClientDialogOpen(true)}
+                  >
+                    Selecciona un cliente
+                  </Button>
+                )}
+              </div>
+            </PaymentSection>
+
+            <PaymentSection>
+              {!discountActive ? (
+                <button
+                  onClick={() => setDiscountActive(true)}
+                  className="flex items-center gap-2 text-gray-900 hover:text-gray-700 transition-colors"
+                >
+                  <Percent className="w-5 h-5" />
+                  <span className="font-medium underline">Agregar un descuento</span>
+                </button>
+              ) : (
+                <div className="bg-gray-50 p-3 md:p-4 rounded-lg space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-semibold text-gray-900">Descuento</h3>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-8 w-8 rounded-full bg-gray-300 hover:bg-gray-400"
+                      onClick={() => {
+                        setDiscountActive(false);
+                        setDiscountPercent('0');
+                        setDiscountAmount('0');
+                      }}
+                    >
+                      <X className="w-4 h-4" />
+                    </Button>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="relative">
+                      <Input
+                        type="text"
+                        inputMode="decimal"
+                        value={discountPercent}
+                        onChange={(e) => handleDiscountPercentChange(e.target.value)}
+                        className="pr-8 h-12 text-base"
+                        placeholder="0"
+                      />
+                      <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">%</span>
+                    </div>
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                      <Input
+                        type="text"
+                        inputMode="decimal"
+                        value={discountAmount}
+                        onChange={(e) => handleDiscountAmountChange(e.target.value)}
+                        className="pl-7 h-12 text-base"
+                        placeholder="0"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </PaymentSection>
 
             {paymentType === 'pagada' && (
-              <>
-                {/* Number of Payments */}
+              <PaymentSection>
                 <div className="space-y-3">
                   <Label className="text-xs sm:text-sm break-words leading-tight">Selecciona el número de pagos que realizarás y el método de pago*</Label>
                   <div className="flex gap-2 flex-wrap">
@@ -439,7 +448,6 @@ export function PaymentSheet({
                   </div>
                 </div>
 
-                {/* Single Payment Method Selection */}
                 {numPayments === 1 && (
                   <div className="space-y-3">
                     <Label className="text-xs sm:text-sm">Selecciona el método de pago*</Label>
@@ -500,10 +508,9 @@ export function PaymentSheet({
                   </div>
                 )}
 
-                {/* Multiple Payment Fields */}
                 {numPayments > 1 && (
                   <div className="space-y-4">
-                    {paymentFields.map((field, index) => (
+                    {paymentFields.map((field) => (
                       <div key={field.id} className="space-y-3">
                         <div className="grid grid-cols-2 gap-3">
                           <div className="space-y-2">
@@ -543,11 +550,10 @@ export function PaymentSheet({
                   </div>
                 )}
 
-                {/* Payment Validation - Only for multiple payments */}
                 {numPayments > 1 && paymentFields.length > 0 && (
                   <div className={`p-4 rounded-lg border-2 flex items-center gap-3 ${
-                    paymentsMatchTotal 
-                      ? 'bg-green-50 border-green-300' 
+                    paymentsMatchTotal
+                      ? 'bg-green-50 border-green-300'
                       : 'bg-yellow-50 border-yellow-300'
                   }`}>
                     {paymentsMatchTotal && (
@@ -556,44 +562,42 @@ export function PaymentSheet({
                     <p className={`text-sm font-medium ${
                       paymentsMatchTotal ? 'text-green-800' : 'text-yellow-800'
                     }`}>
-                      {paymentsMatchTotal 
+                      {paymentsMatchTotal
                         ? `Los pagos suman el total de la orden: $${formatCurrency(totalWithDiscount)}`
                         : `Los pagos ($${formatCurrency(totalPaid)}) no suman el total: $${formatCurrency(totalWithDiscount)}`
                       }
                     </p>
                   </div>
                 )}
-
-                <Separator />
-              </>
+              </PaymentSection>
             )}
 
-            {/* Payment Details - Collapsible */}
-            <Collapsible open={paymentDetailsOpen} onOpenChange={setPaymentDetailsOpen}>
-              <CollapsibleTrigger asChild>
-                <Button variant="ghost" className="w-full justify-between p-0 h-auto font-semibold">
-                  Detalle del pago
-                  {paymentDetailsOpen ? (
-                    <ChevronUp className="w-5 h-5" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5" />
-                  )}
-                </Button>
-              </CollapsibleTrigger>
-              <CollapsibleContent className="mt-4 space-y-3">
-                {/* Receipt Note */}
-                <div className="space-y-2">
-                  <Label>Nota del comprobante</Label>
-                  <Textarea
-                    placeholder="Agregar nota..."
-                    value={receiptNote}
-                    onChange={(e) => setReceiptNote(e.target.value)}
-                    rows={3}
-                    className="resize-none"
-                  />
-                </div>
-              </CollapsibleContent>
-            </Collapsible>
+            <PaymentSection>
+              <Collapsible open={paymentDetailsOpen} onOpenChange={setPaymentDetailsOpen}>
+                <CollapsibleTrigger asChild>
+                  <Button variant="ghost" className="w-full justify-between p-0 h-auto font-semibold">
+                    Detalle del pago
+                    {paymentDetailsOpen ? (
+                      <ChevronUp className="w-5 h-5" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5" />
+                    )}
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mt-4 space-y-3">
+                  <div className="space-y-2">
+                    <Label>Nota del comprobante</Label>
+                    <Textarea
+                      placeholder="Agregar nota..."
+                      value={receiptNote}
+                      onChange={(e) => setReceiptNote(e.target.value)}
+                      rows={3}
+                      className="resize-none"
+                    />
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            </PaymentSection>
           </div>
         </ScrollArea>
 
