@@ -1009,7 +1009,7 @@ export default function ProductsPage() {
                   onClick={() => setBusinessModalOpen(true)}
                   className="flex items-center gap-2.5 hover:opacity-90 transition-opacity w-full text-left"
                 >
-                  <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
                     {((currentBusiness as any)?.logo || (currentBusiness as any)?.logo_url) ? (
                       <img
                         src={(currentBusiness as any)?.logo || (currentBusiness as any)?.logo_url}
