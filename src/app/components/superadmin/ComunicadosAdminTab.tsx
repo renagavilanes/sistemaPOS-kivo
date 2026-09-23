@@ -487,13 +487,13 @@ export function ComunicadosAdminTab({
             <div className="relative px-4 pt-10 pb-4 border-b border-slate-200 bg-white">
               <button
                 type="button"
-                className="absolute left-3 top-3 text-slate-500 hover:text-slate-900 text-2xl leading-none w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100"
+                className="absolute right-3 top-3 text-slate-500 hover:text-slate-900 text-2xl leading-none w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100"
                 onClick={() => !sendBusy && setPreviewOpen(false)}
                 aria-label="Cerrar"
               >
                 ×
               </button>
-              <h4 className="text-lg font-semibold text-slate-900 text-center pr-6">{title.trim() || 'Sin titular'}</h4>
+              <h4 className="text-lg font-semibold text-slate-900 text-center px-8">{title.trim() || 'Sin titular'}</h4>
             </div>
             <div className="p-4 max-h-[50vh] overflow-y-auto bg-white">
               {(uploadedUrl || imagePreview) && (

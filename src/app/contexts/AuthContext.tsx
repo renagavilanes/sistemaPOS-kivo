@@ -342,14 +342,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         >
           <button
             type="button"
-            className="absolute left-3 top-3 z-10 text-slate-500 hover:text-slate-900 text-2xl leading-none w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
+            className="absolute right-3 top-3 z-10 text-slate-500 hover:text-slate-900 text-2xl leading-none w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
             onClick={() => void dismissComunicado()}
             aria-label="Cerrar y omitir"
           >
             ×
           </button>
           <div className="px-4 pt-12 pb-3 border-b border-slate-200 bg-white">
-            <h2 id="comunicado-title" className="text-lg font-semibold text-slate-900 pr-8 text-center">
+            <h2 id="comunicado-title" className="text-lg font-semibold text-slate-900 px-8 text-center">
               {pendingComunicado.title}
             </h2>
           </div>
