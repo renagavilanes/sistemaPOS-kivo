@@ -15,6 +15,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Skeleton } from '../components/ui/skeleton';
 import { BusinessSelectorModal } from '../components/BusinessSelectorModal';
 import { PageHeader } from '../components/layout/PageHeader';
+import { BlurSensitive } from '../components/BlurSensitive';
 import { Product } from '../types';
 import { toast } from 'sonner';
 import ExcelJS from 'exceljs';
@@ -183,6 +184,7 @@ export default function ProductsPage() {
   const canCreateProduct = isCurrentUserOwner || productPerms.create === true;
   const canEditProduct = isCurrentUserOwner || productPerms.edit === true;
   const canDeleteProduct = isCurrentUserOwner || productPerms.delete === true;
+  const canSeeCostProfit = canCreateProduct || canEditProduct;
   const canTransferInventory =
     canEditProduct &&
     businesses.filter((b) => {
@@ -951,7 +953,11 @@ export default function ProductsPage() {
                   <span className="text-gray-300">|</span>
                   <div className="flex items-center gap-1.5">
                     <span>Costo de inventario:</span>
-                    <span className="font-semibold text-gray-900">${formatCurrency(totalInventoryCost)}</span>
+                    <span className="font-semibold text-gray-900">
+                      <BlurSensitive hidden={!canSeeCostProfit}>
+                        ${formatCurrency(totalInventoryCost)}
+                      </BlurSensitive>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1070,7 +1076,11 @@ export default function ProductsPage() {
               <span className="text-white/30">|</span>
               <div className="flex items-center gap-1.5">
                 <span>Inventario:</span>
-                <span className="font-semibold text-white">${formatCurrency(totalInventoryCost)}</span>
+                <span className="font-semibold text-white">
+                  <BlurSensitive hidden={!canSeeCostProfit}>
+                    ${formatCurrency(totalInventoryCost)}
+                  </BlurSensitive>
+                </span>
               </div>
             </div>
           </div>
@@ -1303,41 +1313,54 @@ export default function ProductsPage() {
                         </div>
                       </td>
                       <td className="px-2 py-3 text-right">
-                        <div className="relative ml-auto w-24">
-                          <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
-                          <InlineNumberField
-                            value={product.cost}
-                            readOnly={!canEditProduct}
-                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
-                            onCommit={async (newCost) => {
-                              const previous = product.cost;
-                              setProducts((prev) =>
-                                prev.map((p) => (p.id === product.id ? { ...p, cost: newCost } : p)),
-                              );
-                              try {
-                                await updateProduct(product.id, { cost: newCost });
-                                toast.success('Costo actualizado');
-                              } catch (error) {
+                        <BlurSensitive hidden={!canSeeCostProfit} className="ml-auto" placeholder="$88,88">
+                          <div className="relative ml-auto w-24">
+                            <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                            <InlineNumberField
+                              value={product.cost}
+                              readOnly={!canEditProduct}
+                              className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
+                              onCommit={async (newCost) => {
+                                const previous = product.cost;
                                 setProducts((prev) =>
-                                  prev.map((p) => (p.id === product.id ? { ...p, cost: previous } : p)),
+                                  prev.map((p) => (p.id === product.id ? { ...p, cost: newCost } : p)),
                                 );
-                                console.error('❌ Error al actualizar costo:', error);
-                                toast.error('Error al guardar el costo');
-                              }
-                            }}
-                          />
-                        </div>
+                                try {
+                                  await updateProduct(product.id, { cost: newCost });
+                                  toast.success('Costo actualizado');
+                                } catch (error) {
+                                  setProducts((prev) =>
+                                    prev.map((p) => (p.id === product.id ? { ...p, cost: previous } : p)),
+                                  );
+                                  console.error('❌ Error al actualizar costo:', error);
+                                  toast.error('Error al guardar el costo');
+                                }
+                              }}
+                            />
+                          </div>
+                        </BlurSensitive>
                       </td>
                       <td className="px-2 py-3 text-right">
-                        <div className="flex items-center justify-end gap-2">
-                          <span className="text-gray-900">${formatCurrency(profit)}</span>
-                          <Badge
-                            variant="outline"
-                            className="bg-green-50 text-green-700 border-green-200"
-                          >
-                            {profitPercentage}%
-                          </Badge>
-                        </div>
+                        <BlurSensitive
+                          hidden={!canSeeCostProfit}
+                          className="ml-auto"
+                          placeholder={
+                            <span className="inline-flex items-center gap-2">
+                              $88,88
+                              <span className="rounded-full border px-2 py-0.5 text-xs">88%</span>
+                            </span>
+                          }
+                        >
+                          <div className="flex items-center justify-end gap-2">
+                            <span className="text-gray-900">${formatCurrency(profit)}</span>
+                            <Badge
+                              variant="outline"
+                              className="bg-green-50 text-green-700 border-green-200"
+                            >
+                              {profitPercentage}%
+                            </Badge>
+                          </div>
+                        </BlurSensitive>
                       </td>
                       <td className="px-4 py-3 text-right">
                         <InlineNumberField
@@ -1469,9 +1492,18 @@ export default function ProductsPage() {
                         <span className="text-base font-bold text-gray-900">
                           ${formatCurrency(product.price)}
                         </span>
-                        <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 text-[10px] px-1.5 py-0">
-                          +{profitPercentage}%
-                        </Badge>
+                        <BlurSensitive
+                          hidden={!canSeeCostProfit}
+                          placeholder={
+                            <Badge variant="outline" className="text-[10px] px-1.5 py-0">
+                              +88%
+                            </Badge>
+                          }
+                        >
+                          <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 text-[10px] px-1.5 py-0">
+                            +{profitPercentage}%
+                          </Badge>
+                        </BlurSensitive>
                       </div>
                       <div className="flex items-center gap-1 flex-shrink-0">
                         <span className="text-xs text-gray-500">Stock:</span>

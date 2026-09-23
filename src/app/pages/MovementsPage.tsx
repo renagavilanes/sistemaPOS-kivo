@@ -55,6 +55,7 @@ import { saleItemUnitCost, saleItemsTotalCost, saleProfit } from '../utils/saleP
 import { searchTextMatches } from '../utils/searchText';
 import { PageHeader } from '../components/layout/PageHeader';
 import { SectionCard } from '../components/layout/SectionCard';
+import { BlurSensitive } from '../components/BlurSensitive';
 import { dataTableTheadSticky, dthMovement } from '../lib/dataTableHeaderClasses';
 
 /** Pagado = verde, Deuda = rojo (misma lógica en tabla y Excel) */
@@ -548,6 +549,7 @@ export default function MovementsPage() {
   const canDeleteMovement  = isOwner || (movPerms as any).delete  === true;
   const canExportMovement  = isOwner || (movPerms as any).export  === true;
   const canReportsMovement = isOwner || (movPerms as any).reports === true;
+  const canSeeCostProfit   = canEditMovement;
   // ─────────────────────────────────────────────────────────────────────────
 
   // Local state for data
@@ -2955,9 +2957,15 @@ export default function MovementsPage() {
                           <div className="flex flex-col min-w-0">
                             <span className="text-sm font-semibold text-gray-900">${formatCurrency(movement.total)}</span>
                             {!movement.isPartialPayment && movement.type === 'sale' && (
-                              <span className={`text-xs font-medium leading-tight ${movement.profit >= 0 ? 'text-emerald-700' : 'text-rose-700'}`}>
-                                Ganancia: ${formatCurrency(movement.profit)}
-                              </span>
+                              <BlurSensitive
+                                hidden={!canSeeCostProfit}
+                                className="text-xs font-medium leading-tight"
+                                placeholder="Ganancia: $88,88"
+                              >
+                                <span className={`text-xs font-medium leading-tight ${movement.profit >= 0 ? 'text-emerald-700' : 'text-rose-700'}`}>
+                                  Ganancia: ${formatCurrency(movement.profit)}
+                                </span>
+                              </BlurSensitive>
                             )}
                           </div>
                         </td>
@@ -3551,9 +3559,15 @@ export default function MovementsPage() {
 
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">Ganancia</span>
-                      <span className={`text-sm font-bold ${selectedMovement.profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                        ${formatCurrency(selectedMovement.profit)}
-                      </span>
+                      <BlurSensitive
+                        hidden={!canSeeCostProfit}
+                        className="text-sm font-bold"
+                        placeholder="$88,88"
+                      >
+                        <span className={`text-sm font-bold ${selectedMovement.profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                          ${formatCurrency(selectedMovement.profit)}
+                        </span>
+                      </BlurSensitive>
                     </div>
                   </>
                 ) : (
