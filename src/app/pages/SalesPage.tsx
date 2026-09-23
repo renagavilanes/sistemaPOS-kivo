@@ -169,7 +169,12 @@ export default function SalesPage() {
     void loadProducts();
 
     const handleProductsUpdated = (e: Event) => {
-      const detail = (e as CustomEvent<{ productId?: string; image?: string; businessId?: string }>).detail;
+      const detail = (e as CustomEvent<{
+        productId?: string;
+        image?: string;
+        businessId?: string;
+        stockAdjusted?: boolean;
+      }>).detail;
       if (detail?.businessId && detail.businessId !== businessId) return;
 
       if (detail?.productId && detail.image) {
@@ -178,6 +183,9 @@ export default function SalesPage() {
         );
         return;
       }
+
+      // Ya descontamos el stock local al confirmar la venta (evitar recarga y flicker).
+      if (detail?.stockAdjusted) return;
 
       console.log('🔄 Productos actualizados (evento personalizado), recargando...');
       void loadProducts();
@@ -535,7 +543,29 @@ export default function SalesPage() {
       localStorage.removeItem('editingMovement');
       setIsEditingMovement(false);
 
+      const soldByProductId = new Map<string, number>();
+      for (const item of cartItems) {
+        soldByProductId.set(
+          item.product.id,
+          (soldByProductId.get(item.product.id) || 0) + item.quantity,
+        );
+      }
+      setProducts((prev) =>
+        prev.map((p) => {
+          const sold = soldByProductId.get(p.id);
+          if (!sold) return p;
+          return { ...p, stock: p.stock - sold };
+        }),
+      );
+      setOriginalCartQuantities({});
       setCartItems([]);
+      if (currentBusiness?.id) {
+        window.dispatchEvent(
+          new CustomEvent('productsUpdated', {
+            detail: { businessId: currentBusiness.id, stockAdjusted: true },
+          }),
+        );
+      }
       setPaymentSheetOpen(false);
       // Motion UI fuerte: Ink Double al crear venta (antes de abrir modal)
       triggerInkDouble();
