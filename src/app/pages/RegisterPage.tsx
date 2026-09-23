@@ -309,7 +309,7 @@ export default function RegisterPage() {
 
       // 5. Redirigir al POS
       setTimeout(() => {
-        navigate('/sales', { replace: true });
+        navigate('/', { replace: true });
       }, 1500);
 
     } catch (error: any) {

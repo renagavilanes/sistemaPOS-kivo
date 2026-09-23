@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { createBrowserRouter, Navigate, Outlet, useLocation } from "react-router";
+import { getHomePath } from "./lib/businessAccess";
+import { useBusiness } from "./contexts/BusinessContext";
 import RootLayout from "./components/RootLayout";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { BusinessProtectedRoute } from "./components/BusinessProtectedRoute";
@@ -55,9 +57,10 @@ function RootWithProviders() {
 
 function HomeRoute() {
   const { user, loading } = useAuth();
+  const { currentBusiness, loading: businessLoading } = useBusiness();
   // Evita desmontar la ruta por completo (null): en móvil Chrome eso + toasts/portales
   // a veces provoca NotFoundError insertBefore al hidratar/reconciliar.
-  if (loading) {
+  if (loading || (user && businessLoading && !currentBusiness)) {
     return (
       <div
         className="min-h-[100dvh] bg-background"
@@ -66,7 +69,7 @@ function HomeRoute() {
       />
     );
   }
-  if (user) return <Navigate to="/sales" replace />;
+  if (user) return <Navigate to={getHomePath(currentBusiness)} replace />;
   return <LandingPage />;
 }
 
@@ -138,7 +141,7 @@ export const router = createBrowserRouter([
           </BusinessProtectedRoute>
         ),
         children: [
-          { index: true, element: <Navigate to="/sales" replace /> },
+          { index: true, element: <HomeRoute /> },
           { path: "sales", Component: SalesPage },
           { path: "movements", Component: MovementsPage },
           { path: "products", Component: ProductsPage },

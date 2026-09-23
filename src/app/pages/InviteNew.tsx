@@ -135,7 +135,7 @@ export default function InviteNew() {
       localStorage.removeItem('pending_invitation');
       setPhase('success');
       toast.success(`¡Bienvenido a ${inviteData.businessName}!`);
-      setTimeout(() => navigate('/sales', { replace: true }), 1500);
+      setTimeout(() => navigate('/', { replace: true }), 1500);
     } catch (err: unknown) {
       toast.error(err instanceof Error ? err.message : 'Error al crear tu cuenta');
     } finally {

@@ -22,6 +22,7 @@ import {
 } from './ui/alert-dialog';
 import { BusinessSwitcher } from './BusinessSwitcher';
 import { BrandLogo } from './BrandLogo';
+import { canAccessPath } from '../lib/businessAccess';
 
 // Navegación para desktop (todas las opciones)
 const desktopNavigation = [
@@ -48,46 +49,9 @@ export function Sidebar() {
   const { currentBusiness: business } = useBusiness();
   const [isSignOutDialogOpen, setIsSignOutDialogOpen] = useState(false);
 
-  // Filtrar navegación basada en permisos
-  const getFilteredNavigation = (navItems: any[]) => {
+  const getFilteredNavigation = (navItems: typeof desktopNavigation) => {
     if (!business) return navItems;
-    
-    // Si es el dueño o tiene permiso "all", ve todo
-    if (business.role === 'owner' || business.permissions?.all === true) return navItems;
-    
-    // Si es empleado sin permisos definidos aún, mostrar solo vender y productos por defecto
-    const perms = business.permissions || {};
-    const hasNoPermissions = !business.permissions || Object.keys(perms).length === 0;
-    
-    if (hasNoPermissions) {
-      // Sin permisos explícitos: acceso mínimo solo a ventas
-      console.log('⚠️ Empleado sin permisos explícitos, acceso mínimo');
-      return navItems.filter(item => ['/sales', '/more'].includes(item.href));
-    }
-    
-    return navItems.filter(item => {
-      switch (item.href) {
-        case '/sales':
-          if (perms.sales?.create === false) return false;
-          return perms.sales?.view !== false;
-        case '/movements':
-          return perms.movements?.view === true || perms.movements?.view !== false;
-        case '/products':
-          return perms.products?.view === true;
-        case '/contacts':
-          return perms.contacts?.view === true; // Solo visible si tiene permiso de ver
-        case '/employees':
-          return perms.employees?.view === true;
-        case '/settings':
-          return perms.settings?.access === true;
-        case '/catalog/settings':
-          return perms.catalog?.view === true;
-        case '/more':
-          return true;
-        default:
-          return true;
-      }
-    });
+    return navItems.filter((item) => canAccessPath(item.href, business));
   };
 
   const currentDesktopNav = getFilteredNavigation(desktopNavigation);

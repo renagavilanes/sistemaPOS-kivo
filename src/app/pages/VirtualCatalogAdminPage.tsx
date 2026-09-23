@@ -18,6 +18,7 @@ import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Switch } from '../components/ui/switch';
 import { useBusiness } from '../contexts/BusinessContext';
+import { getHomePath } from '../lib/businessAccess';
 import type { OutOfStockMode, VirtualCatalogConfig } from '../lib/virtualCatalogTypes';
 import {
   coerceVirtualCatalogConfig,
@@ -83,7 +84,7 @@ export default function VirtualCatalogAdminPage() {
     if (!business?.id) return;
     if (!canViewCatalog) {
       toast.error('No tienes permiso para ver el catálogo');
-      navigate('/sales', { replace: true });
+      navigate(getHomePath(business), { replace: true });
       return;
     }
 
