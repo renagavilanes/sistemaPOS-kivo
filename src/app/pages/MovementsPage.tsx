@@ -3441,8 +3441,8 @@ export default function MovementsPage() {
       {/* Detail Sheet */}
       {selectedMovement && (
         <Sheet open={detailSheetOpen} onOpenChange={setDetailSheetOpen}>
-          <SheetContent className="w-full sm:max-w-lg overflow-y-auto">
-            <SheetHeader className="border-b pb-4">
+          <SheetContent className="w-full sm:max-w-lg p-0 flex flex-col h-full overflow-x-hidden gap-0 bg-gray-100">
+            <SheetHeader className="border-b pb-4 px-4 sm:px-6 pt-4 bg-white flex-shrink-0">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
                   <SheetTitle className="text-lg font-bold">
@@ -3465,26 +3465,25 @@ export default function MovementsPage() {
               </div>
             </SheetHeader>
 
-            {/* Content */}
-            <div className="py-6 mx-[24px] my-[0px]">
-              {/* Total and Status */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-gray-50 rounded-lg p-4 text-center">
-                  <p className="text-xs text-gray-600 mb-1">Total</p>
-                  <p className="text-2xl font-bold text-gray-900">${formatCurrency(selectedMovement.total)}</p>
+            <div className="flex-1 overflow-y-auto bg-gray-100 p-3 pb-4 sm:p-6 space-y-3">
+              <PaymentSection>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-gray-50 rounded-lg p-4 text-center">
+                    <p className="text-xs text-gray-600 mb-1">Total</p>
+                    <p className="text-2xl font-bold text-gray-900">${formatCurrency(selectedMovement.total)}</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4 text-center">
+                    <p className="text-xs text-gray-600 mb-1">Estado</p>
+                    <Badge
+                      className={`text-sm mt-1 ${movementPaymentStatusBadgeClass(selectedMovement.status)}`}
+                    >
+                      {movementPaymentStatusLabel(selectedMovement.status)}
+                    </Badge>
+                  </div>
                 </div>
-                <div className="bg-gray-50 rounded-lg p-4 text-center">
-                  <p className="text-xs text-gray-600 mb-1">Estado</p>
-                  <Badge
-                    className={`text-sm mt-1 ${movementPaymentStatusBadgeClass(selectedMovement.status)}`}
-                  >
-                    {movementPaymentStatusLabel(selectedMovement.status)}
-                  </Badge>
-                </div>
-              </div>
+              </PaymentSection>
 
-              {/* Info Section */}
-              <div className="space-y-3 border-t pt-4">
+              <PaymentSection>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-600">Fecha y hora</span>
                   <span className="text-sm font-medium text-gray-900">{formatDate(selectedMovement.date)} {selectedMovement.time}</span>
@@ -3575,12 +3574,11 @@ export default function MovementsPage() {
                     </div>
                   </>
                 )}
-              </div>
+              </PaymentSection>
 
-              {/* Products List */}
               {selectedMovement.type === 'sale' && selectedMovement.products && selectedMovement.products.length > 0 && (
-                <div className="border-t pt-4">
-                  <h3 className="text-sm font-semibold text-gray-900 mb-3">Inventario ({selectedMovement.products.length})</h3>
+                <PaymentSection>
+                  <h3 className="text-sm font-semibold text-gray-900">Inventario ({selectedMovement.products.length})</h3>
                   <div className="space-y-2">
                     {selectedMovement.products.map((product: any) => {
                       const lineName =
@@ -3620,7 +3618,7 @@ export default function MovementsPage() {
                       );
                     })}
                   </div>
-                </div>
+                </PaymentSection>
               )}
             </div>
 
