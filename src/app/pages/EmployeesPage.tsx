@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, Plus, Edit2, Trash2, X, UserPlus, Shield, CheckCircle2, XCircle, ChevronLeft, Clock } from 'lucide-react';
+import { Search, Plus, Edit2, Trash2, X, UserPlus, Shield, CheckCircle2, XCircle, ChevronLeft, Clock, Mail } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -353,6 +353,32 @@ export default function EmployeesPage() {
     setCreateSheetOpen(true);
   };
 
+  const handleResendInvitation = async (employee: Employee) => {
+    if (!currentBusiness?.id || employee.userId || employee.isOwner) return;
+    setLoading(true);
+    try {
+      const result = await api.resendEmployeeInvitation(currentBusiness.id, {
+        name: employee.name,
+        email: employee.email,
+        phone: employee.phone || null,
+        role: mapRoleToStorage(employee.role),
+        permissions: employee.permissions,
+      });
+      if (result.emailSent) {
+        toast.success(`Invitación reenviada a ${employee.email}`);
+      } else {
+        toast.warning('No se pudo enviar el correo', {
+          description: result.emailError || 'Inténtalo de nuevo en unos minutos.',
+          duration: 7000,
+        });
+      }
+    } catch (error: any) {
+      toast.error(error.message || 'Error al reenviar la invitación');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleDeleteClick = (employee: Employee) => {
     if (employee.isOwner) {
       toast.error('No puedes eliminar al propietario del negocio');
@@ -616,6 +642,17 @@ export default function EmployeesPage() {
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center justify-end gap-2">
+                          {canCreate && !employee.isOwner && !employee.userId && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => void handleResendInvitation(employee)}
+                              disabled={loading}
+                            >
+                              <Mail className="w-4 h-4 mr-1" />
+                              Reenviar
+                            </Button>
+                          )}
                           {((employee.isOwner && canEditOwnerName) || (!employee.isOwner && canEdit)) && (
                             <Button
                               variant="ghost"
@@ -718,8 +755,25 @@ export default function EmployeesPage() {
                   <Badge variant="outline" className={getRoleColor(employee.role)}>
                     {employee.role}
                   </Badge>
-                  <div className="flex items-center gap-1.5">
-                    {renderEmployeeStatus(employee)}
+                  <div className="flex items-center gap-2">
+                    {canCreate && !employee.isOwner && !employee.userId && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="h-8"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          void handleResendInvitation(employee);
+                        }}
+                        disabled={loading}
+                      >
+                        <Mail className="w-4 h-4 mr-1" />
+                        Reenviar
+                      </Button>
+                    )}
+                    <div className="flex items-center gap-1.5">
+                      {renderEmployeeStatus(employee)}
+                    </div>
                   </div>
                 </div>
               </div>

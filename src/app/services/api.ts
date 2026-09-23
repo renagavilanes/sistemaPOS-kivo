@@ -1,6 +1,6 @@
 import { supabase } from '../lib/supabase';
 import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicEnv';
-import { buildInviteUrl } from '../utils/appUrl';
+import { buildInviteUrl, encodeInviteToken } from '../utils/appUrl';
 import { runInventoryTransfer } from '../utils/inventoryTransferLogic';
 
 // Helper to create Supabase client directly
@@ -1316,6 +1316,69 @@ export async function getEmployeeByEmail(businessId: string, email: string): Pro
   };
 }
 
+async function sendInvitationEmail(params: {
+  email: string;
+  name: string;
+  businessName: string;
+  invitationLink: string;
+}): Promise<{ emailSent: boolean; emailError?: string }> {
+  try {
+    const emailResponse = await fetch(
+      `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/send-invitation`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${supabaseAnonKey}`,
+        },
+        body: JSON.stringify(params),
+      },
+    );
+
+    if (emailResponse.ok) {
+      return { emailSent: true };
+    }
+    const errorData = await emailResponse.json().catch(() => ({}));
+    let emailError = errorData.error || errorData.message || 'No se pudo enviar el correo de invitación';
+    if (emailError.includes('unrecognised IP') || emailError.includes('authorised_ips')) {
+      emailError =
+        'Brevo bloqueó el correo: autoriza la IP de Supabase en Brevo → Seguridad → IPs autorizadas (o desactiva la restricción).';
+    }
+    console.error('❌ [INVITE] Error sending email:', errorData);
+    return { emailSent: false, emailError };
+  } catch (err: any) {
+    console.error('❌ [INVITE] Email error:', err);
+    return { emailSent: false, emailError: err.message || 'Error de red al enviar el correo' };
+  }
+}
+
+async function getBusinessName(businessId: string): Promise<string> {
+  const { data: businessData } = await supabase.from('businesses').select('name').eq('id', businessId).single();
+  return businessData?.name || 'Negocio';
+}
+
+function buildEmployeeInviteLink(params: {
+  businessId: string;
+  businessName: string;
+  email: string;
+  name: string;
+  role: string;
+  permissions: any;
+  phone?: string | null;
+}): string {
+  const invitationToken = encodeInviteToken({
+    businessId: params.businessId,
+    businessName: params.businessName,
+    email: params.email,
+    name: params.name,
+    role: params.role,
+    permissions: params.permissions,
+    phone: params.phone ?? null,
+    timestamp: Date.now(),
+  });
+  return buildInviteUrl(invitationToken);
+}
+
 // Invite employee - Send real email with Brevo via server
 export async function inviteEmployee(businessId: string, employee: {
   name: string;
@@ -1326,29 +1389,30 @@ export async function inviteEmployee(businessId: string, employee: {
 }): Promise<{ success: boolean; invitationLink: string; emailSent: boolean; emailError?: string }> {
   console.log('🚀 [INVITE] Creating employee invitation...');
   console.log('📧 [INVITE] Email:', employee.email);
-  console.log('👤 [INVITE] Name:', employee.name);
-  
-  // 1. Check if employee already exists
+
   const existing = await getEmployeeByEmail(businessId, employee.email);
-  if (existing) {
+  if (existing?.userId && existing.is_active) {
     throw new Error('Este empleado ya existe en el negocio');
   }
-  
-  // 1.5. Get business name
-  const { data: businessData } = await supabase
-    .from('businesses')
-    .select('name')
-    .eq('id', businessId)
-    .single();
-  
-  const businessName = businessData?.name || 'Negocio';
-  
-  // 2. Create employee record WITHOUT user_id (pending confirmation)
-  console.log('📝 [INVITE] Creating employee record...');
-  await createEmployee(businessId, employee);
-  
-  // 3. Generate invitation token (INCLUYE businessName)
-  const invitationToken = btoa(JSON.stringify({
+
+  const businessName = await getBusinessName(businessId);
+
+  if (!existing) {
+    console.log('📝 [INVITE] Creating employee record...');
+    await createEmployee(businessId, employee);
+  } else {
+    console.log('📧 [INVITE] Reutilizando empleado (pendiente o eliminado) y enviando correo nuevo');
+    await updateEmployee(existing.id, businessId, {
+      name: employee.name,
+      email: employee.email,
+      phone: employee.phone || null,
+      role: employee.role,
+      permissions: employee.permissions,
+      is_active: true,
+    });
+  }
+
+  const invitationLink = buildEmployeeInviteLink({
     businessId,
     businessName,
     email: employee.email,
@@ -1356,54 +1420,16 @@ export async function inviteEmployee(businessId: string, employee: {
     role: employee.role,
     permissions: employee.permissions,
     phone: employee.phone,
-    timestamp: Date.now()
-  }));
-  
-  // 4. Create invitation link (ruta real de la app, no Figma)
-  const invitationLink = buildInviteUrl(invitationToken);
-  
+  });
+
   console.log('🔗 [INVITE] Link generado:', invitationLink);
-  console.log('📧 [INVITE] Sending email via server...');
-  
-  // 5. Send email via server (el empleado ya está creado — no fallar todo si el correo falla)
-  let emailSent = false;
-  let emailError: string | undefined;
 
-  try {
-    const emailResponse = await fetch(
-      `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/send-invitation`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${supabaseAnonKey}`,
-        },
-        body: JSON.stringify({
-          email: employee.email,
-          name: employee.name,
-          businessName,
-          invitationLink: invitationLink,
-        }),
-      }
-    );
-
-    if (emailResponse.ok) {
-      emailSent = true;
-      console.log('✅ [INVITE] Email sent successfully via server!');
-    } else {
-      const errorData = await emailResponse.json().catch(() => ({}));
-      emailError = errorData.error || errorData.message || 'No se pudo enviar el correo de invitación';
-      if (emailError.includes('unrecognised IP') || emailError.includes('authorised_ips')) {
-        emailError = 'Brevo bloqueó el correo: autoriza la IP de Supabase en Brevo → Seguridad → IPs autorizadas (o desactiva la restricción).';
-      }
-      console.error('❌ [INVITE] Error sending email:', errorData);
-    }
-  } catch (err: any) {
-    emailError = err.message || 'Error de red al enviar el correo';
-    console.error('❌ [INVITE] Email error:', err);
-  }
-
-  console.log('✅ [INVITE] Employee invitation created', emailSent ? '+ email sent' : '(email pending)');
+  const { emailSent, emailError } = await sendInvitationEmail({
+    email: employee.email,
+    name: employee.name,
+    businessName,
+    invitationLink,
+  });
 
   return {
     success: true,
@@ -1411,6 +1437,36 @@ export async function inviteEmployee(businessId: string, employee: {
     emailSent,
     emailError,
   };
+}
+
+/** Reenvía el correo a un empleado que aún no aceptó la invitación (user_id vacío). */
+export async function resendEmployeeInvitation(
+  businessId: string,
+  employee: {
+    name: string;
+    email: string;
+    phone?: string | null;
+    role: string;
+    permissions: any;
+  },
+): Promise<{ success: boolean; invitationLink: string; emailSent: boolean; emailError?: string }> {
+  const businessName = await getBusinessName(businessId);
+  const invitationLink = buildEmployeeInviteLink({
+    businessId,
+    businessName,
+    email: employee.email,
+    name: employee.name,
+    role: employee.role,
+    permissions: employee.permissions,
+    phone: employee.phone,
+  });
+  const { emailSent, emailError } = await sendInvitationEmail({
+    email: employee.email,
+    name: employee.name,
+    businessName,
+    invitationLink,
+  });
+  return { success: true, invitationLink, emailSent, emailError };
 }
 
 // Fix employee user_id (migration)

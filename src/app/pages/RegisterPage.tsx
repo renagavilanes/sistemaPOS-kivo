@@ -10,6 +10,7 @@ import { supabase } from '../lib/supabase';
 import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicEnv';
 import { useBusiness } from '../contexts/BusinessContext';
 import { BrandLogo } from '../components/BrandLogo';
+import { decodeInviteToken } from '../utils/appUrl';
 
 type Step = 'business-info' | 'verify-code';
 
@@ -76,7 +77,7 @@ export default function RegisterPage() {
       try {
         const pending = localStorage.getItem('pending_invitation');
         if (pending) {
-          const inviteData = JSON.parse(atob(pending));
+          const inviteData = decodeInviteToken(pending);
           businessName = inviteData.businessName || businessName;
           name = inviteData.name || name;
         }
@@ -253,7 +254,7 @@ export default function RegisterPage() {
       if (pendingInvite) {
         console.log('📧 Procesando invitación pendiente...');
         try {
-          const inviteData = JSON.parse(atob(pendingInvite));
+          const inviteData = decodeInviteToken(pendingInvite);
           
           console.log('📋 Datos de invitación:', {
             businessId: inviteData.businessId,

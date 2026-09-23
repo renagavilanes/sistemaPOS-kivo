@@ -308,7 +308,6 @@ export function registerAdminRoutes(app: any): void {
           role:        b.role || "cashier",
           permissions: b.permissions ?? {},
           is_active:   true,
-          user_id:     null,
           updated_at:  new Date().toISOString(),
         }).eq("id", inactiveRow.id).eq("business_id", businessId).select().single();
 
@@ -409,7 +408,8 @@ export function registerAdminRoutes(app: any): void {
         .select("*")
         .eq("business_id", businessId)
         .ilike("email", email)
-        .eq("is_active", true)
+        .order("is_active", { ascending: false })
+        .limit(1)
         .maybeSingle();
       if (error) { console.error("❌ [ADMIN/EMPLOYEES/BY-EMAIL]", error.message); return c.json({ error: error.message }, 500); }
       return c.json({ success: true, employee: data ?? null });

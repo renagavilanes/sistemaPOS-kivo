@@ -9,6 +9,7 @@ import { Loader2, Lock, Eye, EyeOff, ArrowLeft, CheckCircle2 } from 'lucide-reac
 import { supabase } from '../lib/supabase';
 import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicEnv';
 import { BrandLogo } from '../components/BrandLogo';
+import { decodeInviteToken } from '../utils/appUrl';
 
 interface InviteData {
   businessId: string;
@@ -42,7 +43,7 @@ export default function InviteNew() {
       }
 
       try {
-        const decoded: InviteData = JSON.parse(atob(token));
+        const decoded: InviteData = decodeInviteToken(token);
         if (decoded.timestamp) {
           const age = Date.now() - decoded.timestamp;
           if (age > 7 * 24 * 60 * 60 * 1000) {

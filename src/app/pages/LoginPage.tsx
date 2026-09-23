@@ -11,6 +11,7 @@ import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { BrandLogo } from '../components/BrandLogo';
+import { decodeInviteToken } from '../utils/appUrl';
 
 type Step = 'login' | 'forgot-email' | 'forgot-code' | 'forgot-password';
 type ViewMode = 'accounts-list' | 'email-password' | 'password-only';
@@ -269,7 +270,7 @@ export default function LoginPage() {
       if (pendingInvite) {
         console.log('📧 Procesando invitación pendiente...');
         try {
-          const inviteData = JSON.parse(atob(pendingInvite));
+          const inviteData = decodeInviteToken(pendingInvite);
           
           console.log('📋 Datos de invitación:', {
             businessId: inviteData.businessId,
