@@ -1313,7 +1313,7 @@ export default function ProductsPage() {
                         </div>
                       </td>
                       <td className="px-2 py-3 text-right">
-                        <BlurSensitive hidden={!canSeeCostProfit} className="ml-auto" placeholder="$88,88">
+                        <BlurSensitive hidden={!canSeeCostProfit} className="ml-auto">
                           <div className="relative ml-auto w-24">
                             <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                             <InlineNumberField
@@ -1341,16 +1341,7 @@ export default function ProductsPage() {
                         </BlurSensitive>
                       </td>
                       <td className="px-2 py-3 text-right">
-                        <BlurSensitive
-                          hidden={!canSeeCostProfit}
-                          className="ml-auto"
-                          placeholder={
-                            <span className="inline-flex items-center gap-2">
-                              $88,88
-                              <span className="rounded-full border px-2 py-0.5 text-xs">88%</span>
-                            </span>
-                          }
-                        >
+                        <BlurSensitive hidden={!canSeeCostProfit} className="ml-auto">
                           <div className="flex items-center justify-end gap-2">
                             <span className="text-gray-900">${formatCurrency(profit)}</span>
                             <Badge
@@ -1492,14 +1483,7 @@ export default function ProductsPage() {
                         <span className="text-base font-bold text-gray-900">
                           ${formatCurrency(product.price)}
                         </span>
-                        <BlurSensitive
-                          hidden={!canSeeCostProfit}
-                          placeholder={
-                            <Badge variant="outline" className="text-[10px] px-1.5 py-0">
-                              +88%
-                            </Badge>
-                          }
-                        >
+                        <BlurSensitive hidden={!canSeeCostProfit}>
                           <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 text-[10px] px-1.5 py-0">
                             +{profitPercentage}%
                           </Badge>

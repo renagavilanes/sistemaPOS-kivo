@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 
-/** Muestra un valor sensible desenfocado, sin dejar el número real en el DOM. */
+/** Oculta un valor sensible con un guion, sin romper el layout ni dejar el número en el DOM. */
 export function BlurSensitive({
   hidden,
   children,
-  placeholder = '$88,88',
+  placeholder = '—',
   className = '',
 }: {
   hidden: boolean;
@@ -15,7 +15,7 @@ export function BlurSensitive({
   if (!hidden) return <>{children}</>;
   return (
     <span
-      className={`inline-flex max-w-full align-middle blur-[8px] select-none pointer-events-none ${className}`}
+      className={`inline-flex items-center text-gray-400 select-none ${className}`}
       aria-hidden
     >
       {placeholder}
