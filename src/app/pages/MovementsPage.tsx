@@ -2960,7 +2960,6 @@ export default function MovementsPage() {
                               <BlurSensitive
                                 hidden={!canSeeCostProfit}
                                 className="text-xs font-medium leading-tight"
-                                placeholder="Ganancia: —"
                               >
                                 <span className={`text-xs font-medium leading-tight ${movement.profit >= 0 ? 'text-emerald-700' : 'text-rose-700'}`}>
                                   Ganancia: ${formatCurrency(movement.profit)}
