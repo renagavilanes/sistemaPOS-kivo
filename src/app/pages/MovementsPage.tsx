@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo, type ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { Search, Filter, Calendar, MoreVertical, Download, FileText, TrendingUp, DollarSign, CreditCard, ChevronLeft, ChevronRight, X, Users, ChevronRight as ChevronRightIcon, User, Building2, Printer, Receipt, Edit, Trash2, ShoppingCart, Plus, Minus, Check, Banknote, MoreHorizontal, ChevronDown, ChevronUp, Percent, ArrowLeft, Loader2 } from 'lucide-react';
 import { ExpenseForm } from '../components/ExpenseForm';
@@ -32,7 +32,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetFooter, SheetDescrip
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
 import { Label } from '../components/ui/label';
 import { Textarea } from '../components/ui/textarea';
-import { Separator } from '../components/ui/separator';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../components/ui/collapsible';
 import { ScrollArea } from '../components/ui/scroll-area';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../components/ui/tooltip';
@@ -67,6 +66,15 @@ function movementPaymentStatusBadgeClass(status: string): string {
   return status === 'paid'
     ? 'border-0 bg-emerald-600 text-white hover:bg-emerald-600 shadow-none'
     : 'border-0 bg-rose-600 text-white hover:bg-rose-600 shadow-none';
+}
+
+/** Mismas cards ligeras que el pago de Vender. */
+function PaymentSection({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return (
+    <div className={`bg-white rounded-xl border border-gray-200 shadow-sm p-3.5 space-y-3 ${className}`}>
+      {children}
+    </div>
+  );
 }
 
 // Helper function to check if a date is within a range
@@ -3684,9 +3692,9 @@ export default function MovementsPage() {
       {/* Edit Sheet - Sale */}
       {selectedMovement && selectedMovement.type === 'sale' && (
         <Sheet open={editSheetOpen} onOpenChange={setEditSheetOpen}>
-          <SheetContent side="right" className="w-full sm:max-w-lg p-0 flex flex-col h-full overflow-x-hidden">
+          <SheetContent side="right" className="w-full sm:max-w-lg p-0 flex flex-col h-full overflow-x-hidden gap-0 bg-gray-100">
             {/* Header */}
-            <SheetHeader className="px-2 sm:px-6 py-2 sm:py-4 border-b flex-shrink-0">
+            <SheetHeader className="px-2 sm:px-6 py-2 sm:py-4 border-b flex-shrink-0 bg-white">
               <div className="flex items-center gap-2">
                 <Button
                   variant="ghost"
@@ -3707,30 +3715,12 @@ export default function MovementsPage() {
               </SheetDescription>
             </SheetHeader>
 
-            <ScrollArea className="flex-1">
-              <div className="p-2 sm:p-6 space-y-3 sm:space-y-6">
-                {/* Status Toggle */}
-                <div className="flex gap-2">
-                  <Button
-                    variant={editSaleStatus === 'paid' ? 'default' : 'outline'}
-                    className="flex-1"
-                    onClick={() => setEditSaleStatus('paid')}
-                  >
-                    Pagado
-                  </Button>
-                  <Button
-                    variant={editSaleStatus === 'credit' ? 'default' : 'outline'}
-                    className="flex-1"
-                    onClick={() => setEditSaleStatus('credit')}
-                  >
-                    A crédito
-                  </Button>
-                </div>
-
+            <ScrollArea className="flex-1 bg-gray-100">
+              <div className="p-3 pb-4 sm:p-6 space-y-3 min-h-full">
                 {/* Editar Productos - Clickable Section */}
                 <button
                   onClick={handleEditProducts}
-                  className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-lg border-2 border-gray-200 hover:border-teal-500 transition-all"
+                  className="w-full flex items-center justify-between p-4 bg-white hover:bg-gray-50 rounded-xl border border-gray-200 shadow-sm hover:border-teal-500 transition-all"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center">
@@ -3748,7 +3738,24 @@ export default function MovementsPage() {
                   <ChevronRightIcon className="w-5 h-5 text-gray-400" />
                 </button>
 
-                <Separator />
+                <PaymentSection>
+                {/* Status Toggle */}
+                <div className="flex gap-2">
+                  <Button
+                    variant={editSaleStatus === 'paid' ? 'default' : 'outline'}
+                    className="flex-1"
+                    onClick={() => setEditSaleStatus('paid')}
+                  >
+                    Pagado
+                  </Button>
+                  <Button
+                    variant={editSaleStatus === 'credit' ? 'default' : 'outline'}
+                    className="flex-1"
+                    onClick={() => setEditSaleStatus('credit')}
+                  >
+                    A crédito
+                  </Button>
+                </div>
 
                 {/* Sale Date */}
                 <div className="space-y-2">
@@ -3866,9 +3873,9 @@ export default function MovementsPage() {
                     </Dialog>
                   )}
                 </div>
+                </PaymentSection>
 
-                <Separator />
-
+                <PaymentSection>
                 {/* Discount Section */}
                 {!editDiscountActive ? (
                   <button
@@ -3879,7 +3886,7 @@ export default function MovementsPage() {
                     <span className="font-medium underline">Agregar un descuento</span>
                   </button>
                 ) : (
-                  <div className="bg-gray-50 p-4 rounded-lg space-y-3">
+                  <div className="bg-gray-50 p-3 md:p-4 rounded-lg space-y-3">
                     <div className="flex items-center justify-between">
                       <h3 className="font-semibold text-gray-900">Descuento</h3>
                       <Button
@@ -3921,9 +3928,9 @@ export default function MovementsPage() {
                     </div>
                   </div>
                 )}
+                </PaymentSection>
 
-                <Separator />
-
+                <PaymentSection>
                 {/* Number of Payments */}
                 <div className="space-y-3">
                   <Label className="text-xs sm:text-sm break-words leading-tight">Selecciona el número de pagos que realizarás y el método de pago*</Label>
@@ -4072,9 +4079,9 @@ export default function MovementsPage() {
                     </p>
                   </div>
                 )}
+                </PaymentSection>
 
-                <Separator />
-
+                <PaymentSection>
                 {/* Payment Details - Collapsible */}
                 <Collapsible open={editPaymentDetailsOpen} onOpenChange={setEditPaymentDetailsOpen}>
                   <CollapsibleTrigger asChild>
@@ -4101,6 +4108,7 @@ export default function MovementsPage() {
                     </div>
                   </CollapsibleContent>
                 </Collapsible>
+                </PaymentSection>
               </div>
             </ScrollArea>
 
