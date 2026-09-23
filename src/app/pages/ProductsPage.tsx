@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, type ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import { Search, Plus, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet, ArrowLeftRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../components/ui/dialog';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '../components/ui/alert-dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { Switch } from '../components/ui/switch';
 import { ScrollArea, ScrollBar } from '../components/ui/scroll-area';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator } from '../components/ui/dropdown-menu';
 import { Skeleton } from '../components/ui/skeleton';
@@ -40,6 +41,14 @@ import {
 const stopOpenProductDetail = (e: { stopPropagation: () => void }) => {
   e.stopPropagation();
 };
+
+function FormSection({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return (
+    <div className={`bg-white rounded-xl border border-gray-200 shadow-sm p-3.5 space-y-3 ${className}`}>
+      {children}
+    </div>
+  );
+}
 
 function sameNumericValue(a: number, b: number, integer?: boolean) {
   const left = Number(a);
@@ -162,6 +171,7 @@ export default function ProductsPage() {
   const [productStock, setProductStock] = useState('');
   const [productCategory, setProductCategory] = useState('');
   const [productImage, setProductImage] = useState('');
+  const [showInVirtualCatalog, setShowInVirtualCatalog] = useState(true);
   const [imageProcessing, setImageProcessing] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -583,6 +593,7 @@ export default function ProductsPage() {
           stock: stockQty,
           category: productCategory || editingProduct.category,
           image: imageToSave,
+          showInVirtualCatalog,
         });
 
         if (result.success) {
@@ -605,6 +616,7 @@ export default function ProductsPage() {
                     stock: stockQty,
                     category: productCategory || p.category,
                     image: savedImage,
+                    showInVirtualCatalog,
                   }
                 : p,
             ),
@@ -634,6 +646,7 @@ export default function ProductsPage() {
           stock: stockQty,
           category: productCategory || 'Sin categoría',
           image: imageToSave,
+          showInVirtualCatalog,
         });
 
         if (result.success) {
@@ -655,6 +668,7 @@ export default function ProductsPage() {
                 stock: stockQty,
                 category: productCategory || 'Sin categoría',
                 image: savedImage,
+                showInVirtualCatalog,
               },
               ...prev,
             ]);
@@ -692,6 +706,7 @@ export default function ProductsPage() {
     setProductStock(product.stock.toString());
     setProductCategory(product.category);
     setProductImage(product.image || '');
+    setShowInVirtualCatalog(product.showInVirtualCatalog !== false);
     try {
       const full = await apiService.getProductById(currentBusiness.id, product.id);
       setEditingProduct(full);
@@ -701,6 +716,7 @@ export default function ProductsPage() {
       setProductStock(full.stock.toString());
       setProductCategory(full.category);
       setProductImage(full.image || '');
+      setShowInVirtualCatalog(full.showInVirtualCatalog !== false);
     } catch (e) {
       console.warn('No se pudo cargar el producto completo; usando datos del listado.', e);
     }
@@ -741,6 +757,7 @@ export default function ProductsPage() {
     setProductStock('');
     setProductCategory('');
     setProductImage('');
+    setShowInVirtualCatalog(true);
   };
 
   const handleExport = async () => {
@@ -850,6 +867,7 @@ export default function ProductsPage() {
       stock: p.stock,
       category: p.category || 'Sin categoría',
       image: cleanImage,
+      showInVirtualCatalog: p.showInVirtualCatalog !== false,
     };
   };
 
@@ -1486,8 +1504,8 @@ export default function ProductsPage() {
 
       {/* Create/Edit Product Sheet */}
       <Sheet open={createSheetOpen} onOpenChange={setCreateSheetOpen}>
-        <SheetContent side="right" className="w-full sm:max-w-lg p-0 flex flex-col h-full">
-          <SheetHeader className="px-6 py-4 border-b">
+        <SheetContent side="right" className="w-full sm:max-w-lg p-0 flex flex-col h-full overflow-x-hidden gap-0 bg-gray-100">
+          <SheetHeader className="px-6 py-4 border-b bg-white flex-shrink-0">
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">
                 <SheetTitle>
@@ -1511,12 +1529,11 @@ export default function ProductsPage() {
             </div>
           </SheetHeader>
 
-          <ScrollArea className="flex-1">
-            <div className="p-6 space-y-6">
-              {/* Image Upload - First */}
-              <div className="space-y-2">
+          <ScrollArea className="flex-1 bg-gray-100">
+            <div className="p-3 pb-4 sm:p-6 space-y-3 min-h-full">
+              <FormSection>
                 <Label>Imagen del producto</Label>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-3">
                   <div className="w-full h-[8.4rem] rounded-lg overflow-hidden bg-gray-100 relative">
                     <ImageWithFallback
                       src={productImage ? parseProductImage(productImage).full || productImage : ''}
@@ -1580,122 +1597,136 @@ export default function ProductsPage() {
                     </label>
                   </div>
                 </div>
-              </div>
+              </FormSection>
 
-              {/* Product Name */}
-              <div className="space-y-2">
-                <Label>Nombre del producto*</Label>
-                <Input
-                  placeholder="Ej: Café Americano"
-                  value={productName}
-                  onChange={(e) => setProductName(e.target.value)}
-                  className="h-12"
-                />
-              </div>
-
-              {/* Price and Cost */}
-              <div className="grid grid-cols-2 gap-4">
+              <FormSection>
                 <div className="space-y-2">
-                  <Label>Precio de venta*</Label>
-                  <div className="relative">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-                    <Input
-                      type="text"
-                      inputMode="decimal"
-                      placeholder="0"
-                      value={productPrice}
-                      onChange={(e) => setProductPrice(e.target.value)}
-                      className="h-12 pl-7"
-                    />
-                  </div>
+                  <Label>Nombre del producto*</Label>
+                  <Input
+                    placeholder="Ej: Café Americano"
+                    value={productName}
+                    onChange={(e) => setProductName(e.target.value)}
+                    className="h-12"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label>Costo*</Label>
-                  <div className="relative">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-                    <Input
-                      type="text"
-                      inputMode="decimal"
-                      placeholder="0"
-                      value={productCost}
-                      onChange={(e) => setProductCost(e.target.value)}
-                      className="h-12 pl-7"
-                    />
+                  <Label>Categoría</Label>
+                  <div className="flex gap-2">
+                    <div className="hidden md:block flex-1">
+                      <Select value={productCategory} onValueChange={setProductCategory}>
+                        <SelectTrigger className="h-12">
+                          <SelectValue placeholder="Seleccionar categoría" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {allCategories.map((cat) => (
+                            <SelectItem key={cat} value={cat}>
+                              {cat}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => setCategoryPickerOpen(true)}
+                      className="md:hidden flex-1 h-12 justify-between text-left font-normal"
+                    >
+                      <span className={productCategory ? "text-gray-900" : "text-gray-500"}>
+                        {productCategory || "Seleccionar categoría"}
+                      </span>
+                      <ChevronDown className="w-4 h-4 text-gray-400" />
+                    </Button>
+
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      onClick={() => setCategoriesDialogOpen(true)}
+                      className="h-12 w-12"
+                    >
+                      <Grid3x3 className="w-4 h-4" />
+                    </Button>
                   </div>
                 </div>
-              </div>
+              </FormSection>
 
-              {/* Stock */}
-              <div className="space-y-2">
-                <Label>Cantidad disponible</Label>
-                <Input
-                  type="text"
-                  inputMode="numeric"
-                  placeholder="0"
-                  value={productStock}
-                  onChange={(e) => setProductStock(e.target.value)}
-                  className="h-12"
-                />
-              </div>
-
-              {/* Category */}
-              <div className="space-y-2">
-                <Label>Categoría</Label>
-                <div className="flex gap-2">
-                  {/* Desktop: Select normal */}
-                  <div className="hidden md:block flex-1">
-                    <Select value={productCategory} onValueChange={setProductCategory}>
-                      <SelectTrigger className="h-12">
-                        <SelectValue placeholder="Seleccionar categoría" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {allCategories.map((cat) => (
-                          <SelectItem key={cat} value={cat}>
-                            {cat}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+              <FormSection>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label>Precio de venta*</Label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                      <Input
+                        type="text"
+                        inputMode="decimal"
+                        placeholder="0"
+                        value={productPrice}
+                        onChange={(e) => setProductPrice(e.target.value)}
+                        className="h-12 pl-7"
+                      />
+                    </div>
                   </div>
-
-                  {/* Mobile: Botón que abre modal */}
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => setCategoryPickerOpen(true)}
-                    className="md:hidden flex-1 h-12 justify-between text-left font-normal"
-                  >
-                    <span className={productCategory ? "text-gray-900" : "text-gray-500"}>
-                      {productCategory || "Seleccionar categoría"}
-                    </span>
-                    <ChevronDown className="w-4 h-4 text-gray-400" />
-                  </Button>
-
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={() => setCategoriesDialogOpen(true)}
-                    className="h-12 w-12"
-                  >
-                    <Grid3x3 className="w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
-
-              {/* Profit Preview */}
-              {Number.isFinite(parseLocaleNumber(productPrice)) && Number.isFinite(parseLocaleNumber(productCost)) && (
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <div className="text-sm text-gray-600 mb-1">Ganancia por unidad</div>
-                  <div className="text-2xl font-bold text-gray-900">
-                    ${formatCurrency(parseLocaleNumber(productPrice) - parseLocaleNumber(productCost))}
-                  </div>
-                  <div className="text-sm text-green-600 font-medium mt-1">
-                    {parseLocaleNumber(productPrice) > 0
-                      ? `${(((parseLocaleNumber(productPrice) - parseLocaleNumber(productCost)) / parseLocaleNumber(productPrice)) * 100).toFixed(0)}% de margen`
-                      : '—'}
+                  <div className="space-y-2">
+                    <Label>Costo*</Label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                      <Input
+                        type="text"
+                        inputMode="decimal"
+                        placeholder="0"
+                        value={productCost}
+                        onChange={(e) => setProductCost(e.target.value)}
+                        className="h-12 pl-7"
+                      />
+                    </div>
                   </div>
                 </div>
-              )}
+                {Number.isFinite(parseLocaleNumber(productPrice)) && Number.isFinite(parseLocaleNumber(productCost)) && (
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <div className="text-sm text-gray-600 mb-1">Ganancia por unidad</div>
+                    <div className="text-2xl font-bold text-gray-900">
+                      ${formatCurrency(parseLocaleNumber(productPrice) - parseLocaleNumber(productCost))}
+                    </div>
+                    <div className="text-sm text-green-600 font-medium mt-1">
+                      {parseLocaleNumber(productPrice) > 0
+                        ? `${(((parseLocaleNumber(productPrice) - parseLocaleNumber(productCost)) / parseLocaleNumber(productPrice)) * 100).toFixed(0)}% de margen`
+                        : '—'}
+                    </div>
+                  </div>
+                )}
+              </FormSection>
+
+              <FormSection>
+                <div className="space-y-2">
+                  <Label>Cantidad disponible</Label>
+                  <Input
+                    type="text"
+                    inputMode="numeric"
+                    placeholder="0"
+                    value={productStock}
+                    onChange={(e) => setProductStock(e.target.value)}
+                    className="h-12"
+                  />
+                </div>
+              </FormSection>
+
+              <FormSection>
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <Label htmlFor="show-in-virtual-catalog">Mostrar en catálogo virtual</Label>
+                    <p className="text-xs text-gray-500 mt-1 leading-snug">
+                      Encendido por defecto. Si lo apagas, este producto no se verá al compartir el catálogo, tenga o no stock.
+                    </p>
+                  </div>
+                  <Switch
+                    id="show-in-virtual-catalog"
+                    checked={showInVirtualCatalog}
+                    onCheckedChange={setShowInVirtualCatalog}
+                    className="mt-0.5 shrink-0"
+                  />
+                </div>
+              </FormSection>
             </div>
           </ScrollArea>
 

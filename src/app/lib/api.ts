@@ -331,6 +331,7 @@ export interface CreateProductData {
   stock?: number;
   category?: string;
   image?: string;
+  showInVirtualCatalog?: boolean;
 }
 
 export async function createProduct(data: CreateProductData) {
@@ -348,6 +349,7 @@ export async function createProduct(data: CreateProductData) {
     stock: data.stock || 0,
     category: data.category || 'Otros',
     image: data.image,
+    showInVirtualCatalog: data.showInVirtualCatalog !== false,
   });
 
   return {

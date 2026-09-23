@@ -10,6 +10,8 @@ export interface Product {
   stock: number;
   category: string;
   image?: string;
+  /** Si es false, no aparece en el catálogo virtual compartido. Default true. */
+  showInVirtualCatalog?: boolean;
 }
 
 export interface CartItem {

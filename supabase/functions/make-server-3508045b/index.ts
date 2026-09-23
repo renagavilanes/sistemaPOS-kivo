@@ -2711,6 +2711,7 @@ function mapProductRow(p: any) {
     barcode: p.barcode ?? null,
     description: p.description ?? null,
     isActive: p.is_active ?? true,
+    showInVirtualCatalog: p.show_in_virtual_catalog !== false,
     createdAt: p.created_at,
     updatedAt: p.updated_at,
   };
@@ -2760,6 +2761,8 @@ app.get("/make-server-3508045b/public/catalog/:slug", async (c) => {
 
     const publicProducts: any[] = [];
     for (const p of productsRaw as any[]) {
+      if (p?.show_in_virtual_catalog === false) continue;
+
       const isActive = p?.is_active !== false;
       if (!isActive) continue;
 
@@ -2930,7 +2933,7 @@ app.post("/make-server-3508045b/products", async (c) => {
     }
 
     const body = await c.req.json();
-    const { name, price, cost, stock, category, image, barcode, description, isActive } = body;
+    const { name, price, cost, stock, category, image, barcode, description, isActive, showInVirtualCatalog } = body;
 
     if (!name || price === undefined) {
       return c.json({ error: 'Name and price are required' }, 400);
@@ -2948,6 +2951,7 @@ app.post("/make-server-3508045b/products", async (c) => {
       barcode,
       description,
       is_active: isActive,
+      show_in_virtual_catalog: showInVirtualCatalog !== false,
     });
 
     return c.json({
@@ -2982,6 +2986,8 @@ app.patch("/make-server-3508045b/products/:id", async (c) => {
     if (body.barcode !== undefined) updates.barcode = body.barcode;
     if (body.description !== undefined) updates.description = body.description;
     if (body.isActive !== undefined) updates.is_active = body.isActive;
+    if (body.showInVirtualCatalog !== undefined) updates.show_in_virtual_catalog = body.showInVirtualCatalog !== false;
+    if (body.show_in_virtual_catalog !== undefined) updates.show_in_virtual_catalog = body.show_in_virtual_catalog !== false;
 
     const product = await dbProducts.updateProduct(id, businessId, updates as any);
     return c.json({ success: true, product: mapProductRow(product) });

@@ -8,7 +8,7 @@ const supabase = createClient(
 
 /** Sin `image` ni `description` — evita respuestas de varios MB (base64 en image / textos largos). */
 const PRODUCT_LIST_COLUMNS =
-  'id, business_id, name, price, cost, stock, category, barcode, is_active, created_at, updated_at';
+  'id, business_id, name, price, cost, stock, category, barcode, is_active, show_in_virtual_catalog, created_at, updated_at';
 
 // Get all products for a business
 // NOTE: The 'products' table does NOT have an 'active' column — do not filter by it.
@@ -64,6 +64,7 @@ export async function createProduct(businessId: string, productData: {
   description?: string;
   barcode?: string;
   is_active?: boolean;
+  show_in_virtual_catalog?: boolean;
 }) {
   const insert: Record<string, unknown> = {
     business_id: businessId,
@@ -77,6 +78,9 @@ export async function createProduct(businessId: string, productData: {
   };
   if (productData.barcode !== undefined) insert.barcode = productData.barcode || null;
   if (productData.is_active !== undefined) insert.is_active = productData.is_active;
+  if (productData.show_in_virtual_catalog !== undefined) {
+    insert.show_in_virtual_catalog = productData.show_in_virtual_catalog;
+  }
 
   const { data, error } = await supabase
     .from('products')
@@ -100,6 +104,7 @@ export async function updateProduct(productId: string, businessId: string, updat
   description?: string;
   barcode?: string | null;
   is_active?: boolean;
+  show_in_virtual_catalog?: boolean;
   updated_at?: string;
 }) {
   const { data, error } = await supabase

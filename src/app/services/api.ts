@@ -53,6 +53,7 @@ export interface Product {
   barcode?: string;
   description?: string;
   isActive?: boolean;
+  showInVirtualCatalog?: boolean;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -140,7 +141,7 @@ export interface Expense {
 // ==================== PRODUCTS ====================
 
 const PRODUCT_LIST_SELECT =
-  'id, business_id, name, price, cost, stock, category, barcode, is_active, created_at, updated_at';
+  'id, business_id, name, price, cost, stock, category, barcode, is_active, show_in_virtual_catalog, created_at, updated_at';
 
 function mapProductFromApi(p: any): Product {
   return {
@@ -155,6 +156,7 @@ function mapProductFromApi(p: any): Product {
     barcode: p.barcode,
     description: p.description,
     isActive: p.is_active ?? p.isActive ?? true,
+    showInVirtualCatalog: p.show_in_virtual_catalog ?? p.showInVirtualCatalog ?? true,
     createdAt: p.created_at ?? p.createdAt,
     updatedAt: p.updated_at ?? p.updatedAt,
   };
@@ -286,6 +288,7 @@ export async function createProduct(businessId: string, product: Omit<Product, '
         barcode: product.barcode,
         description: product.description,
         isActive: product.isActive,
+        showInVirtualCatalog: product.showInVirtualCatalog,
       }),
     },
   );
