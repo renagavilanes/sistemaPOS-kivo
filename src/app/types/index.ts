@@ -78,6 +78,10 @@ export interface MovementsPermissions {
   export?: boolean;
   reports?: boolean;
   cancel?: boolean;   // Legado: mismo efecto que delete
+  cashOpen?: boolean;
+  cashClose?: boolean;
+  cashEdit?: boolean;
+  cashDelete?: boolean;
 }
 
 export interface ReportsPermissions {

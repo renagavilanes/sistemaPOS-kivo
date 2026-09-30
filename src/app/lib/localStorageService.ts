@@ -451,7 +451,7 @@ const ADMIN_PERMISSIONS = {
   sales: { create: true, view: true, edit: true, cancel: true },
   expenses: { create: true, view: true, edit: true, cancel: true },
   products: { create: true, view: true, edit: true, delete: true },
-  movements: { view: true, viewScope: 'all', edit: true, editScope: 'all', delete: true, deleteScope: 'all', export: true, reports: true, cancel: true },
+  movements: { view: true, viewScope: 'all', edit: true, editScope: 'all', delete: true, deleteScope: 'all', export: true, reports: true, cancel: true, cashOpen: true, cashClose: true, cashEdit: true, cashDelete: true },
   reports: { view: true, export: true },
   employees: { view: true, create: true, edit: true, delete: true },
   settings: { access: true }

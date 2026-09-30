@@ -73,6 +73,10 @@ const getActionLabel = (action: string) => {
     export: 'Exportar',
     access: 'Acceder',
     createExpense: 'Crear Gasto',
+    cashOpen: 'Abrir caja',
+    cashClose: 'Cerrar caja',
+    cashEdit: 'Editar caja',
+    cashDelete: 'Eliminar caja',
   };
   return labels[action] || action;
 };
@@ -88,7 +92,7 @@ const ADMIN_PERMISSIONS = {
   sales: { create: true, view: true, edit: true, cancel: true, createExpense: true },
   expenses: { create: true, view: true, edit: true, cancel: true },
   products: { create: true, view: true, edit: true, delete: true },
-  movements: { view: true, viewScope: 'all', edit: true, editScope: 'all', delete: true, deleteScope: 'all', export: true, reports: true, cancel: true },
+  movements: { view: true, viewScope: 'all', edit: true, editScope: 'all', delete: true, deleteScope: 'all', export: true, reports: true, cancel: true, cashOpen: true, cashClose: true, cashEdit: true, cashDelete: true },
   reports: { view: true, export: true },
   employees: { view: true, create: true, edit: true, delete: true },
   settings: { access: true },
@@ -964,7 +968,7 @@ export default function EmployeesPage() {
                           {(moduleKey === 'sales'
                               ? (['create', 'edit', 'createExpense'] as const).map(k => [k, (modulePermissions as any)[k] ?? false] as [string, boolean])
                               : moduleKey === 'movements'
-                              ? (['view', 'edit', 'delete', 'export', 'reports'] as const).map(k => [k, k === 'delete'
+                              ? (['view', 'edit', 'delete', 'export', 'reports', 'cashOpen', 'cashClose', 'cashEdit', 'cashDelete'] as const).map(k => [k, k === 'delete'
                                   ? ((modulePermissions as any).delete ?? (modulePermissions as any).cancel ?? false)
                                   : ((modulePermissions as any)[k] ?? false)] as [string, boolean])
                               : moduleKey === 'contacts'
@@ -990,7 +994,7 @@ export default function EmployeesPage() {
                               const isSalesCreateExpense = moduleKey === 'sales' && actionKey === 'createExpense';
 
                               // Movimientos: edit, delete, export dependen de view
-                              const isMovementsDependant = moduleKey === 'movements' && (actionKey === 'edit' || actionKey === 'delete' || actionKey === 'export' || actionKey === 'reports');
+                              const isMovementsDependant = moduleKey === 'movements' && (actionKey === 'edit' || actionKey === 'delete' || actionKey === 'export' || actionKey === 'reports' || actionKey === 'cashOpen' || actionKey === 'cashClose' || actionKey === 'cashEdit' || actionKey === 'cashDelete');
 
                               // Contactos: create y edit dependen de view
                               const isContactsDependant = moduleKey === 'contacts' && (actionKey === 'create' || actionKey === 'edit');
@@ -1052,6 +1056,10 @@ export default function EmployeesPage() {
                                       ? 'Gráficas y totales solo de lo que figura a su nombre'
                                       : 'Gráficas y totales de todo el negocio';
                                   }
+                                  if (actionKey === 'cashOpen') return 'Puede abrir una caja y dejar el efectivo inicial';
+                                  if (actionKey === 'cashClose') return 'Puede contar el dinero y cerrar una caja abierta';
+                                  if (actionKey === 'cashEdit') return 'Puede corregir el efectivo y el comentario de una caja cerrada';
+                                  if (actionKey === 'cashDelete') return 'Puede eliminar un cierre. Las ventas y los gastos siguen en Movimientos';
                                 }
                                 if (moduleKey === 'contacts') {
                                   if (actionKey === 'view') return 'Acceso a la pantalla de contactos';
@@ -1099,9 +1107,12 @@ export default function EmployeesPage() {
                               return (
                                 <div
                                   key={actionKey}
-                                  className={`flex items-start justify-between gap-3 px-2 py-2 rounded ${isDisabled ? 'opacity-40' : 'hover:bg-gray-50'} ${moduleKey === 'movements' && actionKey === 'view' && actionValue ? 'bg-gray-50' : ''}`}
+                                  className={`flex items-start justify-between gap-3 px-2 py-2 rounded ${isDisabled ? 'opacity-40' : 'hover:bg-gray-50'} ${moduleKey === 'movements' && actionKey === 'view' && actionValue ? 'bg-gray-50' : ''} ${actionKey === 'cashOpen' ? 'mt-1 border-t border-gray-100 pt-3' : ''}`}
                                 >
                                   <div className="min-w-0">
+                                    {actionKey === 'cashOpen' && (
+                                      <p className="text-xs font-semibold text-gray-900 mb-2">Caja</p>
+                                    )}
                                     <span className="text-sm text-gray-700">
                                       {actionKey === 'reports' ? 'Reportes' : getActionLabel(actionKey)}
                                     </span>
@@ -1155,6 +1166,10 @@ export default function EmployeesPage() {
                                             cancel: newView ? (prev as any).movements?.cancel ?? (prev as any).movements?.delete ?? false : false,
                                             export: newView ? (prev as any).movements?.export ?? false : false,
                                             reports: newView ? (prev as any).movements?.reports ?? false : false,
+                                            cashOpen: newView ? (prev as any).movements?.cashOpen ?? false : false,
+                                            cashClose: newView ? (prev as any).movements?.cashClose ?? false : false,
+                                            cashEdit: newView ? (prev as any).movements?.cashEdit ?? false : false,
+                                            cashDelete: newView ? (prev as any).movements?.cashDelete ?? false : false,
                                           },
                                         }));
                                       } else if (moduleKey === 'contacts' && actionKey === 'view') {

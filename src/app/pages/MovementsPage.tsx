@@ -54,6 +54,8 @@ import { formatDate } from '../utils/date';
 import { saleItemUnitCost, saleItemsTotalCost, saleProfit } from '../utils/saleProfit';
 import { searchTextMatches } from '../utils/searchText';
 import { canTouchMovement, movementBelongsToUser, resolveMovementAccess } from '../lib/movementPermissions';
+import { CashSessionsPanel } from '../components/CashSessionsPanel';
+import { CajaIntroDialog } from '../components/CajaIntroDialog';
 import { PageHeader } from '../components/layout/PageHeader';
 import { SectionCard } from '../components/layout/SectionCard';
 import { BlurSensitive } from '../components/BlurSensitive';
@@ -118,6 +120,33 @@ const isDateInRange = (dateStr: string, filter: string, selectedDay: Date, weekS
       return true;
   }
 };
+
+function dateFilterBounds(opts: {
+  dateFilter: string;
+  selectedDay: Date;
+  weekStart: Date;
+  weekEnd: Date;
+  selectedMonth: number;
+  selectedYear: number;
+}): { start: Date; end: Date } | null {
+  switch (opts.dateFilter) {
+    case 'daily':
+      return { start: startOfDay(opts.selectedDay), end: endOfDay(opts.selectedDay) };
+    case 'weekly':
+    case 'custom':
+      return { start: startOfDay(opts.weekStart), end: endOfDay(opts.weekEnd) };
+    case 'monthly': {
+      const day = new Date(opts.selectedYear, opts.selectedMonth, 1);
+      return { start: startOfMonth(day), end: endOfMonth(day) };
+    }
+    case 'yearly': {
+      const day = new Date(opts.selectedYear, 0, 1);
+      return { start: startOfYear(day), end: endOfYear(day) };
+    }
+    default:
+      return null;
+  }
+}
 
 function movementsServerRange(opts: {
   dateFilter: string;
@@ -550,6 +579,7 @@ export default function MovementsPage() {
   );
   const canExportMovement = movementAccess.export;
   const canReportsMovement = movementAccess.reports;
+  const canUseCaja = movementAccess.cashOpen || movementAccess.cashClose || movementAccess.cashEdit || movementAccess.cashDelete;
   const canEditRow = useCallback(
     (movement: any) => canTouchMovement(
       movementAccess.edit,
@@ -813,6 +843,51 @@ export default function MovementsPage() {
   };
   
   const [typeFilter, setTypeFilter] = useState('sale');
+  const [sectionView, setSectionView] = useState<'movements' | 'registers'>('movements');
+  useEffect(() => {
+    if (!canUseCaja && sectionView === 'registers') setSectionView('movements');
+  }, [canUseCaja, sectionView]);
+  const [cajaIntroOpen, setCajaIntroOpen] = useState(false);
+  useEffect(() => {
+    if (sectionView !== 'registers' || !user?.id) return;
+    const key = `kivo_caja_intro_seen_${user.id}`;
+    try {
+      if (localStorage.getItem(key)) return;
+    } catch {
+      return;
+    }
+    setCajaIntroOpen(true);
+  }, [sectionView, user?.id]);
+  const dismissCajaIntro = (open: boolean) => {
+    if (open) return;
+    if (user?.id) {
+      try {
+        localStorage.setItem(`kivo_caja_intro_seen_${user.id}`, '1');
+      } catch {
+        /* el modal igual se cierra */
+      }
+    }
+    setCajaIntroOpen(false);
+  };
+  const [cajaEmployeeId, setCajaEmployeeId] = useState('');
+  const [cajaStatus, setCajaStatus] = useState<'all' | 'open' | 'match' | 'short' | 'over'>('all');
+  const [canOpenCaja, setCanOpenCaja] = useState(false);
+  const [openCajaSignal, setOpenCajaSignal] = useState(0);
+  const handleCanOpenCaja = useCallback((canOpen: boolean) => {
+    setCanOpenCaja(canOpen);
+  }, []);
+  const cajaPeople = useMemo(() => {
+    const list = employees
+      .filter((employee) => employee.userId && employee.is_active !== false && employee.isActive !== false)
+      .map((employee) => ({ userId: String(employee.userId), name: employee.name || 'Empleado' }));
+    if (user?.id && !list.some((person) => person.userId === user.id)) {
+      list.unshift({
+        userId: user.id,
+        name: employees.find((employee) => employee.userId === user.id)?.name || user.email || 'Tú',
+      });
+    }
+    return list;
+  }, [employees, user?.id, user?.email]);
   const [dateFilter, setDateFilter] = useState(() => readSavedMovementsDateFilter());
   const [searchTerm, setSearchTerm] = useState('');
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
@@ -823,6 +898,14 @@ export default function MovementsPage() {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [weekStart, setWeekStart] = useState(startOfWeek(new Date(), { weekStartsOn: 1 }));
   const [weekEnd, setWeekEnd] = useState(endOfWeek(new Date(), { weekStartsOn: 1 }));
+  const cajaRange = dateFilterBounds({
+    dateFilter,
+    selectedDay,
+    weekStart,
+    weekEnd,
+    selectedMonth,
+    selectedYear,
+  });
 
   useEffect(() => {
     if (!currentBusiness?.id) return;
@@ -2304,10 +2387,22 @@ export default function MovementsPage() {
                   </div>
 
                   <div className="flex gap-2">
-                    {canExportMovement && (
+                    {canExportMovement && sectionView !== 'registers' && (
                       <Button variant="outline" size="sm" onClick={exportToExcel}>
                         <Download className="w-4 h-4 mr-2" />
                         Exportar
+                      </Button>
+                    )}
+                    {sectionView === 'registers' && movementAccess.cashOpen && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setOpenCajaSignal((value) => value + 1)}
+                        disabled={!canOpenCaja}
+                        title={canOpenCaja ? undefined : 'Todos tienen una caja abierta'}
+                      >
+                        <Banknote className="w-4 h-4 mr-2" />
+                        Abrir caja
                       </Button>
                     )}
                     {canReportsMovement && (
@@ -2417,6 +2512,24 @@ export default function MovementsPage() {
               </>
             }
           />
+
+      {canUseCaja && (
+      <div className="hidden md:block px-4 sm:px-6 pt-4">
+        <Tabs value={sectionView} onValueChange={(value) => setSectionView(value as 'movements' | 'registers')}>
+          <TabsList className="w-full grid grid-cols-2 h-11 p-1 bg-gray-100 rounded-xl border border-gray-200">
+            <TabsTrigger value="movements" className="rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm">
+              Movimientos
+            </TabsTrigger>
+            <TabsTrigger value="registers" className="rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm">
+              Cajas
+              <span className="inline-flex items-center rounded-full bg-[#2F80FF] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-white">
+                Nuevo
+              </span>
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
+      </div>
+      )}
 
       {/* Date Selector - Mobile Horizontal Scroll */}
       <div className="md:hidden bg-[#272B36] border-b border-slate-700 px-2 sm:px-3 py-1.5 sm:py-2">
@@ -2566,7 +2679,7 @@ export default function MovementsPage() {
       <div className="hidden md:block px-4 sm:px-6 py-4">
         <SectionCard>
           <div className="flex flex-wrap items-center gap-3">
-            {/* Filter Button */}
+            {sectionView !== 'registers' && (
             <Button variant="outline" size="sm" onClick={openFilterSheet}>
               <Filter className="w-4 h-4 mr-2" />
               Filtrar
@@ -2576,6 +2689,7 @@ export default function MovementsPage() {
                 </Badge>
               )}
             </Button>
+            )}
 
             {/* Date Preset Filter */}
             <Select value={dateFilter} onValueChange={setDateFilter}>
@@ -2654,7 +2768,35 @@ export default function MovementsPage() {
               </PopoverContent>
             </Popover>
             
-            {/* Search */}
+            {sectionView === 'registers' ? (
+              <>
+              {movementAccess.viewScope === 'all' && (
+                <Select value={cajaEmployeeId || 'all'} onValueChange={(value) => setCajaEmployeeId(value === 'all' ? '' : value)}>
+                  <SelectTrigger className="w-[220px]">
+                    <SelectValue placeholder="Empleado" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">Todos los empleados</SelectItem>
+                    {cajaPeople.map((person) => (
+                      <SelectItem key={person.userId} value={person.userId}>{person.name}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              )}
+              <Select value={cajaStatus} onValueChange={(value) => setCajaStatus(value as 'all' | 'open' | 'match' | 'short' | 'over')}>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Estado" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">Todos los estados</SelectItem>
+                  <SelectItem value="open">Abierta</SelectItem>
+                  <SelectItem value="match">Cuadra</SelectItem>
+                  <SelectItem value="short">Faltante</SelectItem>
+                  <SelectItem value="over">Sobrante</SelectItem>
+                </SelectContent>
+              </Select>
+              </>
+            ) : (
             <div className="relative flex-1 min-w-[200px]">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
               <Input
@@ -2664,10 +2806,13 @@ export default function MovementsPage() {
                 className="pl-10"
               />
             </div>
+            )}
           </div>
         </SectionCard>
       </div>
 
+      {sectionView !== 'registers' && (
+      <>
       {/* Applied Filters Section - Desktop Only */}
       {activeFiltersCount > 0 && (
         <div className="hidden md:block px-4 sm:px-6 pb-4">
@@ -2812,6 +2957,8 @@ export default function MovementsPage() {
           </SectionCard>
         </div>
       </div>
+      </>
+      )}
 
       {/* Summary Cards - Mobile */}
       <div className="md:hidden px-4 py-3">
@@ -2847,7 +2994,26 @@ export default function MovementsPage() {
 
       {/* Tabs and Table */}
       <div className="flex-1 min-h-0 px-0 md:px-4 sm:px-6 pb-0 md:pb-4 overflow-hidden">
-        <Tabs value={typeFilter} onValueChange={setTypeFilter} className="h-full min-h-0 flex flex-col">
+        <div className={sectionView === 'registers' ? 'hidden md:flex h-full bg-white rounded-lg border border-gray-300/90 shadow-[var(--shadow-card)] flex-col overflow-hidden' : 'hidden'}>
+            <CashSessionsPanel
+              businessId={currentBusiness.id}
+              employees={employees}
+              currentUserId={user?.id ?? null}
+              currentUserName={employees.find((employee) => employee.userId === user?.id)?.name || user?.email || 'Tú'}
+              viewScope={movementAccess.viewScope}
+              canOpen={movementAccess.cashOpen}
+              canClose={movementAccess.cashClose}
+              canEdit={movementAccess.cashEdit}
+              canDelete={movementAccess.cashDelete}
+              openSignal={openCajaSignal}
+              onCanOpenChange={handleCanOpenCaja}
+              rangeStart={cajaRange?.start.toISOString() ?? null}
+              rangeEnd={cajaRange?.end.toISOString() ?? null}
+              employeeUserId={cajaEmployeeId || null}
+              statusFilter={cajaStatus}
+            />
+        </div>
+        <Tabs value={typeFilter} onValueChange={setTypeFilter} className={`h-full min-h-0 flex flex-col ${sectionView === 'registers' ? 'md:hidden' : ''}`}>
           {/* Tabs Header - Desktop */}
           <div className="hidden md:block bg-white rounded-t-lg border border-gray-300/90 shadow-[var(--shadow-card)] px-4 pt-4 pb-4 relative z-10">
             <TabsList className="w-full grid grid-cols-2 gap-2 p-2 bg-gray-100 h-auto">
@@ -4473,6 +4639,7 @@ export default function MovementsPage() {
         currentBusiness={currentBusiness}
         onSwitchBusiness={switchBusiness}
       />
+      <CajaIntroDialog open={cajaIntroOpen} onOpenChange={dismissCajaIntro} />
       </>
       )}
     </div>

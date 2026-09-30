@@ -9,6 +9,10 @@ export type MovementAccess = {
   deleteScope: MovementScope;
   export: boolean;
   reports: boolean;
+  cashOpen: boolean;
+  cashClose: boolean;
+  cashEdit: boolean;
+  cashDelete: boolean;
 };
 
 type BusinessAccess = {
@@ -54,6 +58,10 @@ export function resolveMovementAccess(business: BusinessAccess): MovementAccess 
       deleteScope: 'all',
       export: true,
       reports: true,
+      cashOpen: true,
+      cashClose: true,
+      cashEdit: true,
+      cashDelete: true,
     };
   }
 
@@ -74,6 +82,10 @@ export function resolveMovementAccess(business: BusinessAccess): MovementAccess 
     deleteScope,
     export: view && movements.export === true,
     reports: view && movements.reports === true,
+    cashOpen: view && movements.cashOpen === true,
+    cashClose: view && movements.cashClose === true,
+    cashEdit: view && movements.cashEdit === true,
+    cashDelete: view && movements.cashDelete === true,
   };
 }
 
