@@ -2380,13 +2380,33 @@ export default function MovementsPage() {
           <PageHeader
             desktop={
               <header className="bg-white border-b border-gray-300/80 px-4 sm:px-6 py-4 shadow-[var(--shadow-card)]">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div>
+                <div className="flex items-center justify-between gap-4">
+                  <div className="shrink-0">
                     <h1 className="text-2xl font-bold text-gray-900">Movimientos</h1>
                     <p className="text-sm text-gray-500 mt-1">Historial de ventas y gastos</p>
                   </div>
 
-                  <div className="flex gap-2">
+                  {canUseCaja && (
+                    <Tabs
+                      value={sectionView}
+                      onValueChange={(value) => setSectionView(value as 'movements' | 'registers')}
+                      className="min-w-0 flex-1"
+                    >
+                      <TabsList className="w-full grid grid-cols-2 h-11 p-1 bg-gray-100 rounded-xl border border-gray-200">
+                        <TabsTrigger value="movements" className="rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm">
+                          Movimientos
+                        </TabsTrigger>
+                        <TabsTrigger value="registers" className="rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm">
+                          Cajas
+                          <span className="inline-flex items-center rounded-full bg-[#2F80FF] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-white">
+                            Nuevo
+                          </span>
+                        </TabsTrigger>
+                      </TabsList>
+                    </Tabs>
+                  )}
+
+                  <div className="flex gap-2 shrink-0">
                     {canExportMovement && sectionView !== 'registers' && (
                       <Button variant="outline" size="sm" onClick={exportToExcel}>
                         <Download className="w-4 h-4 mr-2" />
@@ -2512,24 +2532,6 @@ export default function MovementsPage() {
               </>
             }
           />
-
-      {canUseCaja && (
-      <div className="hidden md:block px-4 sm:px-6 pt-4">
-        <Tabs value={sectionView} onValueChange={(value) => setSectionView(value as 'movements' | 'registers')}>
-          <TabsList className="w-full grid grid-cols-2 h-11 p-1 bg-gray-100 rounded-xl border border-gray-200">
-            <TabsTrigger value="movements" className="rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm">
-              Movimientos
-            </TabsTrigger>
-            <TabsTrigger value="registers" className="rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm">
-              Cajas
-              <span className="inline-flex items-center rounded-full bg-[#2F80FF] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-white">
-                Nuevo
-              </span>
-            </TabsTrigger>
-          </TabsList>
-        </Tabs>
-      </div>
-      )}
 
       {/* Date Selector - Mobile Horizontal Scroll */}
       <div className="md:hidden bg-[#272B36] border-b border-slate-700 px-2 sm:px-3 py-1.5 sm:py-2">
