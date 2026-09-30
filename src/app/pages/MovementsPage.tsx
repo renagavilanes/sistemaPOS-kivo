@@ -3015,9 +3015,9 @@ export default function MovementsPage() {
               statusFilter={cajaStatus}
             />
         </div>
-        <Tabs value={typeFilter} onValueChange={setTypeFilter} className={`h-full min-h-0 flex flex-col ${sectionView === 'registers' ? 'md:hidden' : ''}`}>
+        <Tabs value={typeFilter} onValueChange={setTypeFilter} className={`h-full min-h-0 flex flex-col md:gap-0 md:overflow-hidden md:rounded-lg md:border md:border-gray-300/90 md:bg-white md:shadow-[var(--shadow-card)] ${sectionView === 'registers' ? 'md:hidden' : ''}`}>
           {/* Tabs Header - Desktop */}
-          <div className="hidden md:block bg-white rounded-t-lg border border-gray-300/90 shadow-[var(--shadow-card)] px-4 pt-4 pb-4 relative z-10">
+          <div className="hidden md:block bg-white px-4 pt-4 pb-4 relative z-10">
             <TabsList className="w-full grid grid-cols-2 gap-2 p-2 bg-gray-100 h-auto">
               <TabsTrigger value="sale" className="data-[state=active]:bg-white data-[state=active]:shadow-sm">
                 Ventas
@@ -3049,7 +3049,7 @@ export default function MovementsPage() {
           </div>
 
           {/* Table Content */}
-          <div className="md:bg-white md:rounded-b-lg md:border md:border-gray-300/90 md:shadow-[var(--shadow-card)] flex-1 min-h-0 flex flex-col overflow-hidden">
+          <div className="flex-1 min-h-0 flex flex-col overflow-hidden">
             {/* Desktop Table */}
             <div className="hidden md:block overflow-y-auto overflow-x-hidden overscroll-contain flex-1 min-h-0 min-w-0">
               <table className="w-full table-fixed border-separate border-spacing-0">
