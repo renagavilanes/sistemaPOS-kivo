@@ -66,10 +66,18 @@ export interface ProductsPermissions {
   delete: boolean;    // Eliminar productos
 }
 
+export type MovementScope = 'own' | 'all';
+
 export interface MovementsPermissions {
   view: boolean;      // Ver historial de transacciones
+  viewScope?: MovementScope; // own = solo donde figura como vendedor
   edit: boolean;      // Ajustar/corregir transacciones
-  cancel: boolean;    // Anular transacciones
+  editScope?: MovementScope;
+  delete?: boolean;   // Eliminar ventas y gastos
+  deleteScope?: MovementScope;
+  export?: boolean;
+  reports?: boolean;
+  cancel?: boolean;   // Legado: mismo efecto que delete
 }
 
 export interface ReportsPermissions {

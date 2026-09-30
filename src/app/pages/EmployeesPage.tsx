@@ -11,7 +11,7 @@ import { ScrollArea } from '../components/ui/scroll-area';
 import { Switch } from '../components/ui/switch';
 import { Skeleton } from '../components/ui/skeleton';
 import { rolePermissions } from '../data/mockEmployees';
-import { Employee, EmployeeRole } from '../types';
+import { Employee, EmployeeRole, EmployeePermissions, MovementScope } from '../types';
 import { toast } from 'sonner';
 import { useScreenFx } from '../contexts/ScreenFxContext';
 import { useBusiness } from '../contexts/BusinessContext';
@@ -78,11 +78,17 @@ const getActionLabel = (action: string) => {
 };
 
 // Permisos completos para Admin
+function withMovementDefaults(permissions: EmployeePermissions): EmployeePermissions {
+  const movements = { ...(permissions?.movements || {}) } as EmployeePermissions['movements'];
+  if (movements.delete == null && movements.cancel != null) movements.delete = movements.cancel;
+  return { ...permissions, movements };
+}
+
 const ADMIN_PERMISSIONS = {
   sales: { create: true, view: true, edit: true, cancel: true, createExpense: true },
   expenses: { create: true, view: true, edit: true, cancel: true },
   products: { create: true, view: true, edit: true, delete: true },
-  movements: { view: true, edit: true, cancel: true },
+  movements: { view: true, viewScope: 'all', edit: true, editScope: 'all', delete: true, deleteScope: 'all', export: true, reports: true, cancel: true },
   reports: { view: true, export: true },
   employees: { view: true, create: true, edit: true, delete: true },
   settings: { access: true },
@@ -349,7 +355,7 @@ export default function EmployeesPage() {
     setEmployeePhone(employee.phone || '');
     setEmployeeRole(employee.role);
     setEmployeeIsActive(employee.isActive);
-    setCustomPermissions(employee.permissions);
+    setCustomPermissions(withMovementDefaults(employee.permissions));
     setCreateSheetOpen(true);
   };
 
@@ -429,6 +435,24 @@ export default function EmployeesPage() {
     
     setEmployeeRole(role);
     setCustomPermissions(permissions);
+  };
+
+  const setMovementScope = (action: 'view' | 'edit' | 'delete', scope: MovementScope) => {
+    setCustomPermissions(prev => {
+      const current = { ...((prev as any).movements || {}) };
+      if (action === 'view') {
+        current.viewScope = scope;
+        if (scope === 'own') {
+          current.editScope = 'own';
+          current.deleteScope = 'own';
+        }
+      } else if (action === 'edit') {
+        current.editScope = scope;
+      } else {
+        current.deleteScope = scope;
+      }
+      return { ...prev, movements: current };
+    });
   };
 
   const togglePermission = (key: keyof typeof customPermissions) => {
@@ -940,7 +964,9 @@ export default function EmployeesPage() {
                           {(moduleKey === 'sales'
                               ? (['create', 'edit', 'createExpense'] as const).map(k => [k, (modulePermissions as any)[k] ?? false] as [string, boolean])
                               : moduleKey === 'movements'
-                              ? (['view', 'edit', 'delete', 'export', 'reports'] as const).map(k => [k, (modulePermissions as any)[k] ?? false] as [string, boolean])
+                              ? (['view', 'edit', 'delete', 'export', 'reports'] as const).map(k => [k, k === 'delete'
+                                  ? ((modulePermissions as any).delete ?? (modulePermissions as any).cancel ?? false)
+                                  : ((modulePermissions as any)[k] ?? false)] as [string, boolean])
                               : moduleKey === 'contacts'
                               ? (['view', 'create', 'edit'] as const).map(k => [k, (modulePermissions as any)[k] ?? false] as [string, boolean])
                               : moduleKey === 'products'
@@ -985,11 +1011,47 @@ export default function EmployeesPage() {
                                 if (isSalesEdit) return 'Permite modificar el precio al vender';
                                 if (isSalesCreateExpense) return 'Permite registrar gastos desde ventas';
                                 if (moduleKey === 'movements') {
-                                  if (actionKey === 'view') return 'Acceso a la pantalla de movimientos';
-                                  if (actionKey === 'edit') return 'Puede cambiar fechas y datos del movimiento';
-                                  if (actionKey === 'delete') return 'Puede eliminar ventas y gastos registrados';
-                                  if (actionKey === 'export') return 'Puede descargar el historial de movimientos';
-                                  if (actionKey === 'reports') return 'Puede ver el panel de reportes y gráficas';
+                                  const mov = (customPermissions as any).movements || {};
+                                  const viewOn = mov.view === true;
+                                  const viewScope = viewOn && mov.viewScope === 'own' ? 'own' : 'all';
+                                  const editScope = viewScope === 'own' || mov.editScope === 'own' ? 'own' : 'all';
+                                  const deleteScope = viewScope === 'own' || mov.deleteScope === 'own' ? 'own' : 'all';
+                                  if (actionKey === 'view') {
+                                    if (!viewOn) return 'Acceso a la pantalla de movimientos';
+                                    return viewScope === 'own'
+                                      ? 'Entra y ve solo los movimientos donde figura como vendedor'
+                                      : 'Entra y ve todos los movimientos del negocio';
+                                  }
+                                  if (actionKey === 'edit') {
+                                    if (!viewOn || mov.edit !== true) return 'Puede cambiar fechas y datos del movimiento';
+                                    if (editScope === 'own') {
+                                      return viewScope === 'all'
+                                        ? 'Ve todos, pero solo cambia los que figuran a su nombre'
+                                        : 'Solo puede cambiar los que figuran a su nombre';
+                                    }
+                                    return 'Puede cambiar cualquier movimiento';
+                                  }
+                                  if (actionKey === 'delete') {
+                                    if (!viewOn || (mov.delete ?? mov.cancel) !== true) return 'Puede eliminar ventas y gastos registrados';
+                                    if (deleteScope === 'own') {
+                                      return viewScope === 'all'
+                                        ? 'Ve todos, pero solo elimina los que figuran a su nombre'
+                                        : 'Solo puede eliminar los que figuran a su nombre';
+                                    }
+                                    return 'Puede eliminar cualquier venta o gasto';
+                                  }
+                                  if (actionKey === 'export') {
+                                    if (mov.export !== true) return 'Puede descargar el historial de movimientos';
+                                    return viewScope === 'own'
+                                      ? 'Descarga solo los movimientos que puede ver'
+                                      : 'Descarga todo el historial del negocio';
+                                  }
+                                  if (actionKey === 'reports') {
+                                    if (mov.reports !== true) return 'Puede ver el panel de reportes y gráficas';
+                                    return viewScope === 'own'
+                                      ? 'Gráficas y totales solo de lo que figura a su nombre'
+                                      : 'Gráficas y totales de todo el negocio';
+                                  }
                                 }
                                 if (moduleKey === 'contacts') {
                                   if (actionKey === 'view') return 'Acceso a la pantalla de contactos';
@@ -1015,23 +1077,60 @@ export default function EmployeesPage() {
                                 return null;
                               };
                               const description = getDescription();
+                              const movPerms = (customPermissions as any).movements || {};
+                              const movViewScope: MovementScope = movPerms.view === true && movPerms.viewScope === 'own' ? 'own' : 'all';
+                              const movEditScope: MovementScope = movViewScope === 'own' || movPerms.editScope === 'own' ? 'own' : 'all';
+                              const movDeleteScope: MovementScope = movViewScope === 'own' || movPerms.deleteScope === 'own' ? 'own' : 'all';
+                              const movementScopeAction = moduleKey === 'movements' && actionValue && !isDisabled
+                                ? actionKey === 'view'
+                                  ? 'view'
+                                  : actionKey === 'edit' && movViewScope === 'all'
+                                    ? 'edit'
+                                    : actionKey === 'delete' && movViewScope === 'all'
+                                      ? 'delete'
+                                      : null
+                                : null;
+                              const movementScopeValue = movementScopeAction === 'view'
+                                ? movViewScope
+                                : movementScopeAction === 'edit'
+                                  ? movEditScope
+                                  : movDeleteScope;
 
                               return (
                                 <div
                                   key={actionKey}
-                                  className={`flex items-center justify-between px-2 py-2 rounded ${isDisabled ? 'opacity-40' : 'hover:bg-gray-50'}`}
+                                  className={`flex items-start justify-between gap-3 px-2 py-2 rounded ${isDisabled ? 'opacity-40' : 'hover:bg-gray-50'} ${moduleKey === 'movements' && actionKey === 'view' && actionValue ? 'bg-gray-50' : ''}`}
                                 >
-                                  <div>
+                                  <div className="min-w-0">
                                     <span className="text-sm text-gray-700">
                                       {actionKey === 'reports' ? 'Reportes' : getActionLabel(actionKey)}
                                     </span>
                                     {description && (
                                       <p className="text-xs text-gray-400 mt-0.5">{description}</p>
                                     )}
+                                    {movementScopeAction && (
+                                      <div className="flex flex-wrap gap-1.5 mt-2">
+                                        {(['own', 'all'] as MovementScope[]).map((scope) => (
+                                          <button
+                                            key={scope}
+                                            type="button"
+                                            onClick={() => setMovementScope(movementScopeAction, scope)}
+                                            className={`px-2.5 py-1 rounded-full text-xs border ${
+                                              movementScopeValue === scope
+                                                ? 'bg-gray-900 text-white border-gray-900'
+                                                : 'bg-white text-gray-600 border-gray-200'
+                                            }`}
+                                          >
+                                            {scope === 'own' ? 'Solo los que creó' : 'Todos'}
+                                          </button>
+                                        ))}
+                                      </div>
+                                    )}
                                   </div>
                                   <Switch
                                     checked={actionValue as boolean}
                                     disabled={isDisabled}
+                                    className="shrink-0 mt-0.5"
                                     onCheckedChange={() => {
                                       if (moduleKey === 'sales' && actionKey === 'create') {
                                         const newCreate = !(actionValue as boolean);
@@ -1052,7 +1151,8 @@ export default function EmployeesPage() {
                                             ...(prev as any).movements,
                                             view: newView,
                                             edit: newView ? (prev as any).movements?.edit ?? false : false,
-                                            delete: newView ? (prev as any).movements?.delete ?? false : false,
+                                            delete: newView ? (prev as any).movements?.delete ?? (prev as any).movements?.cancel ?? false : false,
+                                            cancel: newView ? (prev as any).movements?.cancel ?? (prev as any).movements?.delete ?? false : false,
                                             export: newView ? (prev as any).movements?.export ?? false : false,
                                             reports: newView ? (prev as any).movements?.reports ?? false : false,
                                           },
@@ -1100,6 +1200,16 @@ export default function EmployeesPage() {
                                             ...(prev as any).catalog,
                                             view: newView,
                                             edit: newView ? (prev as any).catalog?.edit ?? false : false,
+                                          },
+                                        }));
+                                      } else if (moduleKey === 'movements' && actionKey === 'delete') {
+                                        const next = !(actionValue as boolean);
+                                        setCustomPermissions(prev => ({
+                                          ...prev,
+                                          movements: {
+                                            ...(prev as any).movements,
+                                            delete: next,
+                                            cancel: next,
                                           },
                                         }));
                                       } else {

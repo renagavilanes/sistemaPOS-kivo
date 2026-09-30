@@ -53,6 +53,7 @@ import { formatCurrency } from '../utils/currency';
 import { formatDate } from '../utils/date';
 import { saleItemUnitCost, saleItemsTotalCost, saleProfit } from '../utils/saleProfit';
 import { searchTextMatches } from '../utils/searchText';
+import { canTouchMovement, movementBelongsToUser, resolveMovementAccess } from '../lib/movementPermissions';
 import { PageHeader } from '../components/layout/PageHeader';
 import { SectionCard } from '../components/layout/SectionCard';
 import { BlurSensitive } from '../components/BlurSensitive';
@@ -543,13 +544,32 @@ export default function MovementsPage() {
   const location = useLocation();
 
   // ── Permisos del usuario en movimientos ─────────────────────────────────
-  const isOwner = currentBusiness?.role === 'owner' || (currentBusiness?.permissions as any)?.all === true;
-  const movPerms = isOwner ? { view: true, edit: true, delete: true, export: true, reports: true } : ((currentBusiness?.permissions as any)?.movements || {});
-  const canEditMovement    = isOwner || (movPerms as any).edit    === true;
-  const canDeleteMovement  = isOwner || (movPerms as any).delete  === true;
-  const canExportMovement  = isOwner || (movPerms as any).export  === true;
-  const canReportsMovement = isOwner || (movPerms as any).reports === true;
-  const canSeeCostProfit   = canEditMovement;
+  const movementAccess = useMemo(
+    () => resolveMovementAccess(currentBusiness),
+    [currentBusiness],
+  );
+  const canExportMovement = movementAccess.export;
+  const canReportsMovement = movementAccess.reports;
+  const canEditRow = useCallback(
+    (movement: any) => canTouchMovement(
+      movementAccess.edit,
+      movementAccess.editScope,
+      movement,
+      user?.id,
+      currentBusiness?.id,
+    ),
+    [movementAccess.edit, movementAccess.editScope, user?.id, currentBusiness?.id],
+  );
+  const canDeleteRow = useCallback(
+    (movement: any) => canTouchMovement(
+      movementAccess.delete,
+      movementAccess.deleteScope,
+      movement,
+      user?.id,
+      currentBusiness?.id,
+    ),
+    [movementAccess.delete, movementAccess.deleteScope, user?.id, currentBusiness?.id],
+  );
   // ─────────────────────────────────────────────────────────────────────────
 
   // Local state for data
@@ -1556,17 +1576,23 @@ export default function MovementsPage() {
     return [movement];
   };
 
-  const filteredMovements = movements
+  const scopedMovements = !movementAccess.view
+    ? []
+    : movementAccess.viewScope === 'all'
+      ? movements
+      : movements.filter((movement) => movementBelongsToUser(movement, user?.id, currentBusiness?.id));
+
+  const filteredMovements = scopedMovements
     .filter((m) => passesMovementFilters(m, true))
     .flatMap((movement) => expandPartialPayments(movement));
 
   /** Excel: incluir ventas y gastos aunque el usuario filtre solo uno en la tabla */
-  const filteredMovementsForExport = movements
+  const filteredMovementsForExport = scopedMovements
     .filter((m) => passesMovementFilters(m, false))
     .flatMap((movement) => expandPartialPayments(movement));
 
   // Calculate totals - Apply ALL filters including search, payment methods, employees, clients, and suppliers
-  const allMovementsForStats = movements.filter((movement) => {
+  const allMovementsForStats = scopedMovements.filter((movement) => {
     const matchesSearch = searchTextMatches(movement.productConcept, searchTerm) ||
                          searchTextMatches(movement.id, searchTerm);
     const matchesDate = dateFilter === 'all' || isDateInRange(movement.date, dateFilter, selectedDay, weekStart, weekEnd, selectedMonth, selectedYear);
@@ -1729,7 +1755,7 @@ export default function MovementsPage() {
   // Edit Functions
   const openEditSheet = (movement?: any) => {
     const movementToEdit = movement || selectedMovement;
-    if (!movementToEdit) return;
+    if (!movementToEdit || !canEditRow(movementToEdit)) return;
     
     console.log('Opening edit sheet - Movement ID:', movementToEdit.id, 'Date:', movementToEdit.date);
     
@@ -1830,6 +1856,7 @@ export default function MovementsPage() {
   };
 
   const handleEditProducts = () => {
+    if (!selectedMovement || !canEditRow(selectedMovement)) return;
     // Guardar datos en localStorage para recuperarlos al volver
     localStorage.setItem('editingMovement', JSON.stringify({
       ...selectedMovement,
@@ -1855,7 +1882,7 @@ export default function MovementsPage() {
   };
 
   const saveEdit = async () => {
-    if (!selectedMovement || !currentBusiness?.id) return;
+    if (!selectedMovement || !currentBusiness?.id || !canEditRow(selectedMovement)) return;
     
     // Calculate new total from products
     const productsTotal = selectedMovement.products.reduce((sum, product) => {
@@ -2063,12 +2090,13 @@ export default function MovementsPage() {
 
   // Handle delete confirmation
   const handleDeleteClick = () => {
+    if (!selectedMovement || !canDeleteRow(selectedMovement)) return;
     setMovementToDelete(selectedMovement);
     setDeleteDialogOpen(true);
   };
 
   const confirmDelete = async () => {
-    if (!movementToDelete || !currentBusiness?.id || isDeleting) return;
+    if (!movementToDelete || !currentBusiness?.id || isDeleting || !canDeleteRow(movementToDelete)) return;
 
     const deletedId = movementToDelete.id;
     const deletedType = movementToDelete.type;
@@ -2958,7 +2986,7 @@ export default function MovementsPage() {
                             <span className="text-sm font-semibold text-gray-900">${formatCurrency(movement.total)}</span>
                             {!movement.isPartialPayment && movement.type === 'sale' && (
                               <BlurSensitive
-                                hidden={!canSeeCostProfit}
+                                hidden={!canEditRow(movement)}
                                 className="text-xs font-medium leading-tight"
                               >
                                 <span className={`text-xs font-medium leading-tight ${movement.profit >= 0 ? 'text-emerald-700' : 'text-rose-700'}`}>
@@ -3559,7 +3587,7 @@ export default function MovementsPage() {
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">Ganancia</span>
                       <BlurSensitive
-                        hidden={!canSeeCostProfit}
+                        hidden={!canEditRow(selectedMovement)}
                         className="text-sm font-bold"
                       >
                         <span className={`text-sm font-bold ${selectedMovement.profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
@@ -3645,13 +3673,13 @@ export default function MovementsPage() {
                 <Receipt className="w-5 h-5" />
               </Button>
 
-              {canEditMovement && (
+              {canEditRow(selectedMovement) && (
                 <Button variant="outline" size="lg" className="flex-1 h-12" onClick={openEditSheet}>
                   <Edit className="w-5 h-5 mr-2" />
                   Editar
                 </Button>
               )}
-              {canDeleteMovement && (
+              {canDeleteRow(selectedMovement) && (
                 <Button
                   variant="destructive"
                   size="lg"
