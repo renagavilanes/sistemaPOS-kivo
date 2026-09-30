@@ -122,6 +122,9 @@ export default function VirtualCatalogPublicPage() {
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('Todas');
   const categoryScrollerRef = useRef<HTMLDivElement>(null);
+  const catalogHeaderRef = useRef<HTMLDivElement>(null);
+  const [catalogHeaderHeight, setCatalogHeaderHeight] = useState(64);
+  const [categoriesOpen, setCategoriesOpen] = useState(true);
 
   const [deliveryType, setDeliveryType] = useState<DeliveryType>('pickup');
   const [customer, setCustomer] = useState<Record<string, string>>({
@@ -217,6 +220,42 @@ export default function VirtualCatalogPublicPage() {
     const active = root.querySelector('[data-active-category="true"]') as HTMLElement | null;
     active?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
   }, [selectedCategory]);
+
+  useEffect(() => {
+    const el = catalogHeaderRef.current;
+    if (!el) return;
+    const measure = () => setCatalogHeaderHeight(el.offsetHeight);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [data]);
+
+  useEffect(() => {
+    let lastY = window.scrollY;
+    let open = true;
+    let ignoreUntil = 0;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (performance.now() < ignoreUntil) {
+        lastY = y;
+        return;
+      }
+      const goingUp = y < lastY - 1;
+      const goingDown = y > lastY + 4;
+      let next = open;
+      if (y <= 8 || goingUp) next = true;
+      else if (goingDown) next = false;
+      if (next !== open) {
+        open = next;
+        ignoreUntil = performance.now() + 220;
+        setCategoriesOpen(next);
+      }
+      lastY = y;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const cartCount = cart.reduce((sum, l) => sum + l.quantity, 0);
   const subtotal = cart.reduce((sum, l) => sum + l.product.price * l.quantity, 0);
@@ -358,7 +397,7 @@ export default function VirtualCatalogPublicPage() {
   return (
     <div className="min-h-[100dvh] bg-gray-50">
       {/* Header */}
-      <div className="bg-[#272B36] border-b border-slate-700 sticky top-0 z-40 shadow-sm">
+      <div ref={catalogHeaderRef} className="bg-[#272B36] border-b border-slate-700 sticky top-0 z-40 shadow-sm">
         <div className="mx-auto w-full max-w-6xl px-4 py-3 sm:py-3.5">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-3 min-w-0">
@@ -410,14 +449,22 @@ export default function VirtualCatalogPublicPage() {
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:py-5 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start gap-4">
-        <div className="space-y-4 lg:order-1 min-w-0 overflow-x-clip">
-          <div className={`bg-white rounded-2xl border border-gray-200 p-4 min-w-0 ${mobileStep !== 'products' ? 'hidden lg:block' : ''}`}>
-            <div className="space-y-3 min-w-0">
-              <div className="space-y-2">
-                <Label>Buscar</Label>
-                <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Buscar producto..." className="h-10" />
-              </div>
-              {categories.length > 1 && (
+        <div className="space-y-4 lg:order-1 min-w-0">
+          <div
+            className={`sticky z-30 min-w-0 bg-gray-50 before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-4 before:bg-gray-50 sm:before:h-5 top-[calc(var(--catalog-header)+1rem)] sm:top-[calc(var(--catalog-header)+1.25rem)] ${mobileStep !== 'products' ? 'hidden lg:block' : ''}`}
+            style={{ ['--catalog-header' as string]: `${catalogHeaderHeight}px` }}
+          >
+            <div className="bg-white rounded-2xl border border-gray-200 p-4 min-w-0">
+            <div className="space-y-2 min-w-0">
+              <Label>Buscar</Label>
+              <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Buscar producto..." className="h-10" />
+            </div>
+            {categories.length > 1 && (
+              <div
+                className={`overflow-hidden transition-[max-height,margin-top,opacity] duration-200 ease-out ${
+                  categoriesOpen ? 'mt-3 max-h-28 opacity-100' : 'mt-0 max-h-0 opacity-0'
+                }`}
+              >
                 <div className="space-y-2 min-w-0">
                   <Label>Categorías</Label>
                   <div
@@ -439,7 +486,8 @@ export default function VirtualCatalogPublicPage() {
                     ))}
                   </div>
                 </div>
-              )}
+              </div>
+            )}
             </div>
           </div>
 
@@ -472,7 +520,7 @@ export default function VirtualCatalogPublicPage() {
                         className="h-full w-full object-cover object-center"
                       />
                     </div>
-                    <div className="sm:hidden relative h-[6.5rem] w-full shrink-0 overflow-hidden bg-gray-100">
+                    <div className="sm:hidden relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-gray-100">
                       <LazyProductImage
                         fillParent
                         productId={p.id}
