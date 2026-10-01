@@ -9,6 +9,7 @@ import {
   initialVoiceState,
   normalizeVoiceText,
   openingLine,
+  parsePayment,
   type VoiceDialogState,
   type VoicePaymentMethod,
   type VoiceStep,
@@ -190,12 +191,18 @@ export function VoiceSaleAgent({
     pendingRef.current = next;
     setLive(next);
     window.clearTimeout(pauseTimerRef.current);
-    if (!stable) return;
-    pauseTimerRef.current = window.setTimeout(() => {
+    const paying = stateRef.current.step === 'pay' && Boolean(parsePayment(next));
+    if (!stable && !paying) return;
+    const commit = () => {
       if (pendingRef.current.trim().length < 2) return;
       phraseStartRef.current = resultCountRef.current;
       commitHeard(pendingRef.current);
-    }, 800);
+    };
+    if (paying) {
+      commit();
+      return;
+    }
+    pauseTimerRef.current = window.setTimeout(commit, 800);
   };
 
   armRef.current = () => {
@@ -336,9 +343,9 @@ export function VoiceSaleAgent({
 
     if (turn.checkout) {
       setBusy(true);
+      speakRef.current(turn.say, 'close');
       try {
         await onCheckoutRef.current(turn.checkout.method);
-        speakRef.current(turn.say, 'close');
       } catch {
         speakRef.current('No pude registrar la venta. Dime otra vez cómo es el pago.', 'listen');
       } finally {
