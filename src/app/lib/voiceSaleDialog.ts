@@ -93,6 +93,26 @@ export function openingLine() {
   return '¿Qué vendemos hoy?';
 }
 
+/** El celular a veces manda la frase completa otra vez en cada palabra. Nos quedamos con la versión más larga. */
+export function collapseVoiceTranscript(parts: { text: string; final: boolean }[]) {
+  const finals = parts.map((part) => part.text.replace(/\s+/g, ' ').trim()).filter((text, index) => parts[index]?.final && text);
+  const interim = [...parts].reverse().find((part) => !part.final)?.text.replace(/\s+/g, ' ').trim() || '';
+  const kept = finals.filter((phrase, index) => {
+    const current = normalizeVoiceText(phrase);
+    return !finals.slice(index + 1).some((later) => {
+      const next = normalizeVoiceText(later);
+      return next === current || next.startsWith(current);
+    });
+  });
+  let text = kept.join(' ');
+  if (interim) {
+    const base = normalizeVoiceText(text);
+    const live = normalizeVoiceText(interim);
+    text = !base || live.startsWith(base) ? interim : `${text} ${interim}`;
+  }
+  return { text: text.replace(/\s+/g, ' ').trim(), stable: Boolean(text.trim()) && !interim };
+}
+
 function tokensOf(text: string) {
   return normalizeVoiceText(text)
     .split(' ')

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import {
+  collapseVoiceTranscript,
   handleVoiceTurn,
   initialVoiceState,
   matchCatalog,
@@ -282,6 +283,25 @@ describe('agente de voz para ventas', () => {
     const empty = handleVoiceTurn(initialVoiceState(), 'finaliza con efectivo', ctx());
     assert.equal(empty.checkout, undefined);
     assert.match(empty.say, /Todavía no hay productos/);
+  });
+
+  it('no repite la frase cuando el celular la manda creciendo', () => {
+    const growing = [
+      'añade',
+      'añade un',
+      'añade un adaptador',
+      'añade un adaptador de soporte para teléfono de $7',
+    ];
+    const phrase = collapseVoiceTranscript(growing.map((text) => ({ text, final: true })));
+    assert.equal(phrase.stable, true);
+    assert.equal(phrase.text, 'añade un adaptador de soporte para teléfono de $7');
+
+    const live = collapseVoiceTranscript([
+      { text: 'añade un adaptador', final: true },
+      { text: 'añade un adaptador de soporte', final: false },
+    ]);
+    assert.equal(live.stable, false);
+    assert.equal(live.text, 'añade un adaptador de soporte');
   });
 
   it('abre el pago en pantalla cuando la venta es a crédito', () => {

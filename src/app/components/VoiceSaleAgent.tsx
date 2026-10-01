@@ -4,6 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { CartItem, Product } from '../types';
 import { LazyProductImage } from './LazyProductImage';
 import {
+  collapseVoiceTranscript,
   handleVoiceTurn,
   initialVoiceState,
   normalizeVoiceText,
@@ -148,6 +149,8 @@ export function VoiceSaleAgent({
   const speakingRef = useRef(false);
   const onResultRef = useRef<(event: SpeechEvent) => void>(() => {});
   const recognitionRunningRef = useRef(false);
+  const phraseStartRef = useRef(0);
+  const resultCountRef = useRef(0);
   const introRef = useRef<'telling' | 'cta' | null>(null);
   const introPendingRef = useRef(false);
   introRef.current = introPhase;
@@ -180,16 +183,17 @@ export function VoiceSaleAgent({
     void consumeRef.current(clean);
   };
 
-  const queuePhrase = (chunk: string, finalChunk: boolean) => {
+  const queuePhrase = (text: string, stable: boolean) => {
     if (!acceptResultsRef.current) return;
-    const next = `${pendingRef.current} ${chunk}`.replace(/\s+/g, ' ').trim();
+    const next = text.replace(/\s+/g, ' ').trim();
     if (next.length < 2) return;
-    setLive(next);
-    if (!finalChunk) return;
     pendingRef.current = next;
+    setLive(next);
     window.clearTimeout(pauseTimerRef.current);
+    if (!stable) return;
     pauseTimerRef.current = window.setTimeout(() => {
       if (pendingRef.current.trim().length < 2) return;
+      phraseStartRef.current = resultCountRef.current;
       commitHeard(pendingRef.current);
     }, 800);
   };
@@ -356,6 +360,8 @@ export function VoiceSaleAgent({
     rec.interimResults = true;
     rec.onstart = () => {
       recognitionRunningRef.current = true;
+      phraseStartRef.current = 0;
+      resultCountRef.current = 0;
       acceptResultsRef.current = true;
       networkFailsRef.current = 0;
       setListening(true);
@@ -484,6 +490,8 @@ export function VoiceSaleAgent({
     acceptResultsRef.current = false;
     recognitionRunningRef.current = false;
     pendingRef.current = '';
+    phraseStartRef.current = 0;
+    resultCountRef.current = 0;
     window.clearTimeout(pauseTimerRef.current);
     try {
       recognitionRef.current?.abort();
@@ -504,15 +512,16 @@ export function VoiceSaleAgent({
 
   onResultRef.current = (event) => {
     if (!acceptResultsRef.current) return;
-    let interim = '';
-    let finalText = '';
-    for (let i = event.resultIndex; i < event.results.length; i += 1) {
-      const piece = String(event.results[i]?.[0]?.transcript || '');
-      if (event.results[i]?.isFinal) finalText += ` ${piece}`;
-      else interim += ` ${piece}`;
+    resultCountRef.current = event.results.length;
+    const parts = [];
+    for (let i = phraseStartRef.current; i < event.results.length; i += 1) {
+      parts.push({
+        text: String(event.results[i]?.[0]?.transcript || ''),
+        final: Boolean(event.results[i]?.isFinal),
+      });
     }
-    if (finalText.trim()) queuePhrase(finalText, true);
-    else if (interim.trim()) queuePhrase(interim, false);
+    const phrase = collapseVoiceTranscript(parts);
+    queuePhrase(phrase.text, phrase.stable);
   };
 
   const stepLabel =
