@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate, useOutlet } from 'react-router';
 import { Sidebar } from './Sidebar';
+import { VoiceAnnounceDialog } from './VoiceAnnounceDialog';
 import { ScreenFxProvider } from '../contexts/ScreenFxContext';
 import { useBusiness } from '../contexts/BusinessContext';
 import { canAccessPath, getHomePath } from '../lib/businessAccess';
@@ -25,6 +26,7 @@ export default function RootLayout() {
       <div className="lg:pl-16 xl:pl-[240px]" key={currentBusiness?.id ?? 'no-business'}>
         {outlet}
       </div>
+      <VoiceAnnounceDialog />
     </ScreenFxProvider>
   );
 }

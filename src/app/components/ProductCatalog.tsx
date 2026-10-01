@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Search, Package, Plus, Minus, X } from 'lucide-react';
 import { Product, CartItem } from '../types';
 import { Input } from './ui/input';
@@ -25,6 +25,10 @@ interface ProductCatalogProps {
   canEditPrice?: boolean; // Allows editing product price before adding to cart
   loading?: boolean;
   modeTabs?: ReactNode;
+  /** Producto recién mencionado por voz: la lista baja hasta esa ficha. */
+  focusProduct?: { id: string; token: number } | null;
+  /** Control a la derecha del buscador, por ejemplo el botón de voz. */
+  searchAction?: ReactNode;
 }
 
 export function ProductCatalog({
@@ -41,6 +45,8 @@ export function ProductCatalog({
   canEditPrice = false,
   loading = false,
   modeTabs,
+  focusProduct = null,
+  searchAction,
 }: ProductCatalogProps) {
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
@@ -80,6 +86,24 @@ export function ProductCatalog({
   };
 
   const [customPrices, setCustomPrices] = useState<Record<string, string>>({});
+  const catalogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!focusProduct?.id) return;
+    const id = focusProduct.id;
+    const frame = window.requestAnimationFrame(() => {
+      const root = catalogRef.current;
+      if (!root) return;
+      const card = root.querySelector<HTMLElement>(`[data-voice-product="${CSS.escape(id)}"]`);
+      const viewport = card?.closest<HTMLElement>('[data-slot="scroll-area-viewport"]');
+      if (!card || !viewport) return;
+      const cardRect = card.getBoundingClientRect();
+      const viewRect = viewport.getBoundingClientRect();
+      const top = viewport.scrollTop + (cardRect.top - viewRect.top) - (viewRect.height - cardRect.height) / 2;
+      viewport.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [focusProduct]);
 
   const getEffectivePrice = (product: Product): number => {
     if (!canEditPrice) return product.price;
@@ -95,15 +119,16 @@ export function ProductCatalog({
   };
 
   return (
-    <div className="flex flex-col h-full lg:bg-gray-50">
+    <div ref={catalogRef} className="flex flex-col h-full lg:bg-gray-50">
       {/* Search */}
-      <div className="p-4 border-b bg-white space-y-3">
+      <div className="relative z-20 p-4 border-b bg-white space-y-3">
         {modeTabs ? (
           <div className="hidden lg:flex justify-center">
             {modeTabs}
           </div>
         ) : null}
-        <div className="relative">
+        <div className="flex items-start gap-3">
+        <div className="relative min-w-0 flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
           <Input
             type="text"
@@ -135,6 +160,8 @@ export function ProductCatalog({
               <X className="h-4 w-4" />
             </button>
           ) : null}
+        </div>
+        {searchAction}
         </div>
       </div>
 
@@ -206,8 +233,13 @@ export function ProductCatalog({
             return (
               <div
                 key={product.id}
+                data-voice-product={product.id}
                 className={`border border-gray-200 rounded-lg overflow-hidden bg-white transition-all shadow-sm hover:shadow-md ${
-                  quantity > 0 ? 'ring-2 ring-blue-600' : ''
+                  focusProduct?.id === product.id
+                    ? 'ring-2 ring-emerald-500'
+                    : quantity > 0
+                      ? 'ring-2 ring-blue-600'
+                      : ''
                 }`}
               >
                 {/* Desktop view - clickable card */}

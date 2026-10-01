@@ -38,6 +38,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Label } from '../components/ui/label';
 import { useAuth } from '../contexts/AuthContext';
 import { useScreenFx } from '../contexts/ScreenFxContext';
+import { VoiceSaleAgent } from '../components/VoiceSaleAgent';
 
 export default function SalesPage() {
   const navigate = useNavigate();
@@ -55,6 +56,8 @@ export default function SalesPage() {
   const [productsLoading, setProductsLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('Todas');
   const [searchTerm, setSearchTerm] = useState('');
+  const [voiceFocus, setVoiceFocus] = useState<{ id: string; token: number } | null>(null);
+  const voiceFocusToken = useRef(0);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [paymentSheetOpen, setPaymentSheetOpen] = useState(false);
   const [expenseSheetOpen, setExpenseSheetOpen] = useState(false);
@@ -292,20 +295,20 @@ export default function SalesPage() {
     }
   };
 
+  const handleAddToCartQuantity = (product: Product, quantity: number) => {
+    const qty = Math.max(1, Math.floor(quantity));
+    setCartItems((prev) => {
+      const existingItem = prev.find((item) => item.product.id === product.id);
+      if (existingItem) {
+        const updatedItem = { ...existingItem, quantity: existingItem.quantity + qty };
+        return [updatedItem, ...prev.filter((item) => item.product.id !== product.id)];
+      }
+      return [{ product, quantity: qty, priceAtSale: product.price }, ...prev];
+    });
+  };
+
   const handleAddToCart = (product: Product) => {
-    const existingItem = cartItems.find(item => item.product.id === product.id);
-    
-    if (existingItem) {
-      const updatedItem = { ...existingItem, quantity: existingItem.quantity + 1 };
-      const otherItems = cartItems.filter(item => item.product.id !== product.id);
-      setCartItems([updatedItem, ...otherItems]);
-    } else {
-      setCartItems([{
-        product,
-        quantity: 1,
-        priceAtSale: product.price,
-      }, ...cartItems]);
-    }
+    handleAddToCartQuantity(product, 1);
   };
 
   const handleUpdateQuantity = (productId: string, quantity: number) => {
@@ -329,7 +332,7 @@ export default function SalesPage() {
   };
 
   const handleRemoveItem = (productId: string) => {
-    setCartItems(cartItems.filter(item => item.product.id !== productId));
+    setCartItems((items) => items.filter((item) => item.product.id !== productId));
   };
 
   const handleClearCart = () => {
@@ -578,6 +581,23 @@ export default function SalesPage() {
       toast.error('Error al registrar la venta');
       throw error;
     }
+  };
+
+  const handleVoiceCheckout = async (
+    method: 'Efectivo' | 'Tarjeta' | 'Transferencia' | 'Otros',
+  ) => {
+    if (isFreeSaleCheckout || cartItems.length === 0) {
+      throw new Error('El carrito está vacío');
+    }
+    const saleTotal = cartItems.reduce((sum, item) => sum + item.priceAtSale * item.quantity, 0);
+    await handleConfirmSale({
+      paymentType: 'pagada',
+      payments: [{ method, amount: saleTotal }],
+      client: null,
+      saleDate: new Date().toLocaleDateString('en-CA'),
+      receiptNote: '',
+      discount: { percent: 0, amount: 0 },
+    });
   };
 
   // Save expense
@@ -939,6 +959,7 @@ export default function SalesPage() {
               onCategoryChange={setSelectedCategory}
               searchTerm={searchTerm}
               onSearchChange={setSearchTerm}
+              focusProduct={voiceFocus}
               onAddToCart={handleAddToCart}
               categories={categories}
               cartItems={cartItems}
@@ -946,6 +967,31 @@ export default function SalesPage() {
               onUpdateQuantity={handleUpdateQuantity}
               canEditPrice={canEditPrice}
               modeTabs={saleModeTabs}
+              searchAction={activeTab === 'sale' && !isEditingMovement ? (
+                <VoiceSaleAgent
+                  products={products}
+                  cartItems={cartItems}
+                  totalLabel={formatCurrency(total)}
+                  onAdd={handleAddToCartQuantity}
+                  onFocusProduct={(productId) => {
+                    voiceFocusToken.current += 1;
+                    setSearchTerm('');
+                    setSelectedCategory('Todas');
+                    setVoiceFocus({ id: productId, token: voiceFocusToken.current });
+                  }}
+                  onCheckout={handleVoiceCheckout}
+                  onOpenPayment={() => {
+                    if (cartItems.length === 0) {
+                      toast.error('El carrito está vacío. Agrega al menos un producto.');
+                      return;
+                    }
+                    setPaymentSheetOpen(true);
+                  }}
+                  onClosePayment={() => setPaymentSheetOpen(false)}
+                  onRemove={handleRemoveItem}
+                  onClearCart={handleClearCart}
+                />
+              ) : null}
             />
           </div>
 
