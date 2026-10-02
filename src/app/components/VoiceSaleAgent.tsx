@@ -55,6 +55,12 @@ function recognitionCtor(): (new () => SpeechRec) | null {
   return host.SpeechRecognition || host.webkitSpeechRecognition || null;
 }
 
+/** Safari mantiene el micrófono abierto y tarda mucho en marcar la frase como terminada. */
+function safariSpeech() {
+  const ua = navigator.userAgent;
+  return /Safari/i.test(ua) && !/Chrome|Chromium|CriOS|Edg|OPR|FxiOS/i.test(ua);
+}
+
 function spanishVoice() {
   const voices = window.speechSynthesis?.getVoices?.() || [];
   const paulina = voices.find((voice) => voice.name.toLowerCase().startsWith('paulina') && voice.lang?.toLowerCase().startsWith('es'));
@@ -204,7 +210,8 @@ export function VoiceSaleAgent({
     }
     window.clearTimeout(pauseTimerRef.current);
     const paying = Boolean(paymentOnlyMethod(next)) || (stateRef.current.step === 'pay' && Boolean(parsePayment(next)));
-    if (!stable && !paying) return;
+    const safari = safariSpeech();
+    if (!stable && !paying && !safari) return;
     const commit = () => {
       if (pendingRef.current.trim().length < 2) return;
       phraseStartRef.current = resultCountRef.current;
@@ -214,7 +221,7 @@ export function VoiceSaleAgent({
       commit();
       return;
     }
-    pauseTimerRef.current = window.setTimeout(commit, 800);
+    pauseTimerRef.current = window.setTimeout(commit, safari ? 600 : 800);
   };
 
   armRef.current = () => {
@@ -292,10 +299,12 @@ export function VoiceSaleAgent({
     if (voice) utterance.voice = voice;
     utterance.rate = 1.4;
     let settled = false;
+    let keepAlive = 0;
     const done = () => {
       if (settled || generation !== speakGenRef.current) return;
       settled = true;
       window.clearTimeout(fallback);
+      window.clearInterval(keepAlive);
       finish();
     };
     const fallback = window.setTimeout(done, Math.min(9000, text.length * 75 + 1200));
@@ -305,8 +314,20 @@ export function VoiceSaleAgent({
       if (generation !== speakGenRef.current) return;
       synth.resume();
       synth.speak(utterance);
+      if (safariSpeech()) {
+        keepAlive = window.setInterval(() => {
+          if (generation !== speakGenRef.current || !synth.speaking) {
+            window.clearInterval(keepAlive);
+            return;
+          }
+          synth.resume();
+        }, 4000);
+      }
     };
-    if (synth.speaking || synth.pending) {
+    if (safariSpeech()) {
+      synth.cancel();
+      window.setTimeout(startSpeak, 50);
+    } else if (synth.speaking || synth.pending) {
       synth.cancel();
       window.setTimeout(startSpeak, 40);
     } else {
@@ -388,7 +409,7 @@ export function VoiceSaleAgent({
     if (!Ctor) return;
     const rec = new Ctor();
     rec.lang = 'es-ES';
-    rec.continuous = true;
+    rec.continuous = !safariSpeech();
     rec.interimResults = true;
     rec.onstart = () => {
       recognitionRunningRef.current = true;
@@ -439,7 +460,7 @@ export function VoiceSaleAgent({
         } catch {
           /* sigue abierto */
         }
-      }, 300);
+      }, safariSpeech() ? 80 : 300);
     };
     recognitionRef.current = rec;
 
