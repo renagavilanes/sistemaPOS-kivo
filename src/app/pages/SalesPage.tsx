@@ -337,6 +337,7 @@ export default function SalesPage() {
 
   const handleClearCart = () => {
     setCartItems([]);
+    setVoiceFocus(null);
   };
 
   const total = cartItems.reduce((sum, item) => sum + (item.priceAtSale * item.quantity), 0);
