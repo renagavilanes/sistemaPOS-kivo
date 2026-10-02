@@ -13,6 +13,7 @@ import * as dbEmployees from "./db_employees.tsx";
 import { createEmployeeV3 } from "./employee_creation_v3.tsx";
 import { registerAdminRoutes } from "./admin_routes.tsx";
 import { restoreProductStockOnSaleDelete, applySaleItemsStockDelta } from "./sale_stock.ts";
+import { registerVoiceInterpretRoute } from "./voice_interpret.ts";
 
 const app = new Hono();
 
@@ -4741,6 +4742,8 @@ app.post("/make-server-3508045b/repair-employee-link", async (c) => {
 
 // ============================================================================
 // Super Admin: Edge Function dedicada (slug p. ej. swift-task en superadminEdgeSlug.ts; no duplicar aquí).
+
+registerVoiceInterpretRoute(app, supabaseAuth);
 
 // Error handler
 app.onError((err, c) => {

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import {
+  applyVoiceIntent,
   collapseVoiceTranscript,
   handleVoiceTurn,
   initialVoiceState,
@@ -8,6 +9,8 @@ import {
   parsePayment,
   parseProductRequest,
   splitProductClauses,
+  voiceFastTurn,
+  voiceTurnNeedsModel,
   type VoiceCatalogItem,
   type VoiceContext,
   type VoiceDialogState,
@@ -345,5 +348,44 @@ describe('agente de voz para ventas', () => {
     assert.equal(turn.end, true);
     assert.equal(parsePayment('tarjeta de credito'), 'Tarjeta');
     assert.equal(parsePayment('nequi'), 'Transferencia');
+  });
+
+  it('la IA agrega solo productos del inventario y el cobro sigue en las reglas', () => {
+    const state = initialVoiceState();
+    const added = applyVoiceIntent(state, {
+      action: 'add',
+      lines: [
+        { id: '8', quantity: 1 },
+        { id: 'no-existe', quantity: 2 },
+      ],
+    }, ctx());
+    assert.equal(added?.adds?.length, 1);
+    assert.equal(added?.adds?.[0].product.id, '8');
+    assert.match(added?.say || '', /Cámara GoPro Hero 8/);
+
+    const invented = applyVoiceIntent(state, { action: 'add', lines: [{ id: 'fantasma' }] }, ctx());
+    assert.equal(invented, null);
+
+    const priced = ctx([{ productId: 'f', quantity: 1, name: 'Filtro GoPro', price: 10 }], '10');
+    const answer = applyVoiceIntent(state, { action: 'answer', say: 'El filtro cuesta $10.' }, priced);
+    assert.equal(answer?.add, undefined);
+    assert.match(answer?.say || '', /filtro/);
+
+    const fakeSale = applyVoiceIntent(state, { action: 'answer', say: 'La venta ha sido registrada.' }, priced);
+    assert.equal(fakeSale, null);
+
+    assert.equal(voiceFastTurn(state, 'efectivo', priced)?.checkout?.method, 'Efectivo');
+    const known = handleVoiceTurn(state, 'camara gopro 8', ctx());
+    assert.equal(voiceTurnNeedsModel(known), false);
+    const missed = handleVoiceTurn(state, 'un patinete rojo', ctx());
+    assert.equal(voiceTurnNeedsModel(missed), true);
+    assert.equal(voiceTurnNeedsModel(voiceFastTurn(state, 'finaliza la venta', priced)!), false);
+    const paid = applyVoiceIntent(
+      { step: 'more', options: [], pendingQuantity: 1 },
+      { action: 'pay', method: 'Transferencia', lines: [{ id: '9', quantity: 1 }] },
+      ctx([{ productId: '8', quantity: 1, name: 'Cámara GoPro Hero 8', price: 450 }], '$450'),
+    );
+    assert.equal(paid?.checkout?.method, 'Transferencia');
+    assert.equal(paid?.adds?.[0].product.id, '9');
   });
 });

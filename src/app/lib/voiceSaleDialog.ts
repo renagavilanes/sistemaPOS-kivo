@@ -927,11 +927,29 @@ function pickOption(raw: string, options: VoiceCatalogItem[]) {
   return null;
 }
 
-export function handleVoiceTurn(state: VoiceDialogState, raw: string, context: VoiceContext): VoiceTurn {
-  const text = normalizeVoiceText(raw);
-  if (!text) {
-    return keep(state, 'No te escuché. Repite, por favor.');
+/** El bot ya resolvió la frase. La IA solo entra si no halló el producto o no entendió la pregunta. */
+export function voiceTurnNeedsModel(turn: VoiceTurn): boolean {
+  if (
+    turn.add
+    || turn.adds?.length
+    || turn.removes?.length
+    || turn.clearCart
+    || turn.checkout
+    || turn.openPaymentSheet
+    || turn.closePaymentSheet
+    || turn.end
+    || turn.step === 'choose'
+  ) {
+    return false;
   }
+  const say = normalizeVoiceText(turn.say);
+  return say.startsWith('no halle') || say === 'dime el nombre del producto' || say.startsWith('puedes decir efectivo');
+}
+
+/** Cobro, cierre y cancelación. No pasa por la IA: tiene que responder al momento. */
+export function voiceFastTurn(state: VoiceDialogState, raw: string, context: VoiceContext): VoiceTurn | null {
+  const text = normalizeVoiceText(raw);
+  if (!text) return keep(state, 'No te escuché. Repite, por favor.');
   if (isStop(text)) {
     return keep(state, 'Detuve el asistente. El carrito se queda como está.', { end: true });
   }
@@ -939,18 +957,224 @@ export function handleVoiceTurn(state: VoiceDialogState, raw: string, context: V
 
   const bundled = bundledPayment(text);
   if (bundled) {
-    if (!cartHasItems(context)) {
-      return keep(state, 'Todavía no hay productos. Dime cuál agrego.');
-    }
+    if (!cartHasItems(context)) return keep(state, 'Todavía no hay productos. Dime cuál agrego.');
     return completeSale(state, context, bundled);
   }
 
-  if (cartHasItems(context) && isFinish(text)) {
-    return goPay(state, context);
-  }
+  if (cartHasItems(context) && isFinish(text)) return goPay(state, context);
 
   const onlyMethod = cartHasItems(context) && state.step !== 'pay' ? paymentOnlyMethod(text) : null;
   if (onlyMethod) return completeSale(state, context, onlyMethod);
+
+  if (state.step === 'pay') {
+    const method = parsePayment(text);
+    if (method === 'credito') {
+      return keep(state, 'Para vender a crédito hay que elegir el cliente. Te abro la pantalla de pago.', {
+        openPaymentSheet: true,
+        end: true,
+      });
+    }
+    if (method) {
+      if (!cartHasItems(context)) {
+        return {
+          step: 'collect',
+          options: [],
+          pendingQuantity: 1,
+          say: 'El carrito está vacío. Dime primero el producto.',
+          closePaymentSheet: true,
+        };
+      }
+      return keep(state, 'Ok, la venta ha sido registrada.', { checkout: { method } });
+    }
+  }
+
+  return null;
+}
+
+export type VoiceIntentAction =
+  | 'add'
+  | 'remove'
+  | 'clear'
+  | 'finish'
+  | 'pay'
+  | 'skip'
+  | 'cancel'
+  | 'resume'
+  | 'answer'
+  | 'choose';
+
+export type VoiceIntent = {
+  action: VoiceIntentAction;
+  lines?: { id: string; quantity?: number }[];
+  removeIds?: string[];
+  option?: number;
+  method?: string;
+  say?: string;
+};
+
+function parseMoneyLabel(label: string): number | null {
+  const raw = String(label || '').replace(/[^\d.,-]/g, '');
+  if (!raw) return null;
+  const value = raw.includes(',') && raw.includes('.')
+    ? Number(raw.replace(/\./g, '').replace(',', '.'))
+    : raw.includes(',')
+      ? Number(raw.replace(',', '.'))
+      : Number(raw);
+  return Number.isFinite(value) ? value : null;
+}
+
+function moneyLabel(value: number) {
+  const formatted = (Math.round(value * 100) / 100).toFixed(2);
+  const [integer, decimal] = formatted.split('.');
+  const integerWithDots = integer.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  const shown = decimal === '00' ? integerWithDots : `${integerWithDots},${decimal}`;
+  return `$${shown}`;
+}
+
+function labelPlus(totalLabel: string, extra: number) {
+  if (!extra) return totalLabel;
+  const base = parseMoneyLabel(totalLabel);
+  if (base == null) return totalLabel;
+  return moneyLabel(base + extra);
+}
+
+function intentProducts(lines: { id: string; quantity?: number }[] | undefined, catalog: VoiceCatalogItem[]) {
+  const picked: { product: VoiceCatalogItem; quantity: number }[] = [];
+  for (const line of lines || []) {
+    const product = catalog.find((item) => item.id === line.id);
+    if (!product || picked.some((item) => item.product.id === product.id)) continue;
+    const quantity = Math.min(20, Math.max(1, Math.round(Number(line.quantity) || 1)));
+    picked.push({ product, quantity });
+  }
+  return picked;
+}
+
+function intentMethod(raw: string | undefined): VoicePaymentMethod | 'credito' | null {
+  const text = normalizeVoiceText(raw || '');
+  if (text === 'efectivo') return 'Efectivo';
+  if (text === 'tarjeta') return 'Tarjeta';
+  if (text === 'transferencia') return 'Transferencia';
+  if (text === 'otros' || text === 'otro') return 'Otros';
+  if (text === 'credito') return 'credito';
+  return parsePayment(text);
+}
+
+function spokenAnswer(raw: string | undefined) {
+  const text = String(raw || '').replace(/\s+/g, ' ').trim();
+  if (text.length < 2 || text.length > 240) return null;
+  if (/https?:|<\w|[{}]/.test(text)) return null;
+  if (/registrad/.test(normalizeVoiceText(text))) return null;
+  return text;
+}
+
+function withAdds(
+  turn: VoiceTurn,
+  lines: { product: VoiceCatalogItem; quantity: number }[],
+): VoiceTurn {
+  if (!lines.length) return turn;
+  return { ...turn, add: lines[0], adds: lines };
+}
+
+/** Convierte la orden de la IA en la misma acción del bot. Si la orden no sirve, devuelve null. */
+export function applyVoiceIntent(
+  state: VoiceDialogState,
+  intent: VoiceIntent,
+  context: VoiceContext,
+): VoiceTurn | null {
+  const action = intent?.action;
+  if (action === 'cancel') return abortSale();
+  if (action === 'resume') return resumeAdding();
+  if (action === 'clear') {
+    return {
+      step: 'collect',
+      options: [],
+      pendingQuantity: 1,
+      say: 'Vacié el carrito.',
+      clearCart: true,
+      closePaymentSheet: true,
+    };
+  }
+
+  if (action === 'answer') {
+    const say = spokenAnswer(intent.say);
+    if (!say) return null;
+    return keep(state, say);
+  }
+
+  if (action === 'choose') {
+    const index = Math.round(Number(intent.option)) - 1;
+    const byId = intent.lines?.[0]?.id;
+    const picked = state.options[index] || state.options.find((item) => item.id === byId);
+    if (!picked) return null;
+    if (state.chooseAction === 'remove') return removalTurn([picked], context, 'more');
+    return addProduct(picked, state.pendingQuantity || 1);
+  }
+
+  if (action === 'skip') {
+    if (!cartHasItems(context)) {
+      return {
+        step: 'collect',
+        options: [],
+        pendingQuantity: 1,
+        say: 'De acuerdo. Dime el producto otra vez.',
+      };
+    }
+    return {
+      step: 'more',
+      options: [],
+      pendingQuantity: 1,
+      say: 'De acuerdo. El carrito se queda así. Cuando quieras, finaliza la venta o dime el método de pago.',
+    };
+  }
+
+  if (action === 'add') {
+    const lines = intentProducts(intent.lines, context.catalog);
+    if (!lines.length) return null;
+    return addProducts(lines);
+  }
+
+  if (action === 'remove') {
+    const ids = new Set((intent.removeIds || []).filter(Boolean));
+    const removed = cartCatalog(context).filter((product) => ids.has(product.id));
+    if (!removed.length) return null;
+    return removalTurn(removed, context, state.step === 'pay' ? 'pay' : 'more');
+  }
+
+  const lines = intentProducts(intent.lines, context.catalog);
+  const extra = lines.reduce((sum, line) => sum + (Number(line.product.price) || 0) * line.quantity, 0);
+  const next: VoiceContext = {
+    ...context,
+    totalLabel: labelPlus(context.totalLabel, extra),
+    cart: [
+      ...context.cart,
+      ...lines.map((line) => ({
+        productId: line.product.id,
+        quantity: line.quantity,
+        name: line.product.name,
+        price: line.product.price,
+      })),
+    ],
+  };
+
+  if (action === 'finish') {
+    if (!cartHasItems(next)) return keep(state, 'Todavía no hay productos. Dime cuál agrego.');
+    return withAdds(goPay(state, next), lines);
+  }
+
+  if (action === 'pay') {
+    const method = intentMethod(intent.method);
+    if (!method) return null;
+    if (!cartHasItems(next)) return keep(state, 'Todavía no hay productos. Dime cuál agrego.');
+    return withAdds(completeSale(state, next, method), lines);
+  }
+
+  return null;
+}
+
+export function handleVoiceTurn(state: VoiceDialogState, raw: string, context: VoiceContext): VoiceTurn {
+  const fast = voiceFastTurn(state, raw, context);
+  if (fast) return fast;
+  const text = normalizeVoiceText(raw);
 
   if (cartHasItems(context) && !isFinish(text) && isRemoveCommand(text)) {
     return removeProducts(raw, context, state.step);
