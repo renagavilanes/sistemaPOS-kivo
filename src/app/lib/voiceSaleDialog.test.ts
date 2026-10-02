@@ -375,6 +375,15 @@ describe('agente de voz para ventas', () => {
     assert.equal(fakeSale, null);
 
     assert.equal(voiceFastTurn(state, 'efectivo', priced)?.checkout?.method, 'Efectivo');
+    const pricedCatalog = ctx();
+    pricedCatalog.catalog = pricedCatalog.catalog.map((item) => item.id === '8' ? { ...item, price: 450 } : item);
+    const quoted = handleVoiceTurn(state, 'cual es el precio de la camara gopro 8', pricedCatalog);
+    assert.equal(quoted.add, undefined);
+    assert.equal(quoted.adds, undefined);
+    assert.match(quoted.say, /cuesta \$450/);
+    const stillAdds = handleVoiceTurn(state, 'agrega la camara gopro 8', pricedCatalog);
+    assert.equal(stillAdds.adds?.[0].product.id, '8');
+
     const known = handleVoiceTurn(state, 'camara gopro 8', ctx());
     assert.equal(voiceTurnNeedsModel(known), false);
     const missed = handleVoiceTurn(state, 'un patinete rojo', ctx());

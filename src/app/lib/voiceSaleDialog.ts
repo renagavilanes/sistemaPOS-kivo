@@ -1171,10 +1171,48 @@ export function applyVoiceIntent(
   return null;
 }
 
+function isCatalogQuestion(text: string) {
+  if (/\b(agrega|agregar|agregue|agregame|anade|anada|anademe|mete|meteme|pon|ponme|ponle|suma|sumame|dame|registra|registrar|vende|vender)\b/.test(text)) {
+    return false;
+  }
+  return /\b(precio|cuesta|cuestan|vale|valen|cuanto sale|a como|a cuanto)\b/.test(text);
+}
+
+function questionQuery(raw: string) {
+  return normalizeVoiceText(raw)
+    .replace(/\b(cual|cuales|que|como|cuanto|cuanta|es|son|el|la|los|las|de|del|un|una|precio|cuesta|cuestan|vale|valen|sale|tiene|tienen|me|puedes|decir|dime|por favor|a)\b/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function answerCatalogQuestion(raw: string, context: VoiceContext, state: VoiceDialogState): VoiceTurn | null {
+  const text = normalizeVoiceText(raw);
+  if (!isCatalogQuestion(text)) return null;
+  const query = questionQuery(raw);
+  if (query.length < 2) return keep(state, 'Dime de qué producto quieres el precio.');
+  const match = matchCatalog(query, context.catalog);
+  if (match.kind === 'none') {
+    return keep(state, `No hallé en el inventario algo parecido a ${query}. Dime otra palabra del producto.`);
+  }
+  if (match.kind === 'many') {
+    const list = match.options.slice(0, 4).map((product) => {
+      const price = product.price == null ? '' : moneyLabel(Number(product.price));
+      return price ? `${product.name}, ${price}` : product.name;
+    }).join('. ');
+    return keep(state, `Hay varias. ${list}.`);
+  }
+  const product = match.options[0];
+  if (product.price == null) return keep(state, `Encontré ${product.name}, pero no tiene precio cargado.`);
+  return keep(state, `${product.name} cuesta ${moneyLabel(Number(product.price))}. Cuando quieras, dime que lo agregue.`);
+}
+
 export function handleVoiceTurn(state: VoiceDialogState, raw: string, context: VoiceContext): VoiceTurn {
   const fast = voiceFastTurn(state, raw, context);
   if (fast) return fast;
   const text = normalizeVoiceText(raw);
+
+  const asked = answerCatalogQuestion(raw, context, state);
+  if (asked) return asked;
 
   if (cartHasItems(context) && !isFinish(text) && isRemoveCommand(text)) {
     return removeProducts(raw, context, state.step);
