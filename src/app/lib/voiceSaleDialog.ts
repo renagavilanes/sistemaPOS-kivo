@@ -21,6 +21,8 @@ export type VoiceDialogState = {
   options: VoiceCatalogItem[];
   pendingQuantity: number;
   chooseAction?: 'add' | 'remove';
+  /** Producto del que acabamos de decir el precio. `null` lo olvida. */
+  quoted?: VoiceCatalogItem | null;
 };
 
 export type VoiceContext = {
@@ -43,6 +45,7 @@ export type VoiceTurn = {
   openPaymentSheet?: boolean;
   closePaymentSheet?: boolean;
   end?: boolean;
+  quoted?: VoiceCatalogItem | null;
 };
 
 const QUANTITY_WORDS: Record<string, number> = {
@@ -642,6 +645,7 @@ function abortSale(): VoiceTurn {
     clearCart: true,
     closePaymentSheet: true,
     end: true,
+    quoted: null,
   };
 }
 
@@ -1172,15 +1176,15 @@ export function applyVoiceIntent(
 }
 
 function isCatalogQuestion(text: string) {
-  if (/\b(agrega|agregar|agregue|agregame|anade|anada|anademe|mete|meteme|pon|ponme|ponle|suma|sumame|dame|registra|registrar|vende|vender)\b/.test(text)) {
+  if (/\b(agrega|agregar|agregue|agregame|agregalo|agregala|anade|anada|anademe|anadelo|anadela|mete|meteme|metelo|metela|pon|ponme|ponlo|ponla|ponle|suma|sumame|sumalo|sumala|dame|registra|registrar)\b/.test(text)) {
     return false;
   }
-  return /\b(precio|cuesta|cuestan|vale|valen|cuanto sale|a como|a cuanto)\b/.test(text);
+  return /\b(precio|cuesta|cuestan|vale|valen|cuanto sale|a como|a cuanto|a cuento|se vende|en cuanto)\b/.test(text);
 }
 
 function questionQuery(raw: string) {
   return normalizeVoiceText(raw)
-    .replace(/\b(cual|cuales|que|como|cuanto|cuanta|es|son|el|la|los|las|de|del|un|una|precio|cuesta|cuestan|vale|valen|sale|tiene|tienen|me|puedes|decir|dime|por favor|a)\b/g, ' ')
+    .replace(/\b(cual|cuales|que|como|cuanto|cuanta|cuento|es|son|el|la|los|las|de|del|un|una|precio|cuesta|cuestan|vale|valen|sale|tiene|tienen|me|puedes|decir|dime|por favor|a|se|vende|venden|esta|este|estan|esten)\b/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -1192,18 +1196,39 @@ function answerCatalogQuestion(raw: string, context: VoiceContext, state: VoiceD
   if (query.length < 2) return keep(state, 'Dime de qué producto quieres el precio.');
   const match = matchCatalog(query, context.catalog);
   if (match.kind === 'none') {
-    return keep(state, `No hallé en el inventario algo parecido a ${query}. Dime otra palabra del producto.`);
+    return { ...keep(state, `No hallé en el inventario algo parecido a ${query}. Dime otra palabra del producto.`), quoted: null };
   }
   if (match.kind === 'many') {
     const list = match.options.slice(0, 4).map((product) => {
       const price = product.price == null ? '' : moneyLabel(Number(product.price));
       return price ? `${product.name}, ${price}` : product.name;
     }).join('. ');
-    return keep(state, `Hay varias. ${list}.`);
+    return { ...keep(state, `Hay varias. ${list}.`), quoted: null };
   }
   const product = match.options[0];
-  if (product.price == null) return keep(state, `Encontré ${product.name}, pero no tiene precio cargado.`);
-  return keep(state, `${product.name} cuesta ${moneyLabel(Number(product.price))}. Cuando quieras, dime que lo agregue.`);
+  if (product.price == null) return { ...keep(state, `Encontré ${product.name}, pero no tiene precio cargado.`), quoted: null };
+  return {
+    ...keep(state, `${product.name} está en ${moneyLabel(Number(product.price))}.`),
+    quoted: product,
+  };
+}
+
+/** «Agrégalo», «ponlo» o «súmalo al carrito» mete el producto del que se acaba de decir el precio. */
+function quotedConfirm(text: string, quoted: VoiceCatalogItem | null | undefined): { product: VoiceCatalogItem; quantity: number } | null {
+  if (!quoted) return null;
+  if (isCatalogQuestion(text) || isRemoveCommand(text) || isFinish(text) || isAbort(text)) return null;
+  if (!/\b(ok|okay|si|sip|claro|dale|listo|agrega|agregar|agregue|agregalo|agregala|anade|anada|anadelo|anadela|pon|ponlo|ponla|suma|sumalo|sumala|mete|metelo|metela|ese|esa|eso|quiero|carrito)\b/.test(text)) {
+    return null;
+  }
+  const stripped = text
+    .replace(/\b(ok|okay|si|sip|claro|dale|listo|ya|entonces|bueno|por favor|porfa)\b/g, ' ')
+    .replace(/\b(agrega|agregar|agregue|agregame|agregalo|agregala|anade|anada|anademe|anadelo|anadela|mete|meteme|metelo|metela|pon|ponme|ponlo|ponla|ponle|suma|sumame|sumalo|sumala|dame|registra|ese|esa|eso|mismo|misma|este|esta|lo|la|al|el|un|una|carrito|quiero|por favor)\b/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const quantity = QUANTITY_WORDS[stripped] || (/^\d+$/.test(stripped) ? Number(stripped) : 0);
+  if (quantity >= 1 && quantity <= 20) return { product: quoted, quantity };
+  if (stripped.length >= 3) return null;
+  return { product: quoted, quantity: 1 };
 }
 
 export function handleVoiceTurn(state: VoiceDialogState, raw: string, context: VoiceContext): VoiceTurn {
@@ -1213,6 +1238,17 @@ export function handleVoiceTurn(state: VoiceDialogState, raw: string, context: V
 
   const asked = answerCatalogQuestion(raw, context, state);
   if (asked) return asked;
+
+  if (state.step !== 'choose') {
+    const confirmed = quotedConfirm(text, state.quoted);
+    if (confirmed) {
+      return {
+        ...addProduct(confirmed.product, confirmed.quantity),
+        quoted: null,
+        closePaymentSheet: state.step === 'pay',
+      };
+    }
+  }
 
   if (cartHasItems(context) && !isFinish(text) && isRemoveCommand(text)) {
     return removeProducts(raw, context, state.step);

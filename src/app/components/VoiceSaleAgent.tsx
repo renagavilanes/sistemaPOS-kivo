@@ -310,6 +310,7 @@ export function VoiceSaleAgent({
       options: turn.options,
       pendingQuantity: turn.pendingQuantity,
       chooseAction: turn.chooseAction,
+      quoted: turn.quoted === null ? undefined : (turn.quoted ?? stateRef.current.quoted),
     };
     setStep(turn.step);
     setHeard(utterance);

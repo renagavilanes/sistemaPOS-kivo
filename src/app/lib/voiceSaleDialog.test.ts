@@ -380,7 +380,38 @@ describe('agente de voz para ventas', () => {
     const quoted = handleVoiceTurn(state, 'cual es el precio de la camara gopro 8', pricedCatalog);
     assert.equal(quoted.add, undefined);
     assert.equal(quoted.adds, undefined);
-    assert.match(quoted.say, /cuesta \$450/);
+    assert.equal(quoted.quoted?.id, '8');
+    assert.match(quoted.say, /está en \$450/);
+
+    const confirmed = handleVoiceTurn(
+      { ...state, quoted: quoted.quoted },
+      'agregalo',
+      pricedCatalog,
+    );
+    assert.equal(confirmed.adds?.[0].product.id, '8');
+    assert.equal(confirmed.quoted, null);
+
+    const ponlo = handleVoiceTurn({ ...state, quoted: quoted.quoted }, 'ponlo', pricedCatalog);
+    assert.equal(ponlo.adds?.[0].product.id, '8');
+    const suma = handleVoiceTurn({ ...state, quoted: quoted.quoted }, 'suma al carrito', pricedCatalog);
+    assert.equal(suma.adds?.[0].product.id, '8');
+
+    const otherPrice = handleVoiceTurn(
+      { ...state, quoted: quoted.quoted },
+      'a cuanto se vende el filtro gopro',
+      { ...pricedCatalog, catalog: pricedCatalog.catalog.map((item) => item.id === 'f' ? { ...item, price: 12 } : item) },
+    );
+    assert.equal(otherPrice.add, undefined);
+    assert.equal(otherPrice.quoted?.id, 'f');
+    assert.match(otherPrice.say, /está en \$12/);
+
+    const otherAdd = handleVoiceTurn(
+      { ...state, quoted: quoted.quoted },
+      'agrega la bateria gopro',
+      pricedCatalog,
+    );
+    assert.equal(otherAdd.adds?.[0].product.id, 'b');
+
     const stillAdds = handleVoiceTurn(state, 'agrega la camara gopro 8', pricedCatalog);
     assert.equal(stillAdds.adds?.[0].product.id, '8');
 
