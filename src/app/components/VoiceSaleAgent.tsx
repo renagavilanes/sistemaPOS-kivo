@@ -138,7 +138,7 @@ export function VoiceSaleAgent({
   const onClearCartRef = useRef(onClearCart);
   const onFocusProductRef = useRef(onFocusProduct);
   const consumeRef = useRef<(utterance: string) => Promise<void>>(async () => {});
-  const speakRef = useRef<(text: string, next: 'listen' | 'stay' | 'close') => void>(() => {});
+  const speakRef = useRef<(text: string, next: 'listen' | 'stay' | 'close', immediateListen?: boolean) => void>(() => {});
   const armRef = useRef<() => void>(() => {});
   const speakGenRef = useRef(0);
   const wantListenRef = useRef(false);
@@ -191,6 +191,16 @@ export function VoiceSaleAgent({
     if (next.length < 2) return;
     pendingRef.current = next;
     setLive(next);
+    if (speakingRef.current && !isEcho(next, lastSaidRef.current)) {
+      speakGenRef.current += 1;
+      speakingRef.current = false;
+      pausedForSpeechRef.current = false;
+      try {
+        window.speechSynthesis?.cancel();
+      } catch {
+        /* sin voz */
+      }
+    }
     window.clearTimeout(pauseTimerRef.current);
     const paying = Boolean(paymentOnlyMethod(next)) || (stateRef.current.step === 'pay' && Boolean(parsePayment(next)));
     if (!stable && !paying) return;
@@ -223,22 +233,30 @@ export function VoiceSaleAgent({
     }
   };
 
-  speakRef.current = (text: string, next: 'listen' | 'stay' | 'close') => {
+  speakRef.current = (text: string, next: 'listen' | 'stay' | 'close', immediateListen = false) => {
     const generation = ++speakGenRef.current;
     lastSaidRef.current = text;
-    pausedForSpeechRef.current = next === 'listen';
     speakingRef.current = true;
-    wantListenRef.current = false;
-    acceptResultsRef.current = false;
-    if (next === 'listen') setListening(true);
-    else setListening(false);
+    pausedForSpeechRef.current = next === 'listen' && !immediateListen;
     setLive('');
     setSay(text);
     window.clearTimeout(pauseTimerRef.current);
-    try {
-      recognitionRef.current?.stop();
-    } catch {
-      /* aún no iniciado */
+
+    if (immediateListen && next === 'listen') {
+      wantListenRef.current = true;
+      acceptResultsRef.current = true;
+      setListening(true);
+      armRef.current();
+    } else {
+      wantListenRef.current = false;
+      acceptResultsRef.current = false;
+      if (next === 'listen') setListening(true);
+      else setListening(false);
+      try {
+        recognitionRef.current?.stop();
+      } catch {
+        /* aún no iniciado */
+      }
     }
 
     const finish = () => {
@@ -251,8 +269,9 @@ export function VoiceSaleAgent({
         setIntroText(VOICE_INTRO);
         setIntroPhase('cta');
       }
-      if (next === 'listen') armRef.current();
-      else if (next === 'close') {
+      if (next === 'listen') {
+        if (!immediateListen || !recognitionRunningRef.current) armRef.current();
+      } else if (next === 'close') {
         wantListenRef.current = false;
         setActive(false);
         setListening(false);
@@ -280,12 +299,17 @@ export function VoiceSaleAgent({
     const fallback = window.setTimeout(done, Math.min(9000, text.length * 75 + 1200));
     utterance.onend = done;
     utterance.onerror = done;
-    synth.cancel();
-    window.setTimeout(() => {
+    const startSpeak = () => {
       if (generation !== speakGenRef.current) return;
       synth.resume();
       synth.speak(utterance);
-    }, 60);
+    };
+    if (synth.speaking || synth.pending) {
+      synth.cancel();
+      window.setTimeout(startSpeak, 40);
+    } else {
+      startSpeak();
+    }
   };
 
   consumeRef.current = async (utterance: string) => {
@@ -472,7 +496,7 @@ export function VoiceSaleAgent({
         return;
       }
       setListening(true);
-      speakRef.current(openingLine(), 'listen');
+      speakRef.current(openingLine(), 'listen', true);
       return;
     }
     armRef.current();
@@ -485,7 +509,7 @@ export function VoiceSaleAgent({
     setIntroPhase(null);
     setIntroText('');
     setListening(true);
-    speakRef.current('¿Quieres vender?', 'listen');
+    speakRef.current('¿Quieres vender?', 'listen', true);
   };
 
   const stopSession = () => {
