@@ -55,7 +55,7 @@ function recognitionCtor(): (new () => SpeechRec) | null {
   return host.SpeechRecognition || host.webkitSpeechRecognition || null;
 }
 
-/** Safari mantiene el micrófono abierto y tarda mucho en marcar la frase como terminada. */
+/** Safari tarda en cerrar la frase. Se espera un silencio más largo, sin cortar a media oración. */
 function safariSpeech() {
   const ua = navigator.userAgent;
   return /Safari/i.test(ua) && !/Chrome|Chromium|CriOS|Edg|OPR|FxiOS/i.test(ua);
@@ -221,7 +221,8 @@ export function VoiceSaleAgent({
       commit();
       return;
     }
-    pauseTimerRef.current = window.setTimeout(commit, safari ? 600 : 800);
+    const pause = safari && !stable ? 2500 : 800;
+    pauseTimerRef.current = window.setTimeout(commit, pause);
   };
 
   armRef.current = () => {
@@ -409,7 +410,7 @@ export function VoiceSaleAgent({
     if (!Ctor) return;
     const rec = new Ctor();
     rec.lang = 'es-ES';
-    rec.continuous = !safariSpeech();
+    rec.continuous = true;
     rec.interimResults = true;
     rec.onstart = () => {
       recognitionRunningRef.current = true;
@@ -460,7 +461,7 @@ export function VoiceSaleAgent({
         } catch {
           /* sigue abierto */
         }
-      }, safariSpeech() ? 80 : 300);
+      }, 300);
     };
     recognitionRef.current = rec;
 
