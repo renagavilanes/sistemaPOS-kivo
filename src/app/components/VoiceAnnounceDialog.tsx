@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { supabase } from '../lib/supabase';
 import { Button } from './ui/button';
 import {
   Dialog,
@@ -12,6 +13,7 @@ import {
 /** Cuentas creadas antes de esta hora ya existían cuando salió la voz. */
 const EXISTING_ACCOUNT_BEFORE = Date.parse('2026-10-01T23:15:00.000Z');
 const SEEN_KEY = 'kivo_voice_announce_seen';
+const ACCOUNT_FLAG = 'voice_announce_seen';
 
 const POINTS = [
   'El micrófono está junto al buscador, en Vender.',
@@ -23,6 +25,17 @@ function seenKey(userId: string) {
   return `${SEEN_KEY}_${userId}`;
 }
 
+function accountHasSeen(metadata: Record<string, unknown> | undefined) {
+  const flag = metadata?.[ACCOUNT_FLAG];
+  return flag === true || flag === '1';
+}
+
+function rememberOnAccount() {
+  void supabase.auth.updateUser({ data: { [ACCOUNT_FLAG]: true } }).catch(() => {
+    /* si falla la red, este aparato igual ya lo ocultó */
+  });
+}
+
 export function VoiceAnnounceDialog() {
   const { user, session } = useAuth();
   const [open, setOpen] = useState(false);
@@ -32,9 +45,19 @@ export function VoiceAnnounceDialog() {
     if (!user || !createdAt) return;
     const created = Date.parse(createdAt);
     if (!Number.isFinite(created) || created >= EXISTING_ACCOUNT_BEFORE) return;
+
+    const onAccount = accountHasSeen(session.user.user_metadata as Record<string, unknown> | undefined);
+    let onDevice = false;
     try {
-      if (localStorage.getItem(seenKey(user.id))) return;
+      onDevice = localStorage.getItem(seenKey(user.id)) === '1';
+      if (onAccount) localStorage.setItem(seenKey(user.id), '1');
     } catch {
+      onDevice = false;
+    }
+
+    if (onAccount) return;
+    if (onDevice) {
+      rememberOnAccount();
       return;
     }
     setOpen(true);
@@ -47,6 +70,7 @@ export function VoiceAnnounceDialog() {
       } catch {
         /* el navegador no guarda */
       }
+      rememberOnAccount();
     }
     setOpen(next);
   };
