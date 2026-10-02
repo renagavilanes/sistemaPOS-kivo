@@ -285,6 +285,40 @@ describe('agente de voz para ventas', () => {
     assert.match(empty.say, /Todavía no hay productos/);
   });
 
+  it('finaliza o cobra aunque esté eligiendo entre productos parecidos', () => {
+    const choosing: VoiceDialogState = {
+      step: 'choose',
+      options: [
+        { id: 'a', name: 'Adaptador para trípode', stock: 2 },
+        { id: 'b', name: 'Adaptador para trípode largo', stock: 1 },
+      ],
+      pendingQuantity: 1,
+    };
+    const cart = ctx([{ productId: '8', quantity: 1, name: 'Cámara GoPro Hero 8' }], '450');
+
+    const pay = handleVoiceTurn(choosing, 'dejalo asi y finaliza la venta', cart);
+    assert.equal(pay.add, undefined);
+    assert.equal(pay.step, 'pay');
+    assert.equal(pay.openPaymentSheet, true);
+    assert.match(pay.say, /método de pago/);
+
+    const done = handleVoiceTurn(choosing, 'efectivo', cart);
+    assert.equal(done.checkout?.method, 'Efectivo');
+    assert.match(done.say, /registrada/);
+
+    const skip = handleVoiceTurn(choosing, 'dejalo asi', cart);
+    assert.equal(skip.add, undefined);
+    assert.equal(skip.step, 'more');
+    assert.match(skip.say, /se queda así/);
+
+    const fromCart = handleVoiceTurn(
+      { step: 'more', options: [], pendingQuantity: 1 },
+      'con tarjeta',
+      cart,
+    );
+    assert.equal(fromCart.checkout?.method, 'Tarjeta');
+  });
+
   it('no repite la frase cuando el celular la manda creciendo', () => {
     const growing = [
       'añade',

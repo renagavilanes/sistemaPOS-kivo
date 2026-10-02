@@ -10,6 +10,7 @@ import {
   normalizeVoiceText,
   openingLine,
   parsePayment,
+  paymentOnlyMethod,
   type VoiceDialogState,
   type VoicePaymentMethod,
   type VoiceStep,
@@ -191,7 +192,7 @@ export function VoiceSaleAgent({
     pendingRef.current = next;
     setLive(next);
     window.clearTimeout(pauseTimerRef.current);
-    const paying = stateRef.current.step === 'pay' && Boolean(parsePayment(next));
+    const paying = Boolean(paymentOnlyMethod(next)) || (stateRef.current.step === 'pay' && Boolean(parsePayment(next)));
     if (!stable && !paying) return;
     const commit = () => {
       if (pendingRef.current.trim().length < 2) return;

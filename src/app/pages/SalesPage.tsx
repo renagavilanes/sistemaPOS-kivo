@@ -967,7 +967,7 @@ export default function SalesPage() {
               onUpdateQuantity={handleUpdateQuantity}
               canEditPrice={canEditPrice}
               modeTabs={saleModeTabs}
-              searchAction={activeTab === 'sale' && !isEditingMovement ? (
+              searchAction={activeTab === 'sale' && !isEditingMovement && products.length >= 2 ? (
                 <VoiceSaleAgent
                   products={products}
                   cartItems={cartItems}

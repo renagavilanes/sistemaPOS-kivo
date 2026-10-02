@@ -522,6 +522,27 @@ export function parsePayment(raw: string): VoicePaymentMethod | 'credito' | null
   return null;
 }
 
+function leftoverAfterPayment(text: string) {
+  return text
+    .replace(PAYMENT_WORD, ' ')
+    .replace(/\bde\s+una\b/g, ' ')
+    .replace(/\b(con|en|por|mediante|usando|via|pago|metodo|forma|medio|de|el|la|los|las|un|una|y|a|quiero|ya|vamos|pasar|pasa|pagar|por favor)\b/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** La frase es solo el método, sin un producto. Sirve aunque todavía se esté eligiendo uno. */
+export function paymentOnlyMethod(raw: string): VoicePaymentMethod | 'credito' | null {
+  const text = normalizeVoiceText(raw);
+  const method = parsePayment(text);
+  if (!method) return null;
+  return leftoverAfterPayment(text) ? null : method;
+}
+
+function isSkipChoice(text: string) {
+  return /\b(deja asi|dejalo asi|asi dejalo|dejalo|deja eso|no lo agregues|no agregues ese|no agregues esa|ninguno de esos|ninguna de esas|ninguno|ninguna|da igual|no importa|mejor no|no ese|no esa|sin ese|sin esa|cancela ese|cancela esa)\b/.test(text);
+}
+
 function bundledPayment(text: string): VoicePaymentMethod | 'credito' | null {
   const method = parsePayment(text);
   if (!method) return null;
@@ -924,6 +945,13 @@ export function handleVoiceTurn(state: VoiceDialogState, raw: string, context: V
     return completeSale(state, context, bundled);
   }
 
+  if (cartHasItems(context) && isFinish(text)) {
+    return goPay(state, context);
+  }
+
+  const onlyMethod = cartHasItems(context) && state.step !== 'pay' ? paymentOnlyMethod(text) : null;
+  if (onlyMethod) return completeSale(state, context, onlyMethod);
+
   if (cartHasItems(context) && !isFinish(text) && isRemoveCommand(text)) {
     return removeProducts(raw, context, state.step);
   }
@@ -943,7 +971,15 @@ export function handleVoiceTurn(state: VoiceDialogState, raw: string, context: V
   }
 
   if (state.step === 'choose') {
-    if (/^(ninguna|ninguno|otra)$/.test(text)) {
+    if (cartHasItems(context) && isSkipChoice(text)) {
+      return {
+        step: 'more',
+        options: [],
+        pendingQuantity: 1,
+        say: 'De acuerdo. El carrito se queda así. Cuando quieras, finaliza la venta o dime el método de pago.',
+      };
+    }
+    if (/^(ninguna|ninguno|otra)$/.test(text) || isSkipChoice(text)) {
       return {
         step: 'collect',
         options: [],
