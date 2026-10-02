@@ -8,6 +8,7 @@ import {
   matchCatalog,
   parsePayment,
   parseProductRequest,
+  speakVoiceText,
   splitProductClauses,
   voiceFastTurn,
   voiceTurnNeedsModel,
@@ -135,13 +136,28 @@ describe('agente de voz para ventas', () => {
       'c8',
     );
 
-    const spoken = handleVoiceTurn(
+    const spoken = speakVoiceText('Carcasa gopro 11-12 y la 11/12, también 11 - 12');
+    assert.equal(spoken, 'Carcasa gopro once doce y la once doce, también once doce');
+    assert.equal(speakVoiceText('GoPro 8'), 'GoPro ocho');
+    assert.equal(speakVoiceText('3 Way 2.0'), 'tres Way dos punto cero');
+    assert.equal(speakVoiceText('está en $32'), 'está en treinta y dos dólares');
+
+    const many = handleVoiceTurn(
+      initialVoiceState(),
+      'camara gopro hero 8, filtro gopro y bateria gopro',
+      ctx(),
+    );
+    assert.equal(many.adds?.length, 3);
+    assert.equal(many.say, 'Añadí los 3 productos al carrito.');
+    assert.equal(speakVoiceText(many.say), 'Añadí los tres productos al carrito.');
+
+    const heard = handleVoiceTurn(
       initialVoiceState(),
       'añada el carrito una carcasa de la gopro 8',
       { catalog: shop, cart: [], totalLabel: '30' },
     );
-    assert.equal(spoken.add?.product.id, 'c8');
-    assert.equal(spoken.step, 'more');
+    assert.equal(heard.add?.product.id, 'c8');
+    assert.equal(heard.step, 'more');
 
     const priced = [
       { id: 'v9', name: 'Adaptador vertical', stock: 2, price: 9 },

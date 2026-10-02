@@ -11,6 +11,7 @@ import {
   openingLine,
   parsePayment,
   paymentOnlyMethod,
+  speakVoiceText,
   type VoiceDialogState,
   type VoicePaymentMethod,
   type VoiceStep,
@@ -235,7 +236,8 @@ export function VoiceSaleAgent({
 
   speakRef.current = (text: string, next: 'listen' | 'stay' | 'close', immediateListen = false) => {
     const generation = ++speakGenRef.current;
-    lastSaidRef.current = text;
+    const spoken = speakVoiceText(text);
+    lastSaidRef.current = spoken;
     speakingRef.current = true;
     pausedForSpeechRef.current = next === 'listen' && !immediateListen;
     setLive('');
@@ -284,7 +286,7 @@ export function VoiceSaleAgent({
       return;
     }
 
-    const utterance = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(spoken);
     utterance.lang = 'es-MX';
     const voice = spanishVoice();
     if (voice) utterance.voice = voice;

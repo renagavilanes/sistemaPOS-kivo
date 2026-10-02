@@ -96,6 +96,63 @@ export function openingLine() {
   return '¿Qué vendemos hoy?';
 }
 
+const CARDINAL_UNITS = ['cero', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve'];
+const CARDINAL_TEENS = ['diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciséis', 'diecisiete', 'dieciocho', 'diecinueve'];
+const CARDINAL_TENS = ['', '', 'veinte', 'treinta', 'cuarenta', 'cincuenta', 'sesenta', 'setenta', 'ochenta', 'noventa'];
+const CARDINAL_HUNDREDS = ['', 'ciento', 'doscientos', 'trescientos', 'cuatrocientos', 'quinientos', 'seiscientos', 'setecientos', 'ochocientos', 'novecientos'];
+const CARDINAL_TWENTIES = ['', 'veintiuno', 'veintidós', 'veintitrés', 'veinticuatro', 'veinticinco', 'veintiséis', 'veintisiete', 'veintiocho', 'veintinueve'];
+
+function spanishCardinal(value: number): string {
+  const n = Math.trunc(value);
+  if (!Number.isFinite(n) || n < 0 || n > 9999) return String(value);
+  if (n < 10) return CARDINAL_UNITS[n];
+  if (n < 20) return CARDINAL_TEENS[n - 10];
+  if (n < 30) return n === 20 ? 'veinte' : CARDINAL_TWENTIES[n - 20];
+  if (n < 100) {
+    const tens = Math.floor(n / 10);
+    const units = n % 10;
+    return units === 0 ? CARDINAL_TENS[tens] : `${CARDINAL_TENS[tens]} y ${CARDINAL_UNITS[units]}`;
+  }
+  if (n === 100) return 'cien';
+  if (n < 1000) {
+    const hundreds = Math.floor(n / 100);
+    const rest = n % 100;
+    const head = hundreds === 1 ? 'ciento' : CARDINAL_HUNDREDS[hundreds];
+    return rest === 0 ? (hundreds === 1 ? 'cien' : head) : `${head} ${spanishCardinal(rest)}`;
+  }
+  const thousands = Math.floor(n / 1000);
+  const rest = n % 1000;
+  const head = thousands === 1 ? 'mil' : `${spanishCardinal(thousands)} mil`;
+  return rest === 0 ? head : `${head} ${spanishCardinal(rest)}`;
+}
+
+function speakIntegerToken(digits: string) {
+  if (digits.length > 4) return digits.split('').map((digit) => spanishCardinal(Number(digit))).join(' ');
+  return spanishCardinal(Number(digits));
+}
+
+function spanishAmount(raw: string) {
+  const thousands = /^\d{1,3}(?:\.\d{3})+$/.test(raw);
+  const [wholeRaw, fracRaw] = raw.split(',');
+  const wholeDigits = raw.includes(',') || thousands ? wholeRaw.replace(/\./g, '') : wholeRaw;
+  const words = speakIntegerToken(wholeDigits);
+  if (!fracRaw || /^0+$/.test(fracRaw)) return words;
+  return `${words} con ${spanishCardinal(Number(fracRaw))}`;
+}
+
+/** Lo que se lee en voz. 11-12 y 11/12 se dicen «once doce»; en pantalla el nombre no cambia. */
+export function speakVoiceText(text: string) {
+  return text
+    .replace(/\$\s*(\d{1,3}(?:\.\d{3})*(?:,\d{1,2})?)/g, (_, amount: string) => `${spanishAmount(amount)} dólares`)
+    .replace(/\d+(?:\s*[-–—/]\s*\d+)+/g, (chunk) => chunk.split(/\s*[-–—/]\s*/).map((part) => speakIntegerToken(part)).join(' '))
+    .replace(/\d+\.\d+/g, (chunk) => {
+      const [whole, fraction] = chunk.split('.');
+      const fractionWords = fraction.split('').map((digit) => spanishCardinal(Number(digit))).join(' ');
+      return `${speakIntegerToken(whole)} punto ${fractionWords}`;
+    })
+    .replace(/\d+/g, (digits) => speakIntegerToken(digits));
+}
+
 /** El celular a veces manda la frase completa otra vez en cada palabra. Nos quedamos con la versión más larga. */
 export function collapseVoiceTranscript(parts: { text: string; final: boolean }[]) {
   const finals = parts.map((part) => part.text.replace(/\s+/g, ' ').trim()).filter((text, index) => parts[index]?.final && text);
@@ -770,7 +827,9 @@ function joinSpoken(parts: string[]) {
 }
 
 function addProducts(lines: { product: VoiceCatalogItem; quantity: number }[]): VoiceTurn {
-  const say = `Añadí ${joinSpoken(lines.map((line) => addedLine(line.product, line.quantity)))} al carrito.`;
+  const say = lines.length > 2
+    ? `Añadí los ${lines.length} productos al carrito.`
+    : `Añadí ${joinSpoken(lines.map((line) => addedLine(line.product, line.quantity)))} al carrito.`;
   return {
     step: 'more',
     options: [],
