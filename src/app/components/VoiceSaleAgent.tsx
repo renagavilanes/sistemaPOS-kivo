@@ -3,9 +3,7 @@ import { Mic } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { CartItem, Product } from '../types';
 import { LazyProductImage } from './LazyProductImage';
-import { interpretVoicePhrase } from '../lib/voiceInterpret';
 import {
-  applyVoiceIntent,
   collapseVoiceTranscript,
   handleVoiceTurn,
   initialVoiceState,
@@ -13,8 +11,6 @@ import {
   openingLine,
   parsePayment,
   paymentOnlyMethod,
-  voiceFastTurn,
-  voiceTurnNeedsModel,
   type VoiceDialogState,
   type VoicePaymentMethod,
   type VoiceStep,
@@ -115,11 +111,10 @@ export function VoiceSaleAgent({
   onClearCart: () => void;
   onFocusProduct: (productId: string) => void;
 }) {
-  const { user, session } = useAuth();
+  const { user } = useAuth();
   const [active, setActive] = useState(false);
   const [listening, setListening] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [thinking, setThinking] = useState(false);
   const [micNote, setMicNote] = useState('');
   const [heard, setHeard] = useState('');
   const [live, setLive] = useState('');
@@ -159,10 +154,8 @@ export function VoiceSaleAgent({
   const phraseStartRef = useRef(0);
   const resultCountRef = useRef(0);
   const introRef = useRef<'telling' | 'cta' | null>(null);
-  const tokenRef = useRef('');
   const introPendingRef = useRef(false);
   introRef.current = introPhase;
-  tokenRef.current = session?.access_token || '';
 
   productsRef.current = products;
   cartRef.current = cartItems;
@@ -311,23 +304,7 @@ export function VoiceSaleAgent({
       })),
       totalLabel: totalRef.current,
     };
-    let turn = voiceFastTurn(stateRef.current, utterance, context);
-    if (!turn) turn = handleVoiceTurn(stateRef.current, utterance, context);
-    if (voiceTurnNeedsModel(turn)) {
-      setThinking(true);
-      const intent = await interpretVoicePhrase({
-        accessToken: tokenRef.current,
-        phrase: utterance,
-        step: stateRef.current.step,
-        options: stateRef.current.options,
-        catalog: context.catalog,
-        cart: context.cart,
-        totalLabel: context.totalLabel,
-      });
-      setThinking(false);
-      const fromModel = intent ? applyVoiceIntent(stateRef.current, intent, context) : null;
-      if (fromModel) turn = fromModel;
-    }
+    const turn = handleVoiceTurn(stateRef.current, utterance, context);
     stateRef.current = {
       step: turn.step,
       options: turn.options,
@@ -575,9 +552,7 @@ export function VoiceSaleAgent({
                     ? 'Cuando quieras'
                     : busy
                       ? 'Registrando venta…'
-                      : thinking
-                        ? 'Entendiendo…'
-                        : listening
+                      : listening
                         ? 'Habla ahora'
                         : stepLabel}
               </p>
