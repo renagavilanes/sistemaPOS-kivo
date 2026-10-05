@@ -1,5 +1,5 @@
 import { DayPicker } from 'react-day-picker';
-import { format, startOfWeek, endOfWeek } from 'date-fns';
+import { startOfWeek, endOfWeek } from 'date-fns';
 import { es } from 'date-fns/locale';
 import '../../styles/calendar.css';
 
@@ -43,18 +43,20 @@ export function DateCalendar({ mode, selected, onSelect, weekMode }: DateCalenda
           nav_button: 'h-8 w-8 bg-transparent p-0 opacity-50 hover:opacity-100 inline-flex items-center justify-center rounded-md',
           nav_button_previous: 'absolute left-1',
           nav_button_next: 'absolute right-1',
-          table: 'w-full border-collapse space-y-1',
-          head_row: 'flex',
-          head_cell: 'text-gray-600 rounded-md w-10 font-semibold text-sm uppercase',
-          row: 'flex w-full mt-2',
-          cell: 'text-center text-sm p-0 relative focus-within:relative focus-within:z-20',
-          day: 'h-10 w-10 p-0 font-normal rounded-md hover:bg-gray-100 inline-flex items-center justify-center',
-          day_selected: 'bg-teal-500 text-white hover:bg-teal-600 hover:text-white focus:bg-teal-500 focus:text-white font-semibold',
-          day_today: 'bg-gray-100 text-gray-900 font-medium',
-          day_outside: 'text-gray-400 opacity-50',
-          day_disabled: 'text-gray-400 opacity-50',
-          day_range_middle: 'bg-teal-100 text-gray-900',
-          day_hidden: 'invisible',
+          table: 'w-full border-collapse',
+          head_row: 'rdp-head_row flex w-full',
+          head_cell: 'rdp-head_cell text-gray-600 font-semibold text-sm uppercase',
+          row: 'rdp-row flex w-full mt-2',
+          cell: 'rdp-cell relative p-0',
+          day: 'rdp-day p-0 font-normal inline-flex items-center justify-center',
+          day_selected: 'rdp-day_selected text-white font-semibold',
+          day_today: 'rdp-day_today font-medium',
+          day_outside: 'rdp-day_outside text-gray-400',
+          day_disabled: 'rdp-day_disabled text-gray-400 opacity-50',
+          day_range_start: 'rdp-day_range_start',
+          day_range_end: 'rdp-day_range_end',
+          day_range_middle: 'rdp-day_range_middle',
+          day_hidden: 'rdp-day_hidden invisible',
         }}
       />
     </div>
