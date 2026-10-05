@@ -1104,6 +1104,56 @@ export default function MovementsPage() {
   const [editDiscountAmount, setEditDiscountAmount] = useState('0');
   const [editSelectedClient, setEditSelectedClient] = useState<any>(null);
   const [editClientDialogOpen, setEditClientDialogOpen] = useState(false);
+  const [editCreatingClient, setEditCreatingClient] = useState(false);
+  const [editCreatingClientBusy, setEditCreatingClientBusy] = useState(false);
+  const [editNewClientForm, setEditNewClientForm] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    cedula: '',
+  });
+  const canCreateContact =
+    currentBusiness?.role === 'owner' ||
+    currentBusiness?.permissions?.all === true ||
+    (currentBusiness?.permissions?.contacts?.create ?? false);
+
+  const resetEditNewClientForm = () => {
+    setEditNewClientForm({ name: '', phone: '', email: '', cedula: '' });
+  };
+
+  const handleCreateClientFromEdit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!currentBusiness?.id || !editNewClientForm.name.trim() || editCreatingClientBusy) return;
+
+    setEditCreatingClientBusy(true);
+    try {
+      const created = await apiService.createCustomer(currentBusiness.id, {
+        name: editNewClientForm.name.trim(),
+        phone: editNewClientForm.phone.trim() || undefined,
+        email: editNewClientForm.email.trim() || undefined,
+        cedula: editNewClientForm.cedula.trim() || undefined,
+        type: 'customer',
+        creditLimit: 0,
+        currentBalance: 0,
+      });
+      setCustomers((prev) => [...prev, created]);
+      setEditSelectedClient({
+        id: created.id,
+        name: created.name,
+        phone: created.phone || null,
+        email: created.email || null,
+      });
+      setEditCreatingClient(false);
+      setEditClientDialogOpen(false);
+      resetEditNewClientForm();
+      toast.success('Cliente creado');
+    } catch (error) {
+      console.error('Error creating client:', error);
+      toast.error('No se pudo crear el cliente');
+    } finally {
+      setEditCreatingClientBusy(false);
+    }
+  };
   const [editSelectedEmployee, setEditSelectedEmployee] = useState<any>(null);
   const [editEmployeeDialogOpen, setEditEmployeeDialogOpen] = useState(false);
   const [editSinglePaymentMethod, setEditSinglePaymentMethod] = useState('Efectivo');
@@ -3994,6 +4044,7 @@ export default function MovementsPage() {
                       </Button>
                     </div>
                   ) : (
+                    <>
                     <Dialog open={editClientDialogOpen} onOpenChange={setEditClientDialogOpen}>
                       <DialogTrigger asChild>
                         <Button variant="outline" className="w-full justify-start">
@@ -4002,8 +4053,26 @@ export default function MovementsPage() {
                       </DialogTrigger>
                       <DialogContent>
                         <DialogHeader>
-                          <DialogTitle>Seleccionar Cliente</DialogTitle>
-                          <DialogDescription>Elige un cliente de la lista o crea uno nuevo.</DialogDescription>
+                          <div className="space-y-3">
+                            <div>
+                              <DialogTitle>Seleccionar Cliente</DialogTitle>
+                              <DialogDescription>Elige un cliente de la lista o crea uno nuevo.</DialogDescription>
+                            </div>
+                            <div className="flex justify-end">
+                              <Button
+                                size="sm"
+                                className="bg-gray-900 text-white hover:bg-gray-800"
+                                disabled={!canCreateContact}
+                                onClick={() => {
+                                  setEditClientDialogOpen(false);
+                                  setEditCreatingClient(true);
+                                }}
+                              >
+                                <Plus className="w-4 h-4 mr-1" />
+                                Nuevo Cliente
+                              </Button>
+                            </div>
+                          </div>
                         </DialogHeader>
                         <div className="space-y-2 mt-4">
                           {mockClients.map((client) => (
@@ -4024,6 +4093,88 @@ export default function MovementsPage() {
                         </div>
                       </DialogContent>
                     </Dialog>
+                    <Sheet
+                      open={editCreatingClient}
+                      onOpenChange={(open) => {
+                        setEditCreatingClient(open);
+                        if (!open && !editCreatingClientBusy) resetEditNewClientForm();
+                      }}
+                    >
+                      <SheetContent className="w-full sm:max-w-md overflow-y-auto" aria-describedby="edit-new-client-description">
+                        <SheetHeader>
+                          <SheetTitle>Nuevo Contacto</SheetTitle>
+                          <SheetDescription id="edit-new-client-description">
+                            Formulario para crear un nuevo contacto
+                          </SheetDescription>
+                        </SheetHeader>
+                        <form onSubmit={handleCreateClientFromEdit} className="mx-[24px] my-[0px] p-[0px] space-y-6">
+                          <div className="space-y-2">
+                            <label className="block text-sm font-medium text-gray-700">
+                              Nombre <span className="text-red-500">*</span>
+                            </label>
+                            <Input
+                              value={editNewClientForm.name}
+                              onChange={(e) => setEditNewClientForm({ ...editNewClientForm, name: e.target.value })}
+                              placeholder="Ej: Juan Pérez o Distribuidora XYZ"
+                              required
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <label className="block text-sm font-medium text-gray-700">Cédula (opcional)</label>
+                            <Input
+                              value={editNewClientForm.cedula}
+                              onChange={(e) => setEditNewClientForm({ ...editNewClientForm, cedula: e.target.value })}
+                              placeholder="Ej: 1804321532"
+                              inputMode="numeric"
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <label className="block text-sm font-medium text-gray-700">Teléfono</label>
+                            <Input
+                              value={editNewClientForm.phone}
+                              onChange={(e) => setEditNewClientForm({ ...editNewClientForm, phone: e.target.value })}
+                              placeholder="Ej: 0991234567"
+                              type="tel"
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <label className="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                            <Input
+                              value={editNewClientForm.email}
+                              onChange={(e) => setEditNewClientForm({ ...editNewClientForm, email: e.target.value })}
+                              placeholder="Ej: ejemplo@correo.com"
+                              type="email"
+                            />
+                          </div>
+                          <div className="sticky bottom-0 left-0 right-0 flex gap-3 pt-4 pb-4 bg-white border-t -mx-6 px-6 mt-6">
+                            <Button
+                              type="button"
+                              variant="outline"
+                              className="flex-1"
+                              disabled={editCreatingClientBusy}
+                              onClick={() => {
+                                setEditCreatingClient(false);
+                                resetEditNewClientForm();
+                                setEditClientDialogOpen(true);
+                              }}
+                            >
+                              Cancelar
+                            </Button>
+                            <Button type="submit" className="flex-1" disabled={editCreatingClientBusy}>
+                              {editCreatingClientBusy ? (
+                                <>
+                                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                                  Creando...
+                                </>
+                              ) : (
+                                'Crear'
+                              )}
+                            </Button>
+                          </div>
+                        </form>
+                      </SheetContent>
+                    </Sheet>
+                    </>
                   )}
                 </div>
 
