@@ -265,36 +265,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [syncAccountSuspension, syncPendingComunicado]);
 
   useEffect(() => {
-    const id = window.setInterval(() => {
-      void syncAccountSuspension();
-    }, 12000);
     const onFocus = () => {
       void syncAccountSuspension();
+      void syncPendingComunicado();
     };
     window.addEventListener('focus', onFocus);
-    return () => {
-      window.clearInterval(id);
-      window.removeEventListener('focus', onFocus);
-    };
-  }, [syncAccountSuspension]);
+    return () => window.removeEventListener('focus', onFocus);
+  }, [syncAccountSuspension, syncPendingComunicado]);
 
   useEffect(() => {
-    const id = window.setInterval(() => {
-      void syncPendingComunicado();
-    }, 15000);
-    const onFocus = () => {
-      void syncPendingComunicado();
-    };
-    window.addEventListener("focus", onFocus);
-    return () => {
-      window.clearInterval(id);
-      window.removeEventListener("focus", onFocus);
-    };
-  }, [syncPendingComunicado]);
-
-  useEffect(() => {
+    void syncAccountSuspension();
     void syncPendingComunicado();
-  }, [appPathname, syncPendingComunicado]);
+  }, [appPathname, syncAccountSuspension, syncPendingComunicado]);
 
   useEffect(() => {
     const handleBusinessChanged = () => {

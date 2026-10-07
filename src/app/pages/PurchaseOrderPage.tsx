@@ -128,9 +128,9 @@ export default function PurchaseOrderPage() {
     ]);
 
     apiService
-      .getProductById(currentBusiness.id, product.id)
-      .then((full) => {
-        const img = (full as any)?.image ?? '';
+      .getProductImages(currentBusiness.id, [product.id])
+      .then((images) => {
+        const img = images[product.id] || '';
         if (!img) return;
         setItems((prev) => prev.map((i) => (i.productId === product.id ? { ...i, image: img } : i)));
       })

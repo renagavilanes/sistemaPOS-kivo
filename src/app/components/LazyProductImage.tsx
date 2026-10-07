@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useBusiness } from '../contexts/BusinessContext';
-import { getProductById, getProductImages } from '../services/api';
+import { getProductImages } from '../services/api';
 import { fetchPublicCatalogImage } from '../lib/virtualCatalogApi';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { compactImageForThumbCache, displayProductImageSrc } from '../utils/productImage';
@@ -197,13 +197,8 @@ async function resolveProductImageSrc(businessId: string, productId: string): Pr
   try {
     return await enqueueProductImage(businessId, productId);
   } catch {
-    try {
-      const prod = await getProductById(businessId, productId);
-      return rememberSrc(key, prod.image || '');
-    } catch {
-      imageSrcCache.set(key, '');
-      return '';
-    }
+    imageSrcCache.set(key, '');
+    return '';
   }
 }
 
@@ -260,39 +255,25 @@ export function LazyProductImage({
   }, [initialSrc, businessId, productId]);
 
   useEffect(() => {
-    const refreshFromServer = () => {
-      if (publicSlug && productId) {
-        void fetchPublicCatalogImage(publicSlug, productId).then((raw) => setSrc(displayProductImageSrc(raw)));
-        return;
-      }
-      if (!businessId || !productId) return;
-      const immediate = displayProductImageSrc(initialSrc);
-      if (immediate) {
-        setSrc(immediate);
-        setProductImageCache(businessId, productId, immediate);
-        return;
-      }
-      invalidateProductImageCache(businessId, productId);
-      void resolveProductImageSrc(businessId, productId).then(setSrc);
-    };
-
     const onProductsUpdated = (e: Event) => {
       const detail = (e as CustomEvent<{ productId?: string; businessId?: string; image?: string }>).detail;
       if (detail?.businessId && detail.businessId !== businessId) return;
       if (detail?.productId && detail.productId !== productId) return;
 
-      if (detail?.image) {
-        const url = displayProductImageSrc(detail.image);
-        setSrc(url);
-        if (businessId && productId) setProductImageCache(businessId, productId, url);
-        return;
+      // Solo una foto nueva trae imagen. Venta, stock o borrado no la tocan.
+      if (!detail || !Object.prototype.hasOwnProperty.call(detail, 'image')) return;
+
+      const url = displayProductImageSrc(detail.image);
+      setSrc(url);
+      if (businessId && productId) {
+        if (url) setProductImageCache(businessId, productId, url);
+        else invalidateProductImageCache(businessId, productId);
       }
-      refreshFromServer();
     };
 
     window.addEventListener('productsUpdated', onProductsUpdated);
     return () => window.removeEventListener('productsUpdated', onProductsUpdated);
-  }, [businessId, productId, initialSrc, publicSlug]);
+  }, [businessId, productId]);
 
   useEffect(() => {
     const immediate = displayProductImageSrc(initialSrc);

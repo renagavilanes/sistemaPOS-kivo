@@ -10,6 +10,10 @@ const supabase = createClient(
 const PRODUCT_LIST_COLUMNS =
   'id, business_id, name, price, cost, stock, category, barcode, is_active, show_in_virtual_catalog, created_at, updated_at';
 
+/** Respuesta de crear/editar/stock: no reenvía la foto grande. */
+const PRODUCT_RETURN_COLUMNS =
+  'id, business_id, name, price, cost, stock, category, barcode, description, is_active, show_in_virtual_catalog, created_at, updated_at';
+
 // Get all products for a business
 // NOTE: The 'products' table does NOT have an 'active' column — do not filter by it.
 export async function getProducts(businessId: string, options?: { includeImage?: boolean }) {
@@ -30,6 +34,24 @@ export async function getProductImagesByIds(businessId: string, ids: string[]) {
   const unique = [...new Set(ids.filter(Boolean))].slice(0, 32);
   if (unique.length === 0) return [] as Array<{ id: string; image: string | null }>;
 
+  const thumb = await supabase
+    .from('products')
+    .select('id, image_thumb')
+    .eq('business_id', businessId)
+    .in('id', unique);
+
+  if (!thumb.error) {
+    return (thumb.data || []).map((row: { id: string; image_thumb?: string | null }) => ({
+      id: row.id,
+      image: row.image_thumb ?? null,
+    }));
+  }
+
+  const message = thumb.error.message || '';
+  const thumbUnavailable = /image_thumb|schema cache|PGRST204|Could not find/i.test(message);
+  if (!thumbUnavailable) throw thumb.error;
+
+  // Mientras no exista la función image_thumb, se lee la columna completa.
   const { data, error } = await supabase
     .from('products')
     .select('id, image')
@@ -85,7 +107,7 @@ export async function createProduct(businessId: string, productData: {
   const { data, error } = await supabase
     .from('products')
     .insert(insert)
-    .select()
+    .select(PRODUCT_RETURN_COLUMNS)
     .single();
 
   if (error) throw error;
@@ -112,7 +134,7 @@ export async function updateProduct(productId: string, businessId: string, updat
     .update(updates)
     .eq('id', productId)
     .eq('business_id', businessId)
-    .select()
+    .select(PRODUCT_RETURN_COLUMNS)
     .single();
 
   if (error) throw error;
@@ -121,16 +143,22 @@ export async function updateProduct(productId: string, businessId: string, updat
 
 // Update product stock
 export async function updateProductStock(productId: string, businessId: string, quantityChange: number) {
-  // Get current stock
-  const product = await getProductById(productId, businessId);
-  const newStock = Math.max(0, product.stock + quantityChange);
+  const { data: current, error: readError } = await supabase
+    .from('products')
+    .select('stock')
+    .eq('id', productId)
+    .eq('business_id', businessId)
+    .single();
+
+  if (readError) throw readError;
+  const newStock = Math.max(0, Number(current?.stock || 0) + quantityChange);
 
   const { data, error } = await supabase
     .from('products')
     .update({ stock: newStock })
     .eq('id', productId)
     .eq('business_id', businessId)
-    .select()
+    .select(PRODUCT_RETURN_COLUMNS)
     .single();
 
   if (error) throw error;
@@ -144,7 +172,7 @@ export async function deactivateProduct(productId: string, businessId: string) {
     .delete()
     .eq('id', productId)
     .eq('business_id', businessId)
-    .select()
+    .select(PRODUCT_RETURN_COLUMNS)
     .single();
 
   if (error) throw error;
