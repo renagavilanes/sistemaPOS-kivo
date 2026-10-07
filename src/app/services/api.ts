@@ -171,48 +171,44 @@ export async function getProducts(
   options?: { includeImage?: boolean },
 ): Promise<Product[]> {
   const includeImage = options?.includeImage === true;
-  console.log('🔵 [API DIRECT] Getting products for business:', businessId, includeImage ? '+images' : 'lite');
+  console.log('🔵 [API] Getting products for business:', businessId, includeImage ? '+images' : 'lite');
 
-  try {
-    const accessToken = await getAccessToken();
-    const qs = includeImage ? '?includeImage=1' : '';
-    const response = await fetch(
-      `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/products${qs}`,
-      {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'X-Business-ID': businessId,
-        },
-      },
-    );
-
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status} ${response.statusText}`);
-    }
-
-    const { products: data } = await response.json();
-    console.log('✅ [API DIRECT] Products retrieved:', data?.length || 0);
-
-    return (data || []).map((p: any) => mapProductFromApi(p));
-  } catch (error: any) {
-    console.error('❌ [API DIRECT] Error getting products:', error);
-
-    console.log('⚠️ Falling back to Supabase client...');
+  // La lista sin foto sale directo de la base (una sola vez). La foto grande sigue en la función.
+  if (!includeImage) {
     const { data, error: dbError } = await retryOnceOnJwtExpired(() =>
       supabase
         .from('products')
-        .select(includeImage ? '*' : PRODUCT_LIST_SELECT)
+        .select(PRODUCT_LIST_SELECT)
         .eq('business_id', businessId)
         .order('name'),
     );
-
-    if (dbError) {
-      throw new Error(normalizeAuthErrorMessage(dbError.message));
+    if (!dbError) {
+      console.log('✅ [API] Products via direct query:', data?.length || 0);
+      return (data || []).map((p: any) => mapProductFromApi(p));
     }
-
-    return (data || []).map((p: any) => mapProductFromApi(p));
+    console.warn('⚠️ [API] Direct product list failed, using function:', dbError.message);
   }
+
+  const accessToken = await getAccessToken();
+  const qs = includeImage ? '?includeImage=1' : '';
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/products${qs}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'X-Business-ID': businessId,
+      },
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(`Error: ${response.status} ${response.statusText}`);
+  }
+
+  const { products: data } = await response.json();
+  console.log('✅ [API] Products via function:', data?.length || 0);
+  return (data || []).map((p: any) => mapProductFromApi(p));
 }
 
 /** Un producto con imagen y descripción (p. ej. al abrir edición). */
@@ -248,6 +244,22 @@ export async function getProductImages(
 ): Promise<Record<string, string>> {
   const unique = [...new Set(ids.map((id) => String(id || '').trim()).filter(Boolean))].slice(0, 32);
   if (!businessId || unique.length === 0) return {};
+
+  const { data: thumbRows, error: thumbError } = await retryOnceOnJwtExpired(() =>
+    supabase
+      .from('products')
+      .select('id, image_thumb')
+      .eq('business_id', businessId)
+      .in('id', unique),
+  );
+  if (!thumbError) {
+    const images: Record<string, string> = {};
+    for (const row of thumbRows || []) {
+      images[row.id] = row.image_thumb || '';
+    }
+    return images;
+  }
+  console.warn('⚠️ [API] Direct thumbs failed, using function:', thumbError.message);
 
   const accessToken = await getAccessToken();
   const response = await fetch(
@@ -692,6 +704,26 @@ export async function getSales(
 ): Promise<Sale[]> {
   console.log('🔵 [API] Getting sales for business:', businessId, options?.fields ? `(${options.fields})` : '');
 
+  const saleSelect =
+    options?.fields === 'balance'
+      ? 'id,customer_id,total,payment_status,paid_amount'
+      : options?.fields === 'list'
+      ? 'id,business_id,customer_id,sale_number,total,subtotal,tax,discount,payment_method,payment_status,paid_amount,change_amount,items,payments,notes,created_by,created_at'
+      : '*';
+
+  const direct = await retryOnceOnJwtExpired(() => {
+    let query = supabase.from('sales').select(saleSelect).eq('business_id', businessId).order('created_at', { ascending: false });
+    if (options?.from) query = query.gte('created_at', options.from);
+    if (options?.to) query = query.lte('created_at', options.to);
+    if (options?.limit) query = query.limit(options.limit);
+    return query;
+  });
+  if (!direct.error) {
+    console.log('✅ [API] Sales via direct query:', direct.data?.length || 0);
+    return (direct.data || []).map(mapSaleRow);
+  }
+  console.warn('⚠️ [API] Direct sales failed, using function:', direct.error.message);
+
   const accessToken = await getAccessToken();
   const params = new URLSearchParams();
   if (options?.from) params.set('from', options.from);
@@ -700,39 +732,18 @@ export async function getSales(
   if (options?.fields === 'balance' || options?.fields === 'list') params.set('fields', options.fields);
   const qs = params.toString() ? '?' + params.toString() : '';
 
-  // Try the Edge Function server (bypasses RLS for all roles)
-  try {
-    const url = `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/admin/sales${qs}`;
-    const response = await fetch(url, {
-      headers: { 'Authorization': `Bearer ${accessToken}`, 'X-Business-ID': businessId },
-    });
-    if (response.ok) {
-      const { sales: data } = await response.json();
-      console.log('✅ [API] Sales via Edge Function:', data?.length || 0);
-      return (data || []).map(mapSaleRow);
-    }
-    console.warn(`⚠️ [API] Edge Function /admin/sales returned ${response.status}, falling back to direct query`);
-  } catch (e) {
-    console.warn('⚠️ [API] Edge Function /admin/sales failed, falling back to direct query:', e);
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/admin/sales${qs}`,
+    {
+      headers: { Authorization: `Bearer ${accessToken}`, 'X-Business-ID': businessId },
+    },
+  );
+  if (!response.ok) {
+    const errBody = await response.json().catch(() => ({ error: response.statusText }));
+    throw new Error(normalizeAuthErrorMessage(errBody.error || `Error ${response.status} al cargar ventas`));
   }
-
-  // Fallback: direct Supabase query (works if RLS SELECT allows authenticated users)
-  const saleSelect =
-    options?.fields === 'balance'
-      ? 'id,customer_id,total,payment_status,paid_amount'
-      : options?.fields === 'list'
-      ? 'id,business_id,customer_id,sale_number,total,subtotal,tax,discount,payment_method,payment_status,paid_amount,change_amount,items,payments,notes,created_by,created_at'
-      : '*';
-  let query = supabase.from('sales').select(saleSelect).eq('business_id', businessId).order('created_at', { ascending: false });
-  if (options?.from) query = query.gte('created_at', options.from);
-  if (options?.to) query = query.lte('created_at', options.to);
-  if (options?.limit) query = query.limit(options.limit);
-  const { data, error } = await query;
-  if (error) {
-    console.error('❌ [API] Direct getSales error:', error);
-    throw new Error(normalizeAuthErrorMessage(error.message));
-  }
-  console.log('✅ [API] Sales via direct query:', data?.length || 0);
+  const { sales: data } = await response.json();
+  console.log('✅ [API] Sales via Edge Function:', data?.length || 0);
   return (data || []).map(mapSaleRow);
 }
 
