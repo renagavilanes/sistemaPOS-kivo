@@ -102,6 +102,8 @@ export interface Sale {
   notes?: string;
   createdBy: string;
   createdAt: string;
+  /** true si la venta tiene foto de transferencia. No incluye la imagen. */
+  hasTransferProof?: boolean;
 }
 
 export interface SaleItem {
@@ -695,6 +697,7 @@ function mapSaleRow(s: any): Sale {
     notes: s.notes,
     createdBy: s.created_by,
     createdAt: s.created_at,
+    hasTransferProof: s.has_transfer_proof === true,
   };
 }
 
@@ -708,7 +711,7 @@ export async function getSales(
     options?.fields === 'balance'
       ? 'id,customer_id,total,payment_status,paid_amount'
       : options?.fields === 'list'
-      ? 'id,business_id,customer_id,sale_number,total,subtotal,tax,discount,payment_method,payment_status,paid_amount,change_amount,items,payments,notes,created_by,created_at'
+      ? 'id,business_id,customer_id,sale_number,total,subtotal,tax,discount,payment_method,payment_status,paid_amount,change_amount,items,payments,notes,created_by,created_at,has_transfer_proof'
       : '*';
 
   const direct = await retryOnceOnJwtExpired(() => {

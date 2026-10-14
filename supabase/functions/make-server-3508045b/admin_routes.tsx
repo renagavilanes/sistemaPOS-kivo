@@ -70,7 +70,7 @@ export function registerAdminRoutes(app: any): void {
         fields === "balance"
           ? "id,customer_id,total,payment_status,paid_amount"
           : fields === "list"
-          ? "id,business_id,customer_id,sale_number,total,subtotal,tax,discount,payment_method,payment_status,paid_amount,change_amount,items,payments,notes,created_by,created_at"
+          ? "id,business_id,customer_id,sale_number,total,subtotal,tax,discount,payment_method,payment_status,paid_amount,change_amount,items,payments,notes,created_by,created_at,has_transfer_proof"
           : "*";
       let q: any = admin.from("sales").select(selectCols).eq("business_id", businessId).order("created_at", { ascending: false });
       if (from) q = q.gte("created_at", from);

@@ -777,7 +777,8 @@ export default function MovementsPage() {
             image: getCurrentProductImage(item.productId, '')
           })),
           notes: movement.notes,
-          discount: movement.discount
+          discount: movement.discount,
+          hasTransferProof: movement.hasTransferProof === true,
         };
       });
       
@@ -1894,11 +1895,18 @@ export default function MovementsPage() {
   };
 
   const [proofSaleId, setProofSaleId] = useState<string | null>(null);
+  const [proofAbsent, setProofAbsent] = useState(false);
   if ((selectedMovement?.id ?? null) !== proofSaleId) {
     setProofSaleId(selectedMovement?.id ?? null);
     setTransferProof(null);
     setProofPreviewOpen(false);
+    setProofAbsent(false);
   }
+  const showTransferImageLink = Boolean(
+    selectedMovement?.type === 'sale' &&
+    movementIncludesTransfer(selectedMovement) &&
+    (transferProof || (selectedMovement.hasTransferProof && !proofAbsent)),
+  );
 
   useEffect(() => {
     if (!currentBusiness?.id || !selectedMovement || selectedMovement.type !== 'sale') {
@@ -1912,7 +1920,9 @@ export default function MovementsPage() {
     let cancelled = false;
     apiService.getSaleTransferProof(selectedMovement.id, currentBusiness.id)
       .then((proof) => {
-        if (!cancelled) setTransferProof(proof);
+        if (cancelled) return;
+        setTransferProof(proof);
+        setProofAbsent(!proof);
       })
       .catch(() => {
         if (!cancelled) setTransferProof(null);
@@ -2279,6 +2289,7 @@ export default function MovementsPage() {
                       ? 'other'
                       : p.method || 'cash',
           })),
+          hasTransferProof: refreshed.hasTransferProof === true,
         });
       }
 
@@ -3841,7 +3852,7 @@ export default function MovementsPage() {
                               </div>
                             </div>
                             <div className="flex items-center gap-2">
-                              {selectedMovement.type === 'sale' && payment.method === 'transfer' && transferProof && selectedMovement.payments.findIndex((item: { method?: string }) => item.method === 'transfer') === index && (
+                              {showTransferImageLink && payment.method === 'transfer' && selectedMovement.payments.findIndex((item: { method?: string }) => item.method === 'transfer') === index && (
                                 <button
                                   type="button"
                                   onClick={() => setProofPreviewOpen(true)}
@@ -3862,7 +3873,7 @@ export default function MovementsPage() {
                   <div className="flex justify-between items-center gap-3">
                     <span className="text-sm text-gray-600">Método de pago</span>
                     <div className="flex items-center gap-2">
-                      {selectedMovement.type === 'sale' && movementIncludesTransfer(selectedMovement) && transferProof && (
+                      {showTransferImageLink && (
                         <button
                           type="button"
                           onClick={() => setProofPreviewOpen(true)}
@@ -3879,17 +3890,23 @@ export default function MovementsPage() {
                   </div>
                 )}
 
-                {selectedMovement.type === 'sale' && movementIncludesTransfer(selectedMovement) && transferProof && (
+                {(showTransferImageLink || proofPreviewOpen) && (
                   <Dialog open={proofPreviewOpen} onOpenChange={setProofPreviewOpen}>
                     <DialogContent className="sm:max-w-md">
                       <DialogHeader className="pr-8">
                         <DialogTitle>Evidencia de la transferencia</DialogTitle>
                       </DialogHeader>
-                      <img
-                        src={transferProof}
-                        alt="Evidencia de la transferencia"
-                        className="max-h-[70vh] w-full rounded-md bg-gray-100 object-contain"
-                      />
+                      {transferProof ? (
+                        <img
+                          src={transferProof}
+                          alt="Evidencia de la transferencia"
+                          className="max-h-[70vh] w-full rounded-md bg-gray-100 object-contain"
+                        />
+                      ) : (
+                        <div className="flex h-40 items-center justify-center">
+                          <Loader2 className="h-6 w-6 animate-spin text-gray-400" />
+                        </div>
+                      )}
                     </DialogContent>
                   </Dialog>
                 )}
