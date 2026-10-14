@@ -34,6 +34,7 @@ import { searchTextMatches } from '../utils/searchText';
 import { useBusiness } from '../contexts/BusinessContext';
 import * as apiService from '../services/api';
 import { useIsMobile } from '../hooks/useIsMobile';
+import { TransferProofField } from './TransferProofField';
 
 interface PaymentSheetProps {
   open: boolean;
@@ -108,6 +109,7 @@ export function PaymentSheet({
     { id: '1', amount: '', method: 'Efectivo' }
   ]);
   const [receiptNote, setReceiptNote] = useState('');
+  const [transferProof, setTransferProof] = useState<string | null>(null);
   const [clientDialogOpen, setClientDialogOpen] = useState(false);
   const [paymentDetailsOpen, setPaymentDetailsOpen] = useState(false);
   const [discountActive, setDiscountActive] = useState(false);
@@ -189,6 +191,15 @@ export function PaymentSheet({
       }, 0);
 
   const paymentsMatchTotal = Math.abs(totalPaid - totalWithDiscount) < 0.01;
+  const includesTransfer =
+    paymentType === 'pagada' &&
+    (numPayments === 1
+      ? singlePaymentMethod === 'Transferencia'
+      : numPayments > 1 && paymentFields.some((field) => field.method === 'Transferencia'));
+
+  useEffect(() => {
+    if (!open) setTransferProof(null);
+  }, [open]);
 
   const handleConfirm = async () => {
     if (paymentType === 'credito' && !selectedClient) {
@@ -218,7 +229,8 @@ export function PaymentSheet({
       discount: discountActive ? {
         percent: parseLocaleNumber(discountPercent) || 0,
         amount: parseLocaleNumber(discountAmount) || 0
-      } : { percent: 0, amount: 0 }
+      } : { percent: 0, amount: 0 },
+      transferProof: isMobile && includesTransfer ? transferProof : null,
     };
 
     try {
@@ -231,6 +243,7 @@ export function PaymentSheet({
       setNumPayments(1);
       setSinglePaymentMethod('Efectivo');
       setReceiptNote('');
+      setTransferProof(null);
       setDiscountActive(false);
       setDiscountPercent('0');
       setDiscountAmount('0');
@@ -569,6 +582,16 @@ export function PaymentSheet({
                     </p>
                   </div>
                 )}
+              </PaymentSection>
+            )}
+
+            {isMobile && includesTransfer && (
+              <PaymentSection className="p-3">
+                <TransferProofField
+                  value={transferProof}
+                  onChange={setTransferProof}
+                  disabled={creatingSale}
+                />
               </PaymentSection>
             )}
 

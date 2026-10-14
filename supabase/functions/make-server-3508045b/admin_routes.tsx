@@ -12,6 +12,28 @@ export function registerAdminRoutes(app: any): void {
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
   );
 
+  async function resolveExistingUserId(email: string): Promise<string | null> {
+    const emailClean = String(email || "").trim().toLowerCase();
+    if (!emailClean) return null;
+
+    const { data: byUser } = await admin
+      .from("users")
+      .select("id")
+      .ilike("email", emailClean)
+      .limit(1);
+    if (byUser?.[0]?.id) return String(byUser[0].id);
+
+    const { data: byEmp } = await admin
+      .from("employees")
+      .select("user_id")
+      .ilike("email", emailClean)
+      .not("user_id", "is", null)
+      .limit(1);
+    if (byEmp?.[0]?.user_id) return String(byEmp[0].user_id);
+
+    return null;
+  }
+
   console.log("🔧 [ADMIN] Registering admin routes with CORS...");
 
   // ── CORS for /admin/* — must come BEFORE route handlers ──────────────────────
@@ -119,6 +141,19 @@ export function registerAdminRoutes(app: any): void {
       if (body.paymentMethod !== undefined) upd.payment_method = body.paymentMethod;
       if (body.createdAt !== undefined) upd.created_at = body.createdAt;
       if (body.createdBy !== undefined) upd.created_by = body.createdBy;
+      if (body.transferProof !== undefined) {
+        const proof = body.transferProof;
+        if (proof === null || proof === '') {
+          upd.transfer_proof = null;
+        } else if (typeof proof === "string" && proof.startsWith("data:image/")) {
+          if (proof.length > 1_200_000) {
+            return c.json({ error: "La foto del respaldo es muy pesada." }, 400);
+          }
+          upd.transfer_proof = proof;
+        } else {
+          return c.json({ error: "Respaldo de transferencia inválido" }, 400);
+        }
+      }
       if (body.payments !== undefined) upd.payments = body.payments;
       if (body.items !== undefined) {
         if (!Array.isArray(body.items) || body.items.length === 0) {
@@ -302,12 +337,14 @@ export function registerAdminRoutes(app: any): void {
         .maybeSingle();
 
       if (inactiveRow) {
+        const linkedUserId = inactiveRow.user_id || await resolveExistingUserId(b.email);
         const { data, error } = await admin.from("employees").update({
           name:        b.name,
           phone:       b.phone ?? null,
           role:        b.role || "cashier",
           permissions: b.permissions ?? {},
           is_active:   true,
+          user_id:     linkedUserId,
           updated_at:  new Date().toISOString(),
         }).eq("id", inactiveRow.id).eq("business_id", businessId).select().single();
 
@@ -316,10 +353,13 @@ export function registerAdminRoutes(app: any): void {
         return c.json({ success: true, employee: data, reactivated: true });
       }
 
-      // Safely handle user_id
+      // Safely handle user_id. Si el correo ya tiene cuenta, vincularlo
+      // para que el segundo negocio aparezca sin esperar otro registro.
       let safeUserId: string | null = null;
       if (b.user_id && typeof b.user_id === "string" && b.user_id.length > 0 && b.user_id !== "undefined") {
         safeUserId = b.user_id;
+      } else {
+        safeUserId = await resolveExistingUserId(b.email);
       }
 
       const { data, error } = await admin.from("employees").insert({

@@ -44,6 +44,8 @@ export interface CreateSaleData {
     percent: number;
     amount: number;
   };
+  /** Data URL de la foto del comprobante, solo si el pago incluye transferencia. */
+  transferProof?: string | null;
 }
 
 export async function createSale(data: CreateSaleData) {
@@ -127,6 +129,7 @@ export async function createSale(data: CreateSaleData) {
     notes: notesForSale || undefined,
     createdBy: user.id,
     createdAt: saleDateTime,
+    transferProof: data.transferProof || null,
   });
 
   return {
@@ -150,6 +153,7 @@ export interface CreateFreeSaleData {
     percent: number;
     amount: number;
   };
+  transferProof?: string | null;
 }
 
 export async function createFreeSale(data: CreateFreeSaleData) {
@@ -220,6 +224,7 @@ export async function createFreeSale(data: CreateFreeSaleData) {
     notes: notesForSale || undefined,
     createdBy: user.id,
     createdAt: saleDateTime,
+    transferProof: data.transferProof || null,
   });
 
   return {

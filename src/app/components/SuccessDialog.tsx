@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, Printer, CheckCircle2 } from 'lucide-react';
+import { X, Printer, CheckCircle2, ShoppingBag, Receipt, List } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -19,6 +19,7 @@ import {
 import { ScrollArea } from './ui/scroll-area';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { formatCurrency } from '../utils/currency';
+import { TransferProofField } from './TransferProofField';
 
 interface SuccessDialogProps {
   open: boolean;
@@ -31,6 +32,9 @@ interface SuccessDialogProps {
   /** Puede ser async; el diálogo espera a que termine antes de navegar (evita que Movimientos cargue sin el nombre nuevo). */
   onNameChange?: (name: string) => void | Promise<void>;
   onViewReceipt?: () => void;
+  /** En móvil, si la venta es por transferencia y todavía no tiene foto. */
+  offerTransferProof?: boolean;
+  onAttachTransferProof?: (dataUrl: string | null) => Promise<void>;
 }
 
 export function SuccessDialog({
@@ -43,14 +47,19 @@ export function SuccessDialog({
   onGoToMovements,
   onNameChange,
   onViewReceipt,
+  offerTransferProof = false,
+  onAttachTransferProof,
 }: SuccessDialogProps) {
   const [transactionName, setTransactionName] = useState('');
+  const [attachedProof, setAttachedProof] = useState<string | null>(null);
+  const [attachingProof, setAttachingProof] = useState(false);
 
   // Set default name when dialog opens
   useEffect(() => {
     if (open) {
       console.log('✅ SuccessDialog - Recibiendo defaultName:', defaultName);
       setTransactionName(defaultName);
+      setAttachedProof(null);
     }
   }, [open, defaultName]);
 
@@ -131,7 +140,7 @@ export function SuccessDialog({
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   const contentComponent = (
-    <div className="kivo-pop-in">
+    <div className="kivo-pop-in flex flex-col gap-5">
       {/* Success Icon */}
       <div className="flex justify-center">
         <div className={`rounded-full p-4 ${type === 'sale' ? 'bg-green-100' : 'bg-orange-100'} kivo-soft-pulse`}>
@@ -164,39 +173,48 @@ export function SuccessDialog({
         />
       </div>
 
-      {/* Receipt Section */}
-      <div className="bg-gray-50 rounded-lg p-4 space-y-3">
-        <h3 className="font-semibold text-gray-900 text-base">Comprobante</h3>
-        <p className="text-sm text-gray-600">
-          Puedes ver e imprimir el comprobante de {type === 'sale' ? 'venta' : 'gasto'}.
-        </p>
-        
+      {isMobile && type === 'sale' && offerTransferProof && (
+        <div className="mt-1">
+          <TransferProofField
+            prominent={!attachedProof}
+            value={attachedProof}
+            busy={attachingProof}
+            onChange={async (next) => {
+              if (!onAttachTransferProof) return;
+              setAttachingProof(true);
+              try {
+                await onAttachTransferProof(next);
+                setAttachedProof(next);
+              } finally {
+                setAttachingProof(false);
+              }
+            }}
+          />
+        </div>
+      )}
+
+      <div className="grid grid-cols-3 items-stretch gap-2">
         <Button
           variant="outline"
-          className="w-full h-12 text-sm font-medium"
+          className="h-auto flex-col gap-3 whitespace-normal rounded-xl px-2 py-3 text-center text-xs font-medium leading-tight kivo-pressable"
           onClick={onViewReceipt}
         >
-          <div className="flex items-center gap-2">
-            <Printer className="w-4 h-4 text-blue-600 flex-shrink-0" />
-            <span>Ver comprobante</span>
-          </div>
+          <Printer className="size-6 text-blue-600" />
+          Ver comprobante
         </Button>
-      </div>
-
-      {/* Action Buttons */}
-      <div className="space-y-3 pt-2">
         <Button
           onClick={handleNewTransaction}
-          className="w-full h-12 text-base font-semibold bg-gray-900 hover:bg-gray-800 kivo-pressable"
+          className="h-auto flex-col gap-3 whitespace-normal rounded-xl bg-gray-900 px-2 py-3 text-center text-xs font-semibold leading-tight text-white hover:bg-gray-800 kivo-pressable"
         >
+          {type === 'sale' ? <ShoppingBag className="size-6" /> : <Receipt className="size-6" />}
           {type === 'sale' ? 'Seguir vendiendo' : 'Crear otro gasto'}
         </Button>
-        
         <Button
           variant="outline"
           onClick={handleGoToMovements}
-          className="w-full h-12 font-medium text-base kivo-pressable"
+          className="h-auto flex-col gap-3 whitespace-normal rounded-xl px-2 py-3 text-center text-xs font-medium leading-tight kivo-pressable"
         >
+          <List className="size-6" />
           Ir a movimientos
         </Button>
       </div>

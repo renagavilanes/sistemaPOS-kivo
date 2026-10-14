@@ -783,7 +783,7 @@ export async function getSaleById(saleId: string, businessId: string): Promise<S
   };
 }
 
-export async function createSale(businessId: string, sale: Omit<Sale, 'id' | 'businessId' | 'saleNumber'> & { createdAt?: string }): Promise<Sale> {
+export async function createSale(businessId: string, sale: Omit<Sale, 'id' | 'businessId' | 'saleNumber'> & { createdAt?: string; transferProof?: string | null }): Promise<Sale> {
   console.log('🔵 [API] Creating sale via Edge Function (bypasses RLS for employees)');
 
   // Route through Edge Function server which uses SERVICE_ROLE_KEY to bypass RLS.
@@ -813,6 +813,7 @@ export async function createSale(businessId: string, sale: Omit<Sale, 'id' | 'bu
         notes: sale.notes,
         createdBy: sale.createdBy,
         createdAt: sale.createdAt,
+        ...(sale.transferProof ? { transferProof: sale.transferProof } : {}),
       }),
     }
   );
@@ -820,7 +821,11 @@ export async function createSale(businessId: string, sale: Omit<Sale, 'id' | 'bu
   if (!response.ok) {
     const errorBody = await response.json().catch(() => ({ error: response.statusText }));
     console.error('❌ [API] Error creating sale via server:', errorBody);
-    throw new Error(errorBody.error || `Error ${response.status} al crear la venta`);
+    const raw = String(errorBody.error || '');
+    if (raw.includes('transfer_proof')) {
+      throw new Error('Falta aplicar la actualización de la base para guardar el respaldo de la transferencia.');
+    }
+    throw new Error(raw || `Error ${response.status} al crear la venta`);
   }
 
   const { sale: data } = await response.json();
@@ -878,6 +883,8 @@ export type UpdateSalePayload = Partial<Sale> & {
   createdAt?: string;
   /** UUID de auth.users del vendedor (columna sales.created_by) */
   createdBy?: string | null;
+  /** Foto del comprobante bancario. null la quita. */
+  transferProof?: string | null;
 };
 
 export async function updateSale(saleId: string, businessId: string, updates: UpdateSalePayload): Promise<Sale> {
@@ -899,6 +906,7 @@ export async function updateSale(saleId: string, businessId: string, updates: Up
     payments: updates.payments,
     createdAt: updates.createdAt,
     createdBy: updates.createdBy,
+    transferProof: updates.transferProof,
   };
   Object.keys(body).forEach((k) => {
     if (body[k] === undefined) delete body[k];
@@ -935,7 +943,11 @@ export async function updateSale(saleId: string, businessId: string, updates: Up
   if (!response.ok) {
     const errBody = await response.json().catch(() => ({ error: response.statusText }));
     console.error('❌ [API] Error updating sale:', errBody);
-    throw new Error(errBody.error || `Error ${response.status} al actualizar venta`);
+    const raw = String(errBody.error || '');
+    if (raw.includes('transfer_proof')) {
+      throw new Error('Falta aplicar la actualización de la base para guardar el respaldo de la transferencia.');
+    }
+    throw new Error(raw || `Error ${response.status} al actualizar venta`);
   }
 
   const { sale: data } = await response.json();
@@ -960,6 +972,23 @@ export async function updateSale(saleId: string, businessId: string, updates: Up
     createdBy: data.created_by,
     createdAt: data.created_at,
   };
+}
+
+/** Solo la foto del comprobante. No viaja en el listado de movimientos. */
+export async function getSaleTransferProof(saleId: string, businessId: string): Promise<string | null> {
+  const accessToken = await getAccessToken();
+  const response = await fetch(
+    `https://${supabaseProjectId}.supabase.co/functions/v1/make-server-3508045b/sales/transfer-proof/${saleId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'X-Business-ID': businessId,
+      },
+    },
+  );
+  if (!response.ok) return null;
+  const body = await response.json().catch(() => ({}));
+  return typeof body.transferProof === 'string' && body.transferProof ? body.transferProof : null;
 }
 
 // ==================== EXPENSES ====================

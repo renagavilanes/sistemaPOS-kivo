@@ -87,6 +87,22 @@ async function rasterize(img: HTMLImageElement, maxDimension: number, quality: n
   return fileToDataUrl(file);
 }
 
+/** Captura del comprobante bancario: una sola imagen, liviana para guardarla con la venta. */
+export async function optimizeTransferProof(file: File): Promise<string> {
+  if (!file.type.startsWith('image/')) {
+    throw new Error('El archivo seleccionado no es una imagen.');
+  }
+  const img = await loadImageFromFile(file);
+  let dataUrl = await rasterize(img, 1280, 0.72);
+  if (dataUrl.length > 900_000) {
+    dataUrl = await rasterize(img, 960, 0.6);
+  }
+  if (dataUrl.length > 1_200_000) {
+    throw new Error('La foto es muy pesada. Prueba con otra imagen.');
+  }
+  return dataUrl;
+}
+
 /** Foto de producto: calidad para catálogo + miniatura liviana para listados. */
 export async function optimizeImageForProduct(file: File): Promise<string> {
   if (!file.type.startsWith('image/')) {

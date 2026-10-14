@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useMemo, type ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router';
-import { Search, Filter, Calendar, MoreVertical, Download, FileText, TrendingUp, DollarSign, CreditCard, ChevronLeft, ChevronRight, X, Users, ChevronRight as ChevronRightIcon, User, Building2, Printer, Receipt, Edit, Trash2, ShoppingCart, Plus, Minus, Check, Banknote, MoreHorizontal, ChevronDown, ChevronUp, Percent, ArrowLeft, Loader2 } from 'lucide-react';
+import { Search, Filter, Calendar, MoreVertical, Download, FileText, TrendingUp, DollarSign, CreditCard, ChevronLeft, ChevronRight, X, Users, ChevronRight as ChevronRightIcon, User, Building2, Printer, Receipt, Edit, Trash2, ShoppingCart, Plus, Minus, Check, Banknote, MoreHorizontal, ChevronDown, ChevronUp, Percent, ArrowLeft, Loader2, Image as ImageIcon } from 'lucide-react';
 import { ExpenseForm } from '../components/ExpenseForm';
 import { ReportsSheet } from '../components/ReportsSheet';
 import { ReceiptPreviewModal } from '../components/ReceiptPreviewModal';
@@ -55,6 +55,9 @@ import { saleItemUnitCost, saleItemsTotalCost, saleProfit } from '../utils/saleP
 import { searchTextMatches } from '../utils/searchText';
 import { canTouchMovement, movementBelongsToUser, resolveMovementAccess } from '../lib/movementPermissions';
 import { CashSessionsPanel } from '../components/CashSessionsPanel';
+import { TransferProofField } from '../components/TransferProofField';
+import { useIsMobile } from '../hooks/useIsMobile';
+import { movementIncludesTransfer } from '../lib/transferProof';
 import { CajaIntroDialog } from '../components/CajaIntroDialog';
 import { PageHeader } from '../components/layout/PageHeader';
 import { SectionCard } from '../components/layout/SectionCard';
@@ -568,6 +571,7 @@ function resolveMovementSeller(
 
 export default function MovementsPage() {
   const { currentBusiness, businesses, switchBusiness, createBusiness } = useBusiness();
+  const isMobile = useIsMobile();
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -997,6 +1001,10 @@ export default function MovementsPage() {
   // Detail Sheet states
   const [detailSheetOpen, setDetailSheetOpen] = useState(false);
   const [selectedMovement, setSelectedMovement] = useState<any>(null);
+  const [transferProof, setTransferProof] = useState<string | null>(null);
+  const [proofPreviewOpen, setProofPreviewOpen] = useState(false);
+  const [editTransferProof, setEditTransferProof] = useState<string | null>(null);
+  const editProofTouchedRef = useRef(false);
 
   // Receipt Preview Modal states
   const [receiptModalOpen, setReceiptModalOpen] = useState(false);
@@ -1885,6 +1893,49 @@ export default function MovementsPage() {
     return parts.join(' • ');
   };
 
+  const [proofSaleId, setProofSaleId] = useState<string | null>(null);
+  if ((selectedMovement?.id ?? null) !== proofSaleId) {
+    setProofSaleId(selectedMovement?.id ?? null);
+    setTransferProof(null);
+    setProofPreviewOpen(false);
+  }
+
+  useEffect(() => {
+    if (!currentBusiness?.id || !selectedMovement || selectedMovement.type !== 'sale') {
+      return;
+    }
+    const shouldLoad = (detailSheetOpen || editSheetOpen) && movementIncludesTransfer(selectedMovement);
+    if (!shouldLoad) {
+      if (!movementIncludesTransfer(selectedMovement)) setTransferProof(null);
+      return;
+    }
+    let cancelled = false;
+    apiService.getSaleTransferProof(selectedMovement.id, currentBusiness.id)
+      .then((proof) => {
+        if (!cancelled) setTransferProof(proof);
+      })
+      .catch(() => {
+        if (!cancelled) setTransferProof(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    currentBusiness?.id,
+    selectedMovement,
+    detailSheetOpen,
+    editSheetOpen,
+  ]);
+
+  useEffect(() => {
+    if (!editSheetOpen) {
+      editProofTouchedRef.current = false;
+      return;
+    }
+    if (editProofTouchedRef.current) return;
+    setEditTransferProof(transferProof);
+  }, [editSheetOpen, transferProof, selectedMovement?.id]);
+
   // Edit Functions
   const openEditSheet = (movement?: any) => {
     const movementToEdit = movement || selectedMovement;
@@ -2112,6 +2163,23 @@ export default function MovementsPage() {
       return;
     }
 
+    const editHasTransfer =
+      editSaleStatus !== 'credit' &&
+      (editNumPayments > 1
+        ? editPayments.some((payment) => payment.method === 'Transferencia')
+        : editSinglePaymentMethod === 'Transferencia');
+    const hadTransferProof = Boolean(editTransferProof || transferProof);
+    let transferProofUpdate: string | null | undefined;
+    if (isMobile) {
+      if (editHasTransfer) {
+        const next = editTransferProof || null;
+        const prev = transferProof || null;
+        if (next !== prev) transferProofUpdate = next;
+      } else if (hadTransferProof) {
+        transferProofUpdate = null;
+      }
+    }
+
     // Update sale via API (persistencia en BD) y recargar ventas para que la lista = lo guardado
     try {
       setSavingEdit(true);
@@ -2130,7 +2198,13 @@ export default function MovementsPage() {
         payments: paymentData.payments || [],
         notes: editNote || null,
         createdAt: createdAtIso,
+        ...(transferProofUpdate !== undefined ? { transferProof: transferProofUpdate } : {}),
       });
+      if (transferProofUpdate !== undefined) {
+        setTransferProof(transferProofUpdate);
+        setEditTransferProof(transferProofUpdate);
+        editProofTouchedRef.current = false;
+      }
       window.dispatchEvent(new CustomEvent('productsUpdated', {
         detail: { businessId: currentBusiness.id },
       }));
@@ -3766,19 +3840,58 @@ export default function MovementsPage() {
                                 <p className="text-xs text-gray-500">Pago {index + 1} de {selectedMovement.numPayments}</p>
                               </div>
                             </div>
-                            <span className="text-sm font-bold text-gray-900">${formatCurrency(payment.amount)}</span>
+                            <div className="flex items-center gap-2">
+                              {selectedMovement.type === 'sale' && payment.method === 'transfer' && transferProof && selectedMovement.payments.findIndex((item: { method?: string }) => item.method === 'transfer') === index && (
+                                <button
+                                  type="button"
+                                  onClick={() => setProofPreviewOpen(true)}
+                                  className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-900 underline underline-offset-2"
+                                >
+                                  Ver imagen
+                                  <ImageIcon className="h-4 w-4" />
+                                </button>
+                              )}
+                              <span className="text-sm font-bold text-gray-900">${formatCurrency(payment.amount)}</span>
+                            </div>
                           </div>
                         );
                       })}
                     </div>
                   </div>
                 ) : (
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center gap-3">
                     <span className="text-sm text-gray-600">Método de pago</span>
-                    <Badge variant="outline" className="text-xs">
-                      {paymentMethodLabelForMovement(selectedMovement.paymentMethod)}
-                    </Badge>
+                    <div className="flex items-center gap-2">
+                      {selectedMovement.type === 'sale' && movementIncludesTransfer(selectedMovement) && transferProof && (
+                        <button
+                          type="button"
+                          onClick={() => setProofPreviewOpen(true)}
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-900 underline underline-offset-2"
+                        >
+                          Ver imagen
+                          <ImageIcon className="h-4 w-4" />
+                        </button>
+                      )}
+                      <Badge variant="outline" className="text-xs">
+                        {paymentMethodLabelForMovement(selectedMovement.paymentMethod)}
+                      </Badge>
+                    </div>
                   </div>
+                )}
+
+                {selectedMovement.type === 'sale' && movementIncludesTransfer(selectedMovement) && transferProof && (
+                  <Dialog open={proofPreviewOpen} onOpenChange={setProofPreviewOpen}>
+                    <DialogContent className="sm:max-w-md">
+                      <DialogHeader className="pr-8">
+                        <DialogTitle>Evidencia de la transferencia</DialogTitle>
+                      </DialogHeader>
+                      <img
+                        src={transferProof}
+                        alt="Evidencia de la transferencia"
+                        className="max-h-[70vh] w-full rounded-md bg-gray-100 object-contain"
+                      />
+                    </DialogContent>
+                  </Dialog>
                 )}
 
                 {selectedMovement.type === 'sale' ? (
@@ -4438,6 +4551,23 @@ export default function MovementsPage() {
                 )}
                 </PaymentSection>
 
+                {isMobile && editSaleStatus !== 'credit' && (
+                  editNumPayments > 1
+                    ? editPayments.some((payment) => payment.method === 'Transferencia')
+                    : editSinglePaymentMethod === 'Transferencia'
+                ) && (
+                  <PaymentSection className="!p-3">
+                    <TransferProofField
+                      value={editTransferProof}
+                      disabled={savingEdit}
+                      onChange={(next) => {
+                        editProofTouchedRef.current = true;
+                        setEditTransferProof(next);
+                      }}
+                    />
+                  </PaymentSection>
+                )}
+
                 <PaymentSection>
                 {/* Payment Details - Collapsible */}
                 <Collapsible open={editPaymentDetailsOpen} onOpenChange={setEditPaymentDetailsOpen}>
@@ -4470,7 +4600,16 @@ export default function MovementsPage() {
             </ScrollArea>
 
             {/* Footer */}
-            <div className="p-4 sm:p-6 border-t bg-white flex-shrink-0">
+            <div className="p-4 sm:p-6 border-t bg-white flex-shrink-0 space-y-3">
+              {isMobile && editSaleStatus !== 'credit' && !(
+                editNumPayments > 1
+                  ? editPayments.some((payment) => payment.method === 'Transferencia')
+                  : editSinglePaymentMethod === 'Transferencia'
+              ) && Boolean(editTransferProof || transferProof) && (
+                <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
+                  Esta venta tiene una foto de la transferencia. Al guardar se quita.
+                </p>
+              )}
               <Button 
                 onClick={saveEdit}
                 size="lg"

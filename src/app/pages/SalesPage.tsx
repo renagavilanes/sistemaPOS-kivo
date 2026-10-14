@@ -30,6 +30,7 @@ import {
   CreateExpenseData,
   defaultSaleConceptFromCart,
 } from '../lib/api';
+import { labeledPaymentsIncludeTransfer } from '../lib/transferProof';
 import { useBusiness } from '../contexts/BusinessContext';
 // REMOVIDO: import { useData } from '../contexts/DataContext';
 import * as apiService from '../services/api';
@@ -65,6 +66,7 @@ export default function SalesPage() {
   const [successDialogType, setSuccessDialogType] = useState<'sale' | 'expense'>('sale');
   const [successDialogAmount, setSuccessDialogAmount] = useState(0);
   const [successDialogDefaultName, setSuccessDialogDefaultName] = useState('');
+  const [successOfferTransferProof, setSuccessOfferTransferProof] = useState(false);
   const { triggerInkDouble } = useScreenFx();
   const [lastCreatedId, setLastCreatedId] = useState<string | null>(null);
   const [lastCreatedMovement, setLastCreatedMovement] = useState<any>(null);
@@ -415,7 +417,7 @@ export default function SalesPage() {
   };
 
   // Confirm sale
-  const handleConfirmSale = async (saleData: { paymentType: 'pagada' | 'credito'; payments: any[]; client: any; saleDate: string; receiptNote: string; discount: any }) => {
+  const handleConfirmSale = async (saleData: { paymentType: 'pagada' | 'credito'; payments: any[]; client: any; saleDate: string; receiptNote: string; discount: any; transferProof?: string | null }) => {
     try {
       if (isFreeSaleCheckout) {
         const result = await createFreeSale({
@@ -426,6 +428,7 @@ export default function SalesPage() {
           saleDate: saleData.saleDate,
           receiptNote: saleData.receiptNote,
           discount: saleData.discount,
+          transferProof: saleData.transferProof,
         });
 
         if (result.sale && result.sale.id) {
@@ -482,6 +485,9 @@ export default function SalesPage() {
         setSuccessDialogType('sale');
         setSuccessDialogAmount(Number(result.sale?.total) || 0);
         setSuccessDialogDefaultName(successDialogConcept);
+        setSuccessOfferTransferProof(
+          labeledPaymentsIncludeTransfer(saleData.paymentType, saleData.payments) && !saleData.transferProof,
+        );
         return;
       }
 
@@ -494,6 +500,7 @@ export default function SalesPage() {
         saleDate: saleData.saleDate,
         receiptNote: saleData.receiptNote,
         discount: saleData.discount,
+        transferProof: saleData.transferProof,
       };
       
       const result = await createSale(createSaleData);
@@ -577,6 +584,9 @@ export default function SalesPage() {
       setSuccessDialogType('sale');
       setSuccessDialogAmount(total);
       setSuccessDialogDefaultName(successDialogConcept);
+      setSuccessOfferTransferProof(
+        labeledPaymentsIncludeTransfer(saleData.paymentType, saleData.payments) && !saleData.transferProof,
+      );
     } catch (error) {
       console.error('Error creating sale:', error);
       toast.error('Error al registrar la venta');
@@ -685,6 +695,7 @@ export default function SalesPage() {
       setSuccessDialogType('expense');
       setSuccessDialogAmount(expense.amount);
       setSuccessDialogDefaultName(expense.name || expense.category || '');
+      setSuccessOfferTransferProof(false);
     } catch (error) {
       console.error('Error creating expense:', error);
       toast.error('Error al registrar el gasto');
@@ -1091,6 +1102,15 @@ export default function SalesPage() {
           navigate('/movements');
         }}
         onViewReceipt={handleViewReceipt}
+        offerTransferProof={successOfferTransferProof}
+        onAttachTransferProof={async (dataUrl) => {
+          if (!lastCreatedId || !currentBusiness?.id) {
+            throw new Error('No se encontró la venta para guardar el respaldo.');
+          }
+          await apiService.updateSale(lastCreatedId, currentBusiness.id, {
+            transferProof: dataUrl,
+          });
+        }}
       />
 
       {/* Mobile Cart Sheet */}

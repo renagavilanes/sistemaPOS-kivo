@@ -3050,6 +3050,7 @@ app.post("/make-server-3508045b/sales/db-create", async (c) => {
       notes,
       createdBy,
       createdAt,
+      transferProof,
     } = body;
 
     if (!items || items.length === 0) {
@@ -3091,6 +3092,13 @@ app.post("/make-server-3508045b/sales/db-create", async (c) => {
       created_by: createdBy || null,
       created_at: createdAt || new Date().toISOString(),
     };
+
+    if (typeof transferProof === 'string' && transferProof.startsWith('data:image/')) {
+      if (transferProof.length > 1_200_000) {
+        return c.json({ error: 'La foto del respaldo es muy pesada.' }, 400);
+      }
+      insertData.transfer_proof = transferProof;
+    }
 
     console.log('💰 [SALES/DB-CREATE] Inserting sale:', saleNumber);
 
@@ -3193,6 +3201,19 @@ app.patch("/make-server-3508045b/sales/db-update/:saleId", async (c) => {
     if (body.paymentMethod !== undefined) updateData.payment_method = body.paymentMethod;
     if (body.createdAt !== undefined) updateData.created_at = body.createdAt;
     if (body.createdBy !== undefined) updateData.created_by = body.createdBy;
+    if (body.transferProof !== undefined) {
+      const proof = body.transferProof;
+      if (proof === null || proof === '') {
+        updateData.transfer_proof = null;
+      } else if (typeof proof === 'string' && proof.startsWith('data:image/')) {
+        if (proof.length > 1_200_000) {
+          return c.json({ error: 'La foto del respaldo es muy pesada.' }, 400);
+        }
+        updateData.transfer_proof = proof;
+      } else {
+        return c.json({ error: 'Respaldo de transferencia inválido' }, 400);
+      }
+    }
     if (body.payments !== undefined) updateData.payments = body.payments;
     if (body.items !== undefined) {
       if (!Array.isArray(body.items) || body.items.length === 0) {
@@ -3242,6 +3263,32 @@ app.patch("/make-server-3508045b/sales/db-update/:saleId", async (c) => {
     }
     console.log('✅ [SALES/DB-UPDATE] Sale updated:', saleId);
     return c.json({ success: true, sale: data });
+  } catch (error: any) {
+    return c.json({ error: error.message || 'Internal server error' }, 500);
+  }
+});
+
+// Foto del comprobante bancario. Aparte del listado para no bajarla en cada movimiento.
+app.get("/make-server-3508045b/sales/transfer-proof/:saleId", async (c) => {
+  try {
+    const businessId = c.req.header('X-Business-ID');
+    if (!businessId) return c.json({ error: 'Missing X-Business-ID header' }, 400);
+    const saleId = c.req.param('saleId');
+    const { data, error } = await supabaseAdmin
+      .from('sales')
+      .select('transfer_proof')
+      .eq('id', saleId)
+      .eq('business_id', businessId)
+      .maybeSingle();
+    if (error) {
+      console.error('❌ [SALES/TRANSFER-PROOF] Error:', error);
+      if (String(error.message || '').includes('transfer_proof')) {
+        return c.json({ transferProof: null });
+      }
+      return c.json({ error: error.message }, 500);
+    }
+    const proof = typeof data?.transfer_proof === 'string' ? data.transfer_proof : null;
+    return c.json({ transferProof: proof });
   } catch (error: any) {
     return c.json({ error: error.message || 'Internal server error' }, 500);
   }
@@ -4446,15 +4493,27 @@ app.post("/make-server-3508045b/check-user-exists", async (c) => {
       return c.json({ error: 'Email is required' }, 400);
     }
 
-    // Get all users and check if email exists
-    const { data: users, error } = await supabaseAdmin.auth.admin.listUsers();
-    
-    if (error) {
-      console.error('❌ [CHECK-USER] Error:', error);
-      return c.json({ error: error.message }, 500);
+    const emailClean = String(email).trim().toLowerCase();
+
+    const { data: userRow, error: userErr } = await supabaseAdmin
+      .from('users')
+      .select('id')
+      .ilike('email', emailClean)
+      .limit(1);
+
+    if (!userErr && userRow?.length) {
+      console.log('✅ [CHECK-USER] User exists in users table');
+      return c.json({ exists: true });
     }
 
-    const exists = users.users.some(u => u.email === email);
+    const { data: empRow, error: empErr } = await supabaseAdmin
+      .from('employees')
+      .select('user_id')
+      .ilike('email', emailClean)
+      .not('user_id', 'is', null)
+      .limit(1);
+
+    const exists = !empErr && !!empRow?.length;
     console.log('✅ [CHECK-USER] User exists?', exists);
 
     return c.json({ exists });
@@ -4587,25 +4646,30 @@ app.post("/make-server-3508045b/accept-invite", async (c) => {
       return c.json({ error: 'Missing required fields' }, 400);
     }
 
-    // Actualizar employee con el user_id
-    const { data: employee, error: updateError } = await supabaseAdmin
+    const emailClean = String(email).trim();
+
+    // Puede haber más de una fila (reactivaciones). No usar .single().
+    const { data: employees, error: updateError } = await supabaseAdmin
       .from('employees')
-      .update({ user_id: userId, is_active: true })
+      .update({ user_id: userId, is_active: true, updated_at: new Date().toISOString() })
       .eq('business_id', businessId)
-      .ilike('email', email)
-      .select()
-      .single();
+      .ilike('email', emailClean)
+      .select();
 
     if (updateError) {
       console.error('❌ Error updating employee:', updateError);
       return c.json({ error: updateError.message }, 500);
     }
 
-    console.log('✅ Employee activated:', employee);
+    if (!employees?.length) {
+      return c.json({ error: 'No se encontró la invitación para este correo en este negocio' }, 404);
+    }
+
+    console.log('✅ Employee activated:', employees[0]);
 
     return c.json({
       success: true,
-      employee,
+      employee: employees[0],
     });
   } catch (error: any) {
     console.error('❌ [ACCEPT-INVITE] Error:', error);
