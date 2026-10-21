@@ -440,20 +440,27 @@ export function PaymentSheet({
               <PaymentSection>
                 <div className="space-y-3">
                   <Label className="text-xs sm:text-sm break-words leading-tight">Selecciona el número de pagos que realizarás y el método de pago*</Label>
-                  <div className="flex gap-2 flex-wrap">
-                    {[1, 2, 3, 4, 5, 6].map((num) => (
+                  <div className="flex w-full flex-nowrap gap-1.5 sm:gap-2">
+                    {[1, 2, 3, 4, 5].map((num) => (
                       <Button
                         key={num}
                         variant={numPayments === num ? 'default' : 'outline'}
-                        className="w-10 h-10 sm:w-12 sm:h-12 text-sm"
+                        className="h-10 min-w-0 flex-1 shrink px-0 text-sm sm:h-12 sm:w-12 sm:flex-none"
                         onClick={() => handleNumPaymentsChange(num)}
                       >
                         {num}
                       </Button>
                     ))}
                     <Button
+                      variant={numPayments === 6 ? 'default' : 'outline'}
+                      className="hidden h-10 min-w-0 shrink px-0 text-sm sm:inline-flex sm:h-12 sm:w-12"
+                      onClick={() => handleNumPaymentsChange(6)}
+                    >
+                      6
+                    </Button>
+                    <Button
                       variant={numPayments === 0 ? 'default' : 'outline'}
-                      className="px-3 h-10 sm:px-4 sm:h-12 text-sm"
+                      className="h-10 min-w-0 flex-1 shrink px-1 text-sm sm:h-12 sm:w-auto sm:flex-none sm:px-4"
                       onClick={() => handleNumPaymentsChange(0)}
                     >
                       Otro
@@ -749,27 +756,40 @@ export function PaymentSheet({
       {/* Client Selection - Desktop (Dialog) or Mobile (Sheet) */}
       {isMobile ? (
         <Sheet open={clientDialogOpen} onOpenChange={setClientDialogOpen}>
-          <SheetContent side="bottom" className="h-full w-full p-0 flex flex-col">
-            <SheetHeader className="px-6 py-4 border-b flex-shrink-0 bg-white">
-              <div className="space-y-3">
-                <div>
-                  <SheetTitle>Seleccionar Cliente</SheetTitle>
+          <SheetContent side="bottom" className="h-full w-full p-0 flex flex-col [&>button]:hidden">
+            <SheetHeader className="px-3 py-2.5 border-b flex-shrink-0 bg-white">
+              <div className="flex items-start gap-2">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  aria-label="Volver"
+                  onClick={() => {
+                    setClientDialogOpen(false);
+                    setClientSearchTerm('');
+                  }}
+                  className="h-8 w-8 flex-shrink-0"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                </Button>
+                <div className="min-w-0 flex-1 pt-0.5">
+                  <SheetTitle className="text-base">Seleccionar Cliente</SheetTitle>
                   <p className="text-sm text-gray-500 mt-1">Elige un cliente de la lista o crea uno nuevo.</p>
                 </div>
-                <div className="flex justify-end">
-                  <Button
-                    size="sm"
-                    className="bg-gray-900 text-white hover:bg-gray-800"
-                    onClick={() => {
-                      setClientDialogOpen(false);
-                      setIsCreatingClient(true);
-                    }}
-                    disabled={!canCreateContact}
-                  >
-                    <Plus className="w-4 h-4 mr-1" />
-                    Nuevo Cliente
-                  </Button>
-                </div>
+              </div>
+              <div className="flex justify-end">
+                <Button
+                  size="sm"
+                  className="bg-gray-900 text-white hover:bg-gray-800"
+                  onClick={() => {
+                    setClientDialogOpen(false);
+                    setIsCreatingClient(true);
+                  }}
+                  disabled={!canCreateContact}
+                >
+                  <Plus className="w-4 h-4 mr-1" />
+                  Nuevo Cliente
+                </Button>
               </div>
             </SheetHeader>
             

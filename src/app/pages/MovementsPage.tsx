@@ -4421,20 +4421,27 @@ export default function MovementsPage() {
                 {/* Number of Payments */}
                 <div className="space-y-3">
                   <Label className="text-xs sm:text-sm break-words leading-tight">Selecciona el número de pagos que realizarás y el método de pago*</Label>
-                  <div className="flex gap-2 flex-wrap">
-                    {[1, 2, 3, 4, 5, 6].map((num) => (
+                  <div className="flex w-full flex-nowrap gap-1.5 sm:gap-2">
+                    {[1, 2, 3, 4, 5].map((num) => (
                       <Button
                         key={num}
                         variant={editNumPayments === num ? 'default' : 'outline'}
-                        className="w-10 h-10 sm:w-12 sm:h-12 text-sm"
+                        className="h-10 min-w-0 flex-1 shrink px-0 text-sm sm:h-12 sm:w-12 sm:flex-none"
                         onClick={() => handleEditNumPaymentsChange(num)}
                       >
                         {num}
                       </Button>
                     ))}
                     <Button
+                      variant={editNumPayments === 6 ? 'default' : 'outline'}
+                      className="hidden h-10 min-w-0 shrink px-0 text-sm sm:inline-flex sm:h-12 sm:w-12"
+                      onClick={() => handleEditNumPaymentsChange(6)}
+                    >
+                      6
+                    </Button>
+                    <Button
                       variant={editNumPayments === 0 ? 'default' : 'outline'}
-                      className="px-3 h-10 sm:px-4 sm:h-12 text-sm"
+                      className="h-10 min-w-0 flex-1 shrink px-1 text-sm sm:h-12 sm:w-auto sm:flex-none sm:px-4"
                       onClick={() => handleEditNumPaymentsChange(0)}
                     >
                       Otro

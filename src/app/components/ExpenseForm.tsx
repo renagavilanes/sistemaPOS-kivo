@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, Check, Banknote, CreditCard, Building2, MoreHorizontal, Search, User, Users, Plus } from 'lucide-react';
+import { X, Check, Banknote, CreditCard, Building2, MoreHorizontal, Search, User, Users, Plus, ArrowLeft } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -466,26 +466,39 @@ export function ExpenseForm({
       {/* Supplier Selection - Desktop (Dialog) or Mobile (Sheet) */}
       {isMobile ? (
         <Sheet open={supplierDialogOpen} onOpenChange={setSupplierDialogOpen}>
-          <SheetContent side="bottom" className="h-full w-full p-0 flex flex-col">
-            <SheetHeader className="px-6 py-4 border-b flex-shrink-0 bg-white">
-              <div className="space-y-3">
-                <div>
-                  <SheetTitle>Seleccionar Contacto</SheetTitle>
+          <SheetContent side="bottom" className="h-full w-full p-0 flex flex-col [&>button]:hidden">
+            <SheetHeader className="px-3 py-2.5 border-b flex-shrink-0 bg-white">
+              <div className="flex items-start gap-2">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  aria-label="Volver"
+                  onClick={() => {
+                    setSupplierDialogOpen(false);
+                    setContactSearchTerm('');
+                  }}
+                  className="h-8 w-8 flex-shrink-0"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                </Button>
+                <div className="min-w-0 flex-1 pt-0.5">
+                  <SheetTitle className="text-base">Seleccionar Contacto</SheetTitle>
                   <p className="text-sm text-gray-500 mt-1">Elige un contacto de la lista o agrega uno nuevo.</p>
                 </div>
-                <div className="flex justify-end">
-                  <Button
-                    size="sm"
-                    className="bg-gray-900 text-white hover:bg-gray-800"
-                    onClick={() => {
-                      setSupplierDialogOpen(false);
-                      setIsCreatingSupplier(true);
-                    }}
-                  >
-                    <Plus className="w-4 h-4 mr-1" />
-                    Nuevo Contacto
-                  </Button>
-                </div>
+              </div>
+              <div className="flex justify-end">
+                <Button
+                  size="sm"
+                  className="bg-gray-900 text-white hover:bg-gray-800"
+                  onClick={() => {
+                    setSupplierDialogOpen(false);
+                    setIsCreatingSupplier(true);
+                  }}
+                >
+                  <Plus className="w-4 h-4 mr-1" />
+                  Nuevo Contacto
+                </Button>
               </div>
             </SheetHeader>
             
