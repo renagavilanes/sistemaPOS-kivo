@@ -778,6 +778,7 @@ export function PaymentSheet({
                 </div>
                 <Button
                   size="sm"
+                  aria-label="Nuevo cliente"
                   className="shrink-0 bg-gray-900 text-white hover:bg-gray-800"
                   onClick={() => {
                     setClientDialogOpen(false);
@@ -786,7 +787,7 @@ export function PaymentSheet({
                   disabled={!canCreateContact}
                 >
                   <Plus className="w-4 h-4" />
-                  Nuevo Cliente
+                  Nuevo
                 </Button>
               </div>
             </SheetHeader>
