@@ -467,7 +467,7 @@ export function ExpenseForm({
       {isMobile ? (
         <Sheet open={supplierDialogOpen} onOpenChange={setSupplierDialogOpen}>
           <SheetContent side="bottom" className="h-full w-full p-0 flex flex-col [&>button]:hidden">
-            <SheetHeader className="px-3 py-2.5 border-b flex-shrink-0 bg-white">
+            <SheetHeader className="px-3 py-3 border-b flex-shrink-0 bg-white">
               <div className="flex items-start gap-2">
                 <Button
                   type="button"
@@ -478,25 +478,23 @@ export function ExpenseForm({
                     setSupplierDialogOpen(false);
                     setContactSearchTerm('');
                   }}
-                  className="h-8 w-8 flex-shrink-0"
+                  className="mt-0.5 h-8 w-8 shrink-0"
                 >
                   <ArrowLeft className="w-4 h-4" />
                 </Button>
-                <div className="min-w-0 flex-1 pt-0.5">
-                  <SheetTitle className="text-base">Seleccionar Contacto</SheetTitle>
-                  <p className="text-sm text-gray-500 mt-1">Elige un contacto de la lista o agrega uno nuevo.</p>
+                <div className="min-w-0 flex-1 pt-1">
+                  <SheetTitle className="text-base leading-5">Seleccionar Contacto</SheetTitle>
+                  <p className="mt-1 text-sm leading-snug text-gray-500">Elige un contacto de la lista o agrega uno nuevo.</p>
                 </div>
-              </div>
-              <div className="flex justify-end">
                 <Button
                   size="sm"
-                  className="bg-gray-900 text-white hover:bg-gray-800"
+                  className="shrink-0 bg-gray-900 text-white hover:bg-gray-800"
                   onClick={() => {
                     setSupplierDialogOpen(false);
                     setIsCreatingSupplier(true);
                   }}
                 >
-                  <Plus className="w-4 h-4 mr-1" />
+                  <Plus className="w-4 h-4" />
                   Nuevo Contacto
                 </Button>
               </div>
