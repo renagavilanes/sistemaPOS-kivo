@@ -43,6 +43,7 @@ import { VoiceSaleAgent } from '../components/VoiceSaleAgent';
 import { BarcodeScanner } from '../components/BarcodeScanner';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { barcodesFromProduct, indexBarcodes, isFastScan, isIdleScan, lookupBarcode } from '../lib/barcodes';
+import { playScanSound, unlockScanSound } from '../lib/scanSound';
 
 export default function SalesPage() {
   const navigate = useNavigate();
@@ -335,6 +336,8 @@ export default function SalesPage() {
   addScannedRef.current = handleAddToCart;
   const setSearchRef = useRef(setSearchTerm);
   setSearchRef.current = setSearchTerm;
+  const cameraOpenRef = useRef(false);
+  cameraOpenRef.current = barcodeCameraOpen;
   const scanEnabledRef = useRef(false);
   scanEnabledRef.current =
     Boolean(currentBusiness) &&
@@ -349,22 +352,26 @@ export default function SalesPage() {
 
   const applyScannedBarcode = (raw: string) => {
     const hit = lookupBarcode(barcodeIndexRef.current, raw);
+    const quiet = cameraOpenRef.current;
     if (hit.status === 'found') {
       addScannedRef.current(hit.product);
       setSearchRef.current('');
-      toast.success(hit.product.name, { id: 'pos-scan', duration: 1200 });
+      playScanSound(true);
+      if (!quiet) toast.success(hit.product.name, { id: 'pos-scan', duration: 1200 });
       return { ok: true, message: hit.product.name };
     }
     if (hit.status === 'ambiguous') {
       setSearchRef.current('');
+      playScanSound(false);
       const message = 'Hay más de un producto con este código';
-      toast.error(message, { id: 'pos-scan', duration: 1800 });
+      if (!quiet) toast.error(message, { id: 'pos-scan', duration: 1800 });
       return { ok: false, message };
     }
     if (hit.status === 'missing') {
       setSearchRef.current('');
+      playScanSound(false);
       const message = 'No hay un producto con este código';
-      toast.error(message, { id: 'pos-scan', duration: 1600 });
+      if (!quiet) toast.error(message, { id: 'pos-scan', duration: 1600 });
       return { ok: false, message };
     }
     return { ok: false, message: '' };
@@ -392,6 +399,7 @@ export default function SalesPage() {
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (!scanEnabledRef.current) return;
+      unlockScanSound();
       const target = event.target as HTMLElement | null;
       const field = target?.closest?.('input, textarea, select, [contenteditable="true"]');
       if (field && !field.hasAttribute('data-pos-search')) {
@@ -1118,7 +1126,10 @@ export default function SalesPage() {
                   {isMobile ? (
                     <button
                       type="button"
-                      onClick={() => setBarcodeCameraOpen(true)}
+                      onClick={() => {
+                        unlockScanSound();
+                        setBarcodeCameraOpen(true);
+                      }}
                       className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#272B36] text-white shadow-sm"
                       aria-label="Escanear código con la cámara"
                     >
@@ -1370,6 +1381,16 @@ export default function SalesPage() {
           continuous
           onClose={() => setBarcodeCameraOpen(false)}
           onDetect={applyScannedBarcode}
+          items={cartItems.map((item) => ({
+            id: item.product.id,
+            name: item.product.name,
+            quantity: item.quantity,
+          }))}
+          totalLabel={`$${formatCurrency(total)}`}
+          onViewCart={() => {
+            setBarcodeCameraOpen(false);
+            setMobileCartSheetOpen(true);
+          }}
         />
       ) : null}
     </div>

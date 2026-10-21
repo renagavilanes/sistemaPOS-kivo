@@ -3,6 +3,12 @@ import { X } from 'lucide-react';
 
 type DetectResult = { ok: boolean; message: string };
 
+export type ScanCartLine = {
+  id: string;
+  name: string;
+  quantity: number;
+};
+
 type BarcodeDetectorLike = {
   detect: (source: CanvasImageSource) => Promise<Array<{ rawValue?: string }>>;
 };
@@ -39,11 +45,17 @@ export function BarcodeScanner({
   continuous = false,
   onClose,
   onDetect,
+  items = [],
+  totalLabel = '',
+  onViewCart,
 }: {
   open: boolean;
   continuous?: boolean;
   onClose: () => void;
   onDetect: (code: string) => DetectResult;
+  items?: ScanCartLine[];
+  totalLabel?: string;
+  onViewCart?: () => void;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const onDetectRef = useRef(onDetect);
@@ -53,12 +65,12 @@ export function BarcodeScanner({
   continuousRef.current = continuous;
   onCloseRef.current = onClose;
   const [error, setError] = useState('');
-  const [message, setMessage] = useState('');
+  const [notice, setNotice] = useState<DetectResult | null>(null);
 
   useEffect(() => {
     if (!open) return;
     setError('');
-    setMessage('');
+    setNotice(null);
     const video = videoRef.current;
     let stopped = false;
     let stream: MediaStream | null = null;
@@ -125,7 +137,7 @@ export function BarcodeScanner({
         recent.at = now;
         const result = onDetectRef.current(raw);
         if (!result) return;
-        setMessage(result.message);
+        setNotice(result);
         if (result.ok && !continuousRef.current) onCloseRef.current();
       }, 250);
     };
@@ -158,14 +170,82 @@ export function BarcodeScanner({
           <div className="h-36 w-[78%] rounded-2xl border-2 border-white/90 shadow-[0_0_0_999px_rgba(0,0,0,0.35)]" />
         </div>
       </div>
-      <div className="px-4 py-4 text-center">
-        {error ? (
-          <p className="text-sm text-amber-200">{error}</p>
+      {onViewCart ? (
+        <ScanCartPanel
+          items={items}
+          totalLabel={totalLabel}
+          error={error}
+          notice={notice}
+          onViewCart={onViewCart}
+        />
+      ) : (
+        <div className="px-4 py-4 text-center">
+          {error ? (
+            <p className="text-sm text-amber-200">{error}</p>
+          ) : (
+            <p className="text-sm text-white/80">
+              {notice?.message || 'La lectura se guarda en el producto.'}
+            </p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ScanCartPanel({
+  items,
+  totalLabel,
+  error,
+  notice,
+  onViewCart,
+}: {
+  items: ScanCartLine[];
+  totalLabel: string;
+  error: string;
+  notice: DetectResult | null;
+  onViewCart: () => void;
+}) {
+  const count = items.reduce((sum, item) => sum + item.quantity, 0);
+  const problem = error || (notice && !notice.ok ? notice.message : '');
+
+  return (
+    <div className="shrink-0 border-t border-white/10 bg-zinc-950 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+      <div className="max-h-40 overflow-y-auto px-4 pt-3">
+        {problem ? <p className="pb-2 text-sm text-amber-200">{problem}</p> : null}
+        {items.length === 0 ? (
+          <p className="pb-3 text-center text-sm text-white/70">Cada lectura se agrega al carrito.</p>
         ) : (
-          <p className="text-sm text-white/80">
-            {message || (continuous ? 'Cada lectura se agrega al carrito.' : 'La lectura se guarda en el producto.')}
-          </p>
+          <ul className="pb-1">
+            {items.map((item, index) => (
+              <li
+                key={item.id}
+                className={`flex items-center justify-between gap-3 py-1.5 ${index === 0 ? 'text-white' : 'text-white/70'}`}
+              >
+                <span className={`min-w-0 truncate text-sm ${index === 0 ? 'font-semibold' : ''}`}>{item.name}</span>
+                <span className="flex h-7 min-w-7 shrink-0 items-center justify-center rounded-full bg-white/15 px-2 text-sm font-semibold tabular-nums">
+                  {item.quantity}
+                </span>
+              </li>
+            ))}
+          </ul>
         )}
+      </div>
+      <div className="px-3 pt-2">
+        <button
+          type="button"
+          onClick={onViewCart}
+          disabled={items.length === 0}
+          className="flex h-12 w-full items-center justify-between rounded-xl bg-white px-4 text-gray-900 disabled:opacity-40"
+        >
+          <span className="flex min-w-0 items-center gap-3">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-900 text-sm font-bold text-white">
+              {count}
+            </span>
+            <span className="font-semibold">Ver carrito</span>
+          </span>
+          <span className="shrink-0 font-bold tabular-nums">{totalLabel}</span>
+        </button>
       </div>
     </div>
   );
