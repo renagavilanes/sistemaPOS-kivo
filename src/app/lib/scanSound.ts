@@ -13,18 +13,18 @@ export function unlockScanSound() {
   if (ctx && ctx.state === 'suspended') void ctx.resume();
 }
 
-function beep(ctx: AudioContext, frequency: number, start: number, duration: number) {
-  const osc = ctx.createOscillator();
+function beep(ctx: AudioContext, frequency: number, start: number, duration: number, peak: number) {
+  const tone = ctx.createOscillator();
   const gain = ctx.createGain();
-  osc.type = 'sine';
-  osc.frequency.value = frequency;
-  osc.connect(gain);
+  tone.type = 'sine';
+  tone.frequency.value = frequency;
+  tone.connect(gain);
   gain.connect(ctx.destination);
   gain.gain.setValueAtTime(0.0001, start);
-  gain.gain.exponentialRampToValueAtTime(0.12, start + 0.012);
+  gain.gain.exponentialRampToValueAtTime(peak, start + 0.02);
   gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
-  osc.start(start);
-  osc.stop(start + duration);
+  tone.start(start);
+  tone.stop(start + duration + 0.02);
 }
 
 export function playScanSound(ok: boolean) {
@@ -33,9 +33,10 @@ export function playScanSound(ok: boolean) {
   if (ctx.state === 'suspended') void ctx.resume();
   const start = ctx.currentTime;
   if (ok) {
-    beep(ctx, 1760, start, 0.08);
+    beep(ctx, 523, start, 0.18, 0.42);
+    beep(ctx, 659, start + 0.1, 0.22, 0.36);
     return;
   }
-  beep(ctx, 220, start, 0.09);
-  beep(ctx, 180, start + 0.11, 0.11);
+  beep(ctx, 349, start, 0.2, 0.32);
+  beep(ctx, 294, start + 0.14, 0.22, 0.28);
 }

@@ -1385,6 +1385,7 @@ export default function SalesPage() {
             id: item.product.id,
             name: item.product.name,
             quantity: item.quantity,
+            image: item.product.image,
           }))}
           totalLabel={`$${formatCurrency(total)}`}
           onViewCart={() => {
