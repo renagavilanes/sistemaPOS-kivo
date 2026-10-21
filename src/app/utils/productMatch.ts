@@ -1,3 +1,5 @@
+import { parseBarcodes } from '../lib/barcodes';
+
 export type MatchableProduct = {
   id: string;
   name: string;
@@ -56,9 +58,12 @@ function nameSimilarity(a: string, b: string) {
 }
 
 export function suggestDestProduct(from: MatchableProduct, destCatalog: MatchableProduct[]): { product: MatchableProduct | null; kind: MatchKind } {
-  const bar = normalizeBarcode(from.barcode);
-  if (bar) {
-    const hit = destCatalog.find((p) => normalizeBarcode(p.barcode) === bar);
+  const fromCodes = parseBarcodes(from.barcode);
+  if (fromCodes.length > 0) {
+    const hit = destCatalog.find((p) => {
+      const destCodes = parseBarcodes(p.barcode);
+      return fromCodes.some((code) => destCodes.includes(code));
+    });
     if (hit) return { product: hit, kind: 'barcode' };
   }
 

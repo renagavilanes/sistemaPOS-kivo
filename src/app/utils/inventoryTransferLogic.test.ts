@@ -79,6 +79,14 @@ describe('emparejado de productos', () => {
     assert.equal(match.product?.id, 'right');
   });
 
+  it('reconoce uno de varios códigos guardados en el mismo producto', () => {
+    const from = product({ id: 'a', name: 'Coca 600', barcode: '111|222', businessId: 'origen' });
+    const dest = [product({ id: 'right', name: 'Otra', barcode: '222', businessId: 'dest' })];
+    const match = suggestDestProduct(from, dest);
+    assert.equal(match.kind, 'barcode');
+    assert.equal(match.product?.id, 'right');
+  });
+
   it('iguala nombres sin importar mayúsculas ni tildes', () => {
     const from = product({ id: 'a', name: 'Adaptador Vertical', stock: 2 });
     const dest = [product({ id: 'b', name: 'adaptador vertical' })];

@@ -2,6 +2,7 @@ import { supabase } from '../lib/supabase';
 import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicEnv';
 import { buildInviteUrl, encodeInviteToken } from '../utils/appUrl';
 import { runInventoryTransfer } from '../utils/inventoryTransferLogic';
+import { parseBarcodes } from '../lib/barcodes';
 
 // Helper to create Supabase client directly
 function createClientDirect() {
@@ -50,7 +51,9 @@ export interface Product {
   stock: number;
   category: string;
   image?: string;
-  barcode?: string;
+  barcode?: string | null;
+  /** Leído del mismo campo barcode. No se pide aparte al servidor. */
+  barcodes?: string[];
   description?: string;
   isActive?: boolean;
   showInVirtualCatalog?: boolean;
@@ -155,7 +158,8 @@ function mapProductFromApi(p: any): Product {
     stock: p.stock || 0,
     category: p.category || 'Sin categoría',
     image: p.image ?? '',
-    barcode: p.barcode,
+    barcode: p.barcode ?? null,
+    barcodes: parseBarcodes(p.barcode),
     description: p.description,
     isActive: p.is_active ?? p.isActive ?? true,
     showInVirtualCatalog: p.show_in_virtual_catalog ?? p.showInVirtualCatalog ?? true,

@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, type ReactNode } from 'react';
 import { useNavigate } from 'react-router';
-import { Search, Plus, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet, ArrowLeftRight } from 'lucide-react';
+import { Search, Plus, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet, ArrowLeftRight, ScanLine } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -29,6 +29,9 @@ import { useBusiness } from '../contexts/BusinessContext';
 import { formatCurrency, parseLocaleNumber } from '../utils/currency';
 import { normalizeSearchText as normalizeText, searchTextMatches } from '../utils/searchText';
 import { optimizeImageForProduct, packedImageForSave, parseProductImage } from '../utils/productImage';
+import { barcodeUsedBy, barcodesFromProduct, collectBarcodes, normalizeBarcode, serializeBarcodes } from '../lib/barcodes';
+import { useIsMobile } from '../hooks/useIsMobile';
+import { BarcodeScanner } from '../components/BarcodeScanner';
 import {
   dataTableTheadSticky,
   dthLeft,
@@ -173,7 +176,10 @@ export default function ProductsPage() {
   const [productCategory, setProductCategory] = useState('');
   const [productImage, setProductImage] = useState('');
   const [showInVirtualCatalog, setShowInVirtualCatalog] = useState(true);
+  const [productBarcodes, setProductBarcodes] = useState<string[]>(['']);
+  const [barcodeCameraOpen, setBarcodeCameraOpen] = useState(false);
   const [imageProcessing, setImageProcessing] = useState(false);
+  const isMobile = useIsMobile();
   const [loading, setLoading] = useState(false);
 
   const { currentBusiness, businesses, switchBusiness } = useBusiness();
@@ -569,6 +575,17 @@ export default function ProductsPage() {
       return;
     }
     const stockQty = Math.trunc(stock);
+    const collectedBarcodes = collectBarcodes(productBarcodes);
+    if (collectedBarcodes.error) {
+      toast.error(collectedBarcodes.error);
+      return;
+    }
+    const barcodeConflict = barcodeUsedBy(products, collectedBarcodes.codes, editingProduct?.id);
+    if (barcodeConflict) {
+      toast.error(`El código ${barcodeConflict.code} ya está en ${barcodeConflict.name}`);
+      return;
+    }
+    const barcodeValue = serializeBarcodes(collectedBarcodes.codes);
 
     if (!currentBusiness) {
       toast.error('No hay un negocio seleccionado');
@@ -596,6 +613,7 @@ export default function ProductsPage() {
           category: productCategory || editingProduct.category,
           image: imageToSave,
           showInVirtualCatalog,
+          barcode: barcodeValue,
         });
 
         if (result.success) {
@@ -619,6 +637,7 @@ export default function ProductsPage() {
                     category: productCategory || p.category,
                     image: savedImage,
                     showInVirtualCatalog,
+                    barcodes: collectedBarcodes.codes,
                   }
                 : p,
             ),
@@ -626,7 +645,12 @@ export default function ProductsPage() {
 
           window.dispatchEvent(
             new CustomEvent('productsUpdated', {
-              detail: { businessId: currentBusiness.id, productId, image: savedImage },
+              detail: {
+                businessId: currentBusiness.id,
+                productId,
+                image: savedImage,
+                barcodes: collectedBarcodes.codes,
+              },
             }),
           );
 
@@ -649,6 +673,7 @@ export default function ProductsPage() {
           category: productCategory || 'Sin categoría',
           image: imageToSave,
           showInVirtualCatalog,
+          barcode: barcodeValue,
         });
 
         if (result.success) {
@@ -671,6 +696,7 @@ export default function ProductsPage() {
                 category: productCategory || 'Sin categoría',
                 image: savedImage,
                 showInVirtualCatalog,
+                barcodes: collectedBarcodes.codes,
               },
               ...prev,
             ]);
@@ -678,7 +704,12 @@ export default function ProductsPage() {
 
           window.dispatchEvent(
             new CustomEvent('productsUpdated', {
-              detail: { businessId: currentBusiness.id, productId, image: savedImage },
+              detail: {
+                businessId: currentBusiness.id,
+                productId,
+                image: savedImage,
+                barcodes: collectedBarcodes.codes,
+              },
             }),
           );
 
@@ -709,9 +740,11 @@ export default function ProductsPage() {
     setProductCategory(product.category);
     setProductImage(product.image || '');
     setShowInVirtualCatalog(product.showInVirtualCatalog !== false);
+    const listedCodes = product.barcodes || [];
+    setProductBarcodes(listedCodes.length ? [...listedCodes] : ['']);
     try {
       const full = await apiService.getProductById(currentBusiness.id, product.id);
-      setEditingProduct(full);
+      setEditingProduct(full as Product);
       setProductName(full.name);
       setProductPrice(full.price.toString());
       setProductCost(full.cost.toString());
@@ -719,6 +752,8 @@ export default function ProductsPage() {
       setProductCategory(full.category);
       setProductImage(full.image || '');
       setShowInVirtualCatalog(full.showInVirtualCatalog !== false);
+      const fullCodes = barcodesFromProduct(full);
+      setProductBarcodes(fullCodes.length ? fullCodes : ['']);
     } catch (e) {
       console.warn('No se pudo cargar el producto completo; usando datos del listado.', e);
     }
@@ -751,6 +786,37 @@ export default function ProductsPage() {
     }
   };
 
+  const handleProductBarcodeDetect = (raw: string) => {
+    const code = normalizeBarcode(raw);
+    const collected = collectBarcodes([code]);
+    if (!code || collected.error || collected.codes.length === 0) {
+      return { ok: false, message: collected.error || 'No se leyó un código' };
+    }
+    const nextCode = collected.codes[0];
+    const conflict = barcodeUsedBy(products, [nextCode], editingProduct?.id);
+    if (conflict) return { ok: false, message: `Ya está en ${conflict.name}` };
+
+    let result = { ok: false, message: 'Este producto ya tiene 3 códigos' };
+    setProductBarcodes((prev) => {
+      const existing = collectBarcodes(prev).codes;
+      if (existing.includes(nextCode)) {
+        result = { ok: false, message: 'Ese código ya está en este producto' };
+        return prev;
+      }
+      const empty = prev.findIndex((value) => !normalizeBarcode(value));
+      if (empty >= 0) {
+        const next = [...prev];
+        next[empty] = nextCode;
+        result = { ok: true, message: 'Código listo. Guarda el producto para dejarlo.' };
+        return next;
+      }
+      if (existing.length >= 3) return prev;
+      result = { ok: true, message: 'Código listo. Guarda el producto para dejarlo.' };
+      return [...prev, nextCode];
+    });
+    return result;
+  };
+
   const resetForm = () => {
     setEditingProduct(null);
     setProductName('');
@@ -760,6 +826,8 @@ export default function ProductsPage() {
     setProductCategory('');
     setProductImage('');
     setShowInVirtualCatalog(true);
+    setProductBarcodes(['']);
+    setBarcodeCameraOpen(false);
   };
 
   const handleExport = async () => {
@@ -870,6 +938,7 @@ export default function ProductsPage() {
       category: p.category || 'Sin categoría',
       image: cleanImage,
       showInVirtualCatalog: p.showInVirtualCatalog !== false,
+      barcodes: barcodesFromProduct(p),
     };
   };
 
@@ -1728,6 +1797,72 @@ export default function ProductsPage() {
               </FormSection>
 
               <FormSection>
+                <Label>Códigos de barras</Label>
+                <div className="space-y-2" data-barcode-fields>
+                  {productBarcodes.map((code, index) => (
+                    <div key={index} className="flex gap-2">
+                      <Input
+                        value={code}
+                        placeholder={index === 0 ? 'Escanear o escribir' : `Código ${index + 1}`}
+                        autoComplete="off"
+                        autoCapitalize="off"
+                        autoCorrect="off"
+                        spellCheck={false}
+                        className="h-12"
+                        onChange={(e) => {
+                          const next = [...productBarcodes];
+                          next[index] = e.target.value;
+                          setProductBarcodes(next);
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key !== 'Enter') return;
+                          e.preventDefault();
+                          const inputs = e.currentTarget.closest('[data-barcode-fields]')?.querySelectorAll('input');
+                          const nextInput = inputs?.[index + 1] as HTMLInputElement | undefined;
+                          nextInput?.focus();
+                        }}
+                      />
+                      {isMobile && index === 0 ? (
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="icon"
+                          className="h-12 w-12 shrink-0"
+                          aria-label="Leer código con la cámara"
+                          onClick={() => setBarcodeCameraOpen(true)}
+                        >
+                          <ScanLine className="w-4 h-4" />
+                        </Button>
+                      ) : null}
+                      {productBarcodes.length > 1 ? (
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="icon"
+                          className="h-12 w-12 shrink-0"
+                          aria-label="Quitar código"
+                          onClick={() => setProductBarcodes(productBarcodes.filter((_, i) => i !== index))}
+                        >
+                          <X className="w-4 h-4" />
+                        </Button>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+                {productBarcodes.length < 3 ? (
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    className="h-10 justify-start px-0"
+                    onClick={() => setProductBarcodes([...productBarcodes, ''])}
+                  >
+                    <Plus className="w-4 h-4 mr-1.5" />
+                    Agregar otro código
+                  </Button>
+                ) : null}
+              </FormSection>
+
+              <FormSection>
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <Label htmlFor="show-in-virtual-catalog">Mostrar en catálogo virtual</Label>
@@ -1777,6 +1912,14 @@ export default function ProductsPage() {
           </div>
         </SheetContent>
       </Sheet>
+
+      {isMobile ? (
+        <BarcodeScanner
+          open={barcodeCameraOpen}
+          onClose={() => setBarcodeCameraOpen(false)}
+          onDetect={handleProductBarcodeDetect}
+        />
+      ) : null}
 
       {/* Categories Sheet - Lateral Derecho (Desktop y Mobile) */}
       <Sheet 

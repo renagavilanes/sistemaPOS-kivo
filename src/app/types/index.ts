@@ -10,6 +10,8 @@ export interface Product {
   stock: number;
   category: string;
   image?: string;
+  /** Hasta 3 códigos. Viajan en el listado, dentro del campo barcode. */
+  barcodes?: string[];
   /** Si es false, no aparece en el catálogo virtual compartido. Default true. */
   showInVirtualCatalog?: boolean;
 }

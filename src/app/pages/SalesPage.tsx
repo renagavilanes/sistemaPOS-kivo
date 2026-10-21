@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router';
-import { Plus, Store, Receipt, ChevronRight, Building2, Check, ChevronDown, DollarSign, CircleDollarSign } from 'lucide-react';
+import { Plus, Store, Receipt, ChevronRight, Building2, Check, ChevronDown, DollarSign, CircleDollarSign, ScanLine } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Badge } from '../components/ui/badge';
@@ -40,6 +40,9 @@ import { Label } from '../components/ui/label';
 import { useAuth } from '../contexts/AuthContext';
 import { useScreenFx } from '../contexts/ScreenFxContext';
 import { VoiceSaleAgent } from '../components/VoiceSaleAgent';
+import { BarcodeScanner } from '../components/BarcodeScanner';
+import { useIsMobile } from '../hooks/useIsMobile';
+import { barcodesFromProduct, indexBarcodes, isFastScan, isIdleScan, lookupBarcode } from '../lib/barcodes';
 
 export default function SalesPage() {
   const navigate = useNavigate();
@@ -82,6 +85,8 @@ export default function SalesPage() {
   const [isEditingMovement, setIsEditingMovement] = useState(false);
   const [originalCartQuantities, setOriginalCartQuantities] = useState<Record<string, number>>({});
   const [mobileCartSheetOpen, setMobileCartSheetOpen] = useState(false);
+  const [barcodeCameraOpen, setBarcodeCameraOpen] = useState(false);
+  const isMobile = useIsMobile();
   const hasLoadedRef = useRef(false);
 
   // Business selector modal state
@@ -160,6 +165,7 @@ export default function SalesPage() {
           stock: p.stock,
           category: p.category || 'Sin categoría',
           image: p.image || '',
+          barcodes: barcodesFromProduct(p),
         }));
         console.log('✅ Productos cargados en SalesPage:', mappedProducts.length, 'productos');
         setProducts(mappedProducts);
@@ -179,12 +185,21 @@ export default function SalesPage() {
         image?: string;
         businessId?: string;
         stockAdjusted?: boolean;
+        barcodes?: string[];
       }>).detail;
       if (detail?.businessId && detail.businessId !== businessId) return;
 
       if (detail?.productId && detail.image) {
         setProducts((prev) =>
-          prev.map((p) => (p.id === detail.productId ? { ...p, image: detail.image! } : p)),
+          prev.map((p) =>
+            p.id === detail.productId
+              ? {
+                  ...p,
+                  image: detail.image!,
+                  ...(Array.isArray(detail.barcodes) ? { barcodes: detail.barcodes } : {}),
+                }
+              : p,
+          ),
         );
         return;
       }
@@ -312,6 +327,117 @@ export default function SalesPage() {
   const handleAddToCart = (product: Product) => {
     handleAddToCartQuantity(product, 1);
   };
+
+  const barcodeIndex = useMemo(() => indexBarcodes(products), [products]);
+  const barcodeIndexRef = useRef(barcodeIndex);
+  barcodeIndexRef.current = barcodeIndex;
+  const addScannedRef = useRef(handleAddToCart);
+  addScannedRef.current = handleAddToCart;
+  const setSearchRef = useRef(setSearchTerm);
+  setSearchRef.current = setSearchTerm;
+  const scanEnabledRef = useRef(false);
+  scanEnabledRef.current =
+    Boolean(currentBusiness) &&
+    activeTab === 'sale' &&
+    !paymentSheetOpen &&
+    !expenseSheetOpen &&
+    !successDialogOpen &&
+    !receiptModalOpen &&
+    !businessModalOpen &&
+    !isCreateDialogOpen &&
+    !barcodeCameraOpen;
+
+  const applyScannedBarcode = (raw: string) => {
+    const hit = lookupBarcode(barcodeIndexRef.current, raw);
+    if (hit.status === 'found') {
+      addScannedRef.current(hit.product);
+      setSearchRef.current('');
+      toast.success(hit.product.name, { id: 'pos-scan', duration: 1200 });
+      return { ok: true, message: hit.product.name };
+    }
+    if (hit.status === 'ambiguous') {
+      setSearchRef.current('');
+      const message = 'Hay más de un producto con este código';
+      toast.error(message, { id: 'pos-scan', duration: 1800 });
+      return { ok: false, message };
+    }
+    if (hit.status === 'missing') {
+      setSearchRef.current('');
+      const message = 'No hay un producto con este código';
+      toast.error(message, { id: 'pos-scan', duration: 1600 });
+      return { ok: false, message };
+    }
+    return { ok: false, message: '' };
+  };
+
+  useEffect(() => {
+    let buffer = '';
+    let first = 0;
+    let last = 0;
+    let idle = 0;
+
+    const clearIdle = () => {
+      if (idle) window.clearTimeout(idle);
+      idle = 0;
+    };
+    const resetBuffer = () => {
+      buffer = '';
+      clearIdle();
+    };
+    const finish = (code: string) => {
+      resetBuffer();
+      const result = applyScannedBarcode(code);
+      return result.ok || result.message !== '';
+    };
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (!scanEnabledRef.current) return;
+      const target = event.target as HTMLElement | null;
+      const field = target?.closest?.('input, textarea, select, [contenteditable="true"]');
+      if (field && !field.hasAttribute('data-pos-search')) {
+        resetBuffer();
+        return;
+      }
+      if (event.ctrlKey || event.metaKey || event.altKey) return;
+
+      if (event.key === 'Enter' || (event.key === 'Tab' && buffer.length >= 4)) {
+        const code = buffer;
+        const fast = isFastScan(code.length, last - first);
+        if (fast && finish(code)) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          resetBuffer();
+        }
+        return;
+      }
+
+      if (event.key.length !== 1) return;
+      const now = performance.now();
+      if (buffer && now - last > 80) buffer = '';
+      if (!buffer) first = now;
+      buffer += event.key;
+      last = now;
+      if (buffer.length > 64) {
+        buffer = buffer.slice(-64);
+        first = now;
+      }
+      clearIdle();
+      const snapshot = buffer;
+      const started = first;
+      idle = window.setTimeout(() => {
+        if (buffer !== snapshot) return;
+        if (isIdleScan(snapshot.length, last - started)) finish(snapshot);
+        else resetBuffer();
+      }, 90);
+    };
+
+    window.addEventListener('keydown', onKeyDown, true);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown, true);
+      clearIdle();
+    };
+  }, []);
 
   const handleUpdateQuantity = (productId: string, quantity: number) => {
     if (quantity === 0) {
@@ -971,6 +1097,14 @@ export default function SalesPage() {
               onCategoryChange={setSelectedCategory}
               searchTerm={searchTerm}
               onSearchChange={setSearchTerm}
+              placeholder={isMobile ? 'Buscar producto...' : 'Buscar o escanear...'}
+              onSearchKeyDown={(event) => {
+                if (event.key !== 'Enter') return;
+                const hit = lookupBarcode(barcodeIndexRef.current, event.currentTarget.value);
+                if (hit.status !== 'found' && hit.status !== 'ambiguous') return;
+                event.preventDefault();
+                applyScannedBarcode(event.currentTarget.value);
+              }}
               focusProduct={voiceFocus}
               onAddToCart={handleAddToCart}
               categories={categories}
@@ -979,7 +1113,19 @@ export default function SalesPage() {
               onUpdateQuantity={handleUpdateQuantity}
               canEditPrice={canEditPrice}
               modeTabs={saleModeTabs}
-              searchAction={activeTab === 'sale' && !isEditingMovement && products.length >= 2 ? (
+              searchAction={activeTab === 'sale' && !isEditingMovement ? (
+                <>
+                  {isMobile ? (
+                    <button
+                      type="button"
+                      onClick={() => setBarcodeCameraOpen(true)}
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#272B36] text-white shadow-sm"
+                      aria-label="Escanear código con la cámara"
+                    >
+                      <ScanLine className="h-5 w-5" />
+                    </button>
+                  ) : null}
+                  {products.length >= 2 ? (
                 <VoiceSaleAgent
                   products={products}
                   cartItems={cartItems}
@@ -1003,6 +1149,8 @@ export default function SalesPage() {
                   onRemove={handleRemoveItem}
                   onClearCart={handleClearCart}
                 />
+                  ) : null}
+                </>
               ) : null}
             />
           </div>
@@ -1216,6 +1364,14 @@ export default function SalesPage() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+      {isMobile ? (
+        <BarcodeScanner
+          open={barcodeCameraOpen}
+          continuous
+          onClose={() => setBarcodeCameraOpen(false)}
+          onDetect={applyScannedBarcode}
+        />
+      ) : null}
     </div>
   );
 }

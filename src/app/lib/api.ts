@@ -337,6 +337,8 @@ export interface CreateProductData {
   category?: string;
   image?: string;
   showInVirtualCatalog?: boolean;
+  /** null borra los códigos. Varios van unidos en el campo que ya existe. */
+  barcode?: string | null;
 }
 
 export async function createProduct(data: CreateProductData) {
@@ -355,6 +357,7 @@ export async function createProduct(data: CreateProductData) {
     category: data.category || 'Otros',
     image: data.image,
     showInVirtualCatalog: data.showInVirtualCatalog !== false,
+    barcode: data.barcode,
   });
 
   return {
@@ -363,7 +366,7 @@ export async function createProduct(data: CreateProductData) {
   };
 }
 
-export async function updateProduct(productId: string, data: Partial<Product>) {
+export async function updateProduct(productId: string, data: Partial<Product> & { barcode?: string | null }) {
   const businessId = getCurrentBusinessId();
   if (!businessId) {
     throw new Error('No se ha seleccionado ningún negocio');

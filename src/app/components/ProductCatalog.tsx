@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
 import { Search, Package, Plus, Minus, X } from 'lucide-react';
 import { Product, CartItem } from '../types';
 import { Input } from './ui/input';
@@ -29,6 +29,8 @@ interface ProductCatalogProps {
   focusProduct?: { id: string; token: number } | null;
   /** Control a la derecha del buscador, por ejemplo el botón de voz. */
   searchAction?: ReactNode;
+  placeholder?: string;
+  onSearchKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export function ProductCatalog({
@@ -47,6 +49,8 @@ export function ProductCatalog({
   modeTabs,
   focusProduct = null,
   searchAction,
+  placeholder = 'Buscar producto...',
+  onSearchKeyDown,
 }: ProductCatalogProps) {
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
@@ -132,9 +136,11 @@ export function ProductCatalog({
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
           <Input
             type="text"
-            placeholder="Buscar producto..."
+            data-pos-search="true"
+            placeholder={placeholder}
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
+            onKeyDown={onSearchKeyDown}
             onFocus={(e) => {
               const el = e.currentTarget;
               requestAnimationFrame(() => el.select());
