@@ -94,11 +94,22 @@ export function BarcodeScanner({
       try {
         stream = await navigator.mediaDevices.getUserMedia({
           audio: false,
-          video: { facingMode: { ideal: 'environment' } },
+          video: {
+            facingMode: { ideal: 'environment' },
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          },
         });
       } catch {
-        if (!stopped) setError('No se pudo abrir la cámara. Revisa el permiso e inténtalo de nuevo.');
-        return;
+        try {
+          stream = await navigator.mediaDevices.getUserMedia({
+            audio: false,
+            video: { facingMode: { ideal: 'environment' } },
+          });
+        } catch {
+          if (!stopped) setError('No se pudo abrir la cámara. Revisa el permiso e inténtalo de nuevo.');
+          return;
+        }
       }
       if (stopped) {
         stopStream();
@@ -123,14 +134,18 @@ export function BarcodeScanner({
         setError('Este teléfono no lee códigos con la cámara. Puedes escribir el código a mano.');
         return;
       }
+      let scanning = false;
       timer = window.setInterval(async () => {
-        if (!video || video.readyState < 2) return;
+        if (scanning || !video || video.readyState < 2) return;
+        scanning = true;
         let raw = '';
         try {
           const found = await detector.detect(video);
           raw = String(found?.[0]?.rawValue || '');
         } catch {
           return;
+        } finally {
+          scanning = false;
         }
         if (!raw) return;
         const now = Date.now();
@@ -253,7 +268,7 @@ function ScanCartPanel({
                 <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-lg bg-white">
                   <LazyProductImage
                     fillParent
-                    eager
+                    cacheOnly
                     productId={item.id}
                     initialSrc={item.image}
                     alt=""

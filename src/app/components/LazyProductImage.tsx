@@ -213,6 +213,11 @@ export interface LazyProductImageProps {
    */
   eager?: boolean;
   /**
+   * Solo usa la foto que ya está en memoria o guardada en el teléfono.
+   * No pide nada al servidor.
+   */
+  cacheOnly?: boolean;
+  /**
    * Rellena un ancestro con `position: relative` y tamaño definido (p. ej. aspect-ratio).
    * Evita en Safari/WebKit que `h-full` sobre la imagen se resuelva mal dentro de flex.
    */
@@ -234,6 +239,7 @@ export function LazyProductImage({
   className,
   initialSrc,
   eager = false,
+  cacheOnly = false,
   fillParent = false,
   publicCatalogSlug,
   businessId: businessIdProp,
@@ -279,6 +285,27 @@ export function LazyProductImage({
     const immediate = displayProductImageSrc(initialSrc);
     if (immediate) {
       return;
+    }
+
+    if (cacheOnly) {
+      if (!businessId || !productId) {
+        setSrc('');
+        return;
+      }
+      const key = cacheKey(businessId, productId);
+      if (imageSrcCache.has(key)) {
+        setSrc(imageSrcCache.get(key)!);
+        return;
+      }
+      let canceled = false;
+      void idbGet(key).then((cached) => {
+        if (canceled || !cached) return;
+        imageSrcCache.set(key, cached);
+        setSrc(cached);
+      });
+      return () => {
+        canceled = true;
+      };
     }
 
     const load = () => {
@@ -337,7 +364,7 @@ export function LazyProductImage({
       cancelAnimationFrame(raf);
       io?.disconnect();
     };
-  }, [businessId, productId, initialSrc, eager, publicSlug]);
+  }, [businessId, productId, initialSrc, eager, cacheOnly, publicSlug]);
 
   return (
     <div
