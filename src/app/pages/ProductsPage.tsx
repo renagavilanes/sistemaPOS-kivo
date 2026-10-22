@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, type ReactNode } from 'react';
+import { memo, startTransition, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import { Search, Plus, Trash2, Grid3x3, X, Upload, Download, ArrowUpDown, Building2, Check, ChevronDown, PackageOpen, Loader2, DollarSign, ClipboardList, FileSpreadsheet, ArrowLeftRight, ScanLine } from 'lucide-react';
 import { Button } from '../components/ui/button';
@@ -147,6 +147,164 @@ function InlineNumberField({
     />
   );
 }
+
+type InlineProductField = 'price' | 'cost' | 'stock';
+
+const InventoryTableRow = memo(function InventoryTableRow({
+  product,
+  canEditProduct,
+  canDeleteProduct,
+  canSeeCostProfit,
+  onPatch,
+  onEdit,
+  onDelete,
+}: {
+  product: Product;
+  canEditProduct: boolean;
+  canDeleteProduct: boolean;
+  canSeeCostProfit: boolean;
+  onPatch: (productId: string, field: InlineProductField, next: number, previous: number) => void;
+  onEdit: (product: Product) => void;
+  onDelete: (product: Product) => void;
+}) {
+  const [override, setOverride] = useState<{ price?: number; cost?: number; stock?: number } | null>(null);
+  const seenPrice = useRef(product.price);
+  const seenCost = useRef(product.cost);
+  const seenStock = useRef(product.stock);
+
+  useEffect(() => {
+    const previousPrice = seenPrice.current;
+    const previousCost = seenCost.current;
+    const previousStock = seenStock.current;
+    seenPrice.current = product.price;
+    seenCost.current = product.cost;
+    seenStock.current = product.stock;
+    setOverride((prev) => {
+      if (!prev) return prev;
+      const next = { ...prev };
+      let changed = false;
+      if (next.price !== undefined && product.price !== previousPrice) {
+        delete next.price;
+        changed = true;
+      }
+      if (next.cost !== undefined && product.cost !== previousCost) {
+        delete next.cost;
+        changed = true;
+      }
+      if (next.stock !== undefined && product.stock !== previousStock) {
+        delete next.stock;
+        changed = true;
+      }
+      if (!changed) return prev;
+      if (next.price === undefined && next.cost === undefined && next.stock === undefined) return null;
+      return next;
+    });
+  }, [product]);
+
+  const price = override?.price ?? product.price;
+  const cost = override?.cost ?? product.cost;
+  const stock = override?.stock ?? product.stock;
+  const profit = price - cost;
+  const profitPercentage = price > 0 ? ((profit / price) * 100).toFixed(0) : '0';
+
+  const commit = (field: InlineProductField, next: number) => {
+    const previous = override?.[field] ?? product[field];
+    setOverride((prev) => ({ ...prev, [field]: next }));
+    onPatch(product.id, field, next, previous);
+  };
+
+  return (
+    <tr className="hover:bg-gray-50">
+      <td
+        className={`pl-4 pr-0 py-3 w-auto ${canEditProduct ? 'cursor-pointer' : ''}`}
+        onClick={() => canEditProduct && onEdit(product)}
+      >
+        <div className="flex items-center gap-3">
+          <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded bg-gray-100">
+            <LazyProductImage
+              fillParent
+              productId={product.id}
+              initialSrc={product.image}
+              alt={product.name}
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+          <div className="min-w-0 max-w-[400px]">
+            <div className="font-medium text-gray-900 truncate" title={product.name}>{product.name}</div>
+            <div className="text-xs text-gray-500 truncate">{product.category}</div>
+          </div>
+        </div>
+      </td>
+      <td className="px-2 py-3 text-right">
+        <div className="relative ml-auto w-24">
+          <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+          <InlineNumberField
+            value={price}
+            readOnly={!canEditProduct}
+            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
+            onCommit={(next) => commit('price', next)}
+          />
+        </div>
+      </td>
+      <td className="px-2 py-3 text-right">
+        <BlurSensitive hidden={!canSeeCostProfit} className="ml-auto">
+          <div className="relative ml-auto w-24">
+            <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+            <InlineNumberField
+              value={cost}
+              readOnly={!canEditProduct}
+              className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
+              onCommit={(next) => commit('cost', next)}
+            />
+          </div>
+        </BlurSensitive>
+      </td>
+      <td className="px-2 py-3 text-right">
+        <BlurSensitive hidden={!canSeeCostProfit} className="ml-auto">
+          <div className="flex items-center justify-end gap-2">
+            <span className="text-gray-900">${formatCurrency(profit)}</span>
+            <Badge
+              variant="outline"
+              className="bg-green-50 text-green-700 border-green-200"
+            >
+              {profitPercentage}%
+            </Badge>
+          </div>
+        </BlurSensitive>
+      </td>
+      <td className="px-4 py-3 text-right">
+        <InlineNumberField
+          value={stock}
+          integer
+          readOnly={!canEditProduct}
+          className={`h-9 w-20 text-right ml-auto ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
+          onCommit={(next) => commit('stock', next)}
+        />
+      </td>
+      <td className="px-2 py-3">
+        <div className="flex items-center justify-end gap-2 mx-[12px] my-[0px]">
+          {canDeleteProduct && (
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={(e) => {
+              e.stopPropagation();
+              onDelete(product);
+            }}
+          >
+            <Trash2 className="w-4 h-4 text-red-600" />
+          </Button>
+          )}
+        </div>
+      </td>
+    </tr>
+  );
+}, (prev, next) => (
+  prev.product === next.product
+  && prev.canEditProduct === next.canEditProduct
+  && prev.canDeleteProduct === next.canDeleteProduct
+  && prev.canSeeCostProfit === next.canSeeCostProfit
+));
 
 export default function ProductsPage() {
   const { triggerInkDouble } = useScreenFx();
@@ -500,15 +658,15 @@ export default function ProductsPage() {
   const totalInventoryCost = products.reduce((sum, p) => sum + p.cost * Math.max(0, p.stock), 0);
 
   // Filtered products
-  const filteredProducts = products.filter(product => {
+  const filteredProducts = useMemo(() => products.filter(product => {
     const matchesSearch = searchTextMatches(product.name, searchTerm);
     const matchesCategory = selectedCategory === 'Todas' || product.category === selectedCategory;
     return matchesSearch && matchesCategory;
-  });
+  }), [products, searchTerm, selectedCategory]);
 
 
   // Sorted products
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  const sortedProducts = useMemo(() => [...filteredProducts].sort((a, b) => {
     if (!sortOption) {
       // Default sort by name ascending
       return a.name.localeCompare(b.name);
@@ -538,7 +696,7 @@ export default function ProductsPage() {
       default:
         return a.name.localeCompare(b.name);
     }
-  });
+  }), [filteredProducts, sortOption]);
 
   // El pedido a proveedor ahora vive en /purchase-order (página completa)
 
@@ -592,71 +750,74 @@ export default function ProductsPage() {
       return;
     }
 
+    let revertEditedRow: (() => void) | null = null;
+
     try {
       setLoading(true);
 
       if (editingProduct) {
-        // Update existing product
-        console.log('🖼️ Actualizando producto con imagen:', productImage || editingProduct.image);
-        
-        const imageToSave = productImage
-          ? productImage.startsWith('{')
-            ? productImage
-            : await packedImageForSave(productImage)
-          : editingProduct.image || '';
+        const previousImage = editingProduct.image || '';
+        const imageChanged = (productImage || '') !== previousImage;
+        const imageToSave = !imageChanged
+          ? previousImage
+          : productImage
+            ? productImage.startsWith('{')
+              ? productImage
+              : await packedImageForSave(productImage)
+            : '';
 
-        const result = await updateProduct(editingProduct.id, {
+        const productId = editingProduct.id;
+        const listSnapshot = products.find((p) => p.id === productId) ?? null;
+        const nextRow = {
           name: productName,
           price,
           cost,
           stock: stockQty,
           category: productCategory || editingProduct.category,
-          image: imageToSave,
+          showInVirtualCatalog,
+          barcodes: collectedBarcodes.codes,
+          ...(imageChanged ? { image: imageToSave } : {}),
+        };
+
+        if (listSnapshot) {
+          revertEditedRow = () => {
+            setProducts((prev) => prev.map((p) => (p.id === productId ? listSnapshot : p)));
+          };
+        }
+        setProducts((prev) =>
+          prev.map((p) => (p.id === productId ? { ...p, ...nextRow } : p)),
+        );
+
+        await updateProduct(productId, {
+          name: productName,
+          price,
+          cost,
+          stock: stockQty,
+          category: productCategory || editingProduct.category,
           showInVirtualCatalog,
           barcode: barcodeValue,
+          ...(imageChanged ? { image: imageToSave } : {}),
         });
+        revertEditedRow = null;
 
-        if (result.success) {
-          const savedImage = imageToSave || result.product?.image || editingProduct.image || '';
-          const productId = editingProduct.id;
-
-          if (currentBusiness.id) {
-            invalidateProductImageCache(currentBusiness.id, productId);
-            if (savedImage) setProductImageCache(currentBusiness.id, productId, savedImage);
-          }
-
-          setProducts((prev) =>
-            prev.map((p) =>
-              p.id === productId
-                ? {
-                    ...p,
-                    name: productName,
-                    price,
-                    cost,
-                    stock: stockQty,
-                    category: productCategory || p.category,
-                    image: savedImage,
-                    showInVirtualCatalog,
-                    barcodes: collectedBarcodes.codes,
-                  }
-                : p,
-            ),
-          );
-
-          window.dispatchEvent(
-            new CustomEvent('productsUpdated', {
-              detail: {
-                businessId: currentBusiness.id,
-                productId,
-                image: savedImage,
-                barcodes: collectedBarcodes.codes,
-              },
-            }),
-          );
-
-          void reloadProducts();
-          toast.success('Producto actualizado correctamente');
+        if (imageChanged && currentBusiness.id) {
+          invalidateProductImageCache(currentBusiness.id, productId);
+          if (imageToSave) setProductImageCache(currentBusiness.id, productId, imageToSave);
         }
+
+        window.dispatchEvent(
+          new CustomEvent('productsUpdated', {
+            detail: {
+              businessId: currentBusiness.id,
+              productId,
+              origin: 'inventory-edit',
+              barcodes: collectedBarcodes.codes,
+              ...(imageChanged ? { image: imageToSave } : {}),
+            },
+          }),
+        );
+
+        toast.success('Producto actualizado correctamente');
       } else {
         // Create new product
         const imageToSave = productImage
@@ -722,6 +883,7 @@ export default function ProductsPage() {
       resetForm();
       setCreateSheetOpen(false);
     } catch (error: any) {
+      revertEditedRow?.();
       console.error('Error saving product:', error);
       toast.error(error.message || 'Error al guardar el producto');
     } finally {
@@ -991,8 +1153,9 @@ export default function ProductsPage() {
     loadProducts();
 
     const handleProductsUpdated = (e: Event) => {
-      const detail = (e as CustomEvent<{ businessId?: string }>).detail;
+      const detail = (e as CustomEvent<{ businessId?: string; origin?: string }>).detail;
       if (detail?.businessId && detail.businessId !== businessId) return;
+      if (detail?.origin === 'inventory-edit') return;
       console.log('🔄 Inventario actualizado (venta eliminada u otro cambio), recargando...');
       void loadProducts();
     };
@@ -1004,6 +1167,56 @@ export default function ProductsPage() {
       window.removeEventListener('productsUpdated', handleProductsUpdated);
     };
   }, [currentBusiness?.id]);
+
+  const inlineSaveSeq = useRef<Record<string, number>>({});
+  const editProductRef = useRef(handleEditProduct);
+  const deleteProductRef = useRef(handleDeleteClick);
+  editProductRef.current = handleEditProduct;
+  deleteProductRef.current = handleDeleteClick;
+
+  const patchProductField = useCallback((
+    productId: string,
+    field: InlineProductField,
+    next: number,
+    previous: number,
+  ) => {
+    const seqKey = `${productId}:${field}`;
+    const seq = (inlineSaveSeq.current[seqKey] || 0) + 1;
+    inlineSaveSeq.current[seqKey] = seq;
+
+    startTransition(() => {
+      setProducts((prev) =>
+        prev.map((p) => (p.id === productId ? { ...p, [field]: next } : p)),
+      );
+    });
+
+    const savedLabel = field === 'price' ? 'Precio actualizado' : field === 'cost' ? 'Costo actualizado' : 'Stock actualizado';
+    const errorLabel = field === 'price' ? 'Error al guardar el precio' : field === 'cost' ? 'Error al guardar el costo' : 'Error al guardar el stock';
+
+    void updateProduct(productId, { [field]: next })
+      .then(() => {
+        if (inlineSaveSeq.current[seqKey] !== seq) return;
+        toast.success(savedLabel);
+      })
+      .catch((error) => {
+        if (inlineSaveSeq.current[seqKey] !== seq) return;
+        startTransition(() => {
+          setProducts((prev) =>
+            prev.map((p) => (p.id === productId ? { ...p, [field]: previous } : p)),
+          );
+        });
+        console.error('❌ Error al actualizar producto:', error);
+        toast.error(errorLabel);
+      });
+  }, []);
+
+  const onEditRow = useCallback((product: Product) => {
+    void editProductRef.current(product);
+  }, []);
+
+  const onDeleteRow = useCallback((product: Product) => {
+    deleteProductRef.current(product);
+  }, []);
 
   return (
     <div className="h-[100dvh] max-h-[100dvh] flex flex-col overflow-hidden overscroll-none bg-gray-50">
@@ -1326,145 +1539,18 @@ export default function ProductsPage() {
                   </td>
                 </tr>
               ) : (
-                sortedProducts.map((product) => {
-                  const profit = product.price - product.cost;
-                  const profitPercentage = ((profit / product.price) * 100).toFixed(0);
-
-                  return (
-                    <tr
-                      key={product.id}
-                      className="hover:bg-gray-50"
-                    >
-                      <td
-                        className={`pl-4 pr-0 py-3 w-auto ${canEditProduct ? 'cursor-pointer' : ''}`}
-                        onClick={() => canEditProduct && handleEditProduct(product)}
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded bg-gray-100">
-                            <LazyProductImage
-                              fillParent
-                              productId={product.id}
-                              initialSrc={product.image}
-                              alt={product.name}
-                              className="h-full w-full object-cover object-center"
-                            />
-                          </div>
-                          <div className="min-w-0 max-w-[400px]">
-                            <div className="font-medium text-gray-900 truncate" title={product.name}>{product.name}</div>
-                            <div className="text-xs text-gray-500 truncate">{product.category}</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-2 py-3 text-right">
-                        <div className="relative ml-auto w-24">
-                          <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
-                          <InlineNumberField
-                            value={product.price}
-                            readOnly={!canEditProduct}
-                            className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
-                            onCommit={async (newPrice) => {
-                              const previous = product.price;
-                              setProducts((prev) =>
-                                prev.map((p) => (p.id === product.id ? { ...p, price: newPrice } : p)),
-                              );
-                              try {
-                                await updateProduct(product.id, { price: newPrice });
-                                toast.success('Precio actualizado');
-                              } catch (error) {
-                                setProducts((prev) =>
-                                  prev.map((p) => (p.id === product.id ? { ...p, price: previous } : p)),
-                                );
-                                console.error('❌ Error al actualizar precio:', error);
-                                toast.error('Error al guardar el precio');
-                              }
-                            }}
-                          />
-                        </div>
-                      </td>
-                      <td className="px-2 py-3 text-right">
-                        <BlurSensitive hidden={!canSeeCostProfit} className="ml-auto">
-                          <div className="relative ml-auto w-24">
-                            <DollarSign className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
-                            <InlineNumberField
-                              value={product.cost}
-                              readOnly={!canEditProduct}
-                              className={`h-9 w-full text-right pl-7 ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
-                              onCommit={async (newCost) => {
-                                const previous = product.cost;
-                                setProducts((prev) =>
-                                  prev.map((p) => (p.id === product.id ? { ...p, cost: newCost } : p)),
-                                );
-                                try {
-                                  await updateProduct(product.id, { cost: newCost });
-                                  toast.success('Costo actualizado');
-                                } catch (error) {
-                                  setProducts((prev) =>
-                                    prev.map((p) => (p.id === product.id ? { ...p, cost: previous } : p)),
-                                  );
-                                  console.error('❌ Error al actualizar costo:', error);
-                                  toast.error('Error al guardar el costo');
-                                }
-                              }}
-                            />
-                          </div>
-                        </BlurSensitive>
-                      </td>
-                      <td className="px-2 py-3 text-right">
-                        <BlurSensitive hidden={!canSeeCostProfit} className="ml-auto">
-                          <div className="flex items-center justify-end gap-2">
-                            <span className="text-gray-900">${formatCurrency(profit)}</span>
-                            <Badge
-                              variant="outline"
-                              className="bg-green-50 text-green-700 border-green-200"
-                            >
-                              {profitPercentage}%
-                            </Badge>
-                          </div>
-                        </BlurSensitive>
-                      </td>
-                      <td className="px-4 py-3 text-right">
-                        <InlineNumberField
-                          value={product.stock}
-                          integer
-                          readOnly={!canEditProduct}
-                          className={`h-9 w-20 text-right ml-auto ${!canEditProduct ? 'bg-gray-50 cursor-default' : 'cursor-text'}`}
-                          onCommit={async (newStock) => {
-                            const previous = product.stock;
-                            setProducts((prev) =>
-                              prev.map((p) => (p.id === product.id ? { ...p, stock: newStock } : p)),
-                            );
-                            try {
-                              await updateProduct(product.id, { stock: newStock });
-                              toast.success('Stock actualizado');
-                            } catch (error) {
-                              setProducts((prev) =>
-                                prev.map((p) => (p.id === product.id ? { ...p, stock: previous } : p)),
-                              );
-                              console.error('❌ Error al actualizar stock:', error);
-                              toast.error('Error al guardar el stock');
-                            }
-                          }}
-                        />
-                      </td>
-                      <td className="px-2 py-3">
-                        <div className="flex items-center justify-end gap-2 mx-[12px] my-[0px]">
-                          {canDeleteProduct && (
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleDeleteClick(product);
-                            }}
-                          >
-                            <Trash2 className="w-4 h-4 text-red-600" />
-                          </Button>
-                          )}
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })
+                sortedProducts.map((product) => (
+                  <InventoryTableRow
+                    key={product.id}
+                    product={product}
+                    canEditProduct={canEditProduct}
+                    canDeleteProduct={canDeleteProduct}
+                    canSeeCostProfit={canSeeCostProfit}
+                    onPatch={patchProductField}
+                    onEdit={onEditRow}
+                    onDelete={onDeleteRow}
+                  />
+                ))
               )}
               </tbody>
             </table>

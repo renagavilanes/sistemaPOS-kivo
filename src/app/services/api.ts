@@ -322,7 +322,39 @@ export async function createProduct(businessId: string, product: Omit<Product, '
   return mapProductFromApi(p);
 }
 
+const QUICK_PRODUCT_FIELDS = new Set(['price', 'cost', 'stock']);
+
+function quickProductPatch(updates: Partial<Product>): Record<string, number> | null {
+  const keys = Object.keys(updates).filter((key) => (updates as Record<string, unknown>)[key] !== undefined);
+  if (keys.length === 0 || keys.some((key) => !QUICK_PRODUCT_FIELDS.has(key))) return null;
+
+  const payload: Record<string, number> = {};
+  for (const key of keys) {
+    const value = Number((updates as Record<string, unknown>)[key]);
+    if (!Number.isFinite(value)) return null;
+    payload[key] = key === 'stock' ? Math.trunc(value) : value;
+  }
+  return payload;
+}
+
 export async function updateProduct(productId: string, businessId: string, updates: Partial<Product>): Promise<Product> {
+  const quick = quickProductPatch(updates);
+  if (quick) {
+    const { data, error } = await retryOnceOnJwtExpired(() =>
+      supabase
+        .from('products')
+        .update({ ...quick, updated_at: new Date().toISOString() })
+        .eq('id', productId)
+        .eq('business_id', businessId)
+        .select(PRODUCT_LIST_SELECT)
+        .maybeSingle(),
+    );
+    if (!error && data) {
+      return mapProductFromApi(data);
+    }
+    console.warn('⚠️ [API] Direct product patch failed, using function:', error?.message || 'sin fila');
+  }
+
   console.log('🔵 [API] Updating product via Edge Function:', productId);
 
   const accessToken = await getAccessToken();
