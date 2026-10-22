@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, Printer, CheckCircle2, ShoppingBag, Receipt, List } from 'lucide-react';
+import { X, Printer, CheckCircle2, ShoppingBag, Receipt, List, Loader2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -53,6 +53,7 @@ export function SuccessDialog({
   const [transactionName, setTransactionName] = useState('');
   const [attachedProof, setAttachedProof] = useState<string | null>(null);
   const [attachingProof, setAttachingProof] = useState(false);
+  const [pending, setPending] = useState<null | 'receipt' | 'continue' | 'movements'>(null);
 
   // Set default name when dialog opens
   useEffect(() => {
@@ -62,6 +63,10 @@ export function SuccessDialog({
       setAttachedProof(null);
     }
   }, [open, defaultName]);
+
+  useEffect(() => {
+    if (open) setPending(null);
+  }, [open]);
 
   // Play success sound when dialog opens
   useEffect(() => {
@@ -110,12 +115,15 @@ export function SuccessDialog({
   };
 
   const handleNewTransaction = async () => {
+    if (pending) return;
+    setPending('continue');
     const trimmed = transactionName.trim();
     try {
       if (onNameChange && trimmed) {
         await Promise.resolve(onNameChange(trimmed));
       }
     } catch {
+      setPending(null);
       return;
     }
     setTransactionName('');
@@ -124,17 +132,35 @@ export function SuccessDialog({
   };
 
   const handleGoToMovements = async () => {
+    if (pending) return;
+    setPending('movements');
     const trimmed = transactionName.trim();
     try {
       if (onNameChange && trimmed) {
         await Promise.resolve(onNameChange(trimmed));
       }
     } catch {
+      setPending(null);
       return;
     }
     setTransactionName('');
     onGoToMovements();
     onOpenChange(false);
+  };
+
+  const handleViewReceiptClick = async () => {
+    if (pending || !onViewReceipt) return;
+    setPending('receipt');
+    try {
+      await Promise.resolve(onViewReceipt());
+    } finally {
+      setPending(null);
+    }
+  };
+
+  const requestClose = (next: boolean) => {
+    if (!next && pending) return;
+    onOpenChange(next);
   };
 
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -168,6 +194,7 @@ export function SuccessDialog({
           type="text"
           placeholder="Escríbelo aquí"
           value={transactionName}
+          disabled={pending !== null}
           onChange={(e) => setTransactionName(e.target.value)}
           className="h-12 text-base"
         />
@@ -196,25 +223,33 @@ export function SuccessDialog({
       <div className="grid grid-cols-3 items-stretch gap-2">
         <Button
           variant="outline"
-          className="h-auto flex-col gap-3 whitespace-normal rounded-xl px-2 py-3 text-center text-xs font-medium leading-tight kivo-pressable"
-          onClick={onViewReceipt}
+          disabled={pending !== null}
+          aria-busy={pending === 'receipt'}
+          className={`h-auto flex-col gap-3 whitespace-normal rounded-xl px-2 py-3 text-center text-xs font-medium leading-tight kivo-pressable ${pending === 'receipt' ? 'disabled:opacity-100' : ''}`}
+          onClick={handleViewReceiptClick}
         >
-          <Printer className="size-6 text-blue-600" />
+          {pending === 'receipt' ? <Loader2 className="size-6 animate-spin text-blue-600" /> : <Printer className="size-6 text-blue-600" />}
           Ver comprobante
         </Button>
         <Button
           onClick={handleNewTransaction}
-          className="h-auto flex-col gap-3 whitespace-normal rounded-xl bg-gray-900 px-2 py-3 text-center text-xs font-semibold leading-tight text-white hover:bg-gray-800 kivo-pressable"
+          disabled={pending !== null}
+          aria-busy={pending === 'continue'}
+          className={`h-auto flex-col gap-3 whitespace-normal rounded-xl bg-gray-900 px-2 py-3 text-center text-xs font-semibold leading-tight text-white hover:bg-gray-800 kivo-pressable ${pending === 'continue' ? 'disabled:opacity-100' : ''}`}
         >
-          {type === 'sale' ? <ShoppingBag className="size-6" /> : <Receipt className="size-6" />}
+          {pending === 'continue'
+            ? <Loader2 className="size-6 animate-spin" />
+            : type === 'sale' ? <ShoppingBag className="size-6" /> : <Receipt className="size-6" />}
           {type === 'sale' ? 'Seguir vendiendo' : 'Crear otro gasto'}
         </Button>
         <Button
           variant="outline"
           onClick={handleGoToMovements}
-          className="h-auto flex-col gap-3 whitespace-normal rounded-xl px-2 py-3 text-center text-xs font-medium leading-tight kivo-pressable"
+          disabled={pending !== null}
+          aria-busy={pending === 'movements'}
+          className={`h-auto flex-col gap-3 whitespace-normal rounded-xl px-2 py-3 text-center text-xs font-medium leading-tight kivo-pressable ${pending === 'movements' ? 'disabled:opacity-100' : ''}`}
         >
-          <List className="size-6" />
+          {pending === 'movements' ? <Loader2 className="size-6 animate-spin" /> : <List className="size-6" />}
           Ir a movimientos
         </Button>
       </div>
@@ -224,7 +259,7 @@ export function SuccessDialog({
   // Mobile: Sheet from bottom
   if (isMobile) {
     return (
-      <Sheet open={open} onOpenChange={onOpenChange}>
+      <Sheet open={open} onOpenChange={requestClose}>
         <SheetContent side="bottom" className="h-auto max-h-[90vh] p-0 rounded-t-3xl overflow-hidden">
           <SheetHeader className="sr-only">
             <SheetTitle>
@@ -234,8 +269,10 @@ export function SuccessDialog({
 
           {/* Close Button */}
           <button
-            onClick={() => onOpenChange(false)}
-            className="absolute right-4 top-4 rounded-full bg-gray-900 hover:bg-gray-800 p-2 transition-colors z-10"
+            type="button"
+            disabled={pending !== null}
+            onClick={() => requestClose(false)}
+            className="absolute right-4 top-4 rounded-full bg-gray-900 hover:bg-gray-800 p-2 transition-colors z-10 disabled:opacity-40"
           >
             <X className="h-4 w-4 text-white" />
           </button>
@@ -252,7 +289,7 @@ export function SuccessDialog({
 
   // Desktop: Centered Dialog
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={requestClose}>
       <DialogContent className="sm:max-w-[500px] w-[calc(100%-2rem)] max-h-[90vh] p-0 overflow-hidden">
         <DialogHeader className="sr-only">
           <DialogTitle>
@@ -265,8 +302,10 @@ export function SuccessDialog({
         
         {/* Close Button */}
         <button
-          onClick={() => onOpenChange(false)}
-          className="absolute right-4 top-4 rounded-full bg-gray-900 hover:bg-gray-800 p-2 transition-colors z-10"
+          type="button"
+          disabled={pending !== null}
+          onClick={() => requestClose(false)}
+          className="absolute right-4 top-4 rounded-full bg-gray-900 hover:bg-gray-800 p-2 transition-colors z-10 disabled:opacity-40"
         >
           <X className="h-4 w-4 text-white" />
         </button>
