@@ -115,6 +115,21 @@ export function invalidateProductImageCache(businessId: string, productId?: stri
   }
 }
 
+export function peekProductImageCache(businessId: string, productId: string): string {
+  if (!businessId || !productId) return '';
+  return imageSrcCache.get(cacheKey(businessId, productId)) || '';
+}
+
+/** Miniatura ya vista o guardada en el teléfono. No pide la foto grande. */
+export async function readStoredProductImage(businessId: string, productId: string): Promise<string> {
+  const key = cacheKey(businessId, productId);
+  if (imageSrcCache.has(key)) return imageSrcCache.get(key) || '';
+  if (!businessId || !productId) return '';
+  const cached = await idbGet(key);
+  if (cached) imageSrcCache.set(key, cached);
+  return cached || '';
+}
+
 export function setProductImageCache(businessId: string, productId: string, src: string) {
   const key = cacheKey(businessId, productId);
   const display = displayProductImageSrc(src);

@@ -21,14 +21,15 @@ import { toast } from 'sonner';
 import ExcelJS from 'exceljs';
 import { useScreenFx } from '../contexts/ScreenFxContext';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { LazyProductImage, invalidateProductImageCache, setProductImageCache } from '../components/LazyProductImage';
+import { LazyProductImage, invalidateProductImageCache, peekProductImageCache, readStoredProductImage, setProductImageCache } from '../components/LazyProductImage';
 import { exportProductsToExcel } from '../utils/productExcelExport';
 import { getProducts, createProduct, updateProduct, deleteProduct, initializeDemoProducts } from '../lib/api';
 import * as apiService from '../services/api';
 import { useBusiness } from '../contexts/BusinessContext';
+import { supabase } from '../lib/supabase';
 import { formatCurrency, parseLocaleNumber } from '../utils/currency';
 import { normalizeSearchText as normalizeText, searchTextMatches } from '../utils/searchText';
-import { optimizeImageForProduct, packedImageForSave, parseProductImage } from '../utils/productImage';
+import { displayProductImageSrc, optimizeImageForProduct, packedImageForSave } from '../utils/productImage';
 import { barcodeUsedBy, barcodesFromProduct, collectBarcodes, normalizeBarcode, serializeBarcodes } from '../lib/barcodes';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { BarcodeScanner } from '../components/BarcodeScanner';
@@ -306,6 +307,17 @@ const InventoryTableRow = memo(function InventoryTableRow({
   && prev.canSeeCostProfit === next.canSeeCostProfit
 ));
 
+async function clearOrSaveProductImage(productId: string, businessId: string, image: string) {
+  const { data, error } = await supabase
+    .from('products')
+    .update({ image: image || null, updated_at: new Date().toISOString() })
+    .eq('id', productId)
+    .eq('business_id', businessId)
+    .select('id')
+    .maybeSingle();
+  return !error && !!data;
+}
+
 export default function ProductsPage() {
   const { triggerInkDouble } = useScreenFx();
   // Products state
@@ -333,6 +345,8 @@ export default function ProductsPage() {
   const [productStock, setProductStock] = useState('');
   const [productCategory, setProductCategory] = useState('');
   const [productImage, setProductImage] = useState('');
+  const imageTouchedRef = useRef(false);
+  const editRequestRef = useRef(0);
   const [showInVirtualCatalog, setShowInVirtualCatalog] = useState(true);
   const [productBarcodes, setProductBarcodes] = useState<string[]>(['']);
   const [barcodeCameraOpen, setBarcodeCameraOpen] = useState(false);
@@ -756,15 +770,17 @@ export default function ProductsPage() {
       setLoading(true);
 
       if (editingProduct) {
-        const previousImage = editingProduct.image || '';
-        const imageChanged = (productImage || '') !== previousImage;
+        const imageChanged = imageTouchedRef.current;
         const imageToSave = !imageChanged
-          ? previousImage
+          ? ''
           : productImage
             ? productImage.startsWith('{')
               ? productImage
               : await packedImageForSave(productImage)
             : '';
+        const imageSavedDirect = imageChanged
+          ? await clearOrSaveProductImage(editingProduct.id, currentBusiness.id, imageToSave)
+          : false;
 
         const productId = editingProduct.id;
         const listSnapshot = products.find((p) => p.id === productId) ?? null;
@@ -796,7 +812,7 @@ export default function ProductsPage() {
           category: productCategory || editingProduct.category,
           showInVirtualCatalog,
           barcode: barcodeValue,
-          ...(imageChanged ? { image: imageToSave } : {}),
+          ...(imageChanged && !imageSavedDirect ? { image: imageToSave } : {}),
         });
         revertEditedRow = null;
 
@@ -893,32 +909,36 @@ export default function ProductsPage() {
 
   const handleEditProduct = async (product: Product) => {
     if (!currentBusiness?.id) return;
+    const requestId = ++editRequestRef.current;
+    imageTouchedRef.current = false;
+    const businessId = currentBusiness.id;
+    const immediate = peekProductImageCache(businessId, product.id) || displayProductImageSrc(product.image);
     setCreateSheetOpen(true);
-    setEditingProduct(product);
+    setEditingProduct({ ...product, image: immediate });
     setProductName(product.name);
     setProductPrice(product.price.toString());
     setProductCost(product.cost.toString());
     setProductStock(product.stock.toString());
     setProductCategory(product.category);
-    setProductImage(product.image || '');
+    setProductImage(immediate);
     setShowInVirtualCatalog(product.showInVirtualCatalog !== false);
     const listedCodes = product.barcodes || [];
     setProductBarcodes(listedCodes.length ? [...listedCodes] : ['']);
-    try {
-      const full = await apiService.getProductById(currentBusiness.id, product.id);
-      setEditingProduct(full as Product);
-      setProductName(full.name);
-      setProductPrice(full.price.toString());
-      setProductCost(full.cost.toString());
-      setProductStock(full.stock.toString());
-      setProductCategory(full.category);
-      setProductImage(full.image || '');
-      setShowInVirtualCatalog(full.showInVirtualCatalog !== false);
-      const fullCodes = barcodesFromProduct(full);
-      setProductBarcodes(fullCodes.length ? fullCodes : ['']);
-    } catch (e) {
-      console.warn('No se pudo cargar el producto completo; usando datos del listado.', e);
+    if (immediate) return;
+
+    const stored = await readStoredProductImage(businessId, product.id);
+    let thumb = stored;
+    if (!thumb) {
+      try {
+        const images = await apiService.getProductImages(businessId, [product.id]);
+        thumb = images[product.id] || '';
+      } catch {
+        thumb = '';
+      }
     }
+    if (requestId !== editRequestRef.current || imageTouchedRef.current || !thumb) return;
+    setProductImage(thumb);
+    setEditingProduct((prev) => (prev?.id === product.id ? { ...prev, image: thumb } : prev));
   };
 
   const handleDeleteClick = (product: Product) => {
@@ -980,6 +1000,8 @@ export default function ProductsPage() {
   };
 
   const resetForm = () => {
+    editRequestRef.current += 1;
+    imageTouchedRef.current = false;
     setEditingProduct(null);
     setProductName('');
     setProductPrice('');
@@ -1707,7 +1729,7 @@ export default function ProductsPage() {
                 <div className="flex flex-col gap-3">
                   <div className="w-full h-[8.4rem] rounded-lg overflow-hidden bg-gray-100 relative">
                     <ImageWithFallback
-                      src={productImage ? parseProductImage(productImage).full || productImage : ''}
+                      src={displayProductImageSrc(productImage)}
                       alt="Preview"
                       className="w-full h-full object-cover object-center"
                     />
@@ -1716,7 +1738,10 @@ export default function ProductsPage() {
                         variant="ghost"
                         size="icon"
                         className="absolute top-2 right-2 bg-white/90 hover:bg-white"
-                        onClick={() => setProductImage('')}
+                        onClick={() => {
+                          imageTouchedRef.current = true;
+                          setProductImage('');
+                        }}
                       >
                         <X className="w-4 h-4" />
                       </Button>
@@ -1745,6 +1770,7 @@ export default function ProductsPage() {
                           setImageProcessing(true);
                           try {
                             const packed = await optimizeImageForProduct(file);
+                            imageTouchedRef.current = true;
                             setProductImage(packed);
                           } catch (error) {
                             console.warn('No se pudo optimizar la imagen, usando original:', error);
@@ -1755,6 +1781,7 @@ export default function ProductsPage() {
                                 reader.onerror = () => reject(new Error('No se pudo leer la imagen.'));
                                 reader.readAsDataURL(file);
                               });
+                              imageTouchedRef.current = true;
                               setProductImage(originalDataUrl);
                             } catch {
                               toast.error('No se pudo cargar la imagen seleccionada');
