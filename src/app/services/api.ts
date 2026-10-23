@@ -1,7 +1,7 @@
 import { supabase } from '../lib/supabase';
 import { supabaseAnonKey, supabaseProjectId } from '../../utils/supabase/publicEnv';
 import { buildInviteUrl, encodeInviteToken } from '../utils/appUrl';
-import { runInventoryTransfer } from '../utils/inventoryTransferLogic';
+import { buildStockWrites, validateTransferRequest, type StockWrite } from '../utils/inventoryTransferLogic';
 import { parseBarcodes } from '../lib/barcodes';
 
 // Helper to create Supabase client directly
@@ -405,19 +405,134 @@ export async function deleteProduct(productId: string, businessId: string): Prom
   console.log('✅ [API] Product deleted');
 }
 
+async function selectProductsByIds(businessId: string, ids: string[], columns: string) {
+  const rows: any[] = [];
+  const unique = [...new Set(ids.map((id) => String(id || '').trim()).filter(Boolean))];
+  for (let i = 0; i < unique.length; i += 80) {
+    const slice = unique.slice(i, i + 80);
+    const { data, error } = await retryOnceOnJwtExpired(() =>
+      supabase.from('products').select(columns).eq('business_id', businessId).in('id', slice),
+    );
+    if (error) throw new Error(normalizeAuthErrorMessage(error.message));
+    rows.push(...(data || []));
+  }
+  return rows;
+}
+
+async function runPool<T>(items: T[], limit: number, worker: (item: T) => Promise<void>) {
+  if (!items.length) return;
+  const errors: unknown[] = [];
+  let cursor = 0;
+  const runners = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (errors.length === 0 && cursor < items.length) {
+      const item = items[cursor];
+      cursor += 1;
+      try {
+        await worker(item);
+      } catch (error) {
+        errors.push(error);
+        return;
+      }
+    }
+  });
+  await Promise.all(runners);
+  if (errors.length) throw errors[0];
+}
+
+async function setProductStock(productId: string, businessId: string, nextStock: number) {
+  await updateProduct(productId, businessId, { stock: nextStock });
+}
+
+async function transferInventoryInBatches(params: {
+  fromBusinessId: string;
+  toBusinessId: string;
+  items: Array<{ fromProductId: string; quantity: number; toProductId: string | null }>;
+}) {
+  const originIds = params.items.map((item) => item.fromProductId);
+  const destIds = params.items.map((item) => item.toProductId || '').filter(Boolean);
+
+  const [originRows, destRows] = await Promise.all([
+    selectProductsByIds(params.fromBusinessId, originIds, 'id, name, stock'),
+    selectProductsByIds(params.toBusinessId, destIds, 'id, name, stock'),
+  ]);
+
+  const plan = buildStockWrites({
+    fromBusinessId: params.fromBusinessId,
+    toBusinessId: params.toBusinessId,
+    items: params.items,
+    originStock: new Map(originRows.map((row) => [row.id, { name: row.name, stock: row.stock }])),
+    destStock: new Map(destRows.map((row) => [row.id, { name: row.name, stock: row.stock }])),
+  });
+
+  const applied: StockWrite[] = [];
+  const createdIds: string[] = [];
+
+  const rollback = async () => {
+    await runPool(applied, 6, async (write) => {
+      try {
+        await setProductStock(write.productId, write.businessId, write.previousStock);
+      } catch (rollbackError) {
+        console.error('No se pudo revertir el stock del traslado:', rollbackError);
+      }
+    });
+    await runPool(createdIds, 4, async (productId) => {
+      try {
+        await deleteProduct(productId, params.toBusinessId);
+      } catch (rollbackError) {
+        console.error('No se pudo borrar un producto creado en el traslado:', rollbackError);
+      }
+    });
+  };
+
+  try {
+    await runPool(plan.writes, 6, async (write) => {
+      await setProductStock(write.productId, write.businessId, write.nextStock);
+      applied.push(write);
+    });
+
+    if (plan.creates.length) {
+      const details = await selectProductsByIds(
+        params.fromBusinessId,
+        plan.creates.map((item) => item.fromProductId),
+        'id, name, price, cost, category, barcode, description, is_active, image',
+      );
+      const byId = new Map(details.map((row) => [row.id, row]));
+
+      await runPool(plan.creates, 3, async (item) => {
+        const origin = byId.get(item.fromProductId);
+        if (!origin) throw new Error('Producto de origen no encontrado');
+        const created = await createProduct(params.toBusinessId, {
+          name: origin.name,
+          price: Number(origin.price) || 0,
+          cost: Number(origin.cost) || 0,
+          stock: item.quantity,
+          category: origin.category || 'Sin categoría',
+          image: origin.image || '',
+          barcode: origin.barcode,
+          description: origin.description,
+          isActive: origin.is_active !== false,
+        });
+        createdIds.push(created.id);
+      });
+    }
+  } catch (error) {
+    await rollback();
+    throw error;
+  }
+}
+
 export async function transferInventory(params: {
   fromBusinessId: string;
   toBusinessId: string;
   items: Array<{ fromProductId: string; quantity: number; toProductId: string | null }>;
 }): Promise<void> {
-  await runInventoryTransfer(params, {
-    getProduct: getProductById,
-    updateStock: async (productId, businessId, stock) => {
-      await updateProduct(productId, businessId, { stock });
-    },
-    createProduct: (businessId, product) => createProduct(businessId, product),
-    deleteProduct,
-  });
+  const items = params.items.map((item) => ({
+    fromProductId: item.fromProductId,
+    quantity: Math.trunc(Number(item.quantity) || 0),
+    toProductId: item.toProductId || null,
+  }));
+  validateTransferRequest({ ...params, items });
+  await transferInventoryInBatches({ ...params, items });
 }
 
 // ==================== CATEGORIES ====================

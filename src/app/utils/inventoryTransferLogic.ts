@@ -140,6 +140,84 @@ export function validateTransferRequest(params: {
   }
 }
 
+export type StockWrite = {
+  productId: string;
+  businessId: string;
+  previousStock: number;
+  nextStock: number;
+};
+
+export type PlannedTransfer = {
+  writes: StockWrite[];
+  creates: Array<{ fromProductId: string; quantity: number }>;
+};
+
+function wholeQuantity(value: number) {
+  const qty = Math.trunc(Number(value) || 0);
+  if (qty < 1) throw new Error('Hay una cantidad inválida');
+  return qty;
+}
+
+/**
+ * Junta las líneas en un solo ajuste por producto.
+ * Así dos líneas del mismo destino no se pisan al guardar el stock.
+ */
+export function buildStockWrites(params: {
+  fromBusinessId: string;
+  toBusinessId: string;
+  items: TransferItem[];
+  originStock: Map<string, { name: string; stock: number }>;
+  destStock: Map<string, { name: string; stock: number }>;
+}): PlannedTransfer {
+  validateTransferRequest(params);
+
+  const originQty = new Map<string, number>();
+  const destQty = new Map<string, number>();
+  const creates: PlannedTransfer['creates'] = [];
+
+  for (const item of params.items) {
+    const qty = wholeQuantity(item.quantity);
+    const fromId = String(item.fromProductId || '').trim();
+    if (!fromId) throw new Error('Producto de origen no encontrado');
+    originQty.set(fromId, (originQty.get(fromId) || 0) + qty);
+
+    const toId = String(item.toProductId || '').trim();
+    if (toId) destQty.set(toId, (destQty.get(toId) || 0) + qty);
+    else creates.push({ fromProductId: fromId, quantity: qty });
+  }
+
+  const writes: StockWrite[] = [];
+
+  for (const [productId, qty] of originQty) {
+    const row = params.originStock.get(productId);
+    if (!row) throw new Error('Producto de origen no encontrado');
+    const previousStock = Math.max(0, Math.trunc(Number(row.stock) || 0));
+    if (previousStock < qty) {
+      throw new Error(`No hay suficiente stock de ${row.name}`);
+    }
+    writes.push({
+      productId,
+      businessId: params.fromBusinessId,
+      previousStock,
+      nextStock: previousStock - qty,
+    });
+  }
+
+  for (const [productId, qty] of destQty) {
+    const row = params.destStock.get(productId);
+    if (!row) throw new Error('Producto destino no encontrado');
+    const previousStock = Math.max(0, Math.trunc(Number(row.stock) || 0));
+    writes.push({
+      productId,
+      businessId: params.toBusinessId,
+      previousStock,
+      nextStock: previousStock + qty,
+    });
+  }
+
+  return { writes, creates };
+}
+
 export type TransferAdapters = {
   getProduct: (businessId: string, productId: string) => Promise<TransferProduct>;
   updateStock: (productId: string, businessId: string, stock: number) => Promise<void>;

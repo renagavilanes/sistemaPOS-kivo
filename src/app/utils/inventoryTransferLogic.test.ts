@@ -4,6 +4,7 @@ import { suggestDestProduct } from './productMatch';
 import {
   addProductToLines,
   applyDestChoiceToLine,
+  buildStockWrites,
   bumpTransferQuantity,
   linesToTransferItems,
   makeTransferLine,
@@ -279,5 +280,51 @@ describe('traslado de stock', () => {
     assert.equal(store.stock('quito', 'vert-q'), 1);
     assert.equal(store.stock('hero', 'tripode-h'), 6);
     assert.equal(store.stock('hero', 'vert-h'), 19);
+  });
+});
+
+describe('plan del traslado', () => {
+  it('junta cantidades del mismo producto y deja un solo ajuste', () => {
+    const plan = buildStockWrites({
+      fromBusinessId: 'quito',
+      toBusinessId: 'hero',
+      items: [
+        { fromProductId: 'a', quantity: 2, toProductId: 'a-h' },
+        { fromProductId: 'a', quantity: 3, toProductId: 'a-h' },
+        { fromProductId: 'b', quantity: 1, toProductId: null },
+      ],
+      originStock: new Map([
+        ['a', { name: 'A', stock: 10 }],
+        ['b', { name: 'B', stock: 4 }],
+      ]),
+      destStock: new Map([['a-h', { name: 'A destino', stock: 1 }]]),
+    });
+
+    assert.deepEqual(
+      plan.writes.map((write) => [write.productId, write.nextStock]),
+      [
+        ['a', 5],
+        ['b', 3],
+        ['a-h', 6],
+      ],
+    );
+    assert.deepEqual(plan.creates, [{ fromProductId: 'b', quantity: 1 }]);
+  });
+
+  it('no arma el plan si el origen no alcanza para la suma', () => {
+    assert.throws(
+      () =>
+        buildStockWrites({
+          fromBusinessId: 'quito',
+          toBusinessId: 'hero',
+          items: [
+            { fromProductId: 'a', quantity: 4, toProductId: 'a-h' },
+            { fromProductId: 'a', quantity: 2, toProductId: null },
+          ],
+          originStock: new Map([['a', { name: 'Aceite', stock: 5 }]]),
+          destStock: new Map([['a-h', { name: 'Aceite', stock: 0 }]]),
+        }),
+      /suficiente stock de Aceite/,
+    );
   });
 });
