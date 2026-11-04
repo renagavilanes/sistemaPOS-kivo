@@ -59,8 +59,16 @@ export function normalizeCashMethod(raw: string | null | undefined): CashPayMeth
   return 'other';
 }
 
+/** El efectivo se compara en centavos. Un resto de coma flotante no es faltante ni sobrante. */
+export function roundMoney(value: number): number {
+  if (!Number.isFinite(value)) return 0;
+  const cents = Math.round(Math.abs(value) * 100);
+  if (cents === 0) return 0;
+  return (value < 0 ? -cents : cents) / 100;
+}
+
 function sumLines(lines: CashLine[]): number {
-  return lines.reduce((acc, line) => acc + line.amount, 0);
+  return roundMoney(lines.reduce((acc, line) => acc + line.amount, 0));
 }
 
 function paymentParts(movement: CashMovementInput): Array<{ method: CashPayMethod; amount: number }> {
@@ -128,7 +136,7 @@ export function buildCashBreakdown(
   card.sort(byTime);
   transfer.sort(byTime);
 
-  const openingAmount = Number(session.openingAmount) || 0;
+  const openingAmount = roundMoney(Number(session.openingAmount) || 0);
   const cashSalesTotal = sumLines(cashSales);
   const cashExpensesTotal = sumLines(cashExpenses);
   return {
@@ -141,11 +149,11 @@ export function buildCashBreakdown(
     cashExpensesTotal,
     cardTotal: sumLines(card),
     transferTotal: sumLines(transfer),
-    expected: openingAmount + cashSalesTotal - cashExpensesTotal,
+    expected: roundMoney(openingAmount + cashSalesTotal - cashExpensesTotal),
   };
 }
 
 export function cashDifference(expected: number, counted: number | null): number | null {
   if (counted == null || Number.isNaN(counted)) return null;
-  return counted - expected;
+  return roundMoney(counted - expected);
 }

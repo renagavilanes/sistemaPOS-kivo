@@ -74,6 +74,8 @@ describe('caja por empleado', () => {
     assert.deepEqual(result.cashSales.map((line) => line.label), ['Audífonos']);
     assert.equal(cashDifference(result.expected, 80), -2);
     assert.equal(cashDifference(result.expected, null), null);
+    assert.equal(cashDifference(7.960000000000001, 7.96), 0);
+    assert.equal(cashDifference(7.96, 7.960000000000001), 0);
   });
 
   it('un gasto en deuda no sale de la caja', () => {
@@ -91,5 +93,20 @@ describe('caja por empleado', () => {
     ]);
     assert.equal(result.cashExpensesTotal, 0);
     assert.equal(result.expected, 50);
+  });
+
+  it('un resto de centavo que se ve como $0 cuenta como cuadra', () => {
+    const result = buildCashBreakdown(
+      { ...session, openingAmount: 0.1 },
+      [
+        sale({
+          id: 'centavos',
+          total: 0.2,
+          paymentMethod: 'efectivo',
+        }),
+      ],
+    );
+    assert.equal(result.expected, 0.3);
+    assert.equal(cashDifference(result.expected, 0.3), 0);
   });
 });

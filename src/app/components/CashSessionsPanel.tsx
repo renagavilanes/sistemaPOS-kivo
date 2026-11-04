@@ -435,7 +435,7 @@ export function CashSessionsPanel({
       return;
     }
     const counted = Math.max(0, Number(countedAmount.replace(',', '.')) || 0);
-    const difference = counted - selectedBreakdown.expected;
+    const difference = cashDifference(selectedBreakdown.expected, counted) ?? 0;
     setSaving(true);
     try {
       await closeCashSession({

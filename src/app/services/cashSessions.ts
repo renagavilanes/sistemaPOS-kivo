@@ -1,5 +1,5 @@
 import { supabase } from '../lib/supabase';
-import type { CashBreakdown } from '../lib/cashSession';
+import { cashDifference, type CashBreakdown } from '../lib/cashSession';
 
 export type CashSessionSnapshot = CashBreakdown & {
   countedAmount: number;
@@ -144,7 +144,7 @@ export async function updateClosedCashSession(input: {
       openingAmount,
       expected,
       countedAmount,
-      difference: countedAmount - expected,
+      difference: cashDifference(expected, countedAmount) ?? 0,
     },
   };
   const next = sessions.slice();
