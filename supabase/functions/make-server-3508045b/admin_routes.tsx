@@ -299,7 +299,7 @@ export function registerAdminRoutes(app: any): void {
   // EMPLOYEE ROUTES — All use SERVICE_ROLE_KEY to bypass RLS
   // ════════════════════════════════════════════════════════════════════════════
 
-  // ── GET /admin/employees — List active employees for a business ──────────────
+  // ── GET /admin/employees — List employees, including deactivated ─────────────
   app.get("/make-server-3508045b/admin/employees", async (c: any) => {
     try {
       const businessId = c.req.header("X-Business-ID");
@@ -311,7 +311,7 @@ export function registerAdminRoutes(app: any): void {
           "id,business_id,user_id,name,email,phone,role,permissions,is_active,is_owner,created_at,updated_at",
         )
         .eq("business_id", businessId)
-        .eq("is_active", true)
+        .order("is_active", { ascending: false })
         .order("created_at", { ascending: false });
       if (error) { console.error("❌ [ADMIN/EMPLOYEES/GET]", error.message); return c.json({ error: error.message }, 500); }
       console.log(`✅ [ADMIN/EMPLOYEES/GET] ${data?.length ?? 0} records`);

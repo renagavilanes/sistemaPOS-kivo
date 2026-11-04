@@ -24,18 +24,18 @@ export async function getUserBusinesses(userId: string) {
   }
   console.log('✅ Owned businesses:', ownedData?.length || 0);
 
-  // 2. Negocios donde el usuario es empleado vinculado
-  // Buscamos con user_id sin filtrar is_active para no perder vínculos recién reparados
+  // 2. Negocios donde el usuario es empleado vinculado y activo.
+  // Un empleado desactivado conserva su fila, pero no puede entrar al negocio.
   const { data: empRowsAll, error: empError } = await supabase
     .from('employees')
     .select('business_id, role, permissions, is_active')
-    .eq('user_id', userId);
+    .eq('user_id', userId)
+    .eq('is_active', true);
 
   if (empError) {
     console.error('❌ Error getting employee businesses:', empError);
     // No lanzar error — continuar solo con los propios
   }
-  // Incluir todos los vínculos donde user_id esté asignado (is_active puede variar tras repair)
   const empRows = empRowsAll || [];
   console.log('✅ Employee links encontrados:', empRows.length, empRows.map((r: any) => `biz:${r.business_id} active:${r.is_active}`));
 

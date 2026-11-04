@@ -4648,12 +4648,31 @@ app.post("/make-server-3508045b/accept-invite", async (c) => {
 
     const emailClean = String(email).trim();
 
-    // Puede haber más de una fila (reactivaciones). No usar .single().
+    const { data: existingRows, error: existingError } = await supabaseAdmin
+      .from('employees')
+      .select('id, is_active')
+      .eq('business_id', businessId)
+      .ilike('email', emailClean);
+
+    if (existingError) {
+      console.error('❌ Error looking up employee invite:', existingError);
+      return c.json({ error: existingError.message }, 500);
+    }
+
+    const activeRows = (existingRows || []).filter((row: { is_active?: boolean }) => row.is_active !== false);
+    if (!activeRows.length) {
+      return c.json({
+        error: 'Tu acceso a este negocio está desactivado. El dueño puede volver a activarte.',
+      }, 403);
+    }
+
+    // Solo vincula invitaciones que siguen activas. No revive un empleado desactivado.
     const { data: employees, error: updateError } = await supabaseAdmin
       .from('employees')
       .update({ user_id: userId, is_active: true, updated_at: new Date().toISOString() })
       .eq('business_id', businessId)
       .ilike('email', emailClean)
+      .eq('is_active', true)
       .select();
 
     if (updateError) {

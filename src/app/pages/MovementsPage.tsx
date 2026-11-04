@@ -513,11 +513,12 @@ function resolveMovementSeller(
 ) {
   const tryMatch = (candidate: any) => {
     if (!candidate) return null;
-    const match = employeeList.find(
+    const matches = employeeList.filter(
       (e) =>
         (candidate.userId && e.userId === candidate.userId) ||
         (candidate.id && e.id === candidate.id),
     );
+    const match = matches.find((e) => e.is_active !== false && e.isActive !== false) || matches[0];
     if (match) return match;
     if (typeof candidate.userId === 'string' && candidate.userId) return candidate;
     return null;
@@ -528,7 +529,8 @@ function resolveMovementSeller(
 
   const createdBy = movement?.createdBy || movement?.employeeUserId;
   if (createdBy) {
-    const byUser = employeeList.find((e) => e.userId === createdBy);
+    const byUserMatches = employeeList.filter((e) => e.userId === createdBy);
+    const byUser = byUserMatches.find((e) => e.is_active !== false && e.isActive !== false) || byUserMatches[0];
     if (byUser) return byUser;
   }
   if (movement?.employeeId) {
@@ -616,6 +618,10 @@ export default function MovementsPage() {
     () => sellersForEdit(employees, user, currentBusiness),
     [employees, user, currentBusiness],
   );
+  const selectableSellers = useMemo(
+    () => sellerOptions.filter((employee) => employee.is_active !== false && employee.isActive !== false),
+    [sellerOptions],
+  );
 
   const resolveSeller = useCallback(
     (movement: any, fallback?: any | null) =>
@@ -676,9 +682,16 @@ export default function MovementsPage() {
           
       const productById = new Map(productsData.map((prod: any) => [prod.id, prod]));
       const customerById = new Map(customersData.map((c: any) => [c.id, c]));
-      const employeeByUserId = new Map(
-        employeesData.filter((emp: any) => emp.userId).map((emp: any) => [emp.userId, emp]),
-      );
+      const employeeByUserId = new Map<string, any>();
+      for (const emp of employeesData) {
+        if (!emp.userId) continue;
+        const current = employeeByUserId.get(emp.userId);
+        const incomingActive = emp.is_active !== false && emp.isActive !== false;
+        const currentActive = !!current && current.is_active !== false && current.isActive !== false;
+        if (!current || (incomingActive && !currentActive)) {
+          employeeByUserId.set(emp.userId, emp);
+        }
+      }
       const ownerEmployee = employeesData.find((emp: any) => emp.is_owner === true);
 
       const getCurrentProductImage = (productId: string | null, fallbackImage: string): string => {
@@ -1518,7 +1531,7 @@ export default function MovementsPage() {
   
   const employeesList = employees.map(emp => ({
     id: emp.id,
-    name: emp.name,
+    name: emp.is_active === false || emp.isActive === false ? `${emp.name} (inactivo)` : emp.name,
     initials: getInitials(emp.name)
   }));
 
@@ -4340,7 +4353,7 @@ export default function MovementsPage() {
                           <DialogDescription>Elige un vendedor de la lista.</DialogDescription>
                         </DialogHeader>
                         <div className="space-y-2 mt-4">
-                          {sellerOptions.map((employee) => (
+                          {selectableSellers.map((employee) => (
                             <button
                               key={employee.id}
                               onClick={() => {

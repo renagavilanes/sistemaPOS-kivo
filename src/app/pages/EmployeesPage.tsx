@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, Plus, Edit2, Trash2, X, UserPlus, Shield, CheckCircle2, XCircle, ChevronLeft, Clock, Mail } from 'lucide-react';
+import { Search, Edit2, X, UserPlus, Shield, CheckCircle2, XCircle, ChevronLeft, Clock, Mail } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -224,17 +224,20 @@ export default function EmployeesPage() {
     return roleMap[role] || 'cashier';
   };
 
-  // Filtered employees
-  const filteredEmployees = employees.filter(employee => {
-    const matchesSearch =
-      searchTextMatches(employee.name, searchTerm) ||
-      searchTextMatches(employee.email, searchTerm);
-    return matchesSearch;
-  });
+  // Filtered employees. Los inactivos se quedan al final, visibles para el dueño.
+  const filteredEmployees = employees
+    .filter(employee => {
+      const matchesSearch =
+        searchTextMatches(employee.name, searchTerm) ||
+        searchTextMatches(employee.email, searchTerm);
+      return matchesSearch;
+    })
+    .sort((a, b) => Number(b.isActive) - Number(a.isActive) || a.name.localeCompare(b.name, 'es'));
 
   // Statistics
   const totalEmployees = employees.length;
   const activeEmployees = employees.filter(e => e.isActive).length;
+  const inactiveEmployees = totalEmployees - activeEmployees;
 
   // Handle create/edit employee
   const handleSaveEmployee = async () => {
@@ -314,7 +317,13 @@ export default function EmployeesPage() {
         });
         
         await loadEmployees();
-        toast.success('Empleado actualizado correctamente');
+        if (editingEmployee.isActive && !employeeIsActive) {
+          toast.success('Empleado desactivado. Sigue en la lista y puedes volver a activarlo.');
+        } else if (!editingEmployee.isActive && employeeIsActive) {
+          toast.success('Empleado activado. Conserva su rol y sus permisos.');
+        } else {
+          toast.success('Empleado actualizado correctamente');
+        }
       } else {
         // Invite new employee (create with temporary password)
         const result = await api.inviteEmployee(currentBusiness.id, {
@@ -391,7 +400,7 @@ export default function EmployeesPage() {
 
   const handleDeleteClick = (employee: Employee) => {
     if (employee.isOwner) {
-      toast.error('No puedes eliminar al propietario del negocio');
+      toast.error('No puedes desactivar al propietario del negocio');
       return;
     }
     setEmployeeToDelete(employee);
@@ -404,15 +413,30 @@ export default function EmployeesPage() {
       try {
         await api.deleteEmployee(employeeToDelete.id, currentBusiness.id);
         await loadEmployees();
-        toast.success('Empleado eliminado correctamente');
+        toast.success(`${employeeToDelete.name} quedó desactivado. Sus datos se conservan.`);
       } catch (error: any) {
-        toast.error(error.message || 'Error al eliminar empleado');
+        toast.error(error.message || 'Error al desactivar empleado');
         console.error(error);
       } finally {
         setLoading(false);
       }
       setEmployeeToDelete(null);
       setDeleteDialogOpen(false);
+    }
+  };
+
+  const handleActivateEmployee = async (employee: Employee) => {
+    if (!currentBusiness || employee.isOwner) return;
+    setLoading(true);
+    try {
+      await api.updateEmployee(employee.id, currentBusiness.id, { is_active: true });
+      await loadEmployees();
+      toast.success(`${employee.name} volvió a estar activo, con los mismos datos.`);
+    } catch (error: any) {
+      toast.error(error.message || 'Error al activar empleado');
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -511,6 +535,11 @@ export default function EmployeesPage() {
                     <span>Activos:</span>
                     <span className="font-semibold text-gray-900">{activeEmployees}</span>
                   </div>
+                  <span className="text-gray-300">|</span>
+                  <div className="flex items-center gap-1.5">
+                    <span>Inactivos:</span>
+                    <span className="font-semibold text-gray-900">{inactiveEmployees}</span>
+                  </div>
                 </div>
               </div>
               {canCreate && (
@@ -549,6 +578,11 @@ export default function EmployeesPage() {
               <div className="flex items-center gap-1.5">
                 <span>Activos:</span>
                 <span className="font-semibold text-gray-900">{activeEmployees}</span>
+              </div>
+              <span className="text-gray-300">|</span>
+              <div className="flex items-center gap-1.5">
+                <span>Inactivos:</span>
+                <span className="font-semibold text-gray-900">{inactiveEmployees}</span>
               </div>
             </div>
           </div>
@@ -639,7 +673,7 @@ export default function EmployeesPage() {
                   </tr>
                 ) : (
                   filteredEmployees.map((employee) => (
-                    <tr key={employee.id} className="hover:bg-gray-50">
+                    <tr key={employee.id} className={`hover:bg-gray-50 ${employee.isActive ? '' : 'bg-gray-50/80'}`}>
                       <td className="px-4 py-3">
                         <div>
                           <div className="flex items-center gap-2">
@@ -670,7 +704,7 @@ export default function EmployeesPage() {
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center justify-end gap-2">
-                          {canCreate && !employee.isOwner && !employee.userId && (
+                          {canCreate && !employee.isOwner && employee.isActive && !employee.userId && (
                             <Button
                               variant="outline"
                               size="sm"
@@ -679,6 +713,17 @@ export default function EmployeesPage() {
                             >
                               <Mail className="w-4 h-4 mr-1" />
                               Reenviar
+                            </Button>
+                          )}
+                          {!employee.isOwner && !employee.isActive && canEdit && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => void handleActivateEmployee(employee)}
+                              disabled={loading}
+                            >
+                              <CheckCircle2 className="w-4 h-4 mr-1" />
+                              Activar
                             </Button>
                           )}
                           {((employee.isOwner && canEditOwnerName) || (!employee.isOwner && canEdit)) && (
@@ -692,14 +737,15 @@ export default function EmployeesPage() {
                               {employee.isOwner ? 'Editar nombre' : 'Editar'}
                             </Button>
                           )}
-                          {!employee.isOwner && canDelete && (
+                          {!employee.isOwner && employee.isActive && canDelete && (
                             <Button
                               variant="ghost"
-                              size="icon"
+                              size="sm"
                               onClick={() => handleDeleteClick(employee)}
                               disabled={loading}
                             >
-                              <Trash2 className="w-4 h-4 text-red-600" />
+                              <XCircle className="w-4 h-4 mr-1 text-red-600" />
+                              Desactivar
                             </Button>
                           )}
                         </div>
@@ -742,7 +788,7 @@ export default function EmployeesPage() {
             {filteredEmployees.map((employee) => (
               <div
                 key={employee.id}
-                className={`bg-white rounded-lg border p-4 ${((employee.isOwner && canEditOwnerName) || (!employee.isOwner && canEdit)) ? 'cursor-pointer' : ''}`}
+                className={`rounded-lg border p-4 ${employee.isActive ? 'bg-white' : 'bg-gray-50'} ${((employee.isOwner && canEditOwnerName) || (!employee.isOwner && canEdit)) ? 'cursor-pointer' : ''}`}
                 onClick={() => {
                   if (employee.isOwner && canEditOwnerName) handleEditEmployee(employee);
                   else if (!employee.isOwner && canEdit) handleEditEmployee(employee);
@@ -763,18 +809,32 @@ export default function EmployeesPage() {
                       <div className="text-xs text-gray-500">{employee.phone}</div>
                     )}
                   </div>
-                  {!employee.isOwner && canDelete && (
+                  {!employee.isOwner && employee.isActive && canDelete && (
                     <Button
                       variant="ghost"
-                      size="icon"
+                      size="sm"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleDeleteClick(employee);
                       }}
-                      className="h-8 w-8 -mt-1 -mr-1"
+                      className="h-8 -mt-1 -mr-1 text-red-600"
                       disabled={loading}
                     >
-                      <Trash2 className="w-4 h-4 text-red-600" />
+                      Desactivar
+                    </Button>
+                  )}
+                  {!employee.isOwner && !employee.isActive && canEdit && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        void handleActivateEmployee(employee);
+                      }}
+                      className="h-8 -mt-1 -mr-1"
+                      disabled={loading}
+                    >
+                      Activar
                     </Button>
                   )}
                 </div>
@@ -784,7 +844,7 @@ export default function EmployeesPage() {
                     {employee.role}
                   </Badge>
                   <div className="flex items-center gap-2">
-                    {canCreate && !employee.isOwner && !employee.userId && (
+                    {canCreate && !employee.isOwner && employee.isActive && !employee.userId && (
                       <Button
                         variant="outline"
                         size="sm"
@@ -934,7 +994,9 @@ export default function EmployeesPage() {
                       <div>
                         <div className="font-medium text-gray-900">Estado del empleado</div>
                         <div className="text-sm text-gray-500">
-                          {employeeIsActive ? 'Activo' : 'Inactivo'}
+                          {employeeIsActive
+                            ? 'Puede ingresar con su correo'
+                            : 'No puede ingresar. Sus datos, rol y permisos se conservan'}
                         </div>
                       </div>
                     </div>
@@ -1076,7 +1138,7 @@ export default function EmployeesPage() {
                                   if (actionKey === 'view') return 'Acceso a la pantalla de empleados';
                                   if (actionKey === 'edit') return 'Puede editar empleados (no el nombre del propietario)';
                                   if (actionKey === 'create') return 'Puede invitar empleados';
-                                  if (actionKey === 'delete') return 'Puede eliminar empleados';
+                                  if (actionKey === 'delete') return 'Puede desactivar empleados. Los datos se conservan y se pueden volver a activar';
                                 }
                                 if (moduleKey === 'catalog') {
                                   if (actionKey === 'view') return 'Puede ver el catálogo virtual y compartir enlace/QR';
@@ -1288,9 +1350,9 @@ export default function EmployeesPage() {
       <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>¿Eliminar empleado?</AlertDialogTitle>
+            <AlertDialogTitle>¿Desactivar empleado?</AlertDialogTitle>
             <AlertDialogDescription>
-              ¿Estás seguro de que deseas eliminar a "{employeeToDelete?.name}"? Esta acción no se puede deshacer.
+              {employeeToDelete?.name} no podrá ingresar a este negocio. Su nombre, correo, rol y permisos se quedan guardados para que puedas verlo y volver a activarlo.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -1300,7 +1362,7 @@ export default function EmployeesPage() {
               className="bg-red-600 hover:bg-red-700"
               disabled={loading}
             >
-              {loading ? 'Eliminando...' : 'Eliminar'}
+              {loading ? 'Desactivando...' : 'Desactivar'}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
