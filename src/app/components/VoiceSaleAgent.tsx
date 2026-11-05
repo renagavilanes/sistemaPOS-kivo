@@ -91,8 +91,13 @@ function markVoiceIntroSeen(userId: string) {
 function isEcho(heard: string, spoken: string) {
   const a = normalizeVoiceText(heard);
   const b = normalizeVoiceText(spoken);
-  if (!a || !b || a.length < 12) return false;
-  return a.length >= b.length * 0.6 && (b.includes(a) || a.includes(b));
+  if (!a || !b || a.length < 4) return false;
+  if (b.includes(a) || a.includes(b)) return true;
+  const spokenWords = b.split(' ').filter((word) => word.length > 2);
+  const heardWords = a.split(' ').filter((word) => word.length > 2);
+  if (!heardWords.length || !spokenWords.length) return false;
+  const hits = heardWords.filter((word) => spokenWords.some((said) => said === word || said.startsWith(word) || word.startsWith(said))).length;
+  return hits / heardWords.length >= 0.6;
 }
 
 export function VoiceSaleAgent({
@@ -160,6 +165,7 @@ export function VoiceSaleAgent({
   const recognitionRunningRef = useRef(false);
   const phraseStartRef = useRef(0);
   const resultCountRef = useRef(0);
+  const deafUntilRef = useRef(0);
   const introRef = useRef<'telling' | 'cta' | null>(null);
   const introPendingRef = useRef(false);
   introRef.current = introPhase;
@@ -177,7 +183,11 @@ export function VoiceSaleAgent({
 
   const commitHeard = (text: string) => {
     const clean = text.trim();
-    if (!clean || isEcho(clean, lastSaidRef.current)) return;
+    if (!clean || isEcho(clean, lastSaidRef.current)) {
+      pendingRef.current = '';
+      setLive('');
+      return;
+    }
     window.clearTimeout(pauseTimerRef.current);
     pendingRef.current = '';
     acceptResultsRef.current = false;
@@ -254,7 +264,8 @@ export function VoiceSaleAgent({
 
     if (immediateListen && next === 'listen') {
       wantListenRef.current = true;
-      acceptResultsRef.current = true;
+      acceptResultsRef.current = false;
+      pausedForSpeechRef.current = true;
       setListening(true);
       armRef.current();
     } else {
@@ -280,7 +291,17 @@ export function VoiceSaleAgent({
         setIntroPhase('cta');
       }
       if (next === 'listen') {
+        const deaf = 700;
+        deafUntilRef.current = Date.now() + deaf;
+        acceptResultsRef.current = false;
+        pendingRef.current = '';
         if (!immediateListen || !recognitionRunningRef.current) armRef.current();
+        window.setTimeout(() => {
+          if (generation !== speakGenRef.current || !wantListenRef.current || speakingRef.current) return;
+          phraseStartRef.current = resultCountRef.current;
+          pendingRef.current = '';
+          acceptResultsRef.current = true;
+        }, deaf);
       } else if (next === 'close') {
         wantListenRef.current = false;
         setActive(false);
@@ -416,7 +437,7 @@ export function VoiceSaleAgent({
       recognitionRunningRef.current = true;
       phraseStartRef.current = 0;
       resultCountRef.current = 0;
-      acceptResultsRef.current = true;
+      acceptResultsRef.current = !speakingRef.current && Date.now() >= deafUntilRef.current;
       networkFailsRef.current = 0;
       setListening(true);
       setMicNote('');
@@ -565,8 +586,8 @@ export function VoiceSaleAgent({
   };
 
   onResultRef.current = (event) => {
-    if (!acceptResultsRef.current) return;
     resultCountRef.current = event.results.length;
+    if (!acceptResultsRef.current) return;
     const parts = [];
     for (let i = phraseStartRef.current; i < event.results.length; i += 1) {
       parts.push({
